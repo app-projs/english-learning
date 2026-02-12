@@ -13,8 +13,15 @@
 ### 功能文档
 - [阅读模块](./features/01-reading.md) - 文章阅读功能详解
 - [练习模块](./features/02-practice.md) - 各种练习功能说明
+- [对话模块](./features/03-dialogue.md) - 对话练习功能详解
 - [用户系统](./features/03-user-system.md) - 用户管理和进度追踪
 - [设置功能](./features/04-settings.md) - 应用设置和配置
+
+### 计划文档
+- [开发进度](./plan/development-progress.md) - 详细的开发进度追踪
+- [功能分解](./plan/feature-breakdown.md) - 完整的功能模块分解
+- [执行计划](./plan/module-execution-plan.md) - 可执行的功能开发计划
+- [技术栈](./plan/tech-stack.md) - 技术选型和架构规划
 
 ### API文档
 - [数据模型](./api/01-data-models.md) - 完整的数据模型定义

@@ -265,23 +265,19 @@ dependencies:
    - 使用ListView.builder处理大列表
    - 图片压缩和缓存
 
-## 📊 开发进度
+## 📊 开发进度与计划
 
-### 第一阶段 (已完成 - 80%)
-- [x] 项目架构搭建
-- [x] 数据模型设计  
-- [x] 阅读模块开发
-- [x] 基础UI框架
+详细的开发进度和功能执行计划已迁移至文档目录：
 
-### 第二阶段 (开发中 - 20%)
-- [ ] 练习模块完善
-- [ ] 个人中心开发
-- [ ] 本地数据存储
+- **开发进度追踪**: [docs/plan/development-progress.md](./docs/plan/development-progress.md)
+- **功能特性分解**: [docs/plan/feature-breakdown.md](./docs/plan/feature-breakdown.md)
+- **模块执行计划**: [docs/plan/module-execution-plan.md](./docs/plan/module-execution-plan.md)
+- **技术栈规划**: [docs/plan/tech-stack.md](./docs/plan/tech-stack.md)
 
-### 第三阶段 (计划中)
-- [ ] 云端同步功能
-- [ ] AI功能集成
-- [ ] 性能优化
+### 当前阶段概览
+- **第一阶段**: ✅ 基础功能 (80%完成)
+- **第二阶段**: 🚧 练习系统 (20%开发中)
+- **第三阶段**: 📋 高级功能 (计划中)
 
 ## 🤝 贡献指南
 

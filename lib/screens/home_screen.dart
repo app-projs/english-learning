@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'practice_tab.dart';
 import 'article_list_screen.dart';
+import 'dialogue_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const ReadingTab(),
     const PracticeTab(),
+    const DialogueTab(),
     const ProfileTab(),
   ];
 
@@ -30,18 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
-            label: '阅读',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
-            label: '练习',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '我的',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: '阅读'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: '对话'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: '我'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: '我的'),
         ],
       ),
     );
@@ -53,9 +47,7 @@ class PracticeTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('练习模块'),
-    );
+    return const Center(child: Text('练习模块'));
   }
 }
 
@@ -64,8 +56,6 @@ class ProfileTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('个人中心'),
-    );
+    return const Center(child: Text('个人中心'));
   }
 }

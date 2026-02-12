@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'word_practice_screen.dart';
 import 'sentence_practice_screen.dart';
-import 'dialogue_practice_screen.dart';
 
 class PracticeTab extends StatelessWidget {
   const PracticeTab({super.key});
@@ -9,9 +8,7 @@ class PracticeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('练习中心'),
-      ),
+      appBar: AppBar(title: const Text('练习中心')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.count(
@@ -48,28 +45,14 @@ class PracticeTab extends StatelessWidget {
               },
             ),
             _PracticeCard(
-              title: '对话练习',
-              subtitle: '模拟真实对话',
-              icon: Icons.chat,
-              color: Colors.orange,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DialoguePracticeScreen(),
-                  ),
-                );
-              },
-            ),
-            _PracticeCard(
               title: '听力练习',
               subtitle: '提升听力理解',
               icon: Icons.headphones,
-              color: Colors.purple,
+              color: Colors.orange,
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('功能开发中...')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(const SnackBar(content: Text('功能开发中...')));
               },
             ),
           ],
@@ -108,20 +91,13 @@ class _PracticeCard extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                color.withOpacity(0.1),
-                color.withOpacity(0.05),
-              ],
+              colors: [color.withOpacity(0.1), color.withOpacity(0.05)],
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                size: 48,
-                color: color,
-              ),
+              Icon(icon, size: 48, color: color),
               const SizedBox(height: 16),
               Text(
                 title,
@@ -134,10 +110,7 @@ class _PracticeCard extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 subtitle,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey[600],
-                ),
+                style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 textAlign: TextAlign.center,
               ),
             ],
