@@ -8,6 +8,7 @@ import 'statistics_screen.dart';
 import 'reading_history_screen.dart';
 import 'favorites_screen.dart';
 import 'notification_settings_screen.dart';
+import 'wrong_answers_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -427,7 +428,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               const SizedBox(width: 12),
-              const Expanded(child: SizedBox()),
+              Expanded(
+                child: _ActionButton(
+                  icon: Icons.error_outline,
+                  label: '错题',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WrongAnswersScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ],

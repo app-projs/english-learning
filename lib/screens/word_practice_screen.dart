@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/word.dart';
+import '../services/storage_service.dart';
 
 class WordPracticeScreen extends StatefulWidget {
   const WordPracticeScreen({super.key});
@@ -17,11 +18,17 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
   bool _showAnswer = false;
   String? _selectedAnswer;
   bool _isCorrect = false;
+  StorageService? _storageService;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _initStorage();
+  }
+
+  Future<void> _initStorage() async {
+    _storageService = await StorageService.getInstance();
   }
 
   @override
@@ -121,9 +128,24 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
 
   void _checkAnswer(String answer) {
     final currentWord = _practiceWords[_currentIndex];
+    final isCorrect = answer == currentWord.chinese;
+
+    if (!isCorrect) {
+      _storageService?.addWrongAnswer({
+        'id': '${currentWord.id}_${DateTime.now().millisecondsSinceEpoch}',
+        'type': '单词',
+        'question': currentWord.english,
+        'context': currentWord.exampleSentence,
+        'userAnswer': answer,
+        'correctAnswer': currentWord.chinese,
+        'createdAt': DateTime.now().toIso8601String(),
+        'reviewed': false,
+      });
+    }
+
     setState(() {
       _selectedAnswer = answer;
-      _isCorrect = answer == currentWord.chinese;
+      _isCorrect = isCorrect;
       _showAnswer = true;
     });
   }

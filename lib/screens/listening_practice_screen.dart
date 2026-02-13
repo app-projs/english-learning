@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/storage_service.dart';
 
 class ListeningPracticeScreen extends StatefulWidget {
   const ListeningPracticeScreen({super.key});
@@ -18,6 +19,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
   bool _showAnswer = false;
   int _correctCount = 0;
   int _totalQuestions = 0;
+  StorageService? _storageService;
 
   final List<Map<String, dynamic>> _scenarios = [
     {
@@ -167,6 +169,11 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _initStorage();
+  }
+
+  Future<void> _initStorage() async {
+    _storageService = await StorageService.getInstance();
   }
 
   @override
@@ -202,12 +209,28 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
 
   void _checkAnswer(String answer) {
     final questions = _scenarios[_selectedScenarioIndex]['questions'];
-    final correctAnswer = questions[_currentQuestionIndex]['correct'];
+    final currentQuestion = questions[_currentQuestionIndex];
+    final correctAnswer = currentQuestion['correct'];
+    final isCorrect = answer == correctAnswer;
+
+    if (!isCorrect) {
+      _storageService?.addWrongAnswer({
+        'id':
+            '${_selectedScenarioIndex}_${_currentQuestionIndex}_${DateTime.now().millisecondsSinceEpoch}',
+        'type': '听力',
+        'question': currentQuestion['question'],
+        'context': currentQuestion['audioText'],
+        'userAnswer': answer,
+        'correctAnswer': correctAnswer,
+        'createdAt': DateTime.now().toIso8601String(),
+        'reviewed': false,
+      });
+    }
 
     setState(() {
       _selectedAnswer = answer;
       _showAnswer = true;
-      if (answer == correctAnswer) {
+      if (isCorrect) {
         _correctCount++;
       }
     });

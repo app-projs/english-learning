@@ -20,6 +20,7 @@ class StorageService {
   static const String _keyStreakDays = 'streak_days';
   static const String _keyLastPracticeDate = 'last_practice_date';
   static const String _keySettings = 'settings';
+  static const String _keyWrongAnswers = 'wrong_answers';
 
   // User Profile
   Future<void> saveUserProfile(Map<String, dynamic> profile) async {
@@ -139,6 +140,48 @@ class StorageService {
     final settings = getSettings();
     settings[key] = value;
     await saveSettings(settings);
+  }
+
+  // Wrong Answers
+  Future<void> saveWrongAnswers(List<Map<String, dynamic>> wrongAnswers) async {
+    await _prefs?.setString(_keyWrongAnswers, jsonEncode(wrongAnswers));
+  }
+
+  List<Map<String, dynamic>> getWrongAnswers() {
+    final data = _prefs?.getString(_keyWrongAnswers);
+    if (data != null) {
+      final list = jsonDecode(data) as List;
+      return list.map((e) => Map<String, dynamic>.from(e)).toList();
+    }
+    return [];
+  }
+
+  Future<void> addWrongAnswer(Map<String, dynamic> wrongAnswer) async {
+    final wrongAnswers = getWrongAnswers();
+    wrongAnswers.add(wrongAnswer);
+    await saveWrongAnswers(wrongAnswers);
+  }
+
+  Future<void> removeWrongAnswer(String id) async {
+    final wrongAnswers = getWrongAnswers();
+    wrongAnswers.removeWhere((item) => item['id'] == id);
+    await saveWrongAnswers(wrongAnswers);
+  }
+
+  Future<void> clearWrongAnswers() async {
+    await _prefs?.remove(_keyWrongAnswers);
+  }
+
+  Future<void> markWrongAnswerReviewed(String id) async {
+    final wrongAnswers = getWrongAnswers();
+    for (var i = 0; i < wrongAnswers.length; i++) {
+      if (wrongAnswers[i]['id'] == id) {
+        wrongAnswers[i]['reviewed'] = true;
+        wrongAnswers[i]['lastReviewDate'] = DateTime.now().toIso8601String();
+        break;
+      }
+    }
+    await saveWrongAnswers(wrongAnswers);
   }
 
   // Clear all data
