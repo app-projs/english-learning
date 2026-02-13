@@ -7,6 +7,7 @@ import 'goal_setting_screen.dart';
 import 'statistics_screen.dart';
 import 'reading_history_screen.dart';
 import 'favorites_screen.dart';
+import 'notification_settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -496,7 +497,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
               leading: const Icon(Icons.notifications),
               title: const Text('通知设置'),
               trailing: const Icon(Icons.chevron_right),
-              onTap: () => _showComingSoon('通知设置'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationSettingsScreen(
+                      notificationSettings: const {
+                        'dailyReminder': true,
+                        'streakReminder': true,
+                        'achievementNotification': true,
+                        'practiceReminder': false,
+                        'reminderTime': '08:00',
+                      },
+                      onSettingsSaved: (settings) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('通知设置已保存')),
+                        );
+                      },
+                    ),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading: const Icon(Icons.info),
