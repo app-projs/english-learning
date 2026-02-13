@@ -10,7 +10,7 @@ class DialogueTab extends StatelessWidget {
         title: const Text('对话练习'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,7 +30,7 @@ class DialogueTab extends StatelessWidget {
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             const SizedBox(height: 32),
-            const Text(
+            Text(
               '即将支持：\n• 对话场景模拟\n• 角色扮演练习\n• 录音与发音评分',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
