@@ -5,6 +5,8 @@ import 'dialogue_tab.dart';
 import 'achievement_screen.dart';
 import 'goal_setting_screen.dart';
 import 'statistics_screen.dart';
+import 'reading_history_screen.dart';
+import 'favorites_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -337,7 +339,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: _ActionButton(
                   icon: Icons.favorite,
                   label: '收藏',
-                  onTap: () => _showComingSoon('收藏功能'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FavoritesScreen(),
+                      ),
+                    );
+                  },
                 ),
               ),
               const SizedBox(width: 12),
@@ -345,7 +354,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: _ActionButton(
                   icon: Icons.history,
                   label: '历史',
-                  onTap: () => _showComingSoon('历史记录'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ReadingHistoryScreen(),
+                      ),
+                    );
+                  },
                 ),
               ),
               const SizedBox(width: 12),
