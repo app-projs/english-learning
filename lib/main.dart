@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'services/storage_service.dart';
+import 'services/word_service.dart';
+import 'services/sentence_service.dart';
+import 'services/dialogue_service.dart';
+import 'services/article_service.dart';
+import 'services/user_service.dart';
 
-void main() {
+late StorageService storageService;
+late WordService wordService;
+late SentenceService sentenceService;
+late DialogueService dialogueService;
+late ArticleService articleService;
+late UserService userService;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  storageService = await StorageService.getInstance();
+  wordService = WordService(storageService);
+  sentenceService = SentenceService(storageService);
+  dialogueService = DialogueService(storageService);
+  articleService = ArticleService();
+  userService = UserService(storageService);
+
   runApp(const EnglishLearningApp());
 }
 

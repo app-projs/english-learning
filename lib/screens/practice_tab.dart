@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'word_practice_screen.dart';
 import 'sentence_practice_screen.dart';
+import 'dialogue_practice_screen.dart';
 
 class PracticeTab extends StatelessWidget {
   const PracticeTab({super.key});
@@ -40,6 +41,20 @@ class PracticeTab extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const SentencePracticeScreen(),
+                  ),
+                );
+              },
+            ),
+            _PracticeCard(
+              title: '对话练习',
+              subtitle: '场景对话',
+              icon: Icons.chat,
+              color: Colors.purple,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DialoguePracticeScreen(),
                   ),
                 );
               },
