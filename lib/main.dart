@@ -6,6 +6,7 @@ import 'services/sentence_service.dart';
 import 'services/dialogue_service.dart';
 import 'services/article_service.dart';
 import 'services/user_service.dart';
+import 'services/theme_service.dart';
 
 late StorageService storageService;
 late WordService wordService;
@@ -13,6 +14,7 @@ late SentenceService sentenceService;
 late DialogueService dialogueService;
 late ArticleService articleService;
 late UserService userService;
+late ThemeService themeService;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,34 +25,54 @@ void main() async {
   dialogueService = DialogueService(storageService);
   articleService = ArticleService();
   userService = UserService(storageService);
+  themeService = ThemeService(storageService);
 
   runApp(const EnglishLearningApp());
 }
 
-class EnglishLearningApp extends StatelessWidget {
+class EnglishLearningApp extends StatefulWidget {
   const EnglishLearningApp({super.key});
+
+  @override
+  State<EnglishLearningApp> createState() => _EnglishLearningAppState();
+}
+
+class _EnglishLearningAppState extends State<EnglishLearningApp> {
+  bool _isDarkMode = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadTheme();
+  }
+
+  Future<void> _loadTheme() async {
+    final isDark = await themeService.isDarkMode();
+    if (mounted) {
+      setState(() {
+        _isDarkMode = isDark;
+      });
+    }
+  }
+
+  void _toggleTheme(bool value) {
+    setState(() {
+      _isDarkMode = value;
+    });
+    themeService.setDarkMode(value);
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'English Learning App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2E7D32),
-          brightness: Brightness.light,
-        ),
-        useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF2E7D32),
-          foregroundColor: Colors.white,
-          elevation: 2,
-        ),
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          selectedItemColor: Color(0xFF2E7D32),
-          unselectedItemColor: Colors.grey,
-        ),
+      theme: themeService.getTheme(false),
+      darkTheme: themeService.getTheme(true),
+      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      home: HomeScreen(
+        isDarkMode: _isDarkMode,
+        onThemeChanged: _toggleTheme,
       ),
-      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -2,7 +2,7 @@ import '../mock/mock_articles.dart';
 import '../models/article.dart';
 
 class ArticleService {
-  bool _useMockData = true;
+  final bool _useMockData = true;
 
   Future<List<Article>> getArticles() async {
     if (_useMockData) {

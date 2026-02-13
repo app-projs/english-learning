@@ -4,7 +4,14 @@ import 'practice_tab.dart';
 import 'dialogue_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final bool isDarkMode;
+  final Function(bool) onThemeChanged;
+
+  const HomeScreen({
+    super.key,
+    required this.isDarkMode,
+    required this.onThemeChanged,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -17,13 +24,21 @@ class _HomeScreenState extends State<HomeScreen> {
     const ReadingTab(),
     const PracticeTab(),
     const DialogueTab(),
-    const ProfileTab(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: IndexedStack(
+        index: _currentIndex,
+        children: [
+          ..._screens,
+          ProfileTab(
+            isDarkMode: widget.isDarkMode,
+            onThemeChanged: widget.onThemeChanged,
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
@@ -44,16 +59,33 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class ProfileTab extends StatelessWidget {
-  const ProfileTab({super.key});
+  final bool isDarkMode;
+  final Function(bool) onThemeChanged;
+
+  const ProfileTab({
+    super.key,
+    required this.isDarkMode,
+    required this.onThemeChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const ProfileScreen();
+    return ProfileScreen(
+      isDarkMode: isDarkMode,
+      onThemeChanged: onThemeChanged,
+    );
   }
 }
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  final bool isDarkMode;
+  final Function(bool) onThemeChanged;
+
+  const ProfileScreen({
+    super.key,
+    required this.isDarkMode,
+    required this.onThemeChanged,
+  });
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -361,7 +393,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _showSettings(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      builder: (context) => Container(
+      builder: (ctx) => Container(
         padding: const EdgeInsets.all(24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -376,15 +408,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
               leading: const Icon(Icons.dark_mode),
               title: const Text('深色模式'),
               trailing: Switch(
-                value: false,
-                onChanged: (value) {},
+                value: widget.isDarkMode,
+                onChanged: widget.onThemeChanged,
               ),
             ),
             ListTile(
               leading: const Icon(Icons.text_fields),
               title: const Text('字体大小'),
               trailing: const Icon(Icons.chevron_right),
-              onTap: () => _showComingSoon('字体设置'),
+              onTap: () => _showFontSizeDialog(context),
             ),
             ListTile(
               leading: const Icon(Icons.notifications),
@@ -397,6 +429,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: const Text('关于我们'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {},
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showFontSizeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('选择字体大小'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              title: const Text('小'),
+              onTap: () {
+                Navigator.pop(context);
+                _showComingSoon('小字体');
+              },
+            ),
+            ListTile(
+              title: const Text('中'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('大'),
+              onTap: () {
+                Navigator.pop(context);
+                _showComingSoon('大字体');
+              },
             ),
           ],
         ),
