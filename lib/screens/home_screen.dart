@@ -4,11 +4,11 @@ import 'practice_tab.dart';
 import 'dialogue_tab.dart';
 import 'achievement_screen.dart';
 import 'goal_setting_screen.dart';
-import 'statistics_screen.dart';
 import 'reading_history_screen.dart';
 import 'favorites_screen.dart';
 import 'notification_settings_screen.dart';
 import 'wrong_answers_screen.dart';
+import 'practice_stats_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -394,7 +394,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const StatisticsScreen(),
+                        builder: (context) => const PracticeStatsScreen(),
                       ),
                     );
                   },

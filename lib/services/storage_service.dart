@@ -21,6 +21,8 @@ class StorageService {
   static const String _keyLastPracticeDate = 'last_practice_date';
   static const String _keySettings = 'settings';
   static const String _keyWrongAnswers = 'wrong_answers';
+  static const String _keyPracticeStats = 'practice_stats';
+  static const String _keyDailyPractice = 'daily_practice';
 
   // User Profile
   Future<void> saveUserProfile(Map<String, dynamic> profile) async {
@@ -182,6 +184,146 @@ class StorageService {
       }
     }
     await saveWrongAnswers(wrongAnswers);
+  }
+
+  // Practice Statistics
+  Future<void> savePracticeStats(Map<String, dynamic> stats) async {
+    await _prefs?.setString(_keyPracticeStats, jsonEncode(stats));
+  }
+
+  Map<String, dynamic> getPracticeStats() {
+    final data = _prefs?.getString(_keyPracticeStats);
+    if (data != null) {
+      return jsonDecode(data);
+    }
+    return {
+      'totalPracticeCount': 0,
+      'correctCount': 0,
+      'wrongCount': 0,
+      'totalTimeMinutes': 0,
+      'wordsPracticed': 0,
+      'sentencesPracticed': 0,
+      'dialoguesPracticed': 0,
+      'listeningPracticed': 0,
+    };
+  }
+
+  Future<void> recordPractice({
+    required String practiceType,
+    required int correctCount,
+    required int wrongCount,
+    required int timeMinutes,
+  }) async {
+    final stats = getPracticeStats();
+    stats['totalPracticeCount'] = (stats['totalPracticeCount'] ?? 0) + 1;
+    stats['correctCount'] = (stats['correctCount'] ?? 0) + correctCount;
+    stats['wrongCount'] = (stats['wrongCount'] ?? 0) + wrongCount;
+    stats['totalTimeMinutes'] = (stats['totalTimeMinutes'] ?? 0) + timeMinutes;
+
+    switch (practiceType) {
+      case '单词':
+        stats['wordsPracticed'] =
+            (stats['wordsPracticed'] ?? 0) + correctCount + wrongCount;
+        break;
+      case '句子':
+        stats['sentencesPracticed'] =
+            (stats['sentencesPracticed'] ?? 0) + correctCount + wrongCount;
+        break;
+      case '对话':
+        stats['dialoguesPracticed'] =
+            (stats['dialoguesPracticed'] ?? 0) + correctCount + wrongCount;
+        break;
+      case '听力':
+        stats['listeningPracticed'] =
+            (stats['listeningPracticed'] ?? 0) + correctCount + wrongCount;
+        break;
+    }
+
+    await savePracticeStats(stats);
+    await _recordDailyPractice(practiceType, correctCount + wrongCount);
+  }
+
+  // Daily Practice Tracking
+  Future<void> _recordDailyPractice(String type, int count) async {
+    final today = DateTime.now();
+    final dateKey =
+        '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+
+    final dailyData = _prefs?.getString(_keyDailyPractice);
+    Map<String, dynamic> dailyMap = {};
+
+    if (dailyData != null) {
+      dailyMap = jsonDecode(dailyData);
+    }
+
+    if (!dailyMap.containsKey(dateKey)) {
+      dailyMap[dateKey] = {
+        'words': 0,
+        'sentences': 0,
+        'dialogues': 0,
+        'listening': 0,
+        'total': 0,
+      };
+    }
+
+    dailyMap[dateKey][type] = (dailyMap[dateKey][type] ?? 0) + count;
+    dailyMap[dateKey]['total'] = (dailyMap[dateKey]['total'] ?? 0) + count;
+
+    // Keep only last 30 days
+    final keysToRemove = <String>[];
+    for (var key in dailyMap.keys) {
+      final date = DateTime.parse(key);
+      if (today.difference(date).inDays > 30) {
+        keysToRemove.add(key);
+      }
+    }
+    for (var key in keysToRemove) {
+      dailyMap.remove(key);
+    }
+
+    await _prefs?.setString(_keyDailyPractice, jsonEncode(dailyMap));
+  }
+
+  Map<String, dynamic> getDailyPractice() {
+    final data = _prefs?.getString(_keyDailyPractice);
+    if (data != null) {
+      return jsonDecode(data);
+    }
+    return {};
+  }
+
+  List<Map<String, dynamic>> getWeeklyPracticeData() {
+    final dailyData = getDailyPractice();
+    final today = DateTime.now();
+    final result = <Map<String, dynamic>>[];
+
+    for (var i = 6; i >= 0; i--) {
+      final date = today.subtract(Duration(days: i));
+      final dateKey =
+          '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+
+      if (dailyData.containsKey(dateKey)) {
+        result.add({
+          'date': dateKey,
+          'total': dailyData[dateKey]['total'] ?? 0,
+          'words': dailyData[dateKey]['words'] ?? 0,
+          'sentences': dailyData[dateKey]['sentences'] ?? 0,
+          'dialogues': dailyData[dateKey]['dialogues'] ?? 0,
+          'listening': dailyData[dateKey]['listening'] ?? 0,
+        });
+      } else {
+        result.add({
+          'date': dateKey,
+          'total': 0,
+          'words': 0,
+          'sentences': 0,
+          'dialogues': 0,
+          'listening': 0,
+        });
+      }
+    }
+
+    return result;
   }
 
   // Clear all data
