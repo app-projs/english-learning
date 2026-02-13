@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'word_practice_screen.dart';
 import 'sentence_practice_screen.dart';
 import 'dialogue_practice_screen.dart';
+import 'listening_practice_screen.dart';
 
 class PracticeTab extends StatelessWidget {
   const PracticeTab({super.key});
@@ -65,9 +66,12 @@ class PracticeTab extends StatelessWidget {
               icon: Icons.headphones,
               color: Colors.orange,
               onTap: () {
-                ScaffoldMessenger.of(
+                Navigator.push(
                   context,
-                ).showSnackBar(const SnackBar(content: Text('功能开发中...')));
+                  MaterialPageRoute(
+                    builder: (context) => const ListeningPracticeScreen(),
+                  ),
+                );
               },
             ),
           ],
