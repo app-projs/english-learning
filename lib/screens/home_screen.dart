@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'article_list_screen.dart';
 import 'practice_tab.dart';
 import 'dialogue_tab.dart';
+import 'achievement_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -350,7 +351,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: _ActionButton(
                   icon: Icons.emoji_events,
                   label: '成就',
-                  onTap: () => _showComingSoon('成就系统'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AchievementScreen(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

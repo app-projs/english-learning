@@ -7,6 +7,7 @@ import 'services/dialogue_service.dart';
 import 'services/article_service.dart';
 import 'services/user_service.dart';
 import 'services/theme_service.dart';
+import 'services/database_service.dart';
 
 late StorageService storageService;
 late WordService wordService;
@@ -15,11 +16,13 @@ late DialogueService dialogueService;
 late ArticleService articleService;
 late UserService userService;
 late ThemeService themeService;
+late DatabaseService databaseService;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   storageService = await StorageService.getInstance();
+  databaseService = await DatabaseService.getInstance();
   wordService = WordService(storageService);
   sentenceService = SentenceService(storageService);
   dialogueService = DialogueService(storageService);
