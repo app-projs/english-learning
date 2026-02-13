@@ -3,6 +3,8 @@ import 'article_list_screen.dart';
 import 'practice_tab.dart';
 import 'dialogue_tab.dart';
 import 'achievement_screen.dart';
+import 'goal_setting_screen.dart';
+import 'statistics_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -361,6 +363,54 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   },
                 ),
               ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Expanded(
+                child: _ActionButton(
+                  icon: Icons.bar_chart,
+                  label: '统计',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const StatisticsScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _ActionButton(
+                  icon: Icons.flag,
+                  label: '目标',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GoalSettingScreen(
+                          currentGoals: const {
+                            'words': 500,
+                            'sentences': 200,
+                            'dialogues': 50,
+                            'dailyMinutes': 30
+                          },
+                          onGoalsSaved: (goals) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('目标已保存')),
+                            );
+                          },
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(width: 12),
+              const Expanded(child: SizedBox()),
             ],
           ),
         ],
