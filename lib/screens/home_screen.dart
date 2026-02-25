@@ -9,6 +9,7 @@ import 'favorites_screen.dart';
 import 'notification_settings_screen.dart';
 import 'wrong_answers_screen.dart';
 import 'practice_stats_screen.dart';
+import '../services/theme_service.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
@@ -143,39 +144,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildProfileHeader() {
     return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(24, 60, 24, 32),
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.primary.withOpacity(0.8),
-          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: AppColors.gradientPrimary,
         ),
       ),
       child: Column(
         children: [
-          const CircleAvatar(
-            radius: 48,
-            backgroundColor: Colors.white,
-            child: Icon(Icons.person, size: 48, color: Colors.grey),
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.white, width: 3),
+            ),
+            child: const CircleAvatar(
+              radius: 40,
+              backgroundColor: Colors.white,
+              child: Icon(Icons.person, size: 40, color: AppColors.primary),
+            ),
           ),
           const SizedBox(height: 16),
           const Text(
             '英语学习者',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(24),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -186,10 +192,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Text(
                   '${_userStats['streakDays']} 天连续学习',
                   style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w500),
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _StatColumn(value: '${_userStats['totalDays']}', label: '学习天数'),
+              Container(
+                  width: 1, height: 30, color: Colors.white.withOpacity(0.3)),
+              _StatColumn(value: '${_userStats['totalWords']}', label: '单词数'),
+              Container(
+                  width: 1, height: 30, color: Colors.white.withOpacity(0.3)),
+              _StatColumn(value: '${_userStats['totalMinutes']}', label: '分钟'),
+            ],
           ),
         ],
       ),
@@ -206,7 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             '学习概览',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
           Row(
             children: [
               Expanded(
@@ -214,7 +235,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   icon: Icons.calendar_today,
                   value: '${_userStats['totalDays']}',
                   label: '学习天数',
-                  color: Colors.blue,
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(width: 12),
@@ -223,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   icon: Icons.timer,
                   value: '${_userStats['totalMinutes']}',
                   label: '学习分钟',
-                  color: Colors.green,
+                  color: AppColors.accent,
                 ),
               ),
             ],
@@ -243,37 +264,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
             '学习进度',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 12),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  _ProgressItem(
-                    icon: Icons.translate,
-                    title: '单词',
-                    current: _userStats['totalWords'],
-                    goal: 500,
-                    color: Colors.blue,
-                  ),
-                  const SizedBox(height: 16),
-                  _ProgressItem(
-                    icon: Icons.format_quote,
-                    title: '句子',
-                    current: _userStats['totalSentences'],
-                    goal: 200,
-                    color: Colors.green,
-                  ),
-                  const SizedBox(height: 16),
-                  _ProgressItem(
-                    icon: Icons.chat,
-                    title: '对话',
-                    current: _userStats['totalDialogues'],
-                    goal: 50,
-                    color: Colors.orange,
-                  ),
-                ],
-              ),
+          const SizedBox(height: 16),
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 20,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                _ProgressItem(
+                  icon: Icons.translate,
+                  title: '单词',
+                  current: _userStats['totalWords'],
+                  goal: 500,
+                  color: AppColors.primary,
+                ),
+                const SizedBox(height: 20),
+                _ProgressItem(
+                  icon: Icons.format_quote,
+                  title: '句子',
+                  current: _userStats['totalSentences'],
+                  goal: 200,
+                  color: AppColors.accent,
+                ),
+                const SizedBox(height: 20),
+                _ProgressItem(
+                  icon: Icons.chat,
+                  title: '对话',
+                  current: _userStats['totalDialogues'],
+                  goal: 50,
+                  color: const Color(0xFFF59E0B),
+                ),
+              ],
             ),
           ),
         ],
@@ -291,29 +321,59 @@ class _ProfileScreenState extends State<ProfileScreen> {
             '最近活动',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 12),
-          Card(
+          const SizedBox(height: 16),
+          Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 20,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
             child: ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: _recentActivity.length,
-              separatorBuilder: (context, index) => const Divider(height: 1),
+              separatorBuilder: (context, index) =>
+                  Divider(height: 1, indent: 72),
               itemBuilder: (context, index) {
                 final activity = _recentActivity[index];
                 return ListTile(
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                   leading: CircleAvatar(
-                    backgroundColor: _getActivityColor(activity['type']),
+                    backgroundColor:
+                        _getActivityColor(activity['type']).withOpacity(0.15),
+                    radius: 20,
                     child: Icon(
                       _getActivityIcon(activity['type']),
-                      color: Colors.white,
+                      color: _getActivityColor(activity['type']),
                       size: 20,
                     ),
                   ),
-                  title: Text(activity['title']),
+                  title: Text(
+                    activity['title'],
+                    style: const TextStyle(fontWeight: FontWeight.w500),
+                  ),
                   subtitle: Text('${activity['count']} 次练习'),
-                  trailing: Text(
-                    activity['time'],
-                    style: TextStyle(color: Colors.grey.shade600),
+                  trailing: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      activity['time'],
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                        fontSize: 12,
+                      ),
+                    ),
                   ),
                 );
               },
@@ -601,28 +661,82 @@ class _StatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Icon(icon, color: color, size: 32),
-            const SizedBox(height: 8),
-            Text(
-              value,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
-            ),
-            Text(
-              label,
-              style: TextStyle(color: Colors.grey.shade600),
-            ),
-          ],
-        ),
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Icon(icon, color: color, size: 24),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            style: TextStyle(
+              color: Colors.grey.shade600,
+              fontSize: 13,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StatColumn extends StatelessWidget {
+  final String value;
+  final String label;
+
+  const _StatColumn({
+    required this.value,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            color: Colors.white.withOpacity(0.8),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -648,8 +762,15 @@ class _ProgressItem extends StatelessWidget {
 
     return Row(
       children: [
-        Icon(icon, color: color),
-        const SizedBox(width: 12),
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(icon, color: color, size: 22),
+        ),
+        const SizedBox(width: 14),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -657,18 +778,28 @@ class _ProgressItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(title,
-                      style: const TextStyle(fontWeight: FontWeight.w500)),
-                  Text('$current / $goal',
-                      style: TextStyle(color: Colors.grey.shade600)),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                    ),
+                  ),
+                  Text(
+                    '$current / $goal',
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                      fontSize: 13,
+                    ),
+                  ),
                 ],
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               ClipRRect(
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(6),
                 child: LinearProgressIndicator(
                   value: progress.clamp(0.0, 1.0),
-                  backgroundColor: color.withOpacity(0.2),
+                  backgroundColor: color.withOpacity(0.15),
                   valueColor: AlwaysStoppedAnimation<Color>(color),
                   minHeight: 8,
                 ),
