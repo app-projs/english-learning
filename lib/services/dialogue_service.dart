@@ -4,7 +4,7 @@ import 'storage_service.dart';
 
 class DialogueService {
   final StorageService _storage;
-  bool _useMockData = true;
+  final bool _useMockData = true;
 
   DialogueService(this._storage);
 
