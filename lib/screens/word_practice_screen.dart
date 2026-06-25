@@ -3,7 +3,8 @@ import '../models/word.dart';
 import '../services/storage_service.dart';
 
 class WordPracticeScreen extends StatefulWidget {
-  const WordPracticeScreen({super.key});
+  final VoidCallback? onCompleted;
+  const WordPracticeScreen({super.key, this.onCompleted});
 
   @override
   State<WordPracticeScreen> createState() => _WordPracticeScreenState();
@@ -155,6 +156,16 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('单词练习'),
+        actions: [
+          if (widget.onCompleted != null)
+            TextButton(
+              onPressed: () {
+                widget.onCompleted!();
+                Navigator.pop(context);
+              },
+              child: const Text('完成', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
+            ),
+        ],
         bottom: TabBar(
           controller: _tabController,
           tabs: const [

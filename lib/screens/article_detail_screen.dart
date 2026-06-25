@@ -3,8 +3,9 @@ import '../models/article.dart';
 
 class ArticleDetailScreen extends StatefulWidget {
   final Article article;
+  final VoidCallback? onCompleted;
 
-  const ArticleDetailScreen({super.key, required this.article});
+  const ArticleDetailScreen({super.key, required this.article, this.onCompleted});
 
   @override
   State<ArticleDetailScreen> createState() => _ArticleDetailScreenState();
@@ -45,6 +46,20 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
       appBar: AppBar(
         title: Text(widget.article.title),
         actions: [
+          if (widget.onCompleted != null)
+            TextButton(
+              onPressed: () {
+                widget.onCompleted!();
+                Navigator.pop(context);
+              },
+              child: const Text(
+                '完成',
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           IconButton(
             icon: Icon(
                 _showTranslation ? Icons.translate : Icons.translate_outlined),

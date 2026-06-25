@@ -17,7 +17,7 @@ class ModernCard extends StatelessWidget {
     this.margin,
     this.onTap,
     this.gradientColors,
-    this.borderRadius = 20,
+    this.borderRadius = 16, // 圆角统一为 16px
     this.hasShadow = true,
   });
 
@@ -39,13 +39,19 @@ class ModernCard extends StatelessWidget {
             ? (isDark ? AppColors.darkCard : AppColors.lightCard)
             : null,
         borderRadius: BorderRadius.circular(borderRadius),
+        border: gradientColors == null
+            ? Border.all(
+                color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE9ECEF),
+                width: 1,
+              )
+            : null,
         boxShadow: hasShadow && gradientColors == null
             ? [
                 BoxShadow(
                   color: isDark
-                      ? Colors.black.withOpacity(0.3)
-                      : Colors.black.withOpacity(0.06),
-                  blurRadius: 20,
+                      ? Colors.black.withOpacity(0.2)
+                      : Colors.black.withOpacity(0.015), // 微弱弥散阴影
+                  blurRadius: 16,
                   offset: const Offset(0, 4),
                 ),
               ]
@@ -120,10 +126,10 @@ class ModernButton extends StatelessWidget {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
           ),
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(24), // 胶囊圆角
           boxShadow: [
             BoxShadow(
-              color: gradientColors!.first.withOpacity(0.3),
+              color: gradientColors!.first.withOpacity(0.2),
               blurRadius: 12,
               offset: const Offset(0, 4),
             ),
@@ -135,7 +141,7 @@ class ModernButton extends StatelessWidget {
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(24),
             ),
           ),
           child: _buildChild(context),
@@ -221,7 +227,7 @@ class GlassContainer extends StatelessWidget {
   const GlassContainer({
     super.key,
     required this.child,
-    this.borderRadius = 20,
+    this.borderRadius = 16,
     this.padding,
     this.margin,
     this.opacity = 0.1,

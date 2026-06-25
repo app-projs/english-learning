@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'article_list_screen.dart';
 import 'practice_tab.dart';
-import 'dialogue_tab.dart';
 import 'achievement_screen.dart';
 import 'goal_setting_screen.dart';
 import 'reading_history_screen.dart';
@@ -9,6 +7,8 @@ import 'favorites_screen.dart';
 import 'notification_settings_screen.dart';
 import 'wrong_answers_screen.dart';
 import 'practice_stats_screen.dart';
+import 'daily_tab.dart';
+import 'leaderboard_tab.dart';
 import '../services/theme_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -29,9 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    const ReadingTab(),
+    const DailyTab(),
     const PracticeTab(),
-    const DialogueTab(),
+    const LeaderboardTab(),
   ];
 
   @override
@@ -56,9 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: '阅读'),
-          BottomNavigationBarItem(icon: Icon(Icons.school), label: '练习'),
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: '对话'),
+          BottomNavigationBarItem(icon: Icon(Icons.today), label: '学习'),
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: '专项'),
+          BottomNavigationBarItem(icon: Icon(Icons.emoji_events), label: '榜单'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: '我的'),
         ],
       ),

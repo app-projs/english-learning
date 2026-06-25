@@ -284,6 +284,33 @@ class StorageService {
     await _prefs?.setString(_keyDailyPractice, jsonEncode(dailyMap));
   }
 
+  // Daily Step Completions (0: Words, 1: Listening, 2: Sentences, 3: Article)
+  bool isDailyStepCompleted(int stepIndex) {
+    final today = DateTime.now();
+    final dateKey = '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+    return _prefs?.getBool('daily_step_${dateKey}_$stepIndex') ?? false;
+  }
+
+  Future<void> setDailyStepCompleted(int stepIndex, bool completed) async {
+    final today = DateTime.now();
+    final dateKey = '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+    await _prefs?.setBool('daily_step_${dateKey}_$stepIndex', completed);
+
+    // If this step is completed, check if all 4 steps are finished to trigger streak update
+    if (completed) {
+      bool allDone = true;
+      for (int i = 0; i < 4; i++) {
+        if (i != stepIndex && !isDailyStepCompleted(i)) {
+          allDone = false;
+          break;
+        }
+      }
+      if (allDone) {
+        await updateStreak();
+      }
+    }
+  }
+
   Map<String, dynamic> getDailyPractice() {
     final data = _prefs?.getString(_keyDailyPractice);
     if (data != null) {

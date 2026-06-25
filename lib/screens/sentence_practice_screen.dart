@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/sentence.dart';
 
 class SentencePracticeScreen extends StatefulWidget {
-  const SentencePracticeScreen({super.key});
+  final VoidCallback? onCompleted;
+  const SentencePracticeScreen({super.key, this.onCompleted});
 
   @override
   State<SentencePracticeScreen> createState() => _SentencePracticeScreenState();
@@ -97,6 +98,22 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('句子练习'),
+        actions: [
+          if (widget.onCompleted != null)
+            TextButton(
+              onPressed: () {
+                widget.onCompleted!();
+                Navigator.pop(context);
+              },
+              child: const Text(
+                '完成',
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+        ],
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,

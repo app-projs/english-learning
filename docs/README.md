@@ -18,6 +18,11 @@
 - [设置功能](./features/04-settings.md) - 应用设置和配置
 
 ### 计划文档
+- [主产品需求文档 (Master PRD)](./prd/master_prd.md) - 最新的产品需求与设计规范
+- [V1 MVP 版本需求文档](./prd/v1_mvp.md) - 第一阶段 MVP 范围
+- [V2 AI与社交版本需求文档](./prd/v2_ai_social.md) - 第二阶段网络/社交/听力/AI 规划
+- [V3 深度学习与云同步版本需求文档](./prd/v3_cloud_sync.md) - 第三阶段完全体规划
+- [Google Stitch 提示词指南](./prd/stitch_prompts.md) - 配合 Stitch 快速生成 UI 视觉设计图的 AI 提示词
 - [开发进度](./plan/development-progress.md) - 详细的开发进度追踪
 - [功能分解](./plan/feature-breakdown.md) - 完整的功能模块分解
 - [执行计划](./plan/module-execution-plan.md) - 可执行的功能开发计划

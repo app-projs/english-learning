@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/storage_service.dart';
 
 class ListeningPracticeScreen extends StatefulWidget {
-  const ListeningPracticeScreen({super.key});
+  final VoidCallback? onCompleted;
+  const ListeningPracticeScreen({super.key, this.onCompleted});
 
   @override
   State<ListeningPracticeScreen> createState() =>
@@ -307,6 +308,16 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('听力练习'),
+        actions: [
+          if (widget.onCompleted != null)
+            TextButton(
+              onPressed: () {
+                widget.onCompleted!();
+                Navigator.pop(context);
+              },
+              child: const Text('完成', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
+            ),
+        ],
         bottom: TabBar(
           controller: _tabController,
           tabs: const [

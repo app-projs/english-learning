@@ -6,9 +6,9 @@ class ThemeService {
 
   ThemeService(this._storage);
 
-  static const Color _primaryColor = Color(0xFF6366F1);
-  static const Color _secondaryColor = Color(0xFF8B5CF6);
-  static const Color _accentColor = Color(0xFF10B981);
+  static const Color _primaryColor = Color(0xFF2B8A3E); // 生机绿
+  static const Color _secondaryColor = Color(0xFF0C8599); // 温润蓝
+  static const Color _accentColor = Color(0xFFF76707); // 活力橙
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
@@ -19,17 +19,17 @@ class ThemeService {
       primary: _primaryColor,
       secondary: _secondaryColor,
       tertiary: _accentColor,
-      surface: const Color(0xFFF8FAFC),
+      surface: const Color(0xFFF8F9FA),
     ),
-    scaffoldBackgroundColor: const Color(0xFFF8FAFC),
+    scaffoldBackgroundColor: const Color(0xFFF8F9FA),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
       scrolledUnderElevation: 0,
       centerTitle: true,
-      foregroundColor: Color(0xFF1E293B),
+      foregroundColor: Color(0xFF212529),
       titleTextStyle: TextStyle(
-        color: Color(0xFF1E293B),
+        color: Color(0xFF212529),
         fontSize: 20,
         fontWeight: FontWeight.w600,
       ),
@@ -37,7 +37,8 @@ class ThemeService {
     cardTheme: CardTheme(
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: Color(0xFFE9ECEF), width: 1),
       ),
       color: Colors.white,
     ),
@@ -48,7 +49,7 @@ class ThemeService {
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(24), // 胶囊大圆角
         ),
         textStyle: const TextStyle(
           fontSize: 16,
@@ -61,7 +62,7 @@ class ThemeService {
         foregroundColor: _primaryColor,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(24),
         ),
         side: const BorderSide(color: _primaryColor, width: 1.5),
       ),
@@ -76,15 +77,15 @@ class ThemeService {
       filled: true,
       fillColor: Colors.white,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: Colors.grey.shade200),
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Color(0xFFE9ECEF)),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(color: _primaryColor, width: 2),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -92,29 +93,29 @@ class ThemeService {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: _primaryColor,
-      unselectedItemColor: Color(0xFF94A3B8),
+      unselectedItemColor: Color(0xFF868E96),
       type: BottomNavigationBarType.fixed,
       elevation: 0,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
       unselectedLabelStyle: TextStyle(fontSize: 12),
     ),
     chipTheme: ChipThemeData(
-      backgroundColor: const Color(0xFFF1F5F9),
+      backgroundColor: const Color(0xFFE9ECEF),
       selectedColor: _primaryColor.withOpacity(0.15),
       labelStyle: const TextStyle(fontSize: 14),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(12),
       ),
     ),
     tabBarTheme: const TabBarTheme(
       labelColor: _primaryColor,
-      unselectedLabelColor: Color(0xFF94A3B8),
+      unselectedLabelColor: Color(0xFF868E96),
       indicatorColor: _primaryColor,
       indicatorSize: TabBarIndicatorSize.label,
     ),
     dividerTheme: const DividerThemeData(
-      color: Color(0xFFE2E8F0),
+      color: Color(0xFFE9ECEF),
       thickness: 1,
       space: 1,
     ),
@@ -135,9 +136,9 @@ class ThemeService {
       primary: _primaryColor,
       secondary: _secondaryColor,
       tertiary: _accentColor,
-      surface: const Color(0xFF0F172A),
+      surface: const Color(0xFF121416),
     ),
-    scaffoldBackgroundColor: const Color(0xFF0F172A),
+    scaffoldBackgroundColor: const Color(0xFF121416),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -153,9 +154,10 @@ class ThemeService {
     cardTheme: CardTheme(
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: Color(0xFF2B3035), width: 1),
       ),
-      color: const Color(0xFF1E293B),
+      color: const Color(0xFF1A1D20),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -164,7 +166,7 @@ class ThemeService {
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(24),
         ),
         textStyle: const TextStyle(
           fontSize: 16,
@@ -177,60 +179,60 @@ class ThemeService {
         foregroundColor: _primaryColor,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(24),
         ),
         side: const BorderSide(color: _primaryColor, width: 1.5),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: const Color(0xFF1E293B),
+      fillColor: const Color(0xFF1A1D20),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: Colors.grey.shade800),
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Color(0xFF2B3035)),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(color: _primaryColor, width: 2),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Color(0xFF1E293B),
+      backgroundColor: Color(0xFF1A1D20),
       selectedItemColor: _primaryColor,
-      unselectedItemColor: Color(0xFF64748B),
+      unselectedItemColor: Color(0xFF495057),
       type: BottomNavigationBarType.fixed,
       elevation: 0,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
       unselectedLabelStyle: TextStyle(fontSize: 12),
     ),
     chipTheme: ChipThemeData(
-      backgroundColor: const Color(0xFF334155),
+      backgroundColor: const Color(0xFF2B3035),
       selectedColor: _primaryColor.withOpacity(0.3),
       labelStyle: const TextStyle(fontSize: 14),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(12),
       ),
     ),
     tabBarTheme: const TabBarTheme(
       labelColor: _primaryColor,
-      unselectedLabelColor: Color(0xFF64748B),
+      unselectedLabelColor: Color(0xFF495057),
       indicatorColor: _primaryColor,
       indicatorSize: TabBarIndicatorSize.label,
     ),
     dividerTheme: const DividerThemeData(
-      color: Color(0xFF334155),
+      color: Color(0xFF2B3035),
       thickness: 1,
       space: 1,
     ),
     snackBarTheme: SnackBarThemeData(
       behavior: SnackBarBehavior.floating,
-      backgroundColor: const Color(0xFF334155),
+      backgroundColor: const Color(0xFF2B3035),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
@@ -252,44 +254,44 @@ class ThemeService {
 }
 
 class AppColors {
-  static const Color primary = Color(0xFF6366F1);
-  static const Color secondary = Color(0xFF8B5CF6);
-  static const Color accent = Color(0xFF10B981);
-  static const Color error = Color(0xFFEF4444);
-  static const Color warning = Color(0xFFF59E0B);
-  static const Color success = Color(0xFF10B981);
-  static const Color info = Color(0xFF3B82F6);
+  static const Color primary = Color(0xFF2B8A3E);
+  static const Color secondary = Color(0xFF0C8599);
+  static const Color accent = Color(0xFFF76707);
+  static const Color error = Color(0xFFFA5252);
+  static const Color warning = Color(0xFFFAB005);
+  static const Color success = Color(0xFF40C057);
+  static const Color info = Color(0xFF228BE6);
 
-  static const Color lightBackground = Color(0xFFF8FAFC);
+  static const Color lightBackground = Color(0xFFF8F9FA);
   static const Color lightSurface = Color(0xFFFFFFFF);
   static const Color lightCard = Color(0xFFFFFFFF);
 
-  static const Color darkBackground = Color(0xFF0F172A);
-  static const Color darkSurface = Color(0xFF1E293B);
-  static const Color darkCard = Color(0xFF1E293B);
+  static const Color darkBackground = Color(0xFF121416);
+  static const Color darkSurface = Color(0xFF1A1D20);
+  static const Color darkCard = Color(0xFF1A1D20);
 
-  static const Color lightText = Color(0xFF1E293B);
-  static const Color lightTextSecondary = Color(0xFF64748B);
-  static const Color darkText = Color(0xFFF1F5F9);
-  static const Color darkTextSecondary = Color(0xFF94A3B8);
+  static const Color lightText = Color(0xFF212529);
+  static const Color lightTextSecondary = Color(0xFF495057);
+  static const Color darkText = Color(0xFFECEFEE);
+  static const Color darkTextSecondary = Color(0xFFADB5BD);
 
   static const List<Color> gradientPrimary = [
-    Color(0xFF6366F1),
-    Color(0xFF8B5CF6),
+    Color(0xFF2B8A3E),
+    Color(0xFF40C057),
   ];
 
   static const List<Color> gradientSuccess = [
-    Color(0xFF10B981),
-    Color(0xFF34D399),
+    Color(0xFF2B8A3E),
+    Color(0xFF40C057),
   ];
 
   static const List<Color> gradientWarning = [
-    Color(0xFFF59E0B),
-    Color(0xFFFBBF24),
+    Color(0xFFF76707),
+    Color(0xFFFFA94D),
   ];
 
   static const List<Color> gradientError = [
-    Color(0xFFEF4444),
-    Color(0xFFF87171),
+    Color(0xFFE03131),
+    Color(0xFFFA5252),
   ];
 }
