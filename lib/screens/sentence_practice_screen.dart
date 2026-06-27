@@ -213,6 +213,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
                             ),
                             const SizedBox(height: 16),
                             Text(
+                              
                               sentence.chinese,
                               style: const TextStyle(fontSize: 16),
                               textAlign: TextAlign.center,

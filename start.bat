@@ -18,7 +18,7 @@ flutter --version
 echo.
 
 REM 进入项目目录
-cd /d "D:\workspace\test\flutter-app"
+cd /d "D:\workspace\test\english-learning"
 
 echo 正在安装依赖...
 flutter pub get
