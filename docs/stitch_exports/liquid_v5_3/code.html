@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "surface-container-lowest": "#ffffff",
+                            "on-primary-fixed": "#1c0062",
+                            "inverse-surface": "#2e3134",
+                            "on-tertiary-fixed": "#001f28",
+                            "tertiary": "#00647c",
+                            "on-primary-container": "#fffbff",
+                            "on-surface": "#191c1f",
+                            "background": "#f8f9fe",
+                            "tertiary-fixed": "#b7eaff",
+                            "primary-fixed-dim": "#cabeff",
+                            "secondary": "#904d00",
+                            "inverse-on-surface": "#eff0f5",
+                            "surface-bright": "#f8f9fe",
+                            "error": "#ba1a1a",
+                            "on-tertiary-container": "#fafdff",
+                            "on-error": "#ffffff",
+                            "primary-container": "#7757fa",
+                            "surface-container-low": "#f2f3f8",
+                            "on-tertiary-fixed-variant": "#004e61",
+                            "primary-fixed": "#e6deff",
+                            "surface-container-high": "#e7e8ed",
+                            "surface-container": "#eceef3",
+                            "surface-container-highest": "#e1e2e7",
+                            "tertiary-fixed-dim": "#5bd5fc",
+                            "surface": "#f8f9fe",
+                            "on-secondary": "#ffffff",
+                            "secondary-container": "#fe9c41",
+                            "on-background": "#191c1f",
+                            "outline-variant": "#c9c4d8",
+                            "tertiary-container": "#007f9d",
+                            "on-secondary-fixed-variant": "#6d3900",
+                            "on-secondary-fixed": "#2e1500",
+                            "error-container": "#ffdad6",
+                            "secondary-fixed-dim": "#ffb77c",
+                            "inverse-primary": "#cabeff",
+                            "on-error-container": "#93000a",
+                            "on-primary": "#ffffff",
+                            "surface-tint": "#603ce2",
+                            "outline": "#797587",
+                            "on-surface-variant": "#484555",
+                            "surface-dim": "#d8dadf",
+                            "surface-variant": "#e1e2e7",
+                            "on-primary-fixed-variant": "#4816cb",
+                            "on-tertiary": "#ffffff",
+                            "primary": "#5e39e0",
+                            "on-secondary-container": "#6b3800",
+                            "secondary-fixed": "#ffdcc2"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "1rem",
+                            "lg": "2rem",
+                            "xl": "3rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "base": "4px",
+                            "stack-lg": "24px",
+                            "gutter-card": "16px",
+                            "stack-xl": "32px",
+                            "stack-sm": "8px",
+                            "margin-page": "20px",
+                            "stack-md": "16px"
+                        },
+                        "fontFamily": {
+                            "headline-xl-mobile": ["Plus Jakarta Sans"],
+                            "label-lg": ["Plus Jakarta Sans"],
+                            "headline-xl": ["Plus Jakarta Sans"],
+                            "body-lg": ["Plus Jakarta Sans"],
+                            "body-md": ["Plus Jakarta Sans"],
+                            "headline-lg": ["Plus Jakarta Sans"],
+                            "label-md": ["Plus Jakarta Sans"],
+                            "headline-md": ["Plus Jakarta Sans"]
+                        },
+                        "fontSize": {
+                            "headline-xl-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                            "label-lg": ["14px", {"lineHeight": "18px", "fontWeight": "700"}],
+                            "headline-xl": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                            "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .liquid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #f8f9fe 0%, #e6deff 50%, #f8f9fe 100%);
+            overflow: hidden;
+        }
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(180deg, rgba(124, 92, 255, 0.2) 0%, rgba(124, 92, 255, 0.05) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- Liquid Background -->
+<div class="liquid-bg">
+<div class="blob top-[-100px] left-[-100px]"></div>
+<div class="blob bottom-[-150px] right-[-100px]" style="animation-delay: -5s; width: 500px; height: 500px;"></div>
+</div>
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-card px-margin-page py-stack-md flex justify-between items-center border-b border-white/20">
+<button aria-label="返回" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-original-icon="chevron_left">chevron_left</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface absolute left-1/2 -translate-x-1/2">专项练习：/æ/</h1>
+<button class="px-4 py-1.5 rounded-full bg-white/40 text-on-surface-variant font-label-md text-label-md hover:bg-white/60 transition-colors border border-white/40">
+        规则
+    </button>
+</header>
+<main class="flex-1 mt-20 px-margin-page pb-64">
+<!-- Phonetic Display -->
+<section class="mb-stack-xl flex flex-col items-center">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-primary font-headline-xl text-[64px] leading-tight">/æ/</span>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-fixed text-primary hover:scale-110 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[28px]" data-original-icon="volume_up" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</button>
+</div>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-8">像 “啊” 但嘴巴要扁平</p>
+<!-- Mouth Illustration Card -->
+<div class="relative w-full max-w-[320px] aspect-square glass-card rounded-[48px] flex items-center justify-center overflow-hidden shadow-sm mb-stack-xl border border-white/40">
+<div class="absolute top-4 left-1/2 -translate-x-1/2 bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-label-md z-10 backdrop-blur-md border border-primary/20">专项纠音模式</div>
+<img alt="发音口型图" class="w-4/5 h-4/5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1eD_kjdeCS3e8JSFlxZumDELLx63cFtCb8ehq-hghTIyN0nGzq2c_4cK9-BB2592XgzZ9XRKtzhGj6dnB5RzOV76ANwvFWqSMsIrEdAp9Zjrh0SyqjENPrDr__jCSZ9jTuwHvN5o_OQCKbHKyAPQCYpDpbAahmE3CjST2KaEs5ztER5djLBMdFWWNZi5W3rUFqQnCM4GIp-3dz6cfoOXw_1pcKdoSmIuvboJpySogLKnthxe0In5qgor-J5RwoSUtEUXiKV3v9HIg"/>
+<!-- Side indicators -->
+<div class="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5">
+<div class="w-11 h-11 rounded-full glass-card shadow-md flex items-center justify-center text-primary border border-white/60">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</div>
+<span class="text-[10px] font-label-md text-outline">我的录音</span>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5">
+<div class="w-11 h-11 rounded-full glass-card shadow-md flex items-center justify-center text-primary border border-white/60">
+<span class="material-symbols-outlined text-[20px]" data-original-icon="spatial_audio_off">spatial_audio_off</span>
+</div>
+<span class="text-[10px] font-label-md text-outline">示范发音</span>
+</div>
+</div>
+</section>
+<!-- Scoring Section -->
+<section class="glass-card rounded-lg p-5 mb-stack-xl shadow-sm border border-white/40">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<div class="flex items-baseline">
+<span class="text-[44px] font-black text-primary leading-none">85</span>
+<span class="text-primary font-label-md text-label-md ml-0.5">分</span>
+</div>
+<div class="h-8 w-px bg-surface-container-high mx-1 opacity-50"></div>
+<span class="text-secondary font-headline-md text-headline-md">发音精准度</span>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+</div>
+</div>
+<div class="h-3 w-full bg-surface-container-low/50 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[85%] transition-all duration-1000 ease-out shadow-[0_0_8px_rgba(119,87,250,0.4)]"></div>
+</div>
+</section>
+<!-- Tips Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">tips_and_updates</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">发音要点</h3>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-4 glass-card rounded-2xl border border-white/40 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md flex-1">嘴巴微微张开，舌尖抵下齿</p>
+</div>
+<div class="flex items-center gap-4 p-4 glass-card rounded-2xl border border-white/40 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md flex-1">舌身放平，嘴唇向两侧拉开</p>
+</div>
+<div class="flex items-center gap-4 p-4 glass-card rounded-2xl border border-white/40 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md flex-1">声音短促有力</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Recording Interface -->
+<div class="fixed bottom-32 left-0 right-0 z-40 px-margin-page flex flex-col items-center pointer-events-none">
+<!-- Hint Text -->
+<div class="mb-4 glass-card shadow-xl px-6 py-2.5 rounded-full border border-white/60 pointer-events-auto">
+<p class="text-primary font-label-lg text-label-lg">点击录音，跟读 /æ/</p>
+</div>
+<!-- Main Recording Button Container -->
+<div class="relative pointer-events-auto cursor-pointer" onclick="toggleRecording()">
+<div class="absolute inset-0 bg-primary/20 rounded-full scale-150 opacity-0 transition-all duration-300" id="recording-bg"></div>
+<button class="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-2xl active:scale-95 transition-all duration-200 z-10 relative" id="mic-btn">
+<span class="material-symbols-outlined text-white text-[40px]" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+<!-- Character Accessory -->
+<div class="absolute -right-14 bottom-0 w-20 h-20 pointer-events-none">
+<img alt="吉祥物" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7H8rIiJkGtpqOxD6y3FIdjxYD9JU16CE2vi8Ykjz5ap3bYIZA3FtlZ0giofFuib0D4YriMWt0HdjVcuYkES9GV_IXwPG3gA0VMRRPUBUxH8rF1Fkgkv2DHG_jYfoqKGXDKdvpTmfU00Vo-bM7EVJ5o2EeaDPbisgCHYv7gVOghGKPHqhfcpLRM47fnSKhnWYWZeh_RIoLqqzvWrPx33P7WQ06fZuFvq3XqistnwnUnx3Gyqg0EPNz5MrvBYgK9IMuhb6BpnYyqCAj"/>
+</div>
+</div>
+</div>
+<!-- Liquid Capsule Navigation -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
+<nav class="glass-card rounded-full shadow-2xl p-2 border border-white/60 flex items-center justify-between">
+<div class="flex-1 flex justify-center">
+<div class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-md text-[10px] mt-0.5">首页</span>
+</div>
+</div>
+<div class="flex-1 flex justify-center">
+<div class="flex flex-col items-center justify-center w-14 h-12 bg-primary/10 rounded-full text-primary cursor-pointer border border-primary/20">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-md text-[10px] mt-0.5">学习</span>
+</div>
+</div>
+<div class="flex-1 flex justify-center">
+<div class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="font-label-md text-[10px] mt-0.5">社区</span>
+</div>
+</div>
+<div class="flex-1 flex justify-center">
+<div class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-md text-[10px] mt-0.5">我的</span>
+</div>
+</div>
+</nav>
+</div>
+<script>
+    let isRecording = false;
+    function toggleRecording() {
+        const btn = document.getElementById('mic-btn');
+        const bg = document.getElementById('recording-bg');
+        isRecording = !isRecording;
+        
+        if (isRecording) {
+            btn.classList.add('animate-pulse');
+            bg.classList.remove('opacity-0');
+            bg.classList.add('opacity-100', 'animate-ping');
+            btn.querySelector('span').textContent = 'graphic_eq';
+        } else {
+            btn.classList.remove('animate-pulse');
+            bg.classList.add('opacity-0');
+            bg.classList.remove('opacity-100', 'animate-ping');
+            btn.querySelector('span').textContent = 'mic';
+        }
+    }
+</script>
+</body></html>

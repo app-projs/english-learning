@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'screens/lumina_home_screen.dart';
+import 'theme/lumina_theme.dart';
 import 'services/storage_service.dart';
 import 'services/word_service.dart';
 import 'services/sentence_service.dart';
@@ -30,7 +32,7 @@ void main() async {
   userService = UserService(storageService);
   themeService = ThemeService(storageService);
 
-  runApp(const EnglishLearningApp());
+  runApp(const ProviderScope(child: EnglishLearningApp()));
 }
 
 class EnglishLearningApp extends StatefulWidget {
@@ -69,13 +71,9 @@ class _EnglishLearningAppState extends State<EnglishLearningApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'English Learning App',
-      theme: themeService.getTheme(false),
-      darkTheme: themeService.getTheme(true),
-      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      home: HomeScreen(
-        isDarkMode: _isDarkMode,
-        onThemeChanged: _toggleTheme,
-      ),
+      theme: LuminaTheme.lightTheme,
+      // Lumina Learning currently uses a pristine light theme design system
+      home: const LuminaHomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

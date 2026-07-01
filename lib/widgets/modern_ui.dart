@@ -17,7 +17,7 @@ class ModernCard extends StatelessWidget {
     this.margin,
     this.onTap,
     this.gradientColors,
-    this.borderRadius = 16, // 圆角统一为 16px
+    this.borderRadius = 24, // 统一为 24px 大圆角
     this.hasShadow = true,
   });
 
@@ -39,18 +39,27 @@ class ModernCard extends StatelessWidget {
             ? (isDark ? AppColors.darkCard : AppColors.lightCard)
             : null,
         borderRadius: BorderRadius.circular(borderRadius),
+        // 均匀边框以保证圆角兼容性
         border: gradientColors == null
             ? Border.all(
-                color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE9ECEF),
-                width: 1,
+                color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE5E7EB),
+                width: 1.5,
               )
             : null,
+        // 将 3D 立体底座移入 shadow 以彻底避免带圆角非均匀 border 引起的异常
         boxShadow: hasShadow && gradientColors == null
             ? [
+                // 3D 实体偏置底座
+                BoxShadow(
+                  color: isDark ? const Color(0xFF1E2124) : const Color(0xFFD1D5DB),
+                  offset: const Offset(0, 4.5),
+                  blurRadius: 0,
+                ),
+                // 软阴影
                 BoxShadow(
                   color: isDark
-                      ? Colors.black.withOpacity(0.2)
-                      : Colors.black.withOpacity(0.015), // 微弱弥散阴影
+                      ? Colors.black.withOpacity(0.35)
+                      : const Color(0xFF9CA3AF).withOpacity(0.15),
                   blurRadius: 16,
                   offset: const Offset(0, 4),
                 ),
@@ -80,7 +89,7 @@ class ModernCard extends StatelessWidget {
   }
 }
 
-class ModernButton extends StatelessWidget {
+class ModernButton extends StatefulWidget {
   final String text;
   final VoidCallback? onPressed;
   final bool isLoading;
@@ -89,6 +98,7 @@ class ModernButton extends StatelessWidget {
   final List<Color>? gradientColors;
   final double? width;
   final double height;
+  final Color? backgroundColor;
 
   const ModernButton({
     super.key,
@@ -100,69 +110,144 @@ class ModernButton extends StatelessWidget {
     this.gradientColors,
     this.width,
     this.height = 52,
+    this.backgroundColor,
   });
 
   @override
+  State<ModernButton> createState() => _ModernButtonState();
+}
+
+class _ModernButtonState extends State<ModernButton> {
+  bool _isPressed = false;
+
+  @override
   Widget build(BuildContext context) {
-    if (isOutlined) {
-      return SizedBox(
-        width: width,
-        height: height,
-        child: OutlinedButton(
-          onPressed: isLoading ? null : onPressed,
-          child: _buildChild(context),
-        ),
-      );
+    final isDisabled = widget.onPressed == null;
+
+    if (isDisabled) {
+      return _buildButtonBody(context, isPressed: false, isDisabled: true);
     }
 
-    Widget button;
-    if (gradientColors != null) {
-      button = Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: gradientColors!,
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
-          borderRadius: BorderRadius.circular(24), // 胶囊圆角
-          boxShadow: [
-            BoxShadow(
-              color: gradientColors!.first.withOpacity(0.2),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
+    return GestureDetector(
+      onTapDown: (_) => setState(() => _isPressed = true),
+      onTapUp: (_) {
+        setState(() => _isPressed = false);
+        widget.onPressed?.call();
+      },
+      onTapCancel: () => setState(() => _isPressed = false),
+      child: _buildButtonBody(context, isPressed: _isPressed, isDisabled: false),
+    );
+  }
+
+  Widget _buildButtonBody(BuildContext context, {required bool isPressed, required bool isDisabled}) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final primaryColor = Theme.of(context).primaryColor;
+    
+    // Q弹的按压深度
+    final double depth = isPressed ? 0.0 : 4.0;
+
+    if (widget.isOutlined) {
+      return SizedBox(
+        width: widget.width ?? double.infinity,
+        height: widget.height,
+        child: Stack(
+          children: [
+            // 底部 3D 厚度
+            Positioned.fill(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE5E7EB),
+                  borderRadius: BorderRadius.circular(24),
+                ),
+              ),
+            ),
+            // 顶部可按压层
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 60),
+              margin: EdgeInsets.only(bottom: 4.0 - depth, top: depth),
+              width: widget.width ?? double.infinity,
+              height: widget.height - 4.0,
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1A1D20) : Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  color: isDisabled
+                      ? (isDark ? const Color(0xFF495057) : const Color(0xFFCED4DA))
+                      : primaryColor,
+                  width: 2.0,
+                ),
+              ),
+              child: Center(child: _buildChild(context, isDisabled: isDisabled)),
             ),
           ],
         ),
-        child: ElevatedButton(
-          onPressed: isLoading ? null : onPressed,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-          ),
-          child: _buildChild(context),
-        ),
-      );
-    } else {
-      button = SizedBox(
-        width: width,
-        height: height,
-        child: ElevatedButton(
-          onPressed: isLoading ? null : onPressed,
-          child: _buildChild(context),
-        ),
       );
     }
 
-    return button;
+    // 计算主色与底部 3D 厚度阴影颜色
+    Color btnColor = widget.backgroundColor ?? primaryColor;
+    Color bottomColor;
+
+    if (widget.gradientColors != null && widget.gradientColors!.isNotEmpty) {
+      btnColor = widget.gradientColors!.first;
+      // 用后半部分作为深度颜色
+      bottomColor = widget.gradientColors!.last.withRed((widget.gradientColors!.last.red * 0.82).toInt())
+                                              .withGreen((widget.gradientColors!.last.green * 0.82).toInt())
+                                              .withBlue((widget.gradientColors!.last.blue * 0.85).toInt());
+    } else if (widget.backgroundColor != null) {
+      bottomColor = HSLColor.fromColor(widget.backgroundColor!).withLightness(
+        (HSLColor.fromColor(widget.backgroundColor!).lightness - 0.15).clamp(0.0, 1.0)
+      ).toColor();
+    } else {
+      // 皇家紫对应的 3D 深厚度色
+      bottomColor = const Color(0xFF5E39C4);
+    }
+
+    if (isDisabled) {
+      btnColor = isDark ? const Color(0xFF2B3035) : const Color(0xFFE5E7EB);
+      bottomColor = isDark ? const Color(0xFF1E2124) : const Color(0xFFD1D5DB);
+    }
+
+    return SizedBox(
+      width: widget.width ?? double.infinity,
+      height: widget.height,
+      child: Stack(
+        children: [
+          // 底部 3D 立体厚度
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                color: bottomColor,
+                borderRadius: BorderRadius.circular(24),
+              ),
+            ),
+          ),
+          // 顶部可按压层
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 60),
+            margin: EdgeInsets.only(bottom: 4.0 - depth, top: depth),
+            width: widget.width ?? double.infinity,
+            height: widget.height - 4.0,
+            decoration: BoxDecoration(
+              gradient: (!isDisabled && widget.gradientColors != null)
+                  ? LinearGradient(
+                      colors: widget.gradientColors!,
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    )
+                  : null,
+              color: (isDisabled || widget.gradientColors == null) ? btnColor : null,
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Center(child: _buildChild(context, isDisabled: isDisabled)),
+          ),
+        ],
+      ),
+    );
   }
 
-  Widget _buildChild(BuildContext context) {
-    if (isLoading) {
+  Widget _buildChild(BuildContext context, {required bool isDisabled}) {
+    if (widget.isLoading) {
       return const SizedBox(
         width: 24,
         height: 24,
@@ -173,18 +258,32 @@ class ModernButton extends StatelessWidget {
       );
     }
 
-    if (icon != null) {
+    final textColor = widget.isOutlined
+        ? (isDisabled ? (Theme.of(context).brightness == Brightness.dark ? const Color(0xFF495057) : const Color(0xFFCED4DA)) : Theme.of(context).primaryColor)
+        : (isDisabled ? (Theme.of(context).brightness == Brightness.dark ? Colors.grey.shade600 : Colors.grey.shade400) : Colors.white);
+
+    final textWidget = Text(
+      widget.text,
+      style: TextStyle(
+        color: textColor,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+
+    if (widget.icon != null) {
       return Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 20),
+          Icon(widget.icon, size: 20, color: textColor),
           const SizedBox(width: 8),
-          Text(text),
+          textWidget,
         ],
       );
     }
 
-    return Text(text);
+    return textWidget;
   }
 }
 

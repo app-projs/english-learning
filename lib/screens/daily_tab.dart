@@ -170,19 +170,26 @@ class _DailyTabState extends State<DailyTab> {
   Widget _buildHeader(bool isDark) {
     return Row(
       children: [
-        // 用户头像
+        // 用户头像 - 3D 泡泡圈
         Container(
-          width: 52,
-          height: 52,
+          padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
+            color: Colors.white,
             border: Border.all(
-              color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE9ECEF),
-              width: 1.5,
+              color: const Color(0xFF7F56FF), // 主色皇家紫边框
+              width: 2,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF7F56FF).withOpacity(0.2),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
+              ),
+            ],
           ),
           child: const CircleAvatar(
-            radius: 24,
+            radius: 22,
             backgroundColor: Colors.transparent,
             backgroundImage: NetworkImage('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'),
           ),
@@ -194,48 +201,71 @@ class _DailyTabState extends State<DailyTab> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                '你好，Alex！',
+                'Hi, Alex! 👋',
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.5,
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 3),
               Text(
                 '学习目标：大学英语四级',
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
                   color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
                 ),
               ),
             ],
           ),
         ),
-        // 打卡火苗
+        // 立体打卡火苗
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          height: 36,
+          padding: const EdgeInsets.symmetric(horizontal: 14),
           decoration: BoxDecoration(
-            color: const Color(0xFFF76707).withOpacity(0.1),
-            borderRadius: BorderRadius.circular(24),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(
-                Icons.local_fire_department,
-                color: Color(0xFFF76707),
-                size: 20,
+            gradient: const LinearGradient(
+              colors: [Color(0xFFFF9E1B), Color(0xFFF76707)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            borderRadius: BorderRadius.circular(18),
+            boxShadow: [
+              // 3D 实体偏置底座
+              const BoxShadow(
+                color: Color(0xFFC04B02),
+                offset: Offset(0, 3.5),
+                blurRadius: 0,
               ),
-              const SizedBox(width: 4),
-              Text(
-                '连续打卡 $_streakDays天',
-                style: const TextStyle(
-                  color: Color(0xFFF76707),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13,
-                ),
+              // 软阴影
+              BoxShadow(
+                color: const Color(0xFFF76707).withOpacity(0.3),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
               ),
             ],
+          ),
+          child: Center(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.local_fire_department,
+                  color: Colors.white,
+                  size: 18,
+                ),
+                const SizedBox(width: 4),
+                Text(
+                  '$_streakDays 天',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
@@ -246,10 +276,44 @@ class _DailyTabState extends State<DailyTab> {
   Widget _buildDailyCabinCard(bool isDark) {
     final progress = _completedSteps / _totalSteps;
 
-    return ModernCard(
+    // 渐变色：浅色模式下为活力黄到橙黄的渐变，深色模式为卡片深灰
+    final gradientColors = isDark
+        ? null
+        : const [Color(0xFFFFD43B), Color(0xFFFF9E1B)];
+
+    return Container(
       padding: const EdgeInsets.all(24),
-      gradientColors: isDark ? null : AppColors.gradientPrimary,
-      borderRadius: 16,
+      decoration: BoxDecoration(
+        gradient: gradientColors != null
+            ? LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: gradientColors,
+              )
+            : null,
+        color: gradientColors == null ? AppColors.darkCard : null,
+        borderRadius: BorderRadius.circular(28), // 特大圆角
+        border: Border.all(
+          color: isDark ? const Color(0xFF2B3035) : const Color(0xFFFFF3BF),
+          width: 1.5,
+        ),
+        boxShadow: [
+          // 3D 实体偏置底座
+          BoxShadow(
+            color: isDark ? const Color(0xFF1E2124) : const Color(0xFFE67E22),
+            offset: const Offset(0, 5),
+            blurRadius: 0,
+          ),
+          // 软阴影
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withOpacity(0.3)
+                : const Color(0xFFF76707).withOpacity(0.18),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
       child: Column(
         children: [
           Row(
@@ -257,32 +321,35 @@ class _DailyTabState extends State<DailyTab> {
               // 进度圆环
               ProgressRing(
                 progress: progress,
-                size: 80,
-                strokeWidth: 6,
-                progressColor: Colors.white,
-                backgroundColor: Colors.white.withOpacity(0.25),
+                size: 84,
+                strokeWidth: 8,
+                progressColor: isDark ? AppColors.primary : Colors.white,
+                backgroundColor: isDark
+                    ? Colors.grey.shade800
+                    : Colors.white.withOpacity(0.25),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       '${(progress * 100).toInt()}%',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white : const Color(0xFF5C3C00),
                       ),
                     ),
                     Text(
-                      '已完成 $_completedSteps/$_totalSteps',
-                      style: const TextStyle(
-                        fontSize: 9,
-                        color: Colors.white70,
+                      '$_completedSteps/$_totalSteps',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        color: isDark ? Colors.white70 : const Color(0xFF8B5E00),
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(width: 24),
+              const SizedBox(width: 20),
               // 四大步骤任务列表
               Expanded(
                 child: Column(
@@ -318,20 +385,17 @@ class _DailyTabState extends State<DailyTab> {
                                 _startPractice(index);
                               }
                             },
-                            borderRadius: BorderRadius.circular(8),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 6),
-                              child: _buildStepRow(
-                                titles[index],
-                                completed,
-                                isDark,
-                                isActive: active,
-                                isLocked: locked,
-                              ),
+                            borderRadius: BorderRadius.circular(14),
+                            child: _buildStepRowCard(
+                              titles[index],
+                              completed,
+                              isDark,
+                              isActive: active,
+                              isLocked: locked,
                             ),
                           ),
                         ),
-                        if (index < 3) const SizedBox(height: 4),
+                        if (index < 3) const SizedBox(height: 6),
                       ],
                     );
                   }),
@@ -340,10 +404,11 @@ class _DailyTabState extends State<DailyTab> {
             ],
           ),
           const SizedBox(height: 24),
-          // 胶囊大按钮
+          // 3D 胶囊大按钮
           ModernButton(
             text: _completedSteps == _totalSteps ? '今日已完成，点此复习' : '继续今日学习',
             width: double.infinity,
+            backgroundColor: isDark ? null : const Color(0xFF7F56FF), // 使用皇家紫强力颜色碰撞
             onPressed: _completedSteps == _totalSteps
                 ? () {
                     Navigator.push(
@@ -354,7 +419,6 @@ class _DailyTabState extends State<DailyTab> {
                     });
                   }
                 : _resumeLearning,
-            gradientColors: isDark ? AppColors.gradientPrimary : null,
           ),
         ],
       ),
@@ -362,44 +426,81 @@ class _DailyTabState extends State<DailyTab> {
   }
 
   // 任务舱步骤项
-  Widget _buildStepRow(String title, bool isCompleted, bool isDark, {bool isActive = false, bool isLocked = false}) {
-    Color textColor = Colors.white;
+  Widget _buildStepRowCard(String title, bool isCompleted, bool isDark, {bool isActive = false, bool isLocked = false}) {
+    Color cardColor = Colors.white.withOpacity(0.15);
+    Color borderColor = Colors.white.withOpacity(0.2);
+    Color textColor = const Color(0xFF5C3C00);
     Widget statusIcon = const SizedBox();
 
-    if (isCompleted) {
-      textColor = Colors.white.withOpacity(0.9);
-      statusIcon = const Icon(Icons.check_circle, color: Colors.white, size: 16);
-    } else if (isActive) {
+    if (isDark) {
+      cardColor = const Color(0xFF1E2124);
+      borderColor = const Color(0xFF2B3035);
       textColor = Colors.white;
+    }
+
+    if (isCompleted) {
+      if (!isDark) {
+        cardColor = Colors.white.withOpacity(0.3);
+        textColor = const Color(0xFF432C00);
+      }
+      statusIcon = const Icon(Icons.check_circle, color: Color(0xFF58CC02), size: 18); // 经典的 Duolingo 绿色对勾
+    } else if (isActive) {
+      if (!isDark) {
+        cardColor = Colors.white;
+        borderColor = Colors.white;
+        textColor = const Color(0xFF7F56FF); // 皇家紫高亮
+      }
       statusIcon = Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.25),
+          color: isDark ? AppColors.primary.withOpacity(0.2) : const Color(0xFF7F56FF).withOpacity(0.15),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: const Text(
+        child: Text(
           '进行中',
-          style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: isDark ? AppColors.primary : const Color(0xFF7F56FF),
+            fontSize: 9,
+            fontWeight: FontWeight.w800,
+          ),
         ),
       );
     } else if (isLocked) {
-      textColor = Colors.white.withOpacity(0.5);
-      statusIcon = Icon(Icons.lock, color: Colors.white.withOpacity(0.5), size: 14);
+      if (!isDark) {
+        textColor = const Color(0xFF8B5E00).withOpacity(0.6);
+        cardColor = Colors.white.withOpacity(0.08);
+      }
+      statusIcon = Icon(
+        Icons.lock,
+        color: isDark ? Colors.white30 : const Color(0xFF8B5E00).withOpacity(0.6),
+        size: 14,
+      );
     }
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: (isActive || isCompleted) ? FontWeight.w600 : FontWeight.normal,
-            color: textColor,
-          ),
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: borderColor,
+          width: 1.2,
         ),
-        statusIcon,
-      ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: (isActive || isCompleted) ? FontWeight.w800 : FontWeight.bold,
+              color: textColor,
+            ),
+          ),
+          statusIcon,
+        ],
+      ),
     );
   }
 
@@ -455,57 +556,122 @@ class _DailyTabState extends State<DailyTab> {
 
   // 4. 每日金句
   Widget _buildDailyQuoteCard(bool isDark) {
-    return ModernCard(
-      padding: const EdgeInsets.all(20),
-      borderRadius: 16,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Row(
-                children: [
-                  Icon(Icons.format_quote, color: AppColors.primary, size: 20),
-                  SizedBox(width: 6),
-                  Text(
-                    '每日金句',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                icon: const Icon(Icons.volume_up, color: AppColors.primary, size: 22),
-                onPressed: _speakQuote,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // AI 吉祥物头像 (3D 风格)
+        Container(
+          width: 48,
+          height: 48,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: const LinearGradient(
+              colors: [Color(0xFF7F56FF), Color(0xFF6C4EFA)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF7F56FF).withOpacity(0.3),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
               ),
             ],
+            border: Border.all(color: Colors.white, width: 2),
           ),
-          const SizedBox(height: 12),
-          const Text(
-            'The limits of my language mean the limits of my world.',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              fontStyle: FontStyle.italic,
-              height: 1.4,
+          child: const Center(
+            child: Icon(
+              Icons.smart_toy, // 可爱的机器人小助手
+              color: Colors.white,
+              size: 24,
             ),
           ),
-          const SizedBox(height: 8),
-          Text(
-            '语言的边界，就是世界的边界。',
-            style: TextStyle(
-              fontSize: 14,
-              color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
-              height: 1.4,
+        ),
+        const SizedBox(width: 12),
+        // 金句对话气泡
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.darkCard : Colors.white,
+              borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(24),
+                bottomLeft: Radius.circular(24),
+                bottomRight: Radius.circular(24),
+              ),
+              border: Border.all(
+                color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE5E7EB),
+                width: 1.5,
+              ),
+              boxShadow: [
+                // 3D 实体偏置底座
+                BoxShadow(
+                  color: isDark ? const Color(0xFF1E2124) : const Color(0xFFD1D5DB),
+                  offset: const Offset(0, 4),
+                  blurRadius: 0,
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.format_quote,
+                          color: isDark ? AppColors.primary : const Color(0xFF7F56FF),
+                          size: 18,
+                        ),
+                        const SizedBox(width: 6),
+                        const Text(
+                          '每日金句',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                      icon: Icon(
+                        Icons.volume_up,
+                        color: isDark ? AppColors.primary : const Color(0xFF7F56FF),
+                        size: 20,
+                      ),
+                      onPressed: _speakQuote,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'The limits of my language mean the limits of my world.',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w800,
+                    fontStyle: FontStyle.italic,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  '语言的边界，就是世界的边界。',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
+                    height: 1.4,
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -518,7 +684,7 @@ class _DailyTabState extends State<DailyTab> {
           '学习工具箱',
           style: TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w800,
           ),
         ),
         const SizedBox(height: 12),
@@ -529,7 +695,8 @@ class _DailyTabState extends State<DailyTab> {
                 Icons.book,
                 '生词本',
                 '34个生词',
-                const Color(0xFF0C8599),
+                const Color(0xFF20C997), // 翠绿
+                isDark ? const Color(0xFF163229) : const Color(0xFFE8F9F5),
                 isDark,
                 () {
                   Navigator.push(
@@ -545,7 +712,8 @@ class _DailyTabState extends State<DailyTab> {
                 Icons.rule,
                 '错题集',
                 '5道错题',
-                const Color(0xFFF76707),
+                const Color(0xFFFF4E73), // 亮粉
+                isDark ? const Color(0xFF3B1820) : const Color(0xFFFFF0F3),
                 isDark,
                 () {
                   Navigator.push(
@@ -561,7 +729,8 @@ class _DailyTabState extends State<DailyTab> {
                 Icons.calendar_month,
                 '打卡日历',
                 '学习记录',
-                const Color(0xFF2B8A3E),
+                const Color(0xFFFF9E1B), // 活力橙黄
+                isDark ? const Color(0xFF332310) : const Color(0xFFFFF9DB),
                 isDark,
                 () {
                   Navigator.push(
@@ -577,41 +746,81 @@ class _DailyTabState extends State<DailyTab> {
     );
   }
 
-  Widget _buildActionTile(IconData icon, String label, String value, Color color, bool isDark, VoidCallback onTap) {
+  Widget _buildActionTile(
+    IconData icon,
+    String label,
+    String value,
+    Color brandColor,
+    Color bgBackgroundColor,
+    bool isDark,
+    VoidCallback onTap,
+  ) {
+    // 3D 边框色
+    final borderColor = isDark
+        ? const Color(0xFF2B3035)
+        : HSLColor.fromColor(bgBackgroundColor).withLightness(
+            (HSLColor.fromColor(bgBackgroundColor).lightness - 0.08).clamp(0.0, 1.0)
+          ).toColor();
+
+    final bottomColor = isDark
+        ? const Color(0xFF1E2124)
+        : HSLColor.fromColor(bgBackgroundColor).withLightness(
+            (HSLColor.fromColor(bgBackgroundColor).lightness - 0.16).clamp(0.0, 1.0)
+          ).toColor();
+
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(20),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1A1D20) : Colors.white,
-          borderRadius: BorderRadius.circular(16),
+          color: bgBackgroundColor,
+          borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE9ECEF),
-            width: 1,
+            color: borderColor,
+            width: 1.2,
           ),
+          boxShadow: [
+            // 3D 实体偏置底座
+            BoxShadow(
+              color: bottomColor,
+              offset: const Offset(0, 3.5),
+              blurRadius: 0,
+            ),
+            // 软阴影
+            BoxShadow(
+              color: isDark ? Colors.black26 : brandColor.withOpacity(0.05),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
+          ],
         ),
         child: Column(
           children: [
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: brandColor.withOpacity(0.15),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: color, size: 20),
+              child: Icon(icon, color: brandColor, size: 20),
             ),
             const SizedBox(height: 8),
             Text(
               label,
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w800,
+                color: isDark ? Colors.white : HSLColor.fromColor(brandColor).withLightness(0.3).toColor(),
+              ),
             ),
             const SizedBox(height: 2),
             Text(
               value,
               style: TextStyle(
                 fontSize: 11,
-                color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
+                fontWeight: FontWeight.bold,
+                color: isDark ? AppColors.darkTextSecondary : HSLColor.fromColor(brandColor).withLightness(0.4).toColor(),
               ),
             ),
           ],

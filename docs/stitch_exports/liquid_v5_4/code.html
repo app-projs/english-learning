@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "primary-fixed-dim": "#cabeff",
+                            "tertiary": "#00647c",
+                            "on-surface-variant": "#484555",
+                            "surface-container-lowest": "#ffffff",
+                            "tertiary-container": "#007f9d",
+                            "on-background": "#191c1f",
+                            "on-error": "#ffffff",
+                            "primary": "#5e39e0",
+                            "surface-container-low": "#f2f3f8",
+                            "primary-container": "#7757fa",
+                            "on-secondary-fixed": "#2e1500",
+                            "surface-container": "#eceef3",
+                            "on-surface": "#191c1f",
+                            "tertiary-fixed": "#b7eaff",
+                            "surface-container-highest": "#e1e2e7",
+                            "on-secondary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "background": "#f8f9fe",
+                            "on-primary-container": "#fffbff",
+                            "on-secondary-fixed-variant": "#6d3900",
+                            "on-secondary-container": "#6b3800",
+                            "tertiary-fixed-dim": "#5bd5fc",
+                            "secondary-fixed-dim": "#ffb77c",
+                            "inverse-on-surface": "#eff0f5",
+                            "surface-tint": "#603ce2",
+                            "primary-fixed": "#e6deff",
+                            "surface-dim": "#d8dadf",
+                            "inverse-surface": "#2e3134",
+                            "surface-container-high": "#e7e8ed",
+                            "error-container": "#ffdad6",
+                            "secondary": "#904d00",
+                            "outline": "#797587",
+                            "error": "#ba1a1a",
+                            "on-tertiary-fixed": "#001f28",
+                            "on-tertiary-fixed-variant": "#004e61",
+                            "secondary-fixed": "#ffdcc2",
+                            "surface-variant": "#e1e2e7",
+                            "secondary-container": "#fe9c41",
+                            "on-primary": "#ffffff",
+                            "outline-variant": "#c9c4d8",
+                            "on-primary-fixed-variant": "#4816cb",
+                            "on-primary-fixed": "#1c0062",
+                            "surface-bright": "#f8f9fe",
+                            "inverse-primary": "#cabeff",
+                            "on-tertiary": "#ffffff",
+                            "surface": "#f8f9fe",
+                            "on-tertiary-container": "#fafdff"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "1rem",
+                            "lg": "2rem",
+                            "xl": "3rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "stack-sm": "8px",
+                            "stack-md": "16px",
+                            "stack-lg": "24px",
+                            "margin-page": "20px",
+                            "base": "4px",
+                            "gutter-card": "16px",
+                            "stack-xl": "32px"
+                        },
+                        "fontFamily": {
+                            "headline-md": ["Plus Jakarta Sans"],
+                            "label-md": ["Plus Jakarta Sans"],
+                            "label-lg": ["Plus Jakarta Sans"],
+                            "headline-xl-mobile": ["Plus Jakarta Sans"],
+                            "headline-lg": ["Plus Jakarta Sans"],
+                            "headline-xl": ["Plus Jakarta Sans"],
+                            "body-md": ["Plus Jakarta Sans"],
+                            "body-lg": ["Plus Jakarta Sans"]
+                        },
+                        "fontSize": {
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                            "label-lg": ["14px", {"lineHeight": "18px", "fontWeight": "700"}],
+                            "headline-xl-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                            "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                            "headline-xl": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .liquid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #e6deff 0%, #f8f9fe 50%, #ffdcc2 100%);
+            overflow: hidden;
+        }
+        .liquid-blob {
+            position: absolute;
+            filter: blur(80px);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 20s infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(20%, 10%) scale(1.2); }
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Liquid Background Elements -->
+<div class="liquid-bg">
+<div class="liquid-blob bg-primary-container w-[500px] h-[500px] -top-48 -left-24"></div>
+<div class="liquid-blob bg-secondary-container w-[400px] h-[400px] top-1/2 -right-24" style="animation-delay: -5s;"></div>
+<div class="liquid-blob bg-tertiary-container w-[300px] h-[300px] bottom-0 left-1/4" style="animation-delay: -10s;"></div>
+</div>
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 glass-panel flex justify-between items-center px-margin-page py-stack-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high/50 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface" data-original-icon="arrow_back_ios_new">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">专项练习：精听</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high/50 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface" data-original-icon="more_horiz">more_horiz</span>
+</button>
+</header>
+<main class="px-margin-page max-w-md mx-auto">
+<!-- Audio Header Card -->
+<section class="mt-stack-md glass-panel p-stack-md rounded-lg shadow-[0_8px_30px_rgb(124,92,255,0.06)] border border-white/50 flex items-center gap-stack-md">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Audio Cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoz2nwVT9tP9MDqrg_qY7YEIiJFsMSWotWgAk_QCZnQov_eED5v4Ek2AKq_xDezqT45Tv6QkObeO9L3O4tHga3FiDGRso4EG3PPFIct92ZrUrygLydL-Maam0Tz8Ew3xyNxdawv3b2W1sB4BQ_xaaldQisjKQ4hoVYl8oP4sbleTMfrJwfz5cpGA4mxjeOTNPkSgHIPCOUX92xG78FSmiG06jYBmQWsmQzED5rrvQFczTXBoxw63KzCLCTGFK7CII4IO7aWHH_CZoW"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="inline-block px-2 py-0.5 bg-primary-container/80 text-on-primary-container text-[10px] font-bold rounded-full mb-1 backdrop-blur-sm">ULTIMATE SERIES</div>
+<h2 class="font-headline-md text-[18px] text-on-surface truncate">The Power of Positive Thinking</h2>
+<p class="font-body-md text-primary mt-1">积极思考的力量</p>
+<p class="font-label-md text-outline mt-1">TED-Ed</p>
+</div>
+</section>
+<!-- Waveform & Progress Section -->
+<section class="mt-stack-xl flex flex-col items-center px-4">
+<div class="flex items-end justify-center gap-[4px] h-24 w-full mb-6">
+<div class="wave-bar h-4 opacity-20 bg-primary rounded-full w-1.5"></div>
+<div class="wave-bar h-8 opacity-30 bg-primary rounded-full w-1.5"></div>
+<div class="wave-bar h-12 opacity-50 bg-primary rounded-full w-1.5"></div>
+<div class="wave-bar h-16 bg-primary rounded-full w-1.5" style="animation-delay: 0.1s"></div>
+<div class="wave-bar h-20 bg-primary rounded-full w-1.5" style="animation-delay: 0.2s"></div>
+<div class="wave-bar h-28 bg-primary rounded-full w-1.5" style="animation-delay: 0.3s"></div>
+<div class="wave-bar h-22 bg-primary rounded-full w-1.5" style="animation-delay: 0.4s"></div>
+<div class="wave-bar h-16 bg-primary rounded-full w-1.5" style="animation-delay: 0.5s"></div>
+<div class="wave-bar h-12 opacity-50 bg-primary rounded-full w-1.5"></div>
+<div class="wave-bar h-8 opacity-30 bg-primary rounded-full w-1.5"></div>
+<div class="wave-bar h-4 opacity-20 bg-primary rounded-full w-1.5"></div>
+</div>
+<div class="w-full flex justify-between px-2 mb-stack-lg">
+<span class="font-label-md text-outline">00:15</span>
+<span class="font-label-md text-outline">02:36</span>
+</div>
+<!-- Playback Controls -->
+<div class="flex items-center justify-center gap-10">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">replay_5</span>
+</button>
+<button class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30 active:scale-90 transition-transform duration-200" id="mainPlayBtn">
+<span class="material-symbols-outlined text-[40px] translate-x-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">forward_5</span>
+</button>
+</div>
+<!-- Speed Selector -->
+<div class="flex bg-white/40 backdrop-blur-md rounded-full p-1 mt-stack-xl w-full max-w-[280px] border border-white/40 shadow-sm">
+<button class="speed-btn flex-1 py-2 rounded-full font-label-md text-on-surface-variant transition-all">0.8x</button>
+<button class="speed-btn flex-1 py-2 rounded-full font-label-md bg-primary text-white shadow-md transition-all">1.0x</button>
+<button class="speed-btn flex-1 py-2 rounded-full font-label-md text-on-surface-variant transition-all">1.2x</button>
+<button class="speed-btn flex-1 py-2 rounded-full font-label-md text-on-surface-variant transition-all">1.5x</button>
+</div>
+</section>
+<!-- Dictation Practice Section -->
+<section class="mt-stack-xl relative">
+<div class="flex justify-between items-center mb-stack-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">keyboard</span>
+<h3 class="font-headline-md text-headline-md">听写填空</h3>
+</div>
+<span class="font-label-md text-outline">1/5</span>
+</div>
+<div class="glass-panel p-stack-lg rounded-lg border border-white/50 shadow-sm mb-stack-xl relative">
+<div class="space-y-6 mb-stack-xl">
+<p class="font-body-lg text-on-surface leading-relaxed">
+                        Believe <span class="text-primary font-bold border-b-2 border-primary/30">in</span> yourself and all that you are.
+                    </p>
+<p class="font-body-lg text-on-surface leading-relaxed">
+                        Know that there is something
+                    </p>
+<p class="font-body-lg text-on-surface leading-relaxed">
+                        inside you that is greater
+                    </p>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-body-lg text-on-surface">than any</span>
+<div class="inline-block w-32 h-8 border-b-2 border-primary-container bg-primary-fixed/30 rounded-t-lg align-bottom animate-pulse"></div>
+</div>
+</div>
+<!-- Word Options -->
+<div class="grid grid-cols-2 gap-3 mt-6">
+<button class="py-3 bg-white/50 rounded-full font-label-lg text-on-surface-variant active:bg-primary/10 transition-all border border-white/60">anyone</button>
+<button class="py-3 bg-white/50 rounded-full font-label-lg text-on-surface-variant active:bg-primary/10 transition-all border border-white/60">waiting</button>
+<button class="py-3 bg-secondary-container text-on-secondary-container rounded-full font-label-lg shadow-sm active:scale-95 transition-all">something</button>
+<button class="py-3 bg-white/50 rounded-full font-label-lg text-on-surface-variant active:bg-primary/10 transition-all border border-white/60">nothing</button>
+</div>
+<!-- Mascot -->
+<div class="absolute -bottom-10 -right-2 w-24 h-24 pointer-events-none z-10">
+<img alt="Mascot" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA44UE55K_mhyMN0r6HNfnEW8iDekFl3cjzXbMU2FeaKhFM-08KYiQclML4FIWucLVtyxRiYe8Ets1MQwiIqRjdPRVL85sPz9JBNtEhujPNyyUt_NDzng3ZNvX4H-072bjWaVjNF_DxvqA9AB8ZNGaZluSWKmwfAMU8gASdt0tPOR4FvfYsbWGY8oakVhVrZhPZ6zkTTzyXCJ2qagvB65UZflg8BB3hT6q9qx3Y652Q62zYrNXLVX9J1TJthKPpuBsRGU6-rQtFBlhc"/>
+</div>
+</div>
+<!-- Accuracy Stats -->
+<div class="mt-8 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-outline">当前正确率 80%</span>
+<button class="text-primary font-label-lg flex items-center gap-1 hover:opacity-80">
+                        查看原文 <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<div class="w-full h-2.5 bg-white/50 rounded-full overflow-hidden shadow-inner border border-white/30 backdrop-blur-sm">
+<div class="w-4/5 h-full bg-secondary rounded-full transition-all duration-500 ease-out"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Liquid Capsule Floating Navigation -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm z-50">
+<nav class="glass-panel rounded-full shadow-[0_8px_32px_rgba(94,57,224,0.15)] border border-white/60 flex justify-between items-center px-6 py-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-md text-[10px] mt-0.5">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary relative" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-md text-[10px] mt-0.5">学习</span>
+<div class="absolute -bottom-1 w-1 h-1 bg-primary rounded-full"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">group</span>
+<span class="font-label-md text-[10px] mt-0.5">社区</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-label-md text-[10px] mt-0.5">我的</span>
+</a>
+</nav>
+</div>
+<script>
+        // Play/Pause Interaction
+        const playBtn = document.getElementById('mainPlayBtn');
+        let isPlaying = false;
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            playBtn.querySelector('span').textContent = isPlaying ? 'pause' : 'play_arrow';
+            playBtn.querySelector('span').classList.toggle('translate-x-0.5', !isPlaying);
+            
+            document.querySelectorAll('.wave-bar').forEach(bar => {
+                if(isPlaying) {
+                    bar.style.animation = 'wave 1s infinite ease-in-out';
+                } else {
+                    bar.style.animation = 'none';
+                }
+            });
+        });
+
+        // Add dynamic wave animation keyframe via JS if not in CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes wave {
+                0%, 100% { transform: scaleY(1); }
+                50% { transform: scaleY(1.5); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Speed selector functionality
+        const speedButtons = document.querySelectorAll('.speed-btn');
+        speedButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                speedButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'shadow-md');
+                    b.classList.add('text-on-surface-variant');
+                });
+                btn.classList.add('bg-primary', 'text-white', 'shadow-md');
+                btn.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

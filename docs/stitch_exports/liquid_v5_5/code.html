@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Lumina Learning - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#191c1f",
+                    "on-error": "#ffffff",
+                    "outline": "#797587",
+                    "on-primary-fixed-variant": "#4816cb",
+                    "on-secondary-container": "#6b3800",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#5bd5fc",
+                    "primary-container": "#7757fa",
+                    "secondary-fixed-dim": "#ffb77c",
+                    "inverse-on-surface": "#eff0f5",
+                    "surface-container": "#eceef3",
+                    "surface-container-highest": "#e1e2e7",
+                    "on-tertiary-fixed": "#001f28",
+                    "surface-container-high": "#e7e8ed",
+                    "on-primary-fixed": "#1c0062",
+                    "surface-tint": "#603ce2",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fe9c41",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#e6deff",
+                    "on-surface-variant": "#484555",
+                    "tertiary-container": "#007f9d",
+                    "on-tertiary-fixed-variant": "#004e61",
+                    "surface-variant": "#e1e2e7",
+                    "tertiary-fixed": "#b7eaff",
+                    "outline-variant": "#c9c4d8",
+                    "primary": "#5e39e0",
+                    "surface-container-low": "#f2f3f8",
+                    "tertiary": "#00647c",
+                    "surface-dim": "#d8dadf",
+                    "background": "#f8f9fe",
+                    "on-secondary-fixed-variant": "#6d3900",
+                    "on-primary-container": "#fffbff",
+                    "secondary": "#904d00",
+                    "on-secondary-fixed": "#2e1500",
+                    "on-primary": "#ffffff",
+                    "on-background": "#191c1f",
+                    "surface": "#f8f9fe",
+                    "inverse-primary": "#cabeff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdcc2",
+                    "primary-fixed-dim": "#cabeff",
+                    "surface-bright": "#f8f9fe",
+                    "inverse-surface": "#2e3134",
+                    "on-tertiary-container": "#fafdff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "stack-xl": "32px",
+                    "stack-lg": "24px",
+                    "gutter-card": "16px",
+                    "margin-page": "20px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "800"}],
+                    "headline-xl": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "18px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fe;
+            overflow-x: hidden;
+        }
+        .bento-card {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.65);
+        }
+        .bento-card:active {
+            transform: scale(0.97);
+        }
+        .radar-web {
+            stroke: #c9c4d8;
+            stroke-width: 1;
+            fill: none;
+        }
+        .radar-area {
+            fill: rgba(94, 57, 224, 0.2);
+            stroke: #5e39e0;
+            stroke-width: 2;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Liquid Background Canvas */
+        #liquid-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Floating Navigation */
+        .nav-capsule {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 400px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 12px;
+            box-shadow: 0 10px 40px -10px rgba(94, 57, 224, 0.15);
+            z-index: 100;
+        }
+        .nav-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            color: #484555;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-item.active {
+            color: #5e39e0;
+        }
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(94, 57, 224, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+            animation: blob-pulse 3s infinite;
+        }
+        @keyframes blob-pulse {
+            0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; }
+            100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Liquid Background -->
+<canvas id="liquid-canvas"></canvas>
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center w-full px-margin-page py-stack-md bg-white/40 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbpkF_iVdKQDXJu3__vUspEVX6oGK2PF0s_52cAREe4ZDbfhmLSzHRCu91e8ZrP9afAne8dxAHVK8mv8-L3k_VKEeLJIhmE86JXOMj9612V_vWaclWz7jl8OK63Pq-fqlpgwudFpkZ7gW7zVA20mCb0SaRZqgMG9GTUxxVIge2CCNTrmE7S9QIwdqevT28oVduRIo2P9K5dHBOemh_4uWiTQwnDa6PeR1BixZ_vgHqEP29mSjOsTcRFYX1VU1z80wI_B4KEVpB4vrD"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">英语学习</h1>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin-page space-y-stack-xl relative">
+<!-- User Profile Section -->
+<section class="flex flex-col items-center text-center space-y-stack-md">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden backdrop-blur-sm">
+<img alt="Emma Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHKW1Ul45fz9V1yrQq5mqO6K5UMH4TIYByIvu6rxsw9jvL2ySUvpNpEMmGGW2-Xk8eOk367oQPMCSxkey_k5VWCXpPQGMacUR3chkruDjpGDinbOjSTBvxwAsh3qHRqdCoPXDC48F-NCpdPWT5PLgTs8ki7cICsHjzF7-HUu7uLkHkKOo4wWO-MUoZcfp-P0G_zJ2fUJf_09btPJV_Jmambl9wySN9zviQpBDCiqpoP4VEm9a0o9RebuJnfbJrsL_llqPOJWmFSupp"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary-container text-on-secondary-container p-1 rounded-full shadow-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg">Emma</h2>
+<div class="inline-flex items-center gap-1 mt-1 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+<span class="font-label-md text-label-md">大学英语四级</span>
+</div>
+</div>
+</section>
+<!-- Learning Metric Chips -->
+<section class="grid grid-cols-2 gap-gutter-card">
+<div class="bento-card p-stack-md rounded-lg border border-white/40 flex flex-col gap-base">
+<span class="material-symbols-outlined text-primary-container">schedule</span>
+<p class="font-label-md text-label-md text-on-surface-variant">累计学习</p>
+<p class="font-headline-md text-headline-md text-primary">42<span class="text-label-md ml-1 text-on-surface-variant">小时</span></p>
+</div>
+<div class="bento-card p-stack-md rounded-lg border border-white/40 flex flex-col gap-base">
+<span class="material-symbols-outlined text-secondary">spellcheck</span>
+<p class="font-label-md text-label-md text-on-surface-variant">掌握单词</p>
+<p class="font-headline-md text-headline-md text-secondary">1,840<span class="text-label-md ml-1 text-on-surface-variant">个</span></p>
+</div>
+<div class="bento-card p-stack-md rounded-lg border border-white/40 flex flex-col gap-base">
+<span class="material-symbols-outlined text-tertiary">article</span>
+<p class="font-label-md text-label-md text-on-surface-variant">精讲文章</p>
+<p class="font-headline-md text-headline-md text-tertiary">36<span class="text-label-md ml-1 text-on-surface-variant">篇</span></p>
+</div>
+<div class="bento-card p-stack-md rounded-lg border border-white/40 flex flex-col gap-base">
+<span class="material-symbols-outlined text-primary">headphones</span>
+<p class="font-label-md text-label-md text-on-surface-variant">精听时长</p>
+<p class="font-headline-md text-headline-md text-primary">18<span class="text-label-md ml-1 text-on-surface-variant">小时</span></p>
+</div>
+</section>
+<!-- Visual Analytics: Radar Chart -->
+<section class="bento-card p-stack-lg rounded-lg border border-white/40 shadow-sm">
+<div class="flex justify-between items-center mb-stack-lg">
+<h3 class="font-headline-md text-headline-md">能力图谱</h3>
+<span class="material-symbols-outlined text-on-surface-variant">info</span>
+</div>
+<div class="relative w-full aspect-square max-w-[280px] mx-auto flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-18" viewbox="0 0 100 100">
+<circle class="radar-web" cx="50" cy="50" r="10" stroke-dasharray="1 2"></circle>
+<circle class="radar-web" cx="50" cy="50" r="20" stroke-dasharray="1 2"></circle>
+<circle class="radar-web" cx="50" cy="50" r="30" stroke-dasharray="1 2"></circle>
+<circle class="radar-web" cx="50" cy="50" r="40" stroke-dasharray="1 2"></circle>
+<line class="radar-web" x1="50" x2="50" y1="50" y2="10"></line>
+<line class="radar-web" x1="50" x2="88" y1="50" y2="38"></line>
+<line class="radar-web" x1="50" x2="74" y1="50" y2="82"></line>
+<line class="radar-web" x1="50" x2="26" y1="50" y2="82"></line>
+<line class="radar-web" x1="50" x2="12" y1="50" y2="38"></line>
+<polygon class="radar-area" points="50,18 80,42 68,75 35,70 20,45"></polygon>
+</svg>
+<span class="absolute top-2 left-1/2 -translate-x-1/2 font-label-md text-label-md">词汇力</span>
+<span class="absolute top-1/3 right-0 font-label-md text-label-md">语法力</span>
+<span class="absolute bottom-4 right-4 font-label-md text-label-md">阅读力</span>
+<span class="absolute bottom-4 left-4 font-label-md text-label-md">听力</span>
+<span class="absolute top-1/3 left-0 font-label-md text-label-md">发音</span>
+</div>
+</section>
+<!-- Badge Cabinet -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">成就徽章柜</h3>
+<span class="text-primary font-label-lg text-label-lg flex items-center gap-1">查看全部 <span class="material-symbols-outlined text-[18px]">chevron_right</span></span>
+</div>
+<div class="flex gap-stack-lg overflow-x-auto pb-4 custom-scrollbar">
+<div class="flex flex-col items-center gap-base shrink-0">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/60 backdrop-blur-md flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-label-md text-label-md">自律狂魔</span>
+</div>
+<div class="flex flex-col items-center gap-base shrink-0">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed/60 backdrop-blur-md flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-secondary text-[32px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<span class="font-label-md text-label-md">黄金词霸</span>
+</div>
+<div class="flex flex-col items-center gap-base shrink-0">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed/60 backdrop-blur-md flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-tertiary text-[32px]" style="font-variation-settings: 'FILL' 1;">spatial_audio_off</span>
+</div>
+<span class="font-label-md text-label-md">听觉觉醒</span>
+</div>
+<div class="flex flex-col items-center gap-base shrink-0 opacity-50">
+<div class="w-16 h-16 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center grayscale">
+<span class="material-symbols-outlined text-outline text-[32px]">menu_book</span>
+</div>
+<span class="font-label-md text-label-md text-outline">阅读先锋</span>
+</div>
+</div>
+</section>
+<!-- Settings Panel -->
+<section class="bento-card rounded-lg border border-white/40 overflow-hidden">
+<button class="w-full flex items-center justify-between p-stack-lg border-b border-white/20 hover:bg-white/20 transition-colors">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">track_changes</span>
+<span class="font-body-lg text-body-lg">修改学习目标</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<div class="w-full flex items-center justify-between p-stack-lg border-b border-white/20">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">dark_mode</span>
+<span class="font-body-lg text-body-lg">深色模式</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-white/30 backdrop-blur-md rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<button class="w-full flex items-center justify-between p-stack-lg hover:bg-white/20 transition-colors">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+<span class="font-body-lg text-body-lg">每日提醒设置</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+</section>
+</main>
+<!-- Floating Liquid Navigation -->
+<nav class="nav-capsule">
+<a class="nav-item" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">首页</span>
+</a>
+<a class="nav-item" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">学习</span>
+</a>
+<a class="nav-item" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">社区</span>
+</a>
+<a class="nav-item active" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">我的</span>
+</a>
+</nav>
+<script>
+        // Liquid Background Animation
+        const canvas = document.getElementById('liquid-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function init() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 4; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 200 + 150,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    color: i % 2 === 0 ? '#e6deff' : '#fafdff'
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.filter = 'blur(80px)';
+            
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < -p.r) p.x = width + p.r;
+                if (p.x > width + p.r) p.x = -p.r;
+                if (p.y < -p.r) p.y = height + p.r;
+                if (p.y > height + p.r) p.y = -p.r;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+
+        // Radar Animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const polygon = document.querySelector('.radar-area');
+            if (polygon) {
+                polygon.style.transition = 'points 1s ease-out';
+            }
+        });
+    </script>
+</body></html>
