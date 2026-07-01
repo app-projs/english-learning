@@ -1,0 +1,49 @@
+name: Deploy Flutter Release APK
+
+# 🔒 触发条件：只有当推送到以 "v" 开头的 tag（如 v1.0.0, v0.0.1）时才触发
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    # 关键权限设置：允许该工作流将编译出来的文件写入到你的 Release 资源中
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      # 1. 编译正式版的 Release APK
+      - name: Build APK
+        run: flutter build apk --release --no-tree-shake-icons
+
+      # 2. 自动将 APK 上传并挂载到创建的 Tag Release 资源列表中
+      - name: Create GitHub Release and Upload APK
+        uses: softprops/action-gh-release@v2
+        with:
+          # 指定要上传的打包文件路径
+          files: build/app/outputs/flutter-apk/app-release.apk
+          # 自动将文件名重命名，方便用户下载识别
+          asset_name: english-learning-${{ github.ref_name }}.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
