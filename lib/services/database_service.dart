@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 
@@ -30,8 +30,9 @@ class DatabaseService {
 
     return openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: _onCreate,
+      onUpgrade: _onUpgrade,
     );
   }
 
@@ -56,6 +57,7 @@ class DatabaseService {
         id TEXT PRIMARY KEY,
         english TEXT NOT NULL,
         chinese TEXT NOT NULL,
+        keyWords TEXT,
         difficulty TEXT,
         category TEXT,
         createdAt TEXT
@@ -69,6 +71,18 @@ class DatabaseService {
         context TEXT,
         difficulty TEXT,
         lines TEXT,
+        createdAt TEXT
+      )
+    ''');
+
+    await db.execute('''
+      CREATE TABLE articles (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        content TEXT NOT NULL,
+        translation TEXT,
+        difficulty TEXT,
+        category TEXT,
         createdAt TEXT
       )
     ''');
@@ -103,20 +117,48 @@ class DatabaseService {
     ''');
   }
 
+  static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 2) {
+      await db.execute('DROP TABLE IF EXISTS words');
+      await db.execute('DROP TABLE IF EXISTS sentences');
+      await db.execute('DROP TABLE IF EXISTS dialogues');
+      await db.execute('DROP TABLE IF EXISTS articles');
+      await db.execute('DROP TABLE IF EXISTS user_progress');
+      await db.execute('DROP TABLE IF EXISTS achievements');
+      await db.execute('DROP TABLE IF EXISTS reading_history');
+      await _onCreate(db, newVersion);
+    }
+  }
+
   // Words
   Future<void> insertWord(Map<String, dynamic> word) async {
-    await _database?.insert('words', word,
+    final dbWord = Map<String, dynamic>.from(word);
+    dbWord['synonyms'] = jsonEncode(word['synonyms'] ?? []);
+    dbWord['antonyms'] = jsonEncode(word['antonyms'] ?? []);
+    await _database?.insert('words', dbWord,
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Map<String, dynamic>>> getAllWords() async {
-    return await _database?.query('words') ?? [];
+    final results = await _database?.query('words') ?? [];
+    return results.map((row) {
+      final word = Map<String, dynamic>.from(row);
+      word['synonyms'] = jsonDecode(row['synonyms'] as String? ?? '[]');
+      word['antonyms'] = jsonDecode(row['antonyms'] as String? ?? '[]');
+      return word;
+    }).toList();
   }
 
   Future<Map<String, dynamic>?> getWordById(String id) async {
     final results =
         await _database?.query('words', where: 'id = ?', whereArgs: [id]);
-    return results?.isNotEmpty == true ? results!.first : null;
+    if (results?.isNotEmpty == true) {
+      final word = Map<String, dynamic>.from(results!.first);
+      word['synonyms'] = jsonDecode(word['synonyms'] as String? ?? '[]');
+      word['antonyms'] = jsonDecode(word['antonyms'] as String? ?? '[]');
+      return word;
+    }
+    return null;
   }
 
   Future<void> updateWordFavorite(String id, bool isFavorite) async {
@@ -125,9 +167,114 @@ class DatabaseService {
   }
 
   Future<List<Map<String, dynamic>>> getFavoriteWords() async {
-    return await _database
+    final results = await _database
             ?.query('words', where: 'isFavorite = ?', whereArgs: [1]) ??
         [];
+    return results.map((row) {
+      final word = Map<String, dynamic>.from(row);
+      word['synonyms'] = jsonDecode(row['synonyms'] as String? ?? '[]');
+      word['antonyms'] = jsonDecode(row['antonyms'] as String? ?? '[]');
+      return word;
+    }).toList();
+  }
+
+  // Sentences
+  Future<void> insertSentence(Map<String, dynamic> sentence) async {
+    final dbSentence = Map<String, dynamic>.from(sentence);
+    dbSentence['keyWords'] = jsonEncode(sentence['keyWords'] ?? []);
+    await _database?.insert('sentences', dbSentence,
+        conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllSentences() async {
+    final results = await _database?.query('sentences') ?? [];
+    return results.map((row) {
+      final sentence = Map<String, dynamic>.from(row);
+      sentence['keyWords'] = jsonDecode(row['keyWords'] as String? ?? '[]');
+      return sentence;
+    }).toList();
+  }
+
+  Future<List<Map<String, dynamic>>> getSentencesByDifficulty(String difficulty) async {
+    final results = await _database?.query('sentences', where: 'difficulty = ?', whereArgs: [difficulty]) ?? [];
+    return results.map((row) {
+      final sentence = Map<String, dynamic>.from(row);
+      sentence['keyWords'] = jsonDecode(row['keyWords'] as String? ?? '[]');
+      return sentence;
+    }).toList();
+  }
+
+  Future<Map<String, dynamic>?> getSentenceById(String id) async {
+    final results = await _database?.query('sentences', where: 'id = ?', whereArgs: [id]);
+    if (results?.isNotEmpty == true) {
+      final sentence = Map<String, dynamic>.from(results!.first);
+      sentence['keyWords'] = jsonDecode(sentence['keyWords'] as String? ?? '[]');
+      return sentence;
+    }
+    return null;
+  }
+
+  // Dialogues
+  Future<void> insertDialogue(Map<String, dynamic> dialogue) async {
+    final dbDialogue = Map<String, dynamic>.from(dialogue);
+    dbDialogue['lines'] = jsonEncode(dialogue['lines'] ?? []);
+    await _database?.insert('dialogues', dbDialogue,
+        conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllDialogues() async {
+    final results = await _database?.query('dialogues') ?? [];
+    return results.map((row) {
+      final dialogue = Map<String, dynamic>.from(row);
+      dialogue['lines'] = jsonDecode(row['lines'] as String? ?? '[]');
+      return dialogue;
+    }).toList();
+  }
+
+  Future<Map<String, dynamic>?> getDialogueById(String id) async {
+    final results = await _database?.query('dialogues', where: 'id = ?', whereArgs: [id]);
+    if (results?.isNotEmpty == true) {
+      final dialogue = Map<String, dynamic>.from(results!.first);
+      dialogue['lines'] = jsonDecode(dialogue['lines'] as String? ?? '[]');
+      return dialogue;
+    }
+    return null;
+  }
+
+  Future<List<Map<String, dynamic>>> getDialoguesByDifficulty(String difficulty) async {
+    final results = await _database?.query('dialogues', where: 'difficulty = ?', whereArgs: [difficulty]) ?? [];
+    return results.map((row) {
+      final dialogue = Map<String, dynamic>.from(row);
+      dialogue['lines'] = jsonDecode(row['lines'] as String? ?? '[]');
+      return dialogue;
+    }).toList();
+  }
+
+  // Articles
+  Future<void> insertArticle(Map<String, dynamic> article) async {
+    await _database?.insert('articles', article,
+        conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllArticles() async {
+    return await _database?.query('articles') ?? [];
+  }
+
+  Future<Map<String, dynamic>?> getArticleById(String id) async {
+    final results = await _database?.query('articles', where: 'id = ?', whereArgs: [id]);
+    return results?.isNotEmpty == true ? results!.first : null;
+  }
+
+  Future<List<Map<String, dynamic>>> getArticlesByDifficulty(String difficulty) async {
+    return await _database?.query('articles', where: 'difficulty = ?', whereArgs: [difficulty]) ?? [];
+  }
+
+  Future<List<Map<String, dynamic>>> searchArticles(String query) async {
+    return await _database?.query(
+      'articles',
+      where: 'title LIKE ? OR content LIKE ?',
+      whereArgs: ['%$query%', '%$query%'],
+    ) ?? [];
   }
 
   // User Progress
@@ -200,6 +347,7 @@ class DatabaseService {
     await _database?.delete('words');
     await _database?.delete('sentences');
     await _database?.delete('dialogues');
+    await _database?.delete('articles');
     await _database?.delete('user_progress');
     await _database?.delete('achievements');
     await _database?.delete('reading_history');

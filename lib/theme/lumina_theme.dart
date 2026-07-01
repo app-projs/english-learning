@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LuminaColors {
-  static const Color primary = Color(0xFF5E39E0);
+  static const Color primary = Color(0xFF2563EB);
   static const Color onPrimary = Color(0xFFFFFFFF);
-  static const Color primaryContainer = Color(0xFF7757FA);
+  static const Color primaryContainer = Color(0xFFDBEAFE);
   
-  static const Color secondary = Color(0xFF904D00);
+  static const Color secondary = Color(0xFF0F766E); // Teal instead of brown
   static const Color onSecondary = Color(0xFFFFFFFF);
   
-  static const Color tertiary = Color(0xFF00647C);
+  static const Color tertiary = Color(0xFFF59E0B); // Amber instead of deep cyan
   
-  static const Color background = Color(0xFFF8F9FE);
-  static const Color surface = Color(0xFFF8F9FE);
-  static const Color surfaceContainerLow = Color(0xFFF2F3F8);
-  static const Color onSurface = Color(0xFF191C1F);
+  static const Color background = Color(0xFFF8FAFC);
+  static const Color surface = Color(0xFFF8FAFC);
+  static const Color surfaceContainerLow = Color(0xFFF1F5F9);
+  static const Color onSurface = Color(0xFF0F172A); // Slate 900
   
-  static const Color error = Color(0xFFBA1A1A);
-  static const Color success = Color(0xFF00D995); // Custom from DESIGN.md
-  static const Color warning = Color(0xFFFF6B6B); // Custom from DESIGN.md
+  static const Color error = Color(0xFFEF4444); // Slate red
+  static const Color success = Color(0xFF10B981); // Slate emerald green
+  static const Color warning = Color(0xFFF59E0B); // Slate orange/amber
 
-  static const Color outline = Color(0xFF797587);
-  static const Color surfaceVariant = Color(0xFFE1E2E7);
+  static const Color outline = Color(0xFF94A3B8);
+  static const Color surfaceVariant = Color(0xFFE2E8F0);
 }
 
 class LuminaTheme {
@@ -78,7 +78,7 @@ class LuminaTheme {
           elevation: 0,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: Colors.white,
         elevation: 0,
         shape: RoundedRectangleBorder(

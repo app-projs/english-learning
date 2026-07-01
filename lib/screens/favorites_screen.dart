@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../services/storage_service.dart';
+import '../mock/mock_words.dart';
+import '../mock/mock_articles.dart';
+import 'article_detail_screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
@@ -10,47 +14,56 @@ class FavoritesScreen extends StatefulWidget {
 class _FavoritesScreenState extends State<FavoritesScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
-  final List<Map<String, dynamic>> _wordFavorites = [
-    {
-      'id': '1',
-      'english': 'abandon',
-      'chinese': '放弃；遗弃',
-      'phonetic': '/əˈbændən/'
-    },
-    {
-      'id': '2',
-      'english': 'benefit',
-      'chinese': '利益；好处',
-      'phonetic': '/ˈbenɪfɪt/'
-    },
-    {
-      'id': '3',
-      'english': 'challenge',
-      'chinese': '挑战',
-      'phonetic': '/ˈtʃælɪndʒ/'
-    },
-  ];
-
-  final List<Map<String, dynamic>> _articleFavorites = [
-    {
-      'id': '1',
-      'title': 'The Benefits of Reading English Books',
-      'difficulty': 'Intermediate',
-      'tags': ['Reading', 'Vocabulary']
-    },
-    {
-      'id': '3',
-      'title': 'Advanced English Grammar Tips',
-      'difficulty': 'Advanced',
-      'tags': ['Grammar', 'Advanced']
-    },
-  ];
+  StorageService? _storageService;
+  List<Map<String, dynamic>> _wordFavorites = [];
+  List<Map<String, dynamic>> _articleFavorites = [];
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _loadFavorites();
+  }
+
+  Future<void> _loadFavorites() async {
+    _storageService = await StorageService.getInstance();
+    final wordIds = _storageService!.getFavorites();
+    final articleIds = _storageService!.getArticleFavorites();
+
+    final List<Map<String, dynamic>> wordList = [];
+    for (final id in wordIds) {
+      final word = MockWords.getWordById(id);
+      if (word != null) {
+        wordList.add({
+          'id': word.id,
+          'english': word.english,
+          'chinese': word.chinese,
+          'phonetic': word.phonetic,
+        });
+      }
+    }
+
+    final List<Map<String, dynamic>> articleList = [];
+    for (final id in articleIds) {
+      final article = MockArticles.getArticles().where((a) => a.id == id).firstOrNull;
+      if (article != null) {
+        articleList.add({
+          'id': article.id,
+          'title': article.title,
+          'difficulty': article.difficulty,
+          'tags': article.tags,
+        });
+      }
+    }
+
+    if (mounted) {
+      setState(() {
+        _wordFavorites = wordList;
+        _articleFavorites = articleList;
+        _isLoading = false;
+      });
+    }
   }
 
   @override
@@ -72,13 +85,15 @@ class _FavoritesScreenState extends State<FavoritesScreen>
           ],
         ),
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          _buildWordFavorites(),
-          _buildArticleFavorites(),
-        ],
-      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : TabBarView(
+              controller: _tabController,
+              children: [
+                _buildWordFavorites(),
+                _buildArticleFavorites(),
+              ],
+            ),
     );
   }
 
@@ -95,22 +110,26 @@ class _FavoritesScreenState extends State<FavoritesScreen>
         return Card(
           margin: const EdgeInsets.only(bottom: 8),
           child: ListTile(
-            title: Text(word['english'],
+            title: Text(word['english'] ?? '',
                 style: const TextStyle(fontWeight: FontWeight.bold)),
-            subtitle: Text(word['chinese']),
+            subtitle: Text(word['chinese'] ?? ''),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(word['phonetic'],
+                Text(word['phonetic'] ?? '',
                     style:
                         TextStyle(color: Colors.grey.shade600, fontSize: 12)),
                 const SizedBox(width: 8),
                 IconButton(
                   icon: const Icon(Icons.favorite, color: Colors.red),
-                  onPressed: () {
+                  onPressed: () async {
+                    final id = word['id'];
                     setState(() {
                       _wordFavorites.removeAt(index);
                     });
+                    if (id != null) {
+                      await _storageService?.removeFavorite(id);
+                    }
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('已取消收藏')),
                     );
@@ -138,9 +157,22 @@ class _FavoritesScreenState extends State<FavoritesScreen>
           margin: const EdgeInsets.only(bottom: 12),
           child: InkWell(
             onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('打开: ${article['title']}')),
-              );
+              final id = article['id'];
+              final fullArticle = MockArticles.getArticles().where((a) => a.id == id).firstOrNull;
+              if (fullArticle != null) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ArticleDetailScreen(article: fullArticle),
+                  ),
+                ).then((_) {
+                  _loadFavorites();
+                });
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('无法打开文章: ${article['title']}')),
+                );
+              }
             },
             borderRadius: BorderRadius.circular(12),
             child: Padding(
@@ -152,17 +184,21 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                     children: [
                       Expanded(
                         child: Text(
-                          article['title'],
+                          article['title'] ?? '',
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                       ),
                       IconButton(
                         icon: const Icon(Icons.favorite, color: Colors.red),
-                        onPressed: () {
+                        onPressed: () async {
+                          final id = article['id'];
                           setState(() {
                             _articleFavorites.removeAt(index);
                           });
+                          if (id != null) {
+                            await _storageService?.removeArticleFavorite(id);
+                          }
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('已取消收藏')),
                           );
@@ -173,7 +209,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                   const SizedBox(height: 8),
                   Wrap(
                     spacing: 8,
-                    children: (article['tags'] as List).map<Widget>((tag) {
+                    children: ((article['tags'] ?? []) as List).map<Widget>((tag) {
                       return Chip(
                         label: Text(tag, style: const TextStyle(fontSize: 10)),
                         padding: EdgeInsets.zero,

@@ -16,6 +16,7 @@ class StorageService {
   // Keys
   static const String _keyUserProfile = 'user_profile';
   static const String _keyFavorites = 'favorites';
+  static const String _keyArticleFavorites = 'article_favorites';
   static const String _keyLearningProgress = 'learning_progress';
   static const String _keyStreakDays = 'streak_days';
   static const String _keyLastPracticeDate = 'last_practice_date';
@@ -61,6 +62,35 @@ class StorageService {
 
   bool isFavorite(String id) {
     return getFavorites().contains(id);
+  }
+
+  // Article Favorites
+  Future<void> saveArticleFavorites(Set<String> favoriteIds) async {
+    await _prefs?.setStringList(_keyArticleFavorites, favoriteIds.toList());
+  }
+
+  Set<String> getArticleFavorites() {
+    if (_prefs?.containsKey(_keyArticleFavorites) != true) {
+      _prefs?.setStringList(_keyArticleFavorites, ['1', '3']);
+    }
+    final list = _prefs?.getStringList(_keyArticleFavorites) ?? [];
+    return list.toSet();
+  }
+
+  Future<void> addArticleFavorite(String id) async {
+    final favorites = getArticleFavorites();
+    favorites.add(id);
+    await saveArticleFavorites(favorites);
+  }
+
+  Future<void> removeArticleFavorite(String id) async {
+    final favorites = getArticleFavorites();
+    favorites.remove(id);
+    await saveArticleFavorites(favorites);
+  }
+
+  bool isArticleFavorite(String id) {
+    return getArticleFavorites().contains(id);
   }
 
   // Learning Progress

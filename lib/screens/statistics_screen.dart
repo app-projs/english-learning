@@ -220,7 +220,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
         'name': '对话',
         'value': _stats['totalDialogues'],
         'goal': 50,
-        'color': Colors.purple
+        'color': Colors.indigo
       },
     ];
 

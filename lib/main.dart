@@ -25,10 +25,10 @@ void main() async {
 
   storageService = await StorageService.getInstance();
   databaseService = await DatabaseService.getInstance();
-  wordService = WordService(storageService);
-  sentenceService = SentenceService(storageService);
-  dialogueService = DialogueService(storageService);
-  articleService = ArticleService();
+  wordService = WordService(storageService, databaseService);
+  sentenceService = SentenceService(storageService, databaseService);
+  dialogueService = DialogueService(storageService, databaseService);
+  articleService = ArticleService(storageService, databaseService);
   userService = UserService(storageService);
   themeService = ThemeService(storageService);
 
@@ -70,10 +70,12 @@ class _EnglishLearningAppState extends State<EnglishLearningApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'English Learning App',
-      theme: LuminaTheme.lightTheme,
-      // Lumina Learning currently uses a pristine light theme design system
-      home: const LuminaHomeScreen(),
+      title: 'lumina English',
+      theme: _isDarkMode ? ThemeService.darkTheme : LuminaTheme.lightTheme,
+      home: LuminaHomeScreen(
+        isDarkMode: _isDarkMode,
+        onThemeChanged: _toggleTheme,
+      ),
       debugShowCheckedModeBanner: false,
     );
   }

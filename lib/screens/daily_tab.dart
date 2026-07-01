@@ -11,16 +11,49 @@ import 'word_practice_screen.dart';
 import 'listening_practice_screen.dart';
 import 'sentence_practice_screen.dart';
 import 'article_detail_screen.dart';
+import '../services/audio_service.dart';
+import '../models/user.dart';
 
 class DailyTab extends StatefulWidget {
-  const DailyTab({super.key});
+  final bool isActive;
+  const DailyTab({super.key, this.isActive = false});
 
   @override
   State<DailyTab> createState() => _DailyTabState();
 }
 
 class _DailyTabState extends State<DailyTab> {
+  UserProfile? _profile;
   final int _totalSteps = 4;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserProfile();
+  }
+
+  @override
+  void didUpdateWidget(covariant DailyTab oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.isActive && !oldWidget.isActive) {
+      _loadUserProfile();
+    }
+  }
+
+  Future<void> _loadUserProfile() async {
+    try {
+      final profile = await userService.getUserProfile();
+      if (mounted) {
+        setState(() {
+          _profile = profile;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {});
+      }
+    }
+  }
 
   int get _completedSteps {
     int count = 0;
@@ -37,7 +70,10 @@ class _DailyTabState extends State<DailyTab> {
   }
 
   int get _pendingReviewCount {
-    return storageService.getWrongAnswers().where((item) => item['reviewed'] != true).length;
+    return storageService
+        .getWrongAnswers()
+        .where((item) => item['reviewed'] != true)
+        .length;
   }
 
   bool isCompleted(int i) => storageService.isDailyStepCompleted(i);
@@ -102,7 +138,7 @@ class _DailyTabState extends State<DailyTab> {
       context,
       MaterialPageRoute(builder: (context) => targetScreen),
     ).then((_) {
-      setState(() {});
+      _loadUserProfile();
     });
   }
 
@@ -128,13 +164,8 @@ class _DailyTabState extends State<DailyTab> {
     _startPractice(activeStep);
   }
 
-  void _speakQuote() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('🔊 正在播放每日金句原声朗读...'),
-        duration: Duration(seconds: 1),
-      ),
-    );
+  void _speakQuote(String quoteText) {
+    AudioService.instance.speak(quoteText);
   }
 
   @override
@@ -159,6 +190,7 @@ class _DailyTabState extends State<DailyTab> {
               _buildDailyQuoteCard(isDark),
               const SizedBox(height: 24),
               _buildQuickActionsGrid(context, isDark),
+              const SizedBox(height: 128), // Space for floating bottom nav
             ],
           ),
         ),
@@ -168,41 +200,46 @@ class _DailyTabState extends State<DailyTab> {
 
   // 1. 顶部头部区域
   Widget _buildHeader(bool isDark) {
+    final displayName = _profile?.name ?? 'Alex';
+    final userAvatar = _profile?.avatar;
+
     return Row(
       children: [
-        // 用户头像 - 3D 泡泡圈
         Container(
-          padding: const EdgeInsets.all(3),
+          padding: const EdgeInsets.all(2.5),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
+            color: const Color(0xFFFFD6C8),
             border: Border.all(
-              color: const Color(0xFF7F56FF), // 主色皇家紫边框
-              width: 2,
+              color: const Color(0xFFFFA98F),
+              width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF7F56FF).withOpacity(0.2),
-                blurRadius: 8,
-                offset: const Offset(0, 3),
+                color: const Color(0xFFFF9B73).withOpacity(0.20),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
-          child: const CircleAvatar(
-            radius: 22,
+          child: CircleAvatar(
+            radius: 28,
             backgroundColor: Colors.transparent,
-            backgroundImage: NetworkImage('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'),
+            backgroundImage: userAvatar != null && userAvatar.isNotEmpty
+                ? NetworkImage(userAvatar)
+                : const NetworkImage(
+                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&auto=format&fit=crop&q=80'),
           ),
         ),
-        const SizedBox(width: 14),
+        const SizedBox(width: 16),
         // 欢迎词与学习目标
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Hi, Alex! 👋',
-                style: TextStyle(
+              Text(
+                'Hi, $displayName! 👋',
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w800,
                   letterSpacing: -0.5,
@@ -214,7 +251,9 @@ class _DailyTabState extends State<DailyTab> {
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
-                  color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
+                  color: isDark
+                      ? AppColors.darkTextSecondary
+                      : AppColors.lightTextSecondary,
                 ),
               ),
             ],
@@ -226,7 +265,7 @@ class _DailyTabState extends State<DailyTab> {
           padding: const EdgeInsets.symmetric(horizontal: 14),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [Color(0xFFFF9E1B), Color(0xFFF76707)],
+              colors: [Color(0xFFFFB020), Color(0xFFF97316)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
@@ -234,13 +273,13 @@ class _DailyTabState extends State<DailyTab> {
             boxShadow: [
               // 3D 实体偏置底座
               const BoxShadow(
-                color: Color(0xFFC04B02),
+                color: Color(0xFFC2410C),
                 offset: Offset(0, 3.5),
                 blurRadius: 0,
               ),
               // 软阴影
               BoxShadow(
-                color: const Color(0xFFF76707).withOpacity(0.3),
+                color: const Color(0xFFF97316).withOpacity(0.28),
                 blurRadius: 8,
                 offset: const Offset(0, 3),
               ),
@@ -276,10 +315,9 @@ class _DailyTabState extends State<DailyTab> {
   Widget _buildDailyCabinCard(bool isDark) {
     final progress = _completedSteps / _totalSteps;
 
-    // 渐变色：浅色模式下为活力黄到橙黄的渐变，深色模式为卡片深灰
-    final gradientColors = isDark
-        ? null
-        : const [Color(0xFFFFD43B), Color(0xFFFF9E1B)];
+    // 渐变色：浅色模式下使用干净暖橘，深色模式为卡片深灰
+    final gradientColors =
+        isDark ? null : const [Color(0xFFFFC857), Color(0xFFF97316)];
 
     return Container(
       padding: const EdgeInsets.all(24),
@@ -294,13 +332,13 @@ class _DailyTabState extends State<DailyTab> {
         color: gradientColors == null ? AppColors.darkCard : null,
         borderRadius: BorderRadius.circular(28), // 特大圆角
         border: Border.all(
-          color: isDark ? const Color(0xFF2B3035) : const Color(0xFFFFF3BF),
+          color: isDark ? const Color(0xFF2B3035) : const Color(0xFFFFE4B5),
           width: 1.5,
         ),
         boxShadow: [
           // 3D 实体偏置底座
           BoxShadow(
-            color: isDark ? const Color(0xFF1E2124) : const Color(0xFFE67E22),
+            color: isDark ? const Color(0xFF1E2124) : const Color(0xFFC2410C),
             offset: const Offset(0, 5),
             blurRadius: 0,
           ),
@@ -308,7 +346,7 @@ class _DailyTabState extends State<DailyTab> {
           BoxShadow(
             color: isDark
                 ? Colors.black.withOpacity(0.3)
-                : const Color(0xFFF76707).withOpacity(0.18),
+                : const Color(0xFFF97316).withOpacity(0.18),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -323,7 +361,7 @@ class _DailyTabState extends State<DailyTab> {
                 progress: progress,
                 size: 84,
                 strokeWidth: 8,
-                progressColor: isDark ? AppColors.primary : Colors.white,
+                progressColor: isDark ? const Color(0xFFF97316) : Colors.white,
                 backgroundColor: isDark
                     ? Colors.grey.shade800
                     : Colors.white.withOpacity(0.25),
@@ -335,7 +373,7 @@ class _DailyTabState extends State<DailyTab> {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white : const Color(0xFF5C3C00),
+                        color: Colors.white,
                       ),
                     ),
                     Text(
@@ -343,7 +381,7 @@ class _DailyTabState extends State<DailyTab> {
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.white70 : const Color(0xFF8B5E00),
+                        color: Colors.white70,
                       ),
                     ),
                   ],
@@ -377,7 +415,8 @@ class _DailyTabState extends State<DailyTab> {
                                 }
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content: Text('请按顺序完成今日任务。当前应进行：${titles[activeIdx]}'),
+                                    content: Text(
+                                        '请按顺序完成今日任务。当前应进行：${titles[activeIdx]}'),
                                     duration: const Duration(seconds: 2),
                                   ),
                                 );
@@ -408,12 +447,15 @@ class _DailyTabState extends State<DailyTab> {
           ModernButton(
             text: _completedSteps == _totalSteps ? '今日已完成，点此复习' : '继续今日学习',
             width: double.infinity,
-            backgroundColor: isDark ? null : const Color(0xFF7F56FF), // 使用皇家紫强力颜色碰撞
+            gradientColors:
+                isDark ? null : const [Color(0xFFFFB020), Color(0xFFF97316)],
+            backgroundColor: isDark ? null : const Color(0xFFF97316),
             onPressed: _completedSteps == _totalSteps
                 ? () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const WrongAnswersScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const WrongAnswersScreen()),
                     ).then((_) {
                       setState(() {});
                     });
@@ -426,10 +468,11 @@ class _DailyTabState extends State<DailyTab> {
   }
 
   // 任务舱步骤项
-  Widget _buildStepRowCard(String title, bool isCompleted, bool isDark, {bool isActive = false, bool isLocked = false}) {
+  Widget _buildStepRowCard(String title, bool isCompleted, bool isDark,
+      {bool isActive = false, bool isLocked = false}) {
     Color cardColor = Colors.white.withOpacity(0.15);
     Color borderColor = Colors.white.withOpacity(0.2);
-    Color textColor = const Color(0xFF5C3C00);
+    Color textColor = Colors.white;
     Widget statusIcon = const SizedBox();
 
     if (isDark) {
@@ -441,25 +484,28 @@ class _DailyTabState extends State<DailyTab> {
     if (isCompleted) {
       if (!isDark) {
         cardColor = Colors.white.withOpacity(0.3);
-        textColor = const Color(0xFF432C00);
+        textColor = Colors.white;
       }
-      statusIcon = const Icon(Icons.check_circle, color: Color(0xFF58CC02), size: 18); // 经典的 Duolingo 绿色对勾
+      statusIcon = const Icon(Icons.check_circle,
+          color: Color(0xFF58CC02), size: 18); // 经典的 Duolingo 绿色对勾
     } else if (isActive) {
       if (!isDark) {
         cardColor = Colors.white;
         borderColor = Colors.white;
-        textColor = const Color(0xFF7F56FF); // 皇家紫高亮
+        textColor = const Color(0xFFEA580C);
       }
       statusIcon = Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
         decoration: BoxDecoration(
-          color: isDark ? AppColors.primary.withOpacity(0.2) : const Color(0xFF7F56FF).withOpacity(0.15),
+          color: isDark
+              ? const Color(0xFFF97316).withOpacity(0.20)
+              : const Color(0xFFFFEDD5),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Text(
           '进行中',
           style: TextStyle(
-            color: isDark ? AppColors.primary : const Color(0xFF7F56FF),
+            color: const Color(0xFFEA580C),
             fontSize: 9,
             fontWeight: FontWeight.w800,
           ),
@@ -467,12 +513,12 @@ class _DailyTabState extends State<DailyTab> {
       );
     } else if (isLocked) {
       if (!isDark) {
-        textColor = const Color(0xFF8B5E00).withOpacity(0.6);
+        textColor = Colors.white.withOpacity(0.62);
         cardColor = Colors.white.withOpacity(0.08);
       }
       statusIcon = Icon(
         Icons.lock,
-        color: isDark ? Colors.white30 : const Color(0xFF8B5E00).withOpacity(0.6),
+        color: isDark ? Colors.white30 : Colors.white.withOpacity(0.58),
         size: 14,
       );
     }
@@ -494,7 +540,8 @@ class _DailyTabState extends State<DailyTab> {
             title,
             style: TextStyle(
               fontSize: 13,
-              fontWeight: (isActive || isCompleted) ? FontWeight.w800 : FontWeight.bold,
+              fontWeight:
+                  (isActive || isCompleted) ? FontWeight.w800 : FontWeight.bold,
               color: textColor,
             ),
           ),
@@ -518,10 +565,10 @@ class _DailyTabState extends State<DailyTab> {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF2C2514) : const Color(0xFFFFF9DB),
+          color: isDark ? const Color(0xFF2A1A12) : const Color(0xFFFFF7ED),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: isDark ? const Color(0xFF664D03) : const Color(0xFFFFEC99),
+            color: isDark ? const Color(0xFF7C2D12) : const Color(0xFFFFEDD5),
             width: 1,
           ),
         ),
@@ -529,7 +576,7 @@ class _DailyTabState extends State<DailyTab> {
           children: [
             const Icon(
               Icons.flash_on,
-              color: Color(0xFFF76707),
+              color: Color(0xFFF97316),
               size: 20,
             ),
             const SizedBox(width: 10),
@@ -537,7 +584,9 @@ class _DailyTabState extends State<DailyTab> {
               child: Text(
                 '温故知新：还有 $_pendingReviewCount 个单词需要复习，点击立即消灭！',
                 style: TextStyle(
-                  color: isDark ? const Color(0xFFFFD43B) : const Color(0xFFE67E22),
+                  color: isDark
+                      ? const Color(0xFFFED7AA)
+                      : const Color(0xFFEA580C),
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),
@@ -545,7 +594,7 @@ class _DailyTabState extends State<DailyTab> {
             ),
             Icon(
               Icons.chevron_right,
-              color: isDark ? const Color(0xFFFFD43B) : const Color(0xFFE67E22),
+              color: isDark ? const Color(0xFFFED7AA) : const Color(0xFFEA580C),
               size: 18,
             ),
           ],
@@ -566,13 +615,13 @@ class _DailyTabState extends State<DailyTab> {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: const LinearGradient(
-              colors: [Color(0xFF7F56FF), Color(0xFF6C4EFA)],
+              colors: [Color(0xFFFFB020), Color(0xFFF97316)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF7F56FF).withOpacity(0.3),
+                color: const Color(0xFFF97316).withOpacity(0.24),
                 blurRadius: 8,
                 offset: const Offset(0, 3),
               ),
@@ -600,13 +649,16 @@ class _DailyTabState extends State<DailyTab> {
                 bottomRight: Radius.circular(24),
               ),
               border: Border.all(
-                color: isDark ? const Color(0xFF2B3035) : const Color(0xFFE5E7EB),
+                color:
+                    isDark ? const Color(0xFF2B3035) : const Color(0xFFE5E7EB),
                 width: 1.5,
               ),
               boxShadow: [
                 // 3D 实体偏置底座
                 BoxShadow(
-                  color: isDark ? const Color(0xFF1E2124) : const Color(0xFFD1D5DB),
+                  color: isDark
+                      ? const Color(0xFF1E2124)
+                      : const Color(0xFFD1D5DB),
                   offset: const Offset(0, 4),
                   blurRadius: 0,
                 ),
@@ -622,7 +674,7 @@ class _DailyTabState extends State<DailyTab> {
                       children: [
                         Icon(
                           Icons.format_quote,
-                          color: isDark ? AppColors.primary : const Color(0xFF7F56FF),
+                          color: Color(0xFFF97316),
                           size: 18,
                         ),
                         const SizedBox(width: 6),
@@ -640,10 +692,11 @@ class _DailyTabState extends State<DailyTab> {
                       constraints: const BoxConstraints(),
                       icon: Icon(
                         Icons.volume_up,
-                        color: isDark ? AppColors.primary : const Color(0xFF7F56FF),
+                        color: Color(0xFFF97316),
                         size: 20,
                       ),
-                      onPressed: _speakQuote,
+                      onPressed: () => _speakQuote(
+                          'The limits of my language mean the limits of my world.'),
                     ),
                   ],
                 ),
@@ -663,7 +716,9 @@ class _DailyTabState extends State<DailyTab> {
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
+                    color: isDark
+                        ? AppColors.darkTextSecondary
+                        : AppColors.lightTextSecondary,
                     height: 1.4,
                   ),
                 ),
@@ -677,6 +732,9 @@ class _DailyTabState extends State<DailyTab> {
 
   // 5. 快捷工具网格
   Widget _buildQuickActionsGrid(BuildContext context, bool isDark) {
+    final favoriteCount = storageService.getFavorites().length;
+    final wrongAnswersCount = storageService.getWrongAnswers().length;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -694,15 +752,18 @@ class _DailyTabState extends State<DailyTab> {
               child: _buildActionTile(
                 Icons.book,
                 '生词本',
-                '34个生词',
+                '$favoriteCount个单词',
                 const Color(0xFF20C997), // 翠绿
                 isDark ? const Color(0xFF163229) : const Color(0xFFE8F9F5),
                 isDark,
                 () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const FavoritesScreen()),
-                  );
+                    MaterialPageRoute(
+                        builder: (context) => const FavoritesScreen()),
+                  ).then((_) {
+                    setState(() {});
+                  });
                 },
               ),
             ),
@@ -711,15 +772,18 @@ class _DailyTabState extends State<DailyTab> {
               child: _buildActionTile(
                 Icons.rule,
                 '错题集',
-                '5道错题',
+                '$wrongAnswersCount道错题',
                 const Color(0xFFFF4E73), // 亮粉
                 isDark ? const Color(0xFF3B1820) : const Color(0xFFFFF0F3),
                 isDark,
                 () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const WrongAnswersScreen()),
-                  );
+                    MaterialPageRoute(
+                        builder: (context) => const WrongAnswersScreen()),
+                  ).then((_) {
+                    setState(() {});
+                  });
                 },
               ),
             ),
@@ -735,8 +799,11 @@ class _DailyTabState extends State<DailyTab> {
                 () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ReadingHistoryScreen()),
-                  );
+                    MaterialPageRoute(
+                        builder: (context) => const ReadingHistoryScreen()),
+                  ).then((_) {
+                    setState(() {});
+                  });
                 },
               ),
             ),
@@ -758,15 +825,19 @@ class _DailyTabState extends State<DailyTab> {
     // 3D 边框色
     final borderColor = isDark
         ? const Color(0xFF2B3035)
-        : HSLColor.fromColor(bgBackgroundColor).withLightness(
-            (HSLColor.fromColor(bgBackgroundColor).lightness - 0.08).clamp(0.0, 1.0)
-          ).toColor();
+        : HSLColor.fromColor(bgBackgroundColor)
+            .withLightness(
+                (HSLColor.fromColor(bgBackgroundColor).lightness - 0.08)
+                    .clamp(0.0, 1.0))
+            .toColor();
 
     final bottomColor = isDark
         ? const Color(0xFF1E2124)
-        : HSLColor.fromColor(bgBackgroundColor).withLightness(
-            (HSLColor.fromColor(bgBackgroundColor).lightness - 0.16).clamp(0.0, 1.0)
-          ).toColor();
+        : HSLColor.fromColor(bgBackgroundColor)
+            .withLightness(
+                (HSLColor.fromColor(bgBackgroundColor).lightness - 0.16)
+                    .clamp(0.0, 1.0))
+            .toColor();
 
     return InkWell(
       onTap: onTap,
@@ -811,7 +882,11 @@ class _DailyTabState extends State<DailyTab> {
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : HSLColor.fromColor(brandColor).withLightness(0.3).toColor(),
+                color: isDark
+                    ? Colors.white
+                    : HSLColor.fromColor(brandColor)
+                        .withLightness(0.3)
+                        .toColor(),
               ),
             ),
             const SizedBox(height: 2),
@@ -820,7 +895,11 @@ class _DailyTabState extends State<DailyTab> {
               style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
-                color: isDark ? AppColors.darkTextSecondary : HSLColor.fromColor(brandColor).withLightness(0.4).toColor(),
+                color: isDark
+                    ? AppColors.darkTextSecondary
+                    : HSLColor.fromColor(brandColor)
+                        .withLightness(0.4)
+                        .toColor(),
               ),
             ),
           ],

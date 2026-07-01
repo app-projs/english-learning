@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/word.dart';
 import '../services/storage_service.dart';
+import '../services/audio_service.dart';
 
 class WordPracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -30,10 +31,17 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
 
   Future<void> _initStorage() async {
     _storageService = await StorageService.getInstance();
+    if (mounted) {
+      setState(() {
+        _favorites.addAll(_storageService?.getFavorites() ?? {});
+      });
+      AudioService.instance.speak(_practiceWords[_currentIndex].english);
+    }
   }
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }
@@ -98,14 +106,18 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
     ];
   }
 
-  void _toggleFavorite(String wordId) {
-    setState(() {
-      if (_favorites.contains(wordId)) {
+  void _toggleFavorite(String wordId) async {
+    if (_favorites.contains(wordId)) {
+      setState(() {
         _favorites.remove(wordId);
-      } else {
+      });
+      await _storageService?.removeFavorite(wordId);
+    } else {
+      setState(() {
         _favorites.add(wordId);
-      }
-    });
+      });
+      await _storageService?.addFavorite(wordId);
+    }
   }
 
   void _nextWord() {
@@ -115,6 +127,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
       _selectedAnswer = null;
       _isCorrect = false;
     });
+    AudioService.instance.speak(_practiceWords[_currentIndex].english);
   }
 
   void _previousWord() {
@@ -125,6 +138,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
       _selectedAnswer = null;
       _isCorrect = false;
     });
+    AudioService.instance.speak(_practiceWords[_currentIndex].english);
   }
 
   void _checkAnswer(String answer) {
@@ -234,13 +248,23 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      Text(
-                        word.phonetic,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
+                      const SizedBox(height: 12),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            word.phonetic,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          IconButton(
+                            icon: const Icon(Icons.volume_up, color: Colors.blue),
+                            onPressed: () => AudioService.instance.speak(word.english),
+                          ),
+                        ],
                       ),
                       if (_showAnswer) ...[
                         const SizedBox(height: 32),

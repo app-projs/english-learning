@@ -78,3 +78,7 @@ Currently using standard **`StatefulWidget`** for local state.
 2. **Check `lib/mock/`** when implementing new UI features to see available test data.
 3. **Update `docs/plan/development-progress.md`** when completing a major milestone or fixing significant tech debt.
 4. **Run `flutter analyze`** before finishing any task to ensure no linting regressions.
+
+
+## 工程化检查
+1. ** 每次做完一个功能需要检查对应plan，然后更新进度

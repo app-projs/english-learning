@@ -6,7 +6,7 @@ class ThemeService {
 
   ThemeService(this._storage);
 
-  static const Color _primaryColor = Color(0xFF7F56FF); // 皇家紫
+  static const Color _primaryColor = Color(0xFF2563EB); // 经典蓝
   static const Color _secondaryColor = Color(0xFF20C997); // 翠绿
   static const Color _accentColor = Color(0xFFFF9E1B); // 活力黄/橙
 
@@ -19,9 +19,9 @@ class ThemeService {
       primary: _primaryColor,
       secondary: _secondaryColor,
       tertiary: _accentColor,
-      surface: const Color(0xFFF6F5FF),
+      surface: const Color(0xFFF1F5F9),
     ),
-    scaffoldBackgroundColor: const Color(0xFFF6F5FF),
+    scaffoldBackgroundColor: const Color(0xFFF1F5F9),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -34,7 +34,7 @@ class ThemeService {
         fontWeight: FontWeight.w600,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
@@ -108,7 +108,7 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       labelColor: _primaryColor,
       unselectedLabelColor: Color(0xFF868E96),
       indicatorColor: _primaryColor,
@@ -151,7 +151,7 @@ class ThemeService {
         fontWeight: FontWeight.w600,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
@@ -219,7 +219,7 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       labelColor: _primaryColor,
       unselectedLabelColor: Color(0xFF495057),
       indicatorColor: _primaryColor,
@@ -254,7 +254,7 @@ class ThemeService {
 }
 
 class AppColors {
-  static const Color primary = Color(0xFF7F56FF);
+  static const Color primary = Color(0xFF2563EB);
   static const Color secondary = Color(0xFF20C997);
   static const Color accent = Color(0xFFFF9E1B);
   static const Color error = Color(0xFFFF4E73);
@@ -262,7 +262,7 @@ class AppColors {
   static const Color success = Color(0xFF58CC02);
   static const Color info = Color(0xFF228BE6);
 
-  static const Color lightBackground = Color(0xFFF6F5FF);
+  static const Color lightBackground = Color(0xFFF1F5F9);
   static const Color lightSurface = Color(0xFFFFFFFF);
   static const Color lightCard = Color(0xFFFFFFFF);
 
@@ -276,8 +276,8 @@ class AppColors {
   static const Color darkTextSecondary = Color(0xFFADB5BD);
 
   static const List<Color> gradientPrimary = [
-    Color(0xFF7F56FF),
-    Color(0xFF6C4EFA),
+    Color(0xFF2563EB),
+    Color(0xFF1D4ED8),
   ];
 
   static const List<Color> gradientSuccess = [

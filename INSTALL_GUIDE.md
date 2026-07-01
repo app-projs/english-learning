@@ -19,81 +19,92 @@
 
 ### 1. 设置环境变量
 
-每次打开新的终端窗口时，需要运行：
+每次打开新的终端窗口时，需要确保 `flutter` 在你的 PATH 路径中（如果尚未配置全局环境变量）：
 
+**macOS:**
+```bash
+# 检查 flutter 命令是否可用，如果不可用可以配置到 ~/.zshrc 或 ~/.bash_profile 中
+# 例如：export PATH="$HOME/development/flutter/bin:$PATH"
+```
+
+**Windows:**
 ```bash
 # 临时添加Flutter到PATH
 export PATH="/c/tools/flutter/bin:$PATH"
 
-# 或者添加到系统环境变量中
-# Windows系统设置 → 环境变量 → 系统变量 → Path
+# 或者添加到系统环境变量中：Windows系统设置 → 环境变量 → 系统变量 → Path
 # 添加: C:\tools\flutter\bin
 ```
 
 ### 2. 常用Flutter命令
 
 ```bash
-# 检查Flutter状态
+# 检查Flutter环境状态
 flutter doctor
 
 # 安装依赖
 flutter pub get
 
-# 运行项目
-flutter run -d windows    # Windows桌面版
-flutter run -d chrome     # Web版
+# 查看可用预览设备
+flutter devices
 
-# 代码检查
+# 查看已配置的模拟器列表
+flutter emulators
+
+# 启动指定的模拟器 (例如系统已配置的 Pixel_8_Pro)
+flutter emulators --launch Pixel_8_Pro
+
+# 运行项目到指定设备
+flutter run -d chrome        # Web版 (Chrome)
+flutter run -d emulator-5554 # 安卓模拟器版 (或者使用 -d android)
+flutter run -d macos         # macOS桌面版 (需Xcode环境)
+flutter run -d windows       # Windows桌面版 (需Windows环境)
+
+# 代码检查与格式化
 flutter analyze
-
-# 代码格式化
 flutter format .
 
-# 清理项目
+# 清理缓存/项目
 flutter clean
-
-# 运行测试
-flutter test
 ```
 
-### 3. 项目开发工作流
+### 3. 项目开发工作流 (以 macOS 模拟器开发为例)
 
 #### 日常开发
 ```bash
-cd D:\workspace\test\flutter-app
+cd /Users/admin/Documents/workspace/code/english-learning
 
-# 1. 安装依赖（如果添加了新的依赖）
-flutter pub get
+# 1. 启动安卓模拟器
+flutter emulators --launch Pixel_8_Pro
 
 # 2. 运行项目
-flutter run -d windows
+flutter run -d emulator-5554
 
-# 3. 在运行中的热重载
-# 按 'r' 键热重载
-# 按 'R' 键热重启
+# 3. 在运行中修改代码后，在终端按 'r' 键进行热重载 (Hot Reload)
 ```
 
-#### 代码修改后
+#### 代码修改后检查
 ```bash
 # 检查代码问题
 flutter analyze
 
 # 格式化代码
 flutter format .
-
-# 重新运行
-flutter run -d windows
 ```
 
-## 📱 当前可用设备
+## 📱 预览与设备配置
 
-你的系统上有以下设备可以运行Flutter应用：
+### 1. 模拟器管理小工具推荐 (macOS)
+除了通过终端命令启动外，推荐安装 **MiniSim** 菜单栏工具。它极其轻量，可以直接从 macOS 顶部菜单栏一键唤醒 Android/iOS 模拟器：
+```bash
+brew install --cask minisim
+```
 
-```
-Windows (desktop) • windows • windows-x64
-Chrome (web)      • chrome  • web-javascript  
-Edge (web)        • edge    • web-javascript
-```
+### 2. 系统当前可用设备列表 (macOS)
+在 macOS 系统上，以下设备已经就绪：
+- **Chrome (web)**: `chrome` (Web预览)
+- **Android Emulator (mobile)**: `Pixel_8_Pro` (可通过命令 `flutter emulators --launch Pixel_8_Pro` 启动)
+- **macOS (desktop)**: `macos` (原生 macOS 桌面版，需 Xcode 配置完毕)
 
 ## 🔧 IDE配置建议
 

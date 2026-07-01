@@ -1,11 +1,11 @@
 {
-    "name": "flutter_app",
-    "short_name": "flutter_app",
+    "name": "lumina English",
+    "short_name": "露米娜英语",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFFDFB",
+    "theme_color": "#7B7CF6",
+    "description": "露米娜英语 / lumina English",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

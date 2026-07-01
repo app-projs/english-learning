@@ -9,32 +9,32 @@ class UserService {
   UserService(this._storage);
 
   Future<UserProfile> getUserProfile() async {
-    if (_useMockData) {
-      final mockData = MockUser.getUserProfile();
-      final progress = _storage.getLearningProgress();
-      final streak = _storage.getStreakDays();
-
-      return UserProfile(
-        id: mockData['id'],
-        name: mockData['name'],
-        avatar: mockData['avatar'],
-        totalDays: progress['totalDays'] ?? mockData['totalDays'],
-        totalWords: progress['totalWords'] ?? mockData['totalWords'],
-        totalSentences:
-            progress['totalSentences'] ?? mockData['totalSentences'],
-        totalDialogues:
-            progress['totalDialogues'] ?? mockData['totalDialogues'],
-        totalMinutes: progress['totalMinutes'] ?? mockData['totalMinutes'],
-        streakDays: streak,
-        wordsGoal: mockData['wordsGoal'],
-        sentencesGoal: mockData['sentencesGoal'],
-        dialoguesGoal: mockData['dialoguesGoal'],
-        joinedDate: DateTime.parse(mockData['joinedDate']),
-      );
+    Map<String, dynamic>? profileMap = _storage.getUserProfile();
+    if (profileMap == null) {
+      profileMap = MockUser.getUserProfile();
+      await _storage.saveUserProfile(profileMap);
     }
-    // Future: fetch from API or local DB
-    final mockData = MockUser.getUserProfile();
-    return UserProfile.fromJson(mockData);
+
+    final progress = _storage.getLearningProgress();
+    final streak = _storage.getStreakDays();
+
+    return UserProfile(
+      id: profileMap['id'] ?? '1',
+      name: profileMap['name'] ?? '英语学习者',
+      avatar: profileMap['avatar'],
+      totalDays: progress['totalDays'] ?? profileMap['totalDays'] ?? 15,
+      totalWords: progress['totalWords'] ?? profileMap['totalWords'] ?? 256,
+      totalSentences:
+          progress['totalSentences'] ?? profileMap['totalSentences'] ?? 89,
+      totalDialogues:
+          progress['totalDialogues'] ?? profileMap['totalDialogues'] ?? 12,
+      totalMinutes: progress['totalMinutes'] ?? profileMap['totalMinutes'] ?? 320,
+      streakDays: streak,
+      wordsGoal: profileMap['wordsGoal'] ?? 500,
+      sentencesGoal: profileMap['sentencesGoal'] ?? 200,
+      dialoguesGoal: profileMap['dialoguesGoal'] ?? 50,
+      joinedDate: DateTime.parse(profileMap['joinedDate'] ?? '2026-01-28'),
+    );
   }
 
   Future<List<ActivityRecord>> getRecentActivity() async {
@@ -48,13 +48,63 @@ class UserService {
   Future<List<Achievement>> getAchievements() async {
     if (_useMockData) {
       final mockData = MockUser.getAchievements();
-      return mockData.map((e) => Achievement.fromJson(e)).toList();
+      final progress = _storage.getLearningProgress();
+      final streak = _storage.getStreakDays();
+      
+      final totalWords = progress['totalWords'] ?? 256;
+      final totalSentences = progress['totalSentences'] ?? 89;
+      final totalDialogues = progress['totalDialogues'] ?? 12;
+
+      return mockData.map((e) {
+        bool unlocked = e['unlocked'] ?? false;
+        final id = e['id'];
+        if (id == '1') {
+          unlocked = true; // Complete first study (always unlocked)
+        } else if (id == '2') {
+          unlocked = streak >= 3; // Streak 3 days
+        } else if (id == '3') {
+          unlocked = totalWords >= 100; // Words >= 100
+        } else if (id == '4') {
+          unlocked = streak >= 7; // Streak 7 days
+        } else if (id == '5') {
+          unlocked = totalSentences >= 200; // Sentences >= 200
+        } else if (id == '6') {
+          unlocked = totalDialogues >= 50; // Dialogues >= 50
+        }
+        return Achievement(
+          id: id,
+          name: e['name'],
+          description: e['description'],
+          icon: e['icon'],
+          unlocked: unlocked,
+        );
+      }).toList();
     }
     return [];
   }
 
   Future<void> updateUserName(String name) async {
-    // TODO: Save to storage
+    Map<String, dynamic>? profileMap = _storage.getUserProfile();
+    if (profileMap == null) {
+      profileMap = MockUser.getUserProfile();
+    }
+    profileMap['name'] = name;
+    await _storage.saveUserProfile(profileMap);
+  }
+
+  Future<void> updateUserGoals({
+    required int wordsGoal,
+    required int sentencesGoal,
+    required int dialoguesGoal,
+  }) async {
+    Map<String, dynamic>? profileMap = _storage.getUserProfile();
+    if (profileMap == null) {
+      profileMap = MockUser.getUserProfile();
+    }
+    profileMap['wordsGoal'] = wordsGoal;
+    profileMap['sentencesGoal'] = sentencesGoal;
+    profileMap['dialoguesGoal'] = dialoguesGoal;
+    await _storage.saveUserProfile(profileMap);
   }
 
   Future<Map<String, dynamic>> getSettings() async {
@@ -69,3 +119,4 @@ class UserService {
     await _storage.updateSetting(key, value);
   }
 }
+

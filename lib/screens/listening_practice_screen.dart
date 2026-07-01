@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/storage_service.dart';
+import '../services/audio_service.dart';
 
 class ListeningPracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -113,7 +114,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
       'title': '购物场景',
       'description': '商场购物对话',
       'icon': Icons.shopping_bag,
-      'color': Colors.purple,
+      'color': Colors.indigo,
       'difficulty': '简单',
       'questions': [
         {
@@ -179,6 +180,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }
@@ -199,7 +201,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
     setState(() {
       _isPlaying = true;
     });
-    Future.delayed(const Duration(seconds: 3), () {
+    AudioService.instance.speak(text, onComplete: () {
       if (mounted) {
         setState(() {
           _isPlaying = false;
