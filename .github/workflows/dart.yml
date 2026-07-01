@@ -1,9 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Dart
+name: Flutter CI
 
 on:
   push:
@@ -16,24 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 拉取你的代码
+      # 1. 拉取代码
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      # 2. 关键步骤：设置 Dart 环境
-      - name: Setup Dart SDK
-        uses: dart-lang/setup-dart@v1
+      # 2. 关键步骤：设置 Flutter 环境 (它会自动包含正确的 Dart 环境)
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable' # 使用稳定的 Flutter 版本
 
-      # 3. 安装依赖
+      # 3. 安装依赖 (使用 flutter 命令)
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
-      # 4. 运行你需要的后续命令（如分析或测试）
+      # 4. 验证代码格式 (Flutter 也有对应的格式化命令)
       - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
+        run: flutter format --output=none --set-exit-if-changed .
 
+      # 5. 代码分析
       - name: Analyze project source
-        run: dart analyze
+        run: flutter analyze
 
+      # 6. 运行测试 (使用 flutter test 兼容平台相关的测试)
       - name: Run tests
-        run: dart test
+        run: flutter test
