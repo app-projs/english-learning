@@ -235,7 +235,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           width: 46,
           height: 46,
           decoration: BoxDecoration(
-            color: LuminaColors.primary.withValues(alpha: 0.1),
+            color: LuminaColors.primary.withOpacity(0.1),
             shape: BoxShape.circle,
           ),
           child: const Icon(
@@ -254,9 +254,9 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.55),
+            color: Colors.white.withOpacity(0.55),
             borderRadius: BorderRadius.circular(28),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.6)),
+            border: Border.all(color: Colors.white.withOpacity(0.6)),
           ),
           child: const Row(
             mainAxisSize: MainAxisSize.min,
@@ -282,12 +282,12 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
     return Container(
       padding: const EdgeInsets.fromLTRB(24, 22, 20, 22),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.72),
+        color: Colors.white.withOpacity(0.72),
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.75)),
+        border: Border.all(color: Colors.white.withOpacity(0.75)),
         boxShadow: [
           BoxShadow(
-            color: LuminaColors.primary.withValues(alpha: 0.08),
+            color: LuminaColors.primary.withOpacity(0.08),
             blurRadius: 32,
             offset: const Offset(0, 14),
           ),
@@ -329,7 +329,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                       width: 1,
                       height: 34,
                       margin: const EdgeInsets.symmetric(horizontal: 20),
-                      color: LuminaColors.outline.withValues(alpha: 0.22),
+                      color: LuminaColors.outline.withOpacity(0.22),
                     ),
                     _buildMyMetric('连续学习', '7 天', LuminaColors.tertiary),
                   ],
@@ -342,7 +342,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
             width: 98,
             height: 76,
             decoration: BoxDecoration(
-              color: LuminaColors.primary.withValues(alpha: 0.08),
+              color: LuminaColors.primary.withOpacity(0.08),
               borderRadius: BorderRadius.circular(22),
             ),
             child: Stack(
@@ -351,7 +351,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                 Icon(
                   Icons.leaderboard_rounded,
                   size: 46,
-                  color: LuminaColors.primary.withValues(alpha: 0.16),
+                  color: LuminaColors.primary.withOpacity(0.16),
                 ),
                 const Icon(
                   Icons.emoji_events_rounded,
@@ -375,7 +375,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
-            color: LuminaColors.onSurface.withValues(alpha: 0.72),
+            color: LuminaColors.onSurface.withOpacity(0.72),
           ),
         ),
         const SizedBox(height: 4),
@@ -396,7 +396,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: LuminaColors.outline.withValues(alpha: 0.16),
+            color: LuminaColors.outline.withOpacity(0.16),
           ),
         ),
       ),
@@ -420,7 +420,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                             isSelected ? FontWeight.w800 : FontWeight.w600,
                         color: isSelected
                             ? LuminaColors.primary
-                            : LuminaColors.onSurface.withValues(alpha: 0.74),
+                            : LuminaColors.onSurface.withOpacity(0.74),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -478,7 +478,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
     };
     final cardColor = user.rank == 1
         ? const Color(0xFFFFDDC5)
-        : Colors.white.withValues(alpha: 0.72);
+        : Colors.white.withOpacity(0.72);
 
     return InkWell(
       borderRadius: BorderRadius.circular(24),
@@ -501,14 +501,14 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                      color: rankColor.withValues(alpha: 0.55), width: 4),
+                      color: rankColor.withOpacity(0.55), width: 4),
                   image: DecorationImage(
                     image: NetworkImage(user.avatarUrl),
                     fit: BoxFit.cover,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: rankColor.withValues(alpha: 0.28),
+                      color: rankColor.withOpacity(0.28),
                       blurRadius: 16,
                       offset: const Offset(0, 8),
                     ),
@@ -548,10 +548,10 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
               color: cardColor,
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(16)),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.7)),
+              border: Border.all(color: Colors.white.withOpacity(0.7)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.04),
+                  color: Colors.black.withOpacity(0.04),
                   blurRadius: 16,
                   offset: const Offset(0, 8),
                 ),
@@ -623,9 +623,9 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
       width: 34,
       height: 34,
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.14),
+        color: color.withOpacity(0.14),
         shape: BoxShape.circle,
-        border: Border.all(color: color.withValues(alpha: 0.35)),
+        border: Border.all(color: color.withOpacity(0.35)),
       ),
       child: Icon(
         rank == 2 ? Icons.diamond_rounded : Icons.auto_awesome_rounded,
@@ -658,11 +658,11 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
 
   Widget _buildRankingRow(_LeaderboardUser user, {bool isPinned = false}) {
     final backgroundColor = isPinned
-        ? LuminaColors.primary.withValues(alpha: 0.13)
-        : Colors.white.withValues(alpha: 0.72);
+        ? LuminaColors.primary.withOpacity(0.13)
+        : Colors.white.withOpacity(0.72);
     final borderColor = isPinned
-        ? LuminaColors.primary.withValues(alpha: 0.22)
-        : Colors.white.withValues(alpha: 0.65);
+        ? LuminaColors.primary.withOpacity(0.22)
+        : Colors.white.withOpacity(0.65);
 
     return Material(
       color: Colors.transparent,
@@ -696,7 +696,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                     fontWeight: FontWeight.w700,
                     color: isPinned
                         ? LuminaColors.primary
-                        : LuminaColors.onSurface.withValues(alpha: 0.8),
+                        : LuminaColors.onSurface.withOpacity(0.8),
                   ),
                 ),
               ),
@@ -754,7 +754,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                           Icons.local_fire_department_rounded,
                           size: 14,
                           color:
-                              const Color(0xFFFF7A1A).withValues(alpha: 0.88),
+                              const Color(0xFFFF7A1A).withOpacity(0.88),
                         ),
                         const SizedBox(width: 3),
                         Flexible(
@@ -766,7 +766,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: LuminaColors.onSurface
-                                  .withValues(alpha: 0.52),
+                                  .withOpacity(0.52),
                             ),
                           ),
                         ),
@@ -788,7 +788,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
               const SizedBox(width: 8),
               Icon(
                 Icons.chevron_right_rounded,
-                color: LuminaColors.outline.withValues(alpha: 0.78),
+                color: LuminaColors.outline.withOpacity(0.78),
               ),
             ],
           ),
@@ -816,7 +816,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           height: 7,
           margin: const EdgeInsets.symmetric(horizontal: 3),
           decoration: BoxDecoration(
-            color: LuminaColors.outline.withValues(alpha: 0.28),
+            color: LuminaColors.outline.withOpacity(0.28),
             shape: BoxShape.circle,
           ),
         ),
@@ -832,15 +832,15 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            const Color(0xFFDDF1FF).withValues(alpha: 0.96),
-            const Color(0xFFEFF4FF).withValues(alpha: 0.8),
+            const Color(0xFFDDF1FF).withOpacity(0.96),
+            const Color(0xFFEFF4FF).withOpacity(0.8),
           ],
         ),
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.6)),
+        border: Border.all(color: Colors.white.withOpacity(0.6)),
         boxShadow: [
           BoxShadow(
-            color: LuminaColors.tertiary.withValues(alpha: 0.08),
+            color: LuminaColors.tertiary.withOpacity(0.08),
             blurRadius: 28,
             offset: const Offset(0, 12),
           ),
@@ -877,7 +877,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                     fontSize: 16,
                     height: 1.65,
                     fontWeight: FontWeight.w600,
-                    color: LuminaColors.tertiary.withValues(alpha: 0.9),
+                    color: LuminaColors.tertiary.withOpacity(0.9),
                   ),
                 ),
               ],
@@ -888,7 +888,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
             width: 58,
             height: 58,
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.76),
+              color: Colors.white.withOpacity(0.76),
               shape: BoxShape.circle,
             ),
             child: const Icon(
@@ -937,12 +937,12 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.78),
+        color: Colors.white.withOpacity(0.78),
         borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.7)),
+        border: Border.all(color: Colors.white.withOpacity(0.7)),
         boxShadow: [
           BoxShadow(
-            color: LuminaColors.primary.withValues(alpha: 0.08),
+            color: LuminaColors.primary.withOpacity(0.08),
             blurRadius: 28,
             offset: const Offset(0, 12),
           ),
@@ -992,7 +992,7 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
             decoration: BoxDecoration(
-              color: LuminaColors.primary.withValues(alpha: 0.1),
+              color: LuminaColors.primary.withOpacity(0.1),
               borderRadius: BorderRadius.circular(99),
             ),
             child: Text(
@@ -1036,9 +1036,9 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.7),
+        color: Colors.white.withOpacity(0.7),
         borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.6)),
+        border: Border.all(color: Colors.white.withOpacity(0.6)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1047,7 +1047,7 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              color: LuminaColors.onSurface.withValues(alpha: 0.56),
+              color: LuminaColors.onSurface.withOpacity(0.56),
               fontWeight: FontWeight.w700,
               fontSize: 13,
             ),
@@ -1076,9 +1076,9 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.72),
+        color: Colors.white.withOpacity(0.72),
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.62)),
+        border: Border.all(color: Colors.white.withOpacity(0.62)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1101,7 +1101,7 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
                     width: 34,
                     height: 34,
                     decoration: BoxDecoration(
-                      color: LuminaColors.success.withValues(alpha: 0.12),
+                      color: LuminaColors.success.withOpacity(0.12),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(

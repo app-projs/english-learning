@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'screens/lumina_home_screen.dart';
+import 'screens/splash_screen.dart';
 import 'theme/lumina_theme.dart';
 import 'services/storage_service.dart';
 import 'services/word_service.dart';
@@ -72,7 +73,7 @@ class _EnglishLearningAppState extends State<EnglishLearningApp> {
     return MaterialApp(
       title: 'lumina English',
       theme: _isDarkMode ? ThemeService.darkTheme : LuminaTheme.lightTheme,
-      home: LuminaHomeScreen(
+      home: SplashScreen(
         isDarkMode: _isDarkMode,
         onThemeChanged: _toggleTheme,
       ),

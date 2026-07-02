@@ -78,7 +78,7 @@ class LuminaTheme {
           elevation: 0,
         ),
       ),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         color: Colors.white,
         elevation: 0,
         shape: RoundedRectangleBorder(
