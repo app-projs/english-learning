@@ -34,7 +34,7 @@ class ThemeService {
         fontWeight: FontWeight.w600,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
@@ -108,7 +108,7 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       labelColor: _primaryColor,
       unselectedLabelColor: Color(0xFF868E96),
       indicatorColor: _primaryColor,
@@ -151,7 +151,7 @@ class ThemeService {
         fontWeight: FontWeight.w600,
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
@@ -219,7 +219,7 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       labelColor: _primaryColor,
       unselectedLabelColor: Color(0xFF495057),
       indicatorColor: _primaryColor,
