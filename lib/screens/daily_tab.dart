@@ -11,6 +11,7 @@ import 'word_practice_screen.dart';
 import 'listening_practice_screen.dart';
 import 'sentence_practice_screen.dart';
 import 'article_detail_screen.dart';
+import 'completion_congratulation_screen.dart';
 import '../services/audio_service.dart';
 import '../models/user.dart';
 
@@ -93,24 +94,40 @@ class _DailyTabState extends State<DailyTab> {
     return true;
   }
 
+  void _showModuleCompletionScreen(String moduleTitle, {int earnedLp = 50}) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CompletionCongratulationScreen(
+          moduleTitle: moduleTitle,
+          earnedLp: earnedLp,
+          streakDays: 7,
+        ),
+      ),
+    );
+  }
+
   void _startPractice(int step) {
     Widget targetScreen;
     if (step == 0) {
       targetScreen = WordPracticeScreen(
         onCompleted: () {
           storageService.setDailyStepCompleted(0, true);
+          _showModuleCompletionScreen('单词记忆');
         },
       );
     } else if (step == 1) {
       targetScreen = ListeningPracticeScreen(
         onCompleted: () {
           storageService.setDailyStepCompleted(1, true);
+          _showModuleCompletionScreen('听力理解');
         },
       );
     } else if (step == 2) {
       targetScreen = SentencePracticeScreen(
         onCompleted: () {
           storageService.setDailyStepCompleted(2, true);
+          _showModuleCompletionScreen('长难句剖析');
         },
       );
     } else {
@@ -130,6 +147,7 @@ class _DailyTabState extends State<DailyTab> {
         article: sampleArticle,
         onCompleted: () {
           storageService.setDailyStepCompleted(3, true);
+          _showModuleCompletionScreen('文章精读');
         },
       );
     }
@@ -152,12 +170,7 @@ class _DailyTabState extends State<DailyTab> {
     }
 
     if (activeStep == -1) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('恭喜你！今日学习任务已全部完成！ 🎉'),
-          duration: Duration(seconds: 2),
-        ),
-      );
+      _showModuleCompletionScreen('今日全套大满贯', earnedLp: 200);
       return;
     }
 
@@ -222,14 +235,7 @@ class _DailyTabState extends State<DailyTab> {
               ),
             ],
           ),
-          child: CircleAvatar(
-            radius: 28,
-            backgroundColor: Colors.transparent,
-            backgroundImage: userAvatar != null && userAvatar.isNotEmpty
-                ? NetworkImage(userAvatar)
-                : const NetworkImage(
-                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&auto=format&fit=crop&q=80'),
-          ),
+          child: _buildAvatarWidget(userAvatar, displayName, radius: 28),
         ),
         const SizedBox(width: 16),
         // 欢迎词与学习目标
@@ -308,6 +314,76 @@ class _DailyTabState extends State<DailyTab> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildAvatarWidget(String? avatar, String name, {double radius = 28}) {
+    if (avatar != null && avatar.startsWith('preset_')) {
+      final emoji = _getPresetEmoji(avatar);
+      return CircleAvatar(
+        radius: radius,
+        backgroundColor: const Color(0xFFFFD6C8),
+        child: Text(emoji, style: TextStyle(fontSize: radius * 0.9)),
+      );
+    }
+
+    if (avatar != null && avatar.trim().isNotEmpty && (avatar.startsWith('http://') || avatar.startsWith('https://'))) {
+      return CircleAvatar(
+        radius: radius,
+        backgroundColor: const Color(0xFFFFD6C8),
+        child: ClipOval(
+          child: Image.network(
+            avatar,
+            width: radius * 2,
+            height: radius * 2,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              return _buildFallbackAvatar(name, radius);
+            },
+          ),
+        ),
+      );
+    }
+
+    return _buildFallbackAvatar(name, radius);
+  }
+
+  String _getPresetEmoji(String avatarKey) {
+    switch (avatarKey) {
+      case 'preset_1':
+        return '🎓';
+      case 'preset_2':
+        return '🦊';
+      case 'preset_3':
+        return '🚀';
+      case 'preset_4':
+        return '🦁';
+      case 'preset_5':
+        return '🤖';
+      case 'preset_6':
+        return '🐱';
+      case 'preset_7':
+        return '⚡️';
+      case 'preset_8':
+        return '🌸';
+      default:
+        return '🎓';
+    }
+  }
+
+  Widget _buildFallbackAvatar(String name, double radius) {
+    final firstChar = name.isNotEmpty ? name.substring(0, 1).toUpperCase() : 'L';
+    return CircleAvatar(
+      radius: radius,
+      backgroundColor: const Color(0xFFF97316),
+      child: Text(
+        firstChar,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: radius * 0.8,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 

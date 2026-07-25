@@ -307,12 +307,23 @@ class _DialoguePracticeScreenState extends State<DialoguePracticeScreen>
             : null,
         bottom: _practiceMode
             ? null
-            : TabBar(
-                controller: _tabController,
-                tabs: const [
-                  Tab(icon: Icon(Icons.list), text: '场景列表'),
-                  Tab(icon: Icon(Icons.play_circle), text: '对话演示'),
-                ],
+            : PreferredSize(
+                preferredSize: const Size.fromHeight(48),
+                child: TabBar(
+                  controller: _tabController,
+                  dividerColor: Colors.transparent,
+                  dividerHeight: 0,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicator: const UnderlineTabIndicator(
+                    borderSide: BorderSide(width: 3, color: Colors.blue),
+                    insets: EdgeInsets.symmetric(horizontal: 16),
+                    borderRadius: BorderRadius.all(Radius.circular(3)),
+                  ),
+                  tabs: const [
+                    Tab(icon: Icon(Icons.list, size: 20), text: '场景列表'),
+                    Tab(icon: Icon(Icons.play_circle, size: 20), text: '对话演示'),
+                  ],
+                ),
               ),
       ),
       body: _practiceMode

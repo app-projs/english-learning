@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../models/word.dart';
 import '../services/storage_service.dart';
 import '../services/audio_service.dart';
+import '../services/sm2_service.dart';
+import 'completion_congratulation_screen.dart';
+import 'goal_setting_screen.dart';
+import '../mock/mock_words.dart';
 
 class WordPracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -14,205 +18,186 @@ class WordPracticeScreen extends StatefulWidget {
 class _WordPracticeScreenState extends State<WordPracticeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  final List<Word> _practiceWords = _generateSampleWords();
+  List<Word> _practiceWords = [];
   final Set<String> _favorites = {};
   int _currentIndex = 0;
   bool _showAnswer = false;
   String? _selectedAnswer;
   bool _isCorrect = false;
   StorageService? _storageService;
+  final TextEditingController _spellingController = TextEditingController();
+  bool _showSpellingAnswer = false;
+  bool _isSpellingCorrect = false;
+  String _targetWordbook = '四级核心';
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     _initStorage();
   }
 
   Future<void> _initStorage() async {
     _storageService = await StorageService.getInstance();
+    final wb = _storageService?.getTargetWordbook() ?? '四级核心';
+    final words = MockWords.getWordsByCategory(wb);
+
     if (mounted) {
       setState(() {
+        _targetWordbook = wb;
+        _practiceWords = words;
+        _currentIndex = 0;
+        _showAnswer = false;
         _favorites.addAll(_storageService?.getFavorites() ?? {});
       });
-      AudioService.instance.speak(_practiceWords[_currentIndex].english);
+      if (_practiceWords.isNotEmpty) {
+        AudioService.instance.speak(_practiceWords[0].english);
+      }
     }
+  }
+
+  void _openGoalSettings() async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => GoalSettingScreen(
+          currentGoals: const {'words': 500, 'sentences': 200, 'dialogues': 50, 'dailyMinutes': 30},
+          onGoalsSaved: (goals) {},
+        ),
+      ),
+    );
+    _initStorage();
   }
 
   @override
   void dispose() {
     AudioService.instance.stop();
     _tabController.dispose();
+    _spellingController.dispose();
     super.dispose();
   }
 
-  static List<Word> _generateSampleWords() {
-    return [
-      Word(
-        id: '1',
-        english: 'abandon',
-        chinese: '放弃；遗弃',
-        phonetic: '/əˈbændən/',
-        synonyms: ['give up', 'desert'],
-        antonyms: ['keep', 'maintain'],
-        exampleSentence: 'Never abandon your dreams.',
-        createdAt: DateTime.now(),
-        masteryLevel: 0,
-      ),
-      Word(
-        id: '2',
-        english: 'benefit',
-        chinese: '利益；好处',
-        phonetic: '/ˈbenɪfɪt/',
-        synonyms: ['advantage', 'profit'],
-        antonyms: ['harm', 'loss'],
-        exampleSentence: 'Exercise has many health benefits.',
-        createdAt: DateTime.now(),
-        masteryLevel: 0,
-      ),
-      Word(
-        id: '3',
-        english: 'challenge',
-        chinese: '挑战',
-        phonetic: '/ˈtʃælɪndʒ/',
-        synonyms: ['difficulty', 'test'],
-        antonyms: ['ease', 'simpleness'],
-        exampleSentence: 'I accept the challenge.',
-        createdAt: DateTime.now(),
-        masteryLevel: 0,
-      ),
-      Word(
-        id: '4',
-        english: 'determine',
-        chinese: '决定；确定',
-        phonetic: '/dɪˈtɜːrmɪn/',
-        synonyms: ['decide', 'resolve'],
-        antonyms: ['hesitate', 'uncertain'],
-        exampleSentence: 'She determined to finish the project.',
-        createdAt: DateTime.now(),
-        masteryLevel: 0,
-      ),
-      Word(
-        id: '5',
-        english: 'essential',
-        chinese: '必要的；本质的',
-        phonetic: '/ɪˈsenʃl/',
-        synonyms: ['necessary', 'vital'],
-        antonyms: ['unnecessary', 'trivial'],
-        exampleSentence: 'Water is essential for life.',
-        createdAt: DateTime.now(),
-        masteryLevel: 0,
-      ),
-    ];
+  void _nextWord() {
+    if (_currentIndex < _practiceWords.length - 1) {
+      setState(() {
+        _currentIndex++;
+        _showAnswer = false;
+        _selectedAnswer = null;
+        _isCorrect = false;
+        _spellingController.clear();
+        _showSpellingAnswer = false;
+        _isSpellingCorrect = false;
+      });
+      AudioService.instance.speak(_practiceWords[_currentIndex].english);
+    } else {
+      _showCompletionDialog();
+    }
+  }
+
+  void _previousWord() {
+    if (_currentIndex > 0) {
+      setState(() {
+        _currentIndex--;
+        _showAnswer = false;
+        _selectedAnswer = null;
+        _isCorrect = false;
+        _spellingController.clear();
+        _showSpellingAnswer = false;
+        _isSpellingCorrect = false;
+      });
+      AudioService.instance.speak(_practiceWords[_currentIndex].english);
+    }
   }
 
   void _toggleFavorite(String wordId) async {
     if (_favorites.contains(wordId)) {
-      setState(() {
-        _favorites.remove(wordId);
-      });
       await _storageService?.removeFavorite(wordId);
+      setState(() => _favorites.remove(wordId));
     } else {
-      setState(() {
-        _favorites.add(wordId);
-      });
       await _storageService?.addFavorite(wordId);
+      setState(() => _favorites.add(wordId));
     }
   }
 
-  void _nextWord() {
-    setState(() {
-      _currentIndex = (_currentIndex + 1) % _practiceWords.length;
-      _showAnswer = false;
-      _selectedAnswer = null;
-      _isCorrect = false;
-    });
-    AudioService.instance.speak(_practiceWords[_currentIndex].english);
-  }
-
-  void _previousWord() {
-    setState(() {
-      _currentIndex =
-          (_currentIndex - 1 + _practiceWords.length) % _practiceWords.length;
-      _showAnswer = false;
-      _selectedAnswer = null;
-      _isCorrect = false;
-    });
-    AudioService.instance.speak(_practiceWords[_currentIndex].english);
-  }
-
-  void _checkAnswer(String answer) {
-    final currentWord = _practiceWords[_currentIndex];
-    final isCorrect = answer == currentWord.chinese;
-
-    if (!isCorrect) {
-      _storageService?.addWrongAnswer({
-        'id': '${currentWord.id}_${DateTime.now().millisecondsSinceEpoch}',
-        'type': '单词',
-        'question': currentWord.english,
-        'context': currentWord.exampleSentence,
-        'userAnswer': answer,
-        'correctAnswer': currentWord.chinese,
-        'createdAt': DateTime.now().toIso8601String(),
-        'reviewed': false,
-      });
-    }
-
-    setState(() {
-      _selectedAnswer = answer;
-      _isCorrect = isCorrect;
-      _showAnswer = true;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('单词练习'),
-        actions: [
-          if (widget.onCompleted != null)
-            TextButton(
-              onPressed: () {
-                widget.onCompleted!();
-                Navigator.pop(context);
-              },
-              child: const Text('完成', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
-            ),
-        ],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(icon: Icon(Icons.style), text: '卡片模式'),
-            Tab(icon: Icon(Icons.quiz), text: '测试模式'),
-          ],
+  void _showCompletionDialog() {
+    widget.onCompleted?.call();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CompletionCongratulationScreen(
+          moduleTitle: '单词练习 ($_targetWordbook)',
+          correctCount: _practiceWords.length,
+          totalQuestions: _practiceWords.length,
         ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          _buildCardMode(),
-          _buildTestMode(),
-        ],
       ),
     );
   }
 
+  void _rateWordSM2(SM2Rating rating) {
+    if (_practiceWords.isEmpty) return;
+    final word = _practiceWords[_currentIndex];
+    final currentItem = SM2Item.initial(word.id);
+    final updatedItem = SM2Service.calculateNextReview(currentItem, rating);
+
+    final nextDate = updatedItem.nextReviewAt;
+    final dateStr = '${nextDate.month}月${nextDate.day}日';
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('已按 SM-2 记忆算法排程！下次复习日期：$dateStr'),
+        duration: const Duration(seconds: 2),
+        backgroundColor: Colors.indigo,
+      ),
+    );
+
+    _nextWord();
+  }
+
   Widget _buildCardMode() {
+    if (_practiceWords.isEmpty) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
     final word = _practiceWords[_currentIndex];
     final isFavorite = _favorites.contains(word.id);
 
     return Column(
       children: [
+        // Header Info Bar with Target Wordbook & Goal Switcher
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              InkWell(
+                onTap: _openGoalSettings,
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.deepOrange.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.deepOrange.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        '目标词库: $_targetWordbook',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.deepOrange.shade900,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 4),
+                      Icon(Icons.tune, size: 14, color: Colors.deepOrange.shade900),
+                    ],
+                  ),
+                ),
+              ),
               Text(
                 '${_currentIndex + 1} / ${_practiceWords.length}',
-                style:
-                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
               IconButton(
                 onPressed: () => _toggleFavorite(word.id),
@@ -224,20 +209,20 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
             ],
           ),
         ),
+
+        // Main Word Card
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(20.0),
             child: Card(
               elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
               child: InkWell(
                 onTap: () => setState(() => _showAnswer = !_showAnswer),
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.all(32),
+                  padding: const EdgeInsets.all(28),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -254,10 +239,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                         children: [
                           Text(
                             word.phonetic,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.grey,
-                            ),
+                            style: const TextStyle(fontSize: 20, color: Colors.grey),
                           ),
                           const SizedBox(width: 8),
                           IconButton(
@@ -267,27 +249,28 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                         ],
                       ),
                       if (_showAnswer) ...[
-                        const SizedBox(height: 32),
+                        const SizedBox(height: 24),
                         const Divider(),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 12),
                         Text(
                           word.chinese,
                           style: const TextStyle(
                             fontSize: 24,
                             color: Colors.green,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(height: 24),
+                        const SizedBox(height: 12),
                         Text(
-                          '例句: ${word.exampleSentence}',
-                          style: const TextStyle(fontSize: 16),
+                          '例句：${word.exampleSentence}',
+                          style: const TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
                           textAlign: TextAlign.center,
                         ),
                       ] else ...[
                         const SizedBox(height: 32),
                         const Text(
-                          '点击显示答案',
-                          style: TextStyle(color: Colors.grey),
+                          '点击卡片显示答案',
+                          style: TextStyle(color: Colors.grey, fontSize: 14),
                         ),
                       ],
                     ],
@@ -297,18 +280,58 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
             ),
           ),
         ),
+
+        // SM-2 Memory Rating Controls (When Answer Revealed)
+        if (_showAnswer) ...[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red.shade100, foregroundColor: Colors.red.shade900),
+                  onPressed: () => _rateWordSM2(SM2Rating.again),
+                  child: const Text('生疏 (1天)'),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.orange.shade100, foregroundColor: Colors.orange.shade900),
+                  onPressed: () => _rateWordSM2(SM2Rating.hard),
+                  child: const Text('模糊 (3天)'),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, foregroundColor: Colors.blue.shade900),
+                  onPressed: () => _rateWordSM2(SM2Rating.good),
+                  child: const Text('掌握 (6天)'),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade100, foregroundColor: Colors.green.shade900),
+                  onPressed: () => _rateWordSM2(SM2Rating.easy),
+                  child: const Text('熟练 (14天)'),
+                ),
+              ],
+            ),
+          ),
+        ],
+
+        // Bottom Navigation Bar
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton.filled(
-                onPressed: _previousWord,
-                icon: const Icon(Icons.arrow_back),
+              IconButton(
+                onPressed: _currentIndex > 0 ? _previousWord : null,
+                icon: const Icon(Icons.arrow_back_ios),
               ),
-              IconButton.filled(
+              ElevatedButton.icon(
                 onPressed: _nextWord,
                 icon: const Icon(Icons.arrow_forward),
+                label: Text(_currentIndex < _practiceWords.length - 1 ? '下个单词' : '完成本次背诵'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                ),
               ),
             ],
           ),
@@ -318,6 +341,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
   }
 
   Widget _buildTestMode() {
+    if (_practiceWords.isEmpty) return const SizedBox();
     final currentWord = _practiceWords[_currentIndex];
     final wrongAnswers = _practiceWords
         .where((w) => w.id != currentWord.id)
@@ -330,36 +354,24 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
               Text(
                 currentWord.english,
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               Text(
                 currentWord.phonetic,
                 style: const TextStyle(fontSize: 18, color: Colors.grey),
               ),
-              const SizedBox(height: 8),
-              Text(
-                currentWord.exampleSentence,
-                style: const TextStyle(fontSize: 14, color: Colors.grey),
-                textAlign: TextAlign.center,
-              ),
             ],
           ),
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
-          child: Text(
-            '请选择正确的中文翻译:',
-            style: TextStyle(fontSize: 16),
-          ),
+          child: Text('请选择正确的中文翻译:', style: TextStyle(fontSize: 16)),
         ),
         const SizedBox(height: 16),
         Expanded(
@@ -377,39 +389,32 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
               if (_showAnswer) {
                 if (isCorrectAnswer) {
                   backgroundColor = Colors.green.shade100;
-                  textColor = Colors.green.shade800;
-                } else if (isSelected && !isCorrectAnswer) {
+                  textColor = Colors.green.shade900;
+                } else if (isSelected) {
                   backgroundColor = Colors.red.shade100;
-                  textColor = Colors.red.shade800;
+                  textColor = Colors.red.shade900;
                 }
               }
 
               return Padding(
                 padding: const EdgeInsets.only(bottom: 12.0),
-                child: InkWell(
-                  onTap: _showAnswer ? null : () => _checkAnswer(option),
-                  borderRadius: BorderRadius.circular(12),
-                  child: Container(
-                    width: double.infinity,
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: backgroundColor,
+                    foregroundColor: textColor,
                     padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: backgroundColor ?? Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: isSelected
-                            ? Theme.of(context).colorScheme.primary
-                            : Colors.grey.shade300,
-                        width: isSelected ? 2 : 1,
-                      ),
-                    ),
-                    child: Text(
-                      option,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: textColor ?? Colors.black87,
-                      ),
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
+                  onPressed: _showAnswer
+                      ? null
+                      : () {
+                          setState(() {
+                            _selectedAnswer = option;
+                            _showAnswer = true;
+                            _isCorrect = isCorrectAnswer;
+                          });
+                        },
+                  child: Text(option, style: const TextStyle(fontSize: 16)),
                 ),
               );
             },
@@ -418,26 +423,193 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
         if (_showAnswer) ...[
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Text(
-                  _isCorrect ? '正确!' : '错误!',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: _isCorrect ? Colors.green : Colors.red,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: _nextWord,
-                  child: const Text('下一题'),
-                ),
-              ],
+            child: ElevatedButton(
+              onPressed: _nextWord,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                minimumSize: const Size(double.infinity, 48),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              child: Text(_currentIndex < _practiceWords.length - 1 ? '下一题' : '完成测试'),
             ),
           ),
         ],
       ],
+    );
+  }
+
+  Widget _buildSpellingMode() {
+    if (_practiceWords.isEmpty) return const SizedBox();
+    final currentWord = _practiceWords[_currentIndex];
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          Card(
+            elevation: 3,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                  Text(
+                    currentWord.chinese,
+                    style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(currentWord.phonetic, style: const TextStyle(fontSize: 18, color: Colors.grey)),
+                      IconButton(
+                        icon: const Icon(Icons.volume_up, color: Colors.blue),
+                        onPressed: () => AudioService.instance.speak(currentWord.english),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Text('例句：${currentWord.exampleSentence}', style: TextStyle(color: Colors.grey.shade700)),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          TextField(
+            controller: _spellingController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: '请输入英文单词',
+              hintText: '输入英文拼写...',
+            ),
+            onSubmitted: (val) {
+              final isMatch = val.trim().toLowerCase() == currentWord.english.toLowerCase();
+              setState(() {
+                _showSpellingAnswer = true;
+                _isSpellingCorrect = isMatch;
+              });
+            },
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton(
+            onPressed: () {
+              final isMatch = _spellingController.text.trim().toLowerCase() == currentWord.english.toLowerCase();
+              setState(() {
+                _showSpellingAnswer = true;
+                _isSpellingCorrect = isMatch;
+              });
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue,
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 48),
+            ),
+            child: const Text('提交校验'),
+          ),
+          if (_showSpellingAnswer) ...[
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: _isSpellingCorrect ? Colors.green.shade50 : Colors.red.shade50,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: _isSpellingCorrect ? Colors.green : Colors.red),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    _isSpellingCorrect ? '🎉 拼写正确！' : '需要加油，正确拼写为：${currentWord.english}',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: _isSpellingCorrect ? Colors.green.shade900 : Colors.red.shade900,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  ElevatedButton(
+                    onPressed: _nextWord,
+                    child: Text(_currentIndex < _practiceWords.length - 1 ? '下一词' : '完成拼写小测'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('单词练习'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 14),
+            child: Center(
+              child: InkWell(
+                onTap: _showCompletionDialog,
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.green.shade600, width: 1.5),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.check_circle, size: 16, color: Colors.green.shade700),
+                      const SizedBox(width: 4),
+                      Text(
+                        '完成',
+                        style: TextStyle(
+                          color: Colors.green.shade800,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(48),
+          child: Container(
+            color: Colors.transparent,
+            child: TabBar(
+              controller: _tabController,
+              dividerColor: Colors.transparent,
+              dividerHeight: 0,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicator: const UnderlineTabIndicator(
+                borderSide: BorderSide(width: 3, color: Colors.blue),
+                insets: EdgeInsets.symmetric(horizontal: 16),
+                borderRadius: BorderRadius.all(Radius.circular(3)),
+              ),
+              tabs: const [
+                Tab(icon: Icon(Icons.style, size: 20), text: '卡片模式'),
+                Tab(icon: Icon(Icons.quiz, size: 20), text: '测试模式'),
+                Tab(icon: Icon(Icons.edit, size: 20), text: '拼写小测'),
+              ],
+            ),
+          ),
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          _buildCardMode(),
+          _buildTestMode(),
+          _buildSpellingMode(),
+        ],
+      ),
     );
   }
 }

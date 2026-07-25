@@ -116,17 +116,27 @@ flutter run -d android
 # 5. 运行模拟器
 flutter run -d android_emulator
 
-# 6. 构建调试 APK
-flutter build apk --debug
-
-# 7. 构建发布 APK
+# 6. 构建个人自用安装包 (推荐: 兼容所有安卓手机)
 flutter build apk --release
+# 生成文件位置: build/app/outputs/flutter-apk/app-release.apk
+
+# 7. 构建按架构拆分安装包 (推荐: 个人自用缩小体积，如仅打 arm64)
+flutter build apk --split-per-abi
+# 生成文件位置: build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+
+# 8. 构建 Google Play 商店安装包 (AAB)
+flutter build appbundle
+# 生成文件位置: build/app/outputs/bundle/release/app-release.aab
 ```
 
-### 输出目录
-```
-build\app\outputs\flutter-apk\
-```
+### 输出目录与安装包说明
+
+| 打包类型 | 命令 | 输出路径 | 适用场景 |
+|---------|------|---------|---------|
+| **通用 Release APK (自用首选)** | `flutter build apk --release` | `build/app/outputs/flutter-apk/app-release.apk` | 个人安装、发送微信好友安装、无网络设备安装 |
+| **轻量架构拆分包** | `flutter build apk --split-per-abi` | `build/app/outputs/flutter-apk/app-arm64-v8a-release.apk` | 体积更小，适合主流 64 位安卓真机自用 |
+| **Google Play 商店包** | `flutter build appbundle` | `build/app/outputs/bundle/release/app-release.aab` | 上架应用商店 |
+| **Debug 调试包** | `flutter build apk --debug` | `build/app/outputs/flutter-apk/app-debug.apk` | 开发阶段联调测试 |
 
 ### Android 配置
 

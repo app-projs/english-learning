@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/storage_service.dart';
 
 class GoalSettingScreen extends StatefulWidget {
   final Map<String, int> currentGoals;
@@ -19,6 +20,8 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
   late int _sentenceGoal;
   late int _dialogueGoal;
   late int _dailyMinutes;
+  String _selectedWordbook = '四级核心';
+  final List<String> _wordbooks = ['四级核心', '六级高频', '考研必刷', '雅思冲刺', '日常基础'];
 
   final Map<String, List<int>> _presets = {
     '轻松': [100, 50, 10, 15],
@@ -34,6 +37,15 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
     _sentenceGoal = widget.currentGoals['sentences'] ?? 200;
     _dialogueGoal = widget.currentGoals['dialogues'] ?? 50;
     _dailyMinutes = widget.currentGoals['dailyMinutes'] ?? 30;
+    _loadWordbook();
+  }
+
+  void _loadWordbook() async {
+    final storage = await StorageService.getInstance();
+    if (!mounted) return;
+    setState(() {
+      _selectedWordbook = storage.getTargetWordbook();
+    });
   }
 
   void _applyPreset(String preset) {
@@ -45,25 +57,29 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
     });
   }
 
-  void _saveGoals() {
+  void _saveGoals() async {
+    final storage = await StorageService.getInstance();
+    await storage.saveTargetWordbook(_selectedWordbook);
+
     widget.onGoalsSaved({
       'words': _wordGoal,
       'sentences': _sentenceGoal,
       'dialogues': _dialogueGoal,
       'dailyMinutes': _dailyMinutes,
     });
-    Navigator.pop(context);
+    if (!mounted) return;
+    Navigator.pop(context, _selectedWordbook);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('学习目标'),
+        title: const Text('学习目标与目标词库'),
         actions: [
           TextButton(
             onPressed: _saveGoals,
-            child: const Text('保存', style: TextStyle(color: Colors.white)),
+            child: const Text('保存', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           ),
         ],
       ),
@@ -72,8 +88,43 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Target Wordbook Selection
             const Text(
-              '快速设置',
+              '📖 当前学习目标词库',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '在设置中选定目标词库后，后续单词与句子练习将自动为你匹配该词库难度。',
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+            ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: _wordbooks.map((wb) {
+                final isSelected = wb == _selectedWordbook;
+                return ChoiceChip(
+                  label: Text(wb, style: TextStyle(fontWeight: isSelected ? FontWeight.bold : FontWeight.normal)),
+                  selected: isSelected,
+                  selectedColor: Colors.deepOrange.shade100,
+                  onSelected: (selected) {
+                    if (selected) {
+                      setState(() {
+                        _selectedWordbook = wb;
+                      });
+                    }
+                  },
+                );
+              }).toList(),
+            ),
+
+            const SizedBox(height: 24),
+            const Divider(),
+            const SizedBox(height: 12),
+
+            const Text(
+              '⚡️ 快速强度设置',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
@@ -92,60 +143,54 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
             ),
             const SizedBox(height: 24),
             const Text(
-              '自定义目标',
+              '自定义每日目标数量',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             _GoalSlider(
               icon: Icons.translate,
-              label: '单词目标',
+              title: '单词复习目标',
               value: _wordGoal,
               min: 50,
               max: 2000,
-              unit: '个',
-              onChanged: (value) => setState(() => _wordGoal = value),
+              divisions: 39,
+              unit: '词',
+              onChanged: (v) => setState(() => _wordGoal = v.toInt()),
             ),
             const SizedBox(height: 16),
             _GoalSlider(
               icon: Icons.format_quote,
-              label: '句子目标',
+              title: '句子练习目标',
               value: _sentenceGoal,
               min: 20,
-              max: 500,
-              unit: '个',
-              onChanged: (value) => setState(() => _sentenceGoal = value),
+              max: 1000,
+              divisions: 49,
+              unit: '句',
+              onChanged: (v) => setState(() => _sentenceGoal = v.toInt()),
             ),
             const SizedBox(height: 16),
             _GoalSlider(
               icon: Icons.chat,
-              label: '对话目标',
+              title: '对话练习目标',
               value: _dialogueGoal,
               min: 5,
               max: 200,
-              unit: '个',
-              onChanged: (value) => setState(() => _dialogueGoal = value),
+              divisions: 39,
+              unit: '句',
+              onChanged: (v) => setState(() => _dialogueGoal = v.toInt()),
             ),
             const SizedBox(height: 16),
             _GoalSlider(
               icon: Icons.timer,
-              label: '每日学习时间',
+              title: '每日学习时长',
               value: _dailyMinutes,
-              min: 10,
+              min: 5,
               max: 180,
+              divisions: 35,
               unit: '分钟',
-              onChanged: (value) => setState(() => _dailyMinutes = value),
+              onChanged: (v) => setState(() => _dailyMinutes = v.toInt()),
             ),
             const SizedBox(height: 32),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: _saveGoals,
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                ),
-                child: const Text('保存设置'),
-              ),
-            ),
           ],
         ),
       ),
@@ -155,19 +200,21 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
 
 class _GoalSlider extends StatelessWidget {
   final IconData icon;
-  final String label;
+  final String title;
   final int value;
-  final int min;
-  final int max;
+  final double min;
+  final double max;
+  final int divisions;
   final String unit;
-  final ValueChanged<int> onChanged;
+  final ValueChanged<double> onChanged;
 
   const _GoalSlider({
     required this.icon,
-    required this.label,
+    required this.title,
     required this.value,
     required this.min,
     required this.max,
+    required this.divisions,
     required this.unit,
     required this.onChanged,
   });
@@ -175,49 +222,27 @@ class _GoalSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Icon(icon, color: Theme.of(context).colorScheme.primary),
+                Icon(icon, color: Theme.of(context).primaryColor),
                 const SizedBox(width: 8),
-                Text(
-                  label,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w500),
-                ),
+                Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
                 const Spacer(),
-                Text(
-                  '$value $unit',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
+                Text('$value $unit', style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold)),
               ],
             ),
-            const SizedBox(height: 8),
             Slider(
-              value: value.toDouble(),
-              min: min.toDouble(),
-              max: max.toDouble(),
-              divisions: (max - min) ~/ 10,
-              onChanged: (v) => onChanged(v.round()),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('$min $unit',
-                    style:
-                        TextStyle(color: Colors.grey.shade600, fontSize: 12)),
-                Text('$max $unit',
-                    style:
-                        TextStyle(color: Colors.grey.shade600, fontSize: 12)),
-              ],
+              value: value.toDouble().clamp(min, max),
+              min: min,
+              max: max,
+              divisions: divisions,
+              onChanged: onChanged,
             ),
           ],
         ),

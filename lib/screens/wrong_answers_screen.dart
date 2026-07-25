@@ -8,17 +8,30 @@ class WrongAnswersScreen extends StatefulWidget {
   State<WrongAnswersScreen> createState() => _WrongAnswersScreenState();
 }
 
-class _WrongAnswersScreenState extends State<WrongAnswersScreen> {
+class _WrongAnswersScreenState extends State<WrongAnswersScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
   List<Map<String, dynamic>> _wrongAnswers = [];
   int _currentIndex = 0;
   bool _showAnswer = false;
   final Set<String> _reviewedIds = {};
   StorageService? _storageService;
+  final TextEditingController _eliminateInputController = TextEditingController();
+  bool _showEliminateFeedback = false;
+  bool _isEliminated = false;
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 2, vsync: this);
     _loadWrongAnswers();
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    _eliminateInputController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadWrongAnswers() async {
@@ -108,8 +121,34 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen> {
               tooltip: '清空错题',
             ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(48),
+          child: TabBar(
+            controller: _tabController,
+            dividerColor: Colors.transparent,
+            dividerHeight: 0,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicator: const UnderlineTabIndicator(
+              borderSide: BorderSide(width: 3, color: Colors.blue),
+              insets: EdgeInsets.symmetric(horizontal: 16),
+              borderRadius: BorderRadius.all(Radius.circular(3)),
+            ),
+            tabs: const [
+              Tab(icon: Icon(Icons.style, size: 20), text: '浏览卡片'),
+              Tab(icon: Icon(Icons.local_fire_department, size: 20), text: '消灭错题'),
+            ],
+          ),
+        ),
       ),
-      body: _wrongAnswers.isEmpty ? _buildEmptyState() : _buildReviewMode(),
+      body: _wrongAnswers.isEmpty
+          ? _buildEmptyState()
+          : TabBarView(
+              controller: _tabController,
+              children: [
+                _buildReviewMode(),
+                _buildEliminateMode(),
+              ],
+            ),
     );
   }
 
@@ -350,6 +389,180 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildEliminateMode() {
+    if (_wrongAnswers.isEmpty) return _buildEmptyState();
+
+    final currentWrong = _wrongAnswers[_currentIndex];
+    final correctAnswer = (currentWrong['correctAnswer'] as String? ?? '').trim();
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.orange.shade700, Colors.red.shade600],
+              ),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: const Row(
+              children: [
+                Icon(Icons.local_fire_department, color: Colors.white, size: 28),
+                SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '消灭错题挑战',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '再次回答正确即可自动从错题本中移除',
+                        style: TextStyle(color: Colors.white70, fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          Card(
+            elevation: 3,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Text(
+                    '类型: ${currentWrong['type'] ?? '错题'}',
+                    style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    currentWrong['question'] ?? '',
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (currentWrong['context'] != null) ...[
+                    const SizedBox(height: 12),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        currentWrong['context'],
+                        style: const TextStyle(fontSize: 14),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            controller: _eliminateInputController,
+            enabled: !_showEliminateFeedback,
+            decoration: InputDecoration(
+              hintText: '请输入正确的答案/单词...',
+              prefixIcon: const Icon(Icons.bolt, color: Colors.amber),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              filled: true,
+              fillColor: Colors.grey.shade50,
+            ),
+          ),
+          const SizedBox(height: 16),
+          if (!_showEliminateFeedback)
+            ElevatedButton(
+              onPressed: () {
+                final userInput = _eliminateInputController.text.trim().toLowerCase();
+                final targetInput = correctAnswer.toLowerCase();
+                final isMatch = userInput == targetInput;
+
+                setState(() {
+                  _showEliminateFeedback = true;
+                  _isEliminated = isMatch;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange.shade700,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.all(16),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              child: const Text('挑战消灭', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+          if (_showEliminateFeedback) ...[
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: _isEliminated ? Colors.green.shade50 : Colors.red.shade50,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: _isEliminated ? Colors.green : Colors.red),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        _isEliminated ? Icons.workspace_premium : Icons.dangerous,
+                        color: _isEliminated ? Colors.green : Colors.red,
+                        size: 28,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        _isEliminated ? '🎉 挑战成功！错题已被消灭！' : '❌ 答案不符',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: _isEliminated ? Colors.green : Colors.red,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Text('标准答案: $correctAnswer', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () async {
+                final targetId = currentWrong['id'];
+                if (_isEliminated && targetId != null) {
+                  await _removeWrongAnswer(targetId);
+                }
+                _eliminateInputController.clear();
+                setState(() {
+                  _showEliminateFeedback = false;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.all(14),
+              ),
+              child: Text(_isEliminated ? '移除此题并继续' : '重新尝试'),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }

@@ -10,6 +10,8 @@ import 'article_list_screen.dart';
 import 'listening_practice_screen.dart';
 import '../services/audio_service.dart';
 
+import 'phonetics_practice_screen.dart';
+
 class LuminaHomeScreen extends StatefulWidget {
   final bool isDarkMode;
   final Function(bool) onThemeChanged;
@@ -182,7 +184,14 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
           mainColor: const Color(0xFF603CE2),
           imageUrl:
               'https://lh3.googleusercontent.com/aida-public/AB6AXuCfjrcfKh-a41yJm3dKcZoMxPF9rVbFbsKdDlqfY3CPDWuVRJ6M71iTI_n4j1Sw9EonrXSr23CVVtQcDTRI7EvJ6Q88DpBt4ouTQwVDnRq2526B0bXbXro2KzEUp-20ijckCoMGjiMqOmZuEZ3CyIM6c11KaK6ZdYBNOz_1WgabcigzB1Zdo_73w9zmia7ISOA7oJih6g5icoA_dvt2iYuR6JbRfUeTGazDBtBm9xrwdxKes0ofPpW-G0UIuR6-7oOuQj51jHUsukwp',
-          onTap: () => _showComingSoon('音标发音练习'),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PhoneticsPracticeScreen(),
+              ),
+            );
+          },
         ),
         _buildBentoCard(
           title: '字词根',

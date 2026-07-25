@@ -36,48 +36,26 @@ void main() async {
   runApp(const ProviderScope(child: EnglishLearningApp()));
 }
 
-class EnglishLearningApp extends StatefulWidget {
+class EnglishLearningApp extends StatelessWidget {
   const EnglishLearningApp({super.key});
 
   @override
-  State<EnglishLearningApp> createState() => _EnglishLearningAppState();
-}
-
-class _EnglishLearningAppState extends State<EnglishLearningApp> {
-  bool _isDarkMode = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadTheme();
-  }
-
-  Future<void> _loadTheme() async {
-    final isDark = await themeService.isDarkMode();
-    if (mounted) {
-      setState(() {
-        _isDarkMode = isDark;
-      });
-    }
-  }
-
-  void _toggleTheme(bool value) {
-    setState(() {
-      _isDarkMode = value;
-    });
-    themeService.setDarkMode(value);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'lumina English',
-      theme: _isDarkMode ? ThemeService.darkTheme : LuminaTheme.lightTheme,
-      home: SplashScreen(
-        isDarkMode: _isDarkMode,
-        onThemeChanged: _toggleTheme,
-      ),
-      debugShowCheckedModeBanner: false,
+    return ValueListenableBuilder<bool>(
+      valueListenable: ThemeService.isDarkModeNotifier,
+      builder: (context, isDark, child) {
+        return MaterialApp(
+          title: 'lumina English',
+          theme: isDark ? ThemeService.darkTheme : LuminaTheme.lightTheme,
+          darkTheme: ThemeService.darkTheme,
+          themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
+          home: SplashScreen(
+            isDarkMode: isDark,
+            onThemeChanged: (val) => themeService.setDarkMode(val),
+          ),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }

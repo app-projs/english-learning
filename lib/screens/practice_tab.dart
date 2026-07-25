@@ -6,6 +6,8 @@ import 'sentence_practice_screen.dart';
 import 'dialogue_practice_screen.dart';
 import 'listening_practice_screen.dart';
 
+import 'phonetics_practice_screen.dart';
+
 class PracticeTab extends StatelessWidget {
   const PracticeTab({super.key});
 
@@ -120,6 +122,20 @@ class PracticeTab extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const ListeningPracticeScreen(),
+                      ),
+                    );
+                  },
+                ),
+                _PracticeCard(
+                  title: '音标发音',
+                  subtitle: '48个国际音标点读',
+                  icon: Icons.record_voice_over,
+                  gradientColors: const [Color(0xFF8B5CF6), Color(0xFFA78BFA)],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PhoneticsPracticeScreen(),
                       ),
                     );
                   },

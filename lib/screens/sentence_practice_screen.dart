@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/sentence.dart';
+import '../services/storage_service.dart';
+import '../services/audio_service.dart';
+import 'completion_congratulation_screen.dart';
 
 class SentencePracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -15,11 +18,20 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
   final List<Sentence> _practiceSentences = _generateSampleSentences();
   int _currentIndex = 0;
   bool _showAnswer = false;
+  StorageService? _storageService;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+    _initStorage();
+  }
+
+  void _initStorage() async {
+    final storage = await StorageService.getInstance();
+    setState(() {
+      _storageService = storage;
+    });
   }
 
   @override
@@ -99,29 +111,73 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
       appBar: AppBar(
         title: const Text('句子练习'),
         actions: [
-          if (widget.onCompleted != null)
-            TextButton(
-              onPressed: () {
-                widget.onCompleted!();
-                Navigator.pop(context);
-              },
-              child: const Text(
-                '完成',
-                style: TextStyle(
-                  color: Colors.green,
-                  fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.only(right: 14),
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  widget.onCompleted?.call();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CompletionCongratulationScreen(
+                        moduleTitle: '长难句剖析',
+                        earnedLp: 50,
+                        streakDays: 7,
+                      ),
+                    ),
+                  );
+                },
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.green.shade600, width: 1.5),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.check_circle, size: 16, color: Colors.green.shade700),
+                      const SizedBox(width: 4),
+                      Text(
+                        '完成',
+                        style: TextStyle(
+                          color: Colors.green.shade800,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
+          ),
         ],
-        bottom: TabBar(
-          controller: _tabController,
-          isScrollable: true,
-          tabs: const [
-            Tab(icon: Icon(Icons.text_fields), text: '填空练习'),
-            Tab(icon: Icon(Icons.sort), text: '排序练习'),
-            Tab(icon: Icon(Icons.translate), text: '翻译练习'),
-          ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(48),
+          child: Container(
+            color: Colors.transparent,
+            child: TabBar(
+              controller: _tabController,
+              isScrollable: true,
+              dividerColor: Colors.transparent,
+              dividerHeight: 0,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicator: const UnderlineTabIndicator(
+                borderSide: BorderSide(width: 3, color: Colors.blue),
+                insets: EdgeInsets.symmetric(horizontal: 16),
+                borderRadius: BorderRadius.all(Radius.circular(3)),
+              ),
+              tabs: const [
+                Tab(icon: Icon(Icons.text_fields, size: 20), text: '填空练习'),
+                Tab(icon: Icon(Icons.sort, size: 20), text: '排序练习'),
+                Tab(icon: Icon(Icons.translate, size: 20), text: '翻译练习'),
+              ],
+            ),
+          ),
         ),
       ),
       body: TabBarView(
@@ -137,120 +193,15 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
 
   Widget _buildClozeMode() {
     final sentence = _practiceSentences[_currentIndex];
-    final words = sentence.english.split(' ');
-    final blankIndex = words.length ~/ 2;
-    final blankWord = words[blankIndex];
-    final displayWords = [...words];
-    displayWords[blankIndex] = '_____';
 
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            '${_currentIndex + 1} / ${_practiceSentences.length}',
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      '请填写空缺的单词:',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 32),
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 8,
-                      runSpacing: 12,
-                      children: displayWords.asMap().entries.map((entry) {
-                        final isBlank = entry.key == blankIndex;
-                        return Text(
-                          entry.value,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight:
-                                isBlank ? FontWeight.bold : FontWeight.normal,
-                            color: isBlank
-                                ? Theme.of(context).colorScheme.primary
-                                : Colors.black87,
-                            decoration:
-                                isBlank ? TextDecoration.underline : null,
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                    const SizedBox(height: 32),
-                    if (_showAnswer) ...[
-                      Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Colors.green.shade50,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Column(
-                          children: [
-                            Text(
-                              '答案: $blankWord',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green.shade700,
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            Text(
-                              
-                              sentence.chinese,
-                              style: const TextStyle(fontSize: 16),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ] else ...[
-                      ElevatedButton.icon(
-                        onPressed: () => setState(() => _showAnswer = true),
-                        icon: const Icon(Icons.visibility),
-                        label: const Text('显示答案'),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton.filled(
-                onPressed: _previousSentence,
-                icon: const Icon(Icons.arrow_back),
-              ),
-              IconButton.filled(
-                onPressed: _nextSentence,
-                icon: const Icon(Icons.arrow_forward),
-              ),
-            ],
-          ),
-        ),
-      ],
+    return _ClozeModeWidget(
+      key: ValueKey('cloze_$_currentIndex'),
+      sentence: sentence,
+      storageService: _storageService,
+      onNext: _nextSentence,
+      onPrevious: _previousSentence,
+      currentIndex: _currentIndex,
+      totalCount: _practiceSentences.length,
     );
   }
 
@@ -288,6 +239,366 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
       onPrevious: _previousSentence,
       currentIndex: _currentIndex,
       totalCount: _practiceSentences.length,
+    );
+  }
+}
+
+class _ClozeModeWidget extends StatefulWidget {
+  final Sentence sentence;
+  final VoidCallback onNext;
+  final VoidCallback onPrevious;
+  final int currentIndex;
+  final int totalCount;
+  final StorageService? storageService;
+
+  const _ClozeModeWidget({
+    super.key,
+    required this.sentence,
+    required this.onNext,
+    required this.onPrevious,
+    required this.currentIndex,
+    required this.totalCount,
+    this.storageService,
+  });
+
+  @override
+  State<_ClozeModeWidget> createState() => _ClozeModeWidgetState();
+}
+
+class _ClozeModeWidgetState extends State<_ClozeModeWidget> {
+  String _userEnteredText = '';
+  bool _submitted = false;
+  bool _isCorrect = false;
+
+  void _showFillInputBottomSheet(String targetBlankWord) {
+    final controller = TextEditingController(text: _userEnteredText);
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (ctx) {
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(ctx).viewInsets.bottom,
+          ),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            ),
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      '填空输入',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () => Navigator.pop(ctx),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  '中文译义：${widget.sentence.chinese}',
+                  style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: controller,
+                  autofocus: true,
+                  textInputAction: TextInputAction.done,
+                  onSubmitted: (val) {
+                    Navigator.pop(ctx);
+                    _submitAnswer(val, targetBlankWord);
+                  },
+                  decoration: InputDecoration(
+                    hintText: '请输入下划线处缺失的单词...',
+                    prefixIcon: const Icon(Icons.edit, color: Colors.blue),
+                    suffixIcon: IconButton(
+                      icon: const Icon(Icons.check_circle, color: Colors.blue),
+                      onPressed: () {
+                        Navigator.pop(ctx);
+                        _submitAnswer(controller.text, targetBlankWord);
+                      },
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey.shade50,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(ctx);
+                    _submitAnswer(controller.text, targetBlankWord);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                  ),
+                  child: const Text('填入并校验', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _submitAnswer(String val, String targetBlankWord) {
+    final input = val.trim();
+    if (input.isEmpty) return;
+
+    final cleanTarget = targetBlankWord.replaceAll(RegExp(r'[^\w\s]'), '').toLowerCase();
+    final cleanInput = input.replaceAll(RegExp(r'[^\w\s]'), '').toLowerCase();
+    final correct = cleanInput == cleanTarget;
+
+    if (!correct) {
+      widget.storageService?.addWrongAnswer({
+        'id': '${widget.sentence.id}_${DateTime.now().millisecondsSinceEpoch}',
+        'type': '句子填空',
+        'question': widget.sentence.english,
+        'context': widget.sentence.chinese,
+        'userAnswer': input,
+        'correctAnswer': targetBlankWord,
+        'createdAt': DateTime.now().toIso8601String(),
+        'reviewed': false,
+      });
+    }
+
+    setState(() {
+      _userEnteredText = input;
+      _submitted = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      AudioService.instance.speak(widget.sentence.english);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final words = widget.sentence.english.split(' ');
+    final blankIndex = words.length ~/ 2;
+    final blankWord = words[blankIndex];
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '${widget.currentIndex + 1} / ${widget.totalCount}',
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              IconButton(
+                icon: const Icon(Icons.volume_up, color: Colors.blue),
+                onPressed: () => AudioService.instance.speak(widget.sentence.english),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                  const Text(
+                    '点击下方【下划线】填入缺少的单词：',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    '中文释义：${widget.sentence.chinese}',
+                    style: TextStyle(fontSize: 15, color: Colors.grey.shade700),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 28),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 8,
+                    runSpacing: 12,
+                    children: words.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final word = entry.value;
+                      if (index != blankIndex) {
+                        return Text(
+                          word,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black87,
+                          ),
+                        );
+                      }
+
+                      Color bg;
+                      Color border;
+                      Color textCol;
+                      IconData? icon;
+
+                      if (!_submitted) {
+                        if (_userEnteredText.isEmpty) {
+                          bg = Colors.blue.shade50;
+                          border = Colors.blue.shade400;
+                          textCol = Colors.blue.shade700;
+                        } else {
+                          bg = Colors.blue.shade100;
+                          border = Colors.blue.shade600;
+                          textCol = Colors.blue.shade900;
+                        }
+                      } else {
+                        if (_isCorrect) {
+                          bg = Colors.green.shade50;
+                          border = Colors.green;
+                          textCol = Colors.green.shade800;
+                          icon = Icons.check_circle;
+                        } else {
+                          bg = Colors.red.shade50;
+                          border = Colors.red;
+                          textCol = Colors.red.shade800;
+                          icon = Icons.cancel;
+                        }
+                      }
+
+                      final displayText = _userEnteredText.isEmpty ? '  _____  ' : ' $_userEnteredText ';
+
+                      return InkWell(
+                        onTap: () => _showFillInputBottomSheet(blankWord),
+                        borderRadius: BorderRadius.circular(8),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: bg,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: border, width: 2),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                displayText,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: textCol,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                              if (icon != null) ...[
+                                const SizedBox(width: 4),
+                                Icon(icon, size: 18, color: textCol),
+                              ],
+                            ],
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  const SizedBox(height: 28),
+                  if (_submitted) ...[
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: _isCorrect ? Colors.green.shade50 : Colors.red.shade50,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: _isCorrect ? Colors.green : Colors.red),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                _isCorrect ? Icons.check_circle : Icons.cancel,
+                                color: _isCorrect ? Colors.green : Colors.red,
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                _isCorrect ? '填空正确！🎉' : '填空不正确，正确单词为："$blankWord"',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: _isCorrect ? Colors.green.shade800 : Colors.red.shade800,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            '完整句子：${widget.sentence.english}',
+                            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                            textAlign: TextAlign.center,
+                          ),
+                          if (!_isCorrect) ...[
+                            const SizedBox(height: 12),
+                            TextButton.icon(
+                              onPressed: () => _showFillInputBottomSheet(blankWord),
+                              icon: const Icon(Icons.refresh, size: 18),
+                              label: const Text('重新填空'),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ] else ...[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.touch_app, size: 18, color: Colors.blue.shade400),
+                        const SizedBox(width: 6),
+                        Text(
+                          '点击上面的下划线区域进行填空',
+                          style: TextStyle(fontSize: 13, color: Colors.blue.shade600),
+                        ),
+                      ],
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton.filled(
+                onPressed: widget.currentIndex > 0 ? widget.onPrevious : null,
+                icon: const Icon(Icons.arrow_back),
+              ),
+              IconButton.filled(
+                onPressed: widget.onNext,
+                icon: const Icon(Icons.arrow_forward),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

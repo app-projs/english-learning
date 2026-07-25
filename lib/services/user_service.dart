@@ -84,11 +84,16 @@ class UserService {
   }
 
   Future<void> updateUserName(String name) async {
+    await updateUserProfile(name: name);
+  }
+
+  Future<void> updateUserProfile({String? name, String? avatar}) async {
     Map<String, dynamic>? profileMap = _storage.getUserProfile();
     if (profileMap == null) {
       profileMap = MockUser.getUserProfile();
     }
-    profileMap['name'] = name;
+    if (name != null) profileMap['name'] = name;
+    if (avatar != null) profileMap['avatar'] = avatar;
     await _storage.saveUserProfile(profileMap);
   }
 

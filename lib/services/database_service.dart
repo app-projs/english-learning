@@ -28,12 +28,19 @@ class DatabaseService {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, 'english_learning.db');
 
-    return openDatabase(
+    final db = await openDatabase(
       path,
-      version: 2,
+      version: 11,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
+
+    try {
+      await db.execute('PRAGMA journal_mode = WAL;');
+      await db.execute('PRAGMA synchronous = NORMAL;');
+    } catch (_) {}
+
+    return db;
   }
 
   static Future<void> _onCreate(Database db, int version) async {
@@ -76,6 +83,25 @@ class DatabaseService {
     ''');
 
     await db.execute('''
+      CREATE TABLE books (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        chineseTitle TEXT,
+        author TEXT,
+        coverUrl TEXT,
+        description TEXT,
+        category TEXT,
+        difficulty TEXT,
+        totalUnits INTEGER DEFAULT 12,
+        wordCount INTEGER DEFAULT 10000,
+        readerCount TEXT,
+        targetVocab TEXT,
+        tagLabel TEXT,
+        coverBadge TEXT
+      )
+    ''');
+
+    await db.execute('''
       CREATE TABLE articles (
         id TEXT PRIMARY KEY,
         title TEXT NOT NULL,
@@ -83,7 +109,14 @@ class DatabaseService {
         translation TEXT,
         difficulty TEXT,
         category TEXT,
-        createdAt TEXT
+        tags TEXT,
+        readTime INTEGER DEFAULT 5,
+        createdAt TEXT,
+        bookId TEXT,
+        unitIndex INTEGER,
+        coverUrl TEXT,
+        chineseTitle TEXT,
+        chineseContent TEXT
       )
     ''');
 
@@ -115,13 +148,18 @@ class DatabaseService {
         readMinutes INTEGER DEFAULT 0
       )
     ''');
+
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_articles_bookId ON articles(bookId);');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_books_category ON books(category);');
   }
 
   static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
-    if (oldVersion < 2) {
+    if (oldVersion < 11) {
       await db.execute('DROP TABLE IF EXISTS words');
       await db.execute('DROP TABLE IF EXISTS sentences');
       await db.execute('DROP TABLE IF EXISTS dialogues');
+      await db.execute('DROP TABLE IF EXISTS books');
       await db.execute('DROP TABLE IF EXISTS articles');
       await db.execute('DROP TABLE IF EXISTS user_progress');
       await db.execute('DROP TABLE IF EXISTS achievements');
@@ -250,14 +288,47 @@ class DatabaseService {
     }).toList();
   }
 
-  // Articles
+  // Books
+  Future<void> insertBook(Map<String, dynamic> book) async {
+    final Map<String, dynamic> safeMap = {};
+    book.forEach((key, value) {
+      if (value is List) {
+        safeMap[key] = value.join(',');
+      } else {
+        safeMap[key] = value;
+      }
+    });
+    await _database?.insert('books', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllBooks() async {
+    return await _database?.query('books') ?? [];
+  }
+
+  Future<Map<String, dynamic>?> getBookById(String id) async {
+    final results = await _database?.query('books', where: 'id = ?', whereArgs: [id]);
+    return results?.isNotEmpty == true ? results!.first : null;
+  }
+
+  // Articles & Chapter Units
   Future<void> insertArticle(Map<String, dynamic> article) async {
-    await _database?.insert('articles', article,
-        conflictAlgorithm: ConflictAlgorithm.replace);
+    final Map<String, dynamic> safeMap = {};
+    article.forEach((key, value) {
+      if (value is List) {
+        safeMap[key] = value.join(',');
+      } else {
+        safeMap[key] = value;
+      }
+    });
+    await _database?.insert('articles', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Map<String, dynamic>>> getAllArticles() async {
     return await _database?.query('articles') ?? [];
+  }
+
+  Future<List<Map<String, dynamic>>> getArticlesByBookId(String bookId) async {
+    return await _database?.query('articles', where: 'bookId = ?', orderBy: 'unitIndex ASC', whereArgs: [bookId]) ?? [];
   }
 
   Future<Map<String, dynamic>?> getArticleById(String id) async {

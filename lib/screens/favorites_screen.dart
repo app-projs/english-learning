@@ -77,12 +77,23 @@ class _FavoritesScreenState extends State<FavoritesScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('我的收藏'),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(text: '单词'),
-            Tab(text: '文章'),
-          ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(44),
+          child: TabBar(
+            controller: _tabController,
+            dividerColor: Colors.transparent,
+            dividerHeight: 0,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicator: const UnderlineTabIndicator(
+              borderSide: BorderSide(width: 3, color: Colors.blue),
+              insets: EdgeInsets.symmetric(horizontal: 16),
+              borderRadius: BorderRadius.all(Radius.circular(3)),
+            ),
+            tabs: const [
+              Tab(text: '单词'),
+              Tab(text: '文章'),
+            ],
+          ),
         ),
       ),
       body: _isLoading

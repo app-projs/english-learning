@@ -11,6 +11,7 @@ import 'practice_stats_screen.dart';
 import 'daily_tab.dart';
 import 'leaderboard_tab.dart';
 import '../theme/lumina_theme.dart';
+import '../services/theme_service.dart';
 import '../models/user.dart';
 import '../main.dart';
 
@@ -273,14 +274,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  child: CircleAvatar(
-                    radius: 34,
-                    backgroundColor: Colors.white,
-                    backgroundImage: avatar != null && avatar.isNotEmpty
-                        ? NetworkImage(avatar)
-                        : const NetworkImage(
-                            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&auto=format&fit=crop&q=80',
-                          ),
+                  child: InkWell(
+                    onTap: _showEditProfileDialog,
+                    borderRadius: BorderRadius.circular(34),
+                    child: _buildAvatarWidget(avatar, _profile!.name, radius: 34),
                   ),
                 ),
                 const SizedBox(width: 18),
@@ -305,7 +302,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           InkWell(
-                            onTap: _showEditNameDialog,
+                            onTap: _showEditProfileDialog,
                             borderRadius: BorderRadius.circular(18),
                             child: Container(
                               width: 34,
@@ -636,38 +633,159 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  void _showEditNameDialog() {
-    final controller = TextEditingController(text: _profile?.name ?? '');
+  Widget _buildAvatarWidget(String? avatar, String name, {double radius = 34}) {
+    if (avatar != null && avatar.startsWith('preset_')) {
+      final emoji = _getPresetEmoji(avatar);
+      return CircleAvatar(
+        radius: radius,
+        backgroundColor: const Color(0xFFFFD6C8),
+        child: Text(emoji, style: TextStyle(fontSize: radius * 0.9)),
+      );
+    }
+
+    if (avatar != null && avatar.trim().isNotEmpty && (avatar.startsWith('http://') || avatar.startsWith('https://'))) {
+      return CircleAvatar(
+        radius: radius,
+        backgroundColor: const Color(0xFFFFD6C8),
+        child: ClipOval(
+          child: Image.network(
+            avatar,
+            width: radius * 2,
+            height: radius * 2,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              return _buildFallbackAvatar(name, radius);
+            },
+          ),
+        ),
+      );
+    }
+
+    return _buildFallbackAvatar(name, radius);
+  }
+
+  String _getPresetEmoji(String avatarKey) {
+    switch (avatarKey) {
+      case 'preset_1':
+        return '🎓';
+      case 'preset_2':
+        return '🦊';
+      case 'preset_3':
+        return '🚀';
+      case 'preset_4':
+        return '🦁';
+      case 'preset_5':
+        return '🤖';
+      case 'preset_6':
+        return '🐱';
+      case 'preset_7':
+        return '⚡️';
+      case 'preset_8':
+        return '🌸';
+      default:
+        return '🎓';
+    }
+  }
+
+  Widget _buildFallbackAvatar(String name, double radius) {
+    final firstChar = name.isNotEmpty ? name.substring(0, 1).toUpperCase() : 'L';
+    return CircleAvatar(
+      radius: radius,
+      backgroundColor: const Color(0xFFF97316),
+      child: Text(
+        firstChar,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: radius * 0.8,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  void _showEditProfileDialog() {
+    final nameController = TextEditingController(text: _profile?.name ?? '');
+    String selectedAvatar = _profile?.avatar ?? 'preset_1';
+    final presets = ['preset_1', 'preset_2', 'preset_3', 'preset_4', 'preset_5', 'preset_6', 'preset_7', 'preset_8'];
+
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('修改昵称'),
-        content: TextField(
-          controller: controller,
-          decoration: const InputDecoration(
-            hintText: '请输入新的昵称',
-            border: OutlineInputBorder(),
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('编辑个人资料'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('选择个性头像：', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                const SizedBox(height: 12),
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  children: presets.map((key) {
+                    final isSelected = selectedAvatar == key;
+                    return InkWell(
+                      onTap: () {
+                        setDialogState(() {
+                          selectedAvatar = key;
+                        });
+                      },
+                      borderRadius: BorderRadius.circular(24),
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isSelected ? Colors.orange : Colors.transparent,
+                            width: 2.5,
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: const Color(0xFFFFD6C8),
+                          child: Text(_getPresetEmoji(key), style: const TextStyle(fontSize: 20)),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+                const SizedBox(height: 20),
+                const Text('用户昵称：', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                const SizedBox(height: 8),
+                TextField(
+                  controller: nameController,
+                  decoration: const InputDecoration(
+                    hintText: '请输入昵称',
+                    border: OutlineInputBorder(),
+                  ),
+                  maxLength: 15,
+                ),
+              ],
+            ),
           ),
-          maxLength: 15,
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('取消'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                final newName = nameController.text.trim();
+                if (newName.isNotEmpty) {
+                  final navigator = Navigator.of(context);
+                  await userService.updateUserProfile(
+                    name: newName,
+                    avatar: selectedAvatar,
+                  );
+                  navigator.pop();
+                  _loadUserData();
+                }
+              },
+              child: const Text('保存'),
+            ),
+          ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('取消'),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              final newName = controller.text.trim();
-              if (newName.isNotEmpty) {
-                final navigator = Navigator.of(context);
-                await userService.updateUserName(newName);
-                navigator.pop();
-                _loadUserData();
-              }
-            },
-            child: const Text('保存'),
-          ),
-        ],
       ),
     );
   }
@@ -1019,11 +1137,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ListTile(
               leading: const Icon(Icons.dark_mode),
               title: const Text('深色模式'),
-              trailing: Switch(
-                value: widget.isDarkMode,
-                onChanged: (val) {
-                  Navigator.pop(ctx);
-                  widget.onThemeChanged(val);
+              trailing: ValueListenableBuilder<bool>(
+                valueListenable: ThemeService.isDarkModeNotifier,
+                builder: (context, isDark, _) {
+                  return Switch(
+                    value: isDark,
+                    onChanged: (val) {
+                      themeService.setDarkMode(val);
+                      widget.onThemeChanged(val);
+                    },
+                  );
                 },
               ),
             ),

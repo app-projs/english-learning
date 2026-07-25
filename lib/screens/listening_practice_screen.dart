@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/storage_service.dart';
 import '../services/audio_service.dart';
+import 'completion_congratulation_screen.dart';
 
 class ListeningPracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -22,6 +23,10 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
   int _correctCount = 0;
   int _totalQuestions = 0;
   StorageService? _storageService;
+  double _speechRate = 1.0;
+  final TextEditingController _dictationController = TextEditingController();
+  bool _showDictationAnswer = false;
+  bool _isDictationCorrect = false;
 
   final List<Map<String, dynamic>> _scenarios = [
     {
@@ -170,7 +175,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     _initStorage();
   }
 
@@ -182,6 +187,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
   void dispose() {
     AudioService.instance.stop();
     _tabController.dispose();
+    _dictationController.dispose();
     super.dispose();
   }
 
@@ -201,7 +207,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
     setState(() {
       _isPlaying = true;
     });
-    AudioService.instance.speak(text, onComplete: () {
+    AudioService.instance.speak(text, speechRate: _speechRate, onComplete: () {
       if (mounted) {
         setState(() {
           _isPlaying = false;
@@ -311,21 +317,72 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
       appBar: AppBar(
         title: const Text('听力练习'),
         actions: [
-          if (widget.onCompleted != null)
-            TextButton(
-              onPressed: () {
-                widget.onCompleted!();
-                Navigator.pop(context);
-              },
-              child: const Text('完成', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
+          Padding(
+            padding: const EdgeInsets.only(right: 14),
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  widget.onCompleted?.call();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CompletionCongratulationScreen(
+                        moduleTitle: '听力理解',
+                        earnedLp: 50,
+                        streakDays: 7,
+                      ),
+                    ),
+                  );
+                },
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.green.shade600, width: 1.5),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.check_circle, size: 16, color: Colors.green.shade700),
+                      const SizedBox(width: 4),
+                      Text(
+                        '完成',
+                        style: TextStyle(
+                          color: Colors.green.shade800,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
+          ),
         ],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(icon: Icon(Icons.list), text: '场景选择'),
-            Tab(icon: Icon(Icons.headphones), text: '开始练习'),
-          ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(48),
+          child: Container(
+            color: Colors.transparent,
+            child: TabBar(
+              controller: _tabController,
+              dividerColor: Colors.transparent,
+              dividerHeight: 0,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicator: const UnderlineTabIndicator(
+                borderSide: BorderSide(width: 3, color: Colors.blue),
+                insets: EdgeInsets.symmetric(horizontal: 16),
+                borderRadius: BorderRadius.all(Radius.circular(3)),
+              ),
+              tabs: const [
+                Tab(icon: Icon(Icons.list, size: 20), text: '场景选择'),
+                Tab(icon: Icon(Icons.headphones, size: 20), text: '单选练习'),
+                Tab(icon: Icon(Icons.edit_note, size: 20), text: '听写填空'),
+              ],
+            ),
+          ),
         ),
       ),
       body: TabBarView(
@@ -333,6 +390,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
         children: [
           _buildScenarioList(),
           _buildPracticeMode(),
+          _buildDictationMode(),
         ],
       ),
     );
@@ -516,6 +574,8 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                           foregroundColor: Colors.white,
                         ),
                       ),
+                      const SizedBox(height: 12),
+                      _buildSpeedSelector(),
                       if (_isPlaying) ...[
                         const SizedBox(height: 8),
                         const Text(
@@ -646,6 +706,193 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
           ),
         ],
       ],
+    );
+  }
+
+  Widget _buildSpeedSelector() {
+    final speeds = [0.8, 1.0, 1.2, 1.5];
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('语速: ', style: TextStyle(fontSize: 13, color: Colors.grey)),
+        ...speeds.map((rate) {
+          final isSelected = (_speechRate == rate);
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+            child: ChoiceChip(
+              label: Text('${rate}x'),
+              selected: isSelected,
+              selectedColor: Colors.blue.shade100,
+              onSelected: (selected) {
+                if (selected) {
+                  setState(() {
+                    _speechRate = rate;
+                  });
+                }
+              },
+            ),
+          );
+        }),
+      ],
+    );
+  }
+
+  Widget _buildDictationMode() {
+    final questions = _scenarios[_selectedScenarioIndex]['questions'];
+    if (questions.isEmpty) {
+      return const Center(child: Text('请先选择一个场景'));
+    }
+
+    final currentQuestion = questions[_currentQuestionIndex];
+    final targetText = currentQuestion['audioText'] as String;
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '听写场景: ${_scenarios[_selectedScenarioIndex]['title']}',
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                '${_currentQuestionIndex + 1} / ${questions.length}',
+                style: const TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  const Icon(Icons.keyboard_voice, size: 48, color: Colors.indigo),
+                  const SizedBox(height: 12),
+                  const Text(
+                    '请听音频并拼写出听到的英文句子/内容',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 16),
+                  ElevatedButton.icon(
+                    onPressed: _isPlaying ? null : () => _playAudio(targetText),
+                    icon: Icon(_isPlaying ? Icons.stop : Icons.volume_up),
+                    label: Text(_isPlaying ? '播放中...' : '点击播放音频'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.indigo,
+                      foregroundColor: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _buildSpeedSelector(),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            controller: _dictationController,
+            enabled: !_showDictationAnswer,
+            maxLines: 3,
+            decoration: InputDecoration(
+              hintText: '在此输入听到的英文内容...',
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              filled: true,
+              fillColor: Colors.grey.shade50,
+            ),
+          ),
+          const SizedBox(height: 16),
+          if (!_showDictationAnswer)
+            ElevatedButton(
+              onPressed: () {
+                final userText = _dictationController.text.trim().toLowerCase();
+                final targetClean = targetText.trim().toLowerCase();
+                final isCorrect = userText == targetClean;
+
+                if (!isCorrect) {
+                  _storageService?.addWrongAnswer({
+                    'id': 'dict_${_selectedScenarioIndex}_${_currentQuestionIndex}_${DateTime.now().millisecondsSinceEpoch}',
+                    'type': '听力听写',
+                    'question': '听写练习: ${currentQuestion['question']}',
+                    'context': targetText,
+                    'userAnswer': _dictationController.text.trim(),
+                    'correctAnswer': targetText,
+                    'createdAt': DateTime.now().toIso8601String(),
+                    'reviewed': false,
+                  });
+                }
+
+                setState(() {
+                  _showDictationAnswer = true;
+                  _isDictationCorrect = isCorrect;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.indigo,
+                foregroundColor: Colors.white,
+                minimumSize: const Size(double.infinity, 48),
+              ),
+              child: const Text('提交听写'),
+            ),
+          if (_showDictationAnswer) ...[
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: _isDictationCorrect ? Colors.green.shade50 : Colors.red.shade50,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: _isDictationCorrect ? Colors.green : Colors.red,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        _isDictationCorrect ? Icons.check_circle : Icons.cancel,
+                        color: _isDictationCorrect ? Colors.green : Colors.red,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        _isDictationCorrect ? '听写正确!' : '存在差异!',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: _isDictationCorrect ? Colors.green : Colors.red,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  const Text('标准原文:', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(targetText, style: const TextStyle(fontSize: 15, color: Colors.blueGrey)),
+                  const SizedBox(height: 8),
+                  const Text('你的听写:', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(_dictationController.text, style: const TextStyle(fontSize: 15)),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                _dictationController.clear();
+                _nextQuestion();
+                setState(() {
+                  _showDictationAnswer = false;
+                });
+              },
+              child: Text(
+                _currentQuestionIndex < questions.length - 1 ? '下一题' : '完成练习',
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }

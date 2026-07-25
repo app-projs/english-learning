@@ -24,6 +24,16 @@ class StorageService {
   static const String _keyWrongAnswers = 'wrong_answers';
   static const String _keyPracticeStats = 'practice_stats';
   static const String _keyDailyPractice = 'daily_practice';
+  static const String _keyTargetWordbook = 'target_wordbook';
+
+  // Target Wordbook
+  Future<void> saveTargetWordbook(String wordbook) async {
+    await _prefs?.setString(_keyTargetWordbook, wordbook);
+  }
+
+  String getTargetWordbook() {
+    return _prefs?.getString(_keyTargetWordbook) ?? '四级核心';
+  }
 
   // User Profile
   Future<void> saveUserProfile(Map<String, dynamic> profile) async {

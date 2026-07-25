@@ -4,8 +4,6 @@ import 'storage_service.dart';
 class ThemeService {
   final StorageService _storage;
 
-  ThemeService(this._storage);
-
   static const Color _primaryColor = Color(0xFF2563EB); // 经典蓝
   static const Color _secondaryColor = Color(0xFF20C997); // 翠绿
   static const Color _accentColor = Color(0xFFFF9E1B); // 活力黄/橙
@@ -108,11 +106,20 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: const TabBarThemeData(
+    tabBarTheme: TabBarThemeData(
       labelColor: _primaryColor,
-      unselectedLabelColor: Color(0xFF868E96),
+      unselectedLabelColor: const Color(0xFF6C757D),
+      labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+      unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
       indicatorColor: _primaryColor,
       indicatorSize: TabBarIndicatorSize.label,
+      dividerColor: Colors.transparent,
+      dividerHeight: 0.0,
+      indicator: const UnderlineTabIndicator(
+        borderSide: BorderSide(width: 3, color: _primaryColor),
+        insets: EdgeInsets.symmetric(horizontal: 16),
+        borderRadius: BorderRadius.all(Radius.circular(3)),
+      ),
     ),
     dividerTheme: const DividerThemeData(
       color: Color(0xFFE9ECEF),
@@ -219,11 +226,20 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: const TabBarThemeData(
+    tabBarTheme: TabBarThemeData(
       labelColor: _primaryColor,
-      unselectedLabelColor: Color(0xFF495057),
+      unselectedLabelColor: const Color(0xFFADB5BD),
+      labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+      unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
       indicatorColor: _primaryColor,
       indicatorSize: TabBarIndicatorSize.label,
+      dividerColor: Colors.transparent,
+      dividerHeight: 0.0,
+      indicator: const UnderlineTabIndicator(
+        borderSide: BorderSide(width: 3, color: _primaryColor),
+        insets: EdgeInsets.symmetric(horizontal: 16),
+        borderRadius: BorderRadius.all(Radius.circular(3)),
+      ),
     ),
     dividerTheme: const DividerThemeData(
       color: Color(0xFF2B3035),
@@ -239,13 +255,27 @@ class ThemeService {
     ),
   );
 
+  static final ValueNotifier<bool> isDarkModeNotifier = ValueNotifier<bool>(false);
+
+  ThemeService(this._storage) {
+    _init();
+  }
+
+  void _init() async {
+    final dark = await isDarkMode();
+    isDarkModeNotifier.value = dark;
+  }
+
   Future<bool> isDarkMode() async {
     final settings = _storage.getSettings();
-    return settings['darkMode'] ?? false;
+    final dark = settings['darkMode'] ?? false;
+    isDarkModeNotifier.value = dark;
+    return dark;
   }
 
   Future<void> setDarkMode(bool value) async {
     await _storage.updateSetting('darkMode', value);
+    isDarkModeNotifier.value = value;
   }
 
   ThemeData getTheme(bool isDark) {

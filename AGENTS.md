@@ -28,3 +28,7 @@ This guide highlights the key architecture patterns, coding conventions, and wor
 2. **Mock Data**: Check `lib/mock/` for mock data when building UI.
 3. **Plan Sync**: When finishing a feature, check the corresponding module execution plan, update progress in `docs/plan/development-progress.md`, and run `flutter analyze`.
 4. **Code Quality**: Always run `flutter analyze` before finishing a task to ensure no linting regressions.
+
+## AI开发说明
+ 开发完一个功能要更新进度文档；
+ 对于未开发需要开发的需要制定开发文档以及计划；

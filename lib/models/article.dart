@@ -6,6 +6,12 @@ class Article {
   final List<String> tags;
   final DateTime createdAt;
   final int readTime;
+  final String? category;
+  final String? bookId;
+  final int? unitIndex;
+  final String? coverUrl;
+  final String? chineseTitle;
+  final String? chineseContent;
 
   Article({
     required this.id,
@@ -15,6 +21,12 @@ class Article {
     required this.tags,
     required this.createdAt,
     required this.readTime,
+    this.category,
+    this.bookId,
+    this.unitIndex,
+    this.coverUrl,
+    this.chineseTitle,
+    this.chineseContent,
   });
 
   factory Article.fromJson(Map<String, dynamic> json) {
@@ -23,9 +35,17 @@ class Article {
       title: json['title'],
       content: json['content'],
       difficulty: json['difficulty'],
-      tags: List<String>.from(json['tags']),
-      createdAt: DateTime.parse(json['createdAt']),
-      readTime: json['readTime'],
+      tags: List<String>.from(json['tags'] ?? []),
+      createdAt: json['createdAt'] != null
+          ? DateTime.parse(json['createdAt'])
+          : DateTime.now(),
+      readTime: json['readTime'] ?? 5,
+      category: json['category'],
+      bookId: json['bookId'],
+      unitIndex: json['unitIndex'],
+      coverUrl: json['coverUrl'],
+      chineseTitle: json['chineseTitle'],
+      chineseContent: json['chineseContent'],
     );
   }
 
@@ -38,6 +58,12 @@ class Article {
       'tags': tags,
       'createdAt': createdAt.toIso8601String(),
       'readTime': readTime,
+      'category': category,
+      'bookId': bookId,
+      'unitIndex': unitIndex,
+      'coverUrl': coverUrl,
+      'chineseTitle': chineseTitle,
+      'chineseContent': chineseContent,
     };
   }
 }
