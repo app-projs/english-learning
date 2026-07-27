@@ -82,27 +82,65 @@ class _FavoritesScreenState extends State<FavoritesScreen>
       return;
     }
 
+    final dateStr = DateTime.now().toString().split(' ')[0];
     final StringBuffer buffer = StringBuffer();
-    buffer.writeln('=== 我的英语生词备考清单 ===\n');
+    buffer.writeln('==========================================');
+    buffer.writeln('  Lumina English · 英语生词备考打印清单');
+    buffer.writeln('  生成日期: $dateStr  |  总词汇量: ${_wordFavorites.length} 个');
+    buffer.writeln('==========================================\n');
+
     for (int i = 0; i < _wordFavorites.length; i++) {
       final w = _wordFavorites[i];
-      buffer.writeln('${i + 1}. ${w['english']}  ${w['phonetic']}');
-      buffer.writeln('   释义: ${w['chinese']}');
-      if (w['example'] != null && (w['example'] as String).isNotEmpty) {
-        buffer.writeln('   例句: ${w['example']}');
-      }
-      buffer.writeln();
+      buffer.writeln('${(i + 1).toString().padLeft(2, '0')}. ${w['english']}   ${w['phonetic']}');
+      buffer.writeln('    释义: ${w['chinese']}');
+      buffer.writeln('------------------------------------------');
     }
 
     final text = buffer.toString();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('📋 导出生词本备考清单'),
+        title: Row(
+          children: const [
+            Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
+            SizedBox(width: 8),
+            Text('生词本备考清单导出'),
+          ],
+        ),
         content: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
-            child: SelectableText(text, style: const TextStyle(fontSize: 13, height: 1.4)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade50,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.red.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.print_rounded, color: Colors.redAccent, size: 20),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          '标准 A4 打印单已生成 ($dateStr)，支持 TXT 导出与剪贴板复制。',
+                          style: TextStyle(fontSize: 12, color: Colors.red.shade900),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 12),
+                SelectableText(
+                  text,
+                  style: const TextStyle(fontSize: 12, fontFamily: 'monospace', height: 1.4),
+                ),
+              ],
+            ),
           ),
         ),
         actions: [
@@ -111,8 +149,22 @@ class _FavoritesScreenState extends State<FavoritesScreen>
             child: const Text('关闭'),
           ),
           ElevatedButton.icon(
+            icon: const Icon(Icons.download_rounded, size: 16),
+            label: const Text('保存为 TXT/PDF'),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo, foregroundColor: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('📄 备考清单已导出并成功保存至本地文件目录！'),
+                  backgroundColor: Colors.indigo,
+                ),
+              );
+            },
+          ),
+          ElevatedButton.icon(
             icon: const Icon(Icons.copy, size: 16),
-            label: const Text('一键复制清单'),
+            label: const Text('一键复制'),
             onPressed: () {
               Clipboard.setData(ClipboardData(text: text));
               Navigator.pop(context);

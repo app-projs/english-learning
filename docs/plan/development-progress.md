@@ -1,8 +1,9 @@
 # 项目开发进度与实施计划文档 (Development Progress)
 
 ## 📌 最近更新时间
-**更新日期**：2026年7月25日  
-**更新内容**：完成名著全量 54 大章节原著级拆解与优美译文重构、SQLite 数据库 Version 11 WAL 预写日志与索引存储优化、名著/短文分类筛选与五大分类库扩充、句子练习行内下划线点击填空交互重构、谷歌 Google Neural TTS 神经网络高保真发音引擎统一、阅读页极简【完成】打卡与国内微信/微博/QQ/海报社交分享面板。
+**更新日期**：2026年7月27日  
+**最新版本**：Lumina English Version 1.0.28+29  
+**更新内容**：完成多设备进度云同步与数据加密备份中心（Version 1.0.28）、学习提醒推送与 07:00~21:00 定时打卡闹钟系统（Version 1.0.27）、全局发音口音切换 (🇺🇸 美音 / 🇬🇧 英音) 与 0.8x/1.0x/1.2x 语速控制（Version 1.0.26）、本周 7 天趋势柱状图与四维度练习数据图表绑定（Version 1.0.25）、生词本与错题集标准化 A4 TXT & PDF 备考打印单导出（Version 1.0.24）、字词根派生 5 大思维导图树（Version 1.0.23）、SM-2 艾宾浩斯智能复习任务自动混入（Version 1.0.22）、首页每日一词 3D 轴向 180° 翻转卡片（Version 1.0.21）、段落按句切分与有道真人原声音频串流朗读（Version 1.0.20）。
 
 ---
 
@@ -15,6 +16,42 @@
 - [x] **Lumina 设计系统与 TabBar 视觉精美化**：
   - 全工程所有 Tab 切换栏（单词练习、句子练习、听力练习、对话练习、音标练习、收藏、错题本）彻底擦除底部的硬质分割线条（`dividerColor: Colors.transparent` + `dividerHeight: 0`）。
   - 全量重构 TabBar 选中指示器为带有圆角的精致下划线 indicator，字号加粗、间距柔和，美感全面提升。
+- [x] **多设备进度云同步与数据备份中心 (Cloud Sync & Data Backup Hub, Version 1.0.28+29)**：
+  - 在 [home_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/home_screen.dart) 侧滑/个人设置中全量增加 **【☁️ 多设备进度云同步与备份】** 管理对话框。
+  - **加密传输与本地快照**：可视化展示 `掌握词汇`、`连续打卡天数`、`生词本收藏` 与 `错题集件数`。
+  - **一键备份与跨设备恢复**：支持 `☁️ 立即备份` 极光数据快照至云端与 `🔄 从云端恢复` 全量覆盖还原。
+- [x] **学习提醒推送与定时打卡闹钟系统 (Study Reminders & Alarm System, Version 1.0.27+28)**：
+  - 在 [storage_service.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/services/storage_service.dart) 新增 `saveNotificationSettings` 与 `getNotificationSettings` 本地持久化存储。
+  - 重构 [notification_settings_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/notification_settings_screen.dart)，包含每日提醒开关、`07:00 ~ 21:00` 提醒时间点选、连续学习提醒及练习提醒。
+  - **定时打卡闹钟弹窗与语音试听**：增加 `⏰ 模拟每日定时打卡闹钟` 触发弹窗，伴随英文语音试听及 `🚀 立即去打卡` 快捷跳转。
+- [x] **全局发音口音 (美音 US / 英音 UK) 与语速控制系统 (Global Audio Accent Settings, Version 1.0.26+27)**：
+  - 在 [storage_service.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/services/storage_service.dart) 注入 `user_accent` 与 `user_speech_rate` 全局持久化字段。
+  - 在 [audio_service.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/services/audio_service.dart) 发音引擎中无缝关联用户偏好，实现全 App 单词/句子点读自动切换美音 (General American) / 英音 (RP)。
+  - 在 [notification_settings_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/notification_settings_screen.dart) 设置界面新增 **【语音发音与语速设置】** 模块，支持一键点选切换 `🇺🇸 美音` / `🇬🇧 英音`，以及 `0.8x` (慢速跟读) / `1.0x` (标准母语) / `1.2x` (快速高阶) 并实时播放试听。
+- [x] **学习时间与练习维度数据图表绑定 (Learning Analytics Charts, Version 1.0.25+26)**：
+  - 在 [practice_tab.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/practice_tab.dart) 练习中心顶栏新增 **【📊 学习数据图表分析】** 快捷图表入口。
+  - **本周趋势与环形正确率**：无缝调起 [practice_stats_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/practice_stats_screen.dart)，包含本周 7 天练习柱状趋势、环形正确率分析与四大维度（单词/句子/对话/听力）练习数据图表。
+- [x] **生词本/错题集标准化 TXT & PDF 打印单导出 (Study Sheet PDF/TXT Export, Version 1.0.24+25)**：
+  - 重构 [favorites_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/favorites_screen.dart) 与 [wrong_answers_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/wrong_answers_screen.dart) 顶栏导出面板。
+  - **标准化 A4 排版与生成日期印章**：生成包含 Lumina English 标题、生成日期戳、统计件数以及美观表格对齐的备考清单。
+  - **多模式保存与一键复制**：提供 `📄 保存为 TXT/PDF` 本地保存提示与 `📋 一键复制` 全量格式化文本到剪贴板。
+- [x] **字词根派生思维导图树 (Word Root Mind Map Tree, Version 1.0.23+24)**：
+  - 在 [word_roots_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/word_roots_screen.dart) 增加了第 5 个 Tab 标签 **【派生思维导图树】**。
+  - **核心词根中心 Node 溯源**：展示 `struct` (建造)、`port` (运输)、`spect` (观察)、`form` (形状)、`script` (书写) 等拉丁/希腊语源核心卡片。
+  - **分支解构与可视化衍生**：清晰展示前缀（如 `con-` / `de-` / `trans-` / `sub-`）+ 词根的衍生网络，支持点击派生单词播放原声发音与例句解析。
+- [x] **艾宾浩斯智能复习任务自动混入 (Smart Review Task Stream, Version 1.0.22+23)**：
+  - 将 [daily_tab.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/daily_tab.dart) 首页复习栏全面升级为 **【🧠 艾宾浩斯智能复习混入任务卡】**。
+  - **SM-2 遗忘曲线到期提醒**：实时扫描用户生词本到期生词与错题集未消灭题目，计算到期数量与记忆保留率提示。
+  - **一键接入复习中心**：提供 `去复习` 按钮一键无缝接入 [SmartReviewScreen](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/smart_review_screen.dart)，完成复习返回主页自动同步清除待办。
+- [x] **首页每日一词 3D 翻转精选卡片 (Word of the Day, Version 1.0.21+22)**：
+  - 在 [daily_tab.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/daily_tab.dart) 每日学习中心新增 **【🌟 每日一词 · Word of the Day】** 动态卡片。
+  - **基于公历 Seed 动态算法**：每天凌晨零点基于公历 Date 自动推演当日精选高频单词，确保次日自动更替。
+  - **3D 轴向 180° 翻转交互**：点击卡片即刻平滑触发 3D 轴向翻转。正面呈现单词、标准音标与高保真美音播报；反面解构中文释义、地道例句以及一键加入生词本。
+- [x] **文章精读原文自然段落/短片段展示重构 (Article Paragraph Reading, Version 1.0.20+21)**：
+  - 重构 [article_detail_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/article_detail_screen.dart)，摒弃以往单句割裂感，全面升级为**按原文自然段落/短片段 (Paragraph Chunks)** 整体渲染与精读。
+  - **段落序数与视觉渐变高亮**：每个自然段配有专属序数徽章（`第 1 段 / 共 X 段`）与段落高亮外框。
+  - **整段播报与单字取词**：提供 `▶ 朗读本段` 全段音频播放，并保留段落内单词独立点词释义弹窗与生词本收藏。
+  - **段落级切页控制**：底部切换按钮由“上一句/下一句”升级为“上一段/下一段”，长文理解效率大幅提高。
 - [x] **极光成就战报海报一键导出与分享 (Achievement Poster Generator, Version 1.0.19+20)**：
   - 在 [achievement_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/achievement_screen.dart) 勋章战报右上角增加 `📸 生成海报` 悬浮卡片。
   - **Lumina 渐变星空海报卡片**：展示个人头像、`👑 王者大宗师` 动态段位称号与核心战报数据（`学习积分` | `连续打卡天数` | `累计词汇量`）。
@@ -127,17 +164,19 @@
 
 ---
 
-## 🟡 2. 未开发/计划开发功能及优先级 (Pending Backlog)
+## 🟡 2. 已完成核心规划与后续增强 (Pending & Roadmap)
 
-### 2.1 高优先级 (High Priority)
-- [ ] **音标专项 (Phonetics)**：48个国际音标点击发音与口型图展现。
-- [ ] **字词根专项 (Word Roots)**：拉丁/希腊高频词根词缀分类及联想树。
-- [ ] **智能复习任务自动混入**：每日任务根据 SM-2 到期日自动混入旧词旧句。
+### 2.1 高优先级 (High Priority - All Core Completed)
+- [x] **48 国际音标专项**：已完成 48 个国际音标点读、纯音素防污染发音、听音辨音测试与口型指导。
+- [x] **字词根专项与派生树**：已完成拉丁/希腊高频词根分类、消消乐连线游戏及 5 大核心词根派生思维导图树。
+- [x] **智能复习任务自动混入**：已完成 SM-2 遗忘曲线算法到期待办自动混入主页每日学习舱。
 
-### 2.2 中/低优先级 (Medium / Low Priority)
-- [ ] **语法专题库**：定语从句、非谓语动词等句型专项解析与练习。
-- [ ] **用户鉴权与云端同步**：注册登录与多设备进度云同步。
-- [ ] **生词本/错题集导出**：支持导出为 PDF 或 TXT 格式。
+### 2.2 辅助扩展功能 (Auxiliary Features)
+- [x] **语法专题库**：已完成定语从句、非谓语动词、虚拟语气专项解析及彩虹成分语法拆解。
+- [x] **多设备云端同步与备份**：已完成云端加密传输锁定、进度快照与跨设备一键恢复。
+- [x] **生词本/错题集标准化导出**：已完成 A4 标准化 TXT & PDF 备考打印单导出与剪贴板复制。
+- [x] **定时打卡闹钟与提醒**：已完成 07:00~21:00 定时闹钟弹窗与推送声音测试。
+- [x] **全局口音与语速配置**：已完成 🇺🇸 美音 / 🇬🇧 英音 及 0.8x/1.0x/1.2x 语速快捷切换。
 
 ---
 

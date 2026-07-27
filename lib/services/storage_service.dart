@@ -25,6 +25,26 @@ class StorageService {
   static const String _keyPracticeStats = 'practice_stats';
   static const String _keyDailyPractice = 'daily_practice';
   static const String _keyTargetWordbook = 'target_wordbook';
+  static const String _keyAccent = 'user_accent';
+  static const String _keySpeechRate = 'user_speech_rate';
+
+  // Audio Accent (US / UK)
+  Future<void> saveAccent(String accent) async {
+    await _prefs?.setString(_keyAccent, accent);
+  }
+
+  String getAccent() {
+    return _prefs?.getString(_keyAccent) ?? 'US';
+  }
+
+  // Audio Speech Rate (0.8, 1.0, 1.2)
+  Future<void> saveSpeechRate(double rate) async {
+    await _prefs?.setDouble(_keySpeechRate, rate);
+  }
+
+  double getSpeechRate() {
+    return _prefs?.getDouble(_keySpeechRate) ?? 1.0;
+  }
 
   // Target Wordbook
   Future<void> saveTargetWordbook(String wordbook) async {
@@ -33,6 +53,27 @@ class StorageService {
 
   String getTargetWordbook() {
     return _prefs?.getString(_keyTargetWordbook) ?? '四级核心';
+  }
+
+  // Notification Settings
+  Future<void> saveNotificationSettings(Map<String, dynamic> settings) async {
+    await _prefs?.setString(_keySettings, jsonEncode(settings));
+  }
+
+  Map<String, dynamic> getNotificationSettings() {
+    final str = _prefs?.getString(_keySettings);
+    if (str != null) {
+      try {
+        return jsonDecode(str);
+      } catch (_) {}
+    }
+    return {
+      'dailyReminder': true,
+      'streakReminder': true,
+      'achievementNotification': true,
+      'practiceReminder': false,
+      'reminderTime': '08:00',
+    };
   }
 
   // User Profile

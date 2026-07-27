@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import '../widgets/modern_ui.dart';
 import '../services/theme_service.dart';
@@ -13,7 +14,11 @@ import 'sentence_practice_screen.dart';
 import 'article_detail_screen.dart';
 import 'completion_congratulation_screen.dart';
 import '../services/audio_service.dart';
+import '../models/word.dart';
+import '../mock/mock_words.dart';
+import '../services/storage_service.dart';
 import '../models/user.dart';
+import 'smart_review_screen.dart';
 
 class DailyTab extends StatefulWidget {
   final bool isActive;
@@ -26,11 +31,13 @@ class DailyTab extends StatefulWidget {
 class _DailyTabState extends State<DailyTab> {
   UserProfile? _profile;
   final int _totalSteps = 4;
+  late Word _wordOfDay;
 
   @override
   void initState() {
     super.initState();
     _loadUserProfile();
+    _pickWordOfDay();
   }
 
   @override
@@ -39,6 +46,15 @@ class _DailyTabState extends State<DailyTab> {
     if (widget.isActive && !oldWidget.isActive) {
       _loadUserProfile();
     }
+  }
+
+  void _pickWordOfDay() {
+    final allWords = MockWords.getWords();
+    final daySeed = DateTime.now().year * 10000 +
+        DateTime.now().month * 100 +
+        DateTime.now().day;
+    final index = daySeed % allWords.length;
+    _wordOfDay = allWords[index];
   }
 
   Future<void> _loadUserProfile() async {
@@ -200,10 +216,12 @@ class _DailyTabState extends State<DailyTab> {
                 _buildReviewAlertBanner(isDark),
               ],
               const SizedBox(height: 24),
+              _buildWordOfDayCard(isDark),
+              const SizedBox(height: 24),
               _buildDailyQuoteCard(isDark),
               const SizedBox(height: 24),
               _buildQuickActionsGrid(context, isDark),
-              const SizedBox(height: 128), // Space for floating bottom nav
+              const SizedBox(height: 128),
             ],
           ),
         ),
@@ -212,6 +230,14 @@ class _DailyTabState extends State<DailyTab> {
   }
 
   // 1. 顶部头部区域
+  Widget _buildWordOfDayCard(bool isDark) {
+    return _WordFlipCard(
+      word: _wordOfDay,
+      isDark: isDark,
+      storageService: storageService,
+    );
+  }
+
   Widget _buildHeader(bool isDark) {
     final displayName = _profile?.name ?? 'Alex';
     final userAvatar = _profile?.avatar;
@@ -627,51 +653,123 @@ class _DailyTabState extends State<DailyTab> {
     );
   }
 
-  // 3. 复习警示条
+  // 3. 艾宾浩斯智能复习混入任务卡
   Widget _buildReviewAlertBanner(bool isDark) {
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const WrongAnswersScreen()),
-        );
+          MaterialPageRoute(builder: (context) => const SmartReviewScreen()),
+        ).then((_) {
+          if (mounted) setState(() {});
+        });
       },
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(16),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF2A1A12) : const Color(0xFFFFF7ED),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: isDark ? const Color(0xFF7C2D12) : const Color(0xFFFFEDD5),
-            width: 1,
+          gradient: LinearGradient(
+            colors: isDark
+                ? [const Color(0xFF311005), const Color(0xFF451A03)]
+                : [const Color(0xFFFFF7ED), const Color(0xFFFFEDD5)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: isDark ? const Color(0xFF9A3412) : const Color(0xFFFDBA74),
+            width: 1.5,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFFF97316).withOpacity(0.12),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         child: Row(
           children: [
-            const Icon(
-              Icons.flash_on,
-              color: Color(0xFFF97316),
-              size: 20,
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                '温故知新：还有 $_pendingReviewCount 个单词需要复习，点击立即消灭！',
-                style: TextStyle(
-                  color: isDark
-                      ? const Color(0xFFFED7AA)
-                      : const Color(0xFFEA580C),
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                color: Color(0xFFF97316),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.psychology_rounded,
+                color: Colors.white,
+                size: 22,
               ),
             ),
-            Icon(
-              Icons.chevron_right,
-              color: isDark ? const Color(0xFFFED7AA) : const Color(0xFFEA580C),
-              size: 18,
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        '🧠 艾宾浩斯今日智能复习待办',
+                        style: TextStyle(
+                          color: isDark ? Colors.white : const Color(0xFF9A3412),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.red.shade100,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          '$_pendingReviewCount 项到期',
+                          style: TextStyle(
+                            color: Colors.red.shade900,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    '根据 SM-2 遗忘曲线算法排程，及时复习记忆保留率提升 300%',
+                    style: TextStyle(
+                      color: isDark ? const Color(0xFFFED7AA) : const Color(0xFFC2410C),
+                      fontSize: 11,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 8),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFF97316),
+                foregroundColor: Colors.white,
+                elevation: 0,
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SmartReviewScreen()),
+                ).then((_) {
+                  if (mounted) setState(() {});
+                });
+              },
+              child: const Text(
+                '去复习',
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
@@ -984,3 +1082,272 @@ class _DailyTabState extends State<DailyTab> {
     );
   }
 }
+
+class _WordFlipCard extends StatefulWidget {
+  final Word word;
+  final bool isDark;
+  final StorageService storageService;
+
+  const _WordFlipCard({
+    required this.word,
+    required this.isDark,
+    required this.storageService,
+  });
+
+  @override
+  State<_WordFlipCard> createState() => _WordFlipCardState();
+}
+
+class _WordFlipCardState extends State<_WordFlipCard>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+  bool _isFront = true;
+  bool _isFavorited = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 400),
+      vsync: this,
+    );
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+    _checkFavorite();
+  }
+
+  void _checkFavorite() {
+    setState(() {
+      _isFavorited = widget.storageService.getFavorites().contains(widget.word.english);
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _toggleFlip() {
+    if (_isFront) {
+      _controller.forward();
+    } else {
+      _controller.reverse();
+    }
+    setState(() {
+      _isFront = !_isFront;
+    });
+  }
+
+  void _toggleFavorite() async {
+    if (_isFavorited) {
+      await widget.storageService.removeFavorite(widget.word.english);
+    } else {
+      await widget.storageService.addFavorite(widget.word.english);
+    }
+    setState(() {
+      _isFavorited = !_isFavorited;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        final angle = _animation.value * pi;
+        final isUnder = angle > (pi / 2);
+
+        return Transform(
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001)
+            ..rotateY(angle),
+          alignment: Alignment.center,
+          child: isUnder
+              ? Transform(
+                  transform: Matrix4.identity()..rotateY(pi),
+                  alignment: Alignment.center,
+                  child: _buildBackCard(),
+                )
+              : _buildFrontCard(),
+        );
+      },
+    );
+  }
+
+  Widget _buildFrontCard() {
+    return InkWell(
+      onTap: _toggleFlip,
+      borderRadius: BorderRadius.circular(24),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF4F46E5), Color(0xFF6366F1)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.indigo.withOpacity(0.3),
+              blurRadius: 16,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Text(
+                    '🌟 每日一词 · Word of the Day',
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  icon: const Icon(Icons.volume_up_rounded, color: Colors.white, size: 24),
+                  onPressed: () => AudioService.instance.speakWord(widget.word.english),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Text(
+              widget.word.english,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              widget.word.phonetic,
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+            const SizedBox(height: 18),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  '💡 点击卡片翻转查看详细释义',
+                  style: TextStyle(color: Colors.white60, fontSize: 12),
+                ),
+                Icon(Icons.flip_rounded, color: Colors.white70, size: 18),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBackCard() {
+    return InkWell(
+      onTap: _toggleFlip,
+      borderRadius: BorderRadius.circular(24),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF0F172A), Color(0xFF1E293B)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(color: Colors.amber.withOpacity(0.5), width: 1.5),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.4),
+              blurRadius: 16,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    widget.word.english,
+                    style: const TextStyle(
+                      color: Colors.amber,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  icon: Icon(
+                    _isFavorited ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                    color: _isFavorited ? Colors.redAccent : Colors.white60,
+                    size: 24,
+                  ),
+                  onPressed: _toggleFavorite,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              widget.word.chinese,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 12),
+            if (widget.word.exampleSentence.isNotEmpty) ...[
+              Text(
+                '“${widget.word.exampleSentence}”',
+                style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 13,
+                  fontStyle: FontStyle.italic,
+                  height: 1.4,
+                ),
+              ),
+              const SizedBox(height: 14),
+            ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  '↩️ 点击翻回正面',
+                  style: TextStyle(color: Colors.white54, fontSize: 12),
+                ),
+                Icon(Icons.flip_rounded, color: Colors.amber, size: 18),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+

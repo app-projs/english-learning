@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:path_provider/path_provider.dart';
+import 'storage_service.dart';
 
 /// 统一超真实高保真语音服务 (Unified Natural Audio Service)
 /// 支持: 谷歌 Google Neural TTS 神经网络发音、有道美音/英音原生原声 MP3 本地文件缓存、双引擎故障自动降级
@@ -175,8 +177,8 @@ class AudioService {
     }
   }
 
-  /// 单词发音播报 (Word Pronunciation with Native MP3 Cache)
-  Future<void> speakWord(String word, {String accent = 'US', VoidCallback? onComplete}) async {
+  /// 单词发音播报 (Word Pronunciation with Native MP3 Cache & Global Accent)
+  Future<void> speakWord(String word, {String? accent, VoidCallback? onComplete}) async {
     await init();
     await stop();
     _onComplete = onComplete;
@@ -188,7 +190,9 @@ class AudioService {
       return;
     }
 
-    final accentType = accent.toUpperCase() == 'UK' ? '1' : '2'; // 1: UK, 2: US
+    final storage = await StorageService.getInstance();
+    final effectiveAccent = accent ?? storage.getAccent();
+    final accentType = effectiveAccent.toUpperCase() == 'UK' ? '1' : '2'; // 1: UK, 2: US
     final fileName = 'word_${cleanWord}_type$accentType.mp3';
 
     try {
@@ -231,76 +235,98 @@ class AudioService {
     }
   }
 
-  /// 长句与文章段落发音 (Sentence & Paragraph Speech with Natural Rhythm)
-  Future<void> speakSentence(String sentence, {double speechRate = 1.0, VoidCallback? onComplete}) async {
+  /// 长句与文章段落发音 (Sentence & Paragraph Speech - Natural Streaming)
+  /// 策略：将段落按句切分 → 每句走有道原声 MP3 流 → 顺序串行播放，无缝连贯自然
+  Future<void> speakSentence(String paragraph, {double speechRate = 1.0, VoidCallback? onComplete}) async {
     await init();
     await stop();
-    _onComplete = onComplete;
 
-    final trimmedText = sentence.trim();
+    final trimmedText = paragraph.trim();
     if (trimmedText.isEmpty) {
-      _onComplete?.call();
-      _onComplete = null;
+      onComplete?.call();
       return;
     }
 
-    // 超长长句直接使用 Google Neural TTS 朗读，发音最自然连贯
-    if (trimmedText.length > 80) {
-      try {
-        await setSpeechRate(speechRate);
-        await _flutterTts.speak(trimmedText);
-        return;
-      } catch (e) {
-        _onComplete?.call();
-        _onComplete = null;
-        return;
-      }
+    // 1. 将段落切分为句子列表（以 . ! ? 为切分点，保留内容非空的句子）
+    final sentences = trimmedText
+        .split(RegExp(r'(?<=[.!?])\s+'))
+        .map((s) => s.trim())
+        .where((s) => s.isNotEmpty)
+        .toList();
+
+    if (sentences.isEmpty) {
+      onComplete?.call();
+      return;
     }
 
-    // 中短句尝试高清有道原声音频流缓存
+    // 2. 依次串行播放每个句子的有道原声 MP3（递归回调链实现无缝顺序播放）
+    int currentIndex = 0;
+    late Future<void> Function() playNext;
+    playNext = () async {
+      if (currentIndex >= sentences.length) {
+        onComplete?.call();
+        return;
+      }
+      final sentenceText = sentences[currentIndex++];
+      await _playSentenceChunk(sentenceText, speechRate: speechRate, onComplete: playNext);
+    };
+    await playNext();
+  }
+
+  /// 单句有道 MP3 流播放内核 (按句缓存 + 完成回调链)
+  Future<void> _playSentenceChunk(String sentenceText, {double speechRate = 1.0, Future<void> Function()? onComplete}) async {
     try {
       if (_cacheDir != null) {
-        final hashStr = trimmedText.hashCode.abs().toString();
-        final fileName = 'sentence_${hashStr}_${trimmedText.length}.mp3';
+        final hashStr = sentenceText.hashCode.abs().toString();
+        final fileName = 'chunk_${hashStr}_${sentenceText.length}.mp3';
         final localFile = File('${_cacheDir!.path}/$fileName');
 
-        if (await localFile.exists() && (await localFile.length()) > 1000) {
+        // 命中磁盘缓存 - 0延迟直接播放
+        if (await localFile.exists() && (await localFile.length()) > 500) {
           await _audioPlayer.setPlaybackRate(speechRate);
+          _onComplete = onComplete != null ? () => onComplete() : null;
           await _audioPlayer.play(DeviceFileSource(localFile.path));
           return;
         }
 
-        final encodedText = Uri.encodeComponent(trimmedText);
+        // 请求有道原声 MP3 音频流（美音，type=2）
+        final encodedText = Uri.encodeComponent(sentenceText);
         final url = 'https://dict.youdao.com/dictvoice?audio=$encodedText&type=2';
         final httpClient = HttpClient();
-        httpClient.connectionTimeout = const Duration(seconds: 4);
+        httpClient.connectionTimeout = const Duration(seconds: 5);
 
         final request = await httpClient.getUrl(Uri.parse(url));
-        request.headers.set('User-Agent', 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36');
+        request.headers.set(
+          'User-Agent',
+          'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
+        );
         final response = await request.close();
 
         if (response.statusCode == 200) {
           final bytes = await response.fold<List<int>>([], (acc, chunk) => acc..addAll(chunk));
-          if (bytes.length > 1000) {
+          if (bytes.length > 500) {
             await localFile.writeAsBytes(bytes);
             await _audioPlayer.setPlaybackRate(speechRate);
+            _onComplete = onComplete != null ? () => onComplete() : null;
             await _audioPlayer.play(DeviceFileSource(localFile.path));
             return;
           }
         }
       }
     } catch (e) {
-      debugPrint('Sentence audio stream fallback: $e');
+      debugPrint('Chunk audio fetch error: $e');
     }
 
-    // 自动降级为系统自然 TTS
+    // 降级：使用本地 TTS 朗读这一句（不影响后续句子播放）
     try {
+      final ttsCompleter = Completer<void>();
+      _flutterTts.setCompletionHandler(() => ttsCompleter.complete());
+      _flutterTts.setErrorHandler((_) => ttsCompleter.complete());
       await setSpeechRate(speechRate);
-      await _flutterTts.speak(trimmedText);
-    } catch (e) {
-      _onComplete?.call();
-      _onComplete = null;
-    }
+      await _flutterTts.speak(sentenceText);
+      await ttsCompleter.future;
+    } catch (_) {}
+    onComplete?.call();
   }
 
   // 48 国际音标高保真纯音发音源映射 (仅保留纯正爆破音/摩擦音音频，拒绝包含完整单词发音)

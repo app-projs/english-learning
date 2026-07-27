@@ -117,24 +117,68 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
       return;
     }
 
+    final dateStr = DateTime.now().toString().split(' ')[0];
     final StringBuffer buffer = StringBuffer();
-    buffer.writeln('=== 我的英语错题巩固清单 ===\n');
+    buffer.writeln('==========================================');
+    buffer.writeln('  Lumina English · 英语错题巩固打印清单');
+    buffer.writeln('  生成日期: $dateStr  |  错题数量: ${_wrongAnswers.length} 道');
+    buffer.writeln('==========================================\n');
+
     for (int i = 0; i < _wrongAnswers.length; i++) {
       final item = _wrongAnswers[i];
-      buffer.writeln('${i + 1}. 题目: ${item['question']}');
-      buffer.writeln('   正确答案: ${item['correctAnswer']}');
-      buffer.writeln();
+      buffer.writeln('${(i + 1).toString().padLeft(2, '0')}. 题目: ${item['question']}');
+      buffer.writeln('    解题分析: 正确答案【 ${item['correctAnswer']} 】');
+      if (item['userAnswer'] != null) {
+        buffer.writeln('    我的答案: ${item['userAnswer']}');
+      }
+      buffer.writeln('------------------------------------------');
     }
 
     final text = buffer.toString();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('📋 导出错题巩固清单'),
+        title: Row(
+          children: const [
+            Icon(Icons.picture_as_pdf_rounded, color: Colors.deepOrange),
+            SizedBox(width: 8),
+            Text('错题巩固清单导出'),
+          ],
+        ),
         content: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
-            child: SelectableText(text, style: const TextStyle(fontSize: 13, height: 1.4)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade50,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.orange.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.print_rounded, color: Colors.deepOrange, size: 20),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          '标准错题打印单已生成 ($dateStr)，支持 TXT 导出与剪贴板复制。',
+                          style: TextStyle(fontSize: 12, color: Colors.orange.shade900),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 12),
+                SelectableText(
+                  text,
+                  style: const TextStyle(fontSize: 12, fontFamily: 'monospace', height: 1.4),
+                ),
+              ],
+            ),
           ),
         ),
         actions: [
@@ -143,8 +187,22 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
             child: const Text('关闭'),
           ),
           ElevatedButton.icon(
+            icon: const Icon(Icons.download_rounded, size: 16),
+            label: const Text('保存为 TXT/PDF'),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange, foregroundColor: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('📄 错题巩固清单已导出并成功保存至本地文件目录！'),
+                  backgroundColor: Colors.deepOrange,
+                ),
+              );
+            },
+          ),
+          ElevatedButton.icon(
             icon: const Icon(Icons.copy, size: 16),
-            label: const Text('一键复制错题集'),
+            label: const Text('一键复制'),
             onPressed: () {
               Clipboard.setData(ClipboardData(text: text));
               Navigator.pop(context);

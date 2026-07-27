@@ -17,7 +17,7 @@ class _WordRootsScreenState extends State<WordRootsScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -99,6 +99,7 @@ class _WordRootsScreenState extends State<WordRootsScreen>
               Tab(text: '核心词根 (Roots)'),
               Tab(text: '高频前缀 (Prefixes)'),
               Tab(text: '常用后缀 (Suffixes)'),
+              Tab(text: '派生思维导图树'),
               Tab(text: '拆词连线游戏'),
             ],
           ),
@@ -110,6 +111,7 @@ class _WordRootsScreenState extends State<WordRootsScreen>
           _buildRootsList(_coreRoots),
           _buildRootsList(_commonPrefixes),
           _buildRootsList(_commonSuffixes),
+          const _EtymologyTreeViewWidget(),
           const _WordRootMatchingGameWidget(),
         ],
       ),
@@ -687,3 +689,401 @@ class _WordRootMatchingGameWidgetState extends State<_WordRootMatchingGameWidget
     );
   }
 }
+
+class _EtymologyTreeViewWidget extends StatefulWidget {
+  const _EtymologyTreeViewWidget();
+
+  @override
+  State<_EtymologyTreeViewWidget> createState() => _EtymologyTreeViewWidgetState();
+}
+
+class _EtymologyTreeViewWidgetState extends State<_EtymologyTreeViewWidget> {
+  int _selectedTreeIndex = 0;
+
+  final List<Map<String, dynamic>> _treeData = [
+    {
+      'root': 'struct',
+      'meaning': '建造，构建 (to build)',
+      'origin': '🏛️ 拉丁语根 structus',
+      'branches': [
+        {
+          'prefix': 'con- (共同)',
+          'word': 'construct',
+          'phonetic': '/kənˈstrʌkt/',
+          'meaning': 'v. 建设，建造',
+          'sentence': 'They plan to construct a new highway.',
+        },
+        {
+          'prefix': 'de- (向下/破坏)',
+          'word': 'destruct',
+          'phonetic': '/dɪˈstrʌkt/',
+          'meaning': 'v. 破坏，摧毁',
+          'sentence': 'The missile was ordered to self-destruct.',
+        },
+        {
+          'prefix': 'in- (向内)',
+          'word': 'instruct',
+          'phonetic': '/ɪnˈstrʌkt/',
+          'meaning': 'v. 指导，教授',
+          'sentence': 'She will instruct the students in grammar.',
+        },
+        {
+          'prefix': 're- (重新)',
+          'word': 'reconstruct',
+          'phonetic': '/ˌriːkənˈstrʌkt/',
+          'meaning': 'v. 重建，重现',
+          'sentence': 'Historians tried to reconstruct the ancient city.',
+        },
+      ],
+    },
+    {
+      'root': 'port',
+      'meaning': '拿，运，携带 (to carry)',
+      'origin': '🏛️ 拉丁语根 portare',
+      'branches': [
+        {
+          'prefix': 'im- (向内)',
+          'word': 'import',
+          'phonetic': '/ˈɪmpɔːt/',
+          'meaning': 'v. 进口，输入',
+          'sentence': 'The country imports oil from abroad.',
+        },
+        {
+          'prefix': 'ex- (向外)',
+          'word': 'export',
+          'phonetic': '/ˈekspɔːt/',
+          'meaning': 'v. 出口，输出',
+          'sentence': 'They export tea to Europe.',
+        },
+        {
+          'prefix': 'trans- (穿过)',
+          'word': 'transport',
+          'phonetic': '/ˈtrænspɔːt/',
+          'meaning': 'v./n. 运输，搬运',
+          'sentence': 'Bicycles are a green means of transport.',
+        },
+        {
+          'prefix': 'sup- (在...下方)',
+          'word': 'support',
+          'phonetic': '/səˈpɔːt/',
+          'meaning': 'v. 支持，支撑',
+          'sentence': 'I fully support your decision.',
+        },
+      ],
+    },
+    {
+      'root': 'spect',
+      'meaning': '看，观察 (to look)',
+      'origin': '🏛️ 拉丁语根 specere',
+      'branches': [
+        {
+          'prefix': 'in- (向内/深入)',
+          'word': 'inspect',
+          'phonetic': '/ɪnˈspekt/',
+          'meaning': 'v. 检查，视察',
+          'sentence': 'Officials will inspect the school today.',
+        },
+        {
+          'prefix': 'pro- (向前)',
+          'word': 'prospect',
+          'phonetic': '/ˈprɒspekt/',
+          'meaning': 'n. 前景，展望',
+          'sentence': 'The job offers good career prospects.',
+        },
+        {
+          'prefix': 're- (再次/回头)',
+          'word': 'respect',
+          'phonetic': '/rɪˈspekt/',
+          'meaning': 'v./n. 尊重，敬佩',
+          'sentence': 'Always treat others with respect.',
+        },
+        {
+          'prefix': 'retro- (向后)',
+          'word': 'retrospect',
+          'phonetic': '/ˈretrəspekt/',
+          'meaning': 'n. 回顾，反思',
+          'sentence': 'In retrospect, it was the right choice.',
+        },
+      ],
+    },
+    {
+      'root': 'form',
+      'meaning': '形状，形成 (to shape)',
+      'origin': '🏛️ 拉丁语根 forma',
+      'branches': [
+        {
+          'prefix': 'con- (共同/一致)',
+          'word': 'conform',
+          'phonetic': '/kənˈfɔːm/',
+          'meaning': 'v. 符合，遵照',
+          'sentence': 'Products must conform to safety standards.',
+        },
+        {
+          'prefix': 'trans- (改变)',
+          'word': 'transform',
+          'phonetic': '/trænsˈfɔːm/',
+          'meaning': 'v. 改变，变形',
+          'sentence': 'Technology transformed our daily lives.',
+        },
+        {
+          'prefix': 'uni- (单一/统一)',
+          'word': 'uniform',
+          'phonetic': '/ˈjuːnɪfɔːm/',
+          'meaning': 'n. 制服 a. 统一的',
+          'sentence': 'Students wear a school uniform.',
+        },
+        {
+          'prefix': 're- (重新/改造)',
+          'word': 'reform',
+          'phonetic': '/rɪˈfɔːm/',
+          'meaning': 'v./n. 改革，改造',
+          'sentence': 'The government plans to reform the tax code.',
+        },
+      ],
+    },
+    {
+      'root': 'script / scrib',
+      'meaning': '写，刻写 (to write)',
+      'origin': '🏛️ 拉丁语根 scribere',
+      'branches': [
+        {
+          'prefix': 'sub- (在...下方)',
+          'word': 'subscribe',
+          'phonetic': '/səbˈskraɪb/',
+          'meaning': 'v. 订阅，签署',
+          'sentence': 'Subscribe to our channel for daily updates.',
+        },
+        {
+          'prefix': 'de- (向下/详细)',
+          'word': 'describe',
+          'phonetic': '/dɪˈskraɪb/',
+          'meaning': 'v. 描述，描绘',
+          'sentence': 'Can you describe what happened?',
+        },
+        {
+          'prefix': 'in- (刻在...上)',
+          'word': 'inscribe',
+          'phonetic': '/ɪnˈskraɪb/',
+          'meaning': 'v. 铭刻，题写',
+          'sentence': 'His name was inscribed on the trophy.',
+        },
+        {
+          'prefix': 'trans- (誊写过录)',
+          'word': 'transcribe',
+          'phonetic': '/trænˈskraɪb/',
+          'meaning': 'v. 抄录，录音转写',
+          'sentence': 'The speech was transcribed word for word.',
+        },
+      ],
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final currentTree = _treeData[_selectedTreeIndex];
+    final rootName = currentTree['root'] as String;
+    final rootMeaning = currentTree['meaning'] as String;
+    final rootOrigin = currentTree['origin'] as String;
+    final branches = currentTree['branches'] as List<Map<String, String>>;
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 顶部选择词根 Chips
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: _treeData.asMap().entries.map((entry) {
+                final idx = entry.key;
+                final data = entry.value;
+                final isSelected = idx == _selectedTreeIndex;
+
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: ChoiceChip(
+                    label: Text('${data['root']} [${data['meaning'].split(' ')[0]}]'),
+                    selected: isSelected,
+                    selectedColor: LuminaColors.primaryContainer,
+                    labelStyle: TextStyle(
+                      color: isSelected ? LuminaColors.primary : (isDark ? Colors.white70 : Colors.black87),
+                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                    ),
+                    onSelected: (_) {
+                      setState(() {
+                        _selectedTreeIndex = idx;
+                      });
+                    },
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+          const SizedBox(height: 16),
+
+          // 核心词根树中心 Node
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color(0xFF4F46E5), Color(0xFF7C3AED)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.purple.withOpacity(0.3),
+                  blurRadius: 12,
+                  offset: const Offset(0, 6),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.account_tree_rounded, color: Colors.amber, size: 24),
+                    const SizedBox(width: 8),
+                    Text(
+                      '词根中心源头: -$rootName-',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  rootMeaning,
+                  style: const TextStyle(color: Colors.amberAccent, fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  rootOrigin,
+                  style: const TextStyle(color: Colors.white70, fontSize: 12, fontStyle: FontStyle.italic),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          const Text(
+            '🌳 派生分支导图 (Branches):',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 12),
+
+          // 派生节点树列表
+          ...branches.map((b) {
+            return Container(
+              margin: const EdgeInsets.only(bottom: 14),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: isDark ? Colors.white10 : Colors.indigo.shade100,
+                  width: 1.5,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.04),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.indigo.shade50,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.indigo.shade200),
+                        ),
+                        child: Text(
+                          '前缀 ${b['prefix']}',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.indigo.shade900,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      const Icon(Icons.arrow_forward_rounded, size: 16, color: Colors.grey),
+                      const SizedBox(width: 8),
+                      Text(
+                        b['word']!,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: LuminaColors.primary,
+                        ),
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        onPressed: () => AudioService.instance.speakWord(b['word']!),
+                        icon: const Icon(Icons.volume_up_rounded, color: Colors.blue),
+                        tooltip: '发音',
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  Row(
+                    children: [
+                      Text(
+                        b['phonetic']!,
+                        style: const TextStyle(fontSize: 13, color: Colors.grey, fontStyle: FontStyle.italic),
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        b['meaning']!,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withOpacity(0.05) : Colors.grey.shade50,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      '“${b['sentence']}”',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                        color: isDark ? Colors.white60 : Colors.grey.shade700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
+          const SizedBox(height: 40),
+        ],
+      ),
+    );
+  }
+}
+

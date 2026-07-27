@@ -10,6 +10,7 @@ import 'phonetics_practice_screen.dart';
 import 'word_roots_screen.dart';
 import 'grammar_practice_screen.dart';
 import 'smart_review_screen.dart';
+import 'practice_stats_screen.dart';
 
 class PracticeTab extends StatelessWidget {
   const PracticeTab({super.key});
@@ -24,6 +25,18 @@ class PracticeTab extends StatelessWidget {
             floating: false,
             pinned: true,
             systemOverlayStyle: SystemUiOverlayStyle.light,
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.bar_chart_rounded, color: Colors.white, size: 28),
+                tooltip: '学习数据图表分析',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const PracticeStatsScreen()),
+                  );
+                },
+              ),
+            ],
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 decoration: const BoxDecoration(

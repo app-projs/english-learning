@@ -19,10 +19,10 @@ class ArticleDetailScreen extends StatefulWidget {
 class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   bool _showTranslation = false;
   double _fontSize = 16.0;
-  int _currentSentenceIndex = 0;
+  int _currentParagraphIndex = 0;
 
-  List<String> _sentences = [];
-  List<String> _chineseSentences = [];
+  List<String> _paragraphs = [];
+  List<String> _chineseParagraphs = [];
   StorageService? _storageService;
 
   String _getPhoneticForWord(String word) {
@@ -38,7 +38,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   @override
   void initState() {
     super.initState();
-    _splitSentences();
+    _splitParagraphs();
     _initStorage();
   }
 
@@ -46,18 +46,58 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     _storageService = await StorageService.getInstance();
   }
 
-  void _splitSentences() {
-    _sentences = widget.article.content
-        .split(RegExp(r'(?<=[.!?])\s+'))
-        .where((s) => s.trim().isNotEmpty)
+  void _splitParagraphs() {
+    // 优先按原文换行自然段切分
+    final rawLines = widget.article.content
+        .split(RegExp(r'\n+'))
+        .where((p) => p.trim().isNotEmpty)
         .toList();
+
+    if (rawLines.length > 1) {
+      _paragraphs = rawLines;
+    } else {
+      // 若原文没有换行，按 2 句作为一个自然小片段 Chunk 组合
+      final sentences = widget.article.content
+          .split(RegExp(r'(?<=[.!?])\s+'))
+          .where((s) => s.trim().isNotEmpty)
+          .toList();
+
+      final List<String> chunks = [];
+      for (int i = 0; i < sentences.length; i += 2) {
+        if (i + 1 < sentences.length) {
+          chunks.add('${sentences[i]} ${sentences[i + 1]}');
+        } else {
+          chunks.add(sentences[i]);
+        }
+      }
+      _paragraphs = chunks.isEmpty ? [widget.article.content] : chunks;
+    }
 
     if (widget.article.chineseContent != null &&
         widget.article.chineseContent!.isNotEmpty) {
-      _chineseSentences = widget.article.chineseContent!
-          .split(RegExp(r'(?<=[。！？\n])\s*'))
-          .where((s) => s.trim().isNotEmpty)
+      final zhLines = widget.article.chineseContent!
+          .split(RegExp(r'\n+'))
+          .where((p) => p.trim().isNotEmpty)
           .toList();
+
+      if (zhLines.length > 1) {
+        _chineseParagraphs = zhLines;
+      } else {
+        final zhSentences = widget.article.chineseContent!
+            .split(RegExp(r'(?<=[。！？\n])\s*'))
+            .where((s) => s.trim().isNotEmpty)
+            .toList();
+
+        final List<String> zhChunks = [];
+        for (int i = 0; i < zhSentences.length; i += 2) {
+          if (i + 1 < zhSentences.length) {
+            zhChunks.add('${zhSentences[i]} ${zhSentences[i + 1]}');
+          } else {
+            zhChunks.add(zhSentences[i]);
+          }
+        }
+        _chineseParagraphs = zhChunks.isEmpty ? [widget.article.chineseContent!] : zhChunks;
+      }
     }
   }
 
@@ -102,12 +142,11 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.15),
+                          color: Colors.black.withOpacity(0.2),
                           blurRadius: 16,
                           offset: const Offset(0, 8),
                         ),
                       ],
-                      border: Border.all(color: Colors.deepOrange.shade100, width: 1.5),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -115,41 +154,17 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                              decoration: BoxDecoration(
-                                color: Colors.deepOrange.shade50,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    cleanWord,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.deepOrange.shade900,
-                                    ),
-                                  ),
-                                  Text(
-                                    _getPhoneticForWord(cleanWord),
-                                    style: LuminaTheme.ipaStyle(
-                                      fontSize: 13,
-                                      color: Colors.deepOrange.shade700,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
+                            Expanded(
+                              child: Text(
+                                cleanWord,
+                                style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                               ),
                             ),
-                            const SizedBox(width: 8),
                             IconButton(
                               onPressed: () => AudioService.instance.speak(cleanWord),
-                              icon: const Icon(Icons.volume_up, color: Colors.deepOrange),
+                              icon: const Icon(Icons.volume_up, color: Colors.blue),
                               tooltip: '朗读发音',
                             ),
-                            const Spacer(),
                             IconButton(
                               onPressed: () async {
                                 if (isFavorited) {
@@ -209,18 +224,11 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     );
   }
 
-  String _getSentenceTranslation(int index, String sentence) {
-    if (_chineseSentences.isNotEmpty && index < _chineseSentences.length) {
-      return _chineseSentences[index];
+  String _getParagraphTranslation(int index, String paragraph) {
+    if (_chineseParagraphs.isNotEmpty && index < _chineseParagraphs.length) {
+      return _chineseParagraphs[index];
     }
-    Map<String, String> translations = {
-      'Reading books in English can significantly improve your language skills...':
-          '阅读英文书籍可以显著提高你的语言技能...',
-      'Speaking English fluently requires practice and dedication...':
-          '流利地说英语需要练习和专注...',
-      'Mastering English grammar takes time and effort...': '掌握英语语法需要时间和努力...',
-    };
-    return translations[sentence] ?? '对照译文：阅读此句帮助强化语感与词汇理解。';
+    return '【段落译文参考】：结合上下文与段落大意进行沉浸式长文理解。';
   }
 
   void _showDomesticShareSheet(BuildContext context, Article article) {
@@ -257,7 +265,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
               ),
               const SizedBox(height: 16),
               const Text(
-                '分享精读文章至国内社交平台',
+                '分享文章战报',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
@@ -273,9 +281,9 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                 itemCount: platforms.length,
                 itemBuilder: (context, index) {
                   final item = platforms[index];
-                  final color = item['color'] as Color;
                   final name = item['name'] as String;
                   final icon = item['icon'] as IconData;
+                  final color = item['color'] as Color;
 
                   return GestureDetector(
                     onTap: () {
@@ -403,7 +411,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
           : const Color(0xFFFFF7ED),
       child: Row(
         children: [
-          const Icon(Icons.menu_book, size: 18, color: Colors.deepOrange),
+          const Icon(Icons.article_rounded, size: 18, color: Colors.deepOrange),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
@@ -413,11 +421,16 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          Chip(
-            label: Text('${widget.article.readTime} 分钟', style: const TextStyle(fontSize: 10)),
-            backgroundColor: Colors.orange.shade100,
-            padding: EdgeInsets.zero,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            decoration: BoxDecoration(
+              color: Colors.orange.shade100,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Text(
+              '按自然段精读 (共 ${_paragraphs.length} 段)',
+              style: TextStyle(fontSize: 11, color: Colors.orange.shade900, fontWeight: FontWeight.bold),
+            ),
           ),
         ],
       ),
@@ -426,7 +439,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   Widget _buildProgressBar() {
     return LinearProgressIndicator(
-      value: (_currentSentenceIndex + 1) / _sentences.length,
+      value: _paragraphs.isEmpty ? 1.0 : (_currentParagraphIndex + 1) / _paragraphs.length,
       backgroundColor: Colors.grey.shade200,
       color: Colors.deepOrange,
     );
@@ -446,22 +459,23 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
             ),
           ),
           const SizedBox(height: 16),
-          ..._sentences.asMap().entries.map((entry) {
+          ..._paragraphs.asMap().entries.map((entry) {
             int index = entry.key;
-            String sentence = entry.value;
-            return _SentenceBlock(
-              sentence: sentence,
+            String paragraphText = entry.value;
+            return _ParagraphBlock(
+              paragraphText: paragraphText,
               index: index,
-              currentIndex: _currentSentenceIndex,
+              currentIndex: _currentParagraphIndex,
               fontSize: _fontSize,
               showTranslation: _showTranslation,
-              onTapSentence: () {
+              onTapParagraph: () {
                 setState(() {
-                  _currentSentenceIndex = index;
+                  _currentParagraphIndex = index;
                 });
               },
               onWordTap: (word, pos) => _showWordBubble(context, word, pos),
-              translation: _getSentenceTranslation(index, sentence),
+              translation: _getParagraphTranslation(index, paragraphText),
+              totalParagraphs: _paragraphs.length,
             );
           }).toList(),
           const SizedBox(height: 40),
@@ -473,35 +487,57 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   Widget _buildBottomActions() {
     return Container(
       padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.dark
+            ? const Color(0xFF0F172A)
+            : Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 8,
+            offset: const Offset(0, -2),
+          ),
+        ],
+      ),
       child: Row(
         children: [
           Expanded(
             child: ElevatedButton.icon(
-              onPressed: _currentSentenceIndex > 0
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              onPressed: _currentParagraphIndex > 0
                   ? () {
                       setState(() {
-                        _currentSentenceIndex--;
+                        _currentParagraphIndex--;
                       });
-                      AudioService.instance.speak(_sentences[_currentSentenceIndex]);
+                      AudioService.instance.speak(_paragraphs[_currentParagraphIndex]);
                     }
                   : null,
               icon: const Icon(Icons.arrow_back),
-              label: const Text('上一句'),
+              label: const Text('上一段'),
             ),
           ),
           const SizedBox(width: 16),
           Expanded(
             child: ElevatedButton.icon(
-              onPressed: _currentSentenceIndex < _sentences.length - 1
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepOrange,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              onPressed: _currentParagraphIndex < _paragraphs.length - 1
                   ? () {
                       setState(() {
-                        _currentSentenceIndex++;
+                        _currentParagraphIndex++;
                       });
-                      AudioService.instance.speak(_sentences[_currentSentenceIndex]);
+                      AudioService.instance.speak(_paragraphs[_currentParagraphIndex]);
                     }
                   : null,
               icon: const Icon(Icons.arrow_forward),
-              label: const Text('下一句'),
+              label: const Text('下一段'),
             ),
           ),
         ],
@@ -510,129 +546,182 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   }
 }
 
-class _SentenceBlock extends StatefulWidget {
-  final String sentence;
+class _ParagraphBlock extends StatefulWidget {
+  final String paragraphText;
   final int index;
   final int currentIndex;
   final double fontSize;
   final bool showTranslation;
-  final VoidCallback onTapSentence;
+  final VoidCallback onTapParagraph;
   final Function(String word, Offset tapPosition) onWordTap;
   final String translation;
+  final int totalParagraphs;
 
-  const _SentenceBlock({
-    required this.sentence,
+  const _ParagraphBlock({
+    required this.paragraphText,
     required this.index,
     required this.currentIndex,
     required this.fontSize,
     required this.showTranslation,
-    required this.onTapSentence,
+    required this.onTapParagraph,
     required this.onWordTap,
     required this.translation,
+    required this.totalParagraphs,
   });
 
   @override
-  State<_SentenceBlock> createState() => _SentenceBlockState();
+  State<_ParagraphBlock> createState() => _ParagraphBlockState();
 }
 
-class _SentenceBlockState extends State<_SentenceBlock> {
+class _ParagraphBlockState extends State<_ParagraphBlock> {
   bool _localShowTranslation = false;
 
   @override
   Widget build(BuildContext context) {
     final isHighlighted = widget.index == widget.currentIndex;
-    final words = widget.sentence.split(RegExp(r'\s+'));
+    final words = widget.paragraphText.split(RegExp(r'\s+'));
     final shouldShowTrans = widget.showTranslation || _localShowTranslation;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 14),
-      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isHighlighted ? Colors.amber.shade50 : Colors.transparent,
+        color: isHighlighted
+            ? (isDark ? const Color(0xFF1E293B) : Colors.amber.shade50)
+            : (isDark ? const Color(0xFF0F172A) : Colors.white),
         border: Border.all(
-          color: isHighlighted ? Colors.amber.shade400 : Colors.grey.shade200,
-          width: isHighlighted ? 1.5 : 1.0,
+          color: isHighlighted
+              ? (isDark ? Colors.amber : Colors.amber.shade400)
+              : (isDark ? Colors.white10 : Colors.grey.shade200),
+          width: isHighlighted ? 1.8 : 1.0,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          if (isHighlighted)
+            BoxShadow(
+              color: Colors.amber.withOpacity(0.12),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // 段落 Header (段落序号 + 朗读按钮)
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Sentence Start Audio Play Button (句首语音朗读图标)
-              InkWell(
-                onTap: () {
-                  widget.onTapSentence();
-                  AudioService.instance.speak(widget.sentence);
-                },
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: isHighlighted ? Colors.deepOrange : Colors.orange.shade100,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.volume_up,
-                    size: 16,
-                    color: isHighlighted ? Colors.white : Colors.deepOrange.shade900,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                decoration: BoxDecoration(
+                  color: isHighlighted ? Colors.deepOrange : Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  '第 ${widget.index + 1} 段 / 共 ${widget.totalParagraphs} 段',
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                    color: isHighlighted ? Colors.white : Colors.orange.shade900,
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
-
-              // Sentence Text Words Wrap
-              Expanded(
-                child: Wrap(
-                  spacing: 4,
-                  runSpacing: 4,
-                  children: words.map((w) {
-                    return GestureDetector(
-                      onTapUp: (details) {
-                        widget.onTapSentence();
-                        widget.onWordTap(w, details.globalPosition);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                        child: Text(
-                          w,
-                          style: TextStyle(
-                            fontSize: widget.fontSize,
-                            height: 1.4,
-                            color: isHighlighted ? Colors.indigo.shade900 : Colors.black87,
-                            fontWeight: isHighlighted ? FontWeight.w600 : FontWeight.normal,
-                          ),
+              const Spacer(),
+              InkWell(
+                onTap: () {
+                  widget.onTapParagraph();
+                  AudioService.instance.speak(widget.paragraphText);
+                },
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: isHighlighted ? Colors.deepOrange : Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.volume_up,
+                        size: 15,
+                        color: isHighlighted ? Colors.white : Colors.deepOrange,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        '朗读本段',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: isHighlighted ? Colors.white : Colors.deepOrange,
                         ),
                       ),
-                    );
-                  }).toList(),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
 
-          // Sentence End Chinese Translation Toggle & Text
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
+
+          // 段落正文 (自然流式分词排版)
+          Wrap(
+            spacing: 5,
+            runSpacing: 6,
+            children: words.map((w) {
+              return GestureDetector(
+                onTapUp: (details) {
+                  widget.onTapParagraph();
+                  widget.onWordTap(w, details.globalPosition);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                  child: Text(
+                    w,
+                    style: TextStyle(
+                      fontSize: widget.fontSize,
+                      height: 1.5,
+                      color: isHighlighted
+                          ? (isDark ? Colors.amber.shade200 : Colors.indigo.shade900)
+                          : (isDark ? Colors.white70 : Colors.black87),
+                      fontWeight: isHighlighted ? FontWeight.w600 : FontWeight.normal,
+                    ),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+
+          const SizedBox(height: 14),
+
+          // 段落译文显示 & 切换按钮
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (shouldShowTrans)
                 Expanded(
-                  child: Text(
-                    widget.translation,
-                    style: TextStyle(
-                      fontSize: widget.fontSize - 2,
-                      color: Colors.grey.shade700,
-                      height: 1.4,
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withOpacity(0.05) : Colors.grey.shade50,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      widget.translation,
+                      style: TextStyle(
+                        fontSize: widget.fontSize - 2,
+                        color: isDark ? Colors.white60 : Colors.grey.shade700,
+                        height: 1.5,
+                      ),
                     ),
                   ),
                 )
               else
                 const Spacer(),
 
-              // Inline Translation Toggle Chip at Sentence End ([译文])
+              const SizedBox(width: 8),
+
               InkWell(
                 onTap: () {
                   setState(() {
@@ -641,7 +730,7 @@ class _SentenceBlockState extends State<_SentenceBlock> {
                 },
                 borderRadius: BorderRadius.circular(8),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
                     color: _localShowTranslation ? Colors.grey.shade200 : Colors.deepOrange.shade50,
                     borderRadius: BorderRadius.circular(8),
@@ -654,12 +743,12 @@ class _SentenceBlockState extends State<_SentenceBlock> {
                     children: [
                       Icon(
                         _localShowTranslation ? Icons.visibility_off : Icons.translate,
-                        size: 12,
+                        size: 13,
                         color: _localShowTranslation ? Colors.grey.shade700 : Colors.deepOrange.shade900,
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        _localShowTranslation ? '收起' : '译文',
+                        _localShowTranslation ? '收起译文' : '段落译文',
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
