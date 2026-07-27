@@ -37,6 +37,23 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    applicationVariants.all { variant ->
+        def versionName = variant.versionName
+        variant.outputs.all { output ->
+            outputFileName = "lumina-english-v${versionName}.apk"
+        }
+        variant.assembleProvider.get().doLast {
+            copy {
+                from "${buildDir}/outputs/apk/${variant.buildType.name}"
+                into "${buildDir}/outputs/flutter-apk"
+                include "*.apk"
+                rename { String fileName ->
+                    "lumina-english-v${versionName}.apk"
+                }
+            }
+        }
+    }
 }
 
 flutter {

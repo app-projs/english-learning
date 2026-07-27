@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/article.dart';
 import '../services/audio_service.dart';
 import '../services/storage_service.dart';
+import '../theme/lumina_theme.dart';
+import '../mock/mock_words.dart';
 import 'completion_congratulation_screen.dart';
 
 class ArticleDetailScreen extends StatefulWidget {
@@ -22,6 +24,16 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   List<String> _sentences = [];
   List<String> _chineseSentences = [];
   StorageService? _storageService;
+
+  String _getPhoneticForWord(String word) {
+    final clean = word.toLowerCase().trim();
+    for (var w in MockWords.getWords()) {
+      if (w.english.toLowerCase() == clean) {
+        return w.phonetic;
+      }
+    }
+    return '/$clean/';
+  }
 
   @override
   void initState() {
@@ -109,13 +121,26 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                                 color: Colors.deepOrange.shade50,
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: Text(
-                                cleanWord,
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange.shade900,
-                                ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    cleanWord,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.deepOrange.shade900,
+                                    ),
+                                  ),
+                                  Text(
+                                    _getPhoneticForWord(cleanWord),
+                                    style: LuminaTheme.ipaStyle(
+                                      fontSize: 13,
+                                      color: Colors.deepOrange.shade700,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             const SizedBox(width: 8),

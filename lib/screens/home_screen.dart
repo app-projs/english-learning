@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'practice_tab.dart';
 import 'achievement_screen.dart';
 import 'goal_setting_screen.dart';
+import 'level_assessment_screen.dart';
 import 'reading_history_screen.dart';
 import 'favorites_screen.dart';
 import 'notification_settings_screen.dart';
@@ -1134,6 +1135,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
+            ListTile(
+              leading: const Icon(Icons.psychology, color: Colors.indigo),
+              title: const Text('英语水平测评与定级诊断'),
+              subtitle: const Text('5道题评估词汇量，智能推荐词库', style: TextStyle(fontSize: 12)),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.pop(ctx);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LevelAssessmentScreen(),
+                  ),
+                );
+              },
+            ),
             ListTile(
               leading: const Icon(Icons.dark_mode),
               title: const Text('深色模式'),

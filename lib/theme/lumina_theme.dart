@@ -41,7 +41,9 @@ class LuminaTheme {
         error: LuminaColors.error,
       ),
       scaffoldBackgroundColor: LuminaColors.background,
-      textTheme: GoogleFonts.plusJakartaSansTextTheme().copyWith(
+      textTheme: GoogleFonts.plusJakartaSansTextTheme().apply(
+        fontFamilyFallback: const ['IPAFont', 'Roboto', 'sans-serif'],
+      ).copyWith(
         headlineLarge: GoogleFonts.plusJakartaSans(
           fontSize: 28,
           fontWeight: FontWeight.w800,
@@ -87,6 +89,20 @@ class LuminaTheme {
         ),
         margin: EdgeInsets.zero,
       ),
+    );
+  }
+
+  /// 国际音标专属离线高保真字体 (使用打包至 App 内部的打包字体 IPAFont，100% 支持所有 Unicode IPA 符号，零网络依赖，拒绝豆腐块 🅇 缺失符号)
+  static TextStyle ipaStyle({
+    double? fontSize,
+    FontWeight? fontWeight,
+    Color? color,
+  }) {
+    return TextStyle(
+      fontFamily: 'IPAFont',
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
     );
   }
 }

@@ -23,7 +23,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _initStorage();
   }
 
@@ -175,6 +175,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
                 Tab(icon: Icon(Icons.text_fields, size: 20), text: '填空练习'),
                 Tab(icon: Icon(Icons.sort, size: 20), text: '排序练习'),
                 Tab(icon: Icon(Icons.translate, size: 20), text: '翻译练习'),
+                Tab(icon: Icon(Icons.account_tree_outlined, size: 20), text: '语法成分分析'),
               ],
             ),
           ),
@@ -186,6 +187,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
           _buildClozeMode(),
           _buildSortMode(),
           _buildTranslateMode(),
+          _buildGrammarRainbowAnalysis(),
         ],
       ),
     );
@@ -203,6 +205,256 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
       currentIndex: _currentIndex,
       totalCount: _practiceSentences.length,
     );
+  }
+
+
+
+  Widget _buildGrammarRainbowAnalysis() {
+    final sentence = _practiceSentences[_currentIndex];
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    // 彩虹语法成分分解结构
+    final List<Map<String, dynamic>> components = _getSyntacticComponents(sentence);
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 顶栏分页与发音控制
+          Row(
+            children: [
+              Text(
+                '句型解析 #${_currentIndex + 1} / ${_practiceSentences.length}',
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.volume_up, color: Colors.blue),
+                onPressed: () => AudioService.instance.speak(sentence.english),
+              ),
+              IconButton(
+                icon: const Icon(Icons.arrow_back_ios, size: 18),
+                onPressed: _previousSentence,
+              ),
+              IconButton(
+                icon: const Icon(Icons.arrow_forward_ios, size: 18),
+                onPressed: _nextSentence,
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 12),
+
+          // 核心英文全句展示卡片
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: isDark ? Colors.white10 : Colors.blue.shade100,
+                width: 1.5,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.04),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  sentence.english,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  sentence.chinese,
+                  style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          const Text(
+            '🌈 彩虹主谓宾语法树拆解：',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            '点击下方彩色成分标签可单独听发音及功能释义',
+            style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+          ),
+
+          const SizedBox(height: 12),
+
+          // 彩虹文字分块与语法标签
+          Wrap(
+            spacing: 8,
+            runSpacing: 10,
+            children: components.map((comp) {
+              final Color color = comp['color'] as Color;
+              final String text = comp['text'] as String;
+              final String tag = comp['tag'] as String;
+              final String explanation = comp['explanation'] as String;
+
+              return InkWell(
+                onTap: () {
+                  AudioService.instance.speak(text);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('【$tag】$text ➔ $explanation'),
+                      duration: const Duration(seconds: 2),
+                      backgroundColor: color,
+                    ),
+                  );
+                },
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: color.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        text,
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: color,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                        decoration: BoxDecoration(
+                          color: color,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          tag,
+                          style: const TextStyle(
+                            fontSize: 10,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+
+          const SizedBox(height: 24),
+
+          const Text(
+            '📘 句型成分详细图谱：',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: components.length,
+            itemBuilder: (context, index) {
+              final comp = components[index];
+              final Color color = comp['color'] as Color;
+
+              return Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: color.withOpacity(0.3)),
+                ),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 14,
+                      backgroundColor: color,
+                      child: Text(
+                        comp['tag'],
+                        style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            comp['text'],
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: color),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            comp['explanation'],
+                            style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+                          ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.volume_up, size: 18, color: Colors.blue),
+                      onPressed: () => AudioService.instance.speak(comp['text']),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<Map<String, dynamic>> _getSyntacticComponents(Sentence sentence) {
+    if (sentence.english.contains('rises')) {
+      return [
+        {'text': 'The sun', 'tag': '主语', 'color': const Color(0xFF2563EB), 'explanation': '句子的核心执行主体（太阳）'},
+        {'text': 'rises', 'tag': '谓语', 'color': const Color(0xFFDC2626), 'explanation': '不及物动词（升起）'},
+        {'text': 'in the east', 'tag': '状语', 'color': const Color(0xFFEA580C), 'explanation': '介词短语修饰动作发生的地点（在东方）'},
+      ];
+    } else if (sentence.english.contains('reading')) {
+      return [
+        {'text': 'She', 'tag': '主语', 'color': const Color(0xFF2563EB), 'explanation': '代词主格（她）'},
+        {'text': 'is reading', 'tag': '谓语', 'color': const Color(0xFFDC2626), 'explanation': '现在进行时谓语动词（正在阅读）'},
+        {'text': 'a book', 'tag': '宾语', 'color': const Color(0xFF16A34A), 'explanation': '动作接受者（一本书）'},
+        {'text': 'in the library', 'tag': '状语', 'color': const Color(0xFFEA580C), 'explanation': '地点状语（在图书馆里）'},
+      ];
+    } else if (sentence.english.contains('succeed')) {
+      return [
+        {'text': 'If you work hard,', 'tag': '条件状语从句', 'color': const Color(0xFF9333EA), 'explanation': 'If 引导的条件状语从句（如果你努力工作）'},
+        {'text': 'you', 'tag': '主句主语', 'color': const Color(0xFF2563EB), 'explanation': '主句核心主语（你）'},
+        {'text': 'will succeed.', 'tag': '主句谓语', 'color': const Color(0xFFDC2626), 'explanation': '一般将来时谓语动词（将会成功）'},
+      ];
+    } else {
+      return [
+        {'text': 'The more you practice,', 'tag': '比较从句', 'color': const Color(0xFF9333EA), 'explanation': 'the more... 结构表递进从句'},
+        {'text': 'the better', 'tag': '状语修饰', 'color': const Color(0xFFEA580C), 'explanation': '副词比较级修饰变化程度'},
+        {'text': 'you become.', 'tag': '主句主谓', 'color': const Color(0xFF2563EB), 'explanation': '主句主语与系动词'},
+      ];
+    }
   }
 
   Widget _buildSortMode() {

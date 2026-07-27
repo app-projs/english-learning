@@ -3,6 +3,7 @@ import '../models/word.dart';
 import '../services/storage_service.dart';
 import '../services/audio_service.dart';
 import '../services/sm2_service.dart';
+import '../theme/lumina_theme.dart';
 import 'completion_congratulation_screen.dart';
 import 'goal_setting_screen.dart';
 import '../mock/mock_words.dart';
@@ -239,7 +240,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                         children: [
                           Text(
                             word.phonetic,
-                            style: const TextStyle(fontSize: 20, color: Colors.grey),
+                            style: LuminaTheme.ipaStyle(fontSize: 20, color: Colors.grey.shade700),
                           ),
                           const SizedBox(width: 8),
                           IconButton(
@@ -284,31 +285,36 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
         // SM-2 Memory Rating Controls (When Answer Revealed)
         if (_showAnswer) ...[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red.shade100, foregroundColor: Colors.red.shade900),
-                  onPressed: () => _rateWordSM2(SM2Rating.again),
-                  child: const Text('生疏 (1天)'),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.orange.shade100, foregroundColor: Colors.orange.shade900),
-                  onPressed: () => _rateWordSM2(SM2Rating.hard),
-                  child: const Text('模糊 (3天)'),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, foregroundColor: Colors.blue.shade900),
-                  onPressed: () => _rateWordSM2(SM2Rating.good),
-                  child: const Text('掌握 (6天)'),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade100, foregroundColor: Colors.green.shade900),
-                  onPressed: () => _rateWordSM2(SM2Rating.easy),
-                  child: const Text('熟练 (14天)'),
-                ),
-              ],
+            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.red.shade100, foregroundColor: Colors.red.shade900),
+                    onPressed: () => _rateWordSM2(SM2Rating.again),
+                    child: const Text('生疏 (1天)'),
+                  ),
+                  const SizedBox(width: 6),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.orange.shade100, foregroundColor: Colors.orange.shade900),
+                    onPressed: () => _rateWordSM2(SM2Rating.hard),
+                    child: const Text('模糊 (3天)'),
+                  ),
+                  const SizedBox(width: 6),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade100, foregroundColor: Colors.blue.shade900),
+                    onPressed: () => _rateWordSM2(SM2Rating.good),
+                    child: const Text('掌握 (6天)'),
+                  ),
+                  const SizedBox(width: 6),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade100, foregroundColor: Colors.green.shade900),
+                    onPressed: () => _rateWordSM2(SM2Rating.easy),
+                    child: const Text('熟练 (14天)'),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -462,7 +468,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(currentWord.phonetic, style: const TextStyle(fontSize: 18, color: Colors.grey)),
+                      Text(currentWord.phonetic, style: LuminaTheme.ipaStyle(fontSize: 18, color: Colors.grey.shade700)),
                       IconButton(
                         icon: const Icon(Icons.volume_up, color: Colors.blue),
                         onPressed: () => AudioService.instance.speak(currentWord.english),

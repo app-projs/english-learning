@@ -209,6 +209,8 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                     _buildHeader(),
                     const SizedBox(height: 22),
                     _buildMyRankCard(),
+                    const SizedBox(height: 20),
+                    _buildPKArenaCard(),
                     const SizedBox(height: 30),
                     _buildScopeTabs(),
                     const SizedBox(height: 44),
@@ -388,6 +390,68 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildPKArenaCard() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFFDC2626), Color(0xFFEF4444)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.red.withOpacity(0.3),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.bolt_rounded, color: Colors.amberAccent, size: 40),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  '⚔️ 全服 1v1 单词限时 PK 赛',
+                  style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  '10题抢答速记对战 | 赢家独享 50 LP 积分',
+                  style: TextStyle(color: Colors.white70, fontSize: 12),
+                ),
+              ],
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.red.shade900,
+              elevation: 0,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ),
+            onPressed: _startLivePKBattle,
+            child: const Text('立即 PK', style: TextStyle(fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _startLivePKBattle() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const _PKBattleDialog(),
     );
   }
 
@@ -1132,6 +1196,168 @@ class _LeaderboardUserDetailScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _PKBattleDialog extends StatefulWidget {
+  const _PKBattleDialog();
+
+  @override
+  State<_PKBattleDialog> createState() => _PKBattleDialogState();
+}
+
+class _PKBattleDialogState extends State<_PKBattleDialog> {
+  bool _isMatching = true;
+  int _myHp = 100;
+  int _opponentHp = 100;
+  int _qIndex = 0;
+  bool _gameOver = false;
+  String _winner = '';
+
+  final List<Map<String, dynamic>> _pkQuestions = [
+    {
+      'word': 'ephemeral',
+      'phonetic': '/ɪˈfemərəl/',
+      'options': ['A. 转瞬即逝的', 'B. 永恒持久的', 'C. 庞大繁复的', 'D. 坚硬无比的'],
+      'correct': 0,
+    },
+    {
+      'word': 'ambiguous',
+      'phonetic': '/æmˈbɪɡjuəs/',
+      'options': ['A. 极具侵略性的', 'B. 模棱两可的', 'C. 欢快喜悦的', 'D. 极其危险的'],
+      'correct': 1,
+    },
+    {
+      'word': 'resilient',
+      'phonetic': '/rɪˈzɪliənt/',
+      'options': ['A. 脆弱易碎的', 'B. 犹豫不决的', 'C. 有复原能力的', 'D. 昂贵奢侈的'],
+      'correct': 2,
+    },
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 1500), () {
+      if (mounted) {
+        setState(() {
+          _isMatching = false;
+        });
+      }
+    });
+  }
+
+  void _answer(int index) {
+    if (_gameOver) return;
+
+    final q = _pkQuestions[_qIndex];
+    if (index == q['correct']) {
+      setState(() {
+        _opponentHp = (_opponentHp - 40).clamp(0, 100);
+      });
+    } else {
+      setState(() {
+        _myHp = (_myHp - 30).clamp(0, 100);
+      });
+    }
+
+    if (_opponentHp <= 0 || _myHp <= 0 || _qIndex >= _pkQuestions.length - 1) {
+      setState(() {
+        _gameOver = true;
+        _winner = _myHp >= _opponentHp ? '你赢得了本场 PK 对决！🎉' : '对手小幅领先，再接再厉！💪';
+      });
+    } else {
+      setState(() {
+        _qIndex++;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (_isMatching) ...[
+              const SizedBox(height: 20),
+              const CircularProgressIndicator(color: Colors.redAccent),
+              const SizedBox(height: 20),
+              const Text('正在为你匹配全服同阶 PK 对手...', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+            ] else if (_gameOver) ...[
+              const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 64),
+              const SizedBox(height: 12),
+              Text(_winner, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              const Text('对战结算：+50 LP 积分已注入勋章榜', style: TextStyle(color: Colors.grey, fontSize: 13)),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent, foregroundColor: Colors.white),
+                onPressed: () => Navigator.pop(context),
+                child: const Text('退出对战场'),
+              ),
+            ] else ...[
+              // 血条比拼
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      const CircleAvatar(radius: 20, backgroundColor: Colors.blue, child: Text('你', style: TextStyle(color: Colors.white))),
+                      const SizedBox(height: 4),
+                      Text('HP: $_myHp', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ],
+                  ),
+                  const Text('⚔️ VS ⚔️', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red)),
+                  Column(
+                    children: [
+                      const CircleAvatar(radius: 20, backgroundColor: Colors.purple, child: Text('Lily', style: TextStyle(color: Colors.white))),
+                      const SizedBox(height: 4),
+                      Text('HP: $_opponentHp', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.purple)),
+                    ],
+                  ),
+                ],
+              ),
+              const Divider(height: 28),
+
+              // 题目
+              Text('第 ${_qIndex + 1} / ${_pkQuestions.length} 题', style: const TextStyle(fontSize: 12, color: Colors.grey)),
+              const SizedBox(height: 6),
+              Text(_pkQuestions[_qIndex]['word'], style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+              Text(_pkQuestions[_qIndex]['phonetic'], style: const TextStyle(fontSize: 13, color: Colors.grey)),
+              const SizedBox(height: 16),
+
+              // 选项
+              Column(
+                children: List.generate(4, (i) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.grey.shade100,
+                          foregroundColor: Colors.black87,
+                          elevation: 0,
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        onPressed: () => _answer(i),
+                        child: Text(_pkQuestions[_qIndex]['options'][i]),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }

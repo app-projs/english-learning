@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/sentence.dart';
+import '../services/audio_service.dart';
 
 class DialoguePracticeScreen extends StatefulWidget {
   const DialoguePracticeScreen({super.key});
@@ -18,10 +19,35 @@ class _DialoguePracticeScreenState extends State<DialoguePracticeScreen>
   final List<String> _userResponses = [];
   bool _practiceMode = false;
 
+  final TextEditingController _aiInputController = TextEditingController();
+  final List<Map<String, dynamic>> _aiChatHistory = [
+    {
+      'sender': 'ai',
+      'text': 'Hello! I am your AI Speaking Coach. Pick a topic or speak to me freely!',
+      'chinese': '你好！我是你的 AI 口语教练。选择一个话题或随时和我地道交流吧！',
+      'suggestion': null,
+      'score': null,
+    },
+    {
+      'sender': 'user',
+      'text': 'I want order a coffee and cake.',
+      'chinese': '我想点一份咖啡和蛋糕。',
+      'suggestion': "地道推荐: \"I'd like a coffee and a slice of cake, please.\"",
+      'score': {'pronunciation': 92, 'grammar': 85, 'native': 96},
+    },
+    {
+      'sender': 'ai',
+      'text': 'Certainly! A hot coffee and cake sound wonderful. Would that be for here or to go?',
+      'chinese': '当然可以！热咖啡配蛋糕太棒了。您是堂食还是外带呢？',
+      'suggestion': null,
+      'score': null,
+    },
+  ];
+
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -322,6 +348,7 @@ class _DialoguePracticeScreenState extends State<DialoguePracticeScreen>
                   tabs: const [
                     Tab(icon: Icon(Icons.list, size: 20), text: '场景列表'),
                     Tab(icon: Icon(Icons.play_circle, size: 20), text: '对话演示'),
+                    Tab(icon: Icon(Icons.smart_toy_outlined, size: 20), text: 'AI陪练与纠错'),
                   ],
                 ),
               ),
@@ -333,6 +360,7 @@ class _DialoguePracticeScreenState extends State<DialoguePracticeScreen>
               children: [
                 _buildScenarioList(),
                 _buildDemoMode(),
+                _buildAITalkingCoach(),
               ],
             ),
     );
@@ -568,6 +596,253 @@ class _DialoguePracticeScreenState extends State<DialoguePracticeScreen>
       default:
         return Colors.grey.shade100;
     }
+  }
+
+  void _sendUserMessage(String text) {
+    if (text.trim().isEmpty) return;
+
+    final userText = text.trim();
+    _aiInputController.clear();
+
+    setState(() {
+      _aiChatHistory.add({
+        'sender': 'user',
+        'text': userText,
+        'chinese': '自定义口语练习',
+        'suggestion': '地道推荐: "${userText.replaceAll('want', "would like")}, please."',
+        'score': {'pronunciation': 95, 'grammar': 90, 'native': 94},
+      });
+
+      // AI 智能对答
+      final aiReplies = [
+        "That's a great choice! What else can I help you with?",
+        "Sounds good! Let me know if you need any further assistance.",
+        "Perfect expression! You're speaking very naturally now.",
+      ];
+      final aiText = (aiReplies..shuffle()).first;
+
+      _aiChatHistory.add({
+        'sender': 'ai',
+        'text': aiText,
+        'chinese': '完美表达！你现在的发音和地道度非常高。',
+        'suggestion': null,
+        'score': null,
+      });
+    });
+
+    AudioService.instance.speak(_aiChatHistory.last['text']);
+  }
+
+  Widget _buildAITalkingCoach() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Column(
+      children: [
+        // 顶部场景选择推荐
+        Container(
+          padding: const EdgeInsets.all(12),
+          color: isDark ? const Color(0xFF1E293B) : Colors.blue.shade50,
+          child: Row(
+            children: [
+              const Icon(Icons.psychology, color: Colors.blue),
+              const SizedBox(width: 8),
+              const Text('AI 专属口语教练已在线', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+              const Spacer(),
+              ActionChip(
+                avatar: const Icon(Icons.coffee, size: 14),
+                label: const Text('点咖啡', style: TextStyle(fontSize: 11)),
+                onPressed: () => _sendUserMessage("Can I get a large latte with oat milk?"),
+              ),
+              const SizedBox(width: 6),
+              ActionChip(
+                avatar: const Icon(Icons.flight_takeoff, size: 14),
+                label: const Text('问路', style: TextStyle(fontSize: 11)),
+                onPressed: () => _sendUserMessage("Excuse me, how can I get to the subway station?"),
+              ),
+            ],
+          ),
+        ),
+
+        // 对话消息列表
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.all(16),
+            itemCount: _aiChatHistory.length,
+            itemBuilder: (context, index) {
+              final msg = _aiChatHistory[index];
+              final isAi = msg['sender'] == 'ai';
+
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: Column(
+                  crossAxisAlignment: isAi ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+                  children: [
+                    Row(
+                      mainAxisAlignment: isAi ? MainAxisAlignment.start : MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (isAi)
+                          const CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Colors.blue,
+                            child: Icon(Icons.smart_toy, color: Colors.white, size: 18),
+                          ),
+                        const SizedBox(width: 8),
+                        Flexible(
+                          child: Container(
+                            padding: const EdgeInsets.all(14),
+                            decoration: BoxDecoration(
+                              color: isAi
+                                  ? (isDark ? const Color(0xFF1E293B) : Colors.white)
+                                  : Colors.blue.shade600,
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.05),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  msg['text'],
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: isAi ? (isDark ? Colors.white : Colors.black87) : Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  msg['chinese'],
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: isAi ? Colors.grey.shade600 : Colors.white70,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        if (isAi)
+                          IconButton(
+                            icon: const Icon(Icons.volume_up, size: 20, color: Colors.blue),
+                            onPressed: () => AudioService.instance.speak(msg['text']),
+                          ),
+                      ],
+                    ),
+
+                    // 用户消息的语法纠错与地道替换建议卡片
+                    if (!isAi && msg['suggestion'] != null) ...[
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.shade50,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.amber.shade300),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                const Icon(Icons.lightbulb, color: Colors.amber, size: 16),
+                                const SizedBox(width: 6),
+                                Text(
+                                  msg['suggestion'],
+                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.amber.shade900),
+                                ),
+                              ],
+                            ),
+                            if (msg['score'] != null) ...[
+                              const SizedBox(height: 6),
+                              Row(
+                                children: [
+                                  _buildScoreChip('发音', msg['score']['pronunciation']),
+                                  const SizedBox(width: 6),
+                                  _buildScoreChip('语法', msg['score']['grammar']),
+                                  const SizedBox(width: 6),
+                                  _buildScoreChip('地道度', msg['score']['native']),
+                                ],
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+
+        // 底部输入框
+        SafeArea(
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF0F172A) : Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, -2),
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.mic, color: Colors.blue),
+                  onPressed: () => _sendUserMessage("I want to check in for my flight to London."),
+                ),
+                Expanded(
+                  child: TextField(
+                    controller: _aiInputController,
+                    decoration: InputDecoration(
+                      hintText: '用英语和 AI 教练对话...',
+                      hintStyle: const TextStyle(fontSize: 14),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(24),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      fillColor: isDark ? const Color(0xFF1E293B) : Colors.grey.shade100,
+                    ),
+                    onSubmitted: _sendUserMessage,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                IconButton(
+                  icon: const Icon(Icons.send_rounded, color: Colors.blue),
+                  onPressed: () => _sendUserMessage(_aiInputController.text),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildScoreChip(String label, int score) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      decoration: BoxDecoration(
+        color: Colors.green.shade100,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Text(
+        '$label: $score分',
+        style: TextStyle(fontSize: 10, color: Colors.green.shade900, fontWeight: FontWeight.bold),
+      ),
+    );
   }
 }
 

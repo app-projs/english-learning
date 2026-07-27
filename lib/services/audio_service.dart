@@ -206,6 +206,7 @@ class AudioService {
         httpClient.connectionTimeout = const Duration(seconds: 4);
 
         final request = await httpClient.getUrl(Uri.parse(url));
+        request.headers.set('User-Agent', 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36');
         final response = await request.close();
 
         if (response.statusCode == 200) {
@@ -275,6 +276,7 @@ class AudioService {
         httpClient.connectionTimeout = const Duration(seconds: 4);
 
         final request = await httpClient.getUrl(Uri.parse(url));
+        request.headers.set('User-Agent', 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36');
         final response = await request.close();
 
         if (response.statusCode == 200) {
@@ -301,23 +303,136 @@ class AudioService {
     }
   }
 
-  /// 48 国际音标点读发音 (Phonetic Symbol Speech)
-  Future<void> speakPhonetic(String symbol, String sampleWord, {VoidCallback? onComplete}) async {
+  // 48 国际音标高保真纯音发音源映射 (仅保留纯正爆破音/摩擦音音频，拒绝包含完整单词发音)
+  static final Map<String, String> _ipaPhonemeAudioUrls = {
+    'p': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/p--_gb_1.mp3',
+    'b': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/b--_gb_1.mp3',
+    't': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/t--_gb_1.mp3',
+    'd': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/d--_gb_1.mp3',
+    'k': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/k--_gb_1.mp3',
+    'f': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/f--_gb_1.mp3',
+    'v': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/v--_gb_1.mp3',
+    's': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/s--_gb_1.mp3',
+    'z': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/z--_gb_1.mp3',
+    'h': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/h--_gb_1.mp3',
+    'r': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/r--_gb_1.mp3',
+    'm': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/m--_gb_1.mp3',
+    'n': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/n--_gb_1.mp3',
+    'l': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/l--_gb_1.mp3',
+    'w': 'https://ssl.gstatic.com/dictionary/static/sounds/20200429/w--_gb_1.mp3',
+  };
+
+  // TTS 音标纯音提示词映射 (防止死读字母名称 "Pee", "Bee", "Tee", "Dee" 或读出例词)
+  static final Map<String, String> _ipaTtsCues = {
+    // 20 元音 (Vowels)
+    'i:': 'ee',
+    'ɪ': 'ih',
+    'e': 'eh',
+    'æ': 'ah',
+    'ɜ:': 'er',
+    'ə': 'uh',
+    'ʌ': 'uh',
+    'u:': 'oo',
+    'ʊ': 'oo',
+    'ɔ:': 'or',
+    'ɒ': 'oh',
+    'ɑ:': 'ah',
+    'aɪ': 'eye',
+    'eɪ': 'ay',
+    'ɔɪ': 'oy',
+    'aʊ': 'ow',
+    'əʊ': 'oh',
+    'ɪə': 'ear',
+    'eə': 'air',
+    'ʊə': 'poor',
+
+    // 28 辅音 (Consonants)
+    'p': 'puh',
+    'b': 'buh',
+    't': 'tuh',
+    'd': 'duh',
+    'k': 'kuh',
+    'g': 'guh',
+    'f': 'fff',
+    'v': 'vvv',
+    's': 'sss',
+    'z': 'zzz',
+    'm': 'mmm',
+    'n': 'nnn',
+    'h': 'huh',
+    'r': 'ruh',
+    'w': 'wuh',
+    'j': 'yuh',
+    'l': 'luh',
+    'θ': 'thuh',
+    'ð': 'theuh',
+    'ʃ': 'shh',
+    'ʒ': 'zhh',
+    'tʃ': 'chuh',
+    'dʒ': 'juh',
+    'tr': 'tree',
+    'dr': 'drive',
+    'ts': 'ts',
+    'dz': 'dz',
+    'ŋ': 'ng',
+  };
+
+  /// 48 国际音标纯正发音播报 (Pure Phonetic Symbol Speech - 拒绝读成字母名称或例词)
+  Future<void> speakPhoneticSymbol(String symbol, {VoidCallback? onComplete}) async {
     await init();
     await stop();
+    _onComplete = onComplete;
 
-    final cleanWord = sampleWord.trim();
-    if (cleanWord.isNotEmpty) {
-      // 读对应的标准例词，发音最为真实自然
-      await speakWord(cleanWord, onComplete: onComplete);
-    } else {
-      // 兜底朗读音标标识
-      final cleanSymbol = symbol.replaceAll(RegExp(r'[\[\]\/]'), '');
-      try {
-        await _flutterTts.speak(cleanSymbol);
-      } catch (_) {
-        onComplete?.call();
-      }
+    final rawSymbol = symbol.replaceAll(RegExp(r'[\[\]\/]'), '').trim();
+    if (rawSymbol.isEmpty) {
+      _onComplete?.call();
+      _onComplete = null;
+      return;
     }
+
+    // 1. 优先获取纯正爆破音/摩擦音原声音频 MP3 缓存 (使用 ipa_v6_clean_ 前缀刷新本地旧缓存)
+    try {
+      final audioUrl = _ipaPhonemeAudioUrls[rawSymbol];
+      if (audioUrl != null && _cacheDir != null) {
+        final localFile = File('${_cacheDir!.path}/ipa_v6_clean_${rawSymbol.hashCode.abs()}.mp3');
+        if (await localFile.exists() && (await localFile.length()) > 500) {
+          await _audioPlayer.play(DeviceFileSource(localFile.path));
+          return;
+        }
+
+        final httpClient = HttpClient();
+        httpClient.connectionTimeout = const Duration(seconds: 4);
+        final request = await httpClient.getUrl(Uri.parse(audioUrl));
+        request.headers.set('User-Agent', 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36');
+        final response = await request.close();
+
+        if (response.statusCode == 200) {
+          final bytes = await response.fold<List<int>>([], (acc, chunk) => acc..addAll(chunk));
+          if (bytes.length > 500) {
+            await localFile.writeAsBytes(bytes);
+            await _audioPlayer.play(DeviceFileSource(localFile.path));
+            return;
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint('Pure IPA audio fetch error: $e, falling back to TTS cue');
+    }
+
+    // 2. 离线/降级方案：使用纯音提示词 (如 [æ] 读纯元音 "ah"，[p] 读 "puh")，拒绝死读字母名或单词
+    try {
+      final cueText = _ipaTtsCues[rawSymbol] ?? rawSymbol;
+      await _flutterTts.setSpeechRate(Platform.isAndroid ? 0.35 : 0.40);
+      await _flutterTts.speak(cueText);
+    } catch (e) {
+      debugPrint('speakPhoneticSymbol fallback error: $e');
+      _onComplete?.call();
+      _onComplete = null;
+    }
+  }
+
+  /// 48 国际音标点读发音 (向后兼容)
+  Future<void> speakPhonetic(String symbol, String sampleWord, {VoidCallback? onComplete}) async {
+    await speakPhoneticSymbol(symbol, onComplete: onComplete);
   }
 }

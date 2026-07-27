@@ -12,6 +12,8 @@ import 'services/user_service.dart';
 import 'services/theme_service.dart';
 import 'services/database_service.dart';
 
+import 'services/audio_service.dart';
+
 late StorageService storageService;
 late WordService wordService;
 late SentenceService sentenceService;
@@ -32,6 +34,7 @@ void main() async {
   articleService = ArticleService(storageService, databaseService);
   userService = UserService(storageService);
   themeService = ThemeService(storageService);
+  await AudioService.instance.init();
 
   runApp(const ProviderScope(child: EnglishLearningApp()));
 }

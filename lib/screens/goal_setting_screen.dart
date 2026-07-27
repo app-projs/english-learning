@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/storage_service.dart';
+import 'level_assessment_screen.dart';
 
 class GoalSettingScreen extends StatefulWidget {
   final Map<String, int> currentGoals;
@@ -99,6 +100,55 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
               style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
             ),
             const SizedBox(height: 12),
+            InkWell(
+              onTap: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LevelAssessmentScreen(),
+                  ),
+                );
+                _loadWordbook();
+              },
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.psychology, color: Colors.white, size: 28),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            '不确定词汇水平？点击进行【水平诊断测评】',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                            ),
+                          ),
+                          SizedBox(height: 2),
+                          Text(
+                            '5道题精准评估词汇与语法量，自动推荐词库',
+                            style: TextStyle(color: Colors.white70, fontSize: 11),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
             Wrap(
               spacing: 8,
               runSpacing: 8,
@@ -190,9 +240,153 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
               unit: '分钟',
               onChanged: (v) => setState(() => _dailyMinutes = v.toInt()),
             ),
+            const SizedBox(height: 28),
+
+            const Text(
+              '🎯 阶段性目标解锁路线图：',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              '完成上一阶段词汇与句型累积，即可自动解锁下一阶段专属词库与高级特权',
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+            ),
+            const SizedBox(height: 14),
+
+            // 阶段 1
+            _StagedGoalCard(
+              stageName: '第一阶段：突破日常起步',
+              targetText: '累计完成 50 词 + 10 句型',
+              recommendedWordbook: '日常基础',
+              isUnlocked: true,
+              isCurrent: _wordGoal <= 100,
+              onSelectWordbook: () => setState(() => _selectedWordbook = '日常基础'),
+            ),
+            const SizedBox(height: 10),
+
+            // 阶段 2
+            _StagedGoalCard(
+              stageName: '第二阶段：四六级与职场进阶',
+              targetText: '累计完成 200 词 + 50 句型',
+              recommendedWordbook: '四级核心',
+              isUnlocked: true,
+              isCurrent: _wordGoal > 100 && _wordGoal <= 300,
+              onSelectWordbook: () => setState(() => _selectedWordbook = '四级核心'),
+            ),
+            const SizedBox(height: 10),
+
+            // 阶段 3
+            _StagedGoalCard(
+              stageName: '第三阶段：考研学术与雅思精读',
+              targetText: '累计完成 500 词 + 150 句型',
+              recommendedWordbook: '考研必刷',
+              isUnlocked: _wordGoal >= 300,
+              isCurrent: _wordGoal > 300 && _wordGoal <= 500,
+              onSelectWordbook: () => setState(() => _selectedWordbook = '考研必刷'),
+            ),
+            const SizedBox(height: 10),
+
+            // 阶段 4
+            _StagedGoalCard(
+              stageName: '第四阶段：自由地道巅峰对话',
+              targetText: '累计完成 1000 词 + 300 句型',
+              recommendedWordbook: '雅思冲刺',
+              isUnlocked: _wordGoal >= 800,
+              isCurrent: _wordGoal > 500,
+              onSelectWordbook: () => setState(() => _selectedWordbook = '雅思冲刺'),
+            ),
+
             const SizedBox(height: 32),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _StagedGoalCard extends StatelessWidget {
+  final String stageName;
+  final String targetText;
+  final String recommendedWordbook;
+  final bool isUnlocked;
+  final bool isCurrent;
+  final VoidCallback onSelectWordbook;
+
+  const _StagedGoalCard({
+    required this.stageName,
+    required this.targetText,
+    required this.recommendedWordbook,
+    required this.isUnlocked,
+    required this.isCurrent,
+    required this.onSelectWordbook,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isUnlocked
+            ? (isCurrent ? Colors.blue.shade50 : (isDark ? const Color(0xFF1E293B) : Colors.white))
+            : (isDark ? const Color(0xFF0F172A) : Colors.grey.shade100),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: isCurrent
+              ? Colors.blue
+              : (isUnlocked ? (isDark ? Colors.white10 : Colors.grey.shade300) : Colors.grey.shade300),
+          width: isCurrent ? 2 : 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 20,
+            backgroundColor: isUnlocked
+                ? (isCurrent ? Colors.blue : Colors.green.shade100)
+                : Colors.grey.shade300,
+            child: Icon(
+              isUnlocked ? (isCurrent ? Icons.flag_rounded : Icons.check) : Icons.lock_outline_rounded,
+              color: isUnlocked ? (isCurrent ? Colors.white : Colors.green.shade800) : Colors.grey.shade600,
+              size: 20,
+            ),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  stageName,
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: isUnlocked ? null : Colors.grey,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  targetText,
+                  style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+                ),
+              ],
+            ),
+          ),
+          if (isUnlocked)
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: isCurrent ? Colors.blue : Colors.grey.shade200,
+                foregroundColor: isCurrent ? Colors.white : Colors.black87,
+                elevation: 0,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              ),
+              onPressed: onSelectWordbook,
+              child: Text(isCurrent ? '当前阶段' : '选择$recommendedWordbook'),
+            )
+          else
+            const Text('🔒 待解锁', style: TextStyle(fontSize: 12, color: Colors.grey)),
+        ],
       ),
     );
   }

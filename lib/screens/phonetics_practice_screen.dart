@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/audio_service.dart';
+import '../theme/lumina_theme.dart';
 import 'completion_congratulation_screen.dart';
 
 class PhoneticsPracticeScreen extends StatefulWidget {
@@ -186,8 +187,7 @@ class PhoneticsGridView extends StatelessWidget {
   const PhoneticsGridView({super.key});
 
   void _showDetailBottomSheet(BuildContext context, PhoneticItem item) {
-    final firstWord = item.examples.isNotEmpty ? item.examples[0].split(' ')[0] : '';
-    AudioService.instance.speakPhonetic(item.symbol, firstWord);
+    AudioService.instance.speakPhoneticSymbol(item.symbol);
 
     showModalBottomSheet(
       context: context,
@@ -212,7 +212,7 @@ class PhoneticsGridView extends StatelessWidget {
                     ),
                     child: Text(
                       item.symbol,
-                      style: TextStyle(
+                      style: LuminaTheme.ipaStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
                         color: Colors.deepOrange.shade900,
@@ -230,7 +230,7 @@ class PhoneticsGridView extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          '点击图标听标准发音',
+                          '点击大声听音标纯正发音',
                           style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
                         ),
                       ],
@@ -238,7 +238,7 @@ class PhoneticsGridView extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      AudioService.instance.speakPhonetic(item.symbol, firstWord);
+                      AudioService.instance.speakPhoneticSymbol(item.symbol);
                     },
                     icon: const Icon(Icons.volume_up, color: Colors.white),
                     style: IconButton.styleFrom(
@@ -262,12 +262,12 @@ class PhoneticsGridView extends StatelessWidget {
                 ),
                 child: Text(
                   item.tips,
-                  style: TextStyle(fontSize: 14, color: Colors.amber.shade900, height: 1.4),
+                  style: LuminaTheme.ipaStyle(fontSize: 14, color: Colors.amber.shade900).copyWith(height: 1.4),
                 ),
               ),
               const SizedBox(height: 20),
               const Text(
-                '📝 经典例词练习',
+                '📝 经典例词练习 (点击听单词原声发音)',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
@@ -278,10 +278,13 @@ class PhoneticsGridView extends StatelessWidget {
                   final wordOnly = ex.split(' ')[0];
                   return ActionChip(
                     avatar: const Icon(Icons.volume_up_outlined, size: 16),
-                    label: Text(ex, style: const TextStyle(fontSize: 13)),
+                    label: Text(
+                      ex,
+                      style: LuminaTheme.ipaStyle(fontSize: 13),
+                    ),
                     backgroundColor: Colors.grey.shade100,
                     onPressed: () {
-                      AudioService.instance.speak(wordOnly);
+                      AudioService.instance.speakWord(wordOnly);
                     },
                   );
                 }).toList(),
@@ -332,7 +335,7 @@ class PhoneticsGridView extends StatelessWidget {
               children: [
                 Text(
                   item.symbol,
-                  style: TextStyle(
+                  style: LuminaTheme.ipaStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: color,
@@ -417,8 +420,8 @@ class _PhoneticsQuizViewState extends State<PhoneticsQuizView> {
   }
 
   void _playTargetSound() {
-    final word = _quizItems[_currentIndex]['word'] as String;
-    AudioService.instance.speak(word);
+    final target = _quizItems[_currentIndex]['target'] as String;
+    AudioService.instance.speakPhoneticSymbol(target);
   }
 
   void _selectOption(String option) {

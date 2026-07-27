@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../services/storage_service.dart';
 import '../mock/mock_words.dart';
 import '../mock/mock_articles.dart';
+import '../theme/lumina_theme.dart';
 import 'article_detail_screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
@@ -72,11 +74,70 @@ class _FavoritesScreenState extends State<FavoritesScreen>
     super.dispose();
   }
 
+  void _exportFavorites() {
+    if (_wordFavorites.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('暂无已收藏单词')),
+      );
+      return;
+    }
+
+    final StringBuffer buffer = StringBuffer();
+    buffer.writeln('=== 我的英语生词备考清单 ===\n');
+    for (int i = 0; i < _wordFavorites.length; i++) {
+      final w = _wordFavorites[i];
+      buffer.writeln('${i + 1}. ${w['english']}  ${w['phonetic']}');
+      buffer.writeln('   释义: ${w['chinese']}');
+      if (w['example'] != null && (w['example'] as String).isNotEmpty) {
+        buffer.writeln('   例句: ${w['example']}');
+      }
+      buffer.writeln();
+    }
+
+    final text = buffer.toString();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('📋 导出生词本备考清单'),
+        content: SizedBox(
+          width: double.maxFinite,
+          child: SingleChildScrollView(
+            child: SelectableText(text, style: const TextStyle(fontSize: 13, height: 1.4)),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('关闭'),
+          ),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.copy, size: 16),
+            label: const Text('一键复制清单'),
+            onPressed: () {
+              Clipboard.setData(ClipboardData(text: text));
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('已复制生词本清单到剪贴板！')),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('我的收藏'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.output_rounded),
+            tooltip: '导出生词清单',
+            onPressed: _exportFavorites,
+          ),
+        ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(44),
           child: TabBar(
@@ -129,7 +190,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
               children: [
                 Text(word['phonetic'] ?? '',
                     style:
-                        TextStyle(color: Colors.grey.shade600, fontSize: 12)),
+                        LuminaTheme.ipaStyle(color: Colors.grey.shade600, fontSize: 12)),
                 const SizedBox(width: 8),
                 IconButton(
                   icon: const Icon(Icons.favorite, color: Colors.red),

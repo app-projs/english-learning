@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../services/storage_service.dart';
 
 class WrongAnswersScreen extends StatefulWidget {
@@ -108,12 +109,66 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
     }
   }
 
+  void _exportWrongAnswers() {
+    if (_wrongAnswers.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('暂无错题记录')),
+      );
+      return;
+    }
+
+    final StringBuffer buffer = StringBuffer();
+    buffer.writeln('=== 我的英语错题巩固清单 ===\n');
+    for (int i = 0; i < _wrongAnswers.length; i++) {
+      final item = _wrongAnswers[i];
+      buffer.writeln('${i + 1}. 题目: ${item['question']}');
+      buffer.writeln('   正确答案: ${item['correctAnswer']}');
+      buffer.writeln();
+    }
+
+    final text = buffer.toString();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('📋 导出错题巩固清单'),
+        content: SizedBox(
+          width: double.maxFinite,
+          child: SingleChildScrollView(
+            child: SelectableText(text, style: const TextStyle(fontSize: 13, height: 1.4)),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('关闭'),
+          ),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.copy, size: 16),
+            label: const Text('一键复制错题集'),
+            onPressed: () {
+              Clipboard.setData(ClipboardData(text: text));
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('已复制错题清单到剪贴板！')),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('错题复习'),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.output_rounded),
+            onPressed: _exportWrongAnswers,
+            tooltip: '导出错题清单',
+          ),
           if (_wrongAnswers.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.delete_outline),

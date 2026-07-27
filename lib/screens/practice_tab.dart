@@ -7,6 +7,9 @@ import 'dialogue_practice_screen.dart';
 import 'listening_practice_screen.dart';
 
 import 'phonetics_practice_screen.dart';
+import 'word_roots_screen.dart';
+import 'grammar_practice_screen.dart';
+import 'smart_review_screen.dart';
 
 class PracticeTab extends StatelessWidget {
   const PracticeTab({super.key});
@@ -136,6 +139,48 @@ class PracticeTab extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const PhoneticsPracticeScreen(),
+                      ),
+                    );
+                  },
+                ),
+                _PracticeCard(
+                  title: '词根词缀',
+                  subtitle: '派生词拆解记忆树',
+                  icon: Icons.account_tree,
+                  gradientColors: const [Color(0xFF059669), Color(0xFF10B981)],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WordRootsScreen(),
+                      ),
+                    );
+                  },
+                ),
+                _PracticeCard(
+                  title: '语法句型',
+                  subtitle: '高频语法考点解析',
+                  icon: Icons.menu_book,
+                  gradientColors: const [Color(0xFF2563EB), Color(0xFF60A5FA)],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const GrammarPracticeScreen(),
+                      ),
+                    );
+                  },
+                ),
+                _PracticeCard(
+                  title: '艾宾浩斯复习',
+                  subtitle: 'SM-2遗忘曲线复习中心',
+                  icon: Icons.psychology_rounded,
+                  gradientColors: const [Color(0xFFEA580C), Color(0xFFF97316)],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SmartReviewScreen(),
                       ),
                     );
                   },

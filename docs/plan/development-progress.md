@@ -15,9 +15,60 @@
 - [x] **Lumina 设计系统与 TabBar 视觉精美化**：
   - 全工程所有 Tab 切换栏（单词练习、句子练习、听力练习、对话练习、音标练习、收藏、错题本）彻底擦除底部的硬质分割线条（`dividerColor: Colors.transparent` + `dividerHeight: 0`）。
   - 全量重构 TabBar 选中指示器为带有圆角的精致下划线 indicator，字号加粗、间距柔和，美感全面提升。
-- [x] **Android Release APK 打包与部署文档补全 (Android App Build)**：
-  - 成功完成 Release 正式包编译：`build/app/outputs/flutter-apk/app-release.apk` (58.5MB)。
-  - 完善 [01-android.md](file:///Users/admin/Documents/workspace/code/english-learning/docs/deployment/01-android.md) 与 [BUILD_README.md](file:///Users/admin/Documents/workspace/code/english-learning/docs/BUILD_README.md) 多平台/自用/商店打包指南。
+- [x] **极光成就战报海报一键导出与分享 (Achievement Poster Generator, Version 1.0.19+20)**：
+  - 在 [achievement_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/achievement_screen.dart) 勋章战报右上角增加 `📸 生成海报` 悬浮卡片。
+  - **Lumina 渐变星空海报卡片**：展示个人头像、`👑 王者大宗师` 动态段位称号与核心战报数据（`学习积分` | `连续打卡天数` | `累计词汇量`）。
+  - **一键保存与微信分享**：支持保存渲染海报至系统相册与复制分享文本。
+- [x] **全服 1v1 单词限时 PK 竞技场 (PK Battle Arena, Version 1.0.18+19)**：
+  - 在 `LeaderboardTab` 学习榜单最上方引入 **【⚔️ 全服 1v1 单词限时 PK 赛】** 竞技卡片。
+  - **智能匹配与双人 HP 血条**：一键匹配全服同阶对战玩家（如 `词霸 Lily`），实时可视化比拼双人 HP 血条。
+  - **限时速记抢答与结算**：答对扣除对手 40 点血量，胜者可独享 50 LP 积分注入个人榜单排名！
+- [x] **自动附带版本号的 Release APK 打包配置**：
+  - 修改 `android/app/build.gradle`，在 Gradle `applicationVariants.all` 中新增自动拷贝重命名任务。
+  - 每次执行 `flutter build apk --release` 后，自动在 `build/app/outputs/flutter-apk/` 下产出规范的 **`lumina-english-v${versionName}.apk`**（如 `lumina-english-v1.0.18.apk`）。
+- [x] **AI 智能口语实时对答与语法地道纠错 (AI Talking Coach, Version 1.0.16+17)**：
+  - 在 `DialoguePracticeScreen` 增加了第 3 个 Tab 标签 **【AI 陪练与纠错】**。
+  - **AI 智能场景多轮口语对话**：预设 `咖啡馆点餐`、`问路`、`机场入境` 等实战场景，AI 实时生成自然回复并同步原声朗读。
+  - **实时语法诊断与地道表达推荐**：对用户每一句输出进行实时语法纠错（如缺失介词/冠词等），给出 `发音 92 | 语法 88 | 地道度 96` 评分卡片与地道高级替换句。
+- [x] **阶段性目标追踪与路线图解锁系统 (Staged Goal Tracker, Version 1.0.15+16)**：
+  - 全面升级 [goal_setting_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/goal_setting_screen.dart)，引入 **4 阶梯阶段性目标解锁路线图**。
+  - **4 阶梯渐进式路线**：`突破日常起步` ➔ `四六级与职场进阶` ➔ `考研学术与雅思精读` ➔ `自由地道巅峰对话`。
+  - **锁层控制与一键应用**：基于累积词汇量与句型量实时判断解锁状态。未达标显示 `🔒 待解锁`，已解包支持一键点选并切换全局对应的目标词库。
+- [x] **艾宾浩斯遗忘曲线智能复习中心 (Smart Memory Review Center, Version 1.0.14+15)**：
+  - 全新开发 [smart_review_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/smart_review_screen.dart)，提供基于 SM-2 遗忘曲线算法的**艾宾浩斯智能复习中心**。
+  - **今日混排复习清单自动生成**：自动扫描用户在 `StorageService` 中的生词本、错题集及到期句型，智能生成今日复习待办。
+  - **记忆保留率预测与 4 级反馈**：提供实时记忆保留率趋势预测（`20分钟 58% ➔ 1天 33% ➔ 6天 25% ➔ 31天 21%`），支持点击 `生疏(1天)`、`模糊(3天)`、`掌握(6天)`、`熟练(14天)` 动态更新复习日程。
+- [x] **字词根拆词连线消消乐游戏 (Word Root Matching Game, Version 1.0.13+14)**：
+  - 在 `WordRootsScreen` 增加了第 4 个 Tab 标签 **【拆词连线游戏】**。
+  - **拆词公式与释义匹配**：支持左侧点击拆词公式（如 `im- [向内] + port [拿]` / `dis- [解开] + cover [盖]`），右侧点击中文释义（如 `进口、输入` / `发现、揭盖`）进行互动消消乐连线。
+  - **消除音效与大满贯结算**：连线配对成功自动播放英文原声朗读，全消除自动触发大满贯结算法及 100 LP 积分奖励。
+- [x] **句型主谓宾语法彩虹拆解 (Grammar Rainbow Analysis, Version 1.0.12+13)**：
+  - 在 `SentencePracticeScreen` 增加了第 4 个 Tab 标签 **【语法成分分析】**。
+  - **彩虹成分高亮与图谱**：将长难句按 `主语 (蓝)`、`谓语 (红)`、`宾语 (绿)`、`状语 (橙)`、`从句 (紫)` 进行彩虹色彩化高亮标注与树形图谱拆解。
+  - **短语交互发音与释义**：支持点击任意彩色成分单独听读音，并弹窗提示该语法成分在句中的功能与解析。
+- [x] **48 国际音标纯正音素发音重构 (Pure IPA Phoneme Audio, Version 1.0.11+12)**：
+  - **彻底擦除例词读音污染与旧缓存 (如点 `[æ]` 读出 "cat"，点 `[i:]` 读出 "ee")**：
+    1. 彻底擦除包含例词的发音源映射，全量采用国际标准纯音音素提示词与纯正爆破音/摩擦音音频，拒绝读出完整单词。
+    2. 缓存 Key 全量更名为 `ipa_v6_clean_`，强制使手机端旧版本缓存的例词音频全部失效重加载。
+  - **重构听音辨音测试 (`PhoneticsQuizView`)**：修正测验加载与切题时误调 `speak(word)` 的问题，全面统一改调 `speakPhoneticSymbol(target)`。
+- [x] **学习积分 (LP Points) 引擎与五大段位勋章系统 (Achievement Tier System, Version 1.0.8+9)**：
+  - 全面重构 [achievement_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/achievement_screen.dart)，引入基于学习背词、句子练习与连续打卡的动态 **LP (Learning Points) 积分引擎**。
+  - **五大段位晋级体系**：`🥉 青铜学徒 (0-200)` ➔ `🥈 白银词霸 (201-600)` ➔ `🥇 黄金极客 (601-1500)` ➔ `💎 钻石宗师 (1501-3000)` ➔ `👑 王者大宗师 (>3000)`。
+  - **动态勋章墙**：自动根据用户真实练习统计解锁 `初露锋芒`、`坚持不懈`、`词汇达人`、`句法高手`、`语法宗师` 与 `音标专家` 勋章。
+- [x] **听力逐句精听与复读模式 (Intensive Repeat Listening, Version 1.0.7+8)**：
+  - 在 `ListeningPracticeScreen` 增加了第 4 个 Tab 标签 **【逐句精听】**。
+  - **单句循环复读与 0.7x 慢速**：支持对场景音频中的每一个精读句型开启单句死循环复读（🔁）或 0.7x 慢速复读。
+  - **盲听字幕遮挡开关**：提供一键 `🙈 盲听模式 (字幕已遮挡)` 切换，帮助用户听音复述并练习地道跟读听力。
+- [x] **英语水平测评与定级诊断模块 (Level Placement Assessment, Version 1.0.6+7)**：
+  - 全新开发 [level_assessment_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/level_assessment_screen.dart)，设计 5 阶段跨阶梯测验（包含基础词汇、进阶词汇、高频学术词、长难句语法及雅思阅读）。
+  - **AI 智能定级评估报告**：自动生成 `零基础 / 入门 (A1-A2)`、`四六级 (B1-B2)`、`考研/雅思 (C1-C2)` 等阶梯评级，并智能推荐适宜词库（`日常基础` / `四级核心` / `六级高频` / `考研必刷` / `雅思冲刺`）。
+  - **一键应用与全局同步**：报告页支持一键将推荐词库无缝应用至全局 `StorageService` 存储；已全面接入【设置】弹窗与【目标设置】页面入口。
+- [x] **语法句型专项训练与刷题模块 (Grammar Practice & Quiz Module, Version 1.0.5+6)**：
+  - 全新开发 [grammar_practice_screen.dart](file:///Users/admin/Documents/workspace/code/english-learning/lib/screens/grammar_practice_screen.dart)，涵盖定语从句 (Attributive Clauses)、非谓语动词 (Non-finite Verbs) 以及虚拟语气 (Subjunctive Mood) 等高频语法考点。
+  - 提供核心口诀卡片、结构图解例句剖析以及 4 选 1 语法考点精练，答错实时解析并保存至错题集。
+- [x] **生词本与错题集一键导出一览清单 (Export Favorites & Wrong Answers)**：
+  - 在 `FavoritesScreen` 与 `WrongAnswersScreen` 的 AppBar 增加导出按钮。
+  - 支持一键生成格式清晰的备考清单文本并一键复制到剪贴板，方便打印或备考复习。
 - [x] **品牌资产集成**：完整替换 App Icon、横向 Logo 与品牌标志资源。
 - [x] **导航与路径引擎**：实现 DailyTab 每日引导路径 1 到 N 状态流转与断点续学。
 

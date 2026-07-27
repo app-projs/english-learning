@@ -175,7 +175,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _initStorage();
   }
 
@@ -380,6 +380,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                 Tab(icon: Icon(Icons.list, size: 20), text: '场景选择'),
                 Tab(icon: Icon(Icons.headphones, size: 20), text: '单选练习'),
                 Tab(icon: Icon(Icons.edit_note, size: 20), text: '听写填空'),
+                Tab(icon: Icon(Icons.repeat, size: 20), text: '逐句精听'),
               ],
             ),
           ),
@@ -391,6 +392,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
           _buildScenarioList(),
           _buildPracticeMode(),
           _buildDictationMode(),
+          _buildIntensiveRepeatMode(),
         ],
       ),
     );
@@ -893,6 +895,152 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
           ],
         ],
       ),
+    );
+  }
+
+  int _repeatSentenceIndex = -1;
+  bool _hideEnglishSubtitle = false;
+  bool _isLoopingSingle = false;
+
+  Widget _buildIntensiveRepeatMode() {
+    final scenario = _scenarios[_selectedScenarioIndex];
+    final questions = scenario['questions'] as List;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          color: isDark ? const Color(0xFF1E293B) : Colors.blue.shade50,
+          child: Row(
+            children: [
+              Text(
+                '场景: ${scenario['title']}',
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              ),
+              const Spacer(),
+              ChoiceChip(
+                label: Text(_hideEnglishSubtitle ? '🙈 盲听模式 (字幕已遮挡)' : '👁️ 显示字幕'),
+                selected: _hideEnglishSubtitle,
+                onSelected: (val) {
+                  setState(() {
+                    _hideEnglishSubtitle = val;
+                  });
+                },
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.all(16),
+            itemCount: questions.length,
+            itemBuilder: (context, index) {
+              final q = questions[index];
+              final String audioText = q['audioText'] ?? q['question'];
+              final isThisLooping = _repeatSentenceIndex == index && _isLoopingSingle;
+
+              return Container(
+                margin: const EdgeInsets.only(bottom: 12),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: isThisLooping
+                        ? Colors.blue
+                        : (isDark ? Colors.white10 : Colors.grey.shade200),
+                    width: isThisLooping ? 2 : 1,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 12,
+                          backgroundColor: Colors.blue.shade100,
+                          child: Text(
+                            '${index + 1}',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue.shade900,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '句型练习 #${index + 1}',
+                          style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: () {
+                            AudioService.instance.speak(audioText, speechRate: 0.7);
+                          },
+                          child: const Text('🐢 0.7x 慢速'),
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            isThisLooping ? Icons.repeat_one_on : Icons.repeat,
+                            color: isThisLooping ? Colors.blue : Colors.grey,
+                          ),
+                          tooltip: '单句循环复读',
+                          onPressed: () {
+                            setState(() {
+                              if (isThisLooping) {
+                                _isLoopingSingle = false;
+                                _repeatSentenceIndex = -1;
+                              } else {
+                                _isLoopingSingle = true;
+                                _repeatSentenceIndex = index;
+                                _playAudio(audioText);
+                              }
+                            });
+                          },
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.volume_up, color: Colors.blue),
+                          onPressed: () => _playAudio(audioText),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    if (_hideEnglishSubtitle)
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: isDark ? const Color(0xFF0F172A) : Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          '🙈 英文字幕已隐藏 (请盲听尝试复述，点击顶部开关开启字幕)',
+                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                        ),
+                      )
+                    else
+                      Text(
+                        audioText,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          height: 1.4,
+                        ),
+                      ),
+                    const SizedBox(height: 6),
+                    Text(
+                      '配套问题: ${q['question']}',
+                      style: TextStyle(fontSize: 13, color: Colors.grey.shade700),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
