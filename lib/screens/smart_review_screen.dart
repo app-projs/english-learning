@@ -23,6 +23,12 @@ class _SmartReviewScreenState extends State<SmartReviewScreen> {
     _loadDueReviewItems();
   }
 
+  @override
+  void dispose() {
+    AudioService.instance.stop();
+    super.dispose();
+  }
+
   Future<void> _loadDueReviewItems() async {
     final storage = await StorageService.getInstance();
     final favoriteIds = storage.getFavorites();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../services/storage_service.dart';
+import '../services/audio_service.dart';
 import '../mock/mock_words.dart';
 import '../mock/mock_articles.dart';
 import '../theme/lumina_theme.dart';
@@ -70,6 +71,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }

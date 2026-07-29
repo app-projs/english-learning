@@ -52,6 +52,7 @@ class _DialoguePracticeScreenState extends State<DialoguePracticeScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }

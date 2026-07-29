@@ -22,6 +22,7 @@ class _PhoneticsPracticeScreenState extends State<PhoneticsPracticeScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }

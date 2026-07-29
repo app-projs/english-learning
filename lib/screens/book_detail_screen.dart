@@ -4,6 +4,7 @@ import '../models/article.dart';
 import '../services/article_service.dart';
 import '../services/storage_service.dart';
 import '../services/database_service.dart';
+import '../services/audio_service.dart';
 import 'article_detail_screen.dart';
 
 class BookDetailScreen extends StatefulWidget {
@@ -24,6 +25,12 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
   void initState() {
     super.initState();
     _initService();
+  }
+
+  @override
+  void dispose() {
+    AudioService.instance.stop();
+    super.dispose();
   }
 
   void _initService() async {

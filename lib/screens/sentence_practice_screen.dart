@@ -36,6 +36,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }

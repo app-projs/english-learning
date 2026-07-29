@@ -42,6 +42,12 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     _initStorage();
   }
 
+  @override
+  void dispose() {
+    AudioService.instance.stop();
+    super.dispose();
+  }
+
   Future<void> _initStorage() async {
     _storageService = await StorageService.getInstance();
   }

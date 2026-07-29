@@ -22,6 +22,7 @@ class _WordRootsScreenState extends State<WordRootsScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }

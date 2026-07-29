@@ -16,6 +16,8 @@ class AudioService {
   VoidCallback? _onComplete;
   Directory? _cacheDir;
 
+  bool _isStopped = false;
+
   AudioService._();
 
   static AudioService get instance {
@@ -142,6 +144,7 @@ class AudioService {
 
   /// 停止当前正在播放的所有音频（支持快速打断）
   Future<void> stop() async {
+    _isStopped = true;
     if (_isInitialized) {
       _onComplete = null;
       try {
@@ -181,6 +184,7 @@ class AudioService {
   Future<void> speakWord(String word, {String? accent, VoidCallback? onComplete}) async {
     await init();
     await stop();
+    _isStopped = false;
     _onComplete = onComplete;
 
     final cleanWord = word.trim().toLowerCase();
@@ -235,11 +239,12 @@ class AudioService {
     }
   }
 
-  /// 长句与文章段落发音 (Sentence & Paragraph Speech - Natural Streaming)
-  /// 策略：将段落按句切分 → 每句走有道原声 MP3 流 → 顺序串行播放，无缝连贯自然
+  /// 长句与文章段落发音 (Sentence & Paragraph Speech - Edge Neural TTS Streaming)
+  /// 策略：优先走微软 Edge TTS 神经网络发音 (支持全句自然连读、生动语气) ➔ 降级走有道单句串行 ➔ 降级走系统 TTS
   Future<void> speakSentence(String paragraph, {double speechRate = 1.0, VoidCallback? onComplete}) async {
     await init();
     await stop();
+    _isStopped = false;
 
     final trimmedText = paragraph.trim();
     if (trimmedText.isEmpty) {
@@ -247,7 +252,42 @@ class AudioService {
       return;
     }
 
-    // 1. 将段落切分为句子列表（以 . ! ? 为切分点，保留内容非空的句子）
+    _onComplete = onComplete;
+
+    // 1. 优先请求微软 Edge 神经网络发音（支持长段落自然连续播报，美音/英音适配）
+    try {
+      final storage = await StorageService.getInstance();
+      final accent = storage.getAccent();
+      final voiceName = accent.toUpperCase() == 'UK' ? 'en-GB-SoniaNeural' : 'en-US-AvaNeural';
+
+      if (_cacheDir != null) {
+        final hashStr = trimmedText.hashCode.abs().toString();
+        final fileName = 'edge_tts_${accent}_${hashStr}_${trimmedText.length}.mp3';
+        final localFile = File('${_cacheDir!.path}/$fileName');
+
+        // 磁盘缓存命中 - 0 延迟秒播
+        if (await localFile.exists() && (await localFile.length()) > 500) {
+          if (_isStopped) return;
+          await _audioPlayer.setPlaybackRate(speechRate);
+          await _audioPlayer.play(DeviceFileSource(localFile.path));
+          return;
+        }
+
+        // 本地无缓存 -> WebSocket 合成 Edge TTS 24kHz MP3
+        final audioBytes = await _fetchEdgeTtsAudio(trimmedText, voiceName: voiceName);
+        if (audioBytes != null && audioBytes.length > 500) {
+          if (_isStopped) return;
+          await localFile.writeAsBytes(audioBytes);
+          await _audioPlayer.setPlaybackRate(speechRate);
+          await _audioPlayer.play(DeviceFileSource(localFile.path));
+          return;
+        }
+      }
+    } catch (e) {
+      debugPrint('Edge TTS paragraph speech error: $e, falling back to chunk/TTS');
+    }
+
+    // 2. 降级方案：按句切分串行播放有道原声 MP3
     final sentences = trimmedText
         .split(RegExp(r'(?<=[.!?])\s+'))
         .map((s) => s.trim())
@@ -255,16 +295,18 @@ class AudioService {
         .toList();
 
     if (sentences.isEmpty) {
-      onComplete?.call();
+      _onComplete?.call();
+      _onComplete = null;
       return;
     }
 
-    // 2. 依次串行播放每个句子的有道原声 MP3（递归回调链实现无缝顺序播放）
     int currentIndex = 0;
     late Future<void> Function() playNext;
     playNext = () async {
       if (currentIndex >= sentences.length) {
-        onComplete?.call();
+        final callback = _onComplete;
+        _onComplete = null;
+        callback?.call();
         return;
       }
       final sentenceText = sentences[currentIndex++];
@@ -273,8 +315,100 @@ class AudioService {
     await playNext();
   }
 
+  /// 通过微软 Edge TTS 官方免费 WebSocket 节点合成高保真神经网络音频
+  Future<List<int>?> _fetchEdgeTtsAudio(String text, {String? voiceName}) async {
+    if (kIsWeb) return null;
+    final selectedVoice = voiceName ?? 'en-US-AvaNeural';
+    final escapedText = text
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&apos;');
+
+    try {
+      const wsUrl = 'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EA5E40B1A42548646CF1037F';
+      final socket = await WebSocket.connect(
+        wsUrl,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
+          'Pragma': 'no-cache',
+          'Cache-Control': 'no-cache',
+          'Origin': 'chrome-extension://jdiccldimpdaibocqfkgahpififfkbej',
+        },
+      ).timeout(const Duration(seconds: 6));
+
+      final completer = Completer<List<int>?>();
+      final audioBuffer = <int>[];
+
+      // 1. 发送配置消息
+      final configMsg =
+          "X-Timestamp: ${DateTime.now().toIso8601String()}\r\n"
+          "Content-Type: application/json; charset=utf-8\r\n"
+          "Path: speech.config\r\n\r\n"
+          '{"context":{"synthesis":{"audio":{"metadataOptions":{"sentenceBoundaryEnabled":false,"wordBoundaryEnabled":false},"outputFormat":"audio-24khz-48kbitrate-mono-mp3"}}}}';
+      socket.add(configMsg);
+
+      // 2. 发送 SSML 朗读请求
+      final ssmlMsg =
+          "X-Timestamp: ${DateTime.now().toIso8601String()}\r\n"
+          "Content-Type: application/ssml+xml\r\n"
+          "Path: ssml\r\n\r\n"
+          "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>"
+          "<voice name='$selectedVoice'>"
+          "<pitch hertz='0Hz'/><rate speed='0%'/>$escapedText"
+          "</voice></speak>";
+      socket.add(ssmlMsg);
+
+      socket.listen(
+        (data) {
+          if (data is List<int>) {
+            if (data.length > 2) {
+              final headerLen = (data[0] << 8) | data[1];
+              if (data.length >= 2 + headerLen) {
+                final headerStr = String.fromCharCodes(data.sublist(2, 2 + headerLen));
+                if (headerStr.contains('Path: audio')) {
+                  audioBuffer.addAll(data.sublist(2 + headerLen));
+                }
+              }
+            }
+          } else if (data is String) {
+            if (data.contains('Path: turn.end')) {
+              socket.close();
+              if (!completer.isCompleted) {
+                completer.complete(audioBuffer.isNotEmpty ? audioBuffer : null);
+              }
+            }
+          }
+        },
+        onError: (err) {
+          socket.close();
+          if (!completer.isCompleted) completer.complete(null);
+        },
+        onDone: () {
+          if (!completer.isCompleted) {
+            completer.complete(audioBuffer.isNotEmpty ? audioBuffer : null);
+          }
+        },
+        cancelOnError: true,
+      );
+
+      return await completer.future.timeout(
+        const Duration(seconds: 8),
+        onTimeout: () {
+          socket.close();
+          return audioBuffer.isNotEmpty ? audioBuffer : null;
+        },
+      );
+    } catch (e) {
+      debugPrint('Edge TTS WebSocket synthesis error: $e');
+      return null;
+    }
+  }
+
   /// 单句有道 MP3 流播放内核 (按句缓存 + 完成回调链)
   Future<void> _playSentenceChunk(String sentenceText, {double speechRate = 1.0, Future<void> Function()? onComplete}) async {
+    if (_isStopped) return;
     try {
       if (_cacheDir != null) {
         final hashStr = sentenceText.hashCode.abs().toString();

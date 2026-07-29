@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../services/storage_service.dart';
+import '../services/audio_service.dart';
 
 class WrongAnswersScreen extends StatefulWidget {
   const WrongAnswersScreen({super.key});
@@ -30,6 +31,7 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     _eliminateInputController.dispose();
     super.dispose();

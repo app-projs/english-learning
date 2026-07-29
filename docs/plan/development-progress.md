@@ -1,15 +1,20 @@
 # 项目开发进度与实施计划文档 (Development Progress)
 
 ## 📌 最近更新时间
-**更新日期**：2026年7月27日  
-**最新版本**：Lumina English Version 1.0.28+29  
-**更新内容**：完成多设备进度云同步与数据加密备份中心（Version 1.0.28）、学习提醒推送与 07:00~21:00 定时打卡闹钟系统（Version 1.0.27）、全局发音口音切换 (🇺🇸 美音 / 🇬🇧 英音) 与 0.8x/1.0x/1.2x 语速控制（Version 1.0.26）、本周 7 天趋势柱状图与四维度练习数据图表绑定（Version 1.0.25）、生词本与错题集标准化 A4 TXT & PDF 备考打印单导出（Version 1.0.24）、字词根派生 5 大思维导图树（Version 1.0.23）、SM-2 艾宾浩斯智能复习任务自动混入（Version 1.0.22）、首页每日一词 3D 轴向 180° 翻转卡片（Version 1.0.21）、段落按句切分与有道真人原声音频串流朗读（Version 1.0.20）。
+**更新日期**：2026年7月28日  
+**最新版本**：Lumina English Version 1.0.29+30  
+**更新内容**：接入微软 Edge TTS 神经网络发音引擎 (Version 1.0.29)、完成多设备进度云同步与数据加密备份中心（Version 1.0.28）、学习提醒推送与 07:00~21:00 定时打卡闹钟系统（Version 1.0.27）、全局发音口音切换 (🇺🇸 美音 / 🇬🇧 英音) 与 0.8x/1.0x/1.2x 语速控制（Version 1.0.26）。
 
 ---
 
 ## 🟢 1. 已开发完成功能列表 (Completed)
 
-### 1.1 基础架构与视觉系统
+### 1.1 基础架构与发音/视觉系统
+- [x] **微软 Edge TTS 神经网络长文本发音引擎与页面退出音频自动打断 (Edge Neural TTS & Route Audio Auto-Stop, Version 1.0.29+30)**：
+  - 在 [audio_service.dart](file:///d:/workspace/test/english-learning/lib/services/audio_service.dart) 全量接入微软 Edge TTS 神经网络发音引擎（WebSocket 原生传输，支持 `en-US-AvaNeural` 美音 / `en-GB-SoniaNeural` 英音）。
+  - **长文本与文章段落高保真播报**：解决阅读模块、长句练习中段落朗读机械生硬的问题，实现媲美真人主播的连读起伏与自然重音。
+  - **无缝本地缓存与三重降级**：24kHz 高保真 MP3 音频持久化写入本地缓存，支持 0 延迟秒播；具备【Edge TTS 神经网络发音】 ➔ 【有道单句流】 ➔ 【系统 FlutterTts】三重降级保障。
+  - **页面退出即时停止播放修复 (Page Exit Audio Auto-Stop)**：全量给 [article_detail_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/article_detail_screen.dart) 等 11 个音频关联 UI 页面补齐 `dispose()` 生命周期解绑定与 `AudioService.instance.stop()`，并在 `AudioService` 引擎内部引入 `_isStopped` 标志锁阻断异步流，彻底修复返回上级页面时音频仍在后台播放的问题。
 - [x] **主题响应式状态切换 Bug 彻底修复 (Reactive Dark Mode Fix)**：
   - 修复了此前从设置弹窗切换深色模式后由于组件构造参数未更新导致 Switch 开关卡死在深色模式、无法切回浅色模式的严重问题。
   - 在 `ThemeService` 引入 `ValueNotifier<bool> isDarkModeNotifier` 全局响应式状态，与 `MaterialApp` 及设置弹窗内的 Switch 绑定，实现任意页面、任意时刻双向自由无缝切换浅色/深色模式。

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/lumina_theme.dart';
 import '../services/storage_service.dart';
+import '../services/audio_service.dart';
 import 'completion_congratulation_screen.dart';
 
 class GrammarPracticeScreen extends StatefulWidget {
@@ -25,6 +26,7 @@ class _GrammarPracticeScreenState extends State<GrammarPracticeScreen>
 
   @override
   void dispose() {
+    AudioService.instance.stop();
     _tabController.dispose();
     super.dispose();
   }
