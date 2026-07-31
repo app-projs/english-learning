@@ -30,7 +30,7 @@ class DatabaseService {
 
     final db = await openDatabase(
       path,
-      version: 11,
+      version: 12,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -149,13 +149,38 @@ class DatabaseService {
       )
     ''');
 
+    await db.execute('''
+      CREATE TABLE phonetics (
+        id TEXT PRIMARY KEY,
+        symbol TEXT NOT NULL,
+        type TEXT NOT NULL,
+        category TEXT NOT NULL,
+        tips TEXT,
+        examples TEXT
+      )
+    ''');
+
+    await db.execute('''
+      CREATE TABLE word_roots (
+        id TEXT PRIMARY KEY,
+        root TEXT NOT NULL,
+        type TEXT NOT NULL,
+        origin TEXT,
+        meaning TEXT,
+        explanation TEXT,
+        derivedWords TEXT
+      )
+    ''');
+
     await db.execute('CREATE INDEX IF NOT EXISTS idx_articles_bookId ON articles(bookId);');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_books_category ON books(category);');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_phonetics_type ON phonetics(type);');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_word_roots_type ON word_roots(type);');
   }
 
   static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
-    if (oldVersion < 11) {
+    if (oldVersion < 12) {
       await db.execute('DROP TABLE IF EXISTS words');
       await db.execute('DROP TABLE IF EXISTS sentences');
       await db.execute('DROP TABLE IF EXISTS dialogues');
@@ -164,6 +189,8 @@ class DatabaseService {
       await db.execute('DROP TABLE IF EXISTS user_progress');
       await db.execute('DROP TABLE IF EXISTS achievements');
       await db.execute('DROP TABLE IF EXISTS reading_history');
+      await db.execute('DROP TABLE IF EXISTS phonetics');
+      await db.execute('DROP TABLE IF EXISTS word_roots');
       await _onCreate(db, newVersion);
     }
   }
@@ -413,6 +440,76 @@ class DatabaseService {
         [];
   }
 
+  // Phonetics
+  Future<void> insertPhonetic(Map<String, dynamic> item) async {
+    final safeMap = Map<String, dynamic>.from(item);
+    if (safeMap['examples'] is List) {
+      safeMap['examples'] = jsonEncode(safeMap['examples']);
+    }
+    await _database?.insert('phonetics', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllPhonetics() async {
+    final results = await _database?.query('phonetics') ?? [];
+    return results.map((row) {
+      final map = Map<String, dynamic>.from(row);
+      if (map['examples'] is String) {
+        try {
+          map['examples'] = jsonDecode(map['examples'] as String);
+        } catch (_) {}
+      }
+      return map;
+    }).toList();
+  }
+
+  Future<List<Map<String, dynamic>>> getPhoneticsByType(String type) async {
+    final results = await _database?.query('phonetics', where: 'type = ?', whereArgs: [type]) ?? [];
+    return results.map((row) {
+      final map = Map<String, dynamic>.from(row);
+      if (map['examples'] is String) {
+        try {
+          map['examples'] = jsonDecode(map['examples'] as String);
+        } catch (_) {}
+      }
+      return map;
+    }).toList();
+  }
+
+  // Word Roots
+  Future<void> insertWordRoot(Map<String, dynamic> item) async {
+    final safeMap = Map<String, dynamic>.from(item);
+    if (safeMap['derivedWords'] is List) {
+      safeMap['derivedWords'] = jsonEncode(safeMap['derivedWords']);
+    }
+    await _database?.insert('word_roots', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllWordRoots() async {
+    final results = await _database?.query('word_roots') ?? [];
+    return results.map((row) {
+      final map = Map<String, dynamic>.from(row);
+      if (map['derivedWords'] is String) {
+        try {
+          map['derivedWords'] = jsonDecode(map['derivedWords'] as String);
+        } catch (_) {}
+      }
+      return map;
+    }).toList();
+  }
+
+  Future<List<Map<String, dynamic>>> getWordRootsByType(String type) async {
+    final results = await _database?.query('word_roots', where: 'type = ?', whereArgs: [type]) ?? [];
+    return results.map((row) {
+      final map = Map<String, dynamic>.from(row);
+      if (map['derivedWords'] is String) {
+        try {
+          map['derivedWords'] = jsonDecode(map['derivedWords'] as String);
+        } catch (_) {}
+      }
+      return map;
+    }).toList();
+  }
+
   // Clear all data
   Future<void> clearAll() async {
     await _database?.delete('words');
@@ -422,6 +519,8 @@ class DatabaseService {
     await _database?.delete('user_progress');
     await _database?.delete('achievements');
     await _database?.delete('reading_history');
+    await _database?.delete('phonetics');
+    await _database?.delete('word_roots');
   }
 
   Future<void> close() async {

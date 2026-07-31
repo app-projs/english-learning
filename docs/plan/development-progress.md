@@ -1,15 +1,28 @@
 # 项目开发进度与实施计划文档 (Development Progress)
 
 ## 📌 最近更新时间
-**更新日期**：2026年7月28日  
-**最新版本**：Lumina English Version 1.0.29+30  
-**更新内容**：接入微软 Edge TTS 神经网络发音引擎 (Version 1.0.29)、完成多设备进度云同步与数据加密备份中心（Version 1.0.28）、学习提醒推送与 07:00~21:00 定时打卡闹钟系统（Version 1.0.27）、全局发音口音切换 (🇺🇸 美音 / 🇬🇧 英音) 与 0.8x/1.0x/1.2x 语速控制（Version 1.0.26）。
+**更新日期**：2026年7月31日  
+**最新版本**：Lumina English Version 1.0.33+34  
+**更新内容**：全量重构音标 (Phonetics) 与字词根 (Word Roots) 模块至 SQLite 数据库统一托管 (Version 1.0.33)、字词根实时搜索过滤与派生生词一键收藏 (Version 1.0.32)、背词与文章阅读双向打通联动 (Version 1.0.31)。
 
 ---
 
 ## 🟢 1. 已开发完成功能列表 (Completed)
 
 ### 1.1 基础架构与发音/视觉系统
+- [x] **全量重构音标与字词根至 SQLite 数据库统一托管 (Phonetics & Word Roots SQLite DB Migration, Version 1.0.33+34)**：
+  - **全站练习 100% SQLite DB 托管**：升级 [database_service.dart](file:///d:/workspace/test/english-learning/lib/services/database_service.dart) 至 Version 12，新建 `phonetics` 与 `word_roots` 数据库表并建立高效率索引。
+  - **新增服务层架构**：新建 [phonetics_service.dart](file:///d:/workspace/test/english-learning/lib/services/phonetics_service.dart) 和 [word_root_service.dart](file:///d:/workspace/test/english-learning/lib/services/word_root_service.dart)，实现数据库自动种子写入与异步 CRUD。
+  - **解耦 UI 渲染**：全面重构 `PhoneticsPracticeScreen` 和 `WordRootsScreen`，彻底消除硬编码，改由 SQLite 数据库驱动界面与测试交互。
+- [x] **字词根实时搜索过滤与派生生词一键收藏 (Word Roots Search & Favorites Integration, Version 1.0.32+33)**：
+  - **研发文档补齐**：全新制定 [word_root_prd.md](file:///d:/workspace/test/english-learning/docs/prd/word_root_prd.md) 产品需求文档，明确词根拆解、思维导图树、消消乐与搜索架构。
+  - **全局实时搜索过滤**：在 [word_roots_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/word_roots_screen.dart) 顶栏注入快捷搜索框，支持对词根拼写、源语言、助记公式及衍生单词实时秒级检索过滤。
+  - **派生单词一键收藏**：在词根卡片展开派生单词列表旁增加 `♥️ 收藏` 按钮，直接联动 `StorageService` 添加至生词本并保存词根出处的上下文句型。
+  - **数据与警告修复**：补充 `bio` (生命), `tele` (远) 等高频词根数据，消除了 `leftItems`/`rightItems` 警告。
+- [x] **背词与文章阅读双向打通联动 (Reading & Vocabulary Memory Synergy, Version 1.0.31+32)**：
+  - **文章已收藏生词虚线高亮**：在 [article_detail_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/article_detail_screen.dart) 自然流式段落渲染中，自动匹配用户生词本（`Favorites`），为生词添加优雅的虚线下划线（`TextDecorationStyle.dashed`）与精炼醒目高亮。
+  - **生词划词收藏上下文自动捕获 (Context Capture)**：在划词弹窗收藏生词时，在 [storage_service.dart](file:///d:/workspace/test/english-learning/lib/services/storage_service.dart) 自动记录生词来源的文章标题（`articleTitle`）与上下文原句（`sentence`），弹窗实时提示 `出处: 《文章名》` 专属徽章。
+  - **生词本文章出处徽章与一键精读跳转 (Source Badge & Quick Jump)**：在 [favorites_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/favorites_screen.dart) 生词本卡片中，展示 `📖 出处文章: 《Title》` 调色徽章及原句上下文引用，支持点击徽章直接跳转调起对应文章精读页面。
 - [x] **微软 Edge TTS 神经网络长文本发音引擎与页面退出音频自动打断 (Edge Neural TTS & Route Audio Auto-Stop, Version 1.0.29+30)**：
   - 在 [audio_service.dart](file:///d:/workspace/test/english-learning/lib/services/audio_service.dart) 全量接入微软 Edge TTS 神经网络发音引擎（WebSocket 原生传输，支持 `en-US-AvaNeural` 美音 / `en-GB-SoniaNeural` 英音）。
   - **长文本与文章段落高保真播报**：解决阅读模块、长句练习中段落朗读机械生硬的问题，实现媲美真人主播的连读起伏与自然重音。

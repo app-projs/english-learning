@@ -119,7 +119,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     });
   }
 
-  void _showWordBubble(BuildContext context, String rawWord, Offset tapPosition) {
+  void _showWordBubble(BuildContext context, String rawWord, Offset tapPosition, {String paragraphText = ''}) {
     final cleanWord = rawWord.replaceAll(RegExp(r'[^\w\-]'), '');
     if (cleanWord.isEmpty) return;
 
@@ -130,7 +130,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
       context: context,
       barrierColor: Colors.black26,
       builder: (context) {
-        bool isFavorited = _storageService?.getFavorites().contains(cleanWord) ?? false;
+        bool isFavorited = _storageService?.getFavorites().contains(cleanWord.toLowerCase()) ?? false;
         return StatefulBuilder(
           builder: (context, setBubbleState) {
             return Dialog(
@@ -174,10 +174,17 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                             IconButton(
                               onPressed: () async {
                                 if (isFavorited) {
-                                  await _storageService?.removeFavorite(cleanWord);
+                                  await _storageService?.removeFavorite(cleanWord.toLowerCase());
                                 } else {
-                                  await _storageService?.addFavorite(cleanWord);
+                                  await _storageService?.addFavorite(cleanWord.toLowerCase());
+                                  await _storageService?.saveFavoriteContext(
+                                    cleanWord,
+                                    articleTitle: widget.article.chineseTitle ?? widget.article.title,
+                                    sentence: paragraphText.isNotEmpty ? paragraphText : '来源于文章《${widget.article.title}》',
+                                    articleId: widget.article.id.toString(),
+                                  );
                                 }
+                                setState(() {});
                                 setBubbleState(() {
                                   isFavorited = !isFavorited;
                                 });
@@ -192,7 +199,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          '/${cleanWord.toLowerCase()}/',
+                          _getPhoneticForWord(cleanWord),
                           style: const TextStyle(fontSize: 14, color: Colors.grey, fontStyle: FontStyle.italic),
                         ),
                         const SizedBox(height: 12),
@@ -210,7 +217,35 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 12),
+                        // 来源文章上下文徽章
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: Colors.amber.shade50,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.amber.shade200),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.menu_book, size: 15, color: Colors.amber),
+                              const SizedBox(width: 6),
+                              Expanded(
+                                child: Text(
+                                  '出处: 《${widget.article.chineseTitle ?? widget.article.title}》',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.brown.shade800,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 12),
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
@@ -346,6 +381,23 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
         title: Text(widget.article.chineseTitle ?? widget.article.title),
         actions: [
           IconButton(
+            icon: Icon(_showTranslation ? Icons.translate : Icons.g_translate_outlined),
+            tooltip: _showTranslation ? '隐藏段落译文' : '显示段落译文',
+            onPressed: _toggleTranslation,
+          ),
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.format_size),
+            tooltip: '调节字体大小',
+            onSelected: (val) {
+              if (val == 'up') _adjustFontSize(1.5);
+              if (val == 'down') _adjustFontSize(-1.5);
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(value: 'up', child: Text('🔤 放大字体 (A+)')),
+              const PopupMenuItem(value: 'down', child: Text('🔤 缩小字体 (A-)')),
+            ],
+          ),
+          IconButton(
             icon: const Icon(Icons.share_outlined),
             tooltip: '分享文章',
             onPressed: () => _showDomesticShareSheet(context, widget.article),
@@ -452,6 +504,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   }
 
   Widget _buildArticleContent() {
+    final favoriteWords = _storageService?.getFavorites() ?? {};
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -474,12 +527,13 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
               currentIndex: _currentParagraphIndex,
               fontSize: _fontSize,
               showTranslation: _showTranslation,
+              favoriteWords: favoriteWords,
               onTapParagraph: () {
                 setState(() {
                   _currentParagraphIndex = index;
                 });
               },
-              onWordTap: (word, pos) => _showWordBubble(context, word, pos),
+              onWordTap: (word, pos) => _showWordBubble(context, word, pos, paragraphText: paragraphText),
               translation: _getParagraphTranslation(index, paragraphText),
               totalParagraphs: _paragraphs.length,
             );
@@ -558,6 +612,7 @@ class _ParagraphBlock extends StatefulWidget {
   final int currentIndex;
   final double fontSize;
   final bool showTranslation;
+  final Set<String> favoriteWords;
   final VoidCallback onTapParagraph;
   final Function(String word, Offset tapPosition) onWordTap;
   final String translation;
@@ -569,6 +624,7 @@ class _ParagraphBlock extends StatefulWidget {
     required this.currentIndex,
     required this.fontSize,
     required this.showTranslation,
+    required this.favoriteWords,
     required this.onTapParagraph,
     required this.onWordTap,
     required this.translation,
@@ -676,6 +732,8 @@ class _ParagraphBlockState extends State<_ParagraphBlock> {
             spacing: 5,
             runSpacing: 6,
             children: words.map((w) {
+              final cleanW = w.replaceAll(RegExp(r'[^\w\-]'), '').toLowerCase();
+              final isFav = cleanW.isNotEmpty && widget.favoriteWords.contains(cleanW);
               return GestureDetector(
                 onTapUp: (details) {
                   widget.onTapParagraph();
@@ -688,10 +746,15 @@ class _ParagraphBlockState extends State<_ParagraphBlock> {
                     style: TextStyle(
                       fontSize: widget.fontSize,
                       height: 1.5,
-                      color: isHighlighted
-                          ? (isDark ? Colors.amber.shade200 : Colors.indigo.shade900)
-                          : (isDark ? Colors.white70 : Colors.black87),
-                      fontWeight: isHighlighted ? FontWeight.w600 : FontWeight.normal,
+                      color: isFav
+                          ? (isDark ? Colors.amber.shade300 : Colors.deepOrange.shade800)
+                          : (isHighlighted
+                              ? (isDark ? Colors.amber.shade200 : Colors.indigo.shade900)
+                              : (isDark ? Colors.white70 : Colors.black87)),
+                      fontWeight: isFav ? FontWeight.bold : (isHighlighted ? FontWeight.w600 : FontWeight.normal),
+                      decoration: isFav ? TextDecoration.underline : TextDecoration.none,
+                      decorationStyle: TextDecorationStyle.dashed,
+                      decorationColor: isDark ? Colors.amber.shade400 : Colors.deepOrange,
                     ),
                   ),
                 ),

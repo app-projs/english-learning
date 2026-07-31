@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../theme/lumina_theme.dart';
 import '../services/audio_service.dart';
+import '../services/storage_service.dart';
+import '../services/database_service.dart';
+import '../services/word_root_service.dart';
 import 'completion_congratulation_screen.dart';
 
 class WordRootsScreen extends StatefulWidget {
@@ -13,16 +16,38 @@ class WordRootsScreen extends StatefulWidget {
 class _WordRootsScreenState extends State<WordRootsScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  StorageService? _storageService;
+  WordRootService? _wordRootService;
+  List<WordRootModel> _dbRoots = [];
+  String _searchQuery = '';
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
+    _initStorage();
+  }
+
+  Future<void> _initStorage() async {
+    final s = await StorageService.getInstance();
+    final db = await DatabaseService.getInstance();
+    final service = WordRootService(db);
+    final roots = await service.getAllWordRoots();
+
+    if (mounted) {
+      setState(() {
+        _storageService = s;
+        _wordRootService = service;
+        _dbRoots = roots;
+      });
+    }
   }
 
   @override
   void dispose() {
     AudioService.instance.stop();
+    _searchController.dispose();
     _tabController.dispose();
     super.dispose();
   }
@@ -106,17 +131,109 @@ class _WordRootsScreenState extends State<WordRootsScreen>
           ),
         ),
       ),
-      body: TabBarView(
-        controller: _tabController,
+      body: Column(
         children: [
-          _buildRootsList(_coreRoots),
-          _buildRootsList(_commonPrefixes),
-          _buildRootsList(_commonSuffixes),
-          const _EtymologyTreeViewWidget(),
-          const _WordRootMatchingGameWidget(),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            color: isDark ? const Color(0xFF0F172A) : Colors.grey.shade50,
+            child: TextField(
+              controller: _searchController,
+              onChanged: (val) {
+                setState(() {
+                  _searchQuery = val;
+                });
+              },
+              decoration: InputDecoration(
+                hintText: '🔍 搜索词根/前缀/后缀、义项或衍生词...',
+                hintStyle: TextStyle(fontSize: 13, color: Colors.grey.shade500),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                filled: true,
+                fillColor: isDark ? const Color(0xFF1E293B) : Colors.white,
+                prefixIcon: const Icon(Icons.search, size: 18, color: Colors.grey),
+                suffixIcon: _searchQuery.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear, size: 16),
+                        onPressed: () {
+                          _searchController.clear();
+                          setState(() {
+                            _searchQuery = '';
+                          });
+                        },
+                      )
+                    : null,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.grey.shade300),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: isDark ? Colors.white10 : Colors.grey.shade200),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                _buildRootsList(_filterItems(_dbCoreRoots)),
+                _buildRootsList(_filterItems(_dbPrefixes)),
+                _buildRootsList(_filterItems(_dbSuffixes)),
+                const _EtymologyTreeViewWidget(),
+                const _WordRootMatchingGameWidget(),
+              ],
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  List<RootItem> get _dbCoreRoots {
+    final dbItems = _dbRoots.where((r) => r.type == 'root').map(_mapModelToItem).toList();
+    return dbItems.isNotEmpty ? dbItems : _coreRoots;
+  }
+
+  List<RootItem> get _dbPrefixes {
+    final dbItems = _dbRoots.where((r) => r.type == 'prefix').map(_mapModelToItem).toList();
+    return dbItems.isNotEmpty ? dbItems : _commonPrefixes;
+  }
+
+  List<RootItem> get _dbSuffixes {
+    final dbItems = _dbRoots.where((r) => r.type == 'suffix').map(_mapModelToItem).toList();
+    return dbItems.isNotEmpty ? dbItems : _commonSuffixes;
+  }
+
+  RootItem _mapModelToItem(WordRootModel model) {
+    return RootItem(
+      root: model.root,
+      origin: model.origin,
+      meaning: model.meaning,
+      explanation: model.explanation,
+      derivedWords: model.derivedWords
+          .map((d) => DerivedWord(
+                word: d.word,
+                phonetic: d.phonetic,
+                meaning: d.meaning,
+                breakdown: d.breakdown,
+              ))
+          .toList(),
+    );
+  }
+
+  List<RootItem> _filterItems(List<RootItem> items) {
+    if (_searchQuery.trim().isEmpty) return items;
+    final q = _searchQuery.toLowerCase().trim();
+    return items.where((item) {
+      final rootMatch = item.root.toLowerCase().contains(q);
+      final originMatch = item.originMeaning.toLowerCase().contains(q);
+      final explanationMatch = item.explanation.toLowerCase().contains(q);
+      final derivedMatch = item.derivedWords.any((w) =>
+          w.word.toLowerCase().contains(q) ||
+          w.meaning.toLowerCase().contains(q) ||
+          w.breakdown.toLowerCase().contains(q));
+      return rootMatch || originMatch || explanationMatch || derivedMatch;
+    }).toList();
   }
 
   Widget _buildRootsList(List<RootItem> items) {
@@ -246,11 +363,43 @@ class _WordRootsScreenState extends State<WordRootsScreen>
                                   ],
                                 ),
                               ),
-                              IconButton(
-                                icon: const Icon(Icons.volume_up, color: LuminaColors.primary),
-                                onPressed: () {
-                                  AudioService.instance.speakWord(derived.word);
-                                },
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(Icons.volume_up, color: LuminaColors.primary),
+                                    onPressed: () {
+                                      AudioService.instance.speakWord(derived.word);
+                                    },
+                                  ),
+                                  IconButton(
+                                    icon: Icon(
+                                      _storageService?.getFavorites().contains(derived.word.toLowerCase()) == true
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: _storageService?.getFavorites().contains(derived.word.toLowerCase()) == true
+                                          ? Colors.red
+                                          : Colors.grey,
+                                      size: 20,
+                                    ),
+                                    onPressed: () async {
+                                      final clean = derived.word.toLowerCase();
+                                      final isFav = _storageService?.getFavorites().contains(clean) == true;
+                                      if (isFav) {
+                                        await _storageService?.removeFavorite(clean);
+                                      } else {
+                                        await _storageService?.addFavorite(clean);
+                                        await _storageService?.saveFavoriteContext(
+                                          derived.word,
+                                          articleTitle: '字词根专项: ${item.root}',
+                                          sentence: '${derived.word} (${derived.meaning}) - 拆解: ${derived.breakdown}',
+                                        );
+                                      }
+                                      setState(() {});
+                                    },
+                                    tooltip: '加入生词本',
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -348,6 +497,28 @@ final List<RootItem> _coreRoots = [
       DerivedWord(word: 'predict', phonetic: '/prɪˈdɪkt/', meaning: '预测、预言', breakdown: 'pre- [提前] + dict [说] ➔ 提前说出来'),
       DerivedWord(word: 'indicate', phonetic: '/ˈɪndɪkeɪt/', meaning: '指示、表明', breakdown: 'in- [向内] + dic [说] + -ate ➔ 指出说明'),
       DerivedWord(word: 'contradict', phonetic: '/ˌkɒntrəˈdɪkt/', meaning: '反驳、矛盾', breakdown: 'contra- [相反] + dict [说] ➔ 对着干说相反的话'),
+    ],
+  ),
+  const RootItem(
+    root: 'bio',
+    origin: '希腊语',
+    meaning: '生命、生物',
+    explanation: '源自希腊语 bios (生命)，用于描述与生命科学或个人生平相关的领域。',
+    derivedWords: [
+      DerivedWord(word: 'biology', phonetic: '/baɪˈɒlədʒi/', meaning: '生物学', breakdown: 'bio [生命] + -logy [学科] ➔ 研究生命的学科'),
+      DerivedWord(word: 'biography', phonetic: '/baɪˈɒɡrəfi/', meaning: '传记', breakdown: 'bio [生命] + graph [写] + -y ➔ 记录个人生命史的书'),
+      DerivedWord(word: 'autobiography', phonetic: '/ˌɔːtəbaɪˈɒɡrəfi/', meaning: '自传', breakdown: 'auto- [自己] + bio [生命] + graph [写] ➔ 自己写自己的生命史'),
+    ],
+  ),
+  const RootItem(
+    root: 'tele',
+    origin: '希腊语',
+    meaning: '远、远距离',
+    explanation: '源自希腊语 tele，表示跨越遥远距离的传输与沟通。',
+    derivedWords: [
+      DerivedWord(word: 'telephone', phonetic: '/ˈtelɪfəʊn/', meaning: '电话', breakdown: 'tele [远] + phon [声音] ➔ 传送远方的声音'),
+      DerivedWord(word: 'telescope', phonetic: '/ˈtelɪskəʊp/', meaning: '望远镜', breakdown: 'tele [远] + scop [观察] ➔ 观察远方物体的仪器'),
+      DerivedWord(word: 'telegraph', phonetic: '/ˈtelɪɡrɑːf/', meaning: '电报', breakdown: 'tele [远] + graph [写] ➔ 传送远方文字的电信号'),
     ],
   ),
 ];
@@ -516,12 +687,17 @@ class _WordRootMatchingGameWidgetState extends State<_WordRootMatchingGameWidget
     }
   }
 
+  late List<Map<String, String>> _shuffledRightPairs;
+
+  @override
+  void initState() {
+    super.initState();
+    _shuffledRightPairs = List<Map<String, String>>.from(_gamePairs)..shuffle();
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    final leftItems = List<Map<String, String>>.from(_gamePairs)..shuffle();
-    final rightItems = List<Map<String, String>>.from(_gamePairs)..shuffle();
 
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
@@ -632,7 +808,7 @@ class _WordRootMatchingGameWidgetState extends State<_WordRootMatchingGameWidget
               // 右侧：中文含义
               Expanded(
                 child: Column(
-                  children: _gamePairs.map((item) {
+                  children: _shuffledRightPairs.map((item) {
                     final id = item['id']!;
                     final isMatched = _matchedIds.contains(id);
                     final isSelected = _selectedMeaningId == id;

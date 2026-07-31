@@ -89,6 +89,8 @@ class StorageService {
     return null;
   }
 
+  static const String _keyFavoriteContexts = 'favorite_contexts';
+
   // Favorites (for words)
   Future<void> saveFavorites(Set<String> favoriteIds) async {
     await _prefs?.setStringList(_keyFavorites, favoriteIds.toList());
@@ -109,10 +111,47 @@ class StorageService {
     final favorites = getFavorites();
     favorites.remove(id);
     await saveFavorites(favorites);
+    await removeFavoriteContext(id);
   }
 
   bool isFavorite(String id) {
     return getFavorites().contains(id);
+  }
+
+  // Favorite Context Metadata (Article Title, Context Sentence)
+  Future<void> saveFavoriteContext(String word, {required String articleTitle, required String sentence, String? articleId}) async {
+    final contexts = getAllFavoriteContexts();
+    contexts[word.toLowerCase()] = {
+      'articleTitle': articleTitle,
+      'sentence': sentence,
+      'articleId': articleId ?? '',
+      'time': DateTime.now().toIso8601String(),
+    };
+    await _prefs?.setString(_keyFavoriteContexts, jsonEncode(contexts));
+  }
+
+  Map<String, Map<String, dynamic>> getAllFavoriteContexts() {
+    final str = _prefs?.getString(_keyFavoriteContexts);
+    if (str != null) {
+      try {
+        final decoded = jsonDecode(str) as Map<String, dynamic>;
+        return decoded.map((k, v) => MapEntry(k, Map<String, dynamic>.from(v)));
+      } catch (_) {}
+    }
+    return {};
+  }
+
+  Map<String, dynamic>? getFavoriteContext(String word) {
+    final contexts = getAllFavoriteContexts();
+    return contexts[word.toLowerCase()];
+  }
+
+  Future<void> removeFavoriteContext(String word) async {
+    final contexts = getAllFavoriteContexts();
+    if (contexts.containsKey(word.toLowerCase())) {
+      contexts.remove(word.toLowerCase());
+      await _prefs?.setString(_keyFavoriteContexts, jsonEncode(contexts));
+    }
   }
 
   // Article Favorites

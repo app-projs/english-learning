@@ -33,16 +33,31 @@ class _FavoritesScreenState extends State<FavoritesScreen>
     _storageService = await StorageService.getInstance();
     final wordIds = _storageService!.getFavorites();
     final articleIds = _storageService!.getArticleFavorites();
+    final favoriteContexts = _storageService!.getAllFavoriteContexts();
 
     final List<Map<String, dynamic>> wordList = [];
     for (final id in wordIds) {
       final word = MockWords.getWordById(id);
+      final ctx = favoriteContexts[id.toLowerCase()];
       if (word != null) {
         wordList.add({
           'id': word.id,
           'english': word.english,
           'chinese': word.chinese,
           'phonetic': word.phonetic,
+          'articleTitle': ctx?['articleTitle'],
+          'sentence': ctx?['sentence'],
+          'articleId': ctx?['articleId'],
+        });
+      } else {
+        wordList.add({
+          'id': id,
+          'english': id,
+          'chinese': '生词本精选词',
+          'phonetic': '/$id/',
+          'articleTitle': ctx?['articleTitle'],
+          'sentence': ctx?['sentence'],
+          'articleId': ctx?['articleId'],
         });
       }
     }
@@ -95,6 +110,9 @@ class _FavoritesScreenState extends State<FavoritesScreen>
       final w = _wordFavorites[i];
       buffer.writeln('${(i + 1).toString().padLeft(2, '0')}. ${w['english']}   ${w['phonetic']}');
       buffer.writeln('    释义: ${w['chinese']}');
+      if (w['articleTitle'] != null && (w['articleTitle'] as String).isNotEmpty) {
+        buffer.writeln('    出处: 《${w['articleTitle']}》');
+      }
       buffer.writeln('------------------------------------------');
     }
 
@@ -139,7 +157,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                 const SizedBox(height: 12),
                 SelectableText(
                   text,
-                  style: const TextStyle(fontSize: 12, fontFamily: 'monospace', height: 1.4),
+                  style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
                 ),
               ],
             ),
@@ -151,29 +169,19 @@ class _FavoritesScreenState extends State<FavoritesScreen>
             child: const Text('关闭'),
           ),
           ElevatedButton.icon(
-            icon: const Icon(Icons.download_rounded, size: 16),
-            label: const Text('保存为 TXT/PDF'),
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo, foregroundColor: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('📄 备考清单已导出并成功保存至本地文件目录！'),
-                  backgroundColor: Colors.indigo,
-                ),
-              );
-            },
-          ),
-          ElevatedButton.icon(
-            icon: const Icon(Icons.copy, size: 16),
-            label: const Text('一键复制'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.redAccent,
+              foregroundColor: Colors.white,
+            ),
             onPressed: () {
               Clipboard.setData(ClipboardData(text: text));
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('已复制生词本清单到剪贴板！')),
+                const SnackBar(content: Text('已成功复制 A4 备考清单到剪贴板！')),
               );
             },
+            icon: const Icon(Icons.copy_rounded, size: 16),
+            label: const Text('一键复制'),
           ),
         ],
       ),
@@ -187,13 +195,13 @@ class _FavoritesScreenState extends State<FavoritesScreen>
         title: const Text('我的收藏'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.output_rounded),
-            tooltip: '导出生词清单',
             onPressed: _exportFavorites,
+            icon: const Icon(Icons.picture_as_pdf_outlined),
+            tooltip: '导出 A4 生词清单',
           ),
         ],
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(44),
+          preferredSize: const Size.fromHeight(48),
           child: TabBar(
             controller: _tabController,
             dividerColor: Colors.transparent,
@@ -233,34 +241,130 @@ class _FavoritesScreenState extends State<FavoritesScreen>
       itemCount: _wordFavorites.length,
       itemBuilder: (context, index) {
         final word = _wordFavorites[index];
+        final hasContext = word['articleTitle'] != null && (word['articleTitle'] as String).isNotEmpty;
+
         return Card(
-          margin: const EdgeInsets.only(bottom: 8),
-          child: ListTile(
-            title: Text(word['english'] ?? '',
-                style: const TextStyle(fontWeight: FontWeight.bold)),
-            subtitle: Text(word['chinese'] ?? ''),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
+          margin: const EdgeInsets.only(bottom: 12),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          elevation: 2,
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(word['phonetic'] ?? '',
-                    style:
-                        LuminaTheme.ipaStyle(color: Colors.grey.shade600, fontSize: 12)),
-                const SizedBox(width: 8),
-                IconButton(
-                  icon: const Icon(Icons.favorite, color: Colors.red),
-                  onPressed: () async {
-                    final id = word['id'];
-                    setState(() {
-                      _wordFavorites.removeAt(index);
-                    });
-                    if (id != null) {
-                      await _storageService?.removeFavorite(id);
-                    }
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('已取消收藏')),
-                    );
-                  },
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                word['english'] ?? '',
+                                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                word['phonetic'] ?? '',
+                                style: LuminaTheme.ipaStyle(color: Colors.grey.shade600, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            word['chinese'] ?? '',
+                            style: const TextStyle(fontSize: 14, color: Colors.black87),
+                          ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.volume_up, color: Colors.blue),
+                      onPressed: () => AudioService.instance.speak(word['english'] ?? ''),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.favorite, color: Colors.red),
+                      onPressed: () async {
+                        final id = word['id'];
+                        setState(() {
+                          _wordFavorites.removeAt(index);
+                        });
+                        if (id != null) {
+                          await _storageService?.removeFavorite(id);
+                        }
+                        if (!mounted) return;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('已取消收藏')),
+                        );
+                      },
+                    ),
+                  ],
                 ),
+                if (hasContext) ...[
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.amber.shade50,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.amber.shade200),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            final artIdStr = word['articleId'] ?? '';
+                            final fullArticle = MockArticles.getArticles().where((a) => a.id.toString() == artIdStr || a.title == word['articleTitle'] || a.chineseTitle == word['articleTitle']).firstOrNull;
+                            if (fullArticle != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ArticleDetailScreen(article: fullArticle)),
+                              ).then((_) => _loadFavorites());
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('出处: 《${word['articleTitle']}》')),
+                              );
+                            }
+                          },
+                          child: Row(
+                            children: [
+                              const Icon(Icons.menu_book_rounded, size: 15, color: Colors.amber),
+                              const SizedBox(width: 6),
+                              Expanded(
+                                child: Text(
+                                  '出处文章: 《${word['articleTitle']}》',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.brown.shade800,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              Icon(Icons.chevron_right, size: 18, color: Colors.amber.shade800),
+                            ],
+                          ),
+                        ),
+                        if (word['sentence'] != null && (word['sentence'] as String).isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            '“${word['sentence']}”',
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontStyle: FontStyle.italic,
+                              color: Colors.brown.shade700,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
@@ -325,6 +429,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                           if (id != null) {
                             await _storageService?.removeArticleFavorite(id);
                           }
+                          if (!mounted) return;
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('已取消收藏')),
                           );

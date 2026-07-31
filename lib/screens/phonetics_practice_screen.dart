@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../services/audio_service.dart';
+import '../services/storage_service.dart';
+import '../services/database_service.dart';
+import '../services/phonetics_service.dart';
 import '../theme/lumina_theme.dart';
 import 'completion_congratulation_screen.dart';
 
@@ -13,11 +16,36 @@ class PhoneticsPracticeScreen extends StatefulWidget {
 class _PhoneticsPracticeScreenState extends State<PhoneticsPracticeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  PhoneticsService? _phoneticsService;
+  List<PhoneticItemModel> _vowels = [];
+  List<PhoneticItemModel> _consonants = [];
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _initDbData();
+  }
+
+  Future<void> _initDbData() async {
+    try {
+      final db = await DatabaseService.getInstance();
+      _phoneticsService = PhoneticsService(db);
+
+      final vowels = await _phoneticsService!.getPhoneticsByType('vowel');
+      final consonants = await _phoneticsService!.getPhoneticsByType('consonant');
+
+      if (mounted) {
+        setState(() {
+          _vowels = vowels;
+          _consonants = consonants;
+          _isLoading = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _isLoading = false);
+    }
   }
 
   @override
@@ -187,7 +215,7 @@ const List<PhoneticItem> consonants = [
 class PhoneticsGridView extends StatelessWidget {
   const PhoneticsGridView({super.key});
 
-  void _showDetailBottomSheet(BuildContext context, PhoneticItem item) {
+  void _showDetailBottomSheet(BuildContext context, PhoneticItemModel item) {
     AudioService.instance.speakPhoneticSymbol(item.symbol);
 
     showModalBottomSheet(
@@ -311,7 +339,7 @@ class PhoneticsGridView extends StatelessWidget {
     );
   }
 
-  Widget _buildGrid(BuildContext context, List<PhoneticItem> items, Color color) {
+  Widget _buildGrid(BuildContext context, List<PhoneticItemModel> items, Color color) {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
