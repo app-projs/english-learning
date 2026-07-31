@@ -226,13 +226,14 @@ class _WordRootsScreenState extends State<WordRootsScreen>
     final q = _searchQuery.toLowerCase().trim();
     return items.where((item) {
       final rootMatch = item.root.toLowerCase().contains(q);
-      final originMatch = item.originMeaning.toLowerCase().contains(q);
+      final originMatch = item.origin.toLowerCase().contains(q);
+      final meaningMatch = item.meaning.toLowerCase().contains(q);
       final explanationMatch = item.explanation.toLowerCase().contains(q);
       final derivedMatch = item.derivedWords.any((w) =>
           w.word.toLowerCase().contains(q) ||
           w.meaning.toLowerCase().contains(q) ||
           w.breakdown.toLowerCase().contains(q));
-      return rootMatch || originMatch || explanationMatch || derivedMatch;
+      return rootMatch || originMatch || meaningMatch || explanationMatch || derivedMatch;
     }).toList();
   }
 

@@ -215,7 +215,7 @@ const List<PhoneticItem> consonants = [
 class PhoneticsGridView extends StatelessWidget {
   const PhoneticsGridView({super.key});
 
-  void _showDetailBottomSheet(BuildContext context, PhoneticItemModel item) {
+  void _showDetailBottomSheet(BuildContext context, PhoneticItem item) {
     AudioService.instance.speakPhoneticSymbol(item.symbol);
 
     showModalBottomSheet(
@@ -339,7 +339,7 @@ class PhoneticsGridView extends StatelessWidget {
     );
   }
 
-  Widget _buildGrid(BuildContext context, List<PhoneticItemModel> items, Color color) {
+  Widget _buildGrid(BuildContext context, List<PhoneticItem> items, Color color) {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
