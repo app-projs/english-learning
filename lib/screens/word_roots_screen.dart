@@ -652,7 +652,7 @@ class _WordRootMatchingGameWidgetState extends State<_WordRootMatchingGameWidget
             builder: (context) => AlertDialog(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               title: const Text('🎉 拆词消除大满贯！'),
-              content: Text('恭喜你配对成功全部 5 组词根拆解！\n获得 100 LP 积分奖励！'),
+              content: Text('恭喜你配对成功全部 5 组词根拆解！\n获得 100 学习积分奖励！'),
               actions: [
                 ElevatedButton(
                   onPressed: () {

@@ -22,7 +22,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
 
   void _shareAchievement(BuildContext context) {
     final text = '🎉 我刚刚在【露米娜英语 Lumina English】完成了《$moduleTitle》打卡！\n'
-        '📊 成绩：$correctCount/$totalQuestions 题 ($earnedLp LP)\n'
+        '📊 成绩：$correctCount/$totalQuestions 题 (+$earnedLp 积分)\n'
         '🔥 已连续坚持打卡 $streakDays 天！每一天都在蜕变！';
 
     Clipboard.setData(ClipboardData(text: text));
@@ -200,7 +200,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                         children: [
                           _buildStatItem('做题准确率', '$accuracy%', Icons.military_tech, Colors.amber),
                           Container(width: 1, height: 40, color: Colors.white12),
-                          _buildStatItem('获得积分', '+$earnedLp LP', Icons.diamond, Colors.cyan),
+                          _buildStatItem('获得积分', '+$earnedLp 积分', Icons.diamond, Colors.cyan),
                           Container(width: 1, height: 40, color: Colors.white12),
                           _buildStatItem('连胜打卡', '$streakDays 天', Icons.local_fire_department, Colors.orange),
                         ],

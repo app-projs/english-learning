@@ -193,7 +193,7 @@ class _AchievementScreenState extends State<AchievementScreen> {
                                 const Icon(Icons.bolt, color: Colors.amberAccent, size: 20),
                                 const SizedBox(width: 4),
                                 Text(
-                                  '$_totalLp LP 积分',
+                                  '$_totalLp 学习积分',
                                   style: const TextStyle(
                                     color: Colors.amberAccent,
                                     fontSize: 16,
@@ -473,7 +473,7 @@ class _PosterDialog extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _buildPosterMetric('学习积分', '$totalLp LP', Icons.bolt, Colors.amber),
+                      _buildPosterMetric('学习积分', '$totalLp 积分', Icons.bolt, Colors.amber),
                       _buildPosterMetric('坚持打卡', '$streakDays 天', Icons.local_fire_department, Colors.orange),
                       _buildPosterMetric('累计词汇', '$wordsLearned 词', Icons.translate, Colors.lightBlueAccent),
                     ],

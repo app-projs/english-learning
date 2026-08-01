@@ -20,7 +20,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _slideAnimation;
   late Animation<double> _scaleAnimation;
   late Animation<double> _fadeAnimation;
 
@@ -38,48 +37,31 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2500),
+      duration: const Duration(milliseconds: 1800),
     );
 
-    // Slide up animation: starts below center, moves to center
-    _slideAnimation = Tween<double>(
-      begin: 80.0,
-      end: 0.0,
+    // Smooth scale animation: 0.9 to 1.0 (no double jump)
+    _scaleAnimation = Tween<double>(
+      begin: 0.9,
+      end: 1.0,
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: const Interval(0.0, 0.6, curve: Curves.easeOutCubic),
+      curve: Curves.easeOutCubic,
     ));
 
-    // Bounce scale animation when reaching the top
-    _scaleAnimation = TweenSequence<double>([
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 1.0, end: 1.1)
-            .chain(CurveTween(curve: Curves.easeOutCubic)),
-        weight: 30,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 1.1, end: 1.0)
-            .chain(CurveTween(curve: Curves.bounceOut)),
-        weight: 70,
-      ),
-    ]).animate(CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0.6, 1.0),
-    ));
-
-    // Fade in animation
+    // Smooth fade in animation
     _fadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: const Interval(0.0, 0.5, curve: Curves.easeIn),
+      curve: Curves.easeOut,
     ));
 
     _controller.forward();
 
-    // Navigate to home screen after 3.5 seconds
-    Future.delayed(const Duration(milliseconds: 3500), () {
+    // Seamless navigation to home screen after 2.0 seconds
+    Future.delayed(const Duration(milliseconds: 2000), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
@@ -91,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen>
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
               return FadeTransition(opacity: animation, child: child);
             },
-            transitionDuration: const Duration(milliseconds: 800),
+            transitionDuration: const Duration(milliseconds: 600),
           ),
         );
       }
@@ -112,11 +94,9 @@ class _SplashScreenState extends State<SplashScreen>
         child: AnimatedBuilder(
           animation: _controller,
           builder: (context, child) {
-            return Transform.translate(
-              offset: Offset(0, _slideAnimation.value),
-              child: Transform.scale(
-                scale: _scaleAnimation.value,
-                child: Opacity(
+            return Transform.scale(
+              scale: _scaleAnimation.value,
+              child: Opacity(
                   opacity: _fadeAnimation.value,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -51,11 +51,11 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
             children: tabs,
           ),
 
-          // Floating Bottom Navigation
+          // Full-width Bottom Navigation Dock
           Positioned(
-            bottom: 24,
-            left: 20,
-            right: 20,
+            bottom: 0,
+            left: 0,
+            right: 0,
             child: _buildBottomNav(),
           ),
         ],
@@ -446,27 +446,30 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
   Widget _buildBottomNav() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.85),
-        borderRadius: BorderRadius.circular(100),
-        border: Border.all(color: Colors.white.withOpacity(0.5)),
+        color: Colors.white,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 32,
-            offset: const Offset(0, 8),
+            color: Colors.black.withOpacity(0.06),
+            blurRadius: 16,
+            offset: const Offset(0, -4),
           ),
         ],
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _buildNavItem(0, Icons.home, '首页', isActive: _currentIndex == 0),
-          _buildNavItem(1, Icons.menu_book, '学习', isActive: _currentIndex == 1),
-          _buildNavItem(2, Icons.leaderboard, '榜单',
-              isActive: _currentIndex == 2),
-          _buildNavItem(3, Icons.person, '我的', isActive: _currentIndex == 3),
-        ],
+      child: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildNavItem(0, Icons.home, '首页', isActive: _currentIndex == 0),
+              _buildNavItem(1, Icons.menu_book, '学习', isActive: _currentIndex == 1),
+              _buildNavItem(2, Icons.leaderboard, '榜单', isActive: _currentIndex == 2),
+              _buildNavItem(3, Icons.person, '我的', isActive: _currentIndex == 3),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -481,7 +484,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
           _currentIndex = index;
         });
       },
-      borderRadius: BorderRadius.circular(18),
+      borderRadius: BorderRadius.circular(16),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 180),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
@@ -491,17 +494,18 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
             Icon(
               icon,
               color: isActive ? activeColor : LuminaColors.outline,
+              size: 24,
             ),
-            const SizedBox(height: 2),
+            const SizedBox(height: 3),
             Text(
               label,
               style: TextStyle(
                 fontSize: 11,
-                fontWeight: FontWeight.w600,
+                fontWeight: isActive ? FontWeight.bold : FontWeight.w500,
                 color: isActive ? activeColor : LuminaColors.outline,
               ),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 4),
             AnimatedContainer(
               duration: const Duration(milliseconds: 180),
               width: isActive ? 14 : 0,

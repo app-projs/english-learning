@@ -2,8 +2,8 @@
 
 ## 📌 最近更新时间
 **更新日期**：2026年8月1日  
-**最新版本**：Lumina English Version 1.0.33+34  
-**更新内容**：全量上线【单词练习海量词库扩充 (Version 1.0.33+34)】，将词库扩充至 **1500 个标准高频词汇**（包含四级、六级、考研、雅思、日常基础 5 大级别，每级别 300 词，精准对应 15 词/天 * 20 天学习周期表）。
+**最新版本**：Lumina English Version 1.0.38+39  
+**更新内容**：完成【底部 Dock 栏样式改版 (Version 1.0.38+39)】。在 [lumina_home_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/lumina_home_screen.dart) 中将悬浮胶囊 BottomNav 改为贴底全宽、带 24px 顶部圆角与原生遮罩的 Dock 栏，并完好保留了原图标与选中态。
 
 ---
 

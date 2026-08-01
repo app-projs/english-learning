@@ -861,7 +861,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        _isDictationCorrect ? '听写正确!' : '存在差异!',
+                        _isDictationCorrect ? '听写完美全对!' : '听写文本差异分析',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -870,6 +870,10 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                       ),
                     ],
                   ),
+                  const SizedBox(height: 12),
+                  const Text('单词比对与准确度：', style: TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 6),
+                  _buildWordMatchDiff(_dictationController.text, targetText),
                   const SizedBox(height: 12),
                   const Text('标准原文:', style: TextStyle(fontWeight: FontWeight.bold)),
                   Text(targetText, style: const TextStyle(fontSize: 15, color: Colors.blueGrey)),
@@ -1040,6 +1044,71 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
             },
           ),
         ),
+      ],
+    );
+  }
+
+  Widget _buildWordMatchDiff(String userText, String targetText) {
+    final targetWords = targetText.replaceAll(RegExp(r'[^\w\s]'), '').split(' ');
+    final userWords = userText.replaceAll(RegExp(r'[^\w\s]'), '').toLowerCase().split(' ');
+
+    int matchedCount = 0;
+    final List<TextSpan> spans = [];
+
+    for (var w in targetWords) {
+      if (w.trim().isEmpty) continue;
+      final cleanW = w.toLowerCase();
+      if (userWords.contains(cleanW)) {
+        matchedCount++;
+        spans.add(TextSpan(
+          text: '$w ',
+          style: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 14),
+        ));
+      } else {
+        spans.add(TextSpan(
+          text: '$w ',
+          style: const TextStyle(
+            color: Colors.red,
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+            decoration: TextDecoration.lineThrough,
+          ),
+        ));
+      }
+    }
+
+    final totalTarget = targetWords.where((w) => w.trim().isNotEmpty).length;
+    final accuracy = totalTarget > 0 ? ((matchedCount / totalTarget) * 100).toInt() : 0;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              decoration: BoxDecoration(
+                color: accuracy >= 80 ? Colors.green.shade100 : Colors.orange.shade100,
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(
+                '匹配度: $accuracy%',
+                style: TextStyle(
+                  color: accuracy >= 80 ? Colors.green.shade900 : Colors.orange.shade900,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              '匹配词汇: $matchedCount / $totalTarget',
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        RichText(text: TextSpan(children: spans)),
       ],
     );
   }
