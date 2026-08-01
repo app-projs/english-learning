@@ -135,22 +135,26 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
     );
   }
 
-  void _rateWordSM2(SM2Rating rating) {
+  void _rateWordSM2(SM2Rating rating) async {
     if (_practiceWords.isEmpty) return;
     final word = _practiceWords[_currentIndex];
-    final currentItem = SM2Item.initial(word.id);
-    final updatedItem = SM2Service.calculateNextReview(currentItem, rating);
+    final existingItem = _storageService?.getSM2Item(word.english) ?? SM2Item.initial(word.english);
+    final updatedItem = SM2Service.calculateNextReview(existingItem, rating);
+
+    await _storageService?.saveSM2Item(updatedItem);
 
     final nextDate = updatedItem.nextReviewAt;
     final dateStr = '${nextDate.month}月${nextDate.day}日';
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('已按 SM-2 记忆算法排程！下次复习日期：$dateStr'),
-        duration: const Duration(seconds: 2),
-        backgroundColor: Colors.indigo,
-      ),
-    );
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('已持久化存入 SM-2 排程！下次复习日期：$dateStr (间隔 ${updatedItem.interval} 天)'),
+          duration: const Duration(seconds: 2),
+          backgroundColor: Colors.indigo,
+        ),
+      );
+    }
 
     _nextWord();
   }
@@ -197,9 +201,15 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                   ),
                 ),
               ),
-              Text(
-                '${_currentIndex + 1} / ${_practiceWords.length}',
-                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              Builder(
+                builder: (context) {
+                  final currentDay = (_currentIndex ~/ 15) + 1;
+                  final dayWordIndex = (_currentIndex % 15) + 1;
+                  return Text(
+                    '第 $currentDay 天 ($dayWordIndex/15) · ${_currentIndex + 1}/${_practiceWords.length}',
+                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  );
+                },
               ),
               IconButton(
                 onPressed: () => _toggleFavorite(word.id),

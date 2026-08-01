@@ -21,6 +21,8 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
   final TextEditingController _eliminateInputController = TextEditingController();
   bool _showEliminateFeedback = false;
   bool _isEliminated = false;
+  bool _isAutoLooping = false;
+  int _autoLoopIndex = 0;
 
   @override
   void initState() {
@@ -31,10 +33,54 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
 
   @override
   void dispose() {
+    _isAutoLooping = false;
     AudioService.instance.stop();
     _tabController.dispose();
     _eliminateInputController.dispose();
     super.dispose();
+  }
+
+  void _toggleAutoLoop() {
+    if (_wrongAnswers.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('暂无错题可连播')),
+      );
+      return;
+    }
+    setState(() {
+      _isAutoLooping = !_isAutoLooping;
+      if (_isAutoLooping) {
+        _autoLoopIndex = 0;
+        _startAutoLoopNext();
+      } else {
+        AudioService.instance.stop();
+      }
+    });
+  }
+
+  Future<void> _startAutoLoopNext() async {
+    if (!_isAutoLooping || !mounted || _wrongAnswers.isEmpty) return;
+
+    if (_autoLoopIndex >= _wrongAnswers.length) {
+      _autoLoopIndex = 0;
+    }
+
+    final item = _wrongAnswers[_autoLoopIndex];
+    final text = (item['question'] ?? item['word'] ?? '').toString();
+
+    setState(() {
+      _currentIndex = _autoLoopIndex;
+    });
+
+    if (text.isNotEmpty) {
+      AudioService.instance.speak(text);
+    }
+
+    await Future.delayed(const Duration(seconds: 4));
+    if (!_isAutoLooping || !mounted) return;
+
+    _autoLoopIndex++;
+    _startAutoLoopNext();
   }
 
   Future<void> _loadWrongAnswers() async {
@@ -224,6 +270,14 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
       appBar: AppBar(
         title: const Text('错题复习'),
         actions: [
+          IconButton(
+            onPressed: _toggleAutoLoop,
+            icon: Icon(
+              _isAutoLooping ? Icons.pause_circle_filled_rounded : Icons.play_circle_fill_rounded,
+              color: _isAutoLooping ? Colors.amberAccent : null,
+            ),
+            tooltip: _isAutoLooping ? '暂停错题连播' : '错题发音连播',
+          ),
           IconButton(
             icon: const Icon(Icons.output_rounded),
             onPressed: _exportWrongAnswers,

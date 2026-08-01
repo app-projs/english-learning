@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'sm2_service.dart';
 
 class StorageService {
   static StorageService? _instance;
@@ -27,6 +28,7 @@ class StorageService {
   static const String _keyTargetWordbook = 'target_wordbook';
   static const String _keyAccent = 'user_accent';
   static const String _keySpeechRate = 'user_speech_rate';
+  static const String _keySM2Items = 'sm2_items';
 
   // Audio Accent (US / UK)
   Future<void> saveAccent(String accent) async {
@@ -471,6 +473,101 @@ class StorageService {
     }
 
     return result;
+  }
+
+  // SM-2 Item Persistence & Retrieval
+  Future<void> saveSM2Item(SM2Item item) async {
+    final items = getAllSM2Items();
+    items[item.id] = item.toJson();
+    await _prefs?.setString(_keySM2Items, jsonEncode(items));
+  }
+
+  Map<String, dynamic> getAllSM2Items() {
+    final str = _prefs?.getString(_keySM2Items);
+    if (str != null) {
+      try {
+        return jsonDecode(str) as Map<String, dynamic>;
+      } catch (_) {}
+    }
+    return {};
+  }
+
+  SM2Item? getSM2Item(String id) {
+    final items = getAllSM2Items();
+    if (items.containsKey(id)) {
+      try {
+        return SM2Item.fromJson(Map<String, dynamic>.from(items[id]));
+      } catch (_) {}
+    }
+    return null;
+  }
+
+  List<SM2Item> getDueSM2Items() {
+    final items = getAllSM2Items();
+    final now = DateTime.now();
+    final List<SM2Item> due = [];
+    items.forEach((id, val) {
+      try {
+        final item = SM2Item.fromJson(Map<String, dynamic>.from(val));
+        if (item.nextReviewAt.isBefore(now) || item.nextReviewAt.isAtSameMomentAs(now)) {
+          due.add(item);
+        }
+      } catch (_) {}
+    });
+    return due;
+  }
+
+  /// 汇总 SM-2 到期词汇、生词本与错题集生成全局统一的今日复习动态队列
+  List<Map<String, dynamic>> getUnifiedReviewQueue() {
+    final List<Map<String, dynamic>> queue = [];
+    final Set<String> addedIds = {};
+
+    // 1. SM-2 到期复习项
+    final dueSM2 = getDueSM2Items();
+    for (var sm2 in dueSM2) {
+      queue.add({
+        'id': sm2.id,
+        'title': sm2.id,
+        'subtitle': 'SM-2 遗忘曲线到期复习 (间隔 ${sm2.interval} 天)',
+        'type': 'sm2_due',
+        'sm2Item': sm2,
+      });
+      addedIds.add(sm2.id.toLowerCase());
+    }
+
+    // 2. 错题集未消灭项
+    final wrongAnswers = getWrongAnswers();
+    for (var wa in wrongAnswers) {
+      if (wa['reviewed'] != true) {
+        final id = (wa['id'] ?? wa['question'] ?? wa['word'] ?? '').toString();
+        if (id.isNotEmpty && !addedIds.contains(id.toLowerCase())) {
+          queue.add({
+            'id': id,
+            'title': wa['question'] ?? wa['word'] ?? '错题复习',
+            'subtitle': '错题集中待消除题目',
+            'type': 'wrong_answer',
+            'raw': wa,
+          });
+          addedIds.add(id.toLowerCase());
+        }
+      }
+    }
+
+    // 3. 生词本收藏
+    final favorites = getFavorites();
+    for (var fav in favorites) {
+      if (!addedIds.contains(fav.toLowerCase())) {
+        queue.add({
+          'id': fav,
+          'title': fav,
+          'subtitle': '生词本高频单词',
+          'type': 'favorite',
+        });
+        addedIds.add(fav.toLowerCase());
+      }
+    }
+
+    return queue;
   }
 
   // Clear all data

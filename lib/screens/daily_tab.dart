@@ -87,10 +87,7 @@ class _DailyTabState extends State<DailyTab> {
   }
 
   int get _pendingReviewCount {
-    return storageService
-        .getWrongAnswers()
-        .where((item) => item['reviewed'] != true)
-        .length;
+    return storageService.getUnifiedReviewQueue().length;
   }
 
   bool isCompleted(int i) => storageService.isDailyStepCompleted(i);
@@ -655,11 +652,19 @@ class _DailyTabState extends State<DailyTab> {
 
   // 3. 艾宾浩斯智能复习混入任务卡
   Widget _buildReviewAlertBanner(bool isDark) {
+    final queue = storageService.getUnifiedReviewQueue();
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const SmartReviewScreen()),
+          MaterialPageRoute(
+            builder: (context) => SmartReviewScreen(
+              customQueue: queue,
+              onReviewCompleted: () {
+                if (mounted) setState(() {});
+              },
+            ),
+          ),
         ).then((_) {
           if (mounted) setState(() {});
         });
@@ -711,7 +716,7 @@ class _DailyTabState extends State<DailyTab> {
                   Row(
                     children: [
                       Text(
-                        '🧠 艾宾浩斯今日智能复习待办',
+                        '🧠 SM-2 动态复习舱',
                         style: TextStyle(
                           color: isDark ? Colors.white : const Color(0xFF9A3412),
                           fontSize: 14,
@@ -726,7 +731,7 @@ class _DailyTabState extends State<DailyTab> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
-                          '$_pendingReviewCount 项到期',
+                          '${queue.length} 项到期',
                           style: TextStyle(
                             color: Colors.red.shade900,
                             fontSize: 10,
@@ -761,7 +766,14 @@ class _DailyTabState extends State<DailyTab> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SmartReviewScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => SmartReviewScreen(
+                      customQueue: queue,
+                      onReviewCompleted: () {
+                        if (mounted) setState(() {});
+                      },
+                    ),
+                  ),
                 ).then((_) {
                   if (mounted) setState(() {});
                 });

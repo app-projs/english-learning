@@ -22,6 +22,15 @@ class _FavoritesScreenState extends State<FavoritesScreen>
   List<Map<String, dynamic>> _articleFavorites = [];
   bool _isLoading = true;
 
+  // 智能音频连播与听写模式状态
+  bool _isAutoLooping = false;
+  int _autoLoopIndex = 0;
+  bool _isDictationMode = false;
+  int _dictationIndex = 0;
+  final TextEditingController _dictationInputController = TextEditingController();
+  bool? _dictationIsCorrect;
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
@@ -86,9 +95,113 @@ class _FavoritesScreenState extends State<FavoritesScreen>
 
   @override
   void dispose() {
+    _isAutoLooping = false;
     AudioService.instance.stop();
     _tabController.dispose();
+    _dictationInputController.dispose();
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _toggleAutoLoop() {
+    if (_wordFavorites.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('暂无已收藏单词可连播')),
+      );
+      return;
+    }
+    setState(() {
+      _isAutoLooping = !_isAutoLooping;
+      if (_isAutoLooping) {
+        _autoLoopIndex = 0;
+        _startAutoLoopNext();
+      } else {
+        AudioService.instance.stop();
+      }
+    });
+  }
+
+  Future<void> _startAutoLoopNext() async {
+    if (!_isAutoLooping || !mounted || _wordFavorites.isEmpty) return;
+
+    if (_autoLoopIndex >= _wordFavorites.length) {
+      _autoLoopIndex = 0;
+    }
+
+    final word = _wordFavorites[_autoLoopIndex];
+    final english = (word['english'] ?? '').toString();
+
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        (_autoLoopIndex * 90.0).clamp(0.0, _scrollController.position.maxScrollExtent),
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+
+    setState(() {});
+
+    if (english.isNotEmpty) {
+      AudioService.instance.speak(english);
+    }
+
+    await Future.delayed(const Duration(seconds: 3));
+    if (!_isAutoLooping || !mounted) return;
+
+    _autoLoopIndex++;
+    _startAutoLoopNext();
+  }
+
+  void _toggleDictationMode() {
+    if (_wordFavorites.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('暂无已收藏单词进行听写')),
+      );
+      return;
+    }
+    setState(() {
+      _isDictationMode = !_isDictationMode;
+      _dictationIndex = 0;
+      _dictationIsCorrect = null;
+      _dictationInputController.clear();
+      if (_isDictationMode) {
+        _playDictationAudio();
+      }
+    });
+  }
+
+  void _playDictationAudio() {
+    if (_wordFavorites.isEmpty || _dictationIndex >= _wordFavorites.length) return;
+    final english = (_wordFavorites[_dictationIndex]['english'] ?? '').toString();
+    AudioService.instance.speak(english);
+  }
+
+  void _checkDictationAnswer() {
+    if (_wordFavorites.isEmpty || _dictationIndex >= _wordFavorites.length) return;
+    final target = (_wordFavorites[_dictationIndex]['english'] ?? '').toString().trim().toLowerCase();
+    final input = _dictationInputController.text.trim().toLowerCase();
+
+    setState(() {
+      _dictationIsCorrect = (input == target);
+    });
+  }
+
+  void _nextDictationWord() {
+    if (_dictationIndex < _wordFavorites.length - 1) {
+      setState(() {
+        _dictationIndex++;
+        _dictationIsCorrect = null;
+        _dictationInputController.clear();
+      });
+      _playDictationAudio();
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('🎉 恭喜！生词本听写测试全部完成！')),
+      );
+      setState(() {
+        _isDictationMode = false;
+      });
+    }
   }
 
   void _exportFavorites() {
@@ -195,6 +308,22 @@ class _FavoritesScreenState extends State<FavoritesScreen>
         title: const Text('我的收藏'),
         actions: [
           IconButton(
+            onPressed: _toggleAutoLoop,
+            icon: Icon(
+              _isAutoLooping ? Icons.pause_circle_filled_rounded : Icons.play_circle_fill_rounded,
+              color: _isAutoLooping ? Colors.amberAccent : null,
+            ),
+            tooltip: _isAutoLooping ? '暂停连播' : '智能音频连播',
+          ),
+          IconButton(
+            onPressed: _toggleDictationMode,
+            icon: Icon(
+              _isDictationMode ? Icons.list_alt_rounded : Icons.edit_note_rounded,
+              color: _isDictationMode ? Colors.greenAccent : null,
+            ),
+            tooltip: _isDictationMode ? '返回列表' : '听写强化模式',
+          ),
+          IconButton(
             onPressed: _exportFavorites,
             icon: const Icon(Icons.picture_as_pdf_outlined),
             tooltip: '导出 A4 生词清单',
@@ -224,7 +353,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
           : TabBarView(
               controller: _tabController,
               children: [
-                _buildWordFavorites(),
+                _isDictationMode ? _buildDictationView() : _buildWordFavorites(),
                 _buildArticleFavorites(),
               ],
             ),
@@ -236,140 +365,181 @@ class _FavoritesScreenState extends State<FavoritesScreen>
       return _buildEmptyState('暂无收藏单词', '在单词练习中点击心形图标收藏');
     }
 
-    return ListView.builder(
-      padding: const EdgeInsets.all(16),
-      itemCount: _wordFavorites.length,
-      itemBuilder: (context, index) {
-        final word = _wordFavorites[index];
-        final hasContext = word['articleTitle'] != null && (word['articleTitle'] as String).isNotEmpty;
-
-        return Card(
-          margin: const EdgeInsets.only(bottom: 12),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-          elevation: 2,
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      children: [
+        if (_isAutoLooping) ...[
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            color: Colors.amber.shade100,
+            child: Row(
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                word['english'] ?? '',
-                                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                word['phonetic'] ?? '',
-                                style: LuminaTheme.ipaStyle(color: Colors.grey.shade600, fontSize: 13),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            word['chinese'] ?? '',
-                            style: const TextStyle(fontSize: 14, color: Colors.black87),
-                          ),
-                        ],
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.volume_up, color: Colors.blue),
-                      onPressed: () => AudioService.instance.speak(word['english'] ?? ''),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.favorite, color: Colors.red),
-                      onPressed: () async {
-                        final id = word['id'];
-                        setState(() {
-                          _wordFavorites.removeAt(index);
-                        });
-                        if (id != null) {
-                          await _storageService?.removeFavorite(id);
-                        }
-                        if (!mounted) return;
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('已取消收藏')),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                if (hasContext) ...[
-                  const SizedBox(height: 8),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.amber.shade50,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.amber.shade200),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            final artIdStr = word['articleId'] ?? '';
-                            final fullArticle = MockArticles.getArticles().where((a) => a.id.toString() == artIdStr || a.title == word['articleTitle'] || a.chineseTitle == word['articleTitle']).firstOrNull;
-                            if (fullArticle != null) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ArticleDetailScreen(article: fullArticle)),
-                              ).then((_) => _loadFavorites());
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('出处: 《${word['articleTitle']}》')),
-                              );
-                            }
-                          },
-                          child: Row(
-                            children: [
-                              const Icon(Icons.menu_book_rounded, size: 15, color: Colors.amber),
-                              const SizedBox(width: 6),
-                              Expanded(
-                                child: Text(
-                                  '出处文章: 《${word['articleTitle']}》',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.brown.shade800,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              Icon(Icons.chevron_right, size: 18, color: Colors.amber.shade800),
-                            ],
-                          ),
-                        ),
-                        if (word['sentence'] != null && (word['sentence'] as String).isNotEmpty) ...[
-                          const SizedBox(height: 4),
-                          Text(
-                            '“${word['sentence']}”',
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontStyle: FontStyle.italic,
-                              color: Colors.brown.shade700,
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ],
-                    ),
+                const Icon(Icons.volume_up_rounded, color: Colors.brown, size: 20),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    '🎧 智能发音连播中 (${_autoLoopIndex + 1}/${_wordFavorites.length})',
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.brown),
                   ),
-                ],
+                ),
+                TextButton.icon(
+                  onPressed: _toggleAutoLoop,
+                  icon: const Icon(Icons.pause, size: 16, color: Colors.brown),
+                  label: const Text('暂停', style: TextStyle(color: Colors.brown)),
+                ),
               ],
             ),
           ),
-        );
-      },
+        ],
+        Expanded(
+          child: ListView.builder(
+            controller: _scrollController,
+            padding: const EdgeInsets.all(16),
+            itemCount: _wordFavorites.length,
+            itemBuilder: (context, index) {
+              final word = _wordFavorites[index];
+              final isCurrentPlaying = _isAutoLooping && _autoLoopIndex == index;
+              final hasContext = word['articleTitle'] != null && (word['articleTitle'] as String).isNotEmpty;
+
+              return Card(
+                margin: const EdgeInsets.only(bottom: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                  side: isCurrentPlaying
+                      ? const BorderSide(color: Colors.amber, width: 2.5)
+                      : BorderSide.none,
+                ),
+                elevation: isCurrentPlaying ? 6 : 2,
+                color: isCurrentPlaying ? Colors.amber.shade50 : null,
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      word['english'] ?? '',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                        color: isCurrentPlaying ? Colors.amber.shade900 : null,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      word['phonetic'] ?? '',
+                                      style: LuminaTheme.ipaStyle(color: Colors.grey.shade600, fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  word['chinese'] ?? '',
+                                  style: const TextStyle(fontSize: 14, color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.volume_up, color: Colors.blue),
+                            onPressed: () => AudioService.instance.speak(word['english'] ?? ''),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.favorite, color: Colors.red),
+                            onPressed: () async {
+                              final id = word['id'];
+                              setState(() {
+                                _wordFavorites.removeAt(index);
+                              });
+                              if (id != null) {
+                                await _storageService?.removeFavorite(id);
+                              }
+                              if (!mounted) return;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('已取消收藏')),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                      if (hasContext) ...[
+                        const SizedBox(height: 8),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.amber.shade50,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.amber.shade200),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  final artIdStr = word['articleId'] ?? '';
+                                  final fullArticle = MockArticles.getArticles().where((a) => a.id.toString() == artIdStr || a.title == word['articleTitle'] || a.chineseTitle == word['articleTitle']).firstOrNull;
+                                  if (fullArticle != null) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => ArticleDetailScreen(article: fullArticle)),
+                                    ).then((_) => _loadFavorites());
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(content: Text('出处: 《${word['articleTitle']}》')),
+                                    );
+                                  }
+                                },
+                                child: Row(
+                                  children: [
+                                    const Icon(Icons.menu_book_rounded, size: 15, color: Colors.amber),
+                                    const SizedBox(width: 6),
+                                    Expanded(
+                                      child: Text(
+                                        '出处文章: 《${word['articleTitle']}》',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.brown.shade800,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    Icon(Icons.chevron_right, size: 18, color: Colors.amber.shade800),
+                                  ],
+                                ),
+                              ),
+                              if (word['sentence'] != null && (word['sentence'] as String).isNotEmpty) ...[
+                                const SizedBox(height: 4),
+                                Text(
+                                  '“${word['sentence']}”',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.brown.shade700,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
@@ -454,6 +624,125 @@ class _FavoritesScreenState extends State<FavoritesScreen>
           ),
         );
       },
+    );
+  }
+
+  Widget _buildDictationView() {
+    if (_wordFavorites.isEmpty || _dictationIndex >= _wordFavorites.length) {
+      return const Center(child: Text('暂无听写数据'));
+    }
+
+    final word = _wordFavorites[_dictationIndex];
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '✍️ 生词听写测试 (${_dictationIndex + 1} / ${_wordFavorites.length})',
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              IconButton(
+                icon: const Icon(Icons.volume_up, color: Colors.blue, size: 28),
+                onPressed: _playDictationAudio,
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '音标: ${word['phonetic'] ?? ''}',
+                    style: LuminaTheme.ipaStyle(fontSize: 16, color: Colors.grey.shade700),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    '释义: ${word['chinese'] ?? ''}',
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const Divider(height: 24),
+                  TextField(
+                    controller: _dictationInputController,
+                    decoration: InputDecoration(
+                      hintText: '请输入听到的英文单词...',
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                      suffixIcon: IconButton(
+                        icon: const Icon(Icons.check_circle, color: Colors.blue),
+                        onPressed: _checkDictationAnswer,
+                      ),
+                    ),
+                    onSubmitted: (_) => _checkDictationAnswer(),
+                  ),
+                  if (_dictationIsCorrect != null) ...[
+                    const SizedBox(height: 16),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: _dictationIsCorrect! ? Colors.green.shade50 : Colors.red.shade50,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: _dictationIsCorrect! ? Colors.green.shade300 : Colors.red.shade300,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            _dictationIsCorrect! ? Icons.check_circle : Icons.cancel,
+                            color: _dictationIsCorrect! ? Colors.green : Colors.red,
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              _dictationIsCorrect!
+                                  ? '🎉 拼写正确！完全掌握！'
+                                  : '❌ 拼写有误，正确拼写为：${word['english']}',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: _dictationIsCorrect! ? Colors.green.shade900 : Colors.red.shade900,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ElevatedButton.icon(
+                onPressed: _playDictationAudio,
+                icon: const Icon(Icons.replay),
+                label: const Text('重听'),
+              ),
+              ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: _nextDictationWord,
+                icon: const Icon(Icons.arrow_forward),
+                label: Text(_dictationIndex < _wordFavorites.length - 1 ? '下一题' : '完成听写'),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

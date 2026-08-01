@@ -2,8 +2,8 @@
 
 ## 📌 最近更新时间
 **更新日期**：2026年8月1日  
-**最新版本**：Lumina English Version 1.0.30+31  
-**更新内容**：升级全站语音发音引擎 (`AudioService`) 为多层神经网络架构，引入 Google Translate Neural TTS 与 Edge Neural TTS 双重接入与无缝降级，彻底解决文章精读 (`ArticleDetailScreen`) 及长句练习因单句 Youdao 接口报错而降级至机械生硬系统 TTS 的发音问题。
+**最新版本**：Lumina English Version 1.0.33+34  
+**更新内容**：全量上线【单词练习海量词库扩充 (Version 1.0.33+34)】，将词库扩充至 **1500 个标准高频词汇**（包含四级、六级、考研、雅思、日常基础 5 大级别，每级别 300 词，精准对应 15 词/天 * 20 天学习周期表）。
 
 ---
 
