@@ -1,9 +1,9 @@
 # 项目开发进度与实施计划文档 (Development Progress)
 
 ## 📌 最近更新时间
-**更新日期**：2026年7月31日  
-**最新版本**：Lumina English Version 1.0.33+34  
-**更新内容**：全量重构音标 (Phonetics) 与字词根 (Word Roots) 模块至 SQLite 数据库统一托管 (Version 1.0.33)、字词根实时搜索过滤与派生生词一键收藏 (Version 1.0.32)、背词与文章阅读双向打通联动 (Version 1.0.31)。
+**更新日期**：2026年8月1日  
+**最新版本**：Lumina English Version 1.0.30+31  
+**更新内容**：升级全站语音发音引擎 (`AudioService`) 为多层神经网络架构，引入 Google Translate Neural TTS 与 Edge Neural TTS 双重接入与无缝降级，彻底解决文章精读 (`ArticleDetailScreen`) 及长句练习因单句 Youdao 接口报错而降级至机械生硬系统 TTS 的发音问题。
 
 ---
 

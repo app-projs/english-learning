@@ -24,6 +24,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
   int _currentIndex = 0;
   bool _showAnswer = false;
   String? _selectedAnswer;
+  // ignore: unused_field
   bool _isCorrect = false;
   StorageService? _storageService;
   final TextEditingController _spellingController = TextEditingController();

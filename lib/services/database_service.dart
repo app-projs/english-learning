@@ -30,7 +30,7 @@ class DatabaseService {
 
     final db = await openDatabase(
       path,
-      version: 12,
+      version: 13,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -177,6 +177,17 @@ class DatabaseService {
     await db.execute('CREATE INDEX IF NOT EXISTS idx_books_category ON books(category);');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_phonetics_type ON phonetics(type);');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_word_roots_type ON word_roots(type);');
+
+    // 签到记录表 (Version 13)
+    await db.execute('''
+      CREATE TABLE checkin_records (
+        date TEXT PRIMARY KEY,
+        completed INTEGER DEFAULT 1,
+        lpEarned INTEGER DEFAULT 0,
+        createdAt TEXT
+      )
+    ''');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
   }
 
   static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
@@ -192,6 +203,18 @@ class DatabaseService {
       await db.execute('DROP TABLE IF EXISTS phonetics');
       await db.execute('DROP TABLE IF EXISTS word_roots');
       await _onCreate(db, newVersion);
+    }
+    // Version 13: 新增签到记录表
+    if (oldVersion < 13) {
+      await db.execute('''
+        CREATE TABLE IF NOT EXISTS checkin_records (
+          date TEXT PRIMARY KEY,
+          completed INTEGER DEFAULT 1,
+          lpEarned INTEGER DEFAULT 0,
+          createdAt TEXT
+        )
+      ''');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
     }
   }
 

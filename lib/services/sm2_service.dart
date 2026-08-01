@@ -1,5 +1,3 @@
-import 'dart:math';
-
 /// SM-2 Spaced Repetition Item Record
 class SM2Item {
   final String id;

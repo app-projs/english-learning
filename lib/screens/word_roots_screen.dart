@@ -17,7 +17,6 @@ class _WordRootsScreenState extends State<WordRootsScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   StorageService? _storageService;
-  WordRootService? _wordRootService;
   List<WordRootModel> _dbRoots = [];
   String _searchQuery = '';
   final TextEditingController _searchController = TextEditingController();
@@ -38,7 +37,6 @@ class _WordRootsScreenState extends State<WordRootsScreen>
     if (mounted) {
       setState(() {
         _storageService = s;
-        _wordRootService = service;
         _dbRoots = roots;
       });
     }

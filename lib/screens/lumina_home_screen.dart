@@ -8,6 +8,7 @@ import 'word_practice_screen.dart';
 import 'sentence_practice_screen.dart';
 import 'article_list_screen.dart';
 import 'listening_practice_screen.dart';
+import 'word_roots_screen.dart';
 import '../services/audio_service.dart';
 
 import 'phonetics_practice_screen.dart';
@@ -201,7 +202,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
           tagColor: const Color(0xFFFF9C41),
           imageUrl:
               'https://lh3.googleusercontent.com/aida-public/AB6AXuA7TGnFrc0GF5SUsZCZ_Yhnp7nKI5_HQ1hdgULeNiQgngeuPqKtTCJh5jwG2GDgQI01pnIv36m5O4sgGIG9-iiPD0x377NHPvU8vqjLgwpzkvODWCLEbl0Tef-R5t-g1ADyl7LHJK2nZyKnOfUmmthgyXGDY2hzzfloo0XHnu_EoNQ2FlQn-GRnrpjwj7PIYy0ay8bOKR2j_DBwNddVZMLKU7ltYxKMzEhEfiVDUZbDFn6J-fvo92fdVdDn47bFcba-cRAG_3_1j79p',
-          onTap: () => _showComingSoon('字词根记忆专项'),
+          onTap: () => _navigateTo(const WordRootsScreen()),
         ),
         _buildBentoCard(
           title: '词汇',

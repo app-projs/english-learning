@@ -225,12 +225,20 @@ class AudioService {
             return;
           }
         }
+
+        // 3. 有道无响应 -> 尝试 Google Neural TTS
+        final googleBytes = await _fetchGoogleTtsAudio(cleanWord, accent: effectiveAccent);
+        if (googleBytes != null && googleBytes.length > 500) {
+          await localFile.writeAsBytes(googleBytes);
+          await _audioPlayer.play(DeviceFileSource(localFile.path));
+          return;
+        }
       }
     } catch (e) {
-      debugPrint('Youdao Word MP3 fetch error: $e, falling back to TTS');
+      debugPrint('Word MP3 fetch error: $e, falling back to TTS');
     }
 
-    // 3. 降级方案：使用优化调优后的自然 TTS 引擎
+    // 4. 降级方案：使用优化调优后的自然 TTS 引擎
     try {
       await _flutterTts.speak(cleanWord);
     } catch (e) {
@@ -239,8 +247,8 @@ class AudioService {
     }
   }
 
-  /// 长句与文章段落发音 (Sentence & Paragraph Speech - Edge Neural TTS Streaming)
-  /// 策略：优先走微软 Edge TTS 神经网络发音 (支持全句自然连读、生动语气) ➔ 降级走有道单句串行 ➔ 降级走系统 TTS
+  /// 长句与文章段落发音 (Sentence & Paragraph Speech - Multi-Layer Neural TTS)
+  /// 策略：优先走微软 Edge Neural TTS ➔ 备用 Google Translate Neural TTS ➔ 按句切分串行播放 (Google/Youdao MP3) ➔ 系统 TTS
   Future<void> speakSentence(String paragraph, {double speechRate = 1.0, VoidCallback? onComplete}) async {
     await init();
     await stop();
@@ -253,19 +261,16 @@ class AudioService {
     }
 
     _onComplete = onComplete;
+    final storage = await StorageService.getInstance();
+    final accent = storage.getAccent();
 
-    // 1. 优先请求微软 Edge 神经网络发音（支持长段落自然连续播报，美音/英音适配）
     try {
-      final storage = await StorageService.getInstance();
-      final accent = storage.getAccent();
-      final voiceName = accent.toUpperCase() == 'UK' ? 'en-GB-SoniaNeural' : 'en-US-AvaNeural';
-
       if (_cacheDir != null) {
         final hashStr = trimmedText.hashCode.abs().toString();
-        final fileName = 'edge_tts_${accent}_${hashStr}_${trimmedText.length}.mp3';
+        final fileName = 'neural_tts_${accent}_${hashStr}_${trimmedText.length}.mp3';
         final localFile = File('${_cacheDir!.path}/$fileName');
 
-        // 磁盘缓存命中 - 0 延迟秒播
+        // 1. 磁盘缓存命中 - 0 延迟秒播
         if (await localFile.exists() && (await localFile.length()) > 500) {
           if (_isStopped) return;
           await _audioPlayer.setPlaybackRate(speechRate);
@@ -273,21 +278,34 @@ class AudioService {
           return;
         }
 
-        // 本地无缓存 -> WebSocket 合成 Edge TTS 24kHz MP3
-        final audioBytes = await _fetchEdgeTtsAudio(trimmedText, voiceName: voiceName);
-        if (audioBytes != null && audioBytes.length > 500) {
+        // 2. 请求微软 Edge 神经网络发音 (支持长段落自然连续播报，美音/英音适配)
+        final voiceName = accent.toUpperCase() == 'UK' ? 'en-GB-SoniaNeural' : 'en-US-AvaNeural';
+        final edgeBytes = await _fetchEdgeTtsAudio(trimmedText, voiceName: voiceName);
+        if (edgeBytes != null && edgeBytes.length > 500) {
           if (_isStopped) return;
-          await localFile.writeAsBytes(audioBytes);
+          await localFile.writeAsBytes(edgeBytes);
           await _audioPlayer.setPlaybackRate(speechRate);
           await _audioPlayer.play(DeviceFileSource(localFile.path));
           return;
         }
+
+        // 3. 请求 Google Translate Neural TTS 原声发音 (针对 200 字符内段落/单句)
+        if (trimmedText.length <= 200) {
+          final googleBytes = await _fetchGoogleTtsAudio(trimmedText, accent: accent);
+          if (googleBytes != null && googleBytes.length > 500) {
+            if (_isStopped) return;
+            await localFile.writeAsBytes(googleBytes);
+            await _audioPlayer.setPlaybackRate(speechRate);
+            await _audioPlayer.play(DeviceFileSource(localFile.path));
+            return;
+          }
+        }
       }
     } catch (e) {
-      debugPrint('Edge TTS paragraph speech error: $e, falling back to chunk/TTS');
+      debugPrint('Neural TTS paragraph speech error: $e, falling back to sentence chunks');
     }
 
-    // 2. 降级方案：按句切分串行播放有道原声 MP3
+    // 4. 降级方案：按句切分串行播放 (Google Neural / Youdao 原声 MP3)
     final sentences = trimmedText
         .split(RegExp(r'(?<=[.!?])\s+'))
         .map((s) => s.trim())
@@ -310,9 +328,42 @@ class AudioService {
         return;
       }
       final sentenceText = sentences[currentIndex++];
-      await _playSentenceChunk(sentenceText, speechRate: speechRate, onComplete: playNext);
+      await _playSentenceChunk(sentenceText, accent: accent, speechRate: speechRate, onComplete: playNext);
     };
     await playNext();
+  }
+
+  /// 通过谷歌 Google Translate 高保真神经网络 API 合成自然高保真音频 (HTTP GET)
+  Future<List<int>?> _fetchGoogleTtsAudio(String text, {String accent = 'US'}) async {
+    if (kIsWeb) return null;
+    final cleanText = text.trim();
+    if (cleanText.isEmpty) return null;
+
+    final lang = accent.toUpperCase() == 'UK' ? 'en-GB' : 'en-US';
+    final encoded = Uri.encodeComponent(cleanText);
+    final url = 'https://translate.google.com/translate_tts?ie=UTF-8&q=$encoded&tl=$lang&client=tw-ob';
+
+    try {
+      final httpClient = HttpClient();
+      httpClient.connectionTimeout = const Duration(seconds: 5);
+
+      final request = await httpClient.getUrl(Uri.parse(url));
+      request.headers.set(
+        'User-Agent',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+      );
+      final response = await request.close();
+
+      if (response.statusCode == 200) {
+        final bytes = await response.fold<List<int>>([], (acc, chunk) => acc..addAll(chunk));
+        if (bytes.length > 500) {
+          return bytes;
+        }
+      }
+    } catch (e) {
+      debugPrint('Google TTS fetch error: $e');
+    }
+    return null;
   }
 
   /// 通过微软 Edge TTS 官方免费 WebSocket 节点合成高保真神经网络音频
@@ -336,7 +387,7 @@ class AudioService {
           'Cache-Control': 'no-cache',
           'Origin': 'chrome-extension://jdiccldimpdaibocqfkgahpififfkbej',
         },
-      ).timeout(const Duration(seconds: 6));
+      ).timeout(const Duration(seconds: 5));
 
       final completer = Completer<List<int>?>();
       final audioBuffer = <int>[];
@@ -394,7 +445,7 @@ class AudioService {
       );
 
       return await completer.future.timeout(
-        const Duration(seconds: 8),
+        const Duration(seconds: 7),
         onTimeout: () {
           socket.close();
           return audioBuffer.isNotEmpty ? audioBuffer : null;
@@ -406,16 +457,21 @@ class AudioService {
     }
   }
 
-  /// 单句有道 MP3 流播放内核 (按句缓存 + 完成回调链)
-  Future<void> _playSentenceChunk(String sentenceText, {double speechRate = 1.0, Future<void> Function()? onComplete}) async {
+  /// 单句 MP3 流播放内核 (Google Neural TTS -> Youdao MP3 -> FlutterTts 降级)
+  Future<void> _playSentenceChunk(
+    String sentenceText, {
+    String accent = 'US',
+    double speechRate = 1.0,
+    Future<void> Function()? onComplete,
+  }) async {
     if (_isStopped) return;
     try {
       if (_cacheDir != null) {
         final hashStr = sentenceText.hashCode.abs().toString();
-        final fileName = 'chunk_${hashStr}_${sentenceText.length}.mp3';
+        final fileName = 'chunk_${accent}_${hashStr}_${sentenceText.length}.mp3';
         final localFile = File('${_cacheDir!.path}/$fileName');
 
-        // 命中磁盘缓存 - 0延迟直接播放
+        // 命中磁盘缓存 - 0 延迟直接播放
         if (await localFile.exists() && (await localFile.length()) > 500) {
           await _audioPlayer.setPlaybackRate(speechRate);
           _onComplete = onComplete != null ? () => onComplete() : null;
@@ -423,11 +479,22 @@ class AudioService {
           return;
         }
 
-        // 请求有道原声 MP3 音频流（美音，type=2）
+        // 1. 优先尝试 Google Translate Neural TTS 高质量原声
+        final googleBytes = await _fetchGoogleTtsAudio(sentenceText, accent: accent);
+        if (googleBytes != null && googleBytes.length > 500) {
+          await localFile.writeAsBytes(googleBytes);
+          await _audioPlayer.setPlaybackRate(speechRate);
+          _onComplete = onComplete != null ? () => onComplete() : null;
+          await _audioPlayer.play(DeviceFileSource(localFile.path));
+          return;
+        }
+
+        // 2. 次级备用：请求有道原声 MP3
+        final accentType = accent.toUpperCase() == 'UK' ? '1' : '2';
         final encodedText = Uri.encodeComponent(sentenceText);
-        final url = 'https://dict.youdao.com/dictvoice?audio=$encodedText&type=2';
+        final url = 'https://dict.youdao.com/dictvoice?audio=$encodedText&type=$accentType';
         final httpClient = HttpClient();
-        httpClient.connectionTimeout = const Duration(seconds: 5);
+        httpClient.connectionTimeout = const Duration(seconds: 4);
 
         final request = await httpClient.getUrl(Uri.parse(url));
         request.headers.set(
@@ -451,7 +518,7 @@ class AudioService {
       debugPrint('Chunk audio fetch error: $e');
     }
 
-    // 降级：使用本地 TTS 朗读这一句（不影响后续句子播放）
+    // 3. 降级：使用本地 TTS 朗读这一句
     try {
       final ttsCompleter = Completer<void>();
       _flutterTts.setCompletionHandler(() => ttsCompleter.complete());
