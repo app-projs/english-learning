@@ -32,10 +32,66 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
   bool _isSpellingCorrect = false;
   String _targetWordbook = '四级核心';
 
+  int _synonymIndex = 0;
+  String? _selectedSynonymOption;
+  bool _showSynonymAnalysis = false;
+  bool _isSynonymCorrect = false;
+
+  final List<Map<String, dynamic>> _synonymChains = const [
+    {
+      'targetWord': 'important',
+      'phonetic': '/ɪmˈpɔː.tənt/',
+      'chinese': '重要的，重大意义的',
+      'synonyms': [
+        {'word': 'crucial', 'note': '至关重要的，关键性的（指对决定成败起决定作用）'},
+        {'word': 'vital', 'note': '维持生命或成功必不可少的'},
+        {'word': 'essential', 'note': '基础的，本质不可或缺的'},
+      ],
+      'antonyms': ['trivial', 'minor', 'insignificant'],
+      'wordFamily': {'n.': 'importance', 'adv.': 'importantly'},
+      'sentence': 'Reading is a _____ part of language learning.',
+      'options': ['crucial', 'trivial', 'minor', 'weak'],
+      'correctOption': 'crucial',
+      'explanation': 'crucial 意为“至关重要的”，在句中能够完美替换 important，表达该部分对学习成效具有关键影响力。',
+    },
+    {
+      'targetWord': 'happy',
+      'phonetic': '/ˈhæp.i/',
+      'chinese': '快乐的，高兴的',
+      'synonyms': [
+        {'word': 'joyful', 'note': '极度喜悦的，带有强烈感染力的'},
+        {'word': 'delighted', 'note': '因某事感到十分欣喜愉快的'},
+        {'word': 'ecstatic', 'note': '狂喜的，欣喜若狂的高阶表达'},
+      ],
+      'antonyms': ['sad', 'miserable', 'depressed'],
+      'wordFamily': {'n.': 'happiness', 'adv.': 'happily'},
+      'sentence': 'She was _____ with the excellent test results.',
+      'options': ['delighted', 'miserable', 'sad', 'gloomy'],
+      'correctOption': 'delighted',
+      'explanation': 'delighted 表示“因好消息/好结果而感到高兴”，在句中最符合因优秀成绩而感到喜悦的语境。',
+    },
+    {
+      'targetWord': 'big',
+      'phonetic': '/bɪɡ/',
+      'chinese': '大的，巨大的',
+      'synonyms': [
+        {'word': 'enormous', 'note': '数量/体积极其庞大的'},
+        {'word': 'massive', 'note': '厚重的，规模极为宏大的'},
+        {'word': 'vast', 'note': '辽阔无边的，广阔的'},
+      ],
+      'antonyms': ['tiny', 'small', 'miniature'],
+      'wordFamily': {'n.': 'bigness'},
+      'sentence': 'The company achieved _____ success in the global market.',
+      'options': ['enormous', 'tiny', 'miniature', 'slight'],
+      'correctOption': 'enormous',
+      'explanation': 'enormous 表示“巨大的，极其庞大的”，常用于修饰 success 等抽象成就。',
+    },
+  ];
+
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _initStorage();
   }
 
@@ -614,6 +670,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
                 Tab(icon: Icon(Icons.style, size: 20), text: '卡片模式'),
                 Tab(icon: Icon(Icons.quiz, size: 20), text: '测试模式'),
                 Tab(icon: Icon(Icons.edit, size: 20), text: '拼写小测'),
+                Tab(icon: Icon(Icons.account_tree_rounded, size: 20), text: '同反义词链'),
               ],
             ),
           ),
@@ -625,6 +682,356 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
           _buildCardMode(),
           _buildTestMode(),
           _buildSpellingMode(),
+          _buildSynonymChainTab(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSynonymChainTab() {
+    final item = _synonymChains[_synonymIndex];
+    final targetWord = item['targetWord'] as String;
+    final phonetic = item['phonetic'] as String;
+    final chinese = item['chinese'] as String;
+    final synonyms = item['synonyms'] as List<Map<String, String>>;
+    final antonyms = item['antonyms'] as List<String>;
+    final wordFamily = item['wordFamily'] as Map<String, String>;
+    final sentence = item['sentence'] as String;
+    final options = item['options'] as List<String>;
+    final correctOption = item['correctOption'] as String;
+    final explanation = item['explanation'] as String;
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Target Word Main Header Card
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.indigo.shade600, Colors.blue.shade700],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.indigo.withOpacity(0.25),
+                  blurRadius: 16,
+                  offset: const Offset(0, 6),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white24,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        '核心目标词 ${_synonymIndex + 1} / ${_synonymChains.length}',
+                        style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.volume_up_rounded, color: Colors.white),
+                      onPressed: () => AudioService.instance.speak(targetWord),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  targetWord,
+                  style: const TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  '$phonetic · $chinese',
+                  style: const TextStyle(color: Colors.white70, fontSize: 14),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // Synonyms & Antonyms Mindmap Deconstruction Card
+          Container(
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Row(
+                  children: [
+                    Icon(Icons.account_tree_rounded, color: Colors.indigo, size: 20),
+                    SizedBox(width: 8),
+                    Text(
+                      '同近义词辨析 (Synonyms)',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black87),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Column(
+                  children: synonyms.map((syn) {
+                    final synWord = syn['word']!;
+                    final synNote = syn['note']!;
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 8),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.indigo.shade50,
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: Colors.indigo.shade100),
+                      ),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: () => AudioService.instance.speak(synWord),
+                            child: Row(
+                              children: [
+                                Icon(Icons.play_circle_fill, size: 20, color: Colors.indigo.shade700),
+                                const SizedBox(width: 6),
+                                Text(
+                                  synWord,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.indigo.shade900,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              synNote,
+                              style: TextStyle(fontSize: 12, color: Colors.grey.shade800),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.favorite_border, size: 18, color: Colors.indigo),
+                            onPressed: () {
+                              _storageService?.addFavorite(synWord);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('已将高级同义词 [$synWord] 收入生词本！')),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    );
+                  }).toList(),
+                ),
+                const SizedBox(height: 14),
+
+                // Antonyms Bar
+                Row(
+                  children: [
+                    const Icon(Icons.swap_horiz_rounded, color: Colors.deepOrange, size: 18),
+                    const SizedBox(width: 6),
+                    const Text('反义词对比: ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                    Expanded(
+                      child: Wrap(
+                        spacing: 6,
+                        children: antonyms.map((ant) {
+                          return Chip(
+                            backgroundColor: Colors.deepOrange.shade50,
+                            side: BorderSide(color: Colors.deepOrange.shade200),
+                            label: Text(
+                              ant,
+                              style: TextStyle(fontSize: 12, color: Colors.deepOrange.shade900, fontWeight: FontWeight.bold),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+
+                // Word Family Bar
+                Row(
+                  children: [
+                    const Icon(Icons.alt_route_rounded, color: Colors.teal, size: 18),
+                    const SizedBox(width: 6),
+                    const Text('词族衍生: ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                    Expanded(
+                      child: Wrap(
+                        spacing: 8,
+                        children: wordFamily.entries.map((e) {
+                          return Text(
+                            '${e.key} ${e.value}',
+                            style: TextStyle(fontSize: 12, color: Colors.teal.shade800, fontWeight: FontWeight.w600),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // Synonym Replacement Quiz Card
+          Container(
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '✏️ 语境划词同义替换刷题',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black87),
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    sentence,
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black87),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  childAspectRatio: 2.8,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  children: options.map((opt) {
+                    final isSelected = _selectedSynonymOption == opt;
+                    final isCorrect = opt == correctOption;
+                    Color btnColor = Colors.grey.shade50;
+                    Color textColor = Colors.black87;
+
+                    if (_showSynonymAnalysis) {
+                      if (isCorrect) {
+                        btnColor = Colors.green.shade100;
+                        textColor = Colors.green.shade900;
+                      } else if (isSelected) {
+                        btnColor = Colors.red.shade100;
+                        textColor = Colors.red.shade900;
+                      }
+                    }
+
+                    return InkWell(
+                      onTap: () {
+                        if (_showSynonymAnalysis) return;
+                        setState(() {
+                          _selectedSynonymOption = opt;
+                          _showSynonymAnalysis = true;
+                          _isSynonymCorrect = (opt == correctOption);
+                        });
+                        if (opt == correctOption) {
+                          AudioService.instance.speak(opt);
+                        }
+                      },
+                      borderRadius: BorderRadius.circular(12),
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: btnColor,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: _showSynonymAnalysis && (isCorrect || isSelected)
+                                ? (isCorrect ? Colors.green : Colors.red)
+                                : Colors.grey.shade300,
+                            width: 1.5,
+                          ),
+                        ),
+                        child: Text(
+                          opt,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: textColor),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+
+                if (_showSynonymAnalysis) ...[
+                  const SizedBox(height: 16),
+                  Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: _isSynonymCorrect ? Colors.green.shade50 : Colors.red.shade50,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: _isSynonymCorrect ? Colors.green : Colors.red),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          _isSynonymCorrect ? '🎉 替换精准！' : '回答有误，正确同义替换词为：$correctOption',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: _isSynonymCorrect ? Colors.green.shade900 : Colors.red.shade900,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          explanation,
+                          style: TextStyle(fontSize: 13, color: Colors.grey.shade800),
+                        ),
+                        const SizedBox(height: 14),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.indigo,
+                                foregroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                              ),
+                              icon: const Icon(Icons.arrow_forward, size: 18),
+                              label: Text(_synonymIndex < _synonymChains.length - 1 ? '下一个同义词' : '完成全部练习'),
+                              onPressed: () {
+                                if (_synonymIndex < _synonymChains.length - 1) {
+                                  setState(() {
+                                    _synonymIndex++;
+                                    _selectedSynonymOption = null;
+                                    _showSynonymAnalysis = false;
+                                  });
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(content: Text('🎉 恭喜完成全部同反义词替换演练！')),
+                                  );
+                                }
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
         ],
       ),
     );

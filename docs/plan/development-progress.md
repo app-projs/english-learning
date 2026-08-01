@@ -2,8 +2,8 @@
 
 ## 📌 最近更新时间
 **更新日期**：2026年8月1日  
-**最新版本**：Lumina English Version 1.0.38+39  
-**更新内容**：完成【底部 Dock 栏样式改版 (Version 1.0.38+39)】。在 [lumina_home_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/lumina_home_screen.dart) 中将悬浮胶囊 BottomNav 改为贴底全宽、带 24px 顶部圆角与原生遮罩的 Dock 栏，并完好保留了原图标与选中态。
+**最新版本**：Lumina English Version 1.0.40+41  
+**更新内容**：全新上线【英语词汇同反义词逻辑关联链 (Version 1.0.40+41)】，在 [word_practice_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/word_practice_screen.dart) 中实现了同义近义词差异解构、反义词对比、词族延伸及语境划词同义替换刷题。
 
 ---
 

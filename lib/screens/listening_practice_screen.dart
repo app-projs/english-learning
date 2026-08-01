@@ -172,10 +172,43 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
     },
   ];
 
+  int _dictationChallengeIndex = 0;
+  bool _isChallengeBlind = true;
+  bool _isChallengeSlow = false;
+  bool _hasSubmittedChallenge = false;
+  final TextEditingController _challengeInputController = TextEditingController();
+
+  final List<Map<String, String>> _challengeSentences = const [
+    {
+      'title': '校园与学习',
+      'english': 'Practice makes perfect, and daily study brings great progress.',
+      'chinese': '熟能生巧，每天的学习都会带来巨大的进步。',
+      'hint': '提示词: practice, study, progress',
+    },
+    {
+      'title': '科技与未来',
+      'english': 'Artificial intelligence is changing the way we live and work every day.',
+      'chinese': '人工智能正在改变我们每天生活和工作的方式。',
+      'hint': '提示词: intelligence, changing, everyday',
+    },
+    {
+      'title': '商务与职场',
+      'english': 'We look forward to establishing a long term business partnership with you.',
+      'chinese': '我们非常期待与贵公司建立长期稳定的商业合作伙伴关系。',
+      'hint': '提示词: establishing, partnership, business',
+    },
+    {
+      'title': '环境与自然',
+      'english': 'Protecting the environment is essential for the future of our planet.',
+      'chinese': '保护环境对于我们这个星球的未来至关重要。',
+      'hint': '提示词: protecting, environment, essential',
+    },
+  ];
+
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
     _initStorage();
   }
 
@@ -188,6 +221,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
     AudioService.instance.stop();
     _tabController.dispose();
     _dictationController.dispose();
+    _challengeInputController.dispose();
     super.dispose();
   }
 
@@ -381,6 +415,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                 Tab(icon: Icon(Icons.headphones, size: 20), text: '单选练习'),
                 Tab(icon: Icon(Icons.edit_note, size: 20), text: '听写填空'),
                 Tab(icon: Icon(Icons.repeat, size: 20), text: '逐句精听'),
+                Tab(icon: Icon(Icons.spellcheck_rounded, size: 20), text: '断句听写'),
               ],
             ),
           ),
@@ -393,6 +428,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
           _buildPracticeMode(),
           _buildDictationMode(),
           _buildIntensiveRepeatMode(),
+          _buildDictationChallengeTab(),
         ],
       ),
     );
@@ -1110,6 +1146,316 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
         const SizedBox(height: 8),
         RichText(text: TextSpan(children: spans)),
       ],
+    );
+  }
+
+  Widget _buildDictationChallengeTab() {
+    final item = _challengeSentences[_dictationChallengeIndex];
+    final targetEnglish = item['english']!;
+    final targetChinese = item['chinese']!;
+    final hint = item['hint']!;
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Header Card
+          Container(
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.purple.shade600, Colors.deepPurple.shade700],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.purple.withOpacity(0.25),
+                  blurRadius: 16,
+                  offset: const Offset(0, 6),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white24,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        '第 ${_dictationChallengeIndex + 1} / ${_challengeSentences.length} 关 · ${item['title']}',
+                        style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            _isChallengeBlind ? Icons.visibility_off : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          tooltip: _isChallengeBlind ? '盲听遮挡已开启' : '参考显示已开启',
+                          onPressed: () {
+                            setState(() {
+                              _isChallengeBlind = !_isChallengeBlind;
+                            });
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            _isChallengeSlow ? Icons.slow_motion_video : Icons.speed,
+                            color: _isChallengeSlow ? Colors.amberAccent : Colors.white,
+                          ),
+                          tooltip: _isChallengeSlow ? '当前: 0.7x 慢速' : '当前: 标准语速',
+                          onPressed: () {
+                            setState(() {
+                              _isChallengeSlow = !_isChallengeSlow;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                if (!_isChallengeBlind) ...[
+                  Text(
+                    targetEnglish,
+                    style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    targetChinese,
+                    style: const TextStyle(color: Colors.white70, fontSize: 14),
+                  ),
+                ] else ...[
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.lock, color: Colors.white70, size: 20),
+                        SizedBox(width: 8),
+                        Text(
+                          '🙈 盲听专区 · 点击原声盲听并听写完整英文',
+                          style: TextStyle(color: Colors.white70, fontSize: 13),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+                const SizedBox(height: 12),
+                Text(hint, style: const TextStyle(color: Colors.amberAccent, fontSize: 12)),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // Audio Action Buttons
+          Row(
+            children: [
+              Expanded(
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple.shade700,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  ),
+                  icon: const Icon(Icons.play_arrow_rounded, size: 26),
+                  label: Text(_isChallengeSlow ? '▶ 慢速播放 (0.7x)' : '▶ 播放原声 (1.0x)'),
+                  onPressed: () {
+                    final rate = _isChallengeSlow ? 0.7 : 1.0;
+                    AudioService.instance.speak(targetEnglish, speechRate: rate);
+                  },
+                ),
+              ),
+              const SizedBox(width: 12),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple.shade50,
+                  foregroundColor: Colors.purple.shade800,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                ),
+                onPressed: () => AudioService.instance.speak(targetEnglish, speechRate: 0.7),
+                child: const Icon(Icons.repeat, size: 22),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+
+          // Dictation Input Card
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '✏️ 盲听听写输入框',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black87),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: _challengeInputController,
+                  maxLines: 3,
+                  decoration: InputDecoration(
+                    hintText: '请输入你听到的完整英文句子...',
+                    hintStyle: TextStyle(color: Colors.grey.shade400, fontSize: 14),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(color: Colors.purple.shade600, width: 2),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey.shade50,
+                  ),
+                ),
+                const SizedBox(height: 14),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton.icon(
+                      icon: const Icon(Icons.clear_all, size: 18),
+                      label: const Text('清空'),
+                      onPressed: () {
+                        _challengeInputController.clear();
+                        setState(() {
+                          _hasSubmittedChallenge = false;
+                        });
+                      },
+                    ),
+                    ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.purple.shade600,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      ),
+                      icon: const Icon(Icons.check_circle_outline, size: 20),
+                      label: const Text('提交听写'),
+                      onPressed: () {
+                        if (_challengeInputController.text.trim().isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('请先输入你听到的句子文本')),
+                          );
+                          return;
+                        }
+                        setState(() {
+                          _hasSubmittedChallenge = true;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // Dictation Results & Word-by-Word Diff
+          if (_hasSubmittedChallenge) ...[
+            Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Colors.purple.shade100, width: 1.5),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.purple.withOpacity(0.06),
+                    blurRadius: 16,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    '📊 逐词听写差异比对报告',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.purple),
+                  ),
+                  const SizedBox(height: 12),
+                  _buildWordMatchDiff(_challengeInputController.text, targetEnglish),
+                  const SizedBox(height: 16),
+                  const Divider(),
+                  const SizedBox(height: 8),
+                  Text(
+                    '中文参考：$targetChinese',
+                    style: TextStyle(color: Colors.grey.shade700, fontSize: 13, fontStyle: FontStyle.italic),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber.shade700,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        icon: const Icon(Icons.favorite_border, size: 18),
+                        label: const Text('收藏该句'),
+                        onPressed: () {
+                          _storageService?.addFavorite(targetEnglish);
+                          // Optionally store additional metadata elsewhere if needed
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('已成功将听写句型加入收藏！')),
+                          );
+                        },
+                      ),
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purple.shade700,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        icon: const Icon(Icons.arrow_forward_rounded, size: 18),
+                        label: Text(_dictationChallengeIndex < _challengeSentences.length - 1 ? '下一关' : '完成全部关卡'),
+                        onPressed: () {
+                          if (_dictationChallengeIndex < _challengeSentences.length - 1) {
+                            setState(() {
+                              _dictationChallengeIndex++;
+                              _challengeInputController.clear();
+                              _hasSubmittedChallenge = false;
+                            });
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('🎉 恭喜完成全部断句听写挑战关卡！')),
+                            );
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }
