@@ -301,7 +301,7 @@ class _StreakCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: color.withOpacity(0.1),
+      color: color.withValues(alpha: 0.1),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -362,7 +362,7 @@ class _CategoryProgress extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
               child: LinearProgressIndicator(
                 value: progress,
-                backgroundColor: color.withOpacity(0.2),
+                backgroundColor: color.withValues(alpha: 0.2),
                 valueColor: AlwaysStoppedAnimation<Color>(color),
                 minHeight: 8,
               ),

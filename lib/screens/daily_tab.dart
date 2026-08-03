@@ -252,7 +252,7 @@ class _DailyTabState extends State<DailyTab> {
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFFF9B73).withOpacity(0.20),
+                color: const Color(0xFFFF9B73).withValues(alpha: 0.20),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -308,7 +308,7 @@ class _DailyTabState extends State<DailyTab> {
               ),
               // 软阴影
               BoxShadow(
-                color: const Color(0xFFF97316).withOpacity(0.28),
+                color: const Color(0xFFF97316).withValues(alpha: 0.28),
                 blurRadius: 8,
                 offset: const Offset(0, 3),
               ),
@@ -444,8 +444,8 @@ class _DailyTabState extends State<DailyTab> {
           // 软阴影
           BoxShadow(
             color: isDark
-                ? Colors.black.withOpacity(0.3)
-                : const Color(0xFFF97316).withOpacity(0.18),
+                ? Colors.black.withValues(alpha: 0.3)
+                : const Color(0xFFF97316).withValues(alpha: 0.18),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -463,7 +463,7 @@ class _DailyTabState extends State<DailyTab> {
                 progressColor: isDark ? const Color(0xFFF97316) : Colors.white,
                 backgroundColor: isDark
                     ? Colors.grey.shade800
-                    : Colors.white.withOpacity(0.25),
+                    : Colors.white.withValues(alpha: 0.25),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -569,8 +569,8 @@ class _DailyTabState extends State<DailyTab> {
   // 任务舱步骤项
   Widget _buildStepRowCard(String title, bool isCompleted, bool isDark,
       {bool isActive = false, bool isLocked = false}) {
-    Color cardColor = Colors.white.withOpacity(0.15);
-    Color borderColor = Colors.white.withOpacity(0.2);
+    Color cardColor = Colors.white.withValues(alpha: 0.15);
+    Color borderColor = Colors.white.withValues(alpha: 0.2);
     Color textColor = Colors.white;
     Widget statusIcon = const SizedBox();
 
@@ -582,7 +582,7 @@ class _DailyTabState extends State<DailyTab> {
 
     if (isCompleted) {
       if (!isDark) {
-        cardColor = Colors.white.withOpacity(0.3);
+        cardColor = Colors.white.withValues(alpha: 0.3);
         textColor = Colors.white;
       }
       statusIcon = const Icon(Icons.check_circle,
@@ -597,7 +597,7 @@ class _DailyTabState extends State<DailyTab> {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
         decoration: BoxDecoration(
           color: isDark
-              ? const Color(0xFFF97316).withOpacity(0.20)
+              ? const Color(0xFFF97316).withValues(alpha: 0.20)
               : const Color(0xFFFFEDD5),
           borderRadius: BorderRadius.circular(10),
         ),
@@ -612,12 +612,12 @@ class _DailyTabState extends State<DailyTab> {
       );
     } else if (isLocked) {
       if (!isDark) {
-        textColor = Colors.white.withOpacity(0.62);
-        cardColor = Colors.white.withOpacity(0.08);
+        textColor = Colors.white.withValues(alpha: 0.62);
+        cardColor = Colors.white.withValues(alpha: 0.08);
       }
       statusIcon = Icon(
         Icons.lock,
-        color: isDark ? Colors.white30 : Colors.white.withOpacity(0.58),
+        color: isDark ? Colors.white30 : Colors.white.withValues(alpha: 0.58),
         size: 14,
       );
     }
@@ -688,7 +688,7 @@ class _DailyTabState extends State<DailyTab> {
           ),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFFF97316).withOpacity(0.12),
+              color: const Color(0xFFF97316).withValues(alpha: 0.12),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -807,7 +807,7 @@ class _DailyTabState extends State<DailyTab> {
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFF97316).withOpacity(0.24),
+                color: const Color(0xFFF97316).withValues(alpha: 0.24),
                 blurRadius: 8,
                 offset: const Offset(0, 3),
               ),
@@ -1046,7 +1046,7 @@ class _DailyTabState extends State<DailyTab> {
             ),
             // 软阴影
             BoxShadow(
-              color: isDark ? Colors.black26 : brandColor.withOpacity(0.05),
+              color: isDark ? Colors.black26 : brandColor.withValues(alpha: 0.05),
               blurRadius: 8,
               offset: const Offset(0, 3),
             ),
@@ -1057,7 +1057,7 @@ class _DailyTabState extends State<DailyTab> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: brandColor.withOpacity(0.15),
+                color: brandColor.withValues(alpha: 0.15),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: brandColor, size: 20),
@@ -1204,7 +1204,7 @@ class _WordFlipCardState extends State<_WordFlipCard>
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: Colors.indigo.withOpacity(0.3),
+              color: Colors.indigo.withValues(alpha: 0.3),
               blurRadius: 16,
               offset: const Offset(0, 8),
             ),
@@ -1288,10 +1288,10 @@ class _WordFlipCardState extends State<_WordFlipCard>
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.amber.withOpacity(0.5), width: 1.5),
+          border: Border.all(color: Colors.amber.withValues(alpha: 0.5), width: 1.5),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withValues(alpha: 0.4),
               blurRadius: 16,
               offset: const Offset(0, 8),
             ),

@@ -58,8 +58,8 @@ class ModernCard extends StatelessWidget {
                 // 软阴影
                 BoxShadow(
                   color: isDark
-                      ? Colors.black.withOpacity(0.35)
-                      : const Color(0xFF9CA3AF).withOpacity(0.15),
+                      ? Colors.black.withValues(alpha: 0.35)
+                      : const Color(0xFF9CA3AF).withValues(alpha: 0.15),
                   blurRadius: 16,
                   offset: const Offset(0, 4),
                 ),
@@ -190,10 +190,11 @@ class _ModernButtonState extends State<ModernButton> {
 
     if (widget.gradientColors != null && widget.gradientColors!.isNotEmpty) {
       btnColor = widget.gradientColors!.first;
-      // 用后半部分作为深度颜色
-      bottomColor = widget.gradientColors!.last.withRed((widget.gradientColors!.last.red * 0.82).toInt())
-                                              .withGreen((widget.gradientColors!.last.green * 0.82).toInt())
-                                              .withBlue((widget.gradientColors!.last.blue * 0.85).toInt());
+      final lastColor = widget.gradientColors!.last;
+      final int r = (((lastColor.r * 255.0).round().clamp(0, 255)) * 0.82).toInt();
+      final int g = (((lastColor.g * 255.0).round().clamp(0, 255)) * 0.82).toInt();
+      final int b = (((lastColor.b * 255.0).round().clamp(0, 255)) * 0.85).toInt();
+      bottomColor = Color.fromRGBO(r, g, b, lastColor.a);
     } else if (widget.backgroundColor != null) {
       bottomColor = HSLColor.fromColor(widget.backgroundColor!).withLightness(
         (HSLColor.fromColor(widget.backgroundColor!).lightness - 0.15).clamp(0.0, 1.0)
@@ -341,17 +342,17 @@ class GlassContainer extends StatelessWidget {
       padding: padding ?? const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withOpacity(opacity)
-            : Colors.white.withOpacity(0.8),
+            ? Colors.white.withValues(alpha: opacity)
+            : Colors.white.withValues(alpha: 0.8),
         borderRadius: BorderRadius.circular(borderRadius),
         border: Border.all(
           color: isDark
-              ? Colors.white.withOpacity(0.1)
-              : Colors.white.withOpacity(0.5),
+              ? Colors.white.withValues(alpha: 0.1)
+              : Colors.white.withValues(alpha: 0.5),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -393,7 +394,7 @@ class StatCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.1),
+                  color: color.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(icon, color: color, size: 22),
@@ -517,7 +518,7 @@ class Badge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -605,13 +606,13 @@ class EmptyState extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: AppColors.primary.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 icon,
                 size: 64,
-                color: AppColors.primary.withOpacity(0.5),
+                color: AppColors.primary.withValues(alpha: 0.5),
               ),
             ),
             const SizedBox(height: 24),
@@ -680,7 +681,7 @@ class ListTileItem extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: (iconColor ?? AppColors.primary).withOpacity(0.1),
+                  color: (iconColor ?? AppColors.primary).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(

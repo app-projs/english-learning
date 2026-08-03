@@ -162,8 +162,6 @@ class _SmartReviewScreenState extends State<SmartReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('艾宾浩斯智能复习中心', style: TextStyle(fontWeight: FontWeight.bold)),

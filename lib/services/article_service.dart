@@ -157,7 +157,9 @@ class ArticleService {
   Future<void> recordReadingWithId(String articleId, int minutes) async {
     try {
       await _database.addReadingHistory(articleId, minutes);
-    } catch (e) {}
+    } catch (e) {
+      // Ignore database history write errors in fallback mode
+    }
     await _storage.updateProgress('minutes', minutes);
     await _storage.updateStreak();
   }

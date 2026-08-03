@@ -148,7 +148,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
+                          color: Colors.black.withValues(alpha: 0.2),
                           blurRadius: 16,
                           offset: const Offset(0, 8),
                         ),
@@ -346,7 +346,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                           width: 52,
                           height: 52,
                           decoration: BoxDecoration(
-                            color: color.withOpacity(0.12),
+                            color: color.withValues(alpha: 0.12),
                             shape: BoxShape.circle,
                           ),
                           alignment: Alignment.center,
@@ -553,7 +553,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
             : Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, -2),
           ),
@@ -662,7 +662,7 @@ class _ParagraphBlockState extends State<_ParagraphBlock> {
         boxShadow: [
           if (isHighlighted)
             BoxShadow(
-              color: Colors.amber.withOpacity(0.12),
+              color: Colors.amber.withValues(alpha: 0.12),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -773,7 +773,7 @@ class _ParagraphBlockState extends State<_ParagraphBlock> {
                   child: Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withOpacity(0.05) : Colors.grey.shade50,
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey.shade50,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(

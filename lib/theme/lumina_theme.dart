@@ -35,7 +35,6 @@ class LuminaTheme {
         secondary: LuminaColors.secondary,
         onSecondary: LuminaColors.onSecondary,
         tertiary: LuminaColors.tertiary,
-        background: LuminaColors.background,
         surface: LuminaColors.surface,
         onSurface: LuminaColors.onSurface,
         error: LuminaColors.error,

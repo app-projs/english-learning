@@ -171,7 +171,7 @@ class _LevelAssessmentScreenState extends State<LevelAssessmentScreen> {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.04),
+                  color: Colors.black.withValues(alpha: 0.04),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -305,7 +305,7 @@ class _LevelAssessmentScreenState extends State<LevelAssessmentScreen> {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.purple.withOpacity(0.3),
+                  color: Colors.purple.withValues(alpha: 0.3),
                   blurRadius: 12,
                   offset: const Offset(0, 6),
                 ),
@@ -325,7 +325,7 @@ class _LevelAssessmentScreenState extends State<LevelAssessmentScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
+                    color: Colors.white.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(

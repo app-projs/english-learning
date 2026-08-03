@@ -253,7 +253,7 @@ class _WordRootsScreenState extends State<WordRootsScreen>
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.03),
+                color: Colors.black.withValues(alpha: 0.03),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -1112,7 +1112,7 @@ class _EtymologyTreeViewWidgetState extends State<_EtymologyTreeViewWidget> {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.purple.withOpacity(0.3),
+                  color: Colors.purple.withValues(alpha: 0.3),
                   blurRadius: 12,
                   offset: const Offset(0, 6),
                 ),
@@ -1171,7 +1171,7 @@ class _EtymologyTreeViewWidgetState extends State<_EtymologyTreeViewWidget> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
+                    color: Colors.black.withValues(alpha: 0.04),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
@@ -1240,7 +1240,7 @@ class _EtymologyTreeViewWidgetState extends State<_EtymologyTreeViewWidget> {
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withOpacity(0.05) : Colors.grey.shade50,
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey.shade50,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
@@ -1255,7 +1255,7 @@ class _EtymologyTreeViewWidgetState extends State<_EtymologyTreeViewWidget> {
                 ],
               ),
             );
-          }).toList(),
+          }),
           const SizedBox(height: 40),
         ],
       ),

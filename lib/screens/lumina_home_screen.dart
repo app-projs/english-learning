@@ -95,12 +95,12 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.7),
+        color: Colors.white.withValues(alpha: 0.7),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.4)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.4)),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFF97316).withOpacity(0.08),
+            color: const Color(0xFFF97316).withValues(alpha: 0.08),
             blurRadius: 30,
             offset: const Offset(0, 10),
           ),
@@ -137,7 +137,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF97316).withOpacity(0.10),
+                  color: const Color(0xFFF97316).withValues(alpha: 0.10),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.volume_up,
@@ -267,18 +267,18 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
           colors: [
             softColor,
             paleColor,
-            Colors.white.withOpacity(0.96),
+            Colors.white.withValues(alpha: 0.96),
             Colors.white,
           ],
           stops: const [0.0, 0.42, 0.78, 1.0],
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: mainColor.withOpacity(0.12),
+          color: mainColor.withValues(alpha: 0.12),
         ),
         boxShadow: [
           BoxShadow(
-            color: mainColor.withOpacity(0.045),
+            color: mainColor.withValues(alpha: 0.045),
             blurRadius: 18,
             offset: const Offset(0, 10),
           ),
@@ -308,7 +308,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
                     Text(
                       subtitle,
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: mainColor.withOpacity(0.7),
+                            color: mainColor.withValues(alpha: 0.7),
                           ),
                     ),
                     const SizedBox(height: 12),
@@ -397,7 +397,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF97316).withOpacity(0.10),
+                  color: const Color(0xFFF97316).withValues(alpha: 0.10),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.workspace_premium,
@@ -432,7 +432,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
                     margin: EdgeInsets.only(right: index < 9 ? 2 : 0),
                     color: index < 7
                         ? LuminaColors.secondary
-                        : Colors.black.withOpacity(0.05),
+                        : Colors.black.withValues(alpha: 0.05),
                   ),
                 );
               }),
@@ -450,7 +450,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 16,
             offset: const Offset(0, -4),
           ),

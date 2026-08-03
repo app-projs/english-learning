@@ -453,7 +453,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: scenario['color'].withOpacity(0.1),
+                      color: scenario['color'].withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Icon(
@@ -1172,7 +1172,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.purple.withOpacity(0.25),
+                  color: Colors.purple.withValues(alpha: 0.25),
                   blurRadius: 16,
                   offset: const Offset(0, 6),
                 ),
@@ -1384,7 +1384,7 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
                 border: Border.all(color: Colors.purple.shade100, width: 1.5),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.purple.withOpacity(0.06),
+                    color: Colors.purple.withValues(alpha: 0.06),
                     blurRadius: 16,
                     offset: const Offset(0, 4),
                   ),

@@ -718,7 +718,7 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.indigo.withOpacity(0.25),
+                  color: Colors.indigo.withValues(alpha: 0.25),
                   blurRadius: 16,
                   offset: const Offset(0, 6),
                 ),

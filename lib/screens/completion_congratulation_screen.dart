@@ -99,7 +99,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                           width: 52,
                           height: 52,
                           decoration: BoxDecoration(
-                            color: color.withOpacity(0.18),
+                            color: color.withValues(alpha: 0.18),
                             shape: BoxShape.circle,
                           ),
                           alignment: Alignment.center,
@@ -156,7 +156,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFFF59E0B).withOpacity(0.4),
+                            color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
                             blurRadius: 30,
                             spreadRadius: 8,
                           ),
@@ -182,7 +182,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                       '已顺利完成 $moduleTitle 每日练习',
                       style: TextStyle(
                         fontSize: 15,
-                        color: Colors.white.withOpacity(0.7),
+                        color: Colors.white.withValues(alpha: 0.7),
                       ),
                     ),
                     const SizedBox(height: 28),
@@ -193,7 +193,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: const Color(0xFF1E293B),
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white.withOpacity(0.1)),
+                        border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -214,17 +214,17 @@ class CompletionCongratulationScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Colors.indigo.shade900.withOpacity(0.8),
-                            Colors.purple.shade900.withOpacity(0.8),
+                            Colors.indigo.shade900.withValues(alpha: 0.8),
+                            Colors.purple.shade900.withValues(alpha: 0.8),
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(24),
-                        border: Border.all(color: Colors.indigo.shade400.withOpacity(0.3)),
+                        border: Border.all(color: Colors.indigo.shade400.withValues(alpha: 0.3)),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.purple.withOpacity(0.2),
+                            color: Colors.purple.withValues(alpha: 0.2),
                             blurRadius: 20,
                             offset: const Offset(0, 8),
                           ),
@@ -240,7 +240,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                                 height: 44,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Colors.white.withOpacity(0.2),
+                                  color: Colors.white.withValues(alpha: 0.2),
                                   border: Border.all(color: Colors.amber, width: 2),
                                 ),
                                 child: const Icon(Icons.person, color: Colors.white),
@@ -271,7 +271,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: Colors.amber.withOpacity(0.2),
+                                  color: Colors.amber.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(color: Colors.amber),
                                 ),
@@ -290,7 +290,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.2),
+                              color: Colors.black.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(14),
                             ),
                             child: const Text(
@@ -337,7 +337,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: const Color(0xFF1E293B),
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-                border: Border.all(color: Colors.white.withOpacity(0.05)),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -371,7 +371,7 @@ class CompletionCongratulationScreen extends StatelessWidget {
                     },
                     style: OutlinedButton.styleFrom(
                       foregroundColor: Colors.white70,
-                      side: BorderSide(color: Colors.white.withOpacity(0.2)),
+                      side: BorderSide(color: Colors.white.withValues(alpha: 0.2)),
                       minimumSize: const Size(double.infinity, 48),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),

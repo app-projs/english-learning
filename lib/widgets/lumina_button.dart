@@ -21,7 +21,7 @@ class LuminaButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
         boxShadow: [
           BoxShadow(
-            color: (isSecondary ? LuminaColors.secondary : LuminaColors.primary).withOpacity(0.2),
+            color: (isSecondary ? LuminaColors.secondary : LuminaColors.primary).withValues(alpha: 0.2),
             blurRadius: 16,
             offset: const Offset(0, 8),
           ),

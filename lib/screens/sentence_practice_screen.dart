@@ -260,7 +260,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.04),
+                  color: Colors.black.withValues(alpha: 0.04),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -325,9 +325,9 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
-                    color: color.withOpacity(0.12),
+                    color: color.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+                    border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -386,7 +386,7 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
                 decoration: BoxDecoration(
                   color: isDark ? const Color(0xFF1E293B) : Colors.grey.shade50,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: color.withOpacity(0.3)),
+                  border: Border.all(color: color.withValues(alpha: 0.3)),
                 ),
                 child: Row(
                   children: [

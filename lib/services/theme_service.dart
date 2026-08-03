@@ -99,7 +99,7 @@ class ThemeService {
     ),
     chipTheme: ChipThemeData(
       backgroundColor: const Color(0xFFE9ECEF),
-      selectedColor: _primaryColor.withOpacity(0.15),
+      selectedColor: _primaryColor.withValues(alpha: 0.15),
       labelStyle: const TextStyle(fontSize: 14),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       shape: RoundedRectangleBorder(
@@ -219,7 +219,7 @@ class ThemeService {
     ),
     chipTheme: ChipThemeData(
       backgroundColor: const Color(0xFF2B3035),
-      selectedColor: _primaryColor.withOpacity(0.3),
+      selectedColor: _primaryColor.withValues(alpha: 0.3),
       labelStyle: const TextStyle(fontSize: 14),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       shape: RoundedRectangleBorder(

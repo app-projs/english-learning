@@ -66,7 +66,7 @@ class PracticeTab extends StatelessWidget {
                           '每天进步一点点',
                           style: TextStyle(
                             fontSize: 14,
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withValues(alpha: 0.8),
                           ),
                         ),
                       ],
@@ -275,7 +275,7 @@ class _PracticeCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: gradientColors.first.withOpacity(0.3),
+                color: gradientColors.first.withValues(alpha: 0.3),
                 blurRadius: 20,
                 offset: const Offset(0, 8),
               ),
@@ -289,7 +289,7 @@ class _PracticeCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Icon(
@@ -312,7 +312,7 @@ class _PracticeCard extends StatelessWidget {
                   subtitle,
                   style: TextStyle(
                     fontSize: 13,
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withValues(alpha: 0.8),
                   ),
                 ),
               ],
@@ -346,7 +346,7 @@ class _TipCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.2 : 0.05),
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -357,7 +357,7 @@ class _TipCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
+              color: AppColors.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(

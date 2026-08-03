@@ -132,7 +132,7 @@ class _GrammarPracticeScreenState extends State<GrammarPracticeScreen>
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.blue.withOpacity(0.2),
+                  color: Colors.blue.withValues(alpha: 0.2),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -244,7 +244,7 @@ class _GrammarPracticeScreenState extends State<GrammarPracticeScreen>
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: LuminaColors.primary.withOpacity(0.3), width: 1.5),
+        border: Border.all(color: LuminaColors.primary.withValues(alpha: 0.3), width: 1.5),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

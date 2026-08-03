@@ -430,7 +430,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           width: 44,
           height: 44,
           decoration: BoxDecoration(
-            color: LuminaColors.primary.withOpacity(0.12),
+            color: LuminaColors.primary.withValues(alpha: 0.12),
             shape: BoxShape.circle,
           ),
           child: const Icon(
@@ -488,7 +488,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
               border: Border.all(color: Colors.grey.shade300),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.04),
+                  color: Colors.black.withValues(alpha: 0.04),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -524,7 +524,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
         border: Border.all(color: Colors.grey.shade200),
         boxShadow: [
           BoxShadow(
-            color: LuminaColors.primary.withOpacity(0.06),
+            color: LuminaColors.primary.withValues(alpha: 0.06),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -578,7 +578,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
             width: 80,
             height: 70,
             decoration: BoxDecoration(
-              color: LuminaColors.primary.withOpacity(0.08),
+              color: LuminaColors.primary.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(20),
             ),
             child: const Icon(
@@ -601,7 +601,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w600,
-            color: LuminaColors.onSurface.withOpacity(0.65),
+            color: LuminaColors.onSurface.withValues(alpha: 0.65),
           ),
         ),
         const SizedBox(height: 2),
@@ -643,7 +643,7 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
                   boxShadow: isSelected
                       ? [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.06),
+                            color: Colors.black.withValues(alpha: 0.06),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -731,10 +731,10 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-        color: isPinned ? LuminaColors.primary.withOpacity(0.08) : Colors.white,
+        color: isPinned ? LuminaColors.primary.withValues(alpha: 0.08) : Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isPinned ? LuminaColors.primary.withOpacity(0.4) : Colors.grey.shade200,
+          color: isPinned ? LuminaColors.primary.withValues(alpha: 0.4) : Colors.grey.shade200,
           width: isPinned ? 1.5 : 1,
         ),
       ),

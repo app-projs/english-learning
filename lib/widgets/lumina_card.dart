@@ -22,14 +22,14 @@ class LuminaCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF7C5CFF).withOpacity(0.08), // Soft tinted shadow
+            color: const Color(0xFF7C5CFF).withValues(alpha: 0.08), // Soft tinted shadow
             blurRadius: 24,
             spreadRadius: -4,
             offset: const Offset(0, 8),
           ),
         ],
         border: Border.all(
-          color: const Color(0xFFE1E2E7).withOpacity(0.5),
+          color: const Color(0xFFE1E2E7).withValues(alpha: 0.5),
           width: 1,
         ),
       ),

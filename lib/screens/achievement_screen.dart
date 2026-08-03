@@ -161,7 +161,7 @@ class _AchievementScreenState extends State<AchievementScreen> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple.withValues(alpha: 0.3),
                           blurRadius: 12,
                           offset: const Offset(0, 6),
                         ),
@@ -176,7 +176,7 @@ class _AchievementScreenState extends State<AchievementScreen> {
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
@@ -282,14 +282,14 @@ class _AchievementScreenState extends State<AchievementScreen> {
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(
                             color: item.isUnlocked
-                                ? item.color.withOpacity(0.5)
+                                ? item.color.withValues(alpha: 0.5)
                                 : (isDark ? Colors.white10 : Colors.grey.shade200),
                             width: item.isUnlocked ? 1.5 : 1,
                           ),
                           boxShadow: [
                             if (item.isUnlocked)
                               BoxShadow(
-                                color: item.color.withOpacity(0.1),
+                                color: item.color.withValues(alpha: 0.1),
                                 blurRadius: 8,
                                 offset: const Offset(0, 4),
                               ),
@@ -301,7 +301,7 @@ class _AchievementScreenState extends State<AchievementScreen> {
                             CircleAvatar(
                               radius: 26,
                               backgroundColor: item.isUnlocked
-                                  ? item.color.withOpacity(0.15)
+                                  ? item.color.withValues(alpha: 0.15)
                                   : (isDark ? Colors.white10 : Colors.grey.shade200),
                               child: Icon(
                                 item.icon,
@@ -406,7 +406,7 @@ class _PosterDialog extends StatelessWidget {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.indigo.withOpacity(0.5),
+                  color: Colors.indigo.withValues(alpha: 0.5),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),
@@ -466,7 +466,7 @@ class _PosterDialog extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(color: Colors.white24),
                   ),

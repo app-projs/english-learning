@@ -162,7 +162,7 @@ class _ReadingHistoryScreenState extends State<ReadingHistoryScreen> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: _getDifficultyColor(article.difficulty)
-                                      .withOpacity(0.1),
+                                      .withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Text(

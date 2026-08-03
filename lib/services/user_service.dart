@@ -4,16 +4,13 @@ import 'storage_service.dart';
 
 class UserService {
   final StorageService _storage;
-  bool _useMockData = true;
+  final bool _useMockData = true;
 
   UserService(this._storage);
 
   Future<UserProfile> getUserProfile() async {
     Map<String, dynamic>? profileMap = _storage.getUserProfile();
-    if (profileMap == null) {
-      profileMap = MockUser.getUserProfile();
-      await _storage.saveUserProfile(profileMap);
-    }
+    profileMap ??= MockUser.getUserProfile();
 
     final progress = _storage.getLearningProgress();
     final streak = _storage.getStreakDays();
@@ -89,9 +86,7 @@ class UserService {
 
   Future<void> updateUserProfile({String? name, String? avatar}) async {
     Map<String, dynamic>? profileMap = _storage.getUserProfile();
-    if (profileMap == null) {
-      profileMap = MockUser.getUserProfile();
-    }
+    profileMap ??= MockUser.getUserProfile();
     if (name != null) profileMap['name'] = name;
     if (avatar != null) profileMap['avatar'] = avatar;
     await _storage.saveUserProfile(profileMap);
@@ -103,9 +98,7 @@ class UserService {
     required int dialoguesGoal,
   }) async {
     Map<String, dynamic>? profileMap = _storage.getUserProfile();
-    if (profileMap == null) {
-      profileMap = MockUser.getUserProfile();
-    }
+    profileMap ??= MockUser.getUserProfile();
     profileMap['wordsGoal'] = wordsGoal;
     profileMap['sentencesGoal'] = sentencesGoal;
     profileMap['dialoguesGoal'] = dialoguesGoal;

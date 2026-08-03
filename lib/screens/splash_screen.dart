@@ -20,8 +20,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _scaleAnimation;
-  late Animation<double> _fadeAnimation;
+  late Animation<double> _logoScaleAnimation;
+  late Animation<double> _textFadeAnimation;
+  late Animation<Offset> _textSlideAnimation;
 
   @override
   void initState() {
@@ -37,31 +38,40 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1800),
+      duration: const Duration(milliseconds: 1400),
     );
 
-    // Smooth scale animation: 0.9 to 1.0 (no double jump)
-    _scaleAnimation = Tween<double>(
-      begin: 0.9,
-      end: 1.0,
+    // Gentle logo breathing animation (1.0 -> 1.03) without initial fade-in jump
+    _logoScaleAnimation = Tween<double>(
+      begin: 1.0,
+      end: 1.03,
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeOutCubic,
+      curve: Curves.easeInOutCubic,
     ));
 
-    // Smooth fade in animation
-    _fadeAnimation = Tween<double>(
+    // Smooth text fade-in starting slightly after logo is settled
+    _textFadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeOut,
+      curve: const Interval(0.15, 0.75, curve: Curves.easeOut),
+    ));
+
+    // Smooth text slide-up animation
+    _textSlideAnimation = Tween<Offset>(
+      begin: const Offset(0.0, 0.25),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: const Interval(0.15, 0.75, curve: Curves.easeOutCubic),
     ));
 
     _controller.forward();
 
-    // Seamless navigation to home screen after 2.0 seconds
-    Future.delayed(const Duration(milliseconds: 2000), () {
+    // Seamless navigation to home screen after 1.5 seconds
+    Future.delayed(const Duration(milliseconds: 1500), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
@@ -71,9 +81,15 @@ class _SplashScreenState extends State<SplashScreen>
               onThemeChanged: widget.onThemeChanged,
             ),
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
-              return FadeTransition(opacity: animation, child: child);
+              return FadeTransition(
+                opacity: CurvedAnimation(
+                  parent: animation,
+                  curve: Curves.easeInOut,
+                ),
+                child: child,
+              );
             },
-            transitionDuration: const Duration(milliseconds: 600),
+            transitionDuration: const Duration(milliseconds: 500),
           ),
         );
       }
@@ -88,66 +104,81 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = widget.isDarkMode
+        ? const Color(0xFF111111)
+        : LuminaColors.background;
+
     return Scaffold(
-      backgroundColor: widget.isDarkMode ? const Color(0xFF111111) : LuminaColors.background,
+      backgroundColor: backgroundColor,
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,
           builder: (context, child) {
-            return Transform.scale(
-              scale: _scaleAnimation.value,
-              child: Opacity(
-                  opacity: _fadeAnimation.value,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Logo Image
-                      Container(
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(32),
-                          boxShadow: [
-                            BoxShadow(
-                              color: LuminaColors.primary.withOpacity(0.15),
-                              blurRadius: 30,
-                              offset: const Offset(0, 15),
-                            ),
-                          ],
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Logo Image - Fully visible at 1.0 opacity on first frame for seamless native transition
+                Transform.scale(
+                  scale: _logoScaleAnimation.value,
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                      boxShadow: [
+                        BoxShadow(
+                          color: LuminaColors.primary.withValues(alpha: 0.15),
+                          blurRadius: 30,
+                          offset: const Offset(0, 15),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(32),
-                          child: Image.asset(
-                            'assets/brand/lumina_app_icon_512.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(32),
+                      child: Image.asset(
+                        'assets/brand/lumina_app_icon_512.png',
+                        fit: BoxFit.cover,
                       ),
-                      const SizedBox(height: 24),
-                      // Brand Name
-                      Text(
-                        'Lumina',
-                        style: TextStyle(
-                          fontSize: 36,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.5,
-                          color: widget.isDarkMode ? Colors.white : const Color(0xFF1A1A1A),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      // Brand Description
-                      Text(
-                        '点亮你的英语学习之旅',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 2.5,
-                          color: widget.isDarkMode ? Colors.white70 : const Color(0xFF666666),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
+                const SizedBox(height: 28),
+                // Brand Name & Subtitle - Smooth slide up and fade in
+                SlideTransition(
+                  position: _textSlideAnimation,
+                  child: FadeTransition(
+                    opacity: _textFadeAnimation,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Lumina',
+                          style: TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 1.5,
+                            color: widget.isDarkMode
+                                ? Colors.white
+                                : const Color(0xFF1A1A1A),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          '点亮你的英语学习之旅',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 2.5,
+                            color: widget.isDarkMode
+                                ? Colors.white70
+                                : const Color(0xFF666666),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             );
           },
         ),

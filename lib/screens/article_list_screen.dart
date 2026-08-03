@@ -329,7 +329,7 @@ class YoudaoBookCard extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.65),
+                        color: Colors.black.withValues(alpha: 0.65),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
@@ -458,7 +458,7 @@ class _SmoothCategoryTabBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(19),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.08),
+                        color: Colors.black.withValues(alpha: 0.08),
                         blurRadius: 6,
                         offset: const Offset(0, 2),
                       ),

@@ -243,13 +243,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           borderRadius: BorderRadius.circular(32),
           border: Border.all(
             color: isDark
-                ? const Color(0xFFF97316).withOpacity(0.22)
-                : Colors.white.withOpacity(0.72),
+                ? const Color(0xFFF97316).withValues(alpha: 0.22)
+                : Colors.white.withValues(alpha: 0.72),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFFF97316).withOpacity(isDark ? 0.12 : 0.14),
+              color: const Color(0xFFF97316).withValues(alpha: isDark ? 0.12 : 0.14),
               blurRadius: 26,
               offset: const Offset(0, 12),
             ),
@@ -270,7 +270,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFFF9B73).withOpacity(0.20),
+                        color: const Color(0xFFFF9B73).withValues(alpha: 0.20),
                         blurRadius: 12,
                         offset: const Offset(0, 5),
                       ),
@@ -311,7 +311,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               height: 34,
                               decoration: BoxDecoration(
                                 color: Colors.white
-                                    .withOpacity(isDark ? 0.12 : 0.62),
+                                    .withValues(alpha: isDark ? 0.12 : 0.62),
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
@@ -332,7 +332,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: isDark
-                              ? Colors.white.withOpacity(0.72)
+                              ? Colors.white.withValues(alpha: 0.72)
                               : const Color(0xFF7C2D12),
                         ),
                       ),
@@ -385,11 +385,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withOpacity(0.08)
-            : Colors.white.withOpacity(0.62),
+            ? Colors.white.withValues(alpha: 0.08)
+            : Colors.white.withValues(alpha: 0.62),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isDark ? Colors.white10 : Colors.white.withOpacity(0.66),
+          color: isDark ? Colors.white10 : Colors.white.withValues(alpha: 0.66),
         ),
       ),
       child: Column(
@@ -411,8 +411,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               fontSize: 12,
               fontWeight: FontWeight.w700,
               color: isDark
-                  ? Colors.white.withOpacity(0.62)
-                  : const Color(0xFF7C2D12).withOpacity(0.72),
+                  ? Colors.white.withValues(alpha: 0.62)
+                  : const Color(0xFF7C2D12).withValues(alpha: 0.72),
             ),
           ),
         ],
@@ -425,11 +425,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFFF97316).withOpacity(0.16)
+            ? const Color(0xFFF97316).withValues(alpha: 0.16)
             : const Color(0xFFFFEDD5),
         borderRadius: BorderRadius.circular(99),
         border: Border.all(
-          color: const Color(0xFFF97316).withOpacity(isDark ? 0.24 : 0.28),
+          color: const Color(0xFFF97316).withValues(alpha: isDark ? 0.24 : 0.28),
         ),
       ),
       child: Row(
@@ -493,7 +493,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       values: radarValues,
                       labels: radarLabels,
                       strokeColor: const Color(0xFFF97316),
-                      fillColor: const Color(0xFFF97316).withOpacity(0.18),
+                      fillColor: const Color(0xFFF97316).withValues(alpha: 0.18),
                     ),
                   ),
                 ),
@@ -539,7 +539,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 4),
                 child: Card(
                   color: isUnlocked
-                      ? Colors.amber.shade50.withOpacity(0.6)
+                      ? Colors.amber.shade50.withValues(alpha: 0.6)
                       : Colors.grey.shade100,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(24),
@@ -914,7 +914,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                   leading: CircleAvatar(
                     backgroundColor:
-                        _getActivityColor(activity.type).withOpacity(0.15),
+                        _getActivityColor(activity.type).withValues(alpha: 0.15),
                     radius: 20,
                     child: Icon(
                       _getActivityIcon(activity.type),
@@ -931,7 +931,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.1),
+                      color: Colors.grey.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
@@ -1444,7 +1444,7 @@ class RadarChartPainter extends CustomPainter {
     final radius = size.width / 2 * 0.7;
 
     final Paint webPaint = Paint()
-      ..color = Colors.grey.withOpacity(0.2)
+      ..color = Colors.grey.withValues(alpha: 0.2)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.0;
 
@@ -1553,7 +1553,7 @@ class _StatCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -1564,7 +1564,7 @@ class _StatCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(14),
             ),
             child: Icon(icon, color: color, size: 24),
@@ -1616,7 +1616,7 @@ class _ProgressItem extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(icon, color: color, size: 22),
@@ -1650,7 +1650,7 @@ class _ProgressItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(6),
                 child: LinearProgressIndicator(
                   value: progress.clamp(0.0, 1.0),
-                  backgroundColor: color.withOpacity(0.15),
+                  backgroundColor: color.withValues(alpha: 0.15),
                   valueColor: AlwaysStoppedAnimation<Color>(color),
                   minHeight: 8,
                 ),
