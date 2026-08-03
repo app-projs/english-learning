@@ -30,7 +30,7 @@ class DatabaseService {
 
     final db = await openDatabase(
       path,
-      version: 13,
+      version: 14,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -188,6 +188,22 @@ class DatabaseService {
       )
     ''');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
+
+    // 离线字典表 (Version 14)
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS dictionary (
+        id TEXT PRIMARY KEY,
+        word TEXT UNIQUE NOT NULL,
+        phonetic TEXT,
+        chinese TEXT NOT NULL,
+        pos TEXT,
+        example TEXT,
+        example_translation TEXT,
+        source TEXT,
+        updated_at INTEGER
+      )
+    ''');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
   }
 
   static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
@@ -215,6 +231,23 @@ class DatabaseService {
         )
       ''');
       await db.execute('CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
+    }
+    // Version 14: 新增离线字典表
+    if (oldVersion < 14) {
+      await db.execute('''
+        CREATE TABLE IF NOT EXISTS dictionary (
+          id TEXT PRIMARY KEY,
+          word TEXT UNIQUE NOT NULL,
+          phonetic TEXT,
+          chinese TEXT NOT NULL,
+          pos TEXT,
+          example TEXT,
+          example_translation TEXT,
+          source TEXT,
+          updated_at INTEGER
+        )
+      ''');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
     }
   }
 
@@ -533,6 +566,40 @@ class DatabaseService {
     }).toList();
   }
 
+  // Dictionary Table Methods (Version 14)
+  Future<Map<String, dynamic>?> searchDictionaryWord(String word) async {
+    final lower = word.toLowerCase().trim();
+    final results = await _database?.query(
+      'dictionary',
+      where: 'word = ?',
+      whereArgs: [lower],
+      limit: 1,
+    ) ?? [];
+    return results.isNotEmpty ? Map<String, dynamic>.from(results.first) : null;
+  }
+
+  Future<void> insertDictionaryWord(Map<String, dynamic> row) async {
+    await _database?.insert(
+      'dictionary',
+      row,
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<void> bulkInsertDictionaryWords(List<Map<String, dynamic>> rows) async {
+    if (_database == null || rows.isEmpty) return;
+    final batch = _database!.batch();
+    for (final row in rows) {
+      batch.insert('dictionary', row, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    await batch.commit(noResult: true);
+  }
+
+  Future<int> getDictionaryCount() async {
+    final res = await _database?.rawQuery('SELECT COUNT(*) as count FROM dictionary') ?? [];
+    return res.isNotEmpty ? (res.first['count'] as int? ?? 0) : 0;
+  }
+
   // Clear all data
   Future<void> clearAll() async {
     await _database?.delete('words');
@@ -544,6 +611,7 @@ class DatabaseService {
     await _database?.delete('reading_history');
     await _database?.delete('phonetics');
     await _database?.delete('word_roots');
+    await _database?.delete('dictionary');
   }
 
   Future<void> close() async {

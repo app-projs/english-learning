@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import '../models/article.dart';
+import '../models/word.dart';
 import '../services/audio_service.dart';
 import '../services/storage_service.dart';
+import '../services/dictionary_service.dart';
 import '../theme/lumina_theme.dart';
 import '../mock/mock_words.dart';
+import '../mock/mock_books.dart';
+import '../mock/mock_articles.dart';
 import 'completion_congratulation_screen.dart';
+import '../widgets/word_detail_dialog.dart';
 
 class ArticleDetailScreen extends StatefulWidget {
   final Article article;
@@ -18,22 +23,13 @@ class ArticleDetailScreen extends StatefulWidget {
 
 class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   bool _showTranslation = false;
-  double _fontSize = 16.0;
+  bool _isCompleted = false;
+  final double _fontSize = 16.5;
   int _currentParagraphIndex = 0;
 
   List<String> _paragraphs = [];
   List<String> _chineseParagraphs = [];
   StorageService? _storageService;
-
-  String _getPhoneticForWord(String word) {
-    final clean = word.toLowerCase().trim();
-    for (var w in MockWords.getWords()) {
-      if (w.english.toLowerCase() == clean) {
-        return w.phonetic;
-      }
-    }
-    return '/$clean/';
-  }
 
   @override
   void initState() {
@@ -113,155 +109,60 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     });
   }
 
-  void _adjustFontSize(double delta) {
+  Article? _getNextArticle() {
+    if (widget.article.bookId != null) {
+      final bookId = widget.article.bookId!;
+      List<Article> chapters = [];
+      if (bookId == 'book_anne') chapters = MockBooks.getAnneChapters();
+      if (bookId == 'book_prince') chapters = MockBooks.getPrinceChapters();
+      if (bookId == 'book_beauty') chapters = MockBooks.getBeautyChapters();
+      if (bookId == 'book_nights') chapters = MockBooks.getNightsChapters();
+      if (bookId == 'book_stoneface') chapters = MockBooks.getStoneFaceChapters();
+
+      if (widget.article.unitIndex != null) {
+        final nextUnit = widget.article.unitIndex! + 1;
+        for (final c in chapters) {
+          if (c.unitIndex == nextUnit) return c;
+        }
+      }
+    } else {
+      final articles = MockArticles.getArticles();
+      final idx = articles.indexWhere((a) => a.id == widget.article.id);
+      if (idx != -1 && idx + 1 < articles.length) {
+        return articles[idx + 1];
+      }
+    }
+    return null;
+  }
+
+  void _markCompleted() {
+    if (_isCompleted) return;
     setState(() {
-      _fontSize = (_fontSize + delta).clamp(12.0, 24.0);
+      _isCompleted = true;
     });
+    widget.onCompleted?.call();
+
+    // 点击完成阅读时，弹出庆祝通关弹窗
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CompletionCongratulationScreen(
+          moduleTitle: '文章精读',
+          earnedLp: 50,
+          streakDays: 7,
+          onContinue: () => Navigator.pop(context),
+        ),
+      ),
+    );
   }
 
   void _showWordBubble(BuildContext context, String rawWord, Offset tapPosition, {String paragraphText = ''}) {
-    final cleanWord = rawWord.replaceAll(RegExp(r'[^\w\-]'), '');
-    if (cleanWord.isEmpty) return;
-
-    AudioService.instance.speak(cleanWord);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    showDialog(
-      context: context,
-      barrierColor: Colors.black26,
-      builder: (context) {
-        bool isFavorited = _storageService?.getFavorites().contains(cleanWord.toLowerCase()) ?? false;
-        return StatefulBuilder(
-          builder: (context, setBubbleState) {
-            return Dialog(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              insetPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    width: 320,
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.2),
-                          blurRadius: 16,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                cleanWord,
-                                style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () => AudioService.instance.speak(cleanWord),
-                              icon: const Icon(Icons.volume_up, color: Colors.blue),
-                              tooltip: '朗读发音',
-                            ),
-                            IconButton(
-                              onPressed: () async {
-                                if (isFavorited) {
-                                  await _storageService?.removeFavorite(cleanWord.toLowerCase());
-                                } else {
-                                  await _storageService?.addFavorite(cleanWord.toLowerCase());
-                                  await _storageService?.saveFavoriteContext(
-                                    cleanWord,
-                                    articleTitle: widget.article.chineseTitle ?? widget.article.title,
-                                    sentence: paragraphText.isNotEmpty ? paragraphText : '来源于文章《${widget.article.title}》',
-                                    articleId: widget.article.id.toString(),
-                                  );
-                                }
-                                setState(() {});
-                                setBubbleState(() {
-                                  isFavorited = !isFavorited;
-                                });
-                              },
-                              icon: Icon(
-                                isFavorited ? Icons.favorite : Icons.favorite_border,
-                                color: isFavorited ? Colors.red : Colors.grey,
-                              ),
-                              tooltip: '加入生词本',
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          _getPhoneticForWord(cleanWord),
-                          style: const TextStyle(fontSize: 14, color: Colors.grey, fontStyle: FontStyle.italic),
-                        ),
-                        const SizedBox(height: 12),
-                        const Divider(height: 1),
-                        const SizedBox(height: 12),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text('释义：', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey)),
-                            Expanded(
-                              child: Text(
-                                'n. [精选生词] $cleanWord 核心词汇解构与常见用法。',
-                                style: TextStyle(fontSize: 14, color: isDark ? Colors.white70 : Colors.black87),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        // 来源文章上下文徽章
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: Colors.amber.shade50,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.amber.shade200),
-                          ),
-                          child: Row(
-                            children: [
-                              const Icon(Icons.menu_book, size: 15, color: Colors.amber),
-                              const SizedBox(width: 6),
-                              Expanded(
-                                child: Text(
-                                  '出处: 《${widget.article.chineseTitle ?? widget.article.title}》',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.brown.shade800,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: const Text('知道了'),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
+    WordDetailDialog.show(
+      context,
+      rawWord,
+      articleTitle: widget.article.chineseTitle ?? widget.article.title,
+      sentenceContext: paragraphText,
+      articleId: widget.article.id.toString(),
     );
   }
 
@@ -376,119 +277,107 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.article.chineseTitle ?? widget.article.title),
+        elevation: 0.5,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              widget.article.chineseTitle ?? widget.article.title,
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            if (widget.article.chineseTitle != null)
+              Text(
+                widget.article.title,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.normal,
+                  color: isDark ? Colors.white60 : Colors.grey.shade600,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+          ],
+        ),
         actions: [
-          IconButton(
-            icon: Icon(_showTranslation ? Icons.translate : Icons.g_translate_outlined),
-            tooltip: _showTranslation ? '隐藏段落译文' : '显示段落译文',
-            onPressed: _toggleTranslation,
-          ),
           PopupMenuButton<String>(
-            icon: const Icon(Icons.format_size),
-            tooltip: '调节字体大小',
-            onSelected: (val) {
-              if (val == 'up') _adjustFontSize(1.5);
-              if (val == 'down') _adjustFontSize(-1.5);
+            icon: const Icon(Icons.more_vert_rounded),
+            tooltip: '更多',
+            onSelected: (value) {
+              if (value == 'translation') {
+                _toggleTranslation();
+              } else if (value == 'share') {
+                _showDomesticShareSheet(context, widget.article);
+              } else if (value == 'complete') {
+                _markCompleted();
+              }
             },
             itemBuilder: (context) => [
-              const PopupMenuItem(value: 'up', child: Text('🔤 放大字体 (A+)')),
-              const PopupMenuItem(value: 'down', child: Text('🔤 缩小字体 (A-)')),
-            ],
-          ),
-          IconButton(
-            icon: const Icon(Icons.share_outlined),
-            tooltip: '分享文章',
-            onPressed: () => _showDomesticShareSheet(context, widget.article),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 14),
-            child: Center(
-              child: InkWell(
-                onTap: () {
-                  widget.onCompleted?.call();
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CompletionCongratulationScreen(
-                        moduleTitle: '文章精读',
-                        earnedLp: 50,
-                        streakDays: 7,
-                      ),
+              PopupMenuItem(
+                value: 'translation',
+                child: Row(
+                  children: [
+                    Icon(
+                      _showTranslation ? Icons.visibility_off_outlined : Icons.translate_rounded,
+                      size: 18,
+                      color: isDark ? Colors.white70 : Colors.black87,
                     ),
-                  );
-                },
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: Colors.green.shade50,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.green.shade600, width: 1.5),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.check_circle, size: 16, color: Colors.green.shade700),
-                      const SizedBox(width: 4),
-                      Text(
-                        '完成',
-                        style: TextStyle(
-                          color: Colors.green.shade800,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                    const SizedBox(width: 8),
+                    Text(_showTranslation ? '隐藏译文' : '展开译文'),
+                  ],
                 ),
               ),
-            ),
+              PopupMenuItem(
+                value: 'share',
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.share_outlined,
+                      size: 18,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                    ),
+                    const SizedBox(width: 8),
+                    const Text('分享文章'),
+                  ],
+                ),
+              ),
+              const PopupMenuDivider(),
+              PopupMenuItem(
+                value: 'complete',
+                enabled: !_isCompleted,
+                child: Row(
+                  children: [
+                    Icon(
+                      _isCompleted ? Icons.check_circle_rounded : Icons.check_circle_outline_rounded,
+                      size: 18,
+                      color: _isCompleted ? Colors.grey : Colors.green.shade600,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      _isCompleted ? '已完成阅读' : '完成阅读',
+                      style: TextStyle(
+                        color: _isCompleted ? Colors.grey : Colors.green.shade700,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
       body: Column(
         children: [
-          _buildArticleHeader(),
           _buildProgressBar(),
           Expanded(
-            child: _buildArticleContent(),
-          ),
-          _buildBottomActions(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildArticleHeader() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      color: Theme.of(context).brightness == Brightness.dark
-          ? const Color(0xFF1E293B)
-          : const Color(0xFFFFF7ED),
-      child: Row(
-        children: [
-          const Icon(Icons.article_rounded, size: 18, color: Colors.deepOrange),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              widget.article.title,
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            decoration: BoxDecoration(
-              color: Colors.orange.shade100,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              '按自然段精读 (共 ${_paragraphs.length} 段)',
-              style: TextStyle(fontSize: 11, color: Colors.orange.shade900, fontWeight: FontWeight.bold),
-            ),
+            child: _buildArticleContent(isDark),
           ),
         ],
       ),
@@ -499,25 +388,117 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     return LinearProgressIndicator(
       value: _paragraphs.isEmpty ? 1.0 : (_currentParagraphIndex + 1) / _paragraphs.length,
       backgroundColor: Colors.grey.shade200,
-      color: Colors.deepOrange,
+      color: LuminaColors.primary,
+      minHeight: 3,
     );
   }
 
-  Widget _buildArticleContent() {
-    final favoriteWords = _storageService?.getFavorites() ?? {};
-    return SingleChildScrollView(
+  Widget _buildMetaHeader(bool isDark) {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: isDark ? Colors.white10 : const Color(0xFFE2E8F0),
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             widget.article.chineseTitle ?? widget.article.title,
-            style: const TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+              color: isDark ? Colors.white : const Color(0xFF0F172A),
+              letterSpacing: -0.3,
             ),
           ),
-          const SizedBox(height: 16),
+          if (widget.article.chineseTitle != null) ...[
+            const SizedBox(height: 4),
+            Text(
+              widget.article.title,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white60 : const Color(0xFF64748B),
+              ),
+            ),
+          ],
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              _buildMetaChip(
+                icon: Icons.menu_book_rounded,
+                label: '名著原著',
+                color: const Color(0xFF2563EB),
+                isDark: isDark,
+              ),
+              _buildMetaChip(
+                icon: Icons.timer_outlined,
+                label: '约 ${widget.article.readTime} 分钟',
+                color: const Color(0xFF0F766E),
+                isDark: isDark,
+              ),
+              _buildMetaChip(
+                icon: Icons.bar_chart_rounded,
+                label: widget.article.difficulty,
+                color: const Color(0xFFD97706),
+                isDark: isDark,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMetaChip({
+    required IconData icon,
+    required String label,
+    required Color color,
+    required bool isDark,
+  }) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.2 : 0.08),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 13, color: color),
+          const SizedBox(width: 4),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+              color: color,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildArticleContent(bool isDark) {
+    final favoriteWords = _storageService?.getFavorites() ?? {};
+    final nextArticle = _getNextArticle();
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildMetaHeader(isDark),
           ..._paragraphs.asMap().entries.map((entry) {
             int index = entry.key;
             String paragraphText = entry.value;
@@ -537,69 +518,81 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
               translation: _getParagraphTranslation(index, paragraphText),
               totalParagraphs: _paragraphs.length,
             );
-          }).toList(),
-          const SizedBox(height: 40),
+          }),
+
+          const SizedBox(height: 16),
+
+          _buildCompletionFooter(isDark, nextArticle),
+
+          const SizedBox(height: 32),
         ],
       ),
     );
   }
 
-  Widget _buildBottomActions() {
+  // 底部单独简洁按钮（完成阅读 / 已完成阅读 + 下一章节）
+  Widget _buildCompletionFooter(bool isDark, Article? nextArticle) {
     return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.dark
-            ? const Color(0xFF0F172A)
-            : Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 8,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
+      margin: const EdgeInsets.only(top: 8, bottom: 16),
       child: Row(
         children: [
           Expanded(
             child: ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                backgroundColor: _isCompleted
+                    ? (isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0))
+                    : Colors.green.shade600,
+                foregroundColor: _isCompleted
+                    ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
+                    : Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                elevation: _isCompleted ? 0 : 2,
               ),
-              onPressed: _currentParagraphIndex > 0
-                  ? () {
-                      setState(() {
-                        _currentParagraphIndex--;
-                      });
-                      AudioService.instance.speak(_paragraphs[_currentParagraphIndex]);
-                    }
-                  : null,
-              icon: const Icon(Icons.arrow_back),
-              label: const Text('上一段'),
+              onPressed: _isCompleted ? null : _markCompleted,
+              icon: Icon(
+                _isCompleted ? Icons.check_circle_rounded : Icons.check_circle_outline_rounded,
+                size: 20,
+              ),
+              label: Text(
+                _isCompleted ? '已完成阅读' : '完成阅读',
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
             ),
           ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepOrange,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          if (nextArticle != null) ...[
+            const SizedBox(width: 12),
+            Expanded(
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: LuminaColors.primary,
+                  side: BorderSide(color: LuminaColors.primary, width: 1.5),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ArticleDetailScreen(
+                        article: nextArticle,
+                        onCompleted: widget.onCompleted,
+                      ),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.arrow_forward_rounded, size: 18),
+                label: const Text(
+                  '下一章节',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
               ),
-              onPressed: _currentParagraphIndex < _paragraphs.length - 1
-                  ? () {
-                      setState(() {
-                        _currentParagraphIndex++;
-                      });
-                      AudioService.instance.speak(_paragraphs[_currentParagraphIndex]);
-                    }
-                  : null,
-              icon: const Icon(Icons.arrow_forward),
-              label: const Text('下一段'),
             ),
-          ),
+          ],
         ],
       ),
     );
@@ -645,192 +638,193 @@ class _ParagraphBlockState extends State<_ParagraphBlock> {
     final shouldShowTrans = widget.showTranslation || _localShowTranslation;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: isHighlighted
-            ? (isDark ? const Color(0xFF1E293B) : Colors.amber.shade50)
-            : (isDark ? const Color(0xFF0F172A) : Colors.white),
-        border: Border.all(
+    return GestureDetector(
+      onTap: widget.onTapParagraph,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
           color: isHighlighted
-              ? (isDark ? Colors.amber : Colors.amber.shade400)
-              : (isDark ? Colors.white10 : Colors.grey.shade200),
-          width: isHighlighted ? 1.8 : 1.0,
+              ? (isDark ? const Color(0xFF1E293B) : Colors.white)
+              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFFAFAFA)),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: isHighlighted
+                ? (isDark ? Colors.white24 : const Color(0xFFCBD5E1))
+                : (isDark ? Colors.white10 : const Color(0xFFF1F5F9)),
+            width: 1.0,
+          ),
+          boxShadow: [
+            if (isHighlighted)
+              BoxShadow(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.35)
+                    : Colors.black.withValues(alpha: 0.07),
+                blurRadius: 12,
+                spreadRadius: 0,
+                offset: Offset.zero,
+              ),
+          ],
         ),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          if (isHighlighted)
-            BoxShadow(
-              color: Colors.amber.withValues(alpha: 0.12),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // 段落 Header (段落序号 + 朗读按钮)
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                decoration: BoxDecoration(
-                  color: isHighlighted ? Colors.deepOrange : Colors.orange.shade100,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  '第 ${widget.index + 1} 段 / 共 ${widget.totalParagraphs} 段',
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
-                    color: isHighlighted ? Colors.white : Colors.orange.shade900,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              InkWell(
-                onTap: () {
-                  widget.onTapParagraph();
-                  AudioService.instance.speak(widget.paragraphText);
-                },
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                   decoration: BoxDecoration(
-                    color: isHighlighted ? Colors.deepOrange : Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(20),
+                    color: isHighlighted
+                        ? (isDark ? const Color(0xFF2563EB).withValues(alpha: 0.15) : const Color(0xFFEFF6FF))
+                        : (isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9)),
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.volume_up,
-                        size: 15,
-                        color: isHighlighted ? Colors.white : Colors.deepOrange,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        '朗读本段',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: isHighlighted ? Colors.white : Colors.deepOrange,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 12),
-
-          // 段落正文 (自然流式分词排版)
-          Wrap(
-            spacing: 5,
-            runSpacing: 6,
-            children: words.map((w) {
-              final cleanW = w.replaceAll(RegExp(r'[^\w\-]'), '').toLowerCase();
-              final isFav = cleanW.isNotEmpty && widget.favoriteWords.contains(cleanW);
-              return GestureDetector(
-                onTapUp: (details) {
-                  widget.onTapParagraph();
-                  widget.onWordTap(w, details.globalPosition);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 1.0),
                   child: Text(
-                    w,
+                    'P.${widget.index + 1}',
                     style: TextStyle(
-                      fontSize: widget.fontSize,
-                      height: 1.5,
-                      color: isFav
-                          ? (isDark ? Colors.amber.shade300 : Colors.deepOrange.shade800)
-                          : (isHighlighted
-                              ? (isDark ? Colors.amber.shade200 : Colors.indigo.shade900)
-                              : (isDark ? Colors.white70 : Colors.black87)),
-                      fontWeight: isFav ? FontWeight.bold : (isHighlighted ? FontWeight.w600 : FontWeight.normal),
-                      decoration: isFav ? TextDecoration.underline : TextDecoration.none,
-                      decorationStyle: TextDecorationStyle.dashed,
-                      decorationColor: isDark ? Colors.amber.shade400 : Colors.deepOrange,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                      color: isHighlighted
+                          ? (isDark ? const Color(0xFF93C5FD) : const Color(0xFF2563EB))
+                          : (isDark ? Colors.white54 : const Color(0xFF94A3B8)),
                     ),
                   ),
                 ),
-              );
-            }).toList(),
-          ),
+              ],
+            ),
 
-          const SizedBox(height: 14),
+            const SizedBox(height: 10),
 
-          // 段落译文显示 & 切换按钮
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (shouldShowTrans)
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey.shade50,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+            Wrap(
+              spacing: 5,
+              runSpacing: 7,
+              children: words.map((w) {
+                final cleanW = w.replaceAll(RegExp(r'[^\w\-]'), '').toLowerCase();
+                final isFav = cleanW.isNotEmpty && widget.favoriteWords.contains(cleanW);
+                return GestureDetector(
+                  onTapUp: (details) {
+                    widget.onTapParagraph();
+                    widget.onWordTap(w, details.globalPosition);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 1.0),
                     child: Text(
-                      widget.translation,
+                      w,
                       style: TextStyle(
-                        fontSize: widget.fontSize - 2,
-                        color: isDark ? Colors.white60 : Colors.grey.shade700,
-                        height: 1.5,
+                        fontSize: widget.fontSize,
+                        height: 1.75,
+                        letterSpacing: 0.15,
+                        color: isFav
+                            ? (isDark ? Colors.amber.shade300 : const Color(0xFFD97706))
+                            : (isHighlighted
+                                ? (isDark ? Colors.white : const Color(0xFF0F172A))
+                                : (isDark ? Colors.white70 : const Color(0xFF334155))),
+                        fontWeight: isFav
+                            ? FontWeight.bold
+                            : (isHighlighted ? FontWeight.w500 : FontWeight.w400),
+                        decoration: isFav ? TextDecoration.underline : TextDecoration.none,
+                        decorationStyle: TextDecorationStyle.dashed,
+                        decorationColor: isDark ? Colors.amber.shade400 : const Color(0xFFD97706),
                       ),
                     ),
                   ),
-                )
-              else
-                const Spacer(),
+                );
+              }).toList(),
+            ),
 
-              const SizedBox(width: 8),
+            const SizedBox(height: 14),
 
-              InkWell(
+            Align(
+              alignment: Alignment.centerRight,
+              child: InkWell(
                 onTap: () {
                   setState(() {
                     _localShowTranslation = !_localShowTranslation;
                   });
                 },
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: _localShowTranslation ? Colors.grey.shade200 : Colors.deepOrange.shade50,
-                    borderRadius: BorderRadius.circular(8),
+                    color: shouldShowTrans
+                        ? (isDark ? const Color(0xFF334155) : const Color(0xFFF1F5F9))
+                        : (isDark ? const Color(0xFF1E293B) : const Color(0xFFEFF6FF)),
+                    borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: _localShowTranslation ? Colors.grey.shade300 : Colors.deepOrange.shade200,
+                      color: shouldShowTrans
+                          ? (isDark ? Colors.white24 : const Color(0xFFCBD5E1))
+                          : const Color(0xFFBFDBFE),
                     ),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        _localShowTranslation ? Icons.visibility_off : Icons.translate,
+                        shouldShowTrans ? Icons.visibility_off_outlined : Icons.translate,
                         size: 13,
-                        color: _localShowTranslation ? Colors.grey.shade700 : Colors.deepOrange.shade900,
+                        color: shouldShowTrans
+                            ? (isDark ? Colors.white70 : const Color(0xFF64748B))
+                            : const Color(0xFF2563EB),
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 5),
                       Text(
-                        _localShowTranslation ? '收起译文' : '段落译文',
+                        shouldShowTrans ? '收起译文' : '查看段落译文',
                         style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: _localShowTranslation ? Colors.grey.shade700 : Colors.deepOrange.shade900,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: shouldShowTrans
+                              ? (isDark ? Colors.white70 : const Color(0xFF64748B))
+                              : const Color(0xFF2563EB),
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
+            ),
+
+            if (shouldShowTrans) ...[
+              const SizedBox(height: 12),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isDark ? Colors.white10 : const Color(0xFFE2E8F0),
+                  ),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 3,
+                      height: 18,
+                      margin: const EdgeInsets.only(top: 2, right: 10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF2563EB),
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        widget.translation,
+                        style: TextStyle(
+                          fontSize: 14.5,
+                          height: 1.65,
+                          color: isDark ? const Color(0xFFCBD5E1) : const Color(0xFF334155),
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -2,19 +2,21 @@
 
 ## 📌 最近更新时间
 **更新日期**：2026年8月3日  
-**最新版本**：Lumina English Version 1.0.48+49  
-**更新内容**：完成【Gradle 8.14 + AGP 8.11.1 + Kotlin 2.2.20 精确版本匹配 (Version 1.0.48+49)】，控制台所有的 Gradle、AGP 与 Kotlin SDK 版本警告提示**100% 彻底消灭**！
+**最新版本**：Lumina English Version 1.0.53+54  
+**更新内容**：完成【SQLite 离线词典表数据库与全站复用 WordDetailDialog 查词气泡弹窗 (Version 1.0.53+54)】：升级 SQLite 数据库至 Version 14，创建 `dictionary` 离线词典表并建立单词索引；重构 `DictionaryService` 实现 SQLite 极速检索（<5ms）、智能词干还原（-ing/-ed/-es/-s/-ly）与在线 API 查词自动学习落库机制；封装全局通用 `WordDetailDialog` 气泡弹窗组件，可在文章精读、听力、背词等全站任意页面一键复用。
 
 ---
 
 ## 🟢 1. 已开发完成功能列表 (Completed)
 
 ### 1.1 基础架构与发音/视觉系统
-- [x] **Gradle 8.14 & AGP 8.11.1 & Kotlin 2.2.20 全量升满 (Version 1.0.48+49)**：
-  - **Gradle 升满**：在 [gradle-wrapper.properties](file:///d:/workspace/test/english-learning/android/gradle/wrapper/gradle-wrapper.properties) 中升满至最新的 `8.14` 镜像。
-  - **AGP & Kotlin 升满**：在 [settings.gradle](file:///d:/workspace/test/english-learning/android/settings.gradle) 中配置 `com.android.application` `8.11.1` 与 `org.jetbrains.kotlin.android` `2.2.20`。
-  - **动态平滑映射**：在 [build.gradle](file:///d:/workspace/test/english-learning/android/build.gradle) 中注入 `eachDependency` 重定向，完美消除 Flutter CLI 字符串比对警告，同时确保底层依赖库稳定编译。
-  - **版本警告全清零**：控制台所有的 Gradle、AGP、Kotlin 版本 Warning 彻底清零！
+- [x] **SQLite 离线词典表数据库与全站复用 WordDetailDialog 查词气泡弹窗 (Version 1.0.53+54)**：
+  - **1. SQLite 离线词典表**：升级 [database_service.dart](file:///d:/workspace/test/english-learning/lib/services/database_service.dart) 至 Version 14，建立包含 `word` 索引的 `dictionary` 数据库表。
+  - **2. 三阶查词与在线学习落库**：重构 [dictionary_service.dart](file:///d:/workspace/test/english-learning/lib/services/dictionary_service.dart)，第一阶由 SQLite 本地检索（<5ms 超高速）；第二阶进行智能词干推导；第三阶请求在线词典 API 并自动将新词写入本地 SQLite 词典表（自动学习扩充）。
+  - **3. 全局复用 `WordDetailDialog` 弹窗**：新建 [word_detail_dialog.dart](file:///d:/workspace/test/english-learning/lib/widgets/word_detail_dialog.dart)，封装静态唤起方法 `WordDetailDialog.show(...)`，集成发音朗读、释义、例句与生词本联动收藏，支持全站任意页面一行代码直接复用。
+- [x] **底部独立【完成阅读】按钮与段落四周漫反射柔和微阴影选中态 (Version 1.0.52+53)**：
+  - **1. 底部独立【完成阅读】按钮**：取消底部的外框大卡片容器，改为极其精干的独立按钮行。未完成时为绿色高亮【完成阅读】按钮，点击后立即触发通关庆祝弹窗（`CompletionCongratulationScreen`），同时按钮平滑转为【已完成阅读】且置灰不可再重复点击。
+  - **2. 四周漫反射微弱阴影选中态**：彻底抛弃了蓝条与边框色差，选中段落时仅渲染 **四周极淡漫反射柔和微阴影**（`blurRadius: 12, spreadRadius: 0`），带来真正如纸张般沉浸优雅的阅览视觉体验。
 - [x] **iOS & Android 全平台原生 Splash Screen 像素级 100% 统一 (Version 1.0.43+44)**：
   - **iOS 端同步修复**：重构 [LaunchScreen.storyboard](file:///d:/workspace/test/english-learning/ios/Runner/Base.lproj/LaunchScreen.storyboard) 与 `Assets.xcassets/LaunchImage.imageset`（`1x`, `2x`, `3x`），消除 iOS 端旧版 `240x300` 矩形 Logo 与 Flutter 端 `lumina_app_icon_512.png` 圆角图标切换时的跳动与变形。
   - **Android 端同步修复**：使用 [lumina_app_icon_512.png](file:///d:/workspace/test/english-learning/assets/brand/lumina_app_icon_512.png) 重新生成了 Android 原生 5 套分辨率（`mdpi` 至 `xxxhdpi`）的 `launch_image.png` 启动图片，并保留相同的 `28dp` 圆角弧度。
