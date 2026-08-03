@@ -2,14 +2,19 @@
 
 ## 📌 最近更新时间
 **更新日期**：2026年8月3日  
-**最新版本**：Lumina English Version 1.0.53+54  
-**更新内容**：完成【SQLite 离线词典表数据库与全站复用 WordDetailDialog 查词气泡弹窗 (Version 1.0.53+54)】：升级 SQLite 数据库至 Version 14，创建 `dictionary` 离线词典表并建立单词索引；重构 `DictionaryService` 实现 SQLite 极速检索（<5ms）、智能词干还原（-ing/-ed/-es/-s/-ly）与在线 API 查词自动学习落库机制；封装全局通用 `WordDetailDialog` 气泡弹窗组件，可在文章精读、听力、背词等全站任意页面一键复用。
+**最新版本**：Lumina English Version 1.0.54+55  
+**更新内容**：完成【AI 智能练习模块与底部 Dock 平直顶边框改造 (Version 1.0.54+55)】：完成 PRD 需求文档制定；彻底移除 App 底部 Dock 上半部分的圆角，改为直角平直分隔线；在底部 Dock 最中间（Index = 2）新增 AI 练习模块，支持 AI 场景角色扮演、实时语法评估打分（0-100分）、Native 地道句型改写与 AI Hints 启发提示。
 
 ---
 
 ## 🟢 1. 已开发完成功能列表 (Completed)
 
 ### 1.1 基础架构与发音/视觉系统
+- [x] **AI 智能练习模块与底部 Dock 平直顶边框改造 (Version 1.0.54+55)**：
+  - **1. PRD 规范文档**：完成 [ai_practice_prd.md](file:///d:/workspace/test/english-learning/docs/prd/ai_practice_prd.md) 制定。
+  - **2. 底部 Dock 去圆角直角平边**：重构 [lumina_home_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/lumina_home_screen.dart)，移除 `BorderRadius.vertical(top: Radius.circular(24))`，采用平直直角顶部边框线。
+  - **3. 最中间 AI 练习入口**：底部 Dock 扩展为 5 栏，正中间（Index = 2）放置专属居中高亮的 AI 练习按钮，调起 [ai_practice_tab.dart](file:///d:/workspace/test/english-learning/lib/screens/ai_practice_tab.dart)。
+  - **4. AI 场景对话与实时诊断**：新建 [ai_chat_screen.dart](file:///d:/workspace/test/english-learning/lib/screens/ai_chat_screen.dart) 和 [ai_practice_service.dart](file:///d:/workspace/test/english-learning/lib/services/ai_practice_service.dart)，升级 SQLite 数据库至 Version 15 支持对话历史持久化、语法分数诊断与 Native 地道表达改写。
 - [x] **SQLite 离线词典表数据库与全站复用 WordDetailDialog 查词气泡弹窗 (Version 1.0.53+54)**：
   - **1. SQLite 离线词典表**：升级 [database_service.dart](file:///d:/workspace/test/english-learning/lib/services/database_service.dart) 至 Version 14，建立包含 `word` 索引的 `dictionary` 数据库表。
   - **2. 三阶查词与在线学习落库**：重构 [dictionary_service.dart](file:///d:/workspace/test/english-learning/lib/services/dictionary_service.dart)，第一阶由 SQLite 本地检索（<5ms 超高速）；第二阶进行智能词干推导；第三阶请求在线词典 API 并自动将新词写入本地 SQLite 词典表（自动学习扩充）。

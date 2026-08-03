@@ -30,7 +30,7 @@ class DatabaseService {
 
     final db = await openDatabase(
       path,
-      version: 14,
+      version: 15,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -204,6 +204,22 @@ class DatabaseService {
       )
     ''');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
+
+    // AI 对话历史记录表 (Version 15)
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS ai_chat_history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        scenario_id TEXT NOT NULL,
+        sender TEXT NOT NULL,
+        message TEXT NOT NULL,
+        translation TEXT,
+        grammar_score INTEGER,
+        corrections TEXT,
+        native_suggestion TEXT,
+        created_at INTEGER
+      )
+    ''');
+    await db.execute('CREATE INDEX IF NOT EXISTS idx_ai_chat_scenario ON ai_chat_history(scenario_id);');
   }
 
   static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
@@ -248,6 +264,23 @@ class DatabaseService {
         )
       ''');
       await db.execute('CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
+    }
+    // Version 15: 新增 AI 对话历史表
+    if (oldVersion < 15) {
+      await db.execute('''
+        CREATE TABLE IF NOT EXISTS ai_chat_history (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          scenario_id TEXT NOT NULL,
+          sender TEXT NOT NULL,
+          message TEXT NOT NULL,
+          translation TEXT,
+          grammar_score INTEGER,
+          corrections TEXT,
+          native_suggestion TEXT,
+          created_at INTEGER
+        )
+      ''');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_ai_chat_scenario ON ai_chat_history(scenario_id);');
     }
   }
 
@@ -600,6 +633,29 @@ class DatabaseService {
     return res.isNotEmpty ? (res.first['count'] as int? ?? 0) : 0;
   }
 
+  // AI Chat History SQL Methods (Version 15)
+  Future<List<Map<String, dynamic>>> getAiChatMessages(String scenarioId) async {
+    final results = await _database?.query(
+      'ai_chat_history',
+      where: 'scenario_id = ?',
+      whereArgs: [scenarioId],
+      orderBy: 'created_at ASC',
+    ) ?? [];
+    return results.map((row) => Map<String, dynamic>.from(row)).toList();
+  }
+
+  Future<int> insertAiChatMessage(Map<String, dynamic> row) async {
+    return await _database?.insert('ai_chat_history', row) ?? 0;
+  }
+
+  Future<void> clearAiChatHistory(String scenarioId) async {
+    await _database?.delete(
+      'ai_chat_history',
+      where: 'scenario_id = ?',
+      whereArgs: [scenarioId],
+    );
+  }
+
   // Clear all data
   Future<void> clearAll() async {
     await _database?.delete('words');
@@ -612,6 +668,7 @@ class DatabaseService {
     await _database?.delete('phonetics');
     await _database?.delete('word_roots');
     await _database?.delete('dictionary');
+    await _database?.delete('ai_chat_history');
   }
 
   Future<void> close() async {
