@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/article.dart';
-import '../models/word.dart';
 import '../services/audio_service.dart';
 import '../services/storage_service.dart';
-import '../services/dictionary_service.dart';
 import '../theme/lumina_theme.dart';
-import '../mock/mock_words.dart';
 import '../mock/mock_books.dart';
 import '../mock/mock_articles.dart';
 import 'completion_congratulation_screen.dart';
@@ -22,19 +19,20 @@ class ArticleDetailScreen extends StatefulWidget {
 }
 
 class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
-  bool _showTranslation = false;
+  bool _showAllTranslations = false;
   bool _isCompleted = false;
   final double _fontSize = 16.5;
-  int _currentParagraphIndex = 0;
+  int _activeSentenceIndex = 0;
 
-  List<String> _paragraphs = [];
-  List<String> _chineseParagraphs = [];
+  List<String> _sentences = [];
+  List<String> _chineseSentences = [];
+  final Map<int, bool> _activeSentenceTranslations = {};
   StorageService? _storageService;
 
   @override
   void initState() {
     super.initState();
-    _splitParagraphs();
+    _splitSentences();
     _initStorage();
   }
 
@@ -48,32 +46,25 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     _storageService = await StorageService.getInstance();
   }
 
-  void _splitParagraphs() {
-    // 优先按原文换行自然段切分
+  void _splitSentences() {
     final rawLines = widget.article.content
         .split(RegExp(r'\n+'))
         .where((p) => p.trim().isNotEmpty)
         .toList();
 
-    if (rawLines.length > 1) {
-      _paragraphs = rawLines;
-    } else {
-      // 若原文没有换行，按 2 句作为一个自然小片段 Chunk 组合
-      final sentences = widget.article.content
+    List<String> sList = [];
+    for (final line in rawLines) {
+      final inLineSentences = line
           .split(RegExp(r'(?<=[.!?])\s+'))
           .where((s) => s.trim().isNotEmpty)
           .toList();
-
-      final List<String> chunks = [];
-      for (int i = 0; i < sentences.length; i += 2) {
-        if (i + 1 < sentences.length) {
-          chunks.add('${sentences[i]} ${sentences[i + 1]}');
-        } else {
-          chunks.add(sentences[i]);
-        }
+      if (inLineSentences.isNotEmpty) {
+        sList.addAll(inLineSentences);
+      } else {
+        sList.add(line);
       }
-      _paragraphs = chunks.isEmpty ? [widget.article.content] : chunks;
     }
+    _sentences = sList.isEmpty ? [widget.article.content] : sList;
 
     if (widget.article.chineseContent != null &&
         widget.article.chineseContent!.isNotEmpty) {
@@ -82,30 +73,25 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
           .where((p) => p.trim().isNotEmpty)
           .toList();
 
-      if (zhLines.length > 1) {
-        _chineseParagraphs = zhLines;
-      } else {
-        final zhSentences = widget.article.chineseContent!
-            .split(RegExp(r'(?<=[。！？\n])\s*'))
+      List<String> zhList = [];
+      for (final line in zhLines) {
+        final inLineZh = line
+            .split(RegExp(r'(?<=[。！？])\s*'))
             .where((s) => s.trim().isNotEmpty)
             .toList();
-
-        final List<String> zhChunks = [];
-        for (int i = 0; i < zhSentences.length; i += 2) {
-          if (i + 1 < zhSentences.length) {
-            zhChunks.add('${zhSentences[i]} ${zhSentences[i + 1]}');
-          } else {
-            zhChunks.add(zhSentences[i]);
-          }
+        if (inLineZh.isNotEmpty) {
+          zhList.addAll(inLineZh);
+        } else {
+          zhList.add(line);
         }
-        _chineseParagraphs = zhChunks.isEmpty ? [widget.article.chineseContent!] : zhChunks;
       }
+      _chineseSentences = zhList.isEmpty ? [widget.article.chineseContent!] : zhList;
     }
   }
 
-  void _toggleTranslation() {
+  void _toggleAllTranslations() {
     setState(() {
-      _showTranslation = !_showTranslation;
+      _showAllTranslations = !_showAllTranslations;
     });
   }
 
@@ -115,6 +101,15 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
       List<Article> chapters = [];
       if (bookId == 'book_anne') chapters = MockBooks.getAnneChapters();
       if (bookId == 'book_prince') chapters = MockBooks.getPrinceChapters();
+      if (bookId == 'book_alice') chapters = MockBooks.getAliceChapters();
+      if (bookId == 'book_oz') chapters = MockBooks.getOzChapters();
+      if (bookId == 'book_treasure') chapters = MockBooks.getTreasureChapters();
+      if (bookId == 'book_sea') chapters = MockBooks.getSeaChapters();
+      if (bookId == 'book_gatsby') chapters = MockBooks.getGatsbyChapters();
+      if (bookId == 'book_sherlock') chapters = MockBooks.getSherlockChapters();
+      if (bookId == 'book_pride') chapters = MockBooks.getPrideChapters();
+      if (bookId == 'book_twocities') chapters = MockBooks.getTwoCitiesChapters();
+      if (bookId == 'book_jane') chapters = MockBooks.getJaneChapters();
       if (bookId == 'book_beauty') chapters = MockBooks.getBeautyChapters();
       if (bookId == 'book_nights') chapters = MockBooks.getNightsChapters();
       if (bookId == 'book_stoneface') chapters = MockBooks.getStoneFaceChapters();
@@ -142,7 +137,6 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     });
     widget.onCompleted?.call();
 
-    // 点击完成阅读时，弹出庆祝通关弹窗
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -156,21 +150,21 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     );
   }
 
-  void _showWordBubble(BuildContext context, String rawWord, Offset tapPosition, {String paragraphText = ''}) {
+  void _showWordBubble(BuildContext context, String rawWord, Offset tapPosition, {String sentenceContext = ''}) {
     WordDetailDialog.show(
       context,
       rawWord,
       articleTitle: widget.article.chineseTitle ?? widget.article.title,
-      sentenceContext: paragraphText,
+      sentenceContext: sentenceContext,
       articleId: widget.article.id.toString(),
     );
   }
 
-  String _getParagraphTranslation(int index, String paragraph) {
-    if (_chineseParagraphs.isNotEmpty && index < _chineseParagraphs.length) {
-      return _chineseParagraphs[index];
+  String _getSentenceTranslation(int index) {
+    if (_chineseSentences.isNotEmpty && index < _chineseSentences.length) {
+      return _chineseSentences[index];
     }
-    return '【段落译文参考】：结合上下文与段落大意进行沉浸式长文理解。';
+    return widget.article.chineseContent ?? '';
   }
 
   void _showDomesticShareSheet(BuildContext context, Article article) {
@@ -308,10 +302,10 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
         actions: [
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert_rounded),
-            tooltip: '更多',
+            tooltip: '更多选项',
             onSelected: (value) {
               if (value == 'translation') {
-                _toggleTranslation();
+                _toggleAllTranslations();
               } else if (value == 'share') {
                 _showDomesticShareSheet(context, widget.article);
               } else if (value == 'complete') {
@@ -324,12 +318,12 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                 child: Row(
                   children: [
                     Icon(
-                      _showTranslation ? Icons.visibility_off_outlined : Icons.translate_rounded,
+                      _showAllTranslations ? Icons.visibility_off_outlined : Icons.translate_rounded,
                       size: 18,
                       color: isDark ? Colors.white70 : Colors.black87,
                     ),
                     const SizedBox(width: 8),
-                    Text(_showTranslation ? '隐藏译文' : '展开译文'),
+                    Text(_showAllTranslations ? '隐藏全篇译文' : '展开全篇译文'),
                   ],
                 ),
               ),
@@ -386,7 +380,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   Widget _buildProgressBar() {
     return LinearProgressIndicator(
-      value: _paragraphs.isEmpty ? 1.0 : (_currentParagraphIndex + 1) / _paragraphs.length,
+      value: _sentences.isEmpty ? 1.0 : (_activeSentenceIndex + 1) / _sentences.length,
       backgroundColor: Colors.grey.shade200,
       color: LuminaColors.primary,
       minHeight: 3,
@@ -396,11 +390,11 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   Widget _buildMetaHeader(bool isDark) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isDark ? Colors.white10 : const Color(0xFFE2E8F0),
         ),
@@ -411,7 +405,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
           Text(
             widget.article.chineseTitle ?? widget.article.title,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: FontWeight.w800,
               color: isDark ? Colors.white : const Color(0xFF0F172A),
               letterSpacing: -0.3,
@@ -422,20 +416,20 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
             Text(
               widget.article.title,
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white60 : const Color(0xFF64748B),
               ),
             ),
           ],
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
               _buildMetaChip(
                 icon: Icons.menu_book_rounded,
-                label: '名著原著',
+                label: widget.article.category ?? '名著原著',
                 color: const Color(0xFF2563EB),
                 isDark: isDark,
               ),
@@ -468,13 +462,13 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.2 : 0.08),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 13, color: color),
+          Icon(icon, size: 12, color: color),
           const SizedBox(width: 4),
           Text(
             label,
@@ -494,338 +488,210 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     final nextArticle = _getNextArticle();
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildMetaHeader(isDark),
-          ..._paragraphs.asMap().entries.map((entry) {
+
+          // 呈现无方块、无 P-n 的纯天然排版
+          ..._sentences.asMap().entries.map((entry) {
             int index = entry.key;
-            String paragraphText = entry.value;
-            return _ParagraphBlock(
-              paragraphText: paragraphText,
-              index: index,
-              currentIndex: _currentParagraphIndex,
-              fontSize: _fontSize,
-              showTranslation: _showTranslation,
-              favoriteWords: favoriteWords,
-              onTapParagraph: () {
-                setState(() {
-                  _currentParagraphIndex = index;
-                });
-              },
-              onWordTap: (word, pos) => _showWordBubble(context, word, pos, paragraphText: paragraphText),
-              translation: _getParagraphTranslation(index, paragraphText),
-              totalParagraphs: _paragraphs.length,
+            String sentenceText = entry.value;
+            bool isTransExpanded = _showAllTranslations || (_activeSentenceTranslations[index] ?? false);
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 英文句子内容 + 句尾独立翻译 Icon
+                  _buildSentenceItem(
+                    index: index,
+                    sentenceText: sentenceText,
+                    favoriteWords: favoriteWords,
+                    isTransExpanded: isTransExpanded,
+                    isDark: isDark,
+                    onToggleTrans: () {
+                      setState(() {
+                        _activeSentenceIndex = index;
+                        _activeSentenceTranslations[index] = !isTransExpanded;
+                      });
+                    },
+                  ),
+
+                  // 点按小图标后展开的对应中文句子
+                  if (isTransExpanded) ...[
+                    const SizedBox(height: 6),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF1E293B).withValues(alpha: 0.6) : const Color(0xFFEFF6FF),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: isDark ? Colors.blue.withValues(alpha: 0.2) : const Color(0xFFBFDBFE),
+                        ),
+                      ),
+                      child: Text(
+                        _getSentenceTranslation(index),
+                        style: TextStyle(
+                          fontSize: 14,
+                          height: 1.55,
+                          color: isDark ? const Color(0xFF93C5FD) : const Color(0xFF1D4ED8),
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
             );
           }),
 
-          const SizedBox(height: 16),
-
+          const SizedBox(height: 24),
           _buildCompletionFooter(isDark, nextArticle),
-
           const SizedBox(height: 32),
         ],
       ),
     );
   }
 
-  // 底部单独简洁按钮（完成阅读 / 已完成阅读 + 下一章节）
+  Widget _buildSentenceItem({
+    required int index,
+    required String sentenceText,
+    required Set<String> favoriteWords,
+    required bool isTransExpanded,
+    required bool isDark,
+    required VoidCallback onToggleTrans,
+  }) {
+    final words = sentenceText.split(RegExp(r'\s+'));
+
+    return Wrap(
+      spacing: 5,
+      runSpacing: 6,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: [
+        ...words.map((w) {
+          final cleanW = w.replaceAll(RegExp(r'[^\w\-]'), '').toLowerCase();
+          final isFav = cleanW.isNotEmpty && favoriteWords.contains(cleanW);
+          return GestureDetector(
+            onTapUp: (details) {
+              setState(() {
+                _activeSentenceIndex = index;
+              });
+              _showWordBubble(context, w, details.globalPosition, sentenceContext: sentenceText);
+            },
+            child: Text(
+              w,
+              style: TextStyle(
+                fontSize: _fontSize,
+                height: 1.7,
+                letterSpacing: 0.15,
+                color: isFav
+                    ? (isDark ? Colors.amber.shade300 : const Color(0xFFD97706))
+                    : (isDark ? const Color(0xFFF1F5F9) : const Color(0xFF0F172A)),
+                fontWeight: isFav ? FontWeight.bold : FontWeight.w400,
+                decoration: isFav ? TextDecoration.underline : TextDecoration.none,
+                decorationStyle: TextDecorationStyle.dashed,
+                decorationColor: isDark ? Colors.amber.shade400 : const Color(0xFFD97706),
+              ),
+            ),
+          );
+        }),
+
+        // 句尾小翻译 Icon
+        InkWell(
+          onTap: onToggleTrans,
+          borderRadius: BorderRadius.circular(12),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+            margin: const EdgeInsets.only(left: 4),
+            decoration: BoxDecoration(
+              color: isTransExpanded
+                  ? (isDark ? const Color(0xFF2563EB).withValues(alpha: 0.25) : const Color(0xFFDBEAFE))
+                  : (isDark ? Colors.white.withValues(alpha: 0.06) : const Color(0xFFF1F5F9)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.g_translate_outlined,
+                  size: 13,
+                  color: isTransExpanded
+                      ? (isDark ? const Color(0xFF93C5FD) : const Color(0xFF2563EB))
+                      : (isDark ? Colors.white54 : const Color(0xFF94A3B8)),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildCompletionFooter(bool isDark, Article? nextArticle) {
-    return Container(
-      margin: const EdgeInsets.only(top: 8, bottom: 16),
-      child: Row(
-        children: [
+    return Row(
+      children: [
+        Expanded(
+          child: ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: _isCompleted
+                  ? (isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0))
+                  : Colors.green.shade600,
+              foregroundColor: _isCompleted
+                  ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
+                  : Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 14),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+              elevation: _isCompleted ? 0 : 2,
+            ),
+            onPressed: _isCompleted ? null : _markCompleted,
+            icon: Icon(
+              _isCompleted ? Icons.check_circle_rounded : Icons.check_circle_outline_rounded,
+              size: 20,
+            ),
+            label: Text(
+              _isCompleted ? '已完成阅读' : '完成阅读',
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+        if (nextArticle != null) ...[
+          const SizedBox(width: 12),
           Expanded(
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: _isCompleted
-                    ? (isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0))
-                    : Colors.green.shade600,
-                foregroundColor: _isCompleted
-                    ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
-                    : Colors.white,
+            child: OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                foregroundColor: LuminaColors.primary,
+                side: const BorderSide(color: LuminaColors.primary, width: 1.5),
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
-                elevation: _isCompleted ? 0 : 2,
               ),
-              onPressed: _isCompleted ? null : _markCompleted,
-              icon: Icon(
-                _isCompleted ? Icons.check_circle_rounded : Icons.check_circle_outline_rounded,
-                size: 20,
-              ),
-              label: Text(
-                _isCompleted ? '已完成阅读' : '完成阅读',
-                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          if (nextArticle != null) ...[
-            const SizedBox(width: 12),
-            Expanded(
-              child: OutlinedButton.icon(
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: LuminaColors.primary,
-                  side: BorderSide(color: LuminaColors.primary, width: 1.5),
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ArticleDetailScreen(
-                        article: nextArticle,
-                        onCompleted: widget.onCompleted,
-                      ),
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                label: const Text(
-                  '下一章节',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-class _ParagraphBlock extends StatefulWidget {
-  final String paragraphText;
-  final int index;
-  final int currentIndex;
-  final double fontSize;
-  final bool showTranslation;
-  final Set<String> favoriteWords;
-  final VoidCallback onTapParagraph;
-  final Function(String word, Offset tapPosition) onWordTap;
-  final String translation;
-  final int totalParagraphs;
-
-  const _ParagraphBlock({
-    required this.paragraphText,
-    required this.index,
-    required this.currentIndex,
-    required this.fontSize,
-    required this.showTranslation,
-    required this.favoriteWords,
-    required this.onTapParagraph,
-    required this.onWordTap,
-    required this.translation,
-    required this.totalParagraphs,
-  });
-
-  @override
-  State<_ParagraphBlock> createState() => _ParagraphBlockState();
-}
-
-class _ParagraphBlockState extends State<_ParagraphBlock> {
-  bool _localShowTranslation = false;
-
-  @override
-  Widget build(BuildContext context) {
-    final isHighlighted = widget.index == widget.currentIndex;
-    final words = widget.paragraphText.split(RegExp(r'\s+'));
-    final shouldShowTrans = widget.showTranslation || _localShowTranslation;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return GestureDetector(
-      onTap: widget.onTapParagraph,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        margin: const EdgeInsets.only(bottom: 16),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: isHighlighted
-              ? (isDark ? const Color(0xFF1E293B) : Colors.white)
-              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFFAFAFA)),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: isHighlighted
-                ? (isDark ? Colors.white24 : const Color(0xFFCBD5E1))
-                : (isDark ? Colors.white10 : const Color(0xFFF1F5F9)),
-            width: 1.0,
-          ),
-          boxShadow: [
-            if (isHighlighted)
-              BoxShadow(
-                color: isDark
-                    ? Colors.black.withValues(alpha: 0.35)
-                    : Colors.black.withValues(alpha: 0.07),
-                blurRadius: 12,
-                spreadRadius: 0,
-                offset: Offset.zero,
-              ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  decoration: BoxDecoration(
-                    color: isHighlighted
-                        ? (isDark ? const Color(0xFF2563EB).withValues(alpha: 0.15) : const Color(0xFFEFF6FF))
-                        : (isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9)),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    'P.${widget.index + 1}',
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      color: isHighlighted
-                          ? (isDark ? const Color(0xFF93C5FD) : const Color(0xFF2563EB))
-                          : (isDark ? Colors.white54 : const Color(0xFF94A3B8)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 10),
-
-            Wrap(
-              spacing: 5,
-              runSpacing: 7,
-              children: words.map((w) {
-                final cleanW = w.replaceAll(RegExp(r'[^\w\-]'), '').toLowerCase();
-                final isFav = cleanW.isNotEmpty && widget.favoriteWords.contains(cleanW);
-                return GestureDetector(
-                  onTapUp: (details) {
-                    widget.onTapParagraph();
-                    widget.onWordTap(w, details.globalPosition);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 1.0),
-                    child: Text(
-                      w,
-                      style: TextStyle(
-                        fontSize: widget.fontSize,
-                        height: 1.75,
-                        letterSpacing: 0.15,
-                        color: isFav
-                            ? (isDark ? Colors.amber.shade300 : const Color(0xFFD97706))
-                            : (isHighlighted
-                                ? (isDark ? Colors.white : const Color(0xFF0F172A))
-                                : (isDark ? Colors.white70 : const Color(0xFF334155))),
-                        fontWeight: isFav
-                            ? FontWeight.bold
-                            : (isHighlighted ? FontWeight.w500 : FontWeight.w400),
-                        decoration: isFav ? TextDecoration.underline : TextDecoration.none,
-                        decorationStyle: TextDecorationStyle.dashed,
-                        decorationColor: isDark ? Colors.amber.shade400 : const Color(0xFFD97706),
-                      ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ArticleDetailScreen(
+                      article: nextArticle,
+                      onCompleted: widget.onCompleted,
                     ),
                   ),
                 );
-              }).toList(),
-            ),
-
-            const SizedBox(height: 14),
-
-            Align(
-              alignment: Alignment.centerRight,
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    _localShowTranslation = !_localShowTranslation;
-                  });
-                },
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: shouldShowTrans
-                        ? (isDark ? const Color(0xFF334155) : const Color(0xFFF1F5F9))
-                        : (isDark ? const Color(0xFF1E293B) : const Color(0xFFEFF6FF)),
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: shouldShowTrans
-                          ? (isDark ? Colors.white24 : const Color(0xFFCBD5E1))
-                          : const Color(0xFFBFDBFE),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        shouldShowTrans ? Icons.visibility_off_outlined : Icons.translate,
-                        size: 13,
-                        color: shouldShowTrans
-                            ? (isDark ? Colors.white70 : const Color(0xFF64748B))
-                            : const Color(0xFF2563EB),
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        shouldShowTrans ? '收起译文' : '查看段落译文',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: shouldShowTrans
-                              ? (isDark ? Colors.white70 : const Color(0xFF64748B))
-                              : const Color(0xFF2563EB),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              },
+              icon: const Icon(Icons.arrow_forward_rounded, size: 18),
+              label: const Text(
+                '下一章节',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),
-
-            if (shouldShowTrans) ...[
-              const SizedBox(height: 12),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: isDark ? Colors.white10 : const Color(0xFFE2E8F0),
-                  ),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 3,
-                      height: 18,
-                      margin: const EdgeInsets.only(top: 2, right: 10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF2563EB),
-                        borderRadius: BorderRadius.circular(2),
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        widget.translation,
-                        style: TextStyle(
-                          fontSize: 14.5,
-                          height: 1.65,
-                          color: isDark ? const Color(0xFFCBD5E1) : const Color(0xFF334155),
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
+          ),
+        ],
+      ],
     );
   }
 }

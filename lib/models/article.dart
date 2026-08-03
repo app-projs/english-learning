@@ -35,7 +35,11 @@ class Article {
       title: json['title'],
       content: json['content'],
       difficulty: json['difficulty'],
-      tags: List<String>.from(json['tags'] ?? []),
+      tags: json['tags'] is List
+          ? List<String>.from(json['tags'])
+          : (json['tags'] is String && (json['tags'] as String).isNotEmpty)
+              ? (json['tags'] as String).split(',')
+              : [],
       createdAt: json['createdAt'] != null
           ? DateTime.parse(json['createdAt'])
           : DateTime.now(),

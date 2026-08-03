@@ -15,24 +15,37 @@ class ArticleService {
   Future<void> _seedDatabaseIfNeeded() async {
     try {
       final dbBooks = await _database.getAllBooks();
-      if (dbBooks.isEmpty) {
+      final dbArticles = await _database.getAllArticles();
+      
+      final allBookChapters = [
+        ...MockBooks.getAnneChapters(),
+        ...MockBooks.getPrinceChapters(),
+        ...MockBooks.getAliceChapters(),
+        ...MockBooks.getOzChapters(),
+        ...MockBooks.getTreasureChapters(),
+        ...MockBooks.getSeaChapters(),
+        ...MockBooks.getGatsbyChapters(),
+        ...MockBooks.getSherlockChapters(),
+        ...MockBooks.getPrideChapters(),
+        ...MockBooks.getTwoCitiesChapters(),
+        ...MockBooks.getJaneChapters(),
+        ...MockBooks.getBeautyChapters(),
+        ...MockBooks.getNightsChapters(),
+        ...MockBooks.getStoneFaceChapters(),
+      ];
+      final mockArticles = MockArticles.getArticles();
+      final totalExpectedArticles = allBookChapters.length + mockArticles.length;
+
+      if (dbBooks.isEmpty || dbArticles.length != totalExpectedArticles) {
         final sampleBooks = MockBooks.getSampleBooks();
         for (final book in sampleBooks) {
           await _database.insertBook(book.toJson());
         }
 
-        final allBookChapters = [
-          ...MockBooks.getAnneChapters(),
-          ...MockBooks.getPrinceChapters(),
-          ...MockBooks.getBeautyChapters(),
-          ...MockBooks.getNightsChapters(),
-          ...MockBooks.getStoneFaceChapters(),
-        ];
         for (final article in allBookChapters) {
           await _database.insertArticle(article.toJson());
         }
 
-        final mockArticles = MockArticles.getArticles();
         for (final article in mockArticles) {
           await _database.insertArticle(article.toJson());
         }
@@ -48,6 +61,24 @@ class ArticleService {
         return MockBooks.getAnneChapters();
       case 'book_prince':
         return MockBooks.getPrinceChapters();
+      case 'book_alice':
+        return MockBooks.getAliceChapters();
+      case 'book_oz':
+        return MockBooks.getOzChapters();
+      case 'book_treasure':
+        return MockBooks.getTreasureChapters();
+      case 'book_sea':
+        return MockBooks.getSeaChapters();
+      case 'book_gatsby':
+        return MockBooks.getGatsbyChapters();
+      case 'book_sherlock':
+        return MockBooks.getSherlockChapters();
+      case 'book_pride':
+        return MockBooks.getPrideChapters();
+      case 'book_twocities':
+        return MockBooks.getTwoCitiesChapters();
+      case 'book_jane':
+        return MockBooks.getJaneChapters();
       case 'book_beauty':
         return MockBooks.getBeautyChapters();
       case 'book_nights':

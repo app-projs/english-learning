@@ -58,7 +58,7 @@ class AudioService {
     }
 
     await _flutterTts.setLanguage("en-US");
-    await _flutterTts.setSpeechRate(Platform.isAndroid ? 0.45 : 0.48); // 更加平滑自然的语速
+    await _flutterTts.setSpeechRate((!kIsWeb && Platform.isAndroid) ? 0.45 : 0.48); // 更加平滑自然的语速
     await _flutterTts.setVolume(1.0);
     await _flutterTts.setPitch(1.0);
 
