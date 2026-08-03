@@ -9,8 +9,8 @@ class ArabianNightsMock {
         id: 'nights_u$unitNum',
         bookId: 'book_nights',
         unitIndex: unitNum,
-        title: titles[index % titles.length],
-        chineseTitle: '第 $unitNum 章：${chineseTitles[index % chineseTitles.length]}',
+        title: titles[index],
+        chineseTitle: '第 $unitNum 章：${chineseTitles[index]}',
         content: _getContent(index),
         chineseContent: _getChineseContent(index),
         difficulty: 'Advanced',
@@ -70,7 +70,7 @@ On her wedding night, Scheherazade began telling a captivating story of magic an
 
 One morning, after casting his net, he felt a great weight. Expecting a fine catch, he pulled it ashore, only to find the carcass of a dead donkey. He mended his broken net and cast it a second time, bringing up a large jar filled with mud and sand.
 
-On the fourth cast, his net brought up a heavy copper jar, sealed tight with a lead stopper stamped with the Solomon's royal seal. Overjoyed, the fisherman prised open the stopper with his knife.
+On the fourth cast, his net brought up a heavy copper jar, sealed tight with a lead stopper stamped with Solomon's royal seal. Overjoyed, the fisherman prised open the stopper with his knife.
 
 Thick black smoke poured out of the vessel, rising into the sky and condensing into a colossal Genie of terrifying aspect.
 
@@ -78,23 +78,99 @@ Thick black smoke poured out of the vessel, rising into the sky and condensing i
 
 The fisherman, recovering from his terror, used his wits: "I cannot believe a giant like you could fit inside this tiny bottle unless I see it with my own eyes." Proud and angered, the Genie vanished into smoke and slid back inside, whereupon the quick-witted fisherman slammed the lead stopper tight!''';
       case 2:
-        return '''Deep in the heart of a distant kingdom surrounded by four mysterious mountains lay a enchanted lake filled with fish of four distinct colors: red, white, yellow, and blue.
+        return '''Deep in the heart of a distant kingdom surrounded by four mysterious mountains lay an enchanted lake filled with fish of four distinct colors: red, white, yellow, and blue.
 
 A young King, half of whose body had been turned into cold black marble by an evil enchantress, sat weeping in his deserted palace. He recounted to the Sultan how his wicked queen used dark magic to transform his people and kingdom.
 
 Determined to break the curse, the brave Sultan tracked the enchantress to her secret sanctuary. Disguising himself in her wounded lover's robes, the Sultan tricked the sorceress into reciting the counter-spells.
 
 With a stroke of his sword, the Sultan vanquished the enchantress forever. The marble prince was restored to life, the four-colored fish turned back into humans, and the enchanted city returned to its former glory under a peaceful sky.''';
-      default:
-        final chapterNum = index + 1;
-        return '''This is Chapter $chapterNum of the immortal masterpiece, The Arabian Nights (One Thousand and One Nights).
+      case 3:
+        return '''My father left me a considerable fortune, which I foolishly squandered in my youth on luxury and idle pleasures. Realizing my error, I gathered what little remained and purchased goods for a sea voyage to trade in distant lands.
 
-Scheherazade continued her mesmerizing storytelling night after night for one thousand and one nights. She wove tales of voyages across unknown seas, magical lamps, hidden treasures, clever maidens, and heroic princes.
+We set sail from Bussorah with a company of merchants, stopping at various islands along the Persian Gulf.
 
-Through her enchanting stories, King Shahryar's heart was gradually softened, healed of its bitterness, and filled with deep admiration and genuine love for Scheherazade's wisdom and virtue.
+One day, our ship anchored near a small, green island covered in lush vegetation. We stepped ashore to rest and cook meals.
 
-At the end of the one thousand and one nights, the King pardoned all, abolished his cruel law, and lived in harmony and lasting happiness with Queen Scheherazade and their children.''';
+Suddenly, the island began to tremble violently. The captain shouted from the deck: "Reroute, quick! That is no island, but a giant sleeping whale!"
+
+Before I could reach the boat, the creature dived into the ocean depths, washing me away into the foaming sea while the ship sailed off without me.''';
+      case 4:
+        return '''Washed ashore on a deserted island by the current, I wandered inland in search of food. I discovered a giant white dome of immense smooth stone. As I approached, the sky darkened suddenly.
+
+Looking up, I saw a mythical bird of giant proportions—a Roc—descending upon its giant egg.
+
+I waited until the bird fell asleep, then bound myself to its leg using my turban cloth. At dawn, the Roc flew high into the sky, carrying me across mountain peaks to a terrifying, enclosed valley.
+
+The valley floor was carpeted with thousands of glittering diamonds, guarded by giant vipers that hid in caves during the day.
+
+Merchants tossed huge pieces of raw meat into the canyon from the cliffs above. Diamonds stuck to the meat, and when the eagles carried the meat up to their nests, the merchants drove the birds away to collect the gems. I strapped a piece of meat to my back, and an eagle carried me out of the valley to safety.''';
+      case 5:
+        return '''In a city of Persia lived two brothers, Cassim and Ali Baba. Cassim married a rich wife and lived in luxury, while Ali Baba married a poor woman and earned a living cutting wood in the forest.
+
+One day in the forest, Ali Baba saw a band of forty mounted robbers approaching. He climbed a tree to hide and watched their captain stand before a solid rock wall, shouting:
+
+"Open, Sesame!"
+
+The rock face split open, revealing a vast cavern filled with piles of gold coin, silver ingots, and precious jewels.
+
+After the thieves left, Ali Baba stepped before the rock and repeated the magic words. The cave opened, and he loaded three donkeys with bags of gold before closing the door with "Shut, Sesame!"''';
+      case 6:
+        return '''Cassim learned of the cave from Ali Baba, but his greed proved his undoing. He entered the cave with ten mules, but once inside, forgot the magic word to open the door, shouting "Open, Barley!" in vain until the robbers returned and killed him.
+
+The robber captain traced the gold back to Ali Baba's house and devised a cunning plan. He arrived disguised as an oil merchant, carrying thirty-nine large leather oil jars mounted on mules.
+
+One jar contained real oil, while the remaining thirty-eight hidden robbers awaited his signal to launch a night attack.
+
+Morgiana, Ali Baba's clever slave girl, went to fetch oil for a lamp and heard a robber whisper from inside a jar: "Is it time?"
+
+Realizing the plot, she heated the real oil in a great cauldron and poured boiling oil into each jar, neutralizing the robbers silently. Later, during a feast, she performed a dagger dance and stabbed the captain before he could strike.''';
+      case 7:
+        return '''In a poor city of China lived a lazy boy named Aladdin, the son of a poor tailor. One day, a mysterious African sorcerer arrived, claiming to be Aladdin's long-lost uncle.
+
+The sorcerer led Aladdin to a secret valley between two mountains and lit a magic fire, muttering incense incantations that caused the earth to open, revealing a stone slab with a brass ring.
+
+"Under this stone lies a hidden treasure," said the sorcerer. "Go down into the cavern, touch nothing of the gold, and bring me the lit brass lamp resting in the inner garden."
+
+Aladdin descended the stairs into a garden of trees bearing glowing jewel fruits. He placed the lamp in his bosom and gathered handfuls of rubies, emeralds, and diamonds.
+
+When he reached the entrance, the sorcerer demanded the lamp before helping Aladdin out. Aladdin refused, whereupon the angry sorcerer sealed the cave entrance with a spell, leaving Aladdin trapped in the dark.''';
+      case 8:
+        return '''Trapped in the dark cavern for two days, Aladdin accidentally rubbed a small magic ring the sorcerer had placed on his finger for protection.
+
+Instantly, a giant Genie of the Ring appeared before him in a flash of smoke, saying: "What wouldst thou have? I am thy slave, and the slave of him who holds the ring."
+
+"Deliver me from this place!" cried Aladdin.
+
+In a fraction of a second, Aladdin found himself standing outside on the mountain side, holding the old brass lamp.
+
+Back home, when his mother tried to clean the dirty lamp with sand and water, an even more colossal Genie of the Lamp erupted into the room, declaring: "I am ready to obey thee as thy slave, and the slave of all those who have that lamp in their hands!"''';
+      case 9:
+        return '''With the unlimited wealth and wisdom provided by the Genie of the Lamp, Aladdin transformed from a lazy street boy into a noble, generous prince.
+
+He fell in love with Princess Badroulbadour, the daughter of the Sultan, after seeing her beauty at the royal baths.
+
+Aladdin sent his mother to the Sultan with a dish filled with giant, sparkling jewels from the enchanted garden. Overwhelmed by the priceless gift, the Sultan agreed to the marriage, provided Aladdin built a palace fit for his daughter.
+
+Using the Genie's power, Aladdin constructed a magnificent marble palace overnight, adorned with twenty-four windows studded with diamonds, rubies, and sapphires, connected to the Sultan's palace by a carpet of velvet.''';
+      case 10:
+        return '''News of Aladdin's sudden rise to royal fame reached the evil African sorcerer in his distant homeland. Realizing Aladdin had escaped the cave with the Wonderful Lamp, he traveled to the city in disguise.
+
+Carrying a basket of shiny new brass lamps, the sorcerer walked beneath the palace windows shouting: "New lamps for old! Who will exchange old brass lamps for new ones?"
+
+The Princess, unaware of the old lamp's magic power, handed Aladdin's dusty lamp to the sorcerer in exchange for a bright new one.
+
+Possessing the lamp, the sorcerer commanded the Genie to transport the entire palace, along with the Princess, across the sea to Africa in an instant.''';
+      case 11:
+        return '''Aladdin returned from hunting to find his palace and bride vanished into thin air. The angry Sultan gave him forty days to restore the Princess or face execution.
+
+Using his magic ring, Aladdin summoned the Genie of the Ring and was transported to Africa outside his stolen palace.
+
+He managed to sneak into the Princess's chamber, where they devised a plan. The Princess offered the sorcerer a poisoned cup of wine during a banquet.
+
+When the sorcerer collapsed, Aladdin retrieved the Wonderful Lamp from his robe, rubbed it, and commanded the Genie to return the palace to its original place in Persia, where they lived in everlasting peace and happiness.''';
     }
+    return '';
   }
 
   static String _getChineseContent(int index) {
@@ -128,16 +204,92 @@ At the end of the one thousand and one nights, the King pardoned all, abolished 
 
 勇敢的苏丹决心打破诅咒，追踪女巫到了她的秘密圣所。苏丹伪装成她受伤的情人的长袍，诱骗女巫念出了解除诅咒的咒语。
 
-苏丹挥剑斩断了女巫的邪恶。大理石王子恢复了生命，四色鱼变回了人类，神奇的城市在和平的天空下重现往日的辉煌。''';
-      default:
-        final chapterNum = index + 1;
-        return '''这是不朽名著《一千零一夜》的第 $chapterNum 章。
+苏丹挥剑斩断了女巫的邪恶。大理理石王子恢复了生命，四色鱼变回了人类，神奇的城市在和平的天空下重现往日的辉煌。''';
+      case 3:
+        return '''我的父亲给我留下了相当可观的财产，我在年轻时愚蠢地挥霍在奢华和空虚的享乐上。意识到自己的错误后，我收集了所剩无几的财产，购买了航海货物，去远方贸易。
 
-山鲁佐德夜复一夜地讲述着她令人着迷的故事，整整持续了一千零一夜。她编织了穿越未知海洋的航行、神奇的神灯、隐藏的宝藏、聪慧的少女和英雄王子的传说。
+我们与一家商人公司从布斯拉出发，在波斯湾沿岸的各个岛屿停靠。
 
-通过她迷人的故事，山鲁亚尔国王的心渐渐被融化，苦涩得到了抚平，心中充满了对山鲁佐德智慧与美德的深深钦佩与真挚爱意。
+一天，我们的船锚定在一个覆盖着郁郁葱葱植被的小绿岛附近。我们上岸休息并做饭。
 
-在一千零一夜结束时，国王赦免了所有人，废除了残酷的法令，与山鲁佐德王后及他们的孩子们过上了和谐长久幸福的生活。''';
+突然，岛屿开始剧烈晃动。船长从甲板上喊道：“快掉头，快！那不是岛屿，而是一头巨大的沉睡鲸鱼！”
+
+在我到达船之前，这个生物潜入了海洋深处，将我冲入了泡沫飞溅的大海，而船却没有我继续驶走了。''';
+      case 4:
+        return '''被洋流冲到一个荒无人烟的岛上后，我向内陆漫游寻找食物。我发现了一个巨大的光滑石头构成的巨大白色圆顶。当我靠近时，天空突然变暗了。
+
+抬头一看，我看到了一只巨大比例的神话之鸟——大鹏鸟（Roc）——降落在大蛋上。
+
+我等到鸟睡着了，然后用我的头巾布把自己绑在它的腿上。黎明时分，大鹏鸟飞向高空，带着我穿过山峰来到一个可怕的封闭山谷。
+
+山谷地面铺满了数千颗闪闪发光的钻石，由白天藏在洞穴里的巨大毒蛇守护着。
+
+商人从上面的悬崖向峡谷投掷大块生肉。钻石粘在肉上，当老鹰把肉带到它们的巢穴时，商人赶走鸟儿收集宝石。我把一块肉绑在背上，一只老鹰把我带出山谷到达安全地带。''';
+      case 5:
+        return '''在波斯的一座城市里住着卡西姆和阿里爸爸兄弟俩。卡西姆娶了一个富有的妻子，生活奢华，而阿里爸爸娶了一个贫穷的女人，在森林里砍柴维持生计。
+
+一天在森林里，阿里爸爸看到一群四十名骑马的大盗靠近。他爬上一棵树躲起来，看着他们的队长站在一面坚硬的岩石墙前喊道：
+
+“芝麻开门！”
+
+岩石面分裂开来，露出了一个巨大的洞穴，里面堆满了金币、银锭和昂贵的珠宝。
+
+强盗离开后，阿里爸爸走到岩石前重复了这个神奇的词。洞穴打开了，他在用“芝麻关门”关门之前，给三头驴装满了成袋的黄金。''';
+      case 6:
+        return '''卡西姆从阿里爸爸那里得知了洞穴的事，但他的贪婪证明了他的毁灭。他带着十头骡子进入洞穴，但一进入洞穴，他就忘记了开门的魔法词，徒劳地喊着“大麦开门！”直到强盗返回杀了他。
+
+强盗队长将黄金追踪到了阿里爸爸的房子，并设计了一个狡猾的计划。他伪装成石油商到达，带着安装在骡子身上的三十九个大皮石油罐。
+
+一个罐子装着真正的油，而剩下的三十八个隐藏的强盗等待他的信号发起夜袭。
+
+阿里爸爸聪明的奴婢玛尔基娜去取灯油，听见一个强盗在罐子里低语：“时间到了吗？”
+
+意识到这个阴谋，她在巨大的大锅里加热了真正的油，把沸腾的油倒进每个罐子里，静静地消灭了强盗。后来，在宴会上，她跳了匕首舞，在队长出击前刺死了他。''';
+      case 7:
+        return '''在中国的贫穷城市里住着一个名叫阿拉丁的懒惰男孩，是一个贫穷裁缝的儿子。一天，一个神秘的非洲魔法师到达，声称是阿拉丁失散多年的叔叔。
+
+魔法师将阿拉丁带到两山之间的秘密山谷，点燃了神奇的火，念着香火咒语使大地打开，露出一块带有黄铜环的石板。
+
+“在这块石头下面藏着宝藏，”魔法师说。“下到洞穴里，不要碰任何金子，把我停留在内部花园里的点亮的黄铜灯带给我。”
+
+阿拉丁沿着楼梯下到挂满发光宝石水果的树木花园里。他把灯放在怀里，抓了几把红宝石、祖母绿和钻石。
+
+当他到达入口时，魔法师在帮助阿拉丁出来之前索要灯。阿拉丁拒绝了，于是愤怒的魔法师用咒语封住了洞穴入口，把阿拉丁困在了黑暗中。''';
+      case 8:
+        return '''在黑暗的洞穴里被困了两天，阿拉丁不小心擦了魔法师放在他手指上起保护作用的小魔戒。
+
+霎时间，一个巨大的戒指巨灵在烟雾中出现在他面前说：“你想要什么？我是你的奴隶，也是拥有那个戒指的人的奴隶。”
+
+“把我从这个地方救出去！”阿拉丁喊道。
+
+在一秒钟的分秒内，阿拉丁发现自己站在山边的外面，手里拿着旧黄铜灯。
+
+回到家里，当他的母亲试图用沙子和水清洁脏灯时，一个更加巨大的神灯巨灵喷涌进房间宣告：“我准备服从你作为你的奴隶，以及所有手里有那盏灯的人的奴隶！”''';
+      case 9:
+        return '''凭借神灯巨灵提供的无限财富和智慧，阿拉丁从一个懒惰的街头男孩蜕变成了一位高尚、慷慨的王子。
+
+在皇家浴室看到苏丹的女儿巴德鲁巴杜尔公主的美貌后，他爱上了她。
+
+阿拉丁派他的母亲带着一个装满神奇花园里巨大的闪烁宝石的盘子去见苏丹。被无价的礼物所压倒，苏丹同意了这门亲事，前提是阿拉丁建造一座适合他女儿的宫殿。
+
+利用巨灵的力量，阿拉丁一夜之间建造了一座宏伟的大理石宫殿，装饰着二十四个镶嵌着钻石、红宝石和蓝宝石的窗户，由毯子地毯连接到苏丹的宫殿。''';
+      case 10:
+        return '''阿拉丁突然声名鹊起的消息传到了远方家乡邪恶的非洲魔法师那里。意识到阿拉丁带着神奇的神灯逃出了洞穴，他伪装来到了这座城市。
+
+带着一篮闪亮的新黄铜灯，魔法师在宫殿窗下走着喊道：“旧灯换新灯！谁要用旧黄铜灯换新灯？”
+
+公主不知道旧灯的神奇力量，把阿拉丁落满灰尘的灯递给魔法师换取了一盏亮晶晶的新灯。
+
+拥有了神灯，魔法师命令巨灵将整座宫殿连同公主一瞬间穿过大海运到了非洲。''';
+      case 11:
+        return '''阿拉丁打猎归来，发现他的宫殿和新娘凭空消失了。愤怒的苏丹给了他四十天的时间恢复公主，否则将面临处决。
+
+利用他的魔戒，阿拉丁召唤了戒指巨灵，并被运到了他在被盗宫殿外面的非洲。
+
+他成功溜进了公主的寝室，他们在那里制定了一个计划。在宴会期间，公主向魔法师提供了一杯有毒的葡萄酒。
+
+当魔法师倒下时，阿拉丁从他的长袍里取回了神奇的神灯，擦了擦它，命令巨灵将宫殿带回波斯原来的地方，他们在那里过上了永恒平静幸福的生活。''';
     }
+    return '';
   }
 }
