@@ -1,0 +1,130 @@
+{
+  "id": "book_nights",
+  "title": "One Thousand and One Nights",
+  "chineseTitle": "一千零一夜",
+  "author": "Arabian Folk Tales",
+  "coverUrl": "assets/images/book_nights.png",
+  "description": "《一千零一夜》（又称《天方夜谭》）是阿拉伯民间故事集锦的璀璨明珠。萨里亚尔国王因嫉恨王后的背叛而变得残暴疯狂，每天娶一位新王后并在次日清晨将其处死。聪慧勇敢的大臣女儿山德鲁萨（雪赫拉莎德）自愿嫁给国王，并在每晚为国王讲述一个引人入胜的精彩故事。当清晨降临时，故事总是恰好留悬念在最关键处，迫使国王取消处决。雪赫拉莎德用一千零一个神奇夜晚的故事拯救了自己的生命，也感化了残暴的国王。故事包含阿里巴巴与四十大盗、阿拉丁神灯、辛巴达航海等千古名篇。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 4,
+  "wordCount": 11000,
+  "readerCount": "138.0万人在读",
+  "targetVocab": "1200-3000词",
+  "tagLabel": "东方神话",
+  "coverBadge": "经典 · 东方神话",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Night 1: Scheherazade and Shahryar",
+      "chineseTitle": "第 1 夜：雪赫拉莎德与山鲁亚尔国王",
+      "paragraphs": [
+        {
+          "en": "In ancient times, in the kingdom of Persia, there ruled a powerful king named Shahryar. Betrayed by his former queen, the king grew bitter and cruel, vowing to marry a new bride each evening and execute her at dawn.",
+          "zh": "在古代，在波斯王国，统治着一位名叫山鲁亚尔的强大国王。由于被前任王后背叛，国王变得痛苦而残暴，发誓每晚娶一位新新娘并在次日清晨将其处死。"
+        },
+        {
+          "en": "For years, fear and sorrow hung over the city, until Scheherazade, the brave and wise daughter of the king's grand vizier, volunteered to marry Shahryar.",
+          "zh": "多年来，恐惧和悲伤悬挂在城市的上空，直到国王的大宰相勇敢而聪明的女儿雪赫拉莎德自愿嫁给山鲁亚尔。"
+        },
+        {
+          "en": "On their wedding night, Scheherazade began to tell the king a wondrous tale of magic and adventure.",
+          "zh": "在他们的婚礼之夜，雪赫拉莎德开始给国王讲一个关于魔法和冒险的奇妙故事。"
+        },
+        {
+          "en": "Just as the sun began to rise at the climax of the story, Scheherazade stopped speaking, leaving the conclusion unfinished.",
+          "zh": "就在故事高潮时太阳开始升起，雪赫拉莎德停止了说话，留下了未完成的结尾。"
+        },
+        {
+          "en": "Enchanted by the tale, King Shahryar spared her life for one more day so that he might hear the end of the story.",
+          "zh": "被故事所迷住，山鲁亚尔国王为了能听到故事的结尾，把她的生命又延长了一天。"
+        },
+        {
+          "en": "Night after night, Scheherazade continued her brilliant storytelling, weaving a tapestry of 1,001 nights that melted the king's hardened heart.",
+          "zh": "一夜又一夜，雪赫拉莎德继续她精彩的讲故事，织出了一千零一夜的织锦，融化了国王冰硬的心。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Night 2: Aladdin and the Wonderful Lamp",
+      "chineseTitle": "第 2 夜：阿拉丁与神灯",
+      "paragraphs": [
+        {
+          "en": "In a poor city in China lived a young street boy named Aladdin and his widowed mother.",
+          "zh": "在中国的贫穷城市里住着一个叫阿拉丁的年轻街头男孩和他的寡妇母亲。"
+        },
+        {
+          "en": "One day, a mysterious magician claiming to be Aladdin's uncle tricked him into entering a secret cave in the mountains to retrieve an ancient brass oil lamp.",
+          "zh": "有一天，一个声称是阿拉丁叔叔的神秘魔法师骗他进入山里的一个秘密山洞，去取回一盏古老的黄铜油灯。"
+        },
+        {
+          "en": "When the magician trapped Aladdin inside the dark cave, Aladdin accidentally rubbed the dirty lamp. Immediately, a colossal Djinn enveloped in blue smoke appeared before him, booming:",
+          "zh": "当魔法师把阿拉丁困在黑暗的山洞里时，阿拉丁不小心擦了擦脏灯。立刻，一个裹在蓝色烟雾里的巨型精灵出现在他面前，隆隆地说："
+        },
+        {
+          "en": "\"I am the Slave of the Lamp! Command me, and I shall fulfill your every desire!\"",
+          "zh": "“我是神灯的奴隶！命令我吧，我将实现你的每一个愿望！”"
+        },
+        {
+          "en": "With the Genie's miraculous help, Aladdin escaped the cave, amassed great wealth, and built a magnificent palace to win the heart of Princess Badroulbadour.",
+          "zh": "在精灵奇迹般的帮助下，阿拉丁逃出了山洞，积聚了巨大的财富，并建造了一座宏伟的城堡，赢得了巴德罗巴朵尔公主的心。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Night 3: Ali Baba and the Forty Thieves",
+      "chineseTitle": "第 3 夜：阿里巴巴与四十大盗",
+      "paragraphs": [
+        {
+          "en": "Ali Baba was a poor woodcutter who lived with his wife in a small town in Persia.",
+          "zh": "阿里巴巴是一个贫穷的柴夫，和妻子住在波斯的一个小镇上。"
+        },
+        {
+          "en": "While cutting wood in the forest one afternoon, he saw a band of forty robbers approach a steep rocky cliff.",
+          "zh": "一天下午在森林里砍柴时，他看到一伙四十个强盗靠近悬崖峭壁。"
+        },
+        {
+          "en": "The chief robber stepped forward and shouted: \"Open, Sesame!\" At these magic words, a hidden door in the rock swung open, revealing a vast cavern filled with gold and jewels.",
+          "zh": "强盗头领走上前去大喊：“芝麻开门！”在这句魔法词下，岩石里的一扇隐藏的门打开了，展现出一个装满黄金和珠宝的巨大山洞。"
+        },
+        {
+          "en": "After the thieves departed, Ali Baba approached the cliff and repeated: \"Open, Sesame!\"",
+          "zh": "在强盗离开后，阿里巴巴靠近悬崖并重复道：“芝麻开门！”"
+        },
+        {
+          "en": "The rock opened, and Ali Baba brought home several bags of gold coins, revealing the secret to his clever slave girl, Morgiana, who would later outwit the thirty-nine thieves and save their lives.",
+          "zh": "岩石打开了，阿里巴巴带回家几袋金币，把秘密透露给了他聪明的奴婢摩尔吉安娜，后者后来智胜了三十九个强盗并救了他们的命。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Night 4: The Seven Voyages of Sinbad",
+      "chineseTitle": "第 4 夜：辛巴达七航大海",
+      "paragraphs": [
+        {
+          "en": "Sinbad the Sailor was a wealthy merchant of Baghdad who inherited a fortune from his father, but squandered it in his youth.",
+          "zh": "水手辛巴达是巴格达的一位富有商人，他从父亲那里继承了一笔财产，但在年轻时挥霍掉了。"
+        },
+        {
+          "en": "Desiring to rebuild his wealth and explore distant lands, Sinbad embarked on seven perilous voyages across the Indian Ocean.",
+          "zh": "渴望重建财富并探索遥远的土地，辛巴达踏上了跨越印度洋的七次危险航行。"
+        },
+        {
+          "en": "On his first voyage, his ship anchored at what seemed to be a green island, but was actually the back of a sleeping giant sea monster!",
+          "zh": "在他的第一次航行中，他的船锚定在一个看起来像绿色岛屿的地方，但实际上是一条睡着的巨型海怪的背部！"
+        },
+        {
+          "en": "On subsequent voyages, Sinbad survived being carried off by the giant Roc bird, escaping the Valley of Diamonds, and outwitting savage cannibals.",
+          "zh": "在随后的航行中，辛巴达在被巨型大鹏鸟带走、逃离钻石谷和智胜野蛮食人族中幸存下来。"
+        },
+        {
+          "en": "Each adventure brought him immense riches and wisdom, which he shared with the poor of Baghdad upon his safe return.",
+          "zh": "每一次冒险都给他带来了巨大的财富和智慧，他在安全返回后与巴格达的穷人分享。"
+        }
+      ]
+    }
+  ]
+}

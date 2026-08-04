@@ -1,0 +1,130 @@
+{
+  "id": "book_beauty",
+  "title": "Beauty and the Beast",
+  "chineseTitle": "美女与野兽",
+  "author": "Gabrielle-Suzanne de Villeneuve",
+  "coverUrl": "assets/images/book_beauty.jpg",
+  "description": "《美女与野兽》是欧洲家喻户晓的经典浪漫童话。讲述了美丽善良的女孩贝儿（Belle）为了救回迷路的父亲，自愿来到神秘城堡代替父亲被可怕的野兽囚禁。在城堡中，贝儿逐渐发现野兽外表虽然凶猛粗暴，内心里却充满了温柔、慷慨与深情。最终，贝儿用无私的真爱破除了女巫对野兽施加的邪恶诅咒，使野兽恢复了英俊王子的本来面貌。本书故事生动流畅，蕴含着“不可仅凭外表评判人心”的深远寓意。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 4,
+  "wordCount": 6500,
+  "readerCount": "95.0万人在读",
+  "targetVocab": "1000-2500词",
+  "tagLabel": "浪漫童话",
+  "coverBadge": "入门 · 经典童话",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Merchant and His Family",
+      "chineseTitle": "第 1 章：商人与他的家人们",
+      "paragraphs": [
+        {
+          "en": "There was once a very rich merchant, who had six children, three sons and three daughters. Being a man of sense, he spared no cost for their education, but gave them all kinds of masters.",
+          "zh": "从前有一个非常富有的商人，他有六个孩子，三个儿子和三个女儿。作为一个通情达理的人，他在他们的教育上不惜重金，为他们请了各种各样的老师。"
+        },
+        {
+          "en": "His daughters were extremely handsome, especially the youngest; when she was little everybody admired her, and called her \"The Little Beauty\"; so that, as she grew up, she still went by the name of Beauty, which made her sisters very jealous.",
+          "zh": "他的女儿们长得极其漂亮，尤其是最小的一个；在她小的时候，大家都钦佩她，叫她“小美女”；所以，随着她的长大，她仍然被称为贝儿（Beauty），这让她的姐姐们非常嫉妒。"
+        },
+        {
+          "en": "The eldest two had a great deal of pride, because they were rich. They gave themselves ridiculous airs, and would not visit other merchants' daughters, nor keep company with any but persons of quality.",
+          "zh": "最大的两个非常有优越感，因为她们很有钱。她们摆出可笑的架子，不愿拜访其他商人的女儿，除了有身份的人之外，不与任何人交往。"
+        },
+        {
+          "en": "They went out every day to parties, balls, and plays, and laughed at their youngest sister, who spent the greatest part of her time in reading useful books.",
+          "zh": "她们每天出去参加派对、舞会和戏剧，并嘲笑她们最小的妹妹，后者把大部分时间花在阅读有用的书籍上。"
+        },
+        {
+          "en": "As it was known that the merchant was extremely rich, several great merchants paid their addresses to his daughters; but the two eldest answered, that they would never marry, unless they could meet with a duke or an earl at least.",
+          "zh": "众所周知，商人极其富有，几位大商人向他的女儿们求婚；但最大的两个回答说，她们绝不结婚，除非她们至少能遇到一位公爵或伯爵。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Mysterious Palace and the Rose",
+      "chineseTitle": "第 2 章：神秘城堡与采摘红玫瑰",
+      "paragraphs": [
+        {
+          "en": "The merchant lost his whole fortune, except a small country house at a great distance from town, and he was obliged to retire thither with his family.",
+          "zh": "商人失去了他所有的财产，除了距离城镇很远的一栋小农舍，他不得不和家人一起退隐到那里。"
+        },
+        {
+          "en": "One day, receiving news that a vessel laden with goods belonging to him had arrived safely in port, he set out on horseback for the city. Before leaving, he asked his daughters what presents he should bring back for them.",
+          "zh": "有一天，收到消息说一艘装有属于他的货物的大船安全到达了港口，他骑马前往城市。在离开之前，他问他的女儿们他应该为她们带回什么礼物。"
+        },
+        {
+          "en": "The two eldest asked for expensive dresses, jewels, and fine lace; but Beauty asked only for a fresh rose, for none grew in their country garden.",
+          "zh": "最大的两个要昂贵的连衣裙、珠宝和精美蕾丝；但贝儿只要求一朵新鲜的红玫瑰，因为她们乡村花园里一朵也没长。"
+        },
+        {
+          "en": "On his return journey, a terrible snowstorm overtook the merchant in a dark, dense forest. Lost and shivering, he suddenly saw a bright light shining through the trees.",
+          "zh": "在他的返程途中，一场可怕的雪暴在一个阴暗密集的森林里袭击了商人。迷路发抖的他，突然看到树林里闪烁着明亮的光芒。"
+        },
+        {
+          "en": "Following the light, he arrived at a magnificent palace where a hot meal awaited him in a warm, empty dining hall. After resting, as he walked through the palace garden, he noticed a bush of beautiful red roses, and remembered Beauty's request.",
+          "zh": "顺着光线，他到达了一座宏伟的城堡，在温暖、空的餐厅里一顿热饭正等待着他。休息后，当他在城堡花园里散步时，他注意到一丛漂亮的红玫瑰，并想起了贝儿的要求。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Beauty Enters the Enchanted Castle",
+      "chineseTitle": "第 3 章：贝儿步入魔法城堡",
+      "paragraphs": [
+        {
+          "en": "As the merchant plucked a rose from the bush, a loud, terrifying roar shook the air, and a hideous Beast sprang forward, eyes flashing with rage!",
+          "zh": "当商人从树丛中摘下一朵玫瑰时，一声巨大、可怕的吼声震撼了空气，一只丑陋的野兽冲了出来，眼睛里闪烁着愤怒的光芒！"
+        },
+        {
+          "en": "\"Ungrateful man!\" roared the Beast. \"I saved your life by receiving you into my castle, and in return you steal my favorite roses! For this, you must die!\"",
+          "zh": "“忘恩负义的人！”野兽吼道。“我把你接进我的城堡救了你的命，作为回报你居然偷我最喜欢的玫瑰！为此，你必须死！”"
+        },
+        {
+          "en": "The merchant fell on his knees, weeping and begging for mercy, explaining that he had only taken the rose as a gift for his youngest daughter, Beauty.",
+          "zh": "商人跪倒在地，哭泣着求饶，解释说他拿玫瑰只是作为给他最小的女儿贝儿的礼物。"
+        },
+        {
+          "en": "\"I will forgive you on one condition,\" said the Beast, softening his voice. \"Either you return here in three months to suffer your punishment, or one of your daughters must come willingly to die in your place.\"",
+          "zh": "“我可以在一个条件下原谅你，”野兽放缓声音说。“要么你在三个月内回到这里接受你的惩罚，要么你的一个女儿必须自愿替你来死。”"
+        },
+        {
+          "en": "When the merchant returned home and told his children the tragic tale, Beauty insisted at once that she would go to the Beast's castle, refusing to let her father perish for her sake.",
+          "zh": "当商人回到家并把这个悲惨的故事告诉他的孩子们时，贝儿立刻坚持要她去野兽的城堡，拒绝让她的父亲为她而死。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: True Love and the Broken Curse",
+      "chineseTitle": "第 4 章：真爱之誓与魔咒解除",
+      "paragraphs": [
+        {
+          "en": "When Beauty arrived at the castle, the Beast treated her with extraordinary kindness and respect, giving her luxurious rooms, fine clothes, and endless books.",
+          "zh": "当贝儿到达城堡时，野兽以非凡的善良和尊重对待她，给她豪华的房间、精美的衣服和无尽的书籍。"
+        },
+        {
+          "en": "Every evening at dinner, the Beast would ask her gently: \"Beauty, will you be my wife?\" And every evening, Beauty would answer softly: \"No, Beast.\" Yet she grew to love his generous and gentle soul.",
+          "zh": "每天晚上吃晚饭时，野兽都会温和地问她：“贝儿，你愿意做我的妻子吗？”每天晚上，贝儿都会轻声回答：“不，野兽。”然而她渐渐爱上了他慷慨而温和的灵魂。"
+        },
+        {
+          "en": "One night, after returning home to visit her ailing father, Beauty had a dreadful dream that the Beast lay dying of a broken heart in the castle garden.",
+          "zh": "一天晚上，在回家看望生病的父亲后，贝儿做了一个可怕的梦，梦见野兽在城堡花园里因伤心过度正奄奄一息。"
+        },
+        {
+          "en": "Filled with remorse and affection, Beauty used a magic ring to return instantly to the castle. She found the poor Beast lying motionless beside the rose bush.",
+          "zh": "充满悔恨和深情，贝儿使用一枚魔法戒指瞬间回到了城堡。她发现可怜的野兽毫无生气地躺在玫瑰树丛旁。"
+        },
+        {
+          "en": "\"Do not die, dear Beast!\" Beauty cried, weeping over him. \"Live to be my husband, for from this moment I give you my hand and my heart!\"",
+          "zh": "“不要死，亲爱的野兽！”贝儿趴在他身上哭泣着喊道。“活着做我的丈夫吧，因为从这一刻起，我把我的手和我的心都给你！”"
+        },
+        {
+          "en": "At that instant, a blinding light flashed, and the hideous Beast was transformed into a handsome prince! The curse of a wicked fairy was broken by true love.",
+          "zh": "在那一瞬间，一道耀眼的光芒闪过，丑陋的野兽化身为一位英俊的王子！邪恶仙女的诅咒被真爱打破了。"
+        }
+      ]
+    }
+  ]
+}

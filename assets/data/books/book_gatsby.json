@@ -1,0 +1,249 @@
+{
+  "id": "book_gatsby",
+  "title": "The Great Gatsby",
+  "chineseTitle": "了不起的盖茨比",
+  "author": "F. Scott Fitzgerald",
+  "coverUrl": "assets/images/book_gatsby.png",
+  "description": "《了不起的盖茨比》是弗朗西斯·斯科特·菲茨杰拉德（F. Scott Fitzgerald）于 1925 年出版的爵士时代文学巅峰巨著。故事由青年尼克·卡拉威（Nick Carraway）以第一人称视角讲述。长岛西卵村的神秘富豪杰伊·盖茨比（Jay Gatsby）每夜举办极其奢华的派对，只为了吸引河对岸东卵村昔日恋人黛西·布坎南（Daisy Buchanan）的注意。盖茨比倾尽一生追求着虚无缥缈的虚荣与爱情泡沫，却最终在物质至上、道德沦丧的社会冷漠中走向悲剧下场。本书文笔极其绚烂华丽，修辞精准优美，是英语美文精析与文学品味提升的极致之作。",
+  "category": "经典名著",
+  "difficulty": "高级难度",
+  "totalUnits": 9,
+  "wordCount": 18500,
+  "readerCount": "145.8万人在读",
+  "targetVocab": "2500-5000词",
+  "tagLabel": "美文名著",
+  "coverBadge": "高级 · 美式文学巅峰",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Green Light Across the Bay",
+      "chineseTitle": "第 1 章：海湾对岸的绿光",
+      "paragraphs": [
+        {
+          "en": "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.",
+          "zh": "在我年纪更轻、更容易受伤害的岁月里，父亲给了我一句忠告，从那以后我一直在脑海里反复琢磨。"
+        },
+        {
+          "en": "\"Whenever you feel like criticizing any one,\" he told me, \"just remember that all the people in this world haven't had the advantages that you've had.\"",
+          "zh": "“每当你觉得想要批评任何人的时候，”他告诉我，“只要记住，这世上并不是所有人都有过你拥有的优越条件。”"
+        },
+        {
+          "en": "He didn't say any more, but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence, I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores.",
+          "zh": "他没有再多说，但我们总是以一种含蓄的方式保持着非同寻常的沟通，我明白他的意思远不止于此。结果，我倾向于保留所有的判断，这一习惯向我展示了许多离奇的本性，也使我成为了不少久经沙场的无聊之人的受害者。"
+        },
+        {
+          "en": "When I came back from the East last autumn I felt that I wanted the world to be in uniform and at a sort of moral attention forever; I wanted no more riotous excursions with privileged glimpses into the human heart. Only Gatsby, the man who gives his name to this book, was exempted from my reaction—Gatsby, who represented everything for which I have an unaffected scorn.",
+          "zh": "去年秋天我从东方回来时，我觉得我希望这个世界永远处于某种道德的立正状态；我不再希望进行那些特权窥视人心深处的放荡远行。只有盖茨比，这个把名字赋予这本书的人，是个例外——盖茨比，他代表了我所发自内心鄙视的一切。"
+        },
+        {
+          "en": "If personality is an unbroken series of successful gestures, then there was something gorgeous about him, some heightened sensitivity to the promises of life, as if he were related to one of those intricate machines that register earthquakes ten thousand miles away.",
+          "zh": "如果性格是一连串成功的姿态，那么他身上有一种华丽的东西，某种对生命的许诺高度敏感的气质，仿佛他与万英里之外记录地震的精密仪器相连。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Valley of Ashes",
+      "chineseTitle": "第 2 章：灰烬之谷与沉寂",
+      "paragraphs": [
+        {
+          "en": "About half-way between West Egg and New York the motor road hastily joins the railroad and runs beside it for a quarter of a mile, so as to shrink away from a certain desolate area of land. This is a valley of ashes—a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens; where ashes take the forms of houses and chimneys and rising smoke and, finally, with a transcendent effort, of ash-gray men who move dimly and already crumbling through the powdery air.",
+          "zh": "在西卵与纽约之间的大致半途中，公路急忙与铁路汇合，并排延伸四分之一英里，以便躲避一片荒凉的土地。这是一片灰烬之谷——一个异想天开的农场，在这里灰烬像小麦一样生长成山脊、山丘和怪诞的花园；灰烬在这里化作房子、烟囱和上升的烟雾，最终，经过超凡的努力，化作灰蒙蒙的人，在粉尘弥漫的空气中隐约移动，早已崩塌。"
+        },
+        {
+          "en": "Occasionally a line of gray cars crawls along an invisible track, gives out a ghastly creak, and comes to rest, and immediately the ash-gray men swarm up with leaden spades and stir up an impenetrable cloud, which screens their obscure operations from your sight.",
+          "zh": "偶尔，一列灰色的小车沿着看不见的轨道爬行，发出惨白的嘎吱声，停下来，立刻灰蒙蒙的人们拿着铅色的铁锹涌上来，搅起一片无法看透的云雾，将他们阴暗的操作挡在你的视线之外。"
+        },
+        {
+          "en": "But above the gray land and the spasms of bleak dust which drift endlessly over it, you perceive, after a moment, the eyes of Doctor T. J. Eckleburg. The eyes of Doctor T. J. Eckleburg are blue and gigantic—their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a non-existent nose.",
+          "zh": "但是在灰色的土地和在其上无休止漂浮的荒凉粉尘阵痛之上，过了一会儿，你就会察觉到 T. J. 埃克尔堡医生的眼睛。T. J. 埃克尔堡医生的眼睛是蓝色的，而且巨大——它们的视网膜有一码高。它们不是从脸上看出来，而是从一副巨大的黄色眼镜后看出来，眼镜架在一座不存在的鼻子上。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Gatsby’s Extravagant Party",
+      "chineseTitle": "第 3 章：盖茨比的奢华夜宴",
+      "paragraphs": [
+        {
+          "en": "There was music from my neighbor's house through the summer nights. In his blue gardens men and girls came and went like moths among the whisperings and the champagne and the stars. At high tide in the afternoon I watched his guests diving from the tower of his raft, or sunning themselves on the hot sand of his beach while his two motor-boats slit the waters of the Sound, drawing aquaplanes over cataracts of foam.",
+          "zh": "整个夏天的大半夜里，我邻居家里都有音乐声。在他蓝色的花园里，男男女女像飞蛾一样在低语、香槟和繁星之间来来往往。在下午潮水高涨时，我看着他的客人从他浮台的高塔上跳水，或者在他沙滩炽热的沙子上晒太阳，而他的两艘快艇划破海湾的水面，在飞溅的泡沫瀑布上拖着滑水板。"
+        },
+        {
+          "en": "On week-ends his Rolls-Royce became a omnibus, bearing parties to and from the city between eight o'clock in the morning and long past midnight, while his station wagon scampered like a brisk yellow bug to meet all trains.",
+          "zh": "在周末，他的劳斯莱斯变成了一辆公共汽车，在早晨八点到过半夜之间接送前往城市的聚会者，而他的客货两用车像一只敏捷的黄色昆虫一样飞奔去接所有的火车。"
+        },
+        {
+          "en": "And on Mondays eight servants, including an extra gardener, toiled all day with mops and scrubbing-brushes and hammers and garden-shears, repairing the ravages of the night before.",
+          "zh": "而在星期一，八名仆人，包括一名额外的园丁，整天拿着拖把、刷子、锤子和园艺剪刀辛苦劳作，修复前一天晚上的破坏。"
+        },
+        {
+          "en": "Every Friday five crates of oranges and lemons arrived from a fruiterer in New York—every Monday these same oranges and lemons left his back door in a pyramid of pulpless halves. There was a machine in the kitchen which could extract the juice of two hundred oranges in half an hour if a little button was pressed two hundred times by a butler's thumb.",
+          "zh": "每个星期五，五箱橙子和柠檬从纽约的一家水果商那里运来——每个星期一，这些相同的橙子和柠檬从他的后门离开，变成了一座无果肉半圆皮的金字塔。厨房里有一台机器，如果男管家的拇指按两百次小按钮，就能在半小时内榨出两百个橙子的汁。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: Lunch in New York with Meyer Wolfsheim",
+      "chineseTitle": "第 4 章：纽约午餐与沃尔夫什姆",
+      "paragraphs": [
+        {
+          "en": "At nine o'clock one morning late in July, Gatsby's gorgeous car lurch up the rocky drive to my door and gave out a burst of melody from its three-toned horn. It was the first time he had called on me, though I had gone to two of his parties, mounted in his hydroplane, and, at his urgent invitation, made use of his beach.",
+          "zh": "七月下旬的一个早晨九点，盖茨比华丽的车子沿着我家门前崎岖的驶入道颠簸而止，三音喇叭喷爆出一阵旋律。这是他第一次来拜访我，尽管我参加过他的两次派对，乘坐过他的水上飞机，而且应他的热切邀请使用了他的沙滩。"
+        },
+        {
+          "en": "\"Good morning, old sport,\" he said. \"You're having lunch with me today and I thought we'd ride up together.\"",
+          "zh": "“早安，老兄，”他说。“你今天和我一起吃午饭，我想我们一起坐车去。”"
+        },
+        {
+          "en": "He was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American—that comes, I suppose, with the absence of lifting work or rigid training in youth, and, even more, with the formless grace of our nervous, sporadic games.",
+          "zh": "他在车子的仪表板上保持着平衡，那种动作的机敏是如此独特地具有美国特色——我想，这是因为年轻时没有干过重体力活或接受过僵硬训练，更是因为我们紧张、零星的体育比赛中无拘无束的优雅。"
+        },
+        {
+          "en": "Over lunch in a subterranean New York restaurant, Gatsby introduced me to Mr. Meyer Wolfsheim, a small, flat-nosed Jew with two fine growths of hair in his nostrils.",
+          "zh": "在纽约一家地下餐厅吃午饭时，盖茨比把我介绍给了梅耶·沃尔夫什姆先生，一个矮小、扁鼻子的犹太人，鼻孔里长着两缕细软的毛。"
+        },
+        {
+          "en": "\"Wolfsheim?\" Gatsby explained later. \"He's the man who fixed the World's Series back in 1919.\"",
+          "zh": "“沃尔夫什姆？”盖茨比后来解释道。“他就是那个在 1919 年操纵了世界大赛的人。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Reunion with Daisy at Nick’s Cottage",
+      "chineseTitle": "第 5 章：小屋里的重逢之约",
+      "paragraphs": [
+        {
+          "en": "The day agreed upon for the tea arrived. It poured with rain. At eleven o'clock a man in a raincoat, dragging a lawn-mower, tapped at my front door and said that Mr. Gatsby had sent him to cut my grass.",
+          "zh": "商定喝茶的日子到了。大雨滂沱。十一点钟，一个穿着雨衣的人拖着割草机敲了我家的前门，说盖茨比先生派他来给我割草。"
+        },
+        {
+          "en": "At two o'clock Gatsby himself arrived, dressed in a white flannel suit, silver shirt, and gold-colored tie. He was pale, and there were dark signs of sleeplessness beneath his eyes.",
+          "zh": "两点钟，盖茨比本人到了，穿着白色法兰绒西装、银色衬衫和金黄色领带。他脸色苍白，眼下有失眠的阴暗痕迹。"
+        },
+        {
+          "en": "\"Is everything all right?\" he asked nervously, looking around the living room.",
+          "zh": "“一切都好吗？”他不安地问，环顾着客厅。"
+        },
+        {
+          "en": "When Daisy's car pulled up in the driveway, Gatsby stood in a pool of water on the lawn, soaked through. As Daisy entered the room, Gatsby slipped out the back door and reappeared at the front, pretending to have just arrived.",
+          "zh": "当黛西的车停在驶入道上时，盖茨比站在草坪上的积水里，全身湿透。当黛西走进房间时，盖茨比从小后门溜了出去，又在前门重新出现，假装刚刚到达。"
+        },
+        {
+          "en": "He stood leaning against the mantelpiece with a forced, unnatural calm, his hands jammed into his pockets, trying to look composed as Daisy turned and gasped in sudden recognition.",
+          "zh": "他站在那里，靠着壁炉架，保持着一种强求的、不自然的气定神闲，双手塞在口袋里，试图在黛西转过身来因突然认出他而发出惊呼时显得沉着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Real James Gatz of North Dakota",
+      "chineseTitle": "第 6 章：北达科他州的詹姆斯·盖茨",
+      "paragraphs": [
+        {
+          "en": "The truth was that Jay Gatsby of West Egg, Long Island, sprang from his platonic conception of himself. He was a son of God—a phrase which, if it means anything, means just that—and he must be about His Father's business, the service of a vast, vulgar, and meretricious beauty.",
+          "zh": "事实是，长岛西卵的杰伊·盖茨比源于他对自己的柏拉图式概念。他是上帝之子——如果这个词有什么含义的话，正意味着这个——他必须从事他天父的事务，服务于一种宏大、俗气而虚荣的美。"
+        },
+        {
+          "en": "So he invented just the sort of Jay Gatsby that a seventeen-year-old boy would be likely to invent, and to this conception he was faithful to the end.",
+          "zh": "所以他发明了十七岁男孩可能会发明的绝非盖茨比的那种人，而且他对这个概念忠诚到了最后。"
+        },
+        {
+          "en": "His parents were shiftless and unsuccessful farm people—his imagination had never really accepted them as his parents at all.",
+          "zh": "他的父母是无所作为、不成功的农夫——他的想象力其实从来没有真正接受过他们是他的父母。"
+        },
+        {
+          "en": "The truth was that James Gatz of North Dakota had changed his name at the age of seventeen and at the specific moment that witnessed the beginning of his career—when he saw Dan Cody's yacht drop anchor over the most treacherous flat in Lake Superior.",
+          "zh": "事实是，北达科他州的詹姆斯·盖茨在十七岁时改了名字，那正目睹了他事业开端的具体时刻——当时他看到丹·科迪的游艇在苏必利尔湖最危险的浅滩上降锚。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: Confrontation at the Plaza Hotel",
+      "chineseTitle": "第 7 章：广场饭店的激烈摊牌",
+      "paragraphs": [
+        {
+          "en": "It was on the same day that Gatsby's career as Gatsby began. Dan Cody was fifty years old then, a millionaire manufactured by a little soft-headedness in Nevada, in the silver rushes of Seventy-five.",
+          "zh": "正是在那一天，盖茨比作为盖茨比的事业开始了。丹·科迪当时五十岁，是个在内华达州七十五年银矿热潮中因头脑发热而产生的百万富翁。"
+        },
+        {
+          "en": "He had been a physical wreck, but he retained an immense vitality and a streak of madness.",
+          "zh": "他的身体已经崩溃，但他保持着巨大的活力和一丝狂野。"
+        },
+        {
+          "en": "For five years Gatsby worked for him, traveling with him aboard the Tuolomee to the West Indies and the Barbary Coast.",
+          "zh": "五年里，盖茨比为他工作，乘坐“图奥勒米号”与他一起前往西印度群岛和巴巴里海岸。"
+        },
+        {
+          "en": "When Dan Cody died, he left Gatsby twenty-five thousand dollars. He didn't get the money. A rumor reached him that Cody's mistress, Ella Kaye, used legal tricks to secure the entire fortune.",
+          "zh": "当丹·科迪去世时，他留给盖茨比两万五千美元。他没拿到这笔钱。有谣言传到他耳朵里，说科迪的情妇埃拉·凯利用法律伎俩据有了全部财产。"
+        },
+        {
+          "en": "He was left with a singular understanding of the world and an indestructible ambition that would eventually build his empire on West Egg.",
+          "zh": "他被留下了对世界的独特理解和一种不可摧毁的雄心，这种雄心最终将在西卵建立起他的帝国。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Fatal Accident and Tragic Death",
+      "chineseTitle": "第 8 章：致命车祸与悲剧临降",
+      "paragraphs": [
+        {
+          "en": "The next day was stiflingly hot, almost the hottest day of the summer. We sat in the drawing-room of Tom and Daisy's house in East Egg, drinking gin rickeys while the heat pressed down like a heavy blanket.",
+          "zh": "第二天闷热难耐，几乎是夏天最热的一天。我们坐在东卵汤姆和黛西家的起居室里，喝着金汤力，热浪像沉重的毯子一样压下来。"
+        },
+        {
+          "en": "\"Let's go to town!\" cried Daisy impatiently. \"It's so hot! Everything's so confused!\"",
+          "zh": "“我们去城里吧！”黛西耐心地喊道。“太热了！一切都太混乱了！”"
+        },
+        {
+          "en": "We drove to New York in two cars, renting a suite at the Plaza Hotel.",
+          "zh": "我们开着两辆车前往纽约，在广场饭店租了一套套房。"
+        },
+        {
+          "en": "The tension in the room snapped as Tom Buchanan turned on Gatsby, questioning his past and his Oxford education.",
+          "zh": "随着汤姆·布坎南转向盖茨比，质问他的过去和他牛津大学的教育，房间里的紧张气氛陡然打破。"
+        },
+        {
+          "en": "\"I know I'm not very popular,\" Tom sneered. \"I don't give big parties. But you're not going to make trouble in my house.\"",
+          "zh": "“我知道我不怎么受欢迎，”汤姆冷笑道。“我不举办大派对。但你别想在我家里搞事。”"
+        },
+        {
+          "en": "\"Your wife doesn't love you,\" said Gatsby quietly. \"She's never loved you. She loves me.\"",
+          "zh": "“你妻子不爱你，”盖茨比平静地说。“她从来没爱过你。她爱的是我。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 9,
+      "title": "Chapter 9: The Empty House and the Green Light",
+      "chineseTitle": "第 9 章：人去楼空与永恒绿光",
+      "paragraphs": [
+        {
+          "en": "After the accident on the dark road where Myrtle Wilson was struck and killed by Gatsby's yellow car—driven by Daisy—I couldn't sleep all night.",
+          "zh": "在盖茨比的黄色跑车——由黛西驾驶——在黑暗的公路上撞死默特尔·威尔逊的事故发生后，我整夜无法入睡。"
+        },
+        {
+          "en": "I went over to Gatsby's house at dawn. The heavy front door was open, and the vast rooms smelled faintly of dead flowers and stale tobacco.",
+          "zh": "黎明时我去了盖茨比家。沉重的阔大前门开着，巨大的房间里弥漫着死花和陈旧烟草的淡淡气味。"
+        },
+        {
+          "en": "\"You ought to go away,\" I told him. \"They'll trace your car.\"",
+          "zh": "“你该离开了，”我告诉他。“他们会追踪你的车。”"
+        },
+        {
+          "en": "\"Go away now, old sport?\" He shook his head. \"I couldn't leave Daisy. Not until I know what she's going to do.\"",
+          "zh": "“现在离开，老兄？”他摇了摇头。“我不能离开黛西。直到我知道她打算怎么办。”"
+        },
+        {
+          "en": "Later that afternoon, while Gatsby floated in his swimming pool on a rubber mattress, waiting for a phone call from Daisy that would never come, George Wilson crept through the bushes with a revolver in his hand.",
+          "zh": "那天下午晚些时候，当盖茨比浮在他的游泳池里的橡皮垫子上，等待着永远不会到来的黛西的电话时，乔治·威尔逊手握左轮手枪从灌木丛中溜了进来。"
+        }
+      ]
+    }
+  ]
+}

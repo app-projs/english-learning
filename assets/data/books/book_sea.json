@@ -1,0 +1,122 @@
+{
+  "id": "book_sea",
+  "title": "The Old Man and the Sea",
+  "chineseTitle": "老人与海",
+  "author": "Ernest Hemingway",
+  "coverUrl": "assets/images/book_sea.png",
+  "description": "《老人与海》是美国硬汉文学大师欧内斯特·海明威（Ernest Hemingway）于 1952 年出版的代表作，一举斩获普利策奖与诺贝尔文学奖。老渔夫圣地亚哥在连续 84 天没打到鱼后，独自一人驾船驶向离岸极远的墨西哥湾深海。第 85 天，他钓到了一条比他的小船还要大上的巨型马林鱼。在经过两天两夜精疲力竭的生死搏斗后，老渔夫终于将马林鱼刺杀并系在船边。然而在返航途中，死神般的鲨鱼群蜂拥而至。老渔夫手握残破的武器与鲨鱼群展开了悲壮血腥的决战，体现了“一个人可以被毁灭，但不能被打败”的硬汉精神。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 4,
+  "wordCount": 12800,
+  "readerCount": "210.4万人在读",
+  "targetVocab": "1800-4000词",
+  "tagLabel": "诺奖名著",
+  "coverBadge": "诺奖 · 必读硬汉巨著",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Part 1: The Old Man and the Boy",
+      "chineseTitle": "第 1 部分：老渔夫与小男孩",
+      "paragraphs": [
+        {
+          "en": "He was an old man who fished alone in a skiff in the Gulf Stream and he had gone eighty-four days now without taking a fish. In the first forty days a boy had been with him. But after forty days without a fish the boy's parents had told him that the old man was now definitely and finally salao, which is the worst form of unlucky, and the boy had gone at their orders in another boat which caught three good fish the first week.",
+          "zh": "他是一个老头子，独自一个人在墨西哥湾流的一条小船上钓鱼，如今已连续八十四天没钓到一条鱼了。在头四十天里，有一个男孩和他在一起。但是在四十天没钓到鱼之后，男孩的父母告诉他，老头子现在肯定且最终是“萨劳”（salao）了，这是最倒霉的形式，男孩遵照父母的命令去了另一条船，那条船在第一周就抓到了三条好鱼。"
+        },
+        {
+          "en": "It made the boy sorrowful to see the old man come in each day with his skiff empty and he always went down to help him carry either the coiled lines or the gaff and harpoon and the sail that was furled around the mast. The sail was patched with flour sacks and, furled, it looked like the flag of permanent defeat.",
+          "zh": "看到老头子每天驾着空小船归来，男孩心里很纳闷，他总是跑下去帮老头子背卷好的钓索，或者木钩、飞镖和绕在桅杆上的帆。帆上用面粉袋打着补丁，卷起来的时候，看起来就像永败的旗帜。"
+        },
+        {
+          "en": "The old man was thin and gaunt with deep wrinkles in the back of his neck. The brown blotches of the benevolent skin cancer the sun brings from its reflection on the tropic sea were on his cheeks.",
+          "zh": "老头子消瘦而憔悴，脖颈后面有很深的皱纹。太阳在热带海洋上反射带来的良性皮肤癌的褐色斑块长在他的双颊上。"
+        },
+        {
+          "en": "Everything about him was old except his eyes and they were the same color as the sea and were cheerful and undefeated.",
+          "zh": "他身上的一切都是古老的，除了他的眼睛，他的眼睛和大海是同一个颜色，欢快而从不认输。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Part 2: Out on the Gulf Stream",
+      "chineseTitle": "第 2 部分：驶向墨西哥湾深海",
+      "paragraphs": [
+        {
+          "en": "Before it was light, the old man had his baiting done and he was rowing out of the harbor in the dark. He heard the sound of other boats rowing, although he could not see them for the night was black.",
+          "zh": "天亮之前，老头子已经装好了鱼饵，在黑暗中划出了港口。他听到了其他船划桨的声音，虽然因为夜晚一片漆黑他看不见它们。"
+        },
+        {
+          "en": "He knew he was going far out and he left the smell of the land behind and rowed out into the clean early morning smell of the ocean. He saw the phosphorescence of the Gulf weed in the water as he rowed over the part of the ocean that the fishermen called the great well.",
+          "zh": "他知道自己要去很远的地方，他把陆地的气味抛在身后，划进了海洋清新的清晨气味中。当他划过渔民们称为大井的那部分海洋时，他看到了马尾藻的磷光。"
+        },
+        {
+          "en": "\"La mar,\" he thought of her always in Spanish as feminine and as something that gave or withheld great favors, and if she did wild or wicked things it was because she could not help them. The moon affects her as it does a woman, he thought.",
+          "zh": "“大海”（La mar），他总是用西班牙语把她想象成女性，想象成给予或扣留巨大恩惠的东西，如果她做了狂暴或邪恶的事情，那是因为她情不自禁。月亮对她的影响就像对女人一样，他想。"
+        },
+        {
+          "en": "He rowed greenly and smoothly and did not use unnecessary effort because he kept his speed and the lines went straight down into the water. He was far out now, farther than any fisherman had dared to go that day.",
+          "zh": "他划得既绿意盎然又平稳，没有使用不必要的力气，因为他保持着速度，钓索直直地垂入水中。他现在离得很远了，比那天任何渔民敢去的都要远。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Part 3: The Great Marlin and the Battle",
+      "chineseTitle": "第 3 部分：大马林鱼与生死搏斗",
+      "paragraphs": [
+        {
+          "en": "The line rose slowly and steadily and then the surface of the ocean bulged ahead of the boat and the fish came out. He came out unendingly and water poured from his sides. He was bright in the sun and his head and back were dark purple and in the sun the stripes on his sides showed wide and a light lavender.",
+          "zh": "钓索缓慢而稳定地上升，然后小船前面的海面隆起，鱼出来了。它源源不断地冒出来，水从它的两侧倾泻而下。它在阳光下闪闪发亮，它的头和背是深紫色的，在阳光下，它两侧的条纹显示出宽宽的淡紫色。"
+        },
+        {
+          "en": "His sword was as long as a baseball bat and tapered like a rapier and he rose his full length from the water and then entered it again, smoothly, like a diver and the old man saw the great scythe blade of his tail go under and the line commenced to race out.",
+          "zh": "它的剑像棒球棒一样长，像花剑一样渐细，它从水中伸出了全部身长，然后像跳水运动员一样平滑地再次进入水中，老头子看到它尾巴的巨大镰刀状叶片沉了下去，钓索开始飞快地拉出。"
+        },
+        {
+          "en": "\"He is two feet longer than the skiff,\" the old man said. The line was cutting his hands and he felt the immense power of the fish pulling the boat toward the north.",
+          "zh": "“它比小船还长两英尺，”老头子说。钓索正割破他的双手，他感受到鱼拉着小船朝北去的巨大力量。"
+        },
+        {
+          "en": "\"Fish,\" he said softly, aloud. \"I'll stay with you until I am dead.\"",
+          "zh": "“鱼啊，”他轻声而大声地说。“我要和你呆在一起，直到我死去。”"
+        },
+        {
+          "en": "He felt the strain of the line across his shoulders and he knew he must hold on, no matter how much his body ached or how tired he became.",
+          "zh": "他感受到跨过双肩的钓索的拉力，他知道自己必须坚持住，无论他的身体多么疼痛，无论他变得多么疲倦。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Part 4: The Sharks and the Return",
+      "chineseTitle": "第 4 部分：鲨鱼群袭与英雄归航",
+      "paragraphs": [
+        {
+          "en": "The shark came in fast from behind and when he attacked the fish the old man saw his mouth open and his strange eyes and the clicking sound of his jaws as he drove his teeth into the meat above the tail.",
+          "zh": "鲨鱼从后面快速逼近，当它袭击鱼时，老头子看到它的嘴张开，看到它奇特的眼睛，看到它的双颚在把牙齿推进尾巴上方的肉里时发出的咔嗒声。"
+        },
+        {
+          "en": "The shark's head was out of water and his back was coming out and the old man heard the noise of skin and flesh ripping on the big fish when he shoved the harpoon down into the shark's head with all the strength of his arms.",
+          "zh": "鲨鱼的头冒出了水面，背部也冒了出来，当老头子用双臂的全部力量把飞镖扎进鲨鱼的头部时，他听到了大鱼皮肉撕裂的声音。"
+        },
+        {
+          "en": "He drove it in without hope but with resolution and complete malignancy.",
+          "zh": "他没有抱希望地扎进去，而是怀着决心和彻底的敌意。"
+        },
+        {
+          "en": "The shark swung over and rolled and the old man saw his eye was dead and then he sank slowly into the deep blue water.",
+          "zh": "鲨鱼翻转过来滚动着，老头子看到它的眼睛死了，然后它缓缓沉入深蓝色的水中。"
+        },
+        {
+          "en": "\"A man can be destroyed but not defeated,\" the old man said aloud to the empty sea.",
+          "zh": "“一个人可以被毁灭，但不能被打败，”老头子对着空旷的大海大声说。"
+        },
+        {
+          "en": "When he rowed into the small harbor at night, all the lights were out and everyone was asleep. He tied the skiff and looked back at the giant white skeleton of the marlin tied alongside his boat, gleaming under the starlight.",
+          "zh": "当他在夜里划进小港口时，所有的灯都灭了，所有人都睡着了。他系好小船，回头看着系在他船边的大马林鱼的巨型白色骨架，在星光下闪闪发亮。"
+        }
+      ]
+    }
+  ]
+}

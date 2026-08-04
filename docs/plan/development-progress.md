@@ -1,15 +1,23 @@
 # 项目开发进度与实施计划文档 (Development Progress)
 
 ## 📌 最近更新时间
-**更新日期**：2026年8月3日  
-**最新版本**：Lumina English Version 1.0.58+59  
-**更新内容**：完成【全量补齐 14 本全球顶级经典名著与 347 个原著真实章节入库 SQLite (Version 1.0.58+59)】：彻底纠正章节数量，100% 还原每本名著的实际原著章节数（包含《傲慢与偏见》61章、《双城记》45章、《简·爱》38章、《金银岛》34章、《小王子》27章等）；在 `lib/mock/books/` 下建立 14 个独立名著解耦文件，全量提供 347 个真实原著章节全文本与逐句中文精译，并自动覆写入库 SQLite 数据库托管。
+**更新日期**：2026年8月4日  
+**最新版本**：Lumina English Version 1.0.60+61  
+**更新内容**：完成【全工程高内聚功能模块化架构重构 (Feature-First Architecture) 与 SQLite v16 升级 (Version 1.0.60+61)】：
+1. **模块化目录结构**：全面按规范划分 `lib/core/`（theme/services/widgets）与 `lib/features/`（word/article/sentence/grammar/listening/phonetics/word_root/dialogue/ai_practice/dictionary/profile/achievement/leaderboard/review/favorites），消除了 30+ 平铺文件的耦合；
+2. **Word 模型多义释义与 SQLite v16 升级**：升级 SQLite 数据库至 Version 16 支持 `definitions` 多义释义 JSON 列与分行优雅排版展示；
+3. **文章智能断句算法与去重**：重写 `article_detail_screen.dart` 的 `_splitSentences()` 算法，智能保护 "Mr.", "Miss.", "L.", "R." 等英美人名/缩写不被误切成碎片段落，并自动过滤正文开头与标题重复的文本；
+4. **语法 Mock 解耦提取**：提取硬编码的语法练习题目至 `features/grammar/mock/mock_grammar.dart`。
 
 ---
 
 ## 🟢 1. 已开发完成功能列表 (Completed)
 
 ### 1.1 基础架构与发音/视觉系统
+- [x] **全工程高内聚功能模块化架构重构与 SQLite v16 升级 (Version 1.0.60+61)**：
+  - **1. Feature-First 模块解耦**：将所有模型、服务、视图与 mock 数据收归至 16 个高内聚 `features/` 目录与 `core/` 公共服务库。
+  - **2. Word 多义释义与 SQLite v16 扩展**：数据库升级至 v16 新增 `definitions` 多义释义，背词卡片与气泡弹窗支持多义分行精准呈现。
+  - **3. 智能缩写断句与去重**：保护缩写（Miss./L./R.），避免产生非法碎片段落，消除正文开头重复标题行。
 - [x] **全量补齐 14 本全球顶级经典名著与 347 个原著真实章节入库 SQLite (Version 1.0.58+59)**：
   - **1. 14 大经典名著完整矩阵**：在 `lib/mock/books/` 下建齐《小王子》(27章)、《绿山墙的安妮》(38章)、《爱丽丝梦游仙境》(12章)、《绿野仙踪》(24章)、《金银岛》(34章)、《老人与海》(12章)、《了不起的盖茨比》(9章)、《福尔摩斯探案集》(12章)、《傲慢与偏见》(61章)、《双城记》(45章)、《简·爱》(38章)、《美女与野兽》(10章)、《一千零一夜》(12章)、《巨石人面像》(10章)。
   - **2. 347 章节原著全文本**：全量提供包含 14 本名著共 347 个章节的真实原著丰满全文本与逐句精译。

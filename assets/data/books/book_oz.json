@@ -1,0 +1,197 @@
+{
+  "id": "book_oz",
+  "title": "The Wonderful Wizard of Oz",
+  "chineseTitle": "绿野仙踪",
+  "author": "L. Frank Baum",
+  "coverUrl": "assets/images/book_oz.png",
+  "description": "《绿野仙踪》是美国作家李曼·法兰克·鲍姆（L. Frank Baum）于 1900 年出版的经典奇幻冒险小说，被称为“美国第一部本土童话”。堪萨斯州女孩桃乐丝（Dorothy）和她的狗狗托托被龙卷风吹到了神秘的奥兹国。为了找到重返家乡的方法，桃乐丝踏上了前往翡翠城的黄砖路，并在途中结识了渴望得到大脑的稻草人、渴望拥有健全心灵的铁皮人以及渴望获得勇气的胆小狮。他们共同克服重重艰难险阻，战胜了邪恶的女巫。本书节奏明快，主题积极深刻，对于提升中高级英语词汇量和听说读写综合能力大有裨益。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 5,
+  "wordCount": 14500,
+  "readerCount": "86.4万人在读",
+  "targetVocab": "1000-3000词",
+  "tagLabel": "奇幻冒险",
+  "coverBadge": "入门 · 经典童话",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Cyclone",
+      "chineseTitle": "第 1 章：龙卷风袭来",
+      "paragraphs": [
+        {
+          "en": "Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small, for the lumber to build it had to be carried by wagon many miles.",
+          "zh": "桃乐丝生活在大堪萨斯草原的中央，和她的农夫叔叔亨利、农夫妻子婶婶爱姆生活在一起。他们的房子很小，因为盖房子用的木材必须用马车从好几英里外运过来。"
+        },
+        {
+          "en": "There were four walls, a floor and a roof, which made one room; and this room contained a rusty looking cookstove, a cupboard for the dishes, a table, three or four chairs, and the beds. Uncle Henry and Aunt Em had a big bed in one corner and Dorothy a little bed in another corner.",
+          "zh": "房子有四面墙、一个地板和一个屋顶，构成了一个房间；房间里有一台看起来生锈的做饭用炉子、一个装碗碟的橱柜、一张桌子、三四张椅子，以及床铺。亨利叔叔和爱姆婶婶在一个角落里有一张大床，桃乐丝在另一个角落里有一张小床。"
+        },
+        {
+          "en": "There was no garret at all, and no cellar—except a small hole dug in the ground, called a cyclone cellar, where the family could go in case one of those great whirlwinds arose, mighty enough to crush any building in its path.",
+          "zh": "房子根本没有阁楼，也没有地窖——除了在地上挖的一个小洞，叫做防风地窖，一旦刮起大风暴，大到足以粉碎沿途任何建筑物时，一家人就可以躲进去。"
+        },
+        {
+          "en": "It was reached by a trap door in the middle of the floor, from which a ladder led down into the small, dark hole.",
+          "zh": "地窖由地板中间的一个活门进入，一条梯子从那里通向那个又小又暗的洞。"
+        },
+        {
+          "en": "When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side. Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions.",
+          "zh": "当桃乐丝站在门廊向四周望去时，除了四面八方大片的灰色草原之外，她什么也看不见。在延伸到各个方向天边的辽阔平坦的大地上，没有一棵树，也没有一栋房子打破这片荒凉。"
+        },
+        {
+          "en": "The sun had baked the plowed land into a gray mass, with little cracks running through it. Even the grass was not green, for the sun had burned the tops of the long blades until they were the same gray color to be seen everywhere.",
+          "zh": "太阳把耕过的土地晒成了一大块灰色的硬块，上面布满了小裂缝。甚至连草都不是绿色的，因为太阳晒焦了长长的草叶尖，使它们变成了到处可见的同样的灰色。"
+        },
+        {
+          "en": "Once the house had been painted, but the sun blistered the paint and the rains washed it away, and now the house was as dull and gray as everything else.",
+          "zh": "这栋房子以前涂过漆，但太阳晒爆了漆，雨水冲走了它，现在这栋房子就像其他一切东西一样暗淡无光、一片灰色。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Council with the Munchkins",
+      "chineseTitle": "第 2 章：与芒奇金人的会面",
+      "paragraphs": [
+        {
+          "en": "There were three men and one woman, and all were oddly dressed. They wore round hats that rose to a point a foot above their heads, with little bells around the brims that tinkled sweetly as they moved.",
+          "zh": "有三个男人和一个女人，全都穿得很古怪。他们戴着圆圆的帽子，帽子在头顶上一英尺高的位置耸立成一个尖顶，帽檐周围挂着小铃铛，走起路来发出甜美的叮当声。"
+        },
+        {
+          "en": "The little woman walked up to Dorothy, made a low bow and said, in a sweet voice:",
+          "zh": "那个矮小的女人走到桃乐丝面前，深深地鞠了一躬，用甜美的声音说："
+        },
+        {
+          "en": "\"You are welcome, most noble Sorceress, to the land of the Munchkins. We are so grateful to you for having killed the Wicked Witch of the East, and for setting our people free from bondage.\"",
+          "zh": "“欢迎你，最高尚的女巫，来到芒奇金人的土地。我们非常感谢你杀死了东方的邪恶女巫，把我们的人民从奴役中解放了出来。”"
+        },
+        {
+          "en": "Dorothy listened to this speech with wonder. What could the little woman mean by calling her a sorceress, and saying she had killed the Wicked Witch of the East?",
+          "zh": "桃乐丝满怀惊奇地听着这段话。这个小女人叫她女巫，还说她杀死了东方的邪恶女巫，到底是什么意思呢？"
+        },
+        {
+          "en": "Dorothy was an innocent, harmless little girl, who had been carried by a cyclone many miles from home; and she had never killed anything in all her life.",
+          "zh": "桃乐丝是个无辜、无害的小女孩，被龙卷风吹到了离家许多英里远的地方；她一辈子连任何东西都没杀过。"
+        },
+        {
+          "en": "But the little woman evidently expected her to answer; so Dorothy said, hesitatingly:",
+          "zh": "但那个小女人显然在等待她的回答；于是桃乐丝犹豫地说："
+        },
+        {
+          "en": "\"You are very kind, but there must be some mistake. I have not killed anything.\"",
+          "zh": "“你太客气了，但一定有什么误会。我没有杀过任何东西。”"
+        },
+        {
+          "en": "\"Your house did, anyway,\" replied the little woman with a laugh, \"and that is the same thing. See!\" she continued, pointing to the corner of the house. \"There are her two feet, still sticking out from under a block of wood.\"",
+          "zh": "“反正你的房子杀了，”小女人笑着回答，“那是一回事。你看！”她继续指着房子的角落说。“那是她的两只脚，还从一块木头下面露出来呢。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: How Dorothy Saved the Scarecrow",
+      "chineseTitle": "第 3 章：桃乐丝救下稻草人",
+      "paragraphs": [
+        {
+          "en": "When Dorothy was left alone she began to feel hungry. So she went to the cupboard and cut herself some bread, which she spread with butter. She gave some to Toto, and then she took a pail and went to the little brook for water. Toto ran beside her and barked merrily.",
+          "zh": "当桃乐丝一个人留下来时，她开始感到饿了。于是她走到橱柜前，给自己切了一些面包，抹上黄油。她给托托喂了一些，然后拿了一个水桶走到小溪边打水。托托在她身边跑着，快活地吠叫。"
+        },
+        {
+          "en": "She dressed herself in her clean blue and white gingham dress, and put on a pink sunbonnet. She took a little basket and filled it with bread from the cupboard, then she looked down at her feet and noticed how worn her old shoes were.",
+          "zh": "她穿上了干净的蓝白格方格布连衣裙，戴上一顶粉红色的太阳帽。她拿了一个小篮子，装满橱柜里的面包，然后她低头看了看自己的脚，注意到她的旧鞋子有多破旧。"
+        },
+        {
+          "en": "\"They will never do for a long journey, Toto,\" she said. And Toto looked up into her face with his little black eyes and wagged his tail to show he knew what she meant.",
+          "zh": "“它们可支撑不了长途旅行，托托，”她说。托托用小黑眼睛看着她的脸，摇着尾巴，表示它明白她的意思。"
+        },
+        {
+          "en": "Just then Dorothy saw on the table the silver shoes that had belonged to the Wicked Witch of the East.",
+          "zh": "就在这时，桃乐丝看到桌子上放着属于东方邪恶女巫的银鞋子。"
+        },
+        {
+          "en": "\"I wonder if they will fit me,\" she said to Toto. \"They would be just the thing to take a long walk in.\"",
+          "zh": "“不知道它们合不合我的脚，”她对托托说。“穿着它们长途步行一定正合适。”"
+        },
+        {
+          "en": "She took off her old leather shoes and tried on the silver ones, which fitted her as well as if they had been made for her.",
+          "zh": "她脱下旧皮鞋，试穿了银鞋子，它们非常合脚，就像专门为她做的一样。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Road Through the Forest",
+      "chineseTitle": "第 4 章：穿过森林的黄砖路",
+      "paragraphs": [
+        {
+          "en": "There were several roads near by, but it did not take her long to find the one paved with yellow bricks. Within a short time she was walking briskly toward the Emerald City, her silver shoes tinkling merrily on the hard, yellow road-bed.",
+          "zh": "附近有几条路，但她没花多久就找到了那条用黄砖铺成的路。不一会儿，她就轻快地朝翡翠城走去，她的银鞋子在坚硬的黄色路面上发出清脆欢快的叮当声。"
+        },
+        {
+          "en": "The sun shone bright and the birds sang sweetly, and Dorothy did not feel nearly so bad as you might think a little girl would who had been suddenly whisked away from her own country and dropped down into the midst of a strange land.",
+          "zh": "阳光明媚，鸟儿歌唱甜美，桃乐丝的心情并没有你想象的一个小女孩突然被从自己的国家吹走并掉进一个陌生世界中那么糟糕。"
+        },
+        {
+          "en": "She was surprised, as she walked along, to see how pretty the country was. There were neat fences at the sides of the road, painted a dainty blue color, and beyond them were fields of grain and vegetables in abundance.",
+          "zh": "当她走着的时候，她惊讶地看到乡村是多么美丽。路边有整齐的篱笆，涂着精致的蓝色，篱笆之外是大片大片的粮食作物和丰富的蔬菜。"
+        },
+        {
+          "en": "Evidently the Munchkins were good farmers and able to raise large crops. Once in a while she passed a house, and the people came out to bow low as she went by, for everyone knew she had destroyed the Wicked Witch.",
+          "zh": "显而易见，芒奇金人是出色的农夫，能够种植丰收的作物。时不时地，她经过一栋房子，人们走出来向她深深地鞠躬，因为大家都知道她摧毁了邪恶的女巫。"
+        },
+        {
+          "en": "By noon she sat down by the roadside near a cornfield to rest and eat her bread. While she was sitting there, she noticed a Scarecrow perched high upon a pole to keep the birds from eating the ripe corn.",
+          "zh": "到了中午，她在玉米地附近的路边坐下来休息，吃她的面包。当她坐在那里时，她注意到一个稻草人高高地立在木桩上，以防止鸟儿吃成熟的玉米。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Rescue of the Tin Woodman",
+      "chineseTitle": "第 5 章：解救铁皮伐木工",
+      "paragraphs": [
+        {
+          "en": "While Dorothy was looking earnestly at the queer, painted face of the Scarecrow, she was surprised to see one of the eyes slowly wink at her. She thought she must be mistaken at first, for none of the scarecrows in Kansas ever winked.",
+          "zh": "当桃乐丝认真地看着稻草人那张滑稽的彩绘脸庞时，她惊讶地看到其中的一只眼睛慢慢地向她眨了一下。她起初以为自己看错了，因为堪萨斯州没有一个稻草人会眨眼睛。"
+        },
+        {
+          "en": "Then the figure nodded its head to her in a friendly way. Then she stepped down from the fence and walked up to it, while Toto ran around the pole and barked.",
+          "zh": "然后那个身影以友好的方式向她点头。于是她从篱笆上走下来，走向它，而托托绕着木桩跑着叫着。"
+        },
+        {
+          "en": "\"Good day,\" said the Scarecrow, in a rather husky voice.",
+          "zh": "“午安，”稻草人说，声音相当沙哑。"
+        },
+        {
+          "en": "\"Did you speak?\" asked the girl, in wonder.",
+          "zh": "“你在说话吗？”女孩惊奇地问。"
+        },
+        {
+          "en": "\"Certainly,\" answered the Scarecrow. \"How do you do?\"",
+          "zh": "“当然了，”稻草人回答。“你好吗？”"
+        },
+        {
+          "en": "\"I'm pretty well, thank you,\" replied Dorothy politely. \"How do you do?\"",
+          "zh": "“我很好，谢谢你，”桃乐丝礼貌地回答。“你好吗？”"
+        },
+        {
+          "en": "\"I'm not feeling at all well,\" said the Scarecrow, with a smile, \"for it is very tedious being perched up here night and day to scare away crows.\"",
+          "zh": "“我感觉一点也不好，”稻草人带着微笑说，“因为日夜被竖在这里吓唬乌鸦实在太无聊了。”"
+        },
+        {
+          "en": "\"Can't you get down?\" asked Dorothy.",
+          "zh": "“你下不来吗？”桃乐丝问。"
+        },
+        {
+          "en": "\"No, for this pole is stuck up my back. If you will please take away the pole which holds me up, I shall be greatly obliged to you.\"",
+          "zh": "“下不来，因为这根木桩插在了我的后背上。如果你能帮我拿掉撑着我的木桩，我将不胜感激。”"
+        },
+        {
+          "en": "Dorothy reached up both arms and lifted the figure off the pole, for, being stuffed with straw, it was very light.",
+          "zh": "桃乐丝伸出双手，把那个身影从木桩上提了下来，因为里面塞满了稻草，它非常轻。"
+        }
+      ]
+    }
+  ]
+}

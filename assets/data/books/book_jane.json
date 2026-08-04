@@ -1,0 +1,169 @@
+{
+  "id": "book_jane",
+  "title": "Jane Eyre",
+  "chineseTitle": "简·爱",
+  "author": "Charlotte Brontë",
+  "coverUrl": "assets/images/book_jane.png",
+  "description": "《简·爱》是夏洛蒂·勃朗特（Charlotte Brontë）于 1847 年以笔名“库瑞尔·贝尔”出版的自传体长篇小说。孤儿简·爱从小在舅妈家受尽虐待，后被送往规矩苛刻的罗伍德义学。恪守尊严与独立的简·爱通过自身努力应聘成为桑菲尔德庄园的家庭教师，并与庄园主罗切斯特先生（Mr. Rochester）产生了深厚真挚的爱情。然而在婚礼当天，罗切斯特隐瞒疯妻的秘密被揭穿。面对道德与情感的抉择，简·爱毅然选择离开。全书展现了女性追求平等、尊严与灵魂自由的强大意志力，是英语学习者不可错过的励志名著。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 5,
+  "wordCount": 31000,
+  "readerCount": "240.6万人在读",
+  "targetVocab": "2500-5500词",
+  "tagLabel": "女性成长",
+  "coverBadge": "经典 · 独立灵魂",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: Gateshead Hall and the Red-Room",
+      "chineseTitle": "第 1 章：盖茨黑德庄园与红房子",
+      "paragraphs": [
+        {
+          "en": "There was no possibility of taking a walk that day. We had been wandering, indeed, in the leafless shrubbery an hour in the morning; but since dinner (Mrs. Reed, when there was no company, dined early) the cold winter wind had brought with it clouds so sombre, and a rain so penetrating, that further outdoor exercise was now out of the question.",
+          "zh": "那天不可能散步了。事实上，我们在早晨在无叶的灌木丛里漫步了一个小时；但自从午饭后（里德太太在没有客人时吃得早），寒冷的冬风带来了如此阴沉的云彩，以及如此具有穿透力的雨水，以至于进一步的户外活动现在是不可能的了。"
+        },
+        {
+          "en": "I was glad of it: I never liked long walks, especially on chilly afternoons: dreadful to me was the coming home in the raw twilight, with nipped fingers and toes, and a heart saddened by the chidings of Bessie, the nurse, and humbled by the consciousness of my physical inferiority to John, Eliza, and Georgiana Reed.",
+          "zh": "我为此感到高兴：我从来不喜欢长途散步，尤其是在寒冷的下午：对我来说可怕的是在湿冷的黄昏回家，手指和脚趾被冻伤，心因护士贝茜的训斥而悲伤，因感到自己在身体上劣于约翰、伊丽莎白和乔治安娜·里德而感到卑微。"
+        },
+        {
+          "en": "The said John, Eliza, and Georgiana were now clustered round their mama in the drawing-room: she lay reclined on a sofa by the fireside, and with her darlings about her (for the time neither quarrelling nor crying) looked perfectly happy.",
+          "zh": "前面提到的约翰、伊丽莎白和乔治安娜现在聚集在客厅里他们的妈妈周围：她斜靠在火炉旁的沙发上，她的宝贝们在她身边（当时既不争吵也不哭泣），看起来非常幸福。"
+        },
+        {
+          "en": "Me, she had dispensed from joining the group; saying, \"She regretted to be under the necessity of keeping me at a distance; but that until she heard from Bessie and could discover by her own observation that I was endeavouring in good earnest to acquire a more sociable and childlike disposition, a more attractive and sprightly manner—something lighter, franker, more natural, as it were—she really must exclude me from privileges intended only for contented, happy, little children.\"",
+          "zh": "我被免于加入这个群体；她说：“她很遗憾不得不保持我的距离；但直到她从贝茜那里听说，并能通过她自己的观察发现，我正在认真地努力获得一种更有社交性和孩子气的性格，一种更有吸引力和活泼的举止——可以说更轻快、更坦率、更自然的东西——她真的必须把我排除在仅为满意、快乐的小孩准备的特权之外。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Red-Room Punishment",
+      "chineseTitle": "第 2 章：红房子的惩罚与绝望",
+      "paragraphs": [
+        {
+          "en": "The red-room was a cold room, because it seldom had a fire; it was silent, because remote from the nursery and kitchen; solemn, because it was so seldom entered.",
+          "zh": "红房子是一间寒冷的房间，因为它很少烧火；它是安静的，因为它远离育儿室和厨房；它是庄严的，因为它很少有人进来。"
+        },
+        {
+          "en": "The bed supported on massive pillars of mahogany, hung with curtains of deep red damask, stood out like a tabernacle in the centre; the two large windows, with their blinds always drawn down, were half shrouded in festoons and falls of similar drapery.",
+          "zh": "床由红木的大柱子支撑着，挂着深红色锦缎的窗帘，在中央像一个圣幕一样突出；两扇大窗户的百叶窗总是拉下来，半遮在类似织物的花彩和垂挂中。"
+        },
+        {
+          "en": "It was in this room that Mr. Reed had died nine years ago; and his last moments, his dying words, his quiet lying in state, had given to the place a cold, solemn dread.",
+          "zh": "九年前里德先生就是在这个房间里去世的；他的最后时刻，他的临终遗言，他安静地停灵，给这个地方带来了一种寒冷、庄严的恐惧。"
+        },
+        {
+          "en": "I sat in a chair by the bedside, trembling with cold and fear, watching the shadows lengthen across the carpet as twilight deepened into night.",
+          "zh": "我坐在床边的一张椅子上，因寒冷和害怕而发抖，看着随着黄昏加深为夜晚，阴影在地毯上延长。"
+        },
+        {
+          "en": "Suddenly, a beam of light glided up the wall and hovered over my head. My heart beat thick, my head grew hot; a sound filled my ears which I deemed the rushing of wings; something seemed near me; I was oppressed, suffocated: my endurance broke; I rushed to the door and shook the lock in desperate panic.",
+          "zh": "突然，一束光沿着墙壁滑过，悬挂在我的头上。我的心猛烈跳动，我的头变热了；一种声音填满了我的耳朵，我以为是翅膀的喧嚣；某种东西似乎在我附近；我感到被压迫、窒息：我的忍耐力崩溃了；我冲向门口，在绝望的恐慌中摇晃着锁。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Mr. Lloyd and the Proposal of School",
+      "chineseTitle": "第 3 章：洛伊德医生与上学倡议",
+      "paragraphs": [
+        {
+          "en": "The next thing I remember is, waking up with a feeling as if I had had a frightful nightmare, and seeing before me a terrible red glare, crossed with thick black bars.",
+          "zh": "我记得的下一件事是醒来，感觉好像做了一场可怕的噩梦，看到面前有一个可怕的红色强光，交叉着厚厚的黑条。"
+        },
+        {
+          "en": "I heard voices, too, speaking with a hollow sound, and as if muffled by a cotton wool atmosphere; I was in bed, and my bed had curtains of chintz.",
+          "zh": "我也听到声音，说话带着空洞的声音，仿佛被棉花包裹的气氛所掩盖；我在床上，我的床有印花布的窗帘。"
+        },
+        {
+          "en": "Beside me stood an apothecary, Mr. Lloyd, whom Mrs. Reed sometimes called in for the servants when they were ill.",
+          "zh": "我身边站着一个药剂师洛伊德先生，里德太太在仆人们生病时偶尔会请他来。"
+        },
+        {
+          "en": "\"Well, who am I?\" he asked, looking down at me with a kindly, humorous eye.",
+          "zh": "“嗯，我是谁？”他问，用一种温和、幽默的眼睛看着我。"
+        },
+        {
+          "en": "\"You are Mr. Lloyd, the apothecary,\" I answered softly.",
+          "zh": "“你是药剂师洛伊德先生，”我轻声回答。"
+        },
+        {
+          "en": "He checked my pulse, looked at my tongue, and then turned to Bessie. \"She has had a severe shock,\" he remarked calmly. \"What caused it?\"",
+          "zh": "他检查了我的脉搏，看了看我的舌头，然后转向贝茜。“她受了严重的惊吓，”他平静地备注道。“是什么引起的？”"
+        },
+        {
+          "en": "\"She fell down in a fit,\" Bessie replied.",
+          "zh": "“她抽风倒下了，”贝茜回答。"
+        },
+        {
+          "en": "\"No, Bessie,\" I cried out from the bed, \"it was because they locked me up in the red-room where Mr. Reed died!\"",
+          "zh": "“不，贝茜，”我在床上喊道，“是因为他们把我锁在了里德先生去世的红房子里！”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: Departure for Lowood School",
+      "chineseTitle": "第 4 章：告别盖茨黑德前往学校",
+      "paragraphs": [
+        {
+          "en": "A month elapsed after Mr. Lloyd's visit before any further step was taken regarding my future.",
+          "zh": "洛伊德先生拜访后过了一个月，关于我的未来才采取了进一步的措施。"
+        },
+        {
+          "en": "One morning in January, Mrs. Reed called me into the breakfast-room. Standing by the hearth was a tall, rigid gentleman dressed in solemn black. His face was like a carved mask, with cold gray eyes under heavy brows.",
+          "zh": "一月的一个早晨，里德太太叫我进早餐室。站在火炉旁的是一位身穿庄严黑色西装的高大、僵硬的绅士。他的脸像雕刻的面具，厚眉毛下有一对冷酷的灰色眼睛。"
+        },
+        {
+          "en": "\"This is Little Jane Eyre, Mr. Brocklehurst,\" Mrs. Reed said, pointing her finger at me.",
+          "zh": "“这是小简·爱，博克勒赫斯特先生，”里德太太指着我指着说。"
+        },
+        {
+          "en": "The gentleman examined me with a long, deliberate stare. \"Her size is small,\" he remarked. \"What is her age?\"",
+          "zh": "绅士用漫长、审慎的凝视检查了我。“她的身材很小，”他备注道。“她的年龄是多少？”"
+        },
+        {
+          "en": "\"Ten years.\"",
+          "zh": "“十岁。”"
+        },
+        {
+          "en": "\"So young, and yet, I regret to say, so deceitful,\" Mrs. Reed continued coldly. \"I desire that she be trained in habits of strict discipline and humility at Lowood School.\"",
+          "zh": "“这么年轻，然而，我很遗憾地说，这么狡诈，”里德太太冷酷地继续道。“我希望她在罗伍德学校接受严格纪律和谦逊习惯的训练。”"
+        },
+        {
+          "en": "Mr. Brocklehurst nodded gravely. \"Imparting habits of mortification of the flesh is our special duty at Lowood,\" he declared.",
+          "zh": "博克勒赫斯特先生严肃地点头。“传授克制肉体的习惯是我们在罗伍德的特殊职责，”他声明。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Arrival at Lowood Institution",
+      "chineseTitle": "第 5 章：抵达罗伍德慈善学校",
+      "paragraphs": [
+        {
+          "en": "5 o'clock struck from the bell of the school tower as the coach pulled up at the heavy iron gates of Lowood Institution.",
+          "zh": "当马车停在罗伍德机构沉重的铁门前时，学校钟楼的钟声敲响了五点。"
+        },
+        {
+          "en": "Rain was falling heavily, and the wind blew in bitter gusts across the desolate moorland.",
+          "zh": "大雨磅礴，风在荒凉的荒野上阵阵苦吹。"
+        },
+        {
+          "en": "I stepped out of the coach, shivering with cold, carrying my small trunk. A tall, pale lady with a kind, sorrowful face met me at the door and led me into the long, dimly lit hall.",
+          "zh": "我拎着我的小行李箱，因寒冷而发抖地走出马车。一位高大、苍白、长着温和悲伤脸庞的女士在门口迎接我，带我进入漫长、昏暗的大厅。"
+        },
+        {
+          "en": "\"I am Miss Temple, the superintendent,\" she said gently, laying a warm hand on my shoulder. \"You must be cold and tired after your long journey, Jane.\"",
+          "zh": "“我是校长泰姆普尔小姐，”她温和地说，把一只温暖的手放在我的肩膀上。“经过长途旅行，简，你一定又冷又累。”"
+        },
+        {
+          "en": "She took me to a large, bare room where eighty girls, dressed in plain brown frocks and linen aprons, sat at long wooden tables, silently reading their lesson books by the dim light of tallow candles.",
+          "zh": "她把我带到一个巨大的、简陋的房间，八十个穿着朴素棕色连衣裙和麻布围裙的女孩坐在长木桌旁，在牛脂蜡烛昏暗的光线下默默地读着她们的课本。"
+        }
+      ]
+    }
+  ]
+}

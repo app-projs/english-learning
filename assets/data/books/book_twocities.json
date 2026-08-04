@@ -1,0 +1,125 @@
+{
+  "id": "book_twocities",
+  "title": "A Tale of Two Cities",
+  "chineseTitle": "双城记",
+  "author": "Charles Dickens",
+  "coverUrl": "assets/images/book_twocities.png",
+  "description": "《双城记》是英国批判现实主义文学大师查尔斯·狄更斯（Charles Dickens）于 1859 年出版的历史小说名作。故事以 18 世纪末的伦敦和巴黎两座城市为背景，穿插了法国大革命前夕及爆发期间的宏大历史风云。老医生马内特被贵族无辜囚禁于巴士底狱十八年，后被女儿露西救回伦敦。然而，露西的丈夫——放弃了贵族特权的查尔斯·代尔那却因革命暴动被卷入法国断头台绝境。颓废英勇的律师西德尼·卡顿为了心中深爱的露西，毅然选择代替代尔那走向断头台。“这是最好的时代，也是最坏的时代”，本书开篇即为永恒传世名句。",
+  "category": "经典名著",
+  "difficulty": "高级难度",
+  "totalUnits": 5,
+  "wordCount": 29000,
+  "readerCount": "168.0万人在读",
+  "targetVocab": "3000-6500词",
+  "tagLabel": "历史宏篇",
+  "coverBadge": "巨作 · 狄更斯巅峰",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Period",
+      "chineseTitle": "第 1 章：时代开篇名句",
+      "paragraphs": [
+        {
+          "en": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way—in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.",
+          "zh": "那是最好的时代，那是最坏的时代，那是智慧的时代，那是愚蠢的时代，那是信仰的时期，那是怀疑的时期，那是光明的季节，那是黑暗的季节，那是希望的春天，那是绝望的冬天，我们拥有一切，我们一无所有，我们都在直接去天堂，我们都在直接去另一个方向——简而言之，那个时期与现在的时期如此相似，以至于它一些最吵闹的权威人士坚持要求，无论好坏，只能在最高级的比较级中接受它。"
+        },
+        {
+          "en": "There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France.",
+          "zh": "英国的宝座上有一位大下巴的国王和一位长相平平的王后；法国的宝座上有一位大下巴的国王和一位长相美丽的王后。"
+        },
+        {
+          "en": "In both countries it was clearer than crystal to the lords of the State preserves of loaves and fishes, that things in general were settled for ever.",
+          "zh": "在两个国家里，对于面包和鱼的国家保护领主来说，比水晶还要清楚的是，大体上的事物已经永远定局了。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Mail Coach to Dover",
+      "chineseTitle": "第 2 章：前往多佛的邮政马车",
+      "paragraphs": [
+        {
+          "en": "It was the Dover road that lay, on a Friday night late in November, before the first of the persons with whom this history has to do. The Dover road lay, as to him, beyond the Dover mail, as it lumbered up Shooter's Hill. He walked uphill in the mire by the side of the mail, as the rest of the passengers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were so heavy, that the horses had already stopped three times, besides plunging the coach out of the grade.",
+          "zh": "十一月下旬的一个星期五晚上，躺在本历史涉及的第一份人物面前的是多佛路。对于他来说，当多佛邮政马车在射手山上蹒跚前行时，多佛路躺在多佛邮政马车之外。像其他乘客一样，他在泥泞中走在马车旁边；不是因为在这种情况下他们对步行锻炼有一丝一毫的兴趣，而是因为山丘、马具、泥泞和马车是如此沉重，以至于除了把马车弄出路基之外，马已经停了三次。"
+        },
+        {
+          "en": "With drooping heads and tremulous tails, they walked through the mire, stumbling and floundering, as if they were falling to pieces.",
+          "zh": "它们垂着头，尾巴发抖，在泥泞中行走，磕磕绊绊，摇摇欲坠，仿佛要散架了一样。"
+        },
+        {
+          "en": "The heavy passenger walked in the mud, enveloped in a heavy cloak and boots, keeping his face well wrapped from the raw night air.",
+          "zh": "沉重的乘客走在泥泞中，裹着沉重的披风和靴子，把脸从阴冷的夜间空气中好好包裹起来。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: The Night Shadows",
+      "chineseTitle": "第 3 章：夜色阴影与密信",
+      "paragraphs": [
+        {
+          "en": "A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other. A solemn consideration, when I enter a great city by night, that every one of those darkly clustered houses encloses its own secret; that every room in every one of them encloses its own secret; that every beating heart in the hundreds of thousands of breasts there, is, in some of its imaginings, a secret to the heart nearest it!",
+          "zh": "反思一个奇妙的事实，即每个人都被构造成对每个人来说都是深刻的秘密和谜团。当我在夜间进入一座大城市时，这是一个严肃的思考，那些阴暗聚集的房子中的每一栋都封存着它自己的秘密；它们中每一栋的每一个房间都封存着它自己的秘密；在成千上万胸膛里的每一颗跳动的心脏，在它的某些想象中，都是对离它最近的心脏的一个秘密！"
+        },
+        {
+          "en": "Something of the awfulness, even of Death itself, is referable to this. No more can I turn the leaves of this dear book that I loved, and vainly hope in time to read it all.",
+          "zh": "甚至死亡本身的一些可怕之处，也可以归因于此。我再也不能翻开我爱的这本亲爱的书的页码，徒劳地希望有朝一日能读完它。"
+        },
+        {
+          "en": "The mail passengers leaned back in their corners as the horses labored up the hill, wrapped in their thoughts and the impenetrable mist.",
+          "zh": "随着马匹在山丘上劳作，邮政马车的乘客们缩在自己的角落里，包裹在自己的思想和无法穿透的浓雾中。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Preparation",
+      "chineseTitle": "第 4 章：重逢与准备",
+      "paragraphs": [
+        {
+          "en": "When the mail arrived at Dover in the morning, Mr. Jarvis Lorry, banker of Tellson and Company, washed and dressed himself at the Royal George Hotel, awaiting the arrival of a young lady from London.",
+          "zh": "早晨马车到达多佛时，泰尔森公司的银行家贾维斯·洛里先生在皇家乔治饭店洗漱穿戴完毕，等待一位来自伦敦的年轻女士的到达。"
+        },
+        {
+          "en": "Mademoiselle Manette arrived that afternoon—a young lady of barely seventeen, with a quantity of golden hair, a pair of blue eyes that met his with an inquiring look, and a forehead with a singular capacity for lifting and knitting its brow.",
+          "zh": "马奈特小姐那天下午到达了——一位年仅十七岁的年轻女士，有一头金发，一对用询问的目光迎接他的蓝眼睛，以及额头上有一种独特的挑眉和皱眉的能力。"
+        },
+        {
+          "en": "\"Miss Manette,\" said Mr. Lorry, holding her hands in his own, \"I have a story to tell you of your father, whom you have believed dead since your earliest childhood.\"",
+          "zh": "“马奈特小姐，”洛里先生握着她的双手说，“我要给你讲一个关于你父亲的故事，你从小就以为他已经死了。”"
+        },
+        {
+          "en": "\"My father?\" she repeated, her face turning pale. \"Alive?\"",
+          "zh": "“我父亲？”她重复道，脸色变白了。“活着？”"
+        },
+        {
+          "en": "\"Alive, and in France,\" Mr. Lorry replied softly. \"Restored to life after eighteen years in the Bastille.\"",
+          "zh": "“活着，在法国，”洛里先生轻声回答。“在巴士底狱十八年后复活了。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Wine-shop",
+      "chineseTitle": "第 5 章：圣安东尼区的酒馆",
+      "paragraphs": [
+        {
+          "en": "A large cask of wine had been dropped and broken, in the street of the suburb of Saint Antoine in Paris. The cask had tumbled out of a cart, the hoops had burst, and it lay on the stones just outside the door of the wine-shop.",
+          "zh": "在巴黎圣安东尼郊区的大街上，一大桶酒掉下来摔碎了。酒桶从马车上翻了下来，铁圈破裂了，它躺在酒馆门口外面的石头上。"
+        },
+        {
+          "en": "All the people within reach had suspended their business, or their idleness, to run to the spot and drink the wine. The rough, red wine stained the stones of the street, and stained the hands and faces of the poor who scooped it up.",
+          "zh": "所有在攻击范围内的人都暂停了他们的生意或闲散，跑到那个地方喝酒。粗糙的红酒染红了大街上的石头，染红了舀酒的穷人的手和脸。"
+        },
+        {
+          "en": "Despotism and hunger had written the word BLOOD in large red letters on the wall, forecasting the terrible revolution that was soon to sweep over France.",
+          "zh": "专制和饥饿在墙上用红色的大字写下了“血”字，预示着不久将扫过法国的可怕革命。"
+        },
+        {
+          "en": "Inside the wine-shop sat Monsieur Defarge, a dark-complexioned man of thirty, and Madame Defarge, his wife, quietly knitting her intricate record of doomed aristocrats.",
+          "zh": "在酒馆里面坐着德法日先生，一个三十岁、肤色较暗的男人，以及他的妻子德法日太太，平静地织着她那记录着注定灭亡的贵族的复杂记录。"
+        }
+      ]
+    }
+  ]
+}

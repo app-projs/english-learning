@@ -1,0 +1,149 @@
+{
+  "id": "book_treasure",
+  "title": "Treasure Island",
+  "chineseTitle": "金银岛",
+  "author": "Robert Louis Stevenson",
+  "coverUrl": "assets/images/book_treasure.png",
+  "description": "《金银岛》是苏格兰作家罗伯特·路易斯·史蒂文森（Robert Louis Stevenson）于 1883 年创作的海盗冒险小说天花板。少年吉姆·霍金斯（Jim Hawkins）在自家客栈老海盗的遗物中意外发现了一张记载着神秘海盗船长弗林特宝藏的藏宝图。吉姆与乡绅特里劳尼、李夫西医生组建探险队，乘坐“伊斯帕尼奥拉号”远航前往金银岛。然而，表面温和的双面海盗头目厨子“独脚厨子”高个子约翰·西尔弗在船上发动了惊天叛乱。全书情节扣人心弦，充满了海洋冒险、悬疑智斗与人性抉择，是体验原汁原味英伦文学魅力的绝佳作品。",
+  "category": "经典名著",
+  "difficulty": "中级难度",
+  "totalUnits": 5,
+  "wordCount": 21000,
+  "readerCount": "112.3万人在读",
+  "targetVocab": "2000-4500词",
+  "tagLabel": "冒险小说",
+  "coverBadge": "精选 · 航海冒险",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Old Sea-dog at the Admiral Benbow",
+      "chineseTitle": "第 1 章：海军本鲍客栈的老海狗",
+      "paragraphs": [
+        {
+          "en": "Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17__ and go back to the time when my father kept the Admiral Benbow inn and the brown seaman with the sabre cut took up his lodging under our roof.",
+          "zh": "由于乡绅特里劳尼、李夫西医生以及其他绅士要求我记下关于金银岛的全部细节，从头到尾，除了岛屿的方位之外什么都不保留，那只是因为至今仍有未挖出的宝藏，我在公元 17__ 年拿起笔，回到我父亲开海军本鲍客栈的时候，那个带有刀疤的棕色水手在我们的屋檐下住了下来。"
+        },
+        {
+          "en": "I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow—a tall, strong, heavy, nut-brown man, his pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white.",
+          "zh": "我至今还记得他，就像昨天一样，当他沉重地走到客栈门口时，他的水手木箱用一辆手推车跟在后面——一个高大、强壮、沉重、栗色皮肤的男人，他的辫子垂在他污秽的蓝色外衣的肩膀上，他的手破旧有疤，指甲黑而破损，一条白色的刀疤贯穿了一侧脸颊。"
+        },
+        {
+          "en": "I remember him looking round the cover and whistling to himself as he did so, and then breaking out into that old sea-song that he sang so often afterwards:",
+          "zh": "我记得他环顾四周，边看边自言自语地吹口哨，然后破口唱起他后来经常唱的那首老海歌："
+        },
+        {
+          "en": "\"Fifteen men on the dead man's chest—",
+          "zh": "“十五个人争夺死人的箱子—"
+        },
+        {
+          "en": "Yo-ho-ho, and a bottle of rum!\"",
+          "zh": "哟-荷-荷，抽干一瓶朗姆酒！”"
+        },
+        {
+          "en": "in the high, old tottering voice that seemed to have been tuned and broken at the capstan bars.",
+          "zh": "那高亢、古老摇晃的声音似乎在绞盘杠杆上被定调和打碎过。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: Black Dog Appears and Disappears",
+      "chineseTitle": "第 2 章：黑狗的现身与消失",
+      "paragraphs": [
+        {
+          "en": "It was not very long after this that there occurred the first of the mysterious events that rid us at last of the captain, though not, as you will see, of his affairs. It was a bitter cold winter, with long, hard frosts and gales, and it was plain from the first that my poor father was little likely to see the spring. He sank daily, and my mother and I had all the inn upon our hands and were kept very busy.",
+          "zh": "在此之后不久，发生了第一起神秘事件，终于让我们摆脱了船长，虽然正如你将看到的，并没有摆脱他的事务。那是一个严寒的冬天，伴随着漫长、剧烈的严霜和大风，从一开始就很明显，我可怜的父亲很难看到春天了。他每天都在衰沉，我和母亲承担了客栈的所有事情，非常忙碌。"
+        },
+        {
+          "en": "It was a cold, frosty morning, the mist clinging to the cliff and the bay, when the captain got up early and set off down the beach, his cutlass swinging under the broad skirts of his old blue coat, his brass telescope under his arm, his hat cocked back upon his head.",
+          "zh": "那是一个寒冷、结霜的早晨，雾气紧贴着悬崖和海湾，船长很早就起床下海滩去了，他的短剑在他旧蓝外衣的大下摆下摆动，他的黄铜望远镜夹在胳膊下，他的帽子扣在头后面。"
+        },
+        {
+          "en": "I remember his breath hanging in the air like smoke as he strode off, and the last sound I heard of him was a loud snort of indignation as he turned the big rock.",
+          "zh": "我记得当他大步走开时，他的呼吸像烟雾一样悬挂在空气中，我听到的关于他的最后一个声音是他转过大石头时发出的愤怒的响亮哼声。"
+        },
+        {
+          "en": "Well, mother was up with the captain; and I was laying the breakfast-table against the captain's return when the door opened, and a man stepped in whom I had never seen before.",
+          "zh": "嗯，母亲和船长一起起来了；当门打开时，我正摆好早餐桌等船长回来，一个我以前从未见过的男人走了进来。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: The Black Spot",
+      "chineseTitle": "第 3 章：致死黑点预警符",
+      "paragraphs": [
+        {
+          "en": "About noon I stopped at the captain's door with some cooling drinks and medicines. He was lying very much as we had left him, only a little higher on his pillows, and he seemed both weak and excited.",
+          "zh": "大约在中午，我端着一些清凉饮料和药物停在船长的门口。他躺在那里，非常像我们离开他时的样子，只是在枕头上稍微高了一点，他看起来既虚弱又兴奋。"
+        },
+        {
+          "en": "\"Jim,\" he said, \"you're the only one here that's worth anything; and you know I've been always good to you. Never a dime I didn't give you for keeping your eyes peeled for that seaman with one leg. Now, Jim, you see how I'm down, and left helpless by all these mates.\"",
+          "zh": "“吉姆，”他说，“你是这里唯一有价值的人；你知道我一直对你很好。为了让你留心那个独腿水手，我给你的每一分钱都没有少过。现在，吉姆，你看到我是怎么倒下的，被所有这些同伴留下来无依无靠。”"
+        },
+        {
+          "en": "He looked up at me with a desperate, frightened expression. \"They're after my sea-chest, Jim! They'll pass me the black spot, if they can't get me any other way!\"",
+          "zh": "他带着绝望、恐惧的表情看着我。“他们是奔着我的水手箱子来的，吉姆！如果他们没有其他办法得到我，他们会给我递黑点！”"
+        },
+        {
+          "en": "\"What is the black spot, Captain?\" I asked, leaning over his bed.",
+          "zh": "“什么是黑点，船长？”我俯身在看他的床上问。"
+        },
+        {
+          "en": "\"That's a summons, mate. I'll tell you if they give me the black spot, it's to tell me they're coming to take my chest.\"",
+          "zh": "“那是召唤，伙计。如果他们给我黑点，我会告诉你的，那是告诉我他们要来拿我的箱子。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Sea-chest",
+      "chineseTitle": "第 4 章：老海盗的水手木箱",
+      "paragraphs": [
+        {
+          "en": "I lost no time, of course, in telling my mother all that I knew, and perhaps should have told her long before. We saw ourselves in a situation of extreme difficulty and danger. Some of the man's money—if he had any—was certainly due to us; but it was not likely that the captain's shipmates, above all the two Johnny Raws I had seen, would be inclined to part with their booty.",
+          "zh": "当然，我毫不浪费时间地把我所知道的一切告诉了我母亲，也许很久以前就该告诉她了。我们看到自己处于极度困难和危险的境地。那个人的某些钱——如果他有的话——肯定是我们应得的；但船长的船员们，尤其是见过的两个笨蛋，不大可能愿意分出他们的战利品。"
+        },
+        {
+          "en": "To take the key and open the chest was our only course, and my mother was determined to have her rights.",
+          "zh": "拿着钥匙打开箱子是我们唯一的选择，我母亲决心获得她的权利。"
+        },
+        {
+          "en": "We locked the door of the inn and ran by the moonlit path to the neighboring village to get help. But no one would return with us to defend the Admiral Benbow; the very name of Captain Flint struck terror into their hearts.",
+          "zh": "我们锁上客栈的门，顺着月光照射的小路跑到邻近的村庄寻求帮助。但没有人愿意和我们一起回来保卫海军本鲍；弗林特船长的名字在他们心里引起了恐惧。"
+        },
+        {
+          "en": "So my mother and I had to return alone to the inn, with only a lantern and a key that we took from around the dead captain's neck.",
+          "zh": "所以我和母亲不得不独自返回客栈，只带着一盏灯和从死船长脖子上取下来的钥匙。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Map of Treasure Island",
+      "chineseTitle": "第 5 章：金银岛神秘藏宝图",
+      "paragraphs": [
+        {
+          "en": "When we opened the heavy wooden chest, we found inside a suit of very good clothes, never worn; a compass, a pair of silver pistols, a bar of melted silver, a Spanish watch, and a canvas bag tied tightly with twine.",
+          "zh": "当打开沉重的木箱时，在里面找到了一套非常好的衣服，从未穿过；一个指南针、一对银手枪、一块熔化的银块、一块西班牙怀表，和一个用麻绳紧紧系着的帆布袋。"
+        },
+        {
+          "en": "My mother began counting out the gold coins to pay our debt, refusing to take a single penny more than was due to her.",
+          "zh": "我母亲开始数出金币来还我们的债，拒绝多拿应得的一分钱。"
+        },
+        {
+          "en": "Suddenly, we heard the tapping of a blind man's stick on the frozen road outside, followed by a shrill whistle echoing across the dark bay!",
+          "zh": "突然，听到了外面冻硬的路上盲人拐杖的敲击声，紧接着是一声尖锐的哨声在黑暗的海湾上空回荡！"
+        },
+        {
+          "en": "\"Take the bundle and run!\" my mother gasped, seizing the oilskin packet from the bottom of the chest.",
+          "zh": "“拿着包裹跑！”我母亲喘着气说，从箱底抓起油皮包裹。"
+        },
+        {
+          "en": "We fled under the arch of the bridge just as the gang of pirates, led by Blind Pew, burst into the inn! That oilskin packet contained the famous chart of Treasure Island.",
+          "zh": "就在以盲人皮尤为首的一帮海盗冲进客栈时，逃到了桥拱下！那个油皮包裹里装的就是金银岛的著名海图。"
+        }
+      ]
+    }
+  ]
+}

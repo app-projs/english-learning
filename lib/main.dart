@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'screens/lumina_home_screen.dart';
-import 'screens/splash_screen.dart';
-import 'theme/lumina_theme.dart';
-import 'services/storage_service.dart';
-import 'services/word_service.dart';
-import 'services/sentence_service.dart';
-import 'services/dialogue_service.dart';
-import 'services/article_service.dart';
-import 'services/user_service.dart';
-import 'services/theme_service.dart';
-import 'services/database_service.dart';
+import 'features/home/screens/splash_screen.dart';
+import 'core/theme/lumina_theme.dart';
+import 'core/services/storage_service.dart';
+import 'features/word/services/word_service.dart';
+import 'features/sentence/services/sentence_service.dart';
+import 'features/dialogue/services/dialogue_service.dart';
+import 'features/article/services/article_service.dart';
+import 'features/profile/services/user_service.dart';
+import 'core/theme/theme_service.dart';
+import 'core/services/database_service.dart';
 
-import 'services/audio_service.dart';
+import 'core/services/audio_service.dart';
 
 late StorageService storageService;
 late WordService wordService;

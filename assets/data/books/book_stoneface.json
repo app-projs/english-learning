@@ -1,0 +1,111 @@
+{
+  "id": "book_stoneface",
+  "title": "The Great Stone Face",
+  "chineseTitle": "大石壁",
+  "author": "Nathaniel Hawthorne",
+  "coverUrl": "assets/images/book_stoneface.png",
+  "description": "《大石壁》是美国 19 世纪著名浪漫主义作家纳撒尼尔·霍桑（Nathaniel Hawthorne）创作的哲学寓言名篇。在一条宁静的美丽山谷中，山峰上天然形成了一块酷似慈祥智者面容的巨大石头。当地流传着一个古老的预言：未来将会有一位出生在山谷中的伟大人物，他的面容将与大石壁一模一样。主角欧文斯（Ernest）从小凝视着大石壁成长，一生都在期盼预言中的伟人到来。他见过了富可敌国的富商、战功赫赫的将军、能言善辩的政客与文采飞扬的诗人，却发现他们都不是预言中的人物。最终，年老的欧文斯在无私奉献与深沉思考中，自己成为了大家敬仰的“大石壁”真人。",
+  "category": "经典名著",
+  "difficulty": "中级难度",
+  "totalUnits": 3,
+  "wordCount": 7200,
+  "readerCount": "72.0万人在读",
+  "targetVocab": "1500-3500词",
+  "tagLabel": "哲学寓言",
+  "coverBadge": "精选 · 哲理名篇",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Part 1: The Valley and the Prophecy",
+      "chineseTitle": "第 1 部分：山谷与古老预言",
+      "paragraphs": [
+        {
+          "en": "One afternoon, when the sun was going down, a mother and her little boy sat at the door of their cottage, talking about the Great Stone Face.",
+          "zh": "一天下午，当太阳快要落山时，一位母亲和她的小男孩坐在他们小屋的门口，谈论着大石壁。"
+        },
+        {
+          "en": "They had only to lift their eyes, and there it was plainly to be seen, though miles away, with the sunshine gilding all its features.",
+          "zh": "他们只需抬起眼睛，大石壁就在那里清晰可见，虽然在几英里之外，但阳光给它所有的特征镀上了金色。"
+        },
+        {
+          "en": "The Great Stone Face was a work of Nature in her mood of majestic playfulness, formed on the perpendicular side of a mountain by some immense rocks, which had been thrown together in such a position as, when viewed at a proper distance, precisely resembled the features of a human countenance.",
+          "zh": "大石壁是自然在其庄严玩耍情绪下的杰作，在山峰的垂直一侧由一些巨大的岩石形成，这些岩石被抛在这样一个位置，当在适当的距离观看时，精确地类似于人类面容的特征。"
+        },
+        {
+          "en": "It seemed as if an enormous giant had sat him down in the sunshine, and fallen asleep upon the mountain.",
+          "zh": "仿佛一个巨大的巨人坐在阳光下，在山上睡着了。"
+        },
+        {
+          "en": "It was a happy lot for children to grow up under its gaze, for all its features were noble, and the expression was at once grand and sweet, as if it were the glow of a vast, warm heart, that embraced all mankind in its affections.",
+          "zh": "孩子们在它的注视下长大是一个幸福的命运，因为它所有的特征都是高尚的，表情既宏大又甜美，仿佛是一个巨大、温暖的心灵的光芒，在其情感中拥抱着全人类。"
+        },
+        {
+          "en": "The mother told Ernest a prophecy: that some day, a child born in the valley should grow up to be the greatest and noblest person of his time, and that his countenance should bear an exact resemblance to the Great Stone Face.",
+          "zh": "母亲告诉欧文斯一个预言：有一天，在山谷中出生的一个孩子长大后将成为他那个时代最伟大的高尚人物，他的面容将与大石壁完全相似。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Part 2: The Rich Merchant and the General",
+      "chineseTitle": "第 2 部分：富商、将军与诗人的过客",
+      "paragraphs": [
+        {
+          "en": "Ernest never forgot the story that his mother told him. It was always in his mind whenever he looked upon the Great Stone Face.",
+          "zh": "欧文斯从来没有忘记他母亲告诉他的故事。每当他看着大石壁时，它总是在他的脑海里。"
+        },
+        {
+          "en": "He grew up to be a quiet, hardworking young man in his native valley, learning noble lessons from the benign face of the mountain.",
+          "zh": "在祖国的山谷里，他长大成为一个安静、勤劳的年轻人，从大山慈祥的面容中吸取高尚的教训。"
+        },
+        {
+          "en": "Over the years, several famous men born in the valley returned home, and the rumor spread that each was the long-awaited embodiment of the Great Stone Face.",
+          "zh": "多年来，在山谷里出生的几位名人回到了家，谣言传播开来，说每一位都是期待已久的大石壁的化身。"
+        },
+        {
+          "en": "First came Mr. Gathergold, a immensely wealthy merchant whose face was shrewd and yellowed like old gold coins; Ernest looked at him and sighed: \"No, this is not the Great Stone Face!\"",
+          "zh": "首先是聚金先生，一位极其富有的商人，他的脸精明而像旧金币一样发黄；欧文斯看着他叹息道：“不，这不是大石壁！”"
+        },
+        {
+          "en": "Next came General Blood-and-Thunder, a famous war hero with a stern, battle-scarred countenance, and later a brilliant politician whose voice moved crowds; yet in none of them did Ernest find the divine wisdom and gentle love that beamed from the mountain.",
+          "zh": "接下来是血雷将军，一位著名的战争英雄，有着严厉、战伤累累的面容，后来是一位声音感动人群的杰出政客；然而在他们中没有一个欧文斯找到了从大山里照射出来的神圣智慧和温和的爱。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Part 3: The Fulfillment of the Vision",
+      "chineseTitle": "第 3 部分：真理显现与预言应验",
+      "paragraphs": [
+        {
+          "en": "Years passed, and Ernest grew into an old man. His white hair hung down his shoulders, and deep lines of wisdom were carved upon his thoughtful forehead.",
+          "zh": "多年过去了，欧文斯长成了一个老人。他的白发垂在肩膀上，智慧的深线刻在他沉思的额头上。"
+        },
+        {
+          "en": "Though he had never sought fame or power, he had become a reverent preacher and teacher whose simple, heartfelt words brought comfort to all who heard him.",
+          "zh": "虽然他从未追求名利或权力，但他成为了一个虔诚的传道者和老师，他朴实、真诚的话语给所有听到他的人带来了慰藉。"
+        },
+        {
+          "en": "One evening, a famous poet visited Ernest in the valley. They sat together at the sunset hour, talking of life, love, and the divine beauty of creation.",
+          "zh": "一天晚上，一位著名的诗人到山谷拜访欧文斯。他们在落日时分坐在一起，谈论着生活、爱和创造的神圣美丽。"
+        },
+        {
+          "en": "As the sun sank behind the mountains, casting a golden halo over the Great Stone Face, the poet looked from the mountain to Ernest.",
+          "zh": "当太阳沉到山后，在天石壁上投下一道金色的光环时，诗人从大山看走向欧文斯。"
+        },
+        {
+          "en": "Suddenly, the poet threw up his hands and cried out in awe:",
+          "zh": "突然，诗人举起双手，在敬畏中大声喊道："
+        },
+        {
+          "en": "\"Behold! Behold! Ernest himself is the exact image of the Great Stone Face!\"",
+          "zh": "“看啊！看啊！欧文斯自己就是大石壁的精确形象！”"
+        },
+        {
+          "en": "The people looked, and saw that it was true: through a lifetime of noble thoughts and loving service, Ernest had unconsciously grown into the very likeness of the Great Stone Face.",
+          "zh": "人们看了看，看到这是真的：通过一生的高尚思想和充满爱的奉献，欧文斯不自觉地长成了大石壁的模样。"
+        }
+      ]
+    }
+  ]
+}

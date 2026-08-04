@@ -138,20 +138,27 @@ flutter build appbundle
 | **Google Play 商店包** | `flutter build appbundle` | `build/app/outputs/bundle/release/app-release.aab` | 上架应用商店 |
 | **Debug 调试包** | `flutter build apk --debug` | `build/app/outputs/flutter-apk/app-debug.apk` | 开发阶段联调测试 |
 
-### Android 配置
+### Android 配置与版本号递增
 
-编辑 `android\app\build.gradle` 配置应用版本：
+#### 1. 版本号定义方式 (`pubspec.yaml`)
+Flutter 项目的版本名 (`versionName`) 与构建号 (`versionCode`) 统一在 `pubspec.yaml` 中配置：
+```yaml
+version: 1.0.41+42
+```
+- **`1.0.41`**：应用版本名 (`versionName` / `build-name`)
+- **`42`**：内部打包递增构建号 (`versionCode` / `build-number`)
 
-```gradle
-android {
-    defaultConfig {
-        applicationId "com.example.englishlearning"
-        minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.0"
-    }
-}
+> **注意**：Flutter CLI 默认在打 release 包时**不会自动改写修改 `pubspec.yaml`** 文件，如果不传参，生成的版本号将固定为 `pubspec.yaml` 中定义的值。
+
+#### 2. 打包时动态递增版本号命令
+可以在每次编译打包时通过命令行参数直接指定递增的版本号与构建号，无需手动修改 `pubspec.yaml`：
+
+```bash
+# 打包时动态指定版本名 (build-name) 与构建号 (build-number)
+flutter build apk --release --build-name=1.0.42 --build-number=43
+
+# 按架构拆分打包时动态指定版本
+flutter build apk --split-per-abi --build-name=1.0.42 --build-number=43
 ```
 
 ---

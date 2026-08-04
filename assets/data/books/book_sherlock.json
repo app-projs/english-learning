@@ -1,0 +1,157 @@
+{
+  "id": "book_sherlock",
+  "title": "The Adventures of Sherlock Holmes",
+  "chineseTitle": "福尔摩斯探案集",
+  "author": "Arthur Conan Doyle",
+  "coverUrl": "assets/images/book_sherlock.png",
+  "description": "《福尔摩斯探案集》由阿瑟·柯南·道尔（Arthur Conan Doyle）创作，是世界侦探推理小说史上不可逾越的丰碑。故事讲述了居住在伦敦贝克街 221B 的神探歇洛克·福尔摩斯与他的忠实助手华生医生（Dr. John H. Watson）联手破解的一系列离奇案情。从《波希米亚丑闻》中与传奇女性艾琳·艾德勒的智力较量，到《红发会》、《斑点带子案》中逻辑严密的现场推理，福尔摩斯凭借其观察入微的观察力与严谨周密的演绎推理法破解了一个又一个看似不可能的悬案。本书语言干练地道，是拓展应用词汇与逻辑思维训练的必读之选。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 5,
+  "wordCount": 22000,
+  "readerCount": "310.5万人在读",
+  "targetVocab": "2000-4500词",
+  "tagLabel": "推理侦探",
+  "coverBadge": "经典 · 推理侦探",
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Case 1: A Scandal in Bohemia",
+      "chineseTitle": "第 1 案：波希米亚丑闻",
+      "paragraphs": [
+        {
+          "en": "To Sherlock Holmes she is always THE woman. I have seldom heard him mention her under any other name. In his eyes she eclipses and predominates the whole of her sex. It was not that he felt any emotion akin to love for Irene Adler. All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind.",
+          "zh": "对歇洛克·福尔摩斯来说，她永远是“那位女性”。我很少听到他以任何其他名字提到她。在他的眼里，她黯淡并主导了她的整个性别。这并不是说他对艾琳·艾德勒感到了任何类似于爱的感情。所有的感情，尤其是那一种，对他那冷酷、精准但极其平衡的心智来说都是令人厌恶的。"
+        },
+        {
+          "en": "He was, I take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position.",
+          "zh": "在我看来，他是世界上见过的最完美的推理和观察机器，但作为一个情人，他会把自己置于一个虚假的位置。"
+        },
+        {
+          "en": "He never spoke of the softer passions, save with a gibe and a sneer. They were admirable things for the observer—excellent for drawing the veil from men's motives and actions.",
+          "zh": "他从不谈论较软的激情，除非带着嘲弄和冷笑。它们对观察者来说是令人赞叹的东西——对于从人的动机和行为中揭开面纱极具价值。"
+        },
+        {
+          "en": "But for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results.",
+          "zh": "但对于训练有素的推理者来说，允许这样的侵入他自己微妙而精细调整的气质中，就是引入了一个可能会对他所有的精神结果产生怀疑的干扰因素。"
+        },
+        {
+          "en": "Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his.",
+          "zh": "敏感仪器里的砂砾，或者他自己某个高倍镜头上的裂纹，都不会比像他这样的性格中的强烈情感更令人不安。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 2,
+      "title": "Case 2: The Red-Headed League",
+      "chineseTitle": "第 2 案：红发会奇案",
+      "paragraphs": [
+        {
+          "en": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair.",
+          "zh": "在去年秋天的一天，我拜访了我的朋友歇洛克·福尔摩斯先生，发现他正在与一位非常魁梧、满脸红光、留着火红头发的老先生进行深谈。"
+        },
+        {
+          "en": "With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me.",
+          "zh": "为我的侵入道歉后，我正要退出来，福尔摩斯突然把我拉进房间，关上了身后的门。"
+        },
+        {
+          "en": "\"You could not have come at a better time, my dear Watson,\" he said cordially.",
+          "zh": "“你来得正是再好不过的时候了，我亲爱的华生，”他热情地说。"
+        },
+        {
+          "en": "\"I was afraid that you were engaged.\"",
+          "zh": "“我担心你正忙着。”"
+        },
+        {
+          "en": "\"So I am. Very much so.\"",
+          "zh": "“是的。非常忙。”"
+        },
+        {
+          "en": "\"Then I can wait in the next room.\"",
+          "zh": "“那我可以在隔壁房间等。”"
+        },
+        {
+          "en": "\"Not at all. This gentleman, Mr. Jabez Wilson, has been my partner and helper in many of my most successful accomplishments, and I have no doubt that he will be of the same use to me in your case also.\"",
+          "zh": "“完全不必。这位先生，贾贝兹·威尔逊先生，在我许多最成功的成就中一直是我合作伙伴和帮手，我毫不怀疑他也会在你的案子里对我产生同样的用处。”"
+        },
+        {
+          "en": "The stout gentleman rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes.",
+          "zh": "魁梧的先生从椅子上站起来，致以问候的点头，从他小小的被脂肪包围的眼睛里投来快速的小询问目光。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 3,
+      "title": "Case 3: A Case of Identity",
+      "chineseTitle": "第 3 案：身份案悬云",
+      "paragraphs": [
+        {
+          "en": "\"My dear fellow,\" said Sherlock Holmes as we sat on either side of the fire in his rooms at Baker Street, \"life is infinitely stranger than anything which the mind of man could invent.",
+          "zh": "“我亲爱的伙计，”当我们在贝克街他房间里的火炉两侧坐下时，歇洛克·福尔摩斯说，“生活无限比人类心智所能发明的任何东西都要奇特。"
+        },
+        {
+          "en": "We would not dare to conceive the things which are really mere commonplaces of existence.",
+          "zh": "我们不敢想象那些实际上仅仅是存在的寻常事物。"
+        },
+        {
+          "en": "If we could fly out of that window hand in hand, hover over this great city, gently remove the roofs, and peep in at the queer things which are going on, the strange coincidences, the plannings, the cross-purposes, the wonderful chains of events, working through generations, and leading to the most out-of-the-way results, it would make all fiction with its conventionalities and foreseen conclusions most stale and unprofitable.\"",
+          "zh": "如果我们能手拉手飞出那扇窗户，在这座伟大的城市上空盘旋，轻轻掀开屋顶，偷看里面正在发生的奇特事情，奇特的巧合，计划，交叉的目的，贯穿几代人工作的精彩事件链，并导致最异乎寻常的结果，那就会使所有带有陈规和预见结论的小说变得最陈腐和毫无价值。”"
+        },
+        {
+          "en": "\"And yet I am not convinced of it,\" I answered. \"The cases which come to light in the papers are, as a rule, bald enough, and vulgar enough.\"",
+          "zh": "“但我还是不相信这一点，”我回答。“报纸上揭露的案件，通常都是光秃秃的，而且足够俗气。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 4,
+      "title": "Case 4: The Boscombe Valley Mystery",
+      "chineseTitle": "第 4 案：博斯科姆比溪谷谜案",
+      "paragraphs": [
+        {
+          "en": "We were seated at breakfast one morning, my wife and I, when the maid brought in a telegram. It was from Sherlock Holmes and ran in this way:",
+          "zh": "一天早晨，我们正坐在早餐桌前，我和我妻子，这时女佣送进来一封电报。那是歇洛克·福尔摩斯发来的，内容如下："
+        },
+        {
+          "en": "\"Have you a couple of days to spare? Have just been wired for from the west of England in connection with Boscombe Valley tragedy. Shall be glad if you will come with me. Air and scenery perfect. Leave Paddington by 11:15.\"",
+          "zh": "“你有两天的空闲时间吗？刚刚收到英格兰西部关于博斯科姆比溪谷悲剧的电报。如果你能和我一起来，我会很高兴。空气和风景完美。11:15 从帕丁顿出发。”"
+        },
+        {
+          "en": "\"What do you say, dear?\" said my wife, looking across at me. \"Will you go?\"",
+          "zh": "“你怎么说，亲爱的？”我妻子看着我问。“你去吗？”"
+        },
+        {
+          "en": "\"I really do not know what to say. I have a fairly long list at present.\"",
+          "zh": "“我真的不知道该说什么。我目前有一份相当长的清单。”"
+        },
+        {
+          "en": "\"Oh, Anstruther would do your work for you. You have been looking a little pale lately. I think that the change would do you good, and you are always so interested in Mr. Sherlock Holmes' cases.\"",
+          "zh": "“哦，安斯特拉瑟会帮你做工作的。你最近看起来有点苍白。我想改变一下对你有好处，而且你总是对歇洛克·福尔摩斯先生的案件这么感兴趣。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 5,
+      "title": "Case 5: The Five Orange Pips",
+      "chineseTitle": "第 5 案：五个橘核预警印",
+      "paragraphs": [
+        {
+          "en": "When I glance over my notes and records of the Sherlock Holmes cases between the years '82 and '90, I am faced by so many which present strange and interesting features that it is no easy matter to know which to choose and which to leave.",
+          "zh": "当我翻阅 82 年到 90 年间歇洛克·福尔摩斯案件的笔记和记录时，我面临着如此多呈现奇特和有趣特征的案件，以至于知道选择哪一个和留下哪一个并不是一件容易的事。"
+        },
+        {
+          "en": "Some, however, have already given publicity through the papers, and others have not offered a wide field for those peculiar qualities which my friend possessed in so high a degree.",
+          "zh": "然而，有些已经通过报纸公开了，有些则没有为我朋友在如此高的程度上拥有的那些独特品质提供广阔的领域。"
+        },
+        {
+          "en": "Among the latter is the case of the Open Door, and the singular adventure of the Atkinson family at Trincomalee.",
+          "zh": "后者中有开门案，以及特林可马利的阿特金森一家奇特的冒险。"
+        },
+        {
+          "en": "The case of the Five Orange Pips, however, presents features so unusual and so terrifying that I cannot refrain from placing it upon record, despite the fact that the mystery was never fully solved by human intervention.",
+          "zh": "然而，五个橘核案呈现出如此不寻常和如此可怕的特征，以至于我不能不把它记录下来，尽管这一谜团从未通过人类干预得到完全解决。"
+        }
+      ]
+    }
+  ]
+}
