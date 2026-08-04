@@ -91,7 +91,7 @@ class ThemeService {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: _primaryColor,
-      unselectedItemColor: Color(0xFF868E96),
+      unselectedItemColor: Color(0x8C2563EB),
       type: BottomNavigationBarType.fixed,
       elevation: 0,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
@@ -211,7 +211,7 @@ class ThemeService {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Color(0xFF1A1D20),
       selectedItemColor: _primaryColor,
-      unselectedItemColor: Color(0xFF495057),
+      unselectedItemColor: Color(0x8C60A5FA),
       type: BottomNavigationBarType.fixed,
       elevation: 0,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),

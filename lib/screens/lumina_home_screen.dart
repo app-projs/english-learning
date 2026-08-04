@@ -497,7 +497,8 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
   Widget _buildNavItem(int index, IconData icon, String label, {bool isActive = false}) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final activeColor = isDark ? const Color(0xFF60A5FA) : const Color(0xFF1E293B);
-    final inactiveColor = isDark ? Colors.white38 : LuminaColors.outline;
+    // 未选中态使用选中态颜色的同系淡化色，提升视觉统一感与高级感
+    final inactiveColor = activeColor.withValues(alpha: 0.55);
 
     return InkWell(
       onTap: () {
@@ -544,6 +545,9 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
 
   // 最中间 AI 练习专属高亮按钮
   Widget _buildCenterAiNavItem(int index, String label, {bool isActive = false}) {
+    const activeColor = Color(0xFF2563EB);
+    final inactiveColor = activeColor.withValues(alpha: 0.55);
+
     return InkWell(
       onTap: () {
         setState(() {
@@ -581,7 +585,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
               ),
               child: Icon(
                 Icons.auto_awesome,
-                color: isActive ? Colors.amber : const Color(0xFF2563EB),
+                color: isActive ? Colors.amber : const Color(0xFF2563EB).withValues(alpha: 0.7),
                 size: 20,
               ),
             ),
@@ -591,7 +595,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
               style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
-                color: isActive ? const Color(0xFF2563EB) : Colors.grey.shade600,
+                color: isActive ? activeColor : inactiveColor,
               ),
             ),
           ],
