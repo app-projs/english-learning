@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../mock/mock_articles.dart';
 import '../models/article.dart';
 import '../models/book.dart';
@@ -6,22 +8,41 @@ import '../../../core/services/storage_service.dart';
 import '../../../core/services/database_service.dart';
 
 class ArticleService {
+  static const _contentVersion = '23';
+  static const _contentVersionKey = 'article_content_version';
+
   final StorageService _storage;
   final DatabaseService _database;
   final bool _useMockData = false;
+  Future<void>? _contentSyncFuture;
 
   ArticleService(this._storage, this._database);
 
   Future<void> _seedDatabaseIfNeeded() async {
+    _contentSyncFuture ??= _syncContent();
+    try {
+      await _contentSyncFuture;
+    } catch (_) {
+      _contentSyncFuture = null;
+      rethrow;
+    }
+  }
+
+  Future<void> _syncContent() async {
     try {
       final dbBooks = await _database.getAllBooks();
       final dbArticles = await _database.getAllArticles();
-      
+      final savedContentVersion =
+          await _database.getContentMetadata(_contentVersionKey);
       final allBookChapters = await BookJsonLoader.loadAllBookChapters();
       final mockArticles = MockArticles.getArticles();
-      final totalExpectedArticles = allBookChapters.length + mockArticles.length;
+      final totalExpectedArticles =
+          allBookChapters.length + mockArticles.length;
 
-      if (dbBooks.isEmpty || dbArticles.length != totalExpectedArticles) {
+      final needsSync = savedContentVersion != _contentVersion ||
+          dbBooks.isEmpty ||
+          dbArticles.length != totalExpectedArticles;
+      if (needsSync) {
         final sampleBooks = await BookJsonLoader.loadAllBooks();
         for (final book in sampleBooks) {
           await _database.insertBook(book.toJson());
@@ -34,9 +55,11 @@ class ArticleService {
         for (final article in mockArticles) {
           await _database.insertArticle(article.toJson());
         }
+        await _database.setContentMetadata(_contentVersionKey, _contentVersion);
       }
-    } catch (e) {
-      // Graceful fallback on database error
+    } catch (error, stackTrace) {
+      debugPrint('Article content synchronization failed: $error\n$stackTrace');
+      rethrow;
     }
   }
 
@@ -51,7 +74,8 @@ class ArticleService {
         return BookJsonLoader.loadAllBooks();
       }
       return dbBooks.map((json) => Book.fromJson(json)).toList();
-    } catch (e) {
+    } catch (error, stackTrace) {
+      debugPrint('Failed to load books from the database: $error\n$stackTrace');
       return BookJsonLoader.loadAllBooks();
     }
   }
@@ -67,7 +91,9 @@ class ArticleService {
         return BookJsonLoader.getBookChapters(bookId);
       }
       return dbArticles.map((json) => Article.fromJson(json)).toList();
-    } catch (e) {
+    } catch (error, stackTrace) {
+      debugPrint(
+          'Failed to load book articles from the database: $error\n$stackTrace');
       return BookJsonLoader.getBookChapters(bookId);
     }
   }
@@ -83,7 +109,9 @@ class ArticleService {
         return MockArticles.getArticles();
       }
       return dbArticles.map((json) => Article.fromJson(json)).toList();
-    } catch (e) {
+    } catch (error, stackTrace) {
+      debugPrint(
+          'Failed to load articles from the database: $error\n$stackTrace');
       return MockArticles.getArticles();
     }
   }
@@ -99,7 +127,9 @@ class ArticleService {
         return Article.fromJson(json);
       }
       return MockArticles.getArticleById(id);
-    } catch (e) {
+    } catch (error, stackTrace) {
+      debugPrint(
+          'Failed to load an article from the database: $error\n$stackTrace');
       return MockArticles.getArticleById(id);
     }
   }
@@ -112,7 +142,8 @@ class ArticleService {
       await _seedDatabaseIfNeeded();
       final dbArticles = await _database.getArticlesByDifficulty(difficulty);
       return dbArticles.map((json) => Article.fromJson(json)).toList();
-    } catch (e) {
+    } catch (error, stackTrace) {
+      debugPrint('Failed to load articles by difficulty: $error\n$stackTrace');
       return MockArticles.getArticlesByDifficulty(difficulty);
     }
   }
@@ -125,7 +156,8 @@ class ArticleService {
       await _seedDatabaseIfNeeded();
       final dbArticles = await _database.searchArticles(query);
       return dbArticles.map((json) => Article.fromJson(json)).toList();
-    } catch (e) {
+    } catch (error, stackTrace) {
+      debugPrint('Failed to search articles: $error\n$stackTrace');
       return MockArticles.searchArticles(query);
     }
   }
@@ -133,8 +165,9 @@ class ArticleService {
   Future<void> markArticleAsRead(String articleId, {bool isRead = true}) async {
     try {
       await _database.markArticleAsRead(articleId, isRead: isRead);
-    } catch (e) {
-      // Ignore database write errors in fallback mode
+    } catch (error, stackTrace) {
+      debugPrint('Failed to update article read status: $error\n$stackTrace');
+      rethrow;
     }
   }
 
@@ -147,8 +180,10 @@ class ArticleService {
     try {
       await _database.addReadingHistory(articleId, minutes);
       await _database.markArticleAsRead(articleId, isRead: true);
-    } catch (e) {
-      // Ignore database history write errors in fallback mode
+    } catch (error, stackTrace) {
+      debugPrint(
+          'Failed to record article reading history: $error\n$stackTrace');
+      rethrow;
     }
     await _storage.updateProgress('minutes', minutes);
     await _storage.updateStreak();

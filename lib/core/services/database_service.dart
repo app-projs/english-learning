@@ -20,7 +20,9 @@ class DatabaseService {
   static Future<Database> _initDatabase() async {
     if (kIsWeb) {
       databaseFactory = databaseFactoryFfiWeb;
-    } else if (defaultTargetPlatform == TargetPlatform.windows || defaultTargetPlatform == TargetPlatform.linux || defaultTargetPlatform == TargetPlatform.macOS) {
+    } else if (defaultTargetPlatform == TargetPlatform.windows ||
+        defaultTargetPlatform == TargetPlatform.linux ||
+        defaultTargetPlatform == TargetPlatform.macOS) {
       sqfliteFfiInit();
       databaseFactory = databaseFactoryFfi;
     }
@@ -30,7 +32,7 @@ class DatabaseService {
 
     final db = await openDatabase(
       path,
-      version: 22,
+      version: 23,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -118,7 +120,8 @@ class DatabaseService {
         coverUrl TEXT,
         chineseTitle TEXT,
         chineseContent TEXT,
-        isRead INTEGER DEFAULT 0
+        isRead INTEGER DEFAULT 0,
+        paragraphs TEXT
       )
     ''');
 
@@ -174,11 +177,16 @@ class DatabaseService {
       )
     ''');
 
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_articles_bookId ON articles(bookId);');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_books_category ON books(category);');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_phonetics_type ON phonetics(type);');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_word_roots_type ON word_roots(type);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_articles_bookId ON articles(bookId);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_books_category ON books(category);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_phonetics_type ON phonetics(type);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_word_roots_type ON word_roots(type);');
 
     // 签到记录表 (Version 13)
     await db.execute('''
@@ -189,7 +197,8 @@ class DatabaseService {
         createdAt TEXT
       )
     ''');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
 
     // 离线字典表 (Version 14)
     await db.execute('''
@@ -205,7 +214,8 @@ class DatabaseService {
         updated_at INTEGER
       )
     ''');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
 
     // AI 对话历史记录表 (Version 15)
     await db.execute('''
@@ -221,10 +231,20 @@ class DatabaseService {
         created_at INTEGER
       )
     ''');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_ai_chat_scenario ON ai_chat_history(scenario_id);');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_ai_chat_scenario ON ai_chat_history(scenario_id);');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS content_metadata (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updatedAt TEXT NOT NULL
+      )
+    ''');
   }
 
-  static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
+  static Future<void> _onUpgrade(
+      Database db, int oldVersion, int newVersion) async {
     if (oldVersion < 12) {
       await db.execute('DROP TABLE IF EXISTS words');
       await db.execute('DROP TABLE IF EXISTS sentences');
@@ -248,7 +268,8 @@ class DatabaseService {
           createdAt TEXT
         )
       ''');
-      await db.execute('CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
+      await db.execute(
+          'CREATE INDEX IF NOT EXISTS idx_checkin_date ON checkin_records(date);');
     }
     // Version 14: 新增离线字典表
     if (oldVersion < 14) {
@@ -265,7 +286,8 @@ class DatabaseService {
           updated_at INTEGER
         )
       ''');
-      await db.execute('CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
+      await db.execute(
+          'CREATE INDEX IF NOT EXISTS idx_dictionary_word ON dictionary(word);');
     }
     // Version 15: 新增 AI 对话历史表
     if (oldVersion < 15) {
@@ -282,7 +304,8 @@ class DatabaseService {
           created_at INTEGER
         )
       ''');
-      await db.execute('CREATE INDEX IF NOT EXISTS idx_ai_chat_scenario ON ai_chat_history(scenario_id);');
+      await db.execute(
+          'CREATE INDEX IF NOT EXISTS idx_ai_chat_scenario ON ai_chat_history(scenario_id);');
     }
     // Version 16: words 表新增 definitions 多义释义列
     if (oldVersion < 16) {
@@ -293,43 +316,58 @@ class DatabaseService {
     // Version 17: articles 表新增 isRead 已读状态列
     if (oldVersion < 17) {
       try {
-        await db.execute('ALTER TABLE articles ADD COLUMN isRead INTEGER DEFAULT 0;');
+        await db.execute(
+            'ALTER TABLE articles ADD COLUMN isRead INTEGER DEFAULT 0;');
       } catch (_) {}
     }
     // Version 18: 重构全量名著章节正文为多段落长篇文本，重置 articles 与 books 缓存表以重新播种长篇名著
-    if (oldVersion < 18) {
+    if (oldVersion < 18 && newVersion < 23) {
       try {
         await db.execute('DELETE FROM articles;');
         await db.execute('DELETE FROM books;');
       } catch (_) {}
     }
     // Version 19: 全量名著再次深度扩充长篇正文与精准段落级翻译，重置以重新播种
-    if (oldVersion < 19) {
+    if (oldVersion < 19 && newVersion < 23) {
       try {
         await db.execute('DELETE FROM articles;');
         await db.execute('DELETE FROM books;');
       } catch (_) {}
     }
     // Version 20: 补全全量 14 本名著全量 8~10 章完整正文与直接段落级渲染，重置以重新播种
-    if (oldVersion < 20) {
+    if (oldVersion < 20 && newVersion < 23) {
       try {
         await db.execute('DELETE FROM articles;');
         await db.execute('DELETE FROM books;');
       } catch (_) {}
     }
     // Version 21: 首批 4 本名著（小王子、爱丽丝梦游仙境、绿野仙踪、绿山墙的安妮）全本原著章节（全27章/全12章/全24章/全38章）上线，重置播种
-    if (oldVersion < 21) {
+    if (oldVersion < 21 && newVersion < 23) {
       try {
         await db.execute('DELETE FROM articles;');
         await db.execute('DELETE FROM books;');
       } catch (_) {}
     }
     // Version 22: 首批 4 本名著全部章节深度充实段落篇幅（每章4~6个完整丰富段落，杜绝敷衍），重置播种
-    if (oldVersion < 22) {
+    if (oldVersion < 22 && newVersion < 23) {
       try {
         await db.execute('DELETE FROM articles;');
         await db.execute('DELETE FROM books;');
       } catch (_) {}
+    }
+    // Version 23: 文章段落使用 JSON 持久化，内容更新改由 ArticleService 同步，
+    // 避免通过删除文章表重播种而丢失用户已读状态。
+    if (oldVersion < 23) {
+      try {
+        await db.execute('ALTER TABLE articles ADD COLUMN paragraphs TEXT;');
+      } catch (_) {}
+      await db.execute('''
+        CREATE TABLE IF NOT EXISTS content_metadata (
+          key TEXT PRIMARY KEY,
+          value TEXT NOT NULL,
+          updatedAt TEXT NOT NULL
+        )
+      ''');
     }
   }
 
@@ -398,8 +436,11 @@ class DatabaseService {
     }).toList();
   }
 
-  Future<List<Map<String, dynamic>>> getSentencesByDifficulty(String difficulty) async {
-    final results = await _database?.query('sentences', where: 'difficulty = ?', whereArgs: [difficulty]) ?? [];
+  Future<List<Map<String, dynamic>>> getSentencesByDifficulty(
+      String difficulty) async {
+    final results = await _database?.query('sentences',
+            where: 'difficulty = ?', whereArgs: [difficulty]) ??
+        [];
     return results.map((row) {
       final sentence = Map<String, dynamic>.from(row);
       sentence['keyWords'] = jsonDecode(row['keyWords'] as String? ?? '[]');
@@ -408,10 +449,12 @@ class DatabaseService {
   }
 
   Future<Map<String, dynamic>?> getSentenceById(String id) async {
-    final results = await _database?.query('sentences', where: 'id = ?', whereArgs: [id]);
+    final results =
+        await _database?.query('sentences', where: 'id = ?', whereArgs: [id]);
     if (results?.isNotEmpty == true) {
       final sentence = Map<String, dynamic>.from(results!.first);
-      sentence['keyWords'] = jsonDecode(sentence['keyWords'] as String? ?? '[]');
+      sentence['keyWords'] =
+          jsonDecode(sentence['keyWords'] as String? ?? '[]');
       return sentence;
     }
     return null;
@@ -435,7 +478,8 @@ class DatabaseService {
   }
 
   Future<Map<String, dynamic>?> getDialogueById(String id) async {
-    final results = await _database?.query('dialogues', where: 'id = ?', whereArgs: [id]);
+    final results =
+        await _database?.query('dialogues', where: 'id = ?', whereArgs: [id]);
     if (results?.isNotEmpty == true) {
       final dialogue = Map<String, dynamic>.from(results!.first);
       dialogue['lines'] = jsonDecode(dialogue['lines'] as String? ?? '[]');
@@ -444,8 +488,11 @@ class DatabaseService {
     return null;
   }
 
-  Future<List<Map<String, dynamic>>> getDialoguesByDifficulty(String difficulty) async {
-    final results = await _database?.query('dialogues', where: 'difficulty = ?', whereArgs: [difficulty]) ?? [];
+  Future<List<Map<String, dynamic>>> getDialoguesByDifficulty(
+      String difficulty) async {
+    final results = await _database?.query('dialogues',
+            where: 'difficulty = ?', whereArgs: [difficulty]) ??
+        [];
     return results.map((row) {
       final dialogue = Map<String, dynamic>.from(row);
       dialogue['lines'] = jsonDecode(row['lines'] as String? ?? '[]');
@@ -463,7 +510,8 @@ class DatabaseService {
         safeMap[key] = value;
       }
     });
-    await _database?.insert('books', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+    await _database?.insert('books', safeMap,
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Map<String, dynamic>>> getAllBooks() async {
@@ -471,7 +519,8 @@ class DatabaseService {
   }
 
   Future<Map<String, dynamic>?> getBookById(String id) async {
-    final results = await _database?.query('books', where: 'id = ?', whereArgs: [id]);
+    final results =
+        await _database?.query('books', where: 'id = ?', whereArgs: [id]);
     return results?.isNotEmpty == true ? results!.first : null;
   }
 
@@ -479,13 +528,49 @@ class DatabaseService {
   Future<void> insertArticle(Map<String, dynamic> article) async {
     final Map<String, dynamic> safeMap = {};
     article.forEach((key, value) {
-      if (value is List) {
+      if (key == 'paragraphs') {
+        safeMap[key] = jsonEncode(value);
+      } else if (value is List) {
         safeMap[key] = value.join(',');
       } else {
         safeMap[key] = value;
       }
     });
-    await _database?.insert('articles', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+
+    final articleId = safeMap['id'] as String?;
+    if (articleId != null) {
+      final existing = await getArticleById(articleId);
+      if (existing != null) {
+        safeMap['isRead'] = existing['isRead'] ?? 0;
+      }
+    }
+    await _database?.insert('articles', safeMap,
+        conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<String?> getContentMetadata(String key) async {
+    final results = await _database?.query(
+      'content_metadata',
+      columns: ['value'],
+      where: 'key = ?',
+      whereArgs: [key],
+      limit: 1,
+    );
+    return results?.isNotEmpty == true
+        ? results!.first['value'] as String?
+        : null;
+  }
+
+  Future<void> setContentMetadata(String key, String value) async {
+    await _database?.insert(
+      'content_metadata',
+      {
+        'key': key,
+        'value': value,
+        'updatedAt': DateTime.now().toIso8601String(),
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 
   Future<List<Map<String, dynamic>>> getAllArticles() async {
@@ -493,24 +578,33 @@ class DatabaseService {
   }
 
   Future<List<Map<String, dynamic>>> getArticlesByBookId(String bookId) async {
-    return await _database?.query('articles', where: 'bookId = ?', orderBy: 'unitIndex ASC', whereArgs: [bookId]) ?? [];
+    return await _database?.query('articles',
+            where: 'bookId = ?',
+            orderBy: 'unitIndex ASC',
+            whereArgs: [bookId]) ??
+        [];
   }
 
   Future<Map<String, dynamic>?> getArticleById(String id) async {
-    final results = await _database?.query('articles', where: 'id = ?', whereArgs: [id]);
+    final results =
+        await _database?.query('articles', where: 'id = ?', whereArgs: [id]);
     return results?.isNotEmpty == true ? results!.first : null;
   }
 
-  Future<List<Map<String, dynamic>>> getArticlesByDifficulty(String difficulty) async {
-    return await _database?.query('articles', where: 'difficulty = ?', whereArgs: [difficulty]) ?? [];
+  Future<List<Map<String, dynamic>>> getArticlesByDifficulty(
+      String difficulty) async {
+    return await _database?.query('articles',
+            where: 'difficulty = ?', whereArgs: [difficulty]) ??
+        [];
   }
 
   Future<List<Map<String, dynamic>>> searchArticles(String query) async {
     return await _database?.query(
-      'articles',
-      where: 'title LIKE ? OR content LIKE ?',
-      whereArgs: ['%$query%', '%$query%'],
-    ) ?? [];
+          'articles',
+          where: 'title LIKE ? OR content LIKE ?',
+          whereArgs: ['%$query%', '%$query%'],
+        ) ??
+        [];
   }
 
   Future<void> markArticleAsRead(String id, {bool isRead = true}) async {
@@ -593,7 +687,8 @@ class DatabaseService {
     if (safeMap['examples'] is List) {
       safeMap['examples'] = jsonEncode(safeMap['examples']);
     }
-    await _database?.insert('phonetics', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+    await _database?.insert('phonetics', safeMap,
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Map<String, dynamic>>> getAllPhonetics() async {
@@ -610,7 +705,9 @@ class DatabaseService {
   }
 
   Future<List<Map<String, dynamic>>> getPhoneticsByType(String type) async {
-    final results = await _database?.query('phonetics', where: 'type = ?', whereArgs: [type]) ?? [];
+    final results = await _database
+            ?.query('phonetics', where: 'type = ?', whereArgs: [type]) ??
+        [];
     return results.map((row) {
       final map = Map<String, dynamic>.from(row);
       if (map['examples'] is String) {
@@ -628,7 +725,8 @@ class DatabaseService {
     if (safeMap['derivedWords'] is List) {
       safeMap['derivedWords'] = jsonEncode(safeMap['derivedWords']);
     }
-    await _database?.insert('word_roots', safeMap, conflictAlgorithm: ConflictAlgorithm.replace);
+    await _database?.insert('word_roots', safeMap,
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Map<String, dynamic>>> getAllWordRoots() async {
@@ -645,7 +743,9 @@ class DatabaseService {
   }
 
   Future<List<Map<String, dynamic>>> getWordRootsByType(String type) async {
-    final results = await _database?.query('word_roots', where: 'type = ?', whereArgs: [type]) ?? [];
+    final results = await _database
+            ?.query('word_roots', where: 'type = ?', whereArgs: [type]) ??
+        [];
     return results.map((row) {
       final map = Map<String, dynamic>.from(row);
       if (map['derivedWords'] is String) {
@@ -661,11 +761,12 @@ class DatabaseService {
   Future<Map<String, dynamic>?> searchDictionaryWord(String word) async {
     final lower = word.toLowerCase().trim();
     final results = await _database?.query(
-      'dictionary',
-      where: 'word = ?',
-      whereArgs: [lower],
-      limit: 1,
-    ) ?? [];
+          'dictionary',
+          where: 'word = ?',
+          whereArgs: [lower],
+          limit: 1,
+        ) ??
+        [];
     return results.isNotEmpty ? Map<String, dynamic>.from(results.first) : null;
   }
 
@@ -677,28 +778,34 @@ class DatabaseService {
     );
   }
 
-  Future<void> bulkInsertDictionaryWords(List<Map<String, dynamic>> rows) async {
+  Future<void> bulkInsertDictionaryWords(
+      List<Map<String, dynamic>> rows) async {
     if (_database == null || rows.isEmpty) return;
     final batch = _database!.batch();
     for (final row in rows) {
-      batch.insert('dictionary', row, conflictAlgorithm: ConflictAlgorithm.replace);
+      batch.insert('dictionary', row,
+          conflictAlgorithm: ConflictAlgorithm.replace);
     }
     await batch.commit(noResult: true);
   }
 
   Future<int> getDictionaryCount() async {
-    final res = await _database?.rawQuery('SELECT COUNT(*) as count FROM dictionary') ?? [];
+    final res =
+        await _database?.rawQuery('SELECT COUNT(*) as count FROM dictionary') ??
+            [];
     return res.isNotEmpty ? (res.first['count'] as int? ?? 0) : 0;
   }
 
   // AI Chat History SQL Methods (Version 15)
-  Future<List<Map<String, dynamic>>> getAiChatMessages(String scenarioId) async {
+  Future<List<Map<String, dynamic>>> getAiChatMessages(
+      String scenarioId) async {
     final results = await _database?.query(
-      'ai_chat_history',
-      where: 'scenario_id = ?',
-      whereArgs: [scenarioId],
-      orderBy: 'created_at ASC',
-    ) ?? [];
+          'ai_chat_history',
+          where: 'scenario_id = ?',
+          whereArgs: [scenarioId],
+          orderBy: 'created_at ASC',
+        ) ??
+        [];
     return results.map((row) => Map<String, dynamic>.from(row)).toList();
   }
 

@@ -1,4 +1,6 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 import 'lumina_home_screen.dart';
 import '../../../core/theme/lumina_theme.dart';
@@ -23,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
   late Animation<double> _logoScaleAnimation;
   late Animation<double> _textFadeAnimation;
   late Animation<Offset> _textSlideAnimation;
+  Timer? _navigationTimer;
 
   @override
   void initState() {
@@ -30,9 +33,11 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: widget.isDarkMode ? Brightness.light : Brightness.dark,
+        statusBarIconBrightness:
+            widget.isDarkMode ? Brightness.light : Brightness.dark,
         systemNavigationBarColor: Colors.transparent,
-        systemNavigationBarIconBrightness: widget.isDarkMode ? Brightness.light : Brightness.dark,
+        systemNavigationBarIconBrightness:
+            widget.isDarkMode ? Brightness.light : Brightness.dark,
       ),
     );
 
@@ -71,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
 
     // Seamless navigation to home screen after 1.5 seconds
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    _navigationTimer = Timer(const Duration(milliseconds: 1500), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
@@ -80,7 +85,8 @@ class _SplashScreenState extends State<SplashScreen>
               isDarkMode: widget.isDarkMode,
               onThemeChanged: widget.onThemeChanged,
             ),
-            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
               return FadeTransition(
                 opacity: CurvedAnimation(
                   parent: animation,
@@ -98,15 +104,15 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
+    _navigationTimer?.cancel();
     _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor = widget.isDarkMode
-        ? const Color(0xFF111111)
-        : LuminaColors.background;
+    final backgroundColor =
+        widget.isDarkMode ? const Color(0xFF111111) : LuminaColors.background;
 
     return Scaffold(
       backgroundColor: backgroundColor,
