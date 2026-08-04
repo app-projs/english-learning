@@ -6,6 +6,7 @@ import '../../../core/services/storage_service.dart';
 import '../../../core/services/database_service.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../core/theme/lumina_theme.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 import 'article_detail_screen.dart';
 
 class BookDetailScreen extends StatefulWidget {
@@ -119,30 +120,14 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
                 // Top Header Banner (Cover & Metadata)
                 _buildHeaderBanner(isDark),
 
-                // Custom TabBar (内容简介 | 章节目录)
-                Container(
-                  decoration: BoxDecoration(
-                    color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC),
-                    border: Border(
-                      bottom: BorderSide(
-                        color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.06),
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                  child: TabBar(
-                    controller: _tabController,
-                    labelColor: LuminaColors.primary,
-                    unselectedLabelColor: isDark ? Colors.white54 : const Color(0xFF64748B),
-                    labelStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    unselectedLabelStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-                    indicatorColor: LuminaColors.primary,
-                    indicatorWeight: 3,
-                    tabs: [
-                      const Tab(text: '内容简介'),
-                      Tab(text: '章节目录 (${_chapters.length})'),
-                    ],
-                  ),
+                // Unified AppTabBar (内容简介 | 章节目录)
+                AppTabBar(
+                  controller: _tabController,
+                  backgroundColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC),
+                  tabs: [
+                    const Tab(text: '内容简介'),
+                    Tab(text: '章节目录 (${_chapters.length})'),
+                  ],
                 ),
 
                 // Tab Content Area
@@ -293,6 +278,16 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
     );
   }
 
+  int get _calculatedTotalWordCount {
+    if (_chapters.isEmpty) return widget.book.wordCount;
+    int sum = 0;
+    for (final c in _chapters) {
+      final words = c.content.trim().split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length;
+      sum += words;
+    }
+    return sum > 0 ? sum : widget.book.wordCount;
+  }
+
   Widget _buildDescriptionTab(bool isDark) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
@@ -328,7 +323,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
                   icon: Icons.font_download_rounded,
                   iconColor: Colors.green,
                   title: '预估词数',
-                  value: '~${widget.book.wordCount} 词',
+                  value: '~$_calculatedTotalWordCount 词',
                 ),
               ),
             ],
@@ -336,11 +331,11 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
           const SizedBox(height: 20),
 
           // Main Description Title
-          Row(
+          const Row(
             children: [
-              const Icon(Icons.auto_stories_rounded, size: 20, color: LuminaColors.primary),
-              const SizedBox(width: 8),
-              const Text(
+              Icon(Icons.auto_stories_rounded, size: 20, color: LuminaColors.primary),
+              SizedBox(width: 8),
+              Text(
                 '名著导读与深度简介',
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
@@ -418,71 +413,72 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
       separatorBuilder: (context, index) => const SizedBox(height: 10),
       itemBuilder: (context, index) {
         final chapter = _chapters[index];
-        final unitNum = chapter.unitIndex ?? (index + 1);
-        final isCurrentUnit = unitNum == _lastReadUnitIndex;
 
         return Card(
           elevation: 0,
-          color: isCurrentUnit
-              ? (isDark ? LuminaColors.primary.withValues(alpha: 0.15) : const Color(0xFFEFF6FF))
-              : (isDark ? const Color(0xFF1E293B) : Colors.white),
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
             side: BorderSide(
-              color: isCurrentUnit
-                  ? LuminaColors.primary
-                  : (isDark ? Colors.white.withValues(alpha: 0.08) : const Color(0xFFE2E8F0)),
-              width: isCurrentUnit ? 1.5 : 1,
+              color: isDark ? Colors.white.withValues(alpha: 0.08) : const Color(0xFFE2E8F0),
+              width: 1,
             ),
           ),
           child: ListTile(
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-            leading: CircleAvatar(
-              backgroundColor: isCurrentUnit
-                  ? LuminaColors.primary
-                  : (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.orange.shade100),
-              foregroundColor: isCurrentUnit
-                  ? Colors.white
-                  : (isDark ? Colors.orange.shade300 : Colors.orange.shade900),
-              child: Text(
-                'U$unitNum',
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+            title: Text(
+              chapter.chineseTitle ?? chapter.title,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
               ),
-            ),
-            title: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    chapter.chineseTitle ?? chapter.title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: isCurrentUnit ? LuminaColors.primary : null,
-                    ),
-                  ),
-                ),
-                if (isCurrentUnit)
-                  Container(
-                    margin: const EdgeInsets.only(left: 6),
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                    decoration: BoxDecoration(
-                      color: LuminaColors.primary,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: const Text(
-                      '上次学到',
-                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-              ],
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 4.0),
-              child: Text(
-                chapter.title,
-                style: TextStyle(fontSize: 12, color: isDark ? Colors.white54 : Colors.grey.shade600),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      chapter.title,
+                      style: TextStyle(fontSize: 12, color: isDark ? Colors.white54 : Colors.grey.shade600),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  if (chapter.isRead) ...[
+                    const SizedBox(width: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF10B981).withValues(alpha: 0.15) : const Color(0xFFECFDF5),
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(
+                          color: isDark ? const Color(0xFF34D399).withValues(alpha: 0.3) : const Color(0xFFA7F3D0),
+                          width: 0.8,
+                        ),
+                      ),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.check_circle_rounded,
+                            size: 11,
+                            color: Color(0xFF059669),
+                          ),
+                          SizedBox(width: 3),
+                          Text(
+                            '已读',
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF047857),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
             trailing: Row(
@@ -496,7 +492,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
                 Icon(
                   Icons.arrow_forward_ios_rounded,
                   size: 14,
-                  color: isCurrentUnit ? LuminaColors.primary : (isDark ? Colors.white38 : Colors.grey.shade400),
+                  color: isDark ? Colors.white38 : Colors.grey.shade400,
                 ),
               ],
             ),
@@ -510,41 +506,38 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
   Widget _buildBottomReadingBar(bool isDark, Article targetArticle) {
     final unitNum = targetArticle.unitIndex ?? 1;
     final isFirstChapter = _lastReadUnitIndex == 1;
-    final buttonLabel = isFirstChapter
-        ? '开始阅读：第 1 章'
-        : '继续阅读：第 $unitNum 章 (${targetArticle.chineseTitle ?? targetArticle.title})';
+    final buttonLabel = isFirstChapter ? '开始阅读' : '阅读第 $unitNum 章';
 
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 16),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF0F172A) : Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.08),
-            blurRadius: 16,
-            offset: const Offset(0, -4),
+        border: Border(
+          top: BorderSide(
+            color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.04),
+            width: 1,
           ),
-        ],
+        ),
       ),
       child: SafeArea(
-        child: ElevatedButton.icon(
+        child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: LuminaColors.primary,
-            foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            backgroundColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
+            foregroundColor: isDark ? const Color(0xFFCBD5E1) : const Color(0xFF475569),
+            padding: const EdgeInsets.symmetric(vertical: 14),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
+              side: BorderSide(
+                color: isDark ? Colors.white.withValues(alpha: 0.08) : const Color(0xFFE2E8F0),
+                width: 1,
+              ),
             ),
-            elevation: 3,
-            shadowColor: LuminaColors.primary.withValues(alpha: 0.4),
+            elevation: 0,
           ),
           onPressed: () => _openArticle(targetArticle),
-          icon: const Icon(Icons.play_arrow_rounded, size: 24),
-          label: Text(
+          child: Text(
             buttonLabel,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
           ),
         ),
       ),

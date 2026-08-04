@@ -1,8 +1,7 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../core/services/audio_service.dart';
-import '../../../core/services/database_service.dart';
-import '../services/phonetics_service.dart';
 import '../../../core/theme/lumina_theme.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 import '../../../features/review/screens/completion_congratulation_screen.dart';
 
 class PhoneticsPracticeScreen extends StatefulWidget {
@@ -15,36 +14,11 @@ class PhoneticsPracticeScreen extends StatefulWidget {
 class _PhoneticsPracticeScreenState extends State<PhoneticsPracticeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  PhoneticsService? _phoneticsService;
-  List<PhoneticItemModel> _vowels = [];
-  List<PhoneticItemModel> _consonants = [];
-  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
-    _initDbData();
-  }
-
-  Future<void> _initDbData() async {
-    try {
-      final db = await DatabaseService.getInstance();
-      _phoneticsService = PhoneticsService(db);
-
-      final vowels = await _phoneticsService!.getPhoneticsByType('vowel');
-      final consonants = await _phoneticsService!.getPhoneticsByType('consonant');
-
-      if (mounted) {
-        setState(() {
-          _vowels = vowels;
-          _consonants = consonants;
-          _isLoading = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _isLoading = false);
-    }
   }
 
   @override
@@ -69,8 +43,6 @@ class _PhoneticsPracticeScreenState extends State<PhoneticsPracticeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('48 国际音标专项', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -108,26 +80,14 @@ class _PhoneticsPracticeScreenState extends State<PhoneticsPracticeScreen>
             ),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(44),
-          child: TabBar(
-            controller: _tabController,
-            dividerColor: Colors.transparent,
-            dividerHeight: 0,
-            indicatorColor: Colors.deepOrange,
-            labelColor: Colors.deepOrange,
-            unselectedLabelColor: isDark ? Colors.white60 : Colors.grey.shade700,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(width: 3, color: Colors.deepOrange),
-              insets: EdgeInsets.symmetric(horizontal: 16),
-              borderRadius: BorderRadius.all(Radius.circular(3)),
-            ),
-            tabs: const [
-              Tab(text: '音标点读卡'),
-              Tab(text: '听音辨音测试'),
-            ],
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          indicatorColor: Colors.deepOrange,
+          labelColor: Colors.deepOrange,
+          tabs: const [
+            Tab(text: '音标点读卡'),
+            Tab(text: '听音辨音测试'),
+          ],
         ),
       ),
       body: TabBarView(

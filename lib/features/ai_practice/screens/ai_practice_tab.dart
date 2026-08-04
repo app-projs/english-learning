@@ -1,7 +1,6 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../models/ai_scenario_model.dart';
 import '../services/ai_practice_service.dart';
-import '../../../core/theme/lumina_theme.dart';
 import 'ai_chat_screen.dart';
 
 class AiPracticeTab extends StatefulWidget {

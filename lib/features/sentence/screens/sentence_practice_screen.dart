@@ -1,8 +1,9 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../models/sentence.dart';
 import '../../../core/services/storage_service.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../features/review/screens/completion_congratulation_screen.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 
 class SentencePracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -17,7 +18,6 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
   late TabController _tabController;
   final List<Sentence> _practiceSentences = _generateSampleSentences();
   int _currentIndex = 0;
-  bool _showAnswer = false;
   StorageService? _storageService;
 
   @override
@@ -94,7 +94,6 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
   void _nextSentence() {
     setState(() {
       _currentIndex = (_currentIndex + 1) % _practiceSentences.length;
-      _showAnswer = false;
     });
   }
 
@@ -102,7 +101,6 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
     setState(() {
       _currentIndex = (_currentIndex - 1 + _practiceSentences.length) %
           _practiceSentences.length;
-      _showAnswer = false;
     });
   }
 
@@ -157,29 +155,15 @@ class _SentencePracticeScreenState extends State<SentencePracticeScreen>
             ),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48),
-          child: Container(
-            color: Colors.transparent,
-            child: TabBar(
-              controller: _tabController,
-              isScrollable: true,
-              dividerColor: Colors.transparent,
-              dividerHeight: 0,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicator: const UnderlineTabIndicator(
-                borderSide: BorderSide(width: 3, color: Colors.blue),
-                insets: EdgeInsets.symmetric(horizontal: 16),
-                borderRadius: BorderRadius.all(Radius.circular(3)),
-              ),
-              tabs: const [
-                Tab(icon: Icon(Icons.text_fields, size: 20), text: '填空练习'),
-                Tab(icon: Icon(Icons.sort, size: 20), text: '排序练习'),
-                Tab(icon: Icon(Icons.translate, size: 20), text: '翻译练习'),
-                Tab(icon: Icon(Icons.account_tree_outlined, size: 20), text: '语法成分分析'),
-              ],
-            ),
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          isScrollable: true,
+          tabs: const [
+            Tab(icon: Icon(Icons.text_fields, size: 20), text: '填空练习'),
+            Tab(icon: Icon(Icons.sort, size: 20), text: '排序练习'),
+            Tab(icon: Icon(Icons.translate, size: 20), text: '翻译练习'),
+            Tab(icon: Icon(Icons.account_tree_outlined, size: 20), text: '语法成分分析'),
+          ],
         ),
       ),
       body: TabBarView(

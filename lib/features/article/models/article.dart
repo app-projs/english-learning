@@ -38,6 +38,7 @@ class Article {
   final String? coverUrl;
   final String? chineseTitle;
   final String? chineseContent;
+  final bool isRead;
   final List<ParagraphBlock> paragraphs;
 
   Article({
@@ -54,6 +55,7 @@ class Article {
     this.coverUrl,
     this.chineseTitle,
     this.chineseContent,
+    this.isRead = false,
     List<ParagraphBlock>? paragraphs,
   }) : paragraphs = paragraphs ?? _buildParagraphsFromText(content, chineseContent);
 
@@ -88,12 +90,24 @@ class Article {
     final rawContent = json['content']?.toString() ?? '';
     final rawZhContent = json['chineseContent']?.toString();
 
+    final effectiveContent = rawContent.isNotEmpty
+        ? rawContent
+        : (parsedParagraphs != null ? parsedParagraphs.map((p) => p.en).join('\n\n') : '');
+
+    // 科学精准计算英文预估阅读时长（按 ESL 英语学习者约 140 词/分钟阅读速算）
+    int computedReadTime = 5;
+    if (effectiveContent.trim().isNotEmpty) {
+      final wordCount = effectiveContent.trim().split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length;
+      computedReadTime = (wordCount / 140).ceil();
+      if (computedReadTime < 1) computedReadTime = 1;
+    } else if (json['readTime'] is int && (json['readTime'] as int) > 0) {
+      computedReadTime = json['readTime'];
+    }
+
     return Article(
       id: json['id']?.toString() ?? '',
       title: json['title']?.toString() ?? '',
-      content: rawContent.isNotEmpty
-          ? rawContent
-          : (parsedParagraphs != null ? parsedParagraphs.map((p) => p.en).join('\n\n') : ''),
+      content: effectiveContent,
       difficulty: json['difficulty']?.toString() ?? 'Medium',
       tags: json['tags'] is List
           ? List<String>.from(json['tags'])
@@ -101,13 +115,14 @@ class Article {
               ? (json['tags'] as String).split(',')
               : [],
       createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt']) : DateTime.now(),
-      readTime: json['readTime'] ?? 5,
+      readTime: computedReadTime,
       category: json['category']?.toString(),
       bookId: json['bookId']?.toString(),
       unitIndex: json['unitIndex'] is int ? json['unitIndex'] : int.tryParse(json['unitIndex']?.toString() ?? ''),
       coverUrl: json['coverUrl']?.toString(),
       chineseTitle: json['chineseTitle']?.toString(),
-      chineseContent: rawZhContent ?? (parsedParagraphs != null ? parsedParagraphs.map((p) => p.zh).join('\n\n') : null),
+      chineseContent: (rawZhContent != null && rawZhContent.isNotEmpty) ? rawZhContent : parsedParagraphs?.map((p) => p.zh).join('\n\n'),
+      isRead: json['isRead'] == 1 || json['isRead'] == true || json['isRead'] == '1',
       paragraphs: parsedParagraphs,
     );
   }
@@ -127,6 +142,7 @@ class Article {
       'coverUrl': coverUrl,
       'chineseTitle': chineseTitle,
       'chineseContent': chineseContent,
+      'isRead': isRead ? 1 : 0,
       'paragraphs': paragraphs.map((p) => p.toJson()).toList(),
     };
   }

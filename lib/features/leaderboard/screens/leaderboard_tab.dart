@@ -58,7 +58,6 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
   UserProfile? _userProfile;
   int _userPoints = 1580;
   int _userStreak = 7;
-  bool _isLoadingUser = true;
 
   @override
   void initState() {
@@ -85,7 +84,6 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
         _userProfile = profile;
         _userPoints = calculatedPoints > 0 ? calculatedPoints : 1580;
         _userStreak = streakDays > 0 ? streakDays : 7;
-        _isLoadingUser = false;
       });
     }
   }
@@ -100,7 +98,6 @@ class _LeaderboardTabState extends State<LeaderboardTab> {
         points = _userPoints * 15 + 5000;
         break;
       case _LeaderboardPeriod.week:
-      default:
         points = _userPoints;
         break;
     }

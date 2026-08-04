@@ -106,16 +106,16 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: TabBarThemeData(
+    tabBarTheme: const TabBarThemeData(
       labelColor: _primaryColor,
-      unselectedLabelColor: const Color(0xFF6C757D),
-      labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-      unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+      unselectedLabelColor: Color(0xFF6C757D),
+      labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
       indicatorColor: _primaryColor,
       indicatorSize: TabBarIndicatorSize.label,
       dividerColor: Colors.transparent,
       dividerHeight: 0.0,
-      indicator: const UnderlineTabIndicator(
+      indicator: UnderlineTabIndicator(
         borderSide: BorderSide(width: 3, color: _primaryColor),
         insets: EdgeInsets.symmetric(horizontal: 16),
         borderRadius: BorderRadius.all(Radius.circular(3)),
@@ -228,16 +228,16 @@ class ThemeService {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
-    tabBarTheme: TabBarThemeData(
+    tabBarTheme: const TabBarThemeData(
       labelColor: _primaryColor,
-      unselectedLabelColor: const Color(0xFFADB5BD),
-      labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-      unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+      unselectedLabelColor: Color(0xFFADB5BD),
+      labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
       indicatorColor: _primaryColor,
       indicatorSize: TabBarIndicatorSize.label,
       dividerColor: Colors.transparent,
       dividerHeight: 0.0,
-      indicator: const UnderlineTabIndicator(
+      indicator: UnderlineTabIndicator(
         borderSide: BorderSide(width: 3, color: _primaryColor),
         insets: EdgeInsets.symmetric(horizontal: 16),
         borderRadius: BorderRadius.all(Radius.circular(3)),

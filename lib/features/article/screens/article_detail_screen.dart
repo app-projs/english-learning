@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/article.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../core/services/storage_service.dart';
+import '../../../core/services/database_service.dart';
+import '../services/article_service.dart';
 import '../../../core/theme/lumina_theme.dart';
 import '../services/book_json_loader.dart';
 import '../mock/mock_articles.dart';
@@ -22,17 +24,14 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   bool _showAllTranslations = false;
   bool _isCompleted = false;
   final double _fontSize = 16.5;
-  int _activeSentenceIndex = 0;
 
-  List<String> _sentences = [];
-  List<String> _chineseSentences = [];
-  final Map<int, bool> _activeSentenceTranslations = {};
+  final Map<int, bool> _activeParagraphTranslations = {};
   StorageService? _storageService;
+  ArticleService? _articleService;
 
   @override
   void initState() {
     super.initState();
-    _splitSentences();
     _initStorage();
     _loadNextArticle();
   }
@@ -45,69 +44,8 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
 
   Future<void> _initStorage() async {
     _storageService = await StorageService.getInstance();
-  }
-
-  void _splitSentences() {
-    String protectAbbrev(String text) {
-      return text
-          .replaceAll(RegExp(r'\bMrs\.', caseSensitive: false), 'Mrs\uE000')
-          .replaceAll(RegExp(r'\bMr\.', caseSensitive: false), 'Mr\uE000')
-          .replaceAll(RegExp(r'\bMiss\.', caseSensitive: false), 'Miss\uE000')
-          .replaceAll(RegExp(r'\bDr\.', caseSensitive: false), 'Dr\uE000')
-          .replaceAll(RegExp(r'\bProf\.', caseSensitive: false), 'Prof\uE000')
-          .replaceAll(RegExp(r'\bSt\.', caseSensitive: false), 'St\uE000')
-          .replaceAll(RegExp(r'\bvs\.', caseSensitive: false), 'vs\uE000')
-          .replaceAll(RegExp(r'\be\.g\.', caseSensitive: false), 'e\uE000g\uE000')
-          .replaceAll(RegExp(r'\bi\.e\.', caseSensitive: false), 'i\uE000e\uE000')
-          .replaceAllMapped(RegExp(r'\b([A-Z])\.\s+'), (m) => '${m[1]}\uE000 ');
-    }
-
-    final paragraphs = widget.article.paragraphs;
-    List<String> sList = [];
-    List<String> zhList = [];
-
-    if (paragraphs.isNotEmpty) {
-      for (final p in paragraphs) {
-        final rawEn = p.en.trim();
-        final rawZh = p.zh.trim();
-        if (rawEn.isEmpty) continue;
-
-        final protectedEn = protectAbbrev(rawEn);
-        final rawEnSentences = protectedEn
-            .split(RegExp(r'(?<=[.!?])\s+'))
-            .map((s) => s.replaceAll('\uE000', '.').trim())
-            .where((s) => s.isNotEmpty)
-            .toList();
-
-        final rawZhSentences = rawZh.isNotEmpty
-            ? rawZh
-                .split(RegExp(r'(?<=[。！？])\s*'))
-                .map((s) => s.trim())
-                .where((s) => s.isNotEmpty)
-                .toList()
-            : <String>[];
-
-        if (rawEnSentences.isEmpty) continue;
-
-        if (rawEnSentences.length == rawZhSentences.length) {
-          sList.addAll(rawEnSentences);
-          zhList.addAll(rawZhSentences);
-        } else {
-          sList.addAll(rawEnSentences);
-          final fallbackZh = rawZh.isNotEmpty ? rawZh : '';
-          for (int i = 0; i < rawEnSentences.length; i++) {
-            if (i < rawZhSentences.length) {
-              zhList.add(rawZhSentences[i]);
-            } else {
-              zhList.add(fallbackZh);
-            }
-          }
-        }
-      }
-    }
-
-    _sentences = sList.isEmpty ? [widget.article.content] : sList;
-    _chineseSentences = zhList;
+    final db = await DatabaseService.getInstance();
+    _articleService = ArticleService(_storageService!, db);
   }
 
   void _toggleAllTranslations() {
@@ -151,6 +89,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
       _isCompleted = true;
     });
     widget.onCompleted?.call();
+    _articleService?.recordReadingWithId(widget.article.id, widget.article.readTime);
 
     Navigator.push(
       context,
@@ -173,13 +112,6 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
       sentenceContext: sentenceContext,
       articleId: widget.article.id.toString(),
     );
-  }
-
-  String _getSentenceTranslation(int index) {
-    if (_chineseSentences.isNotEmpty && index < _chineseSentences.length) {
-      return _chineseSentences[index];
-    }
-    return widget.article.chineseContent ?? '';
   }
 
   void _showDomesticShareSheet(BuildContext context, Article article) {
@@ -492,50 +424,49 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
         children: [
           _buildMetaHeader(isDark),
 
-          // 呈现无方块、无 P-n 的纯天然排版
-          ..._sentences.asMap().entries.map((entry) {
-            int index = entry.key;
-            String sentenceText = entry.value;
-            bool isTransExpanded = _showAllTranslations || (_activeSentenceTranslations[index] ?? false);
+          // 直接遍历 JSON 原生段落列表，无需任何正则分句，100% 精准对齐
+          ...widget.article.paragraphs.asMap().entries.map((entry) {
+            final int index = entry.key;
+            final ParagraphBlock paragraph = entry.value;
+            final bool isTransExpanded = _showAllTranslations || (_activeParagraphTranslations[index] ?? false);
 
             return Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 英文句子内容 + 句尾独立翻译 Icon
-                  _buildSentenceItem(
+                  // 英文段落内容（首行 2em 缩进） + 段尾独立翻译 Icon
+                  _buildParagraphItem(
                     index: index,
-                    sentenceText: sentenceText,
+                    paragraph: paragraph,
                     favoriteWords: favoriteWords,
                     isTransExpanded: isTransExpanded,
                     isDark: isDark,
                     onToggleTrans: () {
                       setState(() {
-                        _activeSentenceIndex = index;
-                        _activeSentenceTranslations[index] = !isTransExpanded;
+                        _activeParagraphTranslations[index] = !isTransExpanded;
                       });
                     },
                   ),
 
-                  // 点按小图标后展开的对应中文句子
+                  // 点按小图标后展开的对应 JSON 原生中文段落（100% 精准匹配）
                   if (isTransExpanded) ...[
-                    const SizedBox(height: 6),
+                    const SizedBox(height: 8),
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                       decoration: BoxDecoration(
                         color: isDark ? const Color(0xFF1E293B).withValues(alpha: 0.6) : const Color(0xFFEFF6FF),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                           color: isDark ? Colors.blue.withValues(alpha: 0.2) : const Color(0xFFBFDBFE),
                         ),
                       ),
                       child: Text(
-                        _getSentenceTranslation(index),
+                        paragraph.zh,
                         style: TextStyle(
-                          fontSize: 14,
-                          height: 1.55,
+                          fontSize: 14.5,
+                          height: 1.65,
                           color: isDark ? const Color(0xFF93C5FD) : const Color(0xFF1D4ED8),
                           fontWeight: FontWeight.w400,
                         ),
@@ -555,30 +486,29 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     );
   }
 
-  Widget _buildSentenceItem({
+  Widget _buildParagraphItem({
     required int index,
-    required String sentenceText,
+    required ParagraphBlock paragraph,
     required Set<String> favoriteWords,
     required bool isTransExpanded,
     required bool isDark,
     required VoidCallback onToggleTrans,
   }) {
-    final words = sentenceText.split(RegExp(r'\s+'));
+    final words = paragraph.en.split(RegExp(r'\s+'));
 
     return Wrap(
       spacing: 5,
       runSpacing: 6,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
+        // 段落开头添加 2 em 宽度的首行缩进占位
+        const SizedBox(width: 34),
         ...words.map((w) {
           final cleanW = w.replaceAll(RegExp(r'[^\w\-]'), '').toLowerCase();
           final isFav = cleanW.isNotEmpty && favoriteWords.contains(cleanW);
           return GestureDetector(
             onTapUp: (details) {
-              setState(() {
-                _activeSentenceIndex = index;
-              });
-              _showWordBubble(context, w, details.globalPosition, sentenceContext: sentenceText);
+              _showWordBubble(context, w, details.globalPosition, sentenceContext: paragraph.en);
             },
             child: Text(
               w,
@@ -598,7 +528,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
           );
         }),
 
-        // 句尾小翻译 Icon
+        // 段尾小翻译 Icon
         InkWell(
           onTap: onToggleTrans,
           borderRadius: BorderRadius.circular(12),

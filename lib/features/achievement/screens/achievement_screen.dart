@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/lumina_theme.dart';
 import '../../../core/services/storage_service.dart';
 import '../../review/screens/completion_congratulation_screen.dart';
 
@@ -112,7 +111,7 @@ class _AchievementScreenState extends State<AchievementScreen> {
         current: _totalLp,
         target: 300,
       ),
-      _AchievementItem(
+      const _AchievementItem(
         id: 'phonetics_pro',
         name: '音标发音专家',
         description: '掌握 48 个国际音标点读',
@@ -416,9 +415,9 @@ class _PosterDialog extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // 顶部品牌 Logo
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Icon(Icons.auto_awesome, color: Colors.amber, size: 24),
                     SizedBox(width: 8),
                     Text(

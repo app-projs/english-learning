@@ -1,9 +1,8 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../models/ai_scenario_model.dart';
 import '../models/ai_chat_message_model.dart';
 import '../services/ai_practice_service.dart';
 import '../../../core/services/audio_service.dart';
-import '../../../core/theme/lumina_theme.dart';
 
 class AiChatScreen extends StatefulWidget {
   final AiScenarioModel scenario;
@@ -236,16 +235,16 @@ class _AiChatScreenState extends State<AiChatScreen> {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       color: isDark ? const Color(0xFF1E293B) : const Color(0xFFEFF6FF),
-      child: Row(
+      child: const Row(
         children: [
-          Icon(Icons.auto_awesome, size: 15, color: const Color(0xFF2563EB)),
-          const SizedBox(width: 8),
+          Icon(Icons.auto_awesome, size: 15, color: Color(0xFF2563EB)),
+          SizedBox(width: 8),
           Expanded(
             child: Text(
               '提示: 发送任意表达，AI 将自动分析语法并提供地道 Native 改写建议。',
               style: TextStyle(
                 fontSize: 11.5,
-                color: isDark ? const Color(0xFF93C5FD) : const Color(0xFF1D4ED8),
+                color: Color(0xFF1D4ED8),
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -317,19 +316,19 @@ class _AiChatScreenState extends State<AiChatScreen> {
                           children: [
                             InkWell(
                               onTap: () => AudioService.instance.speak(msg.message),
-                              child: Row(
+                              child: const Row(
                                 children: [
                                   Icon(
                                     Icons.volume_up_rounded,
                                     size: 15,
-                                    color: const Color(0xFF2563EB),
+                                    color: Color(0xFF2563EB),
                                   ),
-                                  const SizedBox(width: 4),
+                                  SizedBox(width: 4),
                                   Text(
                                     '朗读发音',
                                     style: TextStyle(
                                       fontSize: 11,
-                                      color: const Color(0xFF2563EB),
+                                      color: Color(0xFF2563EB),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),

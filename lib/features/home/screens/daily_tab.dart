@@ -469,7 +469,7 @@ class _DailyTabState extends State<DailyTab> {
                   children: [
                     Text(
                       '${(progress * 100).toInt()}%',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
@@ -477,7 +477,7 @@ class _DailyTabState extends State<DailyTab> {
                     ),
                     Text(
                       '$_completedSteps/$_totalSteps',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         color: Colors.white70,
@@ -601,10 +601,10 @@ class _DailyTabState extends State<DailyTab> {
               : const Color(0xFFFFEDD5),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Text(
+        child: const Text(
           '进行中',
           style: TextStyle(
-            color: const Color(0xFFEA580C),
+            color: Color(0xFFEA580C),
             fontSize: 9,
             fontWeight: FontWeight.w800,
           ),
@@ -856,15 +856,15 @@ class _DailyTabState extends State<DailyTab> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Icon(
                           Icons.format_quote,
                           color: Color(0xFFF97316),
                           size: 18,
                         ),
-                        const SizedBox(width: 6),
-                        const Text(
+                        SizedBox(width: 6),
+                        Text(
                           '每日金句',
                           style: TextStyle(
                             fontSize: 13,
@@ -876,7 +876,7 @@ class _DailyTabState extends State<DailyTab> {
                     IconButton(
                       padding: EdgeInsets.zero,
                       constraints: const BoxConstraints(),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.volume_up,
                         color: Color(0xFFF97316),
                         size: 20,
@@ -1259,9 +1259,9 @@ class _WordFlipCardState extends State<_WordFlipCard>
               ),
             ),
             const SizedBox(height: 18),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   '💡 点击卡片翻转查看详细释义',
                   style: TextStyle(color: Colors.white60, fontSize: 12),
@@ -1346,9 +1346,9 @@ class _WordFlipCardState extends State<_WordFlipCard>
               ),
               const SizedBox(height: 14),
             ],
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   '↩️ 点击翻回正面',
                   style: TextStyle(color: Colors.white54, fontSize: 12),

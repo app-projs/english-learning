@@ -4,120 +4,121 @@
   "chineseTitle": "双城记",
   "author": "Charles Dickens",
   "coverUrl": "assets/images/book_twocities.png",
-  "description": "《双城记》是英国批判现实主义文学大师查尔斯·狄更斯（Charles Dickens）于 1859 年出版的历史小说名作。故事以 18 世纪末的伦敦和巴黎两座城市为背景，穿插了法国大革命前夕及爆发期间的宏大历史风云。老医生马内特被贵族无辜囚禁于巴士底狱十八年，后被女儿露西救回伦敦。然而，露西的丈夫——放弃了贵族特权的查尔斯·代尔那却因革命暴动被卷入法国断头台绝境。颓废英勇的律师西德尼·卡顿为了心中深爱的露西，毅然选择代替代尔那走向断头台。“这是最好的时代，也是最坏的时代”，本书开篇即为永恒传世名句。",
+  "description": "《双城记》是英国批判现实主义文学大师查尔斯·狄更斯于 1859 年创作的历史小说巅峰巨作。故事背景设定在 18 世纪末法国大革命前后的伦敦与巴黎。饱受白塔监狱 18 年折磨的马奈特医生在女儿露西的关爱下恢复理智。然而露西的丈夫查尔斯·达奈在返回巴黎救助老仆时被革命法庭判处死刑。爱慕露西的英国放浪律师西德尼·卡顿出于无私至爱，毅然走进死牢替换达奈，走向断头台。“这是最好的时代，也是最坏的时代”的开篇语名扬千古。",
   "category": "经典名著",
   "difficulty": "高级难度",
-  "totalUnits": 5,
-  "wordCount": 29000,
-  "readerCount": "168.0万人在读",
+  "totalUnits": 8,
+  "wordCount": 35000,
+  "readerCount": "136.4万人在读",
   "targetVocab": "3000-6500词",
-  "tagLabel": "历史宏篇",
-  "coverBadge": "巨作 · 狄更斯巅峰",
+  "tagLabel": "历史史诗",
+  "coverBadge": "精读 · 史诗名篇",
   "chapters": [
     {
       "unitIndex": 1,
-      "title": "Chapter 1: The Period",
-      "chineseTitle": "第 1 章：时代开篇名句",
+      "title": "Chapter 1: The Best of Times and the Mail Coach",
+      "chineseTitle": "第 1 章：最好的时代与夜色中的邮政马车",
       "paragraphs": [
         {
           "en": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way—in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.",
-          "zh": "那是最好的时代，那是最坏的时代，那是智慧的时代，那是愚蠢的时代，那是信仰的时期，那是怀疑的时期，那是光明的季节，那是黑暗的季节，那是希望的春天，那是绝望的冬天，我们拥有一切，我们一无所有，我们都在直接去天堂，我们都在直接去另一个方向——简而言之，那个时期与现在的时期如此相似，以至于它一些最吵闹的权威人士坚持要求，无论好坏，只能在最高级的比较级中接受它。"
+          "zh": "这是最好的时代，这是最坏的时代；这是智慧的时代，这是愚蠢的时代；这是信仰的时期，这是怀疑的时期；这是光明的季节，这是黑暗的季节；这是希望的春天，这是绝望的冬天；我们面前拥有一切，我们面前一无所有；我们都在直奔天堂，我们都在直奔相反的方向——简而言之，那个时期与现在的时期是如此相似，以至于它的一些最高权威坚持认为，无论是好是坏，都只能用最高级的程度来进行评估与接受。"
         },
         {
-          "en": "There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France.",
-          "zh": "英国的宝座上有一位大下巴的国王和一位长相平平的王后；法国的宝座上有一位大下巴的国王和一位长相美丽的王后。"
+          "en": "It was the Dover road that lay, on a Friday night late in November, before the Dover mail. Heavy fog steamed up from the hollows, and the horses stumbled through the deep mud of Shooters Hill. A horseman rode up, his face wrapped in a heavy scarf, calling out for Mr. Jarvis Lorry, a passenger from Tellson's Bank in London.",
+          "zh": "在十一月下旬一个星期五的深夜，多佛邮政马车正行驶在多佛大道上。浓雾从山谷中蒸腾而起，马匹在射手山的深泥中艰难蹒跚。一名骑手骑马赶来，脸裹在厚厚的围巾里，高喊要找来自伦敦泰尔森银行的乘客贾维斯·洛里先生。"
         },
         {
-          "en": "In both countries it was clearer than crystal to the lords of the State preserves of loaves and fishes, that things in general were settled for ever.",
-          "zh": "在两个国家里，对于面包和鱼的国家保护领主来说，比水晶还要清楚的是，大体上的事物已经永远定局了。"
+          "en": "The messenger handed Mr. Lorry a slip of paper with the message: 'Wait at Dover for Mam'selle.' Mr. Lorry wrote back three words shrouded in mystery: 'Recalled to Life.'",
+          "zh": "信使递给洛里先生一张纸条，上面写着：“在多佛等候小姐。”洛里先生回写了充满神秘色彩的三个字：“死而复生。”"
         }
       ]
     },
     {
       "unitIndex": 2,
-      "title": "Chapter 2: The Mail Coach to Dover",
-      "chineseTitle": "第 2 章：前往多佛的邮政马车",
+      "title": "Chapter 2: Recalled to Life - The Wine-Shop",
+      "chineseTitle": "第 2 章：重获新生与圣安东尼区酒馆",
       "paragraphs": [
         {
-          "en": "It was the Dover road that lay, on a Friday night late in November, before the first of the persons with whom this history has to do. The Dover road lay, as to him, beyond the Dover mail, as it lumbered up Shooter's Hill. He walked uphill in the mire by the side of the mail, as the rest of the passengers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were so heavy, that the horses had already stopped three times, besides plunging the coach out of the grade.",
-          "zh": "十一月下旬的一个星期五晚上，躺在本历史涉及的第一份人物面前的是多佛路。对于他来说，当多佛邮政马车在射手山上蹒跚前行时，多佛路躺在多佛邮政马车之外。像其他乘客一样，他在泥泞中走在马车旁边；不是因为在这种情况下他们对步行锻炼有一丝一毫的兴趣，而是因为山丘、马具、泥泞和马车是如此沉重，以至于除了把马车弄出路基之外，马已经停了三次。"
+          "en": "A large cask of wine had been dropped and broken in the street of Saint Antoine in Paris. The red wine ran down the rough cobblestones, and the starving people scrambled on their knees to drink the spilled wine. A tall joker dipped his finger in the lees and wrote upon a wall: BLOOD.",
+          "zh": "在巴黎的圣安东尼街，一大桶葡萄酒掉落并破碎了。红酒沿着粗糙的鹅卵石路流淌，饥饿的人们跪着爬行去喝洒出的葡萄酒。一个高个子的戏谑者把手指浸在酒渣里，在墙上写下了单字：血。"
         },
         {
-          "en": "With drooping heads and tremulous tails, they walked through the mire, stumbling and floundering, as if they were falling to pieces.",
-          "zh": "它们垂着头，尾巴发抖，在泥泞中行走，磕磕绊绊，摇摇欲坠，仿佛要散架了一样。"
+          "en": "Inside the wine-shop sat Monsieur Defarge and his wife Madame Defarge, who spent all day silently knitting a secret register of hated aristocrats condemned to die when the revolution came. Defarge led Mr. Lorry and young Lucie Manette up to a dark garret where Dr. Alexandre Manette sat on a stool frantically making shoes.",
+          "zh": "在酒馆内部坐着德法热先生和他的妻子德法热太太，她整天默默编织着一份受人憎恨贵族的秘密死亡注册表。德法热带着洛里先生和年轻的露西·马奈特走上一间黑暗的阁楼，亚历山大·马奈特医生正坐在凳子上发疯似地做鞋。"
         },
         {
-          "en": "The heavy passenger walked in the mud, enveloped in a heavy cloak and boots, keeping his face well wrapped from the raw night air.",
-          "zh": "沉重的乘客走在泥泞中，裹着沉重的披风和靴子，把脸从阴冷的夜间空气中好好包裹起来。"
+          "en": "Imprisoned in the Bastille for eighteen years without trial, Dr. Manette remembered his name only as '105 North Tower.' But as Lucie wrapped her arms around him, her golden hair brought back his memory, and Dr. Manette was softly recalled to life.",
+          "zh": "在巴士底狱未经审判被关押了十八年，马奈特医生只记得自己的名字是“北塔 105 号”。但当露西用手臂环绕住他时，她金色的头发带回了他的记忆，马奈特医生静静地被召回了生命。"
         }
       ]
     },
     {
       "unitIndex": 3,
-      "title": "Chapter 3: The Night Shadows",
-      "chineseTitle": "第 3 章：夜色阴影与密信",
+      "title": "Chapter 3: The Trial at the Old Bailey",
+      "chineseTitle": "第 3 章：老贝利法庭的惊险审判",
       "paragraphs": [
         {
-          "en": "A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other. A solemn consideration, when I enter a great city by night, that every one of those darkly clustered houses encloses its own secret; that every room in every one of them encloses its own secret; that every beating heart in the hundreds of thousands of breasts there, is, in some of its imaginings, a secret to the heart nearest it!",
-          "zh": "反思一个奇妙的事实，即每个人都被构造成对每个人来说都是深刻的秘密和谜团。当我在夜间进入一座大城市时，这是一个严肃的思考，那些阴暗聚集的房子中的每一栋都封存着它自己的秘密；它们中每一栋的每一个房间都封存着它自己的秘密；在成千上万胸膛里的每一颗跳动的心脏，在它的某些想象中，都是对离它最近的心脏的一个秘密！"
+          "en": "Five years later, in the Old Bailey courtroom of London, a young French emigré named Charles Darnay stood trial for high treason, accused of spying. The prosecution case seemed airtight, backed by corrupt witnesses.",
+          "zh": "五年后，在伦敦的老贝利法庭上，一位名叫查尔斯·达奈的年轻法国移民因高瞻叛国罪受审，被指控从事间谍活动。控方案情似乎严丝合缝，得到了腐败证人的支持。"
         },
         {
-          "en": "Something of the awfulness, even of Death itself, is referable to this. No more can I turn the leaves of this dear book that I loved, and vainly hope in time to read it all.",
-          "zh": "甚至死亡本身的一些可怕之处，也可以归因于此。我再也不能翻开我爱的这本亲爱的书的页码，徒劳地希望有朝一日能读完它。"
-        },
-        {
-          "en": "The mail passengers leaned back in their corners as the horses labored up the hill, wrapped in their thoughts and the impenetrable mist.",
-          "zh": "随着马匹在山丘上劳作，邮政马车的乘客们缩在自己的角落里，包裹在自己的思想和无法穿透的浓雾中。"
+          "en": "Suddenly, Sydney Carton, a brilliant but careless lawyer, pointed out that he himself bore an astonishing physical resemblance to Darnay! This uncanny likeness shattered the key witness's credibility, and Darnay was acquitted.",
+          "zh": "突然，西德尼·卡顿（一位卓越而随意的律师）指出他自己与达奈在长相上有着惊人的相似！这种不可思议的相似性粉碎了关键证人的可信度，达奈被宣告无罪。"
         }
       ]
     },
     {
       "unitIndex": 4,
-      "title": "Chapter 4: The Preparation",
-      "chineseTitle": "第 4 章：重逢与准备",
+      "title": "Chapter 4: Sydney Carton’s Secret Promise",
+      "chineseTitle": "第 4 章：西德尼·卡顿的秘密承诺",
       "paragraphs": [
         {
-          "en": "When the mail arrived at Dover in the morning, Mr. Jarvis Lorry, banker of Tellson and Company, washed and dressed himself at the Royal George Hotel, awaiting the arrival of a young lady from London.",
-          "zh": "早晨马车到达多佛时，泰尔森公司的银行家贾维斯·洛里先生在皇家乔治饭店洗漱穿戴完毕，等待一位来自伦敦的年轻女士的到达。"
-        },
-        {
-          "en": "Mademoiselle Manette arrived that afternoon—a young lady of barely seventeen, with a quantity of golden hair, a pair of blue eyes that met his with an inquiring look, and a forehead with a singular capacity for lifting and knitting its brow.",
-          "zh": "马奈特小姐那天下午到达了——一位年仅十七岁的年轻女士，有一头金发，一对用询问的目光迎接他的蓝眼睛，以及额头上有一种独特的挑眉和皱眉的能力。"
-        },
-        {
-          "en": "\"Miss Manette,\" said Mr. Lorry, holding her hands in his own, \"I have a story to tell you of your father, whom you have believed dead since your earliest childhood.\"",
-          "zh": "“马奈特小姐，”洛里先生握着她的双手说，“我要给你讲一个关于你父亲的故事，你从小就以为他已经死了。”"
-        },
-        {
-          "en": "\"My father?\" she repeated, her face turning pale. \"Alive?\"",
-          "zh": "“我父亲？”她重复道，脸色变白了。“活着？”"
-        },
-        {
-          "en": "\"Alive, and in France,\" Mr. Lorry replied softly. \"Restored to life after eighteen years in the Bastille.\"",
-          "zh": "“活着，在法国，”洛里先生轻声回答。“在巴士底狱十八年后复活了。”"
+          "en": "Sydney Carton squandered his immense intellect in heavy drinking and melancholy. In Darnay, Carton saw everything he himself might have been if he had not ruined his life. Though he harbored a deep love for Lucie Manette, Carton promised her with tears: 'For you, and for any dear to you, I would embrace any sacrifice!'",
+          "zh": "西德尼·卡顿在沉溺酗酒与忧郁中挥霍着巨大的智慧。在达奈身上，卡顿看到了如果自己没有毁掉生活本可能成为的一切。尽管他向露西·马奈特怀着深沉的爱，卡顿含泪向她承诺：“为了你，以及任何你亲爱的人，我愿意拥抱任何牺牲！”"
         }
       ]
     },
     {
       "unitIndex": 5,
-      "title": "Chapter 5: The Wine-shop",
-      "chineseTitle": "第 5 章：圣安东尼区的酒馆",
+      "title": "Chapter 5: The Reign of Terror in Paris",
+      "chineseTitle": "第 5 章：巴黎的恐怖统治与绝境救援",
       "paragraphs": [
         {
-          "en": "A large cask of wine had been dropped and broken, in the street of the suburb of Saint Antoine in Paris. The cask had tumbled out of a cart, the hoops had burst, and it lay on the stones just outside the door of the wine-shop.",
-          "zh": "在巴黎圣安东尼郊区的大街上，一大桶酒掉下来摔碎了。酒桶从马车上翻了下来，铁圈破裂了，它躺在酒馆门口外面的石头上。"
-        },
+          "en": "The French Revolution erupted in 1789. The masses stormed the Bastille, and the Reign of Terror began. Charles Darnay, who had renounced his noble inheritance as the Marquis St. Evrémonde, returned secretly to Paris to save his old servant Gabelle, but was arrested and thrown into La Force prison.",
+          "zh": "1789 年法国大革命爆发。群众攻陷了巴士底狱，恐怖统治开始了。已经放弃了作为圣埃弗雷蒙德侯爵贵族继承权的查尔斯·达奈，秘密回到巴黎拯救他的老仆人加贝尔，但被逮捕并扔进了拉福尔斯监狱。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Parchment in the Bastille Cell",
+      "chineseTitle": "第 6 章：巴士底狱羊皮纸的声讨",
+      "paragraphs": [
         {
-          "en": "All the people within reach had suspended their business, or their idleness, to run to the spot and drink the wine. The rough, red wine stained the stones of the street, and stained the hands and faces of the poor who scooped it up.",
-          "zh": "所有在攻击范围内的人都暂停了他们的生意或闲散，跑到那个地方喝酒。粗糙的红酒染红了大街上的石头，染红了舀酒的穷人的手和脸。"
-        },
+          "en": "Though Dr. Manette saved Darnay at his first trial, Madame Defarge produced a hidden parchment written by Dr. Manette during his Bastille imprisonment, denouncing the St. Evrémonde family for atrocious crimes. The Revolutionary Tribunal condemned Darnay to die on the Guillotine within twenty-four hours.",
+          "zh": "虽然马奈特医生在第一次审判中救了达奈，但德法热太太出示了一份马奈特医生在服刑期间写的隐藏羊皮纸，声讨圣埃弗雷蒙德家族残暴的罪行。革命法庭判处查尔斯·达奈在二十四小时内下断头台。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Prisoner in La Force",
+      "chineseTitle": "第 7 章：拉福尔斯监狱的死牢顶替",
+      "paragraphs": [
         {
-          "en": "Despotism and hunger had written the word BLOOD in large red letters on the wall, forecasting the terrible revolution that was soon to sweep over France.",
-          "zh": "专制和饥饿在墙上用红色的大字写下了“血”字，预示着不久将扫过法国的可怕革命。"
-        },
+          "en": "Sydney Carton arrived in Paris with quiet resolve. Overhearing Madame Defarge plotting to execute Lucie next, Carton arranged for Mr. Lorry to take Lucie and her family back to England. Carton then entered Darnay's cell, drugged Darnay into unconsciousness, swapped clothes with him, and had a friend carry Darnay out to the waiting carriage to flee to safety.",
+          "zh": "西德尼·卡顿怀着平静的决心来到了巴黎。在无意中听到德法热太太谋划接下来处决露西时，卡顿安排洛里先生带着露西和她的家人逃回英国。接着卡顿进入达奈的牢房，用药物把达奈迷晕过去，与他互换了衣服，并让一个朋友把达奈抬出去送到等待的马车上逃向安全地带。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Ultimate Sacrifice at the Guillotine",
+      "chineseTitle": "第 8 章：断头台下的至爱与永恒救赎（终极结局）",
+      "paragraphs": [
         {
-          "en": "Inside the wine-shop sat Monsieur Defarge, a dark-complexioned man of thirty, and Madame Defarge, his wife, quietly knitting her intricate record of doomed aristocrats.",
-          "zh": "在酒馆里面坐着德法日先生，一个三十岁、肤色较暗的男人，以及他的妻子德法日太太，平静地织着她那记录着注定灭亡的贵族的复杂记录。"
+          "en": "In the tumbril bound for the Guillotine, Sydney Carton held the hand of a poor young seamstress, comforting her with serene dignity as they mounted the scaffold. As the blade fell, Carton's soul looked far into the future, foreseeing a peaceful Paris and Lucie's children honoring his memory through generations. His heart spoke those immortal words: 'It is a far, far better thing that I do, than I have ever done; it is a far, far better rest that I go to than I have ever known.'",
+          "zh": "在前往断头台的囚车上，西德尼·卡顿紧握着一位可怜年轻女裁缝的手，当他们登上断头台时以平静的尊严安慰着她。当刀刃落下时，卡顿的灵魂看向了遥远的未来，预见到一座和平的巴黎以及露西的后代世世代代缅怀他的纪念。他的心吐露了那些永恒的名言：“我所做的，是一件远比我做过的所有事情都美好得多的事；我所前往的，是一处远比我所知道的所有休息都美好得多的安息。”"
         }
       ]
     }

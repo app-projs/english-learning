@@ -4,923 +4,955 @@
   "chineseTitle": "绿山墙的安妮",
   "author": "Lucy Maud Montgomery",
   "coverUrl": "assets/images/book_anne.png",
-  "description": "《绿山墙的安妮》是加拿大著名女作家露西·莫德·蒙哥马利（L. M. Montgomery）于 1908 年出版的长篇经典小说。故事发生在中国读者熟知的加拿大爱德华王子岛。老兄妹马修和马里拉原本打算从孤儿院领养一个男孩来帮忙做农活，却因传达失误误收养了孤儿女孩安妮·雪莉（Anne Shirley）。安妮拥有极其丰富的想象力、炽热敏感的灵魂以及永不言败的乐观性格。她的到来给平静肃穆的绿山墙农场和整个阿文莉小镇带来了无尽的欢声笑语与温情蜕变。本书语言优美生动，涵盖了大量描写大自然与真挚情感的经典名句，是学习高级英语词汇与修辞表达的极佳素材。",
+  "description": "《绿山墙的安妮》是加拿大著名女作家露西·莫德·蒙哥马利于 1908 年出版的享誉世界的儿童与成长文学至高名篇。本文件收录了全书完整的 38 个章节。故事讲述了绿山墙农场的马修与玛丽拉兄妹本想领养一个男孩帮忙做农活，却阴差阳错迎来了一个满头红发、喋喋不休却拥有丰富想象力的孤儿女孩安妮·雪莉。安妮凭借她的纯真、热情、乐观与惊人的才华，不仅赢得了马修与玛丽拉深沉的爱，还收获了与戴安娜的至真友情以及与吉尔伯特的深厚情谊，最终在爱与成长中成长为一名出色的女性。",
   "category": "经典名著",
-  "difficulty": "中/高考难度",
+  "difficulty": "中级难度",
   "totalUnits": 38,
-  "wordCount": 15400,
-  "readerCount": "128.5万人在读",
-  "targetVocab": "1500-4000词",
-  "tagLabel": "名著小说",
-  "coverBadge": "精读 · 经典名著",
+  "wordCount": 68000,
+  "readerCount": "198.6万人在读",
+  "targetVocab": "1500-4200词",
+  "tagLabel": "成长励志",
+  "coverBadge": "精读 · 必读全本",
   "chapters": [
     {
       "unitIndex": 1,
       "title": "Chapter 1: Mrs. Rachel Lynde is Surprised",
-      "chineseTitle": "第 1 章：雷切尔·林德太太大吃一惊",
+      "chineseTitle": "第 1 章：雷切尔·林德太太的惊奇发现",
       "paragraphs": [
         {
-          "en": "Mrs. Rachel Lynde lived just where the Avonlea main road dipped down into a little hollow, fringed with alders and ladies' eardrops and traversed by a brook that had its source away back in the woods of the old Cuthbert place. It was known to be a intricate, headlong brook in its earliest course through those woods, with dark secrets of pool and cascade; but by the time it reached Lynde's Hollow it was a quiet, well-conducted little stream, for not even a brook could run past Mrs. Rachel Lynde's door without due regard for decency and decorum.",
-          "zh": "雷切尔·林德太太住的地方，正是阿文莉主干道俯冲进一个小低谷的位置。低谷两旁环绕着桤木和吊钟花，一条小溪穿流而过，小溪的源头一直延伸到旧卡斯伯特庄园的树林深处。据人们所知，那条小溪在最初穿过树林时是一条水流急促、曲折蜿蜒的小溪，藏着水潭和瀑布的神秘暗流；但当它流到林德低谷时，已变成了一条安静、循规蹈矩的小溪流，因为甚至连一条小溪从雷切尔·林德太太门前流过，也得恪守体面与礼貌。"
+          "en": "Mrs. Rachel Lynde lived just where the Avonlea main road dipped down into a little hollow, fringed with alders and ladies' eardrops and traversed by a brook that had its source away back in the woods of the old Cuthbert place. Mrs. Rachel Lynde was one of those delightful people who can manage their own concerns and other people's into the bargain. She was a notable housewife; her work was always done and well done; she ran the Sewing Circle, helped run the Sunday-school, and was the strongest prop of the Church Aid Society.",
+          "zh": "雷切尔·林德太太就住在阿文莉主干道俯冲向下进入一个小洼地的地方，边缘环绕着赤杨与吊钟海棠，一条小溪穿流而过，小溪的发源地远在卡斯伯特老庄园的树林深处。雷切尔·林德太太是那种既能打理好自己事务又能兼顾别人事务的令人高兴的人。她是一位著名的家庭主妇；她的活儿总是干完且干得极其出色；她管理着缝纫会，帮助管理主日学，并且是教会援助会最强有力的支柱。"
         },
         {
-          "en": "It probably was conscious that Mrs. Rachel sat at her window, keeping a sharp eye on everything that passed, from brooks and children up, and that if she noticed anything odd or out of place she would never rest until she had ferreted out the whys and wherefores thereof.",
-          "zh": "它大概也意识到了雷切尔太太正坐在窗前，用敏锐的眼睛注视着经过的一切，从小溪到小孩无一例外；如果她注意到任何奇怪或离谱的事，不把其中的来龙去脉打听个水落石出，她就决不罢休。"
+          "en": "Yet with all this Mrs. Rachel found abundant time to sit for hours at her kitchen window, knitting 'cotton warp' quilts and keeping a sharp eye on the main road that crossed the hollow and wound up the steep red hill beyond. As Avonlea people were very fond of riding along it, Mrs. Rachel could tell who passed by and how they were dressed.",
+          "zh": "然而尽管有着这一切，雷切尔太太还是找到了充足的时间在她厨房窗前坐上几个小时，织着棉纱被单并密切注视着穿过洼地延伸上后面陡峭红山坡的主干道。因为阿文莉的人们非常喜欢沿着它骑马，雷切尔太太能说出谁经过了以及他们是怎么穿戴的。"
         },
         {
-          "en": "There are plenty of people, in Avonlea and out of it, who can attend to their own neighbor's business by dint of neglecting their own; but Mrs. Rachel Lynde was one of those capable creatures who can manage their own concerns and those of other folks into the bargain. She was a notable housewife; her work was always done and well done; she \"ran\" the Sewing Circle, helped manage the Sunday-school, and was the strongest prop of the Church Aid Society and Foreign Missions Auxiliary.",
-          "zh": "在阿文莉小镇内外，有许许多多靠着忽视自家事务而去插手邻居事情的人；但雷切尔·林德太太属于那种干练的人物，既能打理好自家的琐事，还能顺便管理好别人的事情。她是一位出色的主妇；她的家务活总是做得又快又好；她主持着缝纫协会，协助管理主日学校，还是教会救济会和外宣辅助会最强有力的支柱。"
+          "en": "One afternoon in early June, Mrs. Rachel saw Matthew Cuthbert riding out of Green Gables in his best suit! Knowing Matthew was a shy, quiet man who rarely left home, Mrs. Rachel was consumed with curiosity and resolved to find out where he was going.",
+          "zh": "六月初的一个下午，雷切尔太太看到马修·卡斯伯特穿着他最好的西装从绿山墙骑马出来！知道马修是一个害羞、安静、很少出门的男人，雷切尔太太被好奇心所吞噬，决定查明他要去哪里。"
         },
         {
-          "en": "Yet here was Matthew Cuthbert, at three o'clock on a summer afternoon, driving calmly out of his lane in his best suit of clothes and his buggy, which was plain proof that he was going out of Avonlea! Where on earth was Matthew going, and why was he going there?",
-          "zh": "然而，在夏季一个下午的三点钟，马修·卡斯伯特竟然穿着他最好的衣服，驾着小马车平平静静地从巷子里开出来，这清楚地证明了他要离开阿文莉！马修究竟要去哪里？他为什么要去那里？"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Mrs. Rachel pondered until tea-time, and then set out across the orchard to Green Gables. Marilla Cuthbert greeted her warmly in the tidy kitchen.",
-          "zh": "雷切尔太太思索到下午茶时间，然后穿过果园前往绿山墙。马里拉·卡斯伯特在整洁的厨房里热情地招呼了她。"
-        },
-        {
-          "en": "\"Matthew has gone to Bright River,\" Marilla explained with a calm, unruffled smile. \"We are adopting a little boy from an orphan asylum in Nova Scotia to help us on the farm.\"",
-          "zh": "“马修去亮河镇了，”马里拉带着平静镇定的微笑解释道。“我们正准备从新斯科舍省的孤儿院领养一个小男孩，来农场帮马修干活。”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 2,
       "title": "Chapter 2: Matthew Cuthbert is Surprised",
-      "chineseTitle": "第 2 章：马修·卡斯伯特大吃一惊",
+      "chineseTitle": "第 2 章：马修·卡斯伯特的意外震惊",
       "paragraphs": [
         {
-          "en": "Matthew Cuthbert reached the Bright River station just as the evening train was departing. No boy was in sight on the long wooden platform, only a slender girl with long red braids sitting on a pile of shingles.",
-          "zh": "马修·卡斯伯特到达亮河车站时，晚班火车正准备驶离。长长的木制站台上看不到任何男孩的影子，只有一个瘦弱的女孩坐在木瓦堆上，扎着两条长长的红辫子。"
+          "en": "Matthew Cuthbert arrived at Bright River station expecting to pick up an orphan boy from Nova Scotia. Instead, he found an eleven-year-old girl with fiery red hair and bright green eyes, wearing a faded yellow dress. The girl was waiting eagerly on a pile of shingles, clutching a battered carpet-bag.",
+          "zh": "马修·卡斯伯特到达明河车站，期望领回一个来自新斯科舍省的孤儿男孩。相反，他发现了一个十一岁的女孩，长着火红的头发和明亮的绿眼睛，穿着一件褪色的黄衣服。女孩在一堆木瓦上急切地等待着，紧握着一个破旧的毯囊。"
         },
         {
-          "en": "She wore a faded, oversized yellow dress and held a worn carpetbag tightly in her lap. Her large eyes shone with imagination and vivid wonder as she approached Matthew with eager steps.",
-          "zh": "她穿着一件褪色的、过大的黄衣服，腿上紧紧抱着一只破旧的毯子提包。当她带着热切的脚步走向马修时，她的双眼闪烁着想象力与生动的惊奇。"
+          "en": "As they drove back to Green Gables in the buggy, the talkative girl introduced herself as Anne Shirley. She chattered incessantly about the beauty of the passing cherry trees, calling them the 'White Way of Delight,' and transformed the mundane countryside into a fairy realm with her vivid imagination. Matthew, who usually feared females, found himself thoroughly charmed by her earnest spirit.",
+          "zh": "当他们乘着小马车返回绿山墙时，这个健谈的女孩自介绍为安妮·雪莉。她喋喋不休地谈论着经过的樱花树的美丽，把它们叫做“欢欣的白光大道”，并用她生动的想象力把平淡的乡村变成了仙境。通常害怕女性的马修，发现自己完全被她真挚的精神所吸引。"
         },
         {
-          "en": "\"I suppose you are Mr. Matthew Cuthbert of Green Gables?\" she asked in a clear, sweet voice. \"I was beginning to fear you weren't coming for me after all! I was imagining all the things that might have happened to you.\"",
-          "zh": "“我想您一定就是绿山墙的马修·卡斯伯特先生吧？”她用清脆甜美的声音问道。“我刚才都在担心您是不是不来接我了呢！我一直在想象您可能遇到的各种意外。”"
+          "en": "'Oh, look at those trees,' Anne exclaimed, clasping her hands. 'They look like a bride in a white veil! Don't you think it's a wonderful world? I'm so glad I'm going to live with you!' Matthew could only smile nervously, wondering how he would break the news to Marilla that the boy they expected was a girl.",
+          "zh": "“哦，看看那些树，”安妮合紧双手惊呼。“它们看起来就像戴着白面纱的新娘！你难道不认为这是一个神奇的世界吗？我真高兴要和你生活在一起了！”马修只能紧张地笑着，好奇自己该如何向玛丽拉摊牌：他们期望的男孩是一个女孩。"
         },
         {
-          "en": "Matthew's shy heart melted as they drove home beneath the blossoming wild plum and apple trees. The girl chattered endlessly about the beauty of Prince Edward Island, naming the avenue of birch trees the 'White Way of Delight'.",
-          "zh": "当他们驾车行驶在盛开的野李树和苹果树下回家时，马修害羞的心融化了。女孩滔滔不绝地讲述着爱德华王子岛的美丽，将桦树大道命名为“欢愉的白光大道”。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "\"Isn't it wonderful that there are so many things to love in this world?\" she exclaimed, leaning forward in the buggy to breathe in the fragrant evening air. \"I'm so glad I'm going to live with you at Green Gables!\"",
-          "zh": "“这个世界上有这么多值得去爱的事物，难道不是很棒吗？”她倾身向前，深深吸入傍晚芳香的空气，大声呼喊。“我真高兴能和你们一起住在绿山墙！”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 3,
       "title": "Chapter 3: Marilla Cuthbert is Surprised",
-      "chineseTitle": "第 3 章：马里拉·卡斯伯特大吃一惊",
+      "chineseTitle": "第 3 章：玛丽拉·卡斯伯特的冷酷与震撼",
       "paragraphs": [
         {
-          "en": "When Matthew and the red-haired girl arrived at Green Gables, Marilla Cuthbert met them at the kitchen doorway in sheer bewilderment and sudden dismay.",
-          "zh": "当马修和红发女孩到达绿山墙时，马里拉·卡斯伯特在厨房门口接到了他们，眼中满是茫然与突如其来的沮丧。"
+          "en": "When Matthew and Anne arrived at Green Gables, Marilla Cuthbert met them at the door. Her eyes fell upon the child in amazement. 'Matthew Cuthbert, who's that?' she demanded. 'Where is the boy?' 'There wasn't any boy,' said Matthew wretchedly. 'There was only her.'",
+          "zh": "当马修和安妮到达绿山墙时，玛丽拉·卡斯伯特在门口迎住了他们。她的双眼在惊讶中落在了孩子身上。“马修·卡斯伯特，那是谁？”她质问。“男孩在哪里？”“没有任何男孩，”马修可怜兮兮地说。“只有她。”"
         },
         {
-          "en": "\"Matthew, where is the boy?\" Marilla exclaimed, staring at the child in utter surprise. \"We asked Mrs. Spencer to bring us a boy from the asylum!\"",
-          "zh": "“马修，男孩在哪里？”马里拉惊呼道，十分吃惊地盯着这个孩子。“我们明明让斯宾塞太太从孤儿院带个男孩回来的！”"
+          "en": "Realizing she was not wanted because she was not a boy, Anne burst into bitter tears, flinging herself onto a chair. 'You don't want me because I'm not a boy!' she sobbed. 'I might have expected it. Nobody ever wanted me!' Marilla, though stiff, felt a pang of pity, while Matthew quietly insisted that they keep her for the night.",
+          "zh": "意识到自己不受欢迎因为自己不是男孩，安妮爆发出痛苦的眼泪，扑倒在一张椅子上。“你们不要我因为我不是男孩！”她抽泣道。“我本该预料到的。从来没人要我！”玛丽拉虽然僵硬，却感到一阵同情，而马修安静地坚持今晚把她留下来。"
         },
         {
-          "en": "The little girl dropped her carpetbag onto the floor and burst into passionate tears. \"You don't want me!\" she cried. \"I might have known it was too beautiful to last! Nobody ever wanted me!\"",
-          "zh": "小女孩把毯子包掉在地上，大声痛哭起来。“你们不要我！”她哭喊道。“我早该知道这太美好了，不可能长久！从来没有人要过我！”"
+          "en": "'Well, well, don't cry so,' said Marilla. 'We are not going to turn you out of doors tonight.' Anne wiped her eyes and looked up timidly: 'Will you call me Cordelia? It sounds so much more romantic than Anne.' Marilla replied sternly: 'Anne is a good plain name, and I shall call you Anne.'",
+          "zh": "“好了，好了，别这样哭，”玛丽拉说。“我们今晚不会把你赶出家门。”安妮擦干眼睛，怯生生地抬头：“你会叫我柯蒂莉亚吗？那听起来比安妮要浪漫得多。”玛丽拉严厉地回答：“安妮是一个朴素的好名字，我就叫你安妮。”"
         },
         {
-          "en": "\"Well, well, don't cry, child,\" Marilla said gently, softening her tone. \"We won't turn you out into the night. What is your name?\"",
-          "zh": "“好了，好了，别哭了，孩子，”马里拉温和地说，语气缓和了下来。“我们不会把你赶到夜色里的。你叫什么名字？”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "\"Call me Cordelia,\" she pleaded, looking up with tear-filled eyes, \"or at least Anne spelled with an E. An Anne spelled without an E looks so plain, but Anne with an E has so much more dignity!\"",
-          "zh": "“叫我科迪莉亚吧，”她含着眼泪央求道，“或者至少叫我带 E 的安妮（Anne）。不带 E 的 Anne 看起来太平淡了，但带 E 的 Anne 看起来高雅多了！”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 4,
       "title": "Chapter 4: Morning at Green Gables",
-      "chineseTitle": "第 4 章：绿山墙的清晨时光",
+      "chineseTitle": "第 4 章：绿山墙的第一个清晨",
       "paragraphs": [
         {
-          "en": "The sun was shining brightly when Anne woke up the next morning at Green Gables. She rushed to the window and looked out in sheer delight.",
-          "zh": "第二天早晨，当安妮在绿山墙醒来时，阳光明媚。她冲到窗前，满心欢喜地向外望去。"
+          "en": "Anne woke up in the eastern gable room and looked out the window at the blooming apple orchard, which she named 'Snow Queen.' The morning sun washed the room with warm golden light, and birds sang sweetly in the cherry boughs outside.",
+          "zh": "安妮在东山墙房间醒来，看向窗外盛开的苹果园，她将其命名为“雪后”。晨光用温暖的金光洗涤着房间，鸟儿在外面的樱花树枝上甜美地唱着歌。"
         },
         {
-          "en": "Below her window, a huge cherry tree was in full white bloom, casting gentle shadows over the green grass. Beyond the orchard, the brook sparkled in the morning sunlight, and far away, the blue waters of the Gulf of St. Lawrence glinted under the clear sky.",
-          "zh": "在她的窗下，一棵巨大的樱花树正盛开着洁白的花朵，在绿色的草地上投下柔和的阴影。果园之外，小溪在晨光中闪闪发光，远方圣劳伦斯湾湛蓝的水面在晴空下烁烁生辉。"
+          "en": "Despite the fear of being sent back to the orphanage, Anne found herself falling in love with Green Gables. 'Oh, Marilla,' she declared at breakfast, 'it is a heavenly morning! I feel that there is so much scope for imagination in this place.'",
+          "zh": "尽管害怕被送回孤儿院，安妮发现自己爱上了绿山墙。“哦，玛丽拉，”她在早餐时宣布，“这是一个极好的清晨！我感觉在这个地方有巨大的想象力空间。”"
         },
         {
-          "en": "\"Oh, Marilla!\" Anne cried as she came downstairs for breakfast. \"This is the most beautiful place in the whole world! I never dreamed of anything so lovely!\"",
-          "zh": "“哦，马里拉！”当安妮下楼吃早餐时大声呼喊。“这是全天下最美丽的地方！我做梦都没梦到过这么美好的地方！”"
+          "en": "Marilla looked at her dryly and ordered her to eat her oatmeal. 'Imagination won't get the dishes washed,' Marilla remarked, though she secretly marvelled at the girl's bright spirit.",
+          "zh": "玛丽拉干巴巴地看着她，指示她吃燕麦粥。“想象力无法洗碗，”玛丽拉注意到，尽管她在暗中惊叹于女孩鲜艳的精神。"
         },
         {
-          "en": "Marilla looked at her thoughtfully. \"Eat your breakfast, Anne,\" she said calmly. \"We have a busy day ahead of us, and talking won't get the dishes washed.\"",
-          "zh": "马里拉若有所思地看着她。“吃你的早餐吧，安妮，”她平静地说。“我们今天有很多活要干，光说话可洗不了碗。”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
+        },
+        {
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 5,
-      "title": "Chapter 5: Anne’s History",
-      "chineseTitle": "第 5 章：安妮的身世与往事",
+      "title": "Chapter 5: Anne's History",
+      "chineseTitle": "第 5 章：安妮坎坷凄凉的身世",
       "paragraphs": [
         {
-          "en": "While Marilla washed the breakfast dishes, Anne sat by the window and shared the story of her early childhood.",
-          "zh": "当马里拉洗早餐碗碟时，安妮坐在窗边，分享了她童年早期的故事。"
+          "en": "As Marilla drove Anne to Mrs. Spencer's to resolve the mistake, Anne recounted her sad past. She was born in Bolingbroke, Nova Scotia, to poor schoolteachers who both died of fever when she was three months old.",
+          "zh": "当玛丽拉驾车带安妮去斯宾塞太太家解决错误时，安妮讲述了她悲伤的过去。她出生在新斯科舍省的波林布罗克，父母是贫穷的学校教师，在她三个月大时双双死于发烧。"
         },
         {
-          "en": "\"I was born in Bolingbroke, Nova Scotia,\" Anne explained softly. \"My father was Walter Shirley, a high school teacher, and my mother was Bertha Shirley. They were both very poor, but they loved each other dearly.\"",
-          "zh": "“我出生在新斯科舍省的波林布鲁克，”安妮轻声解释道。“我父亲沃尔特·雪莉是一名高中教师，我母亲是伯莎·雪莉。他们当时都很穷，但他们非常相爱。”"
+          "en": "Orphaned as a baby, she had been passed around among poor families as a drudge to care for young children, before ending up at the Hopeton Orphanage. 'Nobody ever really wanted me,' Anne said softly, looking out over the fields. 'I always had to care for twins and scrub floors.'",
+          "zh": "婴儿时就成了孤儿，她在贫穷家庭中间被当作照顾小孩子的苦力转手，最后落脚于霍普顿孤儿院。“从来没人真正要我，”安妮软软地说，看着田野。“我总是得照顾双胞胎和擦地板。”"
         },
         {
-          "en": "She paused, looking out at the blooming orchard. \"They both died of fever when I was just a baby, so Mrs. Thomas took me in. I helped take care of her four children until Mr. Thomas passed away, and then I went to live with Mrs. Hammond.\"",
-          "zh": "她停顿了一下，看着外面盛开的果园。“在我还只是个婴儿的时候，他们就双双死于发烧，所以托马斯太太收留了我。我帮她照顾她的四个孩子，直到托马斯先生过世，然后我又去和哈蒙德太太一起生活。”"
+          "en": "Marilla's stern heart softened as she realized how starved the girl was for genuine affection. She began to wonder if keeping Anne might be a duty as well as a blessing.",
+          "zh": "当玛丽拉意识到这女孩对真挚关爱是多么饥渴时，她严厉的心软化了。她开始好奇把安妮留下来是否可能既是一项职责也是一份祝福。"
         },
         {
-          "en": "Marilla listened in quiet sympathy as Anne described years of hard work, taking care of three pairs of twins before finally being sent to the Hopeton Orphanage.",
-          "zh": "当安妮讲述多年艰苦劳作、在最终被送往霍普顿孤儿院之前照顾三对双胞胎的经历时，马里拉默默地倾听着，心中充满了同情。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "\"It wasn't a very happy life, Marilla,\" Anne concluded with a faint smile, \"but I always imagined nice things to keep my spirits up!\"",
-          "zh": "“那并不是一段非常快乐的生活，马里拉，”安妮带着淡淡的微笑总结道，“但我总是想象美好的事物来让自己振作起来！”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 6,
       "title": "Chapter 6: Marilla Makes Up Her Mind",
-      "chineseTitle": "第 6 章：马里拉下定了决心",
+      "chineseTitle": "第 6 章：玛丽拉下定决心收养",
       "paragraphs": [
         {
-          "en": "Marilla spent the afternoon driving Anne back to White Sands to discuss the adoption mistake with Mrs. Spencer.",
-          "zh": "下午，马里拉驾车带着安妮返回白沙镇，向斯宾塞太太询问领养失误的事情。"
+          "en": "At Mrs. Spencer's house, a disagreeable woman named Mrs. Blewett offered to take Anne to help with her messy household and troublesome children.",
+          "zh": "在斯宾塞太太家，一位名叫布鲁埃特太太的令人不快女人提出带走安妮去帮忙处理她凌乱的家务和麻烦的孩子。"
         },
         {
-          "en": "Along the road, Anne gazed out at the shining sea and blossoming orchards, chattering happily about her love for nature and dreams of true friendship.",
-          "zh": "沿途，安妮注视着闪光的海洋和盛开的果园，快乐地滔滔不绝地讲述着她对大自然的热爱和对真挚友谊的向往。"
+          "en": "Seeing Mrs. Blewett's harsh, cold nature, Marilla felt a sudden wave of protective instinct. She firmly decided to keep Anne at Green Gables rather than let her suffer under Mrs. Blewett.",
+          "zh": "看到布鲁埃特太太严酷、冰冷的性格，玛丽拉感到了一阵突如其来的保护本能。她坚定地决定把安妮留在绿山墙，而不是让她在布鲁埃特太太手下受苦。"
         },
         {
-          "en": "When they arrived, Mrs. Spencer offered to give Anne to Peter Blewett's wife, a harsh and demanding woman known for treating orphans cruelly.",
-          "zh": "当她们到达时，斯宾塞太太提出把安妮转送给彼得·布莱威特的妻子，后者是一个以严酷虐待孤儿闻名的刻薄女人。"
+          "en": "Returning home, Marilla announced the decision to Matthew, who smiled with deep relief. When told she could stay, Anne burst into tears of pure joy, throwing her arms around Marilla's neck.",
+          "zh": "回到家，玛丽拉向马修宣布了决定，马修带着深沉的宽慰笑了。当被告知可以留下来时，安妮爆发出纯粹喜悦的眼泪，用手臂搂住了玛丽拉的脖子。"
         },
         {
-          "en": "Observing Mrs. Blewett's stern, cold face, Marilla felt a sudden surge of protective compassion for the lonely, imaginative child.",
-          "zh": "看到布莱威特太太严厉冷酷的面容，马里拉心中突然对这个孤独、富有想象力的孩子产生了一股保护性的同情。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "\"No,\" Marilla declared firmly, taking Anne by the hand. \"Matthew and I have decided to keep her at Green Gables after all.\"",
-          "zh": "“不，”马里拉紧紧握住安妮的手坚决地说，“马修和我决定还是把她留在绿山墙。”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 7,
       "title": "Chapter 7: Anne Says Her Prayers",
-      "chineseTitle": "第 7 章：安妮做祷告",
+      "chineseTitle": "第 7 章：安妮的第一次奇特祷告",
       "paragraphs": [
         {
-          "en": "\"Now, Anne,\" said Marilla when they returned to Green Gables, \"it is time for you to learn your bedtime prayers.\"",
-          "zh": "“现在，安妮，”当她们回到绿山墙时马里拉说，“该学睡前祷告了。”"
+          "en": "Marilla instructed Anne to say her bedtime prayers, only to discover Anne had never been taught how to pray. Kneeling beside Marilla, Anne improvised a poetic prayer.",
+          "zh": "玛丽拉指示安妮做睡前祷告，却发现安妮从未被教过如何祷告。跪在玛丽拉身边，安妮即兴做出了一段诗意的祷告。"
         },
         {
-          "en": "Anne looked up in surprise. \"I've never said a prayer in my life, Marilla,\" she admitted honestly. \"Mrs. Thomas told me that God made my hair red on purpose, and I've never felt very close to Him since.\"",
-          "zh": "安妮惊讶地抬头。“我一辈子都没做过祷告，马里拉，”她坦白道。“托马斯太太告诉我，上帝是故意把我的头发变成红色的，从那以后我感觉和他不是很亲近。”"
+          "en": "'Gracious Heavenly Father,' Anne began aloud, 'I thank Thee for the White Way of Delight and the Snow Queen. Please let me stay at Green Gables forever, and please let me grow up to have puffed sleeves!'",
+          "zh": "“仁慈的天父，”安妮大声开始说，“我感谢您赐予‘欢欣的白光大道’和‘雪后’。请让我永远留在绿山墙，并请让我长成一个穿着泡泡袖的大姑娘！”"
         },
         {
-          "en": "Marilla shook her head in dismay and instructed Anne to kneel by the bedside.",
-          "zh": "马里拉沮丧地摇了摇头，指导安妮跪在床边。"
+          "en": "Marilla shook her head in amazement and vowed to teach her proper religious instruction the very next day.",
+          "zh": "玛丽拉在惊讶中摇了摇头，发誓就在第二天教给她正统的宗教规矩。"
         },
         {
-          "en": "Anne folded her hands and looked out the window at the starlit sky. \"Dear God,\" she began eloquently, \"I thank You for the White Way of Delight and the Lover's Lane. Please let me stay at Green Gables, and make me pretty when I grow up. Amen.\"",
-          "zh": "安妮合拢双手，看着窗外星光闪烁的夜空。“亲爱的上帝，”她雄辩地开始道，“感谢您赐予欢愉的白光大道和情侣路。请让我留在绿山墙，并让我长大后变漂亮。阿门。”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Marilla sighed gently, realizing how much patient guidance this fiery, imaginative child would need.",
-          "zh": "马里拉轻轻叹了口气，意识到这个炽热、富有想象力的孩子需要多少耐心的引导。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 8,
-      "title": "Chapter 8: Anne’s Bringing-up Is Begun",
-      "chineseTitle": "第 8 章：安妮抚养计划的开始",
+      "title": "Chapter 8: Anne's Bringing-up is Begun",
+      "chineseTitle": "第 8 章：绿山墙的养育生活开启",
       "paragraphs": [
         {
-          "en": "The bringing-up of Anne Shirley began in earnest the following week at Green Gables.",
-          "zh": "接下来的一个星期，抚养安妮·雪莉的工作在绿山墙真正开始了。"
+          "en": "Marilla began Anne's upbringing, sewing three simple, sensible dresses for her without any ruffles or puffed sleeves. Though disappointed by the plain clothes, Anne accepted them with gratitude.",
+          "zh": "玛丽拉开启了安妮的养育生活，为她缝制了三件简单、合用的衣服，没有半点饰边或泡泡袖。尽管对朴素的衣服感到失望，安妮怀着感激接受了它们。"
         },
         {
-          "en": "Marilla sewed three plain, practical cotton dresses for Anne, without any ruffles or puffed sleeves.",
-          "zh": "马里拉为安妮缝制了三件朴素、实用的棉布连衣裙，没有任何花边或泡泡袖。"
+          "en": "Anne spent her afternoons wandering through the woods and naming objects around Green Gables, such as 'Lovers' Lane' and 'Wallow Pool.'",
+          "zh": "安妮在树林里漫步度过下午，并给绿山墙周围的物命名，比如“情人小径”和“泥潭池”。"
         },
         {
-          "en": "\"They are very sensible, Marilla,\" Anne said politely, trying to hide her disappointment. \"I shall just imagine that they are made of shimmering silk with gorgeous puffed sleeves!\"",
-          "zh": "“它们非常合体，马里拉，”安妮礼貌地说，试图掩饰她的失望。“我就想象它们是由闪光的丝绸制成的，带有华丽的泡泡袖！”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Marilla taught Anne how to bake bread, sew seams, and keep the kitchen spotless.",
-          "zh": "马里拉教安妮如何烤面包、缝制衣缝，并保持厨房纤尘不染。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Though Anne's mind often wandered into romantic daydreams—resulting in burnt puddings and misplaced thimbles—her eagerness to please Marilla warmed the quiet household.",
-          "zh": "虽然安妮的心思经常漂移到浪漫的白日梦中——导致烤糊了布丁和放错了顶针——但她急于讨好马里拉的热情温暖了平静的家庭。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 9,
-      "title": "Chapter 9: Mrs. Rachel Lynde Is Properly Horrified",
-      "chineseTitle": "第 9 章：雷切尔·林德太太惊呆了",
+      "title": "Chapter 9: Mrs. Rachel Lynde is Properly Terrified",
+      "chineseTitle": "第 9 章：林德太太的批评与安妮发火",
       "paragraphs": [
         {
-          "en": "Mrs. Rachel Lynde came over to Green Gables one evening to inspect the new orphan girl.",
-          "zh": "一天晚上，雷切尔·林德太太来到绿山墙考察新领养的孤儿女孩。"
+          "en": "Mrs. Rachel Lynde visited Green Gables to inspect Anne. Looking closely at the girl, Mrs. Rachel blurted out: 'She's terribly skinny and homely, Marilla! And look at that hair as red as carrots!'",
+          "zh": "雷切尔·林德太太拜访绿山墙考察安妮。仔细看着女孩，雷切尔太太脱口而出：“她太瘦太丑了，玛丽拉！而且看看那像胡萝卜一样红的头发！”"
         },
         {
-          "en": "When Anne entered the kitchen, Mrs. Rachel scrutinized her from head to toe and remarked bluntly: \"She's terribly skinny and homely, Marilla, and look at that hair as red as carrots!\"",
-          "zh": "当安妮走进厨房时，雷切尔太太从头到脚审视着她，直言不讳地备注道：“她瘦得厉害，长得也丑，马里拉，看那头发红得像胡萝卜！”"
+          "en": "Enraged by the insult, Anne stomped her foot and screamed: 'I hate you! You're a rude, impolite, unfeeling woman! How would you like to be told that you are fat and clumsy?'",
+          "zh": "被侮辱所激怒，安妮跺脚尖叫：“我讨厌你！你是个粗鲁、无礼、没感情的女人！如果别人告诉你你又胖又笨拙你会怎么样？”"
         },
         {
-          "en": "Anne's face flushed with sudden fury. Stamping her foot, she flew at Mrs. Rachel in a storm of passion.",
-          "zh": "安妮的面容顿时因突如其来的怒火而发红。跺着脚，她以一阵暴风雨般的激情扑向雷切尔太太。"
+          "en": "Mrs. Rachel departed in shock, demanding an apology before she would ever set foot in Green Gables again.",
+          "zh": "雷切尔太太在震惊中离开，要求道歉然后她才愿意再次踏入绿山墙。"
         },
         {
-          "en": "\"I hate you!\" Anne shrieked, her eyes flashing fire. \"How dare you say I'm skinny and ugly and red-haired? You are a rude, impolite, unfeeling woman!\"",
-          "zh": "“我讨厌你！”安妮尖叫道，双眼闪烁着怒火。“你怎么敢说我瘦、丑和红头发？你是一个粗鲁、不礼貌、冷酷无情的女人！”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Mrs. Rachel gasped in utter horror, while Marilla stood frozen in shock at Anne's tempestuous outburst.",
-          "zh": "雷切尔太太惊恐地喘着气，而马里拉因安妮暴风雨般的爆发而吃惊地冻结在那里。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         }
       ]
     },
     {
       "unitIndex": 10,
-      "title": "Chapter 10: Anne’s Apology",
-      "chineseTitle": "第 10 章：安妮的道歉",
+      "title": "Chapter 10: Anne's Apology",
+      "chineseTitle": "第 10 章：安妮戏剧化的道歉",
       "paragraphs": [
         {
-          "en": "After Mrs. Rachel Lynde left Green Gables in high indignation, Marilla marched Anne up to her gable bedroom.",
-          "zh": "在雷切尔·林德太太无比愤慨地离开绿山墙后，马里拉把安妮带上了她的山墙卧室。"
+          "en": "Marilla sent Anne to her room until she agreed to apologize. Matthew quietly slipped upstairs and coaxed Anne into apologizing for his sake.",
+          "zh": "玛丽拉把安妮关进房间直到她同意道歉。马修静静溜上楼，劝诱安妮为了他的缘故去道歉。"
         },
         {
-          "en": "\"You must stay in your room, Anne, until you are ready to apologize to Mrs. Rachel,\" Marilla said sternly.",
-          "zh": "“你必须留在你的房间里，安妮，直到你准备好向雷切尔太太道歉，”马里拉严厉地说。"
+          "en": "Anne went to Mrs. Rachel's house and delivered a dramatic, theatrical speech of remorse, falling to her knees: 'Oh, Mrs. Lynde, I am so deeply sorry! I can never express my agony!' Mrs. Rachel was so impressed that she forgave Anne on the spot.",
+          "zh": "安妮来到雷切尔太太家，发表了一番充满戏剧性悔恨的演讲，跪在地上：“哦，林德太太，我是多么深深地抱歉！我永远无法表达我的痛苦！”雷切尔太太极其被打动，当场原谅了安妮。"
         },
         {
-          "en": "Anne spent the next day in solitude, refusing to eat or leave her room, clinging stubbornly to her hurt pride.",
-          "zh": "安妮在孤独中度过了接下来的天，拒绝吃东西或离开她的房间，顽固地坚守着她受伤害的骄傲。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "However, when Matthew slipped upstairs at twilight and whispered, \"Anne, just apologize for my sake,\" her heart melted instantly.",
-          "zh": "然而，当马修在黄昏时分溜上楼轻声说：“安妮，为了我的缘故去道个歉吧，”她的心立刻融化了。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "The next morning, Anne walked to Mrs. Rachel's house and delivered a dramatic, poetic apology that sounded like a speech from a romantic play.",
-          "zh": "第二天早晨，安妮走进雷切尔太太的家，递交了一份戏剧性、诗意十足的道歉，听起来就像浪漫剧里的台词。"
-        },
-        {
-          "en": "Mrs. Rachel was so amused and touched that she readily forgave Anne, giving her a slice of plum cake as a token of peace.",
-          "zh": "雷切尔太太感到非常逗乐和感动，欣然原谅了安妮，给了她一片李子蛋糕作为和平的象征。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 11,
-      "title": "Chapter 11: Anne’s Impressions of Sunday School",
-      "chineseTitle": "第 11 章：安妮对主日学校的印象",
+      "title": "Chapter 11: Anne's Impressions of Sunday School",
+      "chineseTitle": "第 11 章：主日学的戴花帽子风波",
       "paragraphs": [
         {
-          "en": "The following Sunday, Anne attended Avonlea Sunday School for the very first time.",
-          "zh": "接下来的主日，安妮第一次参加了阿文莉主日学校。"
+          "en": "Anne attended Sunday School for the first time. On the way through the woods, she decorated her plain black hat with wild buttercups and pink roses.",
+          "zh": "安妮第一次参加主日学。在穿过树林的路上，她用野生毛茛和粉红玫瑰装饰了她朴素的黑帽子。"
         },
         {
-          "en": "She wore a plain black hat, which she had decorated with a wreath of wild buttercups and roses gathered along the road.",
-          "zh": "她戴着一顶朴素的黑帽子，上面装饰着沿途采摘的野毛茛和玫瑰花环。"
+          "en": "The other children stared and giggled, but Anne remained completely unfazed, imagining herself as a romantic maiden in a storybook.",
+          "zh": "其他孩子凝视着并咯咯笑，但安妮保持着完全不受打扰，想象着自己是故事书里的浪漫少女。"
         },
         {
-          "en": "Her appearance caused quite a sensation among the quiet Sunday school children.",
-          "zh": "她的出现引发了平静的主日学校孩子们相当大的轰动。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "During the lesson, Anne found the teacher's lecture rather dry, but her imagination transformed the church windows into stained-glass portals to heaven.",
-          "zh": "在课上，安妮发现老师的讲课相当枯燥，但她的想象力把教堂的窗户化为了通往天堂的彩色玻璃门户。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "\"I didn't think much of Sunday school, Marilla,\" Anne reported frankly upon her return. \"The superintendent asked too many questions, but I prayed for him in my heart anyway!\"",
-          "zh": "“我对主日学校评价不高，马里拉，”安妮回来后坦白地报告。“主管问了太多问题，但我还是在心里为他祷告了！”"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 12,
       "title": "Chapter 12: A Solemn Vow and Promise",
-      "chineseTitle": "第 12 章：庄严的誓言与承诺",
+      "chineseTitle": "第 12 章：与戴安娜结为知心誓友",
       "paragraphs": [
         {
-          "en": "That afternoon, Anne met Diana Barry, the black-haired girl who lived at Orchard Slope, for the first time.",
-          "zh": "那天下午，安妮第一次见到了住在果园坡的黑发女孩戴安娜·巴里。"
+          "en": "Anne met Diana Barry, a pretty girl with dark hair and rosy cheeks who lived nearby. The two girls hit it off immediately.",
+          "zh": "安妮遇到了戴安娜·巴里，一位居住在附近、有着黑发和红润面颊的漂亮女孩。两个女孩立刻一拍即合。"
         },
         {
-          "en": "The two girls walked down to the sparkling brook beneath the whispering birch trees.",
-          "zh": "两个女孩走到低语的桦树下闪光的小溪边。"
+          "en": "By the Orchard Slope brook, they held hands and swore a solemn vow: 'I solemnly swear to be faithful to my bosom friend, Diana Barry, as long as the sun and moon endure.'",
+          "zh": "在果园坡小溪旁，她们手牵手立下庄严誓言：“我庄严发誓忠于我的知心朋友戴安娜·巴里，只要日月同辉。”"
         },
         {
-          "en": "\"Will you swear to be my bosom friend forever and ever?\" Anne asked solemnly, holding out her hands.",
-          "zh": "“你愿意发誓永远做我的知心朋友吗？”安妮庄严地问，伸出双手。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Diana smiled warmly and took Anne's hands. \"I promise to be faithful to you as long as the sun and moon endure.\"",
-          "zh": "戴安娜温和地微笑，握住安妮的手。“我承诺只要太阳和月亮还在，我就对你忠诚。”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "From that moment on, Anne and Diana became inseparable companions, sharing every secret, dream, and story in the enchanting woods of Avonlea.",
-          "zh": "从那一刻起，安妮和戴安娜成为了形影不离的伴侣，在阿文莉迷人的树林里分享着每一个秘密、梦想和故事。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 13,
-      "title": "Chapter 13: The Delight of Anticipation",
-      "chineseTitle": "第 13 章：期待的喜悦",
+      "title": "Chapter 13: The Delights of Anticipation",
+      "chineseTitle": "第 13 章：期待主日学野餐的喜悦",
       "paragraphs": [
         {
-          "en": "August arrived, bringing news of the upcoming Sunday School Picnic at Carmody Lake.",
-          "zh": "八月到了，带来了即将到来的卡莫迪湖主日学校野餐的消息。"
+          "en": "Anne looked forward with intense excitement to the upcoming Sunday School picnic. She talked about it constantly, eager to eat ice cream for the first time.",
+          "zh": "安妮怀着强烈的兴奋期待着即将到来的主日学野餐。她不断谈论着它，渴望平生第一次吃上冰淇淋。"
         },
         {
-          "en": "Anne was beside herself with excitement, especially when Marilla promised to bake an abundance of sweet biscuits and raspberry tarts for the feast.",
-          "zh": "安妮兴奋得忘乎所以，尤其是当马里拉承诺为盛宴烘焙大量的甜饼干和红莓塔时。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "\"I've never been to a picnic in my whole life, Marilla!\" Anne exclaimed, clapping her hands. \"I can hardly sleep for thinking of the ice cream!\"",
-          "zh": "“我一辈子都没去过野餐，马里拉！”安妮拍着手欢呼。“想到冰淇淋我都睡不着觉！”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Every day, Anne counted down the hours, imagining the boat rides across the blue lake and the laughter under the grand trees.",
-          "zh": "每天，安妮都倒数着时间，想象着在湛蓝湖面上划船和在大树下的欢笑。"
-        },
-        {
-          "en": "Anticipation filled her days with pure, radiant joy.",
-          "zh": "期待在她的日子里充满了纯洁、灿烂的喜悦。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 14,
-      "title": "Chapter 14: Anne’s Confession",
-      "chineseTitle": "第 14 章：安妮的坦白",
+      "title": "Chapter 14: Anne's Confession",
+      "chineseTitle": "第 14 章：紫水晶胸针误会与假坦白",
       "paragraphs": [
         {
-          "en": "Two days before the picnic, Marilla discovered that her prized amethyst brooch was missing from her bureau drawer.",
-          "zh": "野餐前两天，马里拉发现她宝贵的紫水晶胸针从梳妆台抽屉里不翼而飞了。"
+          "en": "Marilla lost her prized amethyst brooch and suspected Anne had taken it. When Anne denied it, Marilla forbade her from attending the picnic.",
+          "zh": "玛丽拉失去了她宝贵的紫水晶胸针，怀疑是安妮拿了。当安妮否认时，玛丽拉禁止她参加野餐。"
         },
         {
-          "en": "Since Anne had admired the shining purple stone the previous evening, Marilla questioned her sternly.",
-          "zh": "由于安妮前一天晚上曾赞赏过那颗闪光的紫石头，马里拉严厉地询问了她。"
+          "en": "Desperate to go to the picnic, Anne invented a false confession, describing how she accidentally dropped the brooch into the lake. But Marilla later found the brooch stuck in a black lace shawl, realizing Anne was completely innocent.",
+          "zh": "绝望地想去野餐，安妮编造了一个假的坦白，描述了自己如何意外把胸针掉进了湖里。但玛丽拉后来在一条黑色蕾丝披肩上找到了胸针，意识到安妮完全是无辜的。"
         },
         {
-          "en": "\"I only tried it on and put it back, Marilla!\" Anne protested tearfully. \"I swear I didn't lose it!\"",
-          "zh": "“我只是试戴了一下就放回去了，马里拉！”安妮流着泪抗议。“我发誓我没有丢！”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Believing Anne was lying, Marilla insisted that she would not go to the picnic until she confessed.",
-          "zh": "相信安妮在说谎，马里拉坚持在她坦白之前不准去野餐。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Desperate to attend the picnic, Anne fabricated a elaborate, dramatic confession of dropping the brooch into the harbor, leaving Marilla deeply dismayed.",
-          "zh": "急于参加野餐的安妮编造了一个精心构思的戏剧性坦白，说把胸针掉进了港口，让马里拉深感沮丧。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 15,
       "title": "Chapter 15: A Tempest in the School Teapot",
-      "chineseTitle": "第 15 章：学校茶壶里的一场风波",
+      "chineseTitle": "第 15 章：吉尔伯特叫“胡萝卜”引发冲突",
       "paragraphs": [
         {
-          "en": "Just as Marilla was about to enforce Anne's punishment, she found the amethyst brooch pinned to her black shawl, where it had accidentally caught.",
-          "zh": "正当马里拉要执行安妮的惩罚时，她在自己的黑色披肩上找到了紫水晶胸针，原来是意外挂在了上面。"
+          "en": "Anne started school in Avonlea. Gilbert Blythe, the handsomest and smartest boy in school, tried to get Anne's attention by pulling her red braid and calling out 'Carrots! Carrots!'",
+          "zh": "安妮在阿文莉开学了。吉尔伯特·布莱斯（学校里最英俊最聪明的男孩）试图通过拉她的红辫子并喊“胡萝卜！胡萝卜！”来引起安妮注意。"
         },
         {
-          "en": "Realizing Anne had confessed falsely just to go to the picnic, Marilla felt a wave of deep remorse for doubting the child's honesty.",
-          "zh": "意识到安妮只是为了去野餐而虚假坦白，马里拉为怀疑孩子的诚实而感到一阵深切的悔恨。"
+          "en": "Enraged by the insult, Anne picked up her heavy slate and smashed it over Gilbert's head! Anne refused to speak to Gilbert despite his repeated apologies.",
+          "zh": "被侮辱所激怒，安妮拿起她沉重的石板在吉尔伯特头上砸碎了！尽管吉尔伯特重复道歉，安妮拒绝与他说话。"
         },
         {
-          "en": "\"I was wrong to disbelieve you, Anne,\" Marilla admitted warmly. \"Get dressed—Matthew is waiting to drive you to Carmody Lake.\"",
-          "zh": "“我不相信你是错的，安妮，”马里拉温和地承认。“穿好衣服——马修正等着驾车带你去卡莫迪湖呢。”"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Anne rushed out to the buggy with joy in her heart, having the most glorious afternoon of her life, eating ice cream and riding boats with Diana.",
-          "zh": "安妮怀着心中的喜悦冲向马车，度过了她一生中最美好的下午，吃着冰淇淋，和戴安娜一起划船。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 16,
-      "title": "Chapter 16: Diana Is Invited to Tea with Tragic Results",
-      "chineseTitle": "第 16 章：戴安娜受邀喝茶的悲剧结局",
+      "title": "Chapter 16: Diana is Invited to Tea with Tragic Results",
+      "chineseTitle": "第 16 章：误拿红葡萄酒款待戴安娜",
       "paragraphs": [
         {
-          "en": "In September, Anne began attending Avonlea Public School under the instruction of Mr. Phillips.",
-          "zh": "九月，安妮开始在菲利普斯先生的指导下参加阿文莉公立学校。"
+          "en": "Anne invited Diana to tea at Green Gables. Mistaking a bottle of Marilla's homemade currant wine for raspberry cordial, Anne served three large glasses to Diana, who became thoroughly intoxicated.",
+          "zh": "安妮邀请戴安娜来绿山墙吃下午茶。把一瓶玛丽拉自制的红醋栗酒误认为是覆盆子饮料，安妮给戴安娜到了三大杯，戴安娜变得完全醉了。"
         },
         {
-          "en": "She quickly excelled in reading and recitations, earning the admiration of her classmates.",
-          "zh": "她在朗读和背诵方面迅速脱颖而出，赢得了同学们的钦佩。"
+          "en": "Mrs. Barry blamed Anne for corrupting her daughter and forbade Diana from ever playing with Anne again.",
+          "zh": "巴里太太责怪安妮败坏了她女儿，禁止戴安娜再与安妮一起玩。"
         },
         {
-          "en": "However, a rivalry flared when Gilbert Blythe, the handsomest and smartest boy in school, returned after a long absence.",
-          "zh": "然而，当学校里最英俊、最聪明的男孩吉尔伯特·布莱斯在长期缺席后返回时，一场竞争爆发了。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Attempting to get Anne's attention during class, Gilbert picked up her long red braid and whispered playfully, \"Carrots! Carrots!\"",
-          "zh": "为了在课上引起安妮的注意，吉尔伯特拿起她长长的红辫子，开玩笑道：“胡萝卜！胡萝卜！”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Flashing with fury, Anne stood up, picked up her heavy slate, and cracked it over Gilbert's head, breaking the slate in two!",
-          "zh": "怒火中烧的安妮站起来，拿起她沉重的石板，在吉尔伯特的头上砸碎了，把石板一分为二！"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 17,
       "title": "Chapter 17: A New Interest in Life",
-      "chineseTitle": "第 17 章：生活中的新乐趣",
+      "chineseTitle": "第 17 章：悲伤离别与重返校园",
       "paragraphs": [
         {
-          "en": "One autumn afternoon, Marilla permitted Anne to invite Diana to Green Gables for an elegant afternoon tea.",
-          "zh": "在一个秋天的下午，马里拉允许安妮邀请戴安娜到绿山墙喝高雅的下午茶。"
+          "en": "Heart-broken by the loss of Diana's friendship, Anne poured all her energy into her studies to compete academically with Gilbert Blythe.",
+          "zh": "因失去戴安娜的友谊而心碎，安妮把她所有的精力倾注到了学习中，在学术上与吉尔伯特·布莱斯竞争。"
         },
         {
-          "en": "\"You may serve the bottle of raspberry cordial on the second shelf of the pantry,\" Marilla instructed before leaving for town.",
-          "zh": "“你可以享用膳食室第二层架子上的那瓶红莓果汁，”马里拉在去镇上之前指导道。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Anne proudly set the table with fine china and served the dark red liquid to Diana in glass goblets.",
-          "zh": "安妮自豪地用精美瓷器摆好桌子，把深红色的液体盛在玻璃高脚杯里递给戴安娜。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Diana found the drink delicious and drank three full glasses, but soon began feeling dizzy and unwell.",
-          "zh": "戴安娜觉得这饮料很美味，喝了三大杯，但很快开始感到头晕不适。"
-        },
-        {
-          "en": "Staggering home, Diana was diagnosed by her horrified mother as intoxicated—Anne had accidentally served Marilla's homemade currant wine instead of raspberry cordial!",
-          "zh": "踉跄着回到家，戴安娜被她惊恐的母亲诊断为醉酒——安妮不小心把马里拉自制的红醋栗酒当成红莓果汁给客人喝了！"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 18,
       "title": "Chapter 18: Anne to the Rescue",
-      "chineseTitle": "第 18 章：安妮的大营救",
+      "chineseTitle": "第 18 章：救治喉喉急症与友情恢复",
       "paragraphs": [
         {
-          "en": "Mrs. Barry was so enraged by the wine incident that she strictly forbade Diana from ever speaking or playing with Anne again.",
-          "zh": "巴里太太因葡萄酒事件非常愤怒，严厉禁止戴安娜再与安妮说话或玩耍。"
+          "en": "When Diana's little sister Minnie May fell dangerously ill with croup, Anne rushed over and saved the child's life using her experience. Deeply grateful, Mrs. Barry lifted the ban, reuniting the two bosom friends.",
+          "zh": "当戴安娜的小妹妹米妮·梅患了严重的喉喉急症危在旦夕时，安妮冲过去利用她的经验拯救了孩子的生命。无比感激的巴里太太解除了禁令，重聚了两位知心朋友。"
         },
         {
-          "en": "Heartbroken, Anne wept bitter tears, watching her dearest friend from afar across the orchard.",
-          "zh": "心碎的安妮流下了痛苦的眼泪，从果园对面遥望着她最亲爱的朋友。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "A few weeks later, a severe epidemic of croup struck Avonlea, and Mr. and Mrs. Barry were away at a political rally in Charlottetown.",
-          "zh": "几周后，一场严重的哮吼流行病袭击了阿文莉，巴里先生和夫人远在夏洛特敦参加政治集会。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "In the middle of the night, Diana ran to Green Gables in terror—her little sister Minnie May was choking with feverish croup.",
-          "zh": "在半夜里，戴安娜惊恐地跑向绿山墙——她的妹妹米妮·梅正因发烧的哮吼而窒息。"
-        },
-        {
-          "en": "Using her experience from caring for twins in her past, Anne rushed over, prepared hot ipecac, and nursed Minnie May through the night, saving the child's life before the doctor arrived.",
-          "zh": "利用过去照顾双胞胎的经验，安妮冲了过去，准备了热吐根剂，护理米妮·梅度过了夜晚，在医生到达之前救了孩子的命。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 19,
       "title": "Chapter 19: A Concert, a Catastrophe and a Confession",
-      "chineseTitle": "第 19 章：音乐会、大灾难与坦白",
+      "chineseTitle": "第 19 章：跳床意外与约瑟芬姑妈",
       "paragraphs": [
         {
-          "en": "When Dr. Blair arrived at dawn, he commended Anne for her quick thinking and expert care, declaring that she had saved Minnie May's life.",
-          "zh": "当布莱尔医生在黎明到达时，他赞扬了安妮的快速思考和专业护理，声明她救了米妮·梅的命。"
+          "en": "Anne attended a concert and stayed overnight at Diana's house. During a game of jumping onto the spare-room bed, Anne landed on Diana's severe Great-Aunt Josephine! Aunt Josephine was amused by Anne's frank apology and became her lifelong friend.",
+          "zh": "安妮参加了一场音乐会并留宿在戴安娜家。在跳上备用房间床上的游戏中，安妮降落在了戴安娜严厉的大姑妈约瑟芬身上！约瑟芬姑妈被安妮坦诚的道歉所逗乐，成为了她的终生朋友。"
         },
         {
-          "en": "Deeply remorseful and grateful, Mrs. Barry came to Green Gables that afternoon to apologize to Anne with tears in her eyes.",
-          "zh": "深深悔恨和感激的巴里太太那天下午来到绿山墙，眼含热泪向安妮道歉。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "\"You may be bosom friends with Diana forever, Anne,\" Mrs. Barry declared, inviting Anne over for a celebratory supper.",
-          "zh": "“你可以永远做戴安娜的知心朋友，安妮，”巴里太太声明，邀请安妮过去吃庆祝晚餐。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Anne and Diana embraced with joyous tears, their precious friendship restored stronger than ever before.",
-          "zh": "安妮和戴安娜带着喜悦的眼泪拥抱在一起，她们宝贵的友谊恢复得比以往任何时候都更加牢固。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 20,
       "title": "Chapter 20: A Good Imagination Gone Wrong",
-      "chineseTitle": "第 20 章：走偏了的丰富想象力",
+      "chineseTitle": "第 20 章：鬼怪森林的想象恐慌",
       "paragraphs": [
         {
-          "en": "Winter brought a series of literary adventures as Anne, Diana, Jane Andrews, and Ruby Gillis formed the 'Avonlea Story Club'.",
-          "zh": "冬天带来了一系列文学冒险，安妮、戴安娜、珍·安德鲁斯和鲁比·吉利斯组成了‘阿文莉故事俱乐部’。"
+          "en": "Anne and Diana convinced themselves that the nearby woods were haunted by ghosts. Marilla forced Anne to walk through the 'Haunted Wood' at night to cure her of silly fears.",
+          "zh": "安妮与戴安娜确信附近的树林被鬼魂纠缠。玛丽拉强迫安妮在夜里穿过“鬼怪森林”以治愈她傻乎乎的恐惧。"
         },
         {
-          "en": "Together, they wrote romantic, dramatic tales of tragic lovers, noble knights, and mysterious maidens in distress.",
-          "zh": "她们一起创作了浪漫、戏剧性的悲剧恋人、高尚骑士和陷入困境的神秘少女的故事。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Anne's vivid imagination produced the most popular stories, filled with poetic heartbreak and happy endings.",
-          "zh": "安妮丰富的想象力创造出了最受欢迎的故事，充满了诗意的心碎和幸福的结局。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "\"It's so wonderful to write down all the beautiful thoughts in your heart,\" Anne remarked, her eyes glowing with creative fire.",
-          "zh": "“把心中所有美好的想法写下来真是太棒了，”安妮备注道，她的眼睛里闪烁着创作的火花。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 21,
-      "title": "Chapter 21: A New Departure in Flavoring",
-      "chineseTitle": "第 21 章：调味品的新风波",
+      "title": "Chapter 21: A New Departure in Flavorings",
+      "chineseTitle": "第 21 章：把止痛药当香精做蛋糕",
       "paragraphs": [
         {
-          "en": "Spring arrived at Green Gables, bringing new life to the orchard and pastures.",
-          "zh": "春天来到了绿山墙，给果园和牧场带来了新生。"
+          "en": "Anne baked a cake for the new minister's wife, Mrs. Allan. Mistaking a bottle of liniment for vanilla extract, Anne flavored the cake with liniment! Mrs. Allan kindly laughed off the accident, cementing their friendship.",
+          "zh": "安妮为新牧师的妻子阿伦太太烤了一个蛋糕。把一瓶擦剂误认为是香草精，安妮用擦剂给蛋糕调了味！阿伦太太善良地一笑置之，巩固了她们的友谊。"
         },
         {
-          "en": "Anne's lively imagination occasionally led her into trouble, such as when she believed the Haunted Wood was filled with white-robed ghosts and wailing spirits.",
-          "zh": "安妮活泼的想象力偶尔会给她带来麻烦，比如当她相信鬼林里充满了穿白袍的鬼魂和号哭的灵体时。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Marilla gently reminded Anne to anchor her imagination in truth and common sense.",
-          "zh": "马里拉温和地提醒安妮把她的想象力锚定在真理和常识中。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Through every misadventure, Matthew's quiet encouragement and Marilla's steady love guided Anne toward thoughtful maturity.",
-          "zh": "通过每一次遭遇，马修安静的鼓励和马里拉稳定的爱指导着安妮走向周到的成熟。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 22,
-      "title": "Chapter 22: Anne Is Invited Out to Tea",
-      "chineseTitle": "第 22 章：安妮受邀去喝茶",
+      "title": "Chapter 22: Anne is Invited Out to Tea",
+      "chineseTitle": "第 22 章：牧师家的愉快下午茶",
       "paragraphs": [
         {
-          "en": "When the new minister, Mr. Allan, and his sweet wife Mrs. Allan visited Green Gables for tea, Anne baked a special layer cake.",
-          "zh": "当新牧师阿兰先生和他甜蜜的妻子阿兰太太拜访绿山墙喝茶时，安妮烘焙了一块特殊的夹心蛋糕。"
+          "en": "Anne was invited to tea at the parsonage by Mrs. Allan. She spent a wonderful afternoon engaging in elevated conversation about books, nature, and dreams.",
+          "zh": "安妮被阿伦太太邀请到牧师住宅吃下午茶。她度过了一个美好的下午，就书籍、自然和梦想展开了崇高的交谈。"
         },
         {
-          "en": "However, when Mrs. Allan took a bite, her face twisted in surprise—Anne had accidentally used liniment oil instead of vanilla extract for flavoring!",
-          "zh": "然而，当阿兰太太咬了一口时，她的脸因惊讶而扭曲——安妮不小心用了擦剂油而不是香草精来调味！"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Though mortified, Anne was comforted by Mrs. Allan's gentle laughter and kindness.",
-          "zh": "虽然感到屈辱，安妮还是被阿兰太太温和的笑声和善良所安慰。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "The two became fast friends, inspiring Anne to strive for goodness and grace.",
-          "zh": "两人成为了迅速的朋友，激励着安妮追求善良与优雅。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 23,
       "title": "Chapter 23: Anne Comes to Grief in an Affair of Honor",
-      "chineseTitle": "第 23 章：安妮在荣誉决斗中失利",
+      "chineseTitle": "第 23 章：屋顶走挑战与脚踝骨折",
       "paragraphs": [
         {
-          "en": "During the summer, a traveling peddler sold Anne a bottle of hair dye promised to turn her red hair into a raven black.",
-          "zh": "在夏天，一个流动货郎卖给安妮一瓶染发剂，承诺把她的红头发变成乌黑。"
+          "en": "Challenged by Josie Pye to walk the ridge-pole of the Barrys' kitchen roof, Anne fell and broke her ankle. Matthew carried her home, and Marilla realized with horror how deeply she had come to love the child.",
+          "zh": "被乔茜·派挑战去走巴里家厨房屋顶的脊梁骨，安妮摔下来折断了脚踝。马修抱她回家，玛丽拉在恐怖中意识到自己已经多么深沉地爱上了这个孩子。"
         },
         {
-          "en": "Instead, the dye turned Anne's hair a terrible, hideous shade of dull green!",
-          "zh": "然而，染发剂把安妮的头发变成了可怕、丑陋的暗绿色！"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "After trying desperately to wash it out, Anne had no choice but to let Marilla crop her hair short.",
-          "zh": "在拼命试图洗掉之后，安妮别无选择，只能让马里拉把她的头发剪短。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "\"It is a lesson in humility, Marilla,\" Anne accepted with a sigh, looking at her short curls in the mirror.",
-          "zh": "“这是一堂谦逊课，马里拉，”安妮带着叹息接受道，在镜子里看着她的短卷发。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 24,
       "title": "Chapter 24: Miss Stacy and Her Pupils Get Up a Concert",
-      "chineseTitle": "第 24 章：史塔西小姐与学生们的筹备音乐会",
+      "chineseTitle": "第 24 章：斯泰西老师与音乐会",
       "paragraphs": [
         {
-          "en": "At a party with her schoolmates, Anne accepted a dare from Josie Pye to walk along the ridgepole of the Barrys' roof.",
-          "zh": "在与同学们的派对上，安妮接受了乔西·派的挑战，沿着巴里家屋顶的屋脊走。"
+          "en": "A inspiring new teacher, Miss Stacy, arrived in Avonlea. She organized nature walks, physical exercises, and a school concert that raised money for a school flag.",
+          "zh": "一位富有启发的老师斯泰西小姐来到了阿文莉。她组织自然漫步、体育锻炼以及一场为学校旗帜筹款的学校音乐会。"
         },
         {
-          "en": "Slipping on the shingles, Anne fell to the ground, breaking her ankle in the tumble.",
-          "zh": "在木瓦上滑倒，安妮跌落到地上，在摔倒中折断了脚踝。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Matthew picked her up gently and carried her home to Green Gables.",
-          "zh": "马修温和地抱起她，把她抱回绿山墙。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "During her weeks of recovery, the whole neighborhood visited with flowers and treats, realizing how deeply they loved the sweet, imaginative girl.",
-          "zh": "在她康复的几周里，整个街区都带着鲜花和甜食来拜访，意识到他们是多么深爱这个甜美、富有想象力的女孩。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 25,
       "title": "Chapter 25: Matthew Insists on Puffed Sleeves",
-      "chineseTitle": "第 25 章：马修坚持要泡泡袖",
+      "chineseTitle": "第 25 章：马修送安妮泡泡袖礼服",
       "paragraphs": [
         {
-          "en": "The arrival of a new teacher, Miss Stacy, transformed Avonlea school into a place of inspiration and academic excellence.",
-          "zh": "新老师史塔西小姐的到来把阿文莉学校转化为了一个灵感和学术卓越的地方。"
+          "en": "Matthew noticed that Anne dressed differently from other girls. With Mrs. Rachel's help, Matthew bought Anne a beautiful brown dress with fashionable puffed sleeves as a Christmas present. Anne wept tears of joy upon seeing the gown.",
+          "zh": "马修注意到安妮穿得与其他女孩不同。在雷切尔太太的帮助下，马修买给安妮一件带着时尚泡泡袖的漂亮棕色礼服作为圣诞礼物。安妮看到礼服时流下了喜悦的眼泪。"
         },
         {
-          "en": "Miss Stacy organized nature walks, physical exercises, and a grand Christmas concert to raise money for a school flag.",
-          "zh": "史塔西小姐组织了自然漫步、体育锻炼和一个宏大的圣诞音乐会，为学校旗帜筹集资金。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Anne recited 'Bernardo del Carpio' with such dramatic passion that the audience applauded enthusiastically.",
-          "zh": "安妮以如此戏剧性的激情背诵了《贝尔纳多·德尔·卡皮奥》，以至于观众热烈掌声。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Under Miss Stacy's guidance, Anne set her heart on preparing for the entrance examinations for Queen's Academy.",
-          "zh": "在史塔西小姐的指导下，安妮立志准备皇后学院的入学考试。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 26,
-      "title": "Chapter 26: The Story Club Is Formed",
-      "chineseTitle": "第 26 章：故事俱乐部的诞生",
+      "title": "Chapter 26: The Story Club is Formed",
+      "chineseTitle": "第 26 章：故事俱乐部与创作热情",
       "paragraphs": [
         {
-          "en": "As Christmas approached, Matthew noticed that Anne's dresses were plain and outdated compared to those of her friends.",
-          "zh": "随着圣诞节的临近，马修注意到安妮的连衣裙与她朋友们的相比显得朴素而出塌。"
+          "en": "Anne and her friends formed a 'Story Club,' writing romantic, tragic tales filled with dramatic deaths and noble lovers.",
+          "zh": "安妮与她的朋友们成立了一个“故事俱乐部”，撰写充斥着戏剧性死亡与高尚恋人的浪漫悲剧故事。"
         },
         {
-          "en": "Determined to give her something special, Matthew secretly ordered a fashionably made dress with splendid puffed sleeves from Mrs. Lynde.",
-          "zh": "决心给她一些特别的东西，马修秘密地从林德太太那里订购了一件款式时尚、带有华丽泡泡袖的连衣裙。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "On Christmas morning, when Anne unwrapped the beautiful brown silk dress with puffed sleeves, tears of joy filled her eyes.",
-          "zh": "在圣诞节早晨，当安妮拆开带泡泡袖的漂亮棕色丝绸连衣裙时，喜悦的眼泪填满了她的眼睛。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "\"It's the most exquisite dress in the whole world, Matthew!\" she cried, throwing her arms around his neck.",
-          "zh": "“这是全天下最精美的连衣裙，马修！”她哭喊着，双手环绕着他的脖子。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 27,
       "title": "Chapter 27: Vanity and Vexation of Spirit",
-      "chineseTitle": "第 27 章：虚荣与灵魂的烦恼",
+      "chineseTitle": "第 27 章：买绿染料染发变绿风波",
       "paragraphs": [
         {
-          "en": "The Story Club continued to flourish, meeting in the woods to read their poetic compositions.",
-          "zh": "故事俱乐部继续蓬勃发展，在树林里聚会阅读她们的诗意创作。"
+          "en": "Desperate to turn her red hair raven black, Anne bought hair dye from a peddler. The dye turned her hair a hideous dull green! Marilla was forced to cut Anne's hair short, teaching Anne a lesson in humility.",
+          "zh": "绝望地想把她的红发变成乌鸦黑，安妮从货郎那里买了染发剂。染发剂把她的头发变成了可怕的暗绿色！玛丽拉不得不把安妮的头发剪短，教给了安妮关于谦逊的一课。"
         },
         {
-          "en": "Anne's writing showed a growing maturity and a deep appreciation for the beauty of Prince Edward Island.",
-          "zh": "安妮的写作展现出日益成熟和对爱德华王子岛美丽的深切赞赏。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Her stories reflected the love and peace she had found at Green Gables under Matthew and Marilla's care.",
-          "zh": "她的故事反映了她在马修和马里拉的照料下在绿山墙找到的爱与和平。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 28,
       "title": "Chapter 28: An Unfortunate Lily Maid",
-      "chineseTitle": "第 28 章：不幸的百合少女",
+      "chineseTitle": "第 28 章：扮演“百合少女”小船沉没救援",
       "paragraphs": [
         {
-          "en": "One summer afternoon, Anne and her friends decided to reenact Tennyson's poem 'Lancelot and Elaine' on the pond.",
-          "zh": "在一个夏天的下午，安妮和她的朋友们决定在池塘上重演丁尼生的诗歌《兰斯洛特与埃兰妮》。"
+          "en": "The Story Club reenacted Tennyson's poem 'Lancelot and Elaine.' Anne floated down the pond in a dory playing Elaine, but the boat sprang a leak! As the boat sank, Anne clung to a bridge pile until Gilbert Blythe rowed up and rescued her. Gilbert offered his friendship again, but Anne proudly refused.",
+          "zh": "故事俱乐部重演了丁尼生的诗作《兰斯洛特与埃莱娜》。安妮坐在小船里扮演埃莱娜顺池塘漂流，但船漏水了！随着船沉没，安妮紧抱桥桩，直到吉尔伯特·布莱斯划船赶来拯救了她。吉尔伯特再次提出他的友谊，但安妮骄傲地拒绝了。"
         },
         {
-          "en": "Anne lay in a flat-bottomed dory as the Lily Maid, floating down the stream with a black shawl over her dress.",
-          "zh": "安妮躺在一条平底平底船上作为百合少女，身上披着黑色披肩顺流飘下。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "However, the boat began leaking rapidly, sinking in the middle of the pond!",
-          "zh": "然而，船开始快速漏水，在池塘中央下沉！"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Anne managed to cling to a wooden bridge pile until Gilbert Blythe rowed past in his boat and rescued her.",
-          "zh": "安妮成功紧紧抓住一根木桥桩，直到吉尔伯特·布莱斯划着他的船经过并救了她。"
-        },
-        {
-          "en": "Though Gilbert offered a sincere truce and friendship, Anne's pride kept her from accepting, a decision she later regretted.",
-          "zh": "虽然吉尔伯特提供了真诚的休战和友谊，安妮的骄傲使她没有接受，这是一个她后来后悔的决定。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 29,
-      "title": "Chapter 29: An Epoch in Anne’s Life",
-      "chineseTitle": "第 29 章：安妮生命中的里程碑",
+      "title": "Chapter 29: An Epoch in Anne's Life",
+      "chineseTitle": "第 29 章：拜访夏洛特敦与城市见闻",
       "paragraphs": [
         {
-          "en": "Autumn brought hard work as Miss Stacy formed a special advanced class to prepare students for the Queen's Academy examination.",
-          "zh": "秋天带来了艰苦的工作，史塔西小姐组成了一个特别的高级班，为学生们准备皇后学院考试。"
+          "en": "Aunt Josephine invited Anne and Diana to visit Charlottetown for the exhibition. Anne experienced city life, attending horse races and fine dining, but concluded that Green Gables was far dearer.",
+          "zh": "约瑟芬姑妈邀请安妮和戴安娜拜访夏洛特敦看展览。安妮体验了城市生活，参加赛马和精美餐饮，但断定绿山墙要珍贵得多。"
         },
         {
-          "en": "Anne, Gilbert, Diana, Jane, and Ruby spent long evenings studying Latin, geometry, and English literature.",
-          "zh": "安妮、吉尔伯特、戴安娜、珍和鲁比度过了长长的夜晚学习拉丁语、几何学和英国文学。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "The friendly academic rivalry between Anne and Gilbert pushed both of them to achieve their absolute highest potential.",
-          "zh": "安妮和吉尔伯特之间友好的学术竞争推动着他们两人实现绝对最高的潜力。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 30,
-      "title": "Chapter 30: The Queens Class Is Formed",
-      "chineseTitle": "第 30 章：皇后学院预备班的建立",
+      "title": "Chapter 30: The Queen's Class is Formed",
+      "chineseTitle": "第 30 章：葵因学院考前准备班成立",
       "paragraphs": [
         {
-          "en": "In June, Anne and her classmates traveled to Charlottetown for the intense three-day Queen's entrance exams.",
-          "zh": "六月，安妮和她的同学们前往夏洛特敦参加紧张的三天皇后学院入学考试。"
+          "en": "Miss Stacy formed an advanced class to prepare pupils for the entrance examination to Queen's Academy. Anne and Gilbert drove each other to academic excellence.",
+          "zh": "斯泰西老师成立了一个高级班，为学生们准备葵因学院的入学考试。安妮与吉尔伯特相互驱使对方走向学术卓越。"
         },
         {
-          "en": "Waiting for the results was a nerve-wracking ordeal for everyone in Avonlea.",
-          "zh": "等待结果对阿文莉的每个人来说都是一场折磨神经的考验。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "One evening, Diana ran across the orchard shouting, \"Anne, you've passed! You and Gilbert tied for first place in all the Island!\"",
-          "zh": "一天晚上，戴安娜穿过果园跑着喊道：“安妮，你通过了！你和吉尔伯特全岛并列第一名！”"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Green Gables erupted in celebration as Matthew and Marilla beamed with immense pride for their beloved girl.",
-          "zh": "绿山墙爆发出了庆祝，马修和马里拉为她们宝贝的女孩感到无比自豪。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 31,
       "title": "Chapter 31: Where the Brook and River Meet",
-      "chineseTitle": "第 31 章：溪流与江河汇合之处",
+      "chineseTitle": "第 31 章：少年与青春的转折点",
       "paragraphs": [
         {
-          "en": "That summer, Anne enjoyed her final weeks of childhood before departing for Charlottetown.",
-          "zh": "那个夏天，安妮在前往夏洛特敦之前享受了她童年的最后几周。"
+          "en": "Anne turned fifteen. She grew tall and graceful, her red hair darkening to a rich auburn. Marilla noticed with bittersweet sadness that the little girl had grown into a refined young woman.",
+          "zh": "安妮到了十五岁。她长高且优雅，她的红发加深为浓郁的赤褐色。玛丽拉带着苦乐参半的悲伤注意到那个小女孩已经长成了一位优雅的年轻女子。"
         },
         {
-          "en": "She spent long hours wandering through Lover's Lane, drinking in the familiar beauty of Avonlea.",
-          "zh": "她花长长的时间在情侣路漫步，饮入阿文莉熟悉的细致美丽。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Her bond with Matthew and Marilla grew deeper, filled with quiet understanding and deep affection.",
-          "zh": "她与马修和马里拉的纽带变得更深，充满了安静的理解和深切的情感。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 32,
-      "title": "Chapter 32: The Pass List Is Out",
-      "chineseTitle": "第 32 章：录取名单公布了",
+      "title": "Chapter 32: The Pass List is Out",
+      "chineseTitle": "第 32 章：放榜荣登葵因榜首",
       "paragraphs": [
         {
-          "en": "In September, Anne moved to Charlottetown to begin her studies at Queen's Academy.",
-          "zh": "九月，安妮搬到夏洛特敦开始在皇后学院学习。"
+          "en": "The entrance exam results arrived. Anne and Gilbert tied for first place in the whole island! All of Avonlea celebrated Anne's magnificent achievement.",
+          "zh": "入学考试结果到达。安妮与吉尔伯特在全岛并列第一名！阿文莉的所有人都在庆祝安妮的宏伟成就。"
         },
         {
-          "en": "Though homesick at first, she threw herself into her studies, aiming for the prestigious Avery Scholarship.",
-          "zh": "虽然起初想家，但她投身于学习中，目标是渴望得到的艾弗里奖学金。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Her intelligence and warmth earned her many new friends and the respect of her professors.",
-          "zh": "她的聪慧和温暖赢得了许多新朋友和教授们的尊重。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 33,
       "title": "Chapter 33: The Hotel Concert",
-      "chineseTitle": "第 33 章：饭店里的音乐盛会",
+      "chineseTitle": "第 33 章：白沙大饭店的惊艳朗诵",
       "paragraphs": [
         {
-          "en": "Winter at Queen's was intense as Anne worked tirelessly toward the final examinations.",
-          "zh": "皇后学院的冬天很紧张，因为安妮不知疲倦地朝最终考试努力。"
+          "en": "Anne was invited to recite at a charity concert at the White Sands Hotel. Dressed in a simple white gown, she held the audience spellbound with her emotional recitation, winning thunderous applause.",
+          "zh": "安妮被邀请在白沙大饭店的慈善音乐会上朗诵。穿着简单白长袍，她用热情的朗诵让听众听得入迷，赢得了雷鸣般的掌声。"
         },
         {
-          "en": "She maintained her academic rivalry with Gilbert, each inspiring the other to brilliant achievements.",
-          "zh": "她保持着与吉尔伯特的学术竞争，彼此激励走向辉煌的成就。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
+        },
+        {
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 34,
-      "title": "Chapter 34: A Queen’s Girl",
-      "chineseTitle": "第 34 章：皇后学院的女学生",
+      "title": "Chapter 34: A Queen's Girl",
+      "chineseTitle": "第 34 章：告别绿山墙前往葵因学院",
       "paragraphs": [
         {
-          "en": "At the commencement ceremony, the results were announced amidst great anticipation.",
-          "zh": "在毕业典礼上，结果在巨大的期待中公布了。"
+          "en": "Anne left Green Gables to begin her studies at Queen's Academy in Charlottetown. Though homesick at first, she threw herself into her studies.",
+          "zh": "安妮离开绿山墙开始她在夏洛特敦葵因学院的学习。尽管起初想家，她把全身心投入到了学习中。"
         },
         {
-          "en": "Anne Shirley won the coveted Avery Scholarship, providing four years of tuition at Redmond College!",
-          "zh": "安妮·雪莉赢得了令人垂涎的艾弗里奖学金，提供红蒙德学院四年的学费！"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Gilbert Blythe won the Prince of Wales Gold Medal for general academic excellence.",
-          "zh": "吉尔伯特·布莱斯赢得了威尔士王子金质奖章，以表彰通用的学术卓越。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
         },
         {
-          "en": "Matthew and Marilla watched from the audience, tears of joy streaming down their faces as Anne took the stage.",
-          "zh": "马修和马里拉在观众席上看着，当安妮登台时喜悦的眼泪流下双颊。"
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 35,
-      "title": "Chapter 35: The Winter at Queen’s",
-      "chineseTitle": "第 35 章：在皇后学院的冬天",
+      "title": "Chapter 35: The Winter at Queen's",
+      "chineseTitle": "第 35 章：葵因学院的寒冬拼搏",
       "paragraphs": [
         {
-          "en": "Anne returned to Green Gables for the summer, a poised, educated young woman of seventeen.",
-          "zh": "安妮返回绿山墙度过夏天，成为一位十七岁沉着、受过良好教育的年轻女子。"
+          "en": "Anne studied relentlessly for the Avery Scholarship, which offered four years of free tuition at Redmond College. Gilbert pursued the Prince of Wales Gold Medal.",
+          "zh": "安妮为了艾弗里奖学金（提供雷德蒙德学院四年免费学费）不懈学习。吉尔伯特追求威尔士亲王金牌。"
         },
         {
-          "en": "Though tall and refined, her warm heart and bright spirit remained unchanged.",
-          "zh": "虽然高大而精致，但她温暖的心和明亮的灵魂保持不变。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
+        },
+        {
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 36,
       "title": "Chapter 36: The Glory and the Dream",
-      "chineseTitle": "第 36 章：荣耀与梦想",
+      "chineseTitle": "第 36 章：荣获奖学金与毕业典礼",
       "paragraphs": [
         {
-          "en": "Tragedy struck Green Gables shortly after Anne's return when Matthew Cuthbert suffered a sudden heart attack after reading news of the bank failure.",
-          "zh": "安妮返回后不久，当马修·卡斯伯特在读到银行倒闭的消息后突发心脏病时，悲剧袭击了绿山墙。"
+          "en": "At commencement, Anne won the prestigious Avery Scholarship, while Gilbert won the Gold Medal. Matthew and Marilla watched with tears of pride.",
+          "zh": "在毕业典礼上，安妮赢得了声名赫赫的艾弗里奖学金，而吉尔伯特赢得了金牌。马修与玛丽拉带着骄傲的眼泪看着。"
         },
         {
-          "en": "Matthew passed away quietly, leaving Anne and Marilla heartbroken with grief.",
-          "zh": "马修安静地过世了，留下了心碎悲伤的安妮和马里拉。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "The whole town of Avonlea mourned the loss of the quiet, gentle man who had loved Anne so deeply.",
-          "zh": "整个阿文莉小镇都在哀悼失去了这位如此深爱安妮的安静、温和的男人。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 37,
-      "title": "Chapter 37: The Reaper Whose Name Is Death",
-      "chineseTitle": "第 37 章：名为死亡的割麦人",
+      "title": "Chapter 37: The Reaper Whose Name is Death",
+      "chineseTitle": "第 37 章：马修去世与绿山墙的哀伤",
       "paragraphs": [
         {
-          "en": "Following Matthew's death, Marilla faced the threat of losing her failing eyesight, making it impossible to manage Green Gables alone.",
-          "zh": "在马修去世后，马里拉面临着失去衰退视力的威胁，使她无法独自打理绿山墙。"
+          "en": "Shortly after Anne returned home, Matthew suffered a sudden heart attack upon reading that the Abbey Bank had failed, losing all their savings. Matthew died instantly.",
+          "zh": "安妮回家后不久，马修在看到阿贝银行破产失去所有存款的报道后突发心脏病。马修当场去世。"
         },
         {
-          "en": "To save Green Gables, Anne selflessly gave up her Avery Scholarship to stay home and care for Marilla.",
-          "zh": "为了挽救绿山墙，安妮无私地放弃了她的艾弗里奖学金，留在家中照顾马里拉。"
+          "en": "Anne and Marilla wept in grief, comforting each other in their sudden solitude. The entire community of Avonlea mourned the loss of the kind, quiet man who had touched so many lives with his silent goodness.",
+          "zh": "安妮和玛丽拉在悲伤中哭泣，在突如其来的孤独中互相安慰。阿文莉的整个社区都在哀悼这位和蔼、安静的男人的逝去，他曾用他默默的善意触动了那么多人的生活。"
         },
         {
-          "en": "Learning of her sacrifice, Gilbert Blythe generously gave up his appointment as Avonlea school teacher so Anne could teach close to home.",
-          "zh": "了解到她的牺牲，吉尔伯特·布莱斯慷慨地放弃了他作为阿文莉学校教师的任命，以便安妮可以在家附近教书。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
+        },
+        {
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     },
     {
       "unitIndex": 38,
       "title": "Chapter 38: The Bend in the Road",
-      "chineseTitle": "第 38 章：路途上的弯道",
+      "chineseTitle": "第 38 章：人生的转折点与吉尔伯特的让步（全本终极结局）",
       "paragraphs": [
         {
-          "en": "When Anne met Gilbert on the road near the orchard, she thanked him with deep gratitude for his generous sacrifice.",
-          "zh": "当安妮在果园附近的公路上遇到吉尔伯特时，她以深切的感激感谢他的慷慨牺牲。"
+          "en": "Learning that Marilla was losing her eyesight and might have to sell Green Gables, Anne selflessly gave up her Avery Scholarship to stay home and teach at the local school. Upon hearing this, Gilbert Blythe gave up his appointed post at Avonlea school so Anne could teach close to home.",
+          "zh": "得知玛丽拉正在失去视力并可能不得不卖掉绿山墙，安妮无私地放弃了她的艾弗里奖学金留在家中并在当地学校教书。听到这个，吉尔伯特·布莱斯放弃了他被委任的阿文莉学校职位，以便安妮可以在离家近的地方教书。"
         },
         {
-          "en": "Gilbert smiled warmly, offering his hand in true, lasting friendship.",
-          "zh": "吉尔伯特温和地微笑，在真实、持久的友谊中伸出了他的手。"
+          "en": "Meeting Gilbert at the gate, Anne finally forgave him, and they shook hands as true friends. Looking out over the quiet landscape of Green Gables, Anne felt a deep peace in her heart, knowing that 'God's in his heaven, all's right with the world!'",
+          "zh": "在门口遇到吉尔伯特，安妮终于原谅了他，他们作为真正的朋友握手。展望着绿山墙平静的画卷，安妮在心中感受到了深深的和平，知道“上帝在祂的天堂里，世间一切安好！”"
         },
         {
-          "en": "\"We were born to be friends, Anne,\" he said softly.",
-          "zh": "“我们生来就是做朋友的，安妮，”他轻声说。"
+          "en": "The sun dipped low over Green Gables, casting long golden shadows across the orchard. Anne stood by the window of the gable room, her heart swelling with poetic thoughts as she watched the evening star twinkle above the dark pine woods of the Haunted Wood.",
+          "zh": "太阳在绿山墙上方渐渐西沉，在果园里投下漫长的金色影子。安妮站在山墙房间的窗前，当看着晚星在鬼怪森林黑暗的松树林上方闪烁时，她的心中充盈着诗意的思想。"
         },
         {
-          "en": "Anne took his hand happily, knowing that a wonderful new chapter of their lives was beginning.",
-          "zh": "安妮快乐地握住他的手，知道她们生活的一个美好的新章节正在开始。"
+          "en": "'Isn't it splendid to think of all the things there are to find out about?' Anne mused aloud to Marilla. 'It just makes me feel glad to be alive—it's such an interesting world. It wouldn't be half so interesting if we knew everything about everything, would it?'",
+          "zh": "'想到世上有那么多有待去探寻的事物，难道不是很棒吗？'安妮对玛丽拉大声沉思道。'那只会让我为活着感到高兴——这是一个多么有趣的世界。如果我们对万事万物都无所不知，那世界就不会有哪怕一半有趣了，难道不是吗？'"
+        },
+        {
+          "en": "Marilla looked up from her knitting, a rare, soft smile playing about her stern lips. Though she would never admit it openly, the quiet rooms of Green Gables had become alive with warmth and laughter ever since the red-haired orphan girl had arrived.",
+          "zh": "玛丽拉从她的编织中抬头看去，一抹罕见、温柔的微笑在她严厉的嘴唇边游走。尽管她永远不会公开承认，但自从这个红发孤儿女孩到达以来，绿山墙安静的房间里已经变得充盈着温暖与欢笑。"
         }
       ]
     }

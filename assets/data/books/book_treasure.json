@@ -4,144 +4,165 @@
   "chineseTitle": "金银岛",
   "author": "Robert Louis Stevenson",
   "coverUrl": "assets/images/book_treasure.png",
-  "description": "《金银岛》是苏格兰作家罗伯特·路易斯·史蒂文森（Robert Louis Stevenson）于 1883 年创作的海盗冒险小说天花板。少年吉姆·霍金斯（Jim Hawkins）在自家客栈老海盗的遗物中意外发现了一张记载着神秘海盗船长弗林特宝藏的藏宝图。吉姆与乡绅特里劳尼、李夫西医生组建探险队，乘坐“伊斯帕尼奥拉号”远航前往金银岛。然而，表面温和的双面海盗头目厨子“独脚厨子”高个子约翰·西尔弗在船上发动了惊天叛乱。全书情节扣人心弦，充满了海洋冒险、悬疑智斗与人性抉择，是体验原汁原味英伦文学魅力的绝佳作品。",
+  "description": "《金银岛》是苏格兰伟大文学家罗伯特·路易斯·史蒂文森于 1883 年出版的航海冒险文学至高名篇。故事讲述了少年吉姆·霍金斯在自家客栈里偶然从死去的老水手比尔身上得到了一张藏宝图。在乡绅特里劳尼和李夫西医生的组织下，他们乘坐“伊斯帕尼奥拉号”前往遥远的金银岛寻宝。然而船上由独脚厨师长朗·约翰·西尔弗率领的叛变海盗发动了残酷叛乱。吉姆凭藉机智与勇敢，在荒岛囚徒本·甘恩的帮助下夺回船只、寻获宝藏，展开了一场惊心动魄的航海传奇。",
   "category": "经典名著",
-  "difficulty": "中级难度",
-  "totalUnits": 5,
-  "wordCount": 21000,
-  "readerCount": "112.3万人在读",
-  "targetVocab": "2000-4500词",
-  "tagLabel": "冒险小说",
-  "coverBadge": "精选 · 航海冒险",
+  "difficulty": "中/高级难度",
+  "totalUnits": 8,
+  "wordCount": 35000,
+  "readerCount": "172.4万人在读",
+  "targetVocab": "1800-4800词",
+  "tagLabel": "航海冒险",
+  "coverBadge": "精读 · 海盗名篇",
   "chapters": [
     {
       "unitIndex": 1,
-      "title": "Chapter 1: The Old Sea-dog at the Admiral Benbow",
-      "chineseTitle": "第 1 章：海军本鲍客栈的老海狗",
+      "title": "Chapter 1: The Old Sea-Dog at the Admiral Benbow",
+      "chineseTitle": "第 1 章：本博将军客栈的老水手",
       "paragraphs": [
         {
-          "en": "Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17__ and go back to the time when my father kept the Admiral Benbow inn and the brown seaman with the sabre cut took up his lodging under our roof.",
-          "zh": "由于乡绅特里劳尼、李夫西医生以及其他绅士要求我记下关于金银岛的全部细节，从头到尾，除了岛屿的方位之外什么都不保留，那只是因为至今仍有未挖出的宝藏，我在公元 17__ 年拿起笔，回到我父亲开海军本鲍客栈的时候，那个带有刀疤的棕色水手在我们的屋檐下住了下来。"
+          "en": "Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17— and go back to the time when my father kept the Admiral Benbow inn and the brown old seaman with the sabre cut first took up his lodging under our roof.",
+          "zh": "乡绅特里劳尼、李夫西医生以及这些绅士中的其余人要求我写下关于金银岛的全部细节，从头到尾，除了岛屿的方位外不保留任何东西，而那仅仅是因为那里仍有尚未挖出的宝藏，我在主后 17— 年拿起笔，回到我父亲开本博将军客栈、带佩刀刀疤的棕色老海员第一次在我们屋檐下住宿的时候。"
         },
         {
-          "en": "I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow—a tall, strong, heavy, nut-brown man, his pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white.",
-          "zh": "我至今还记得他，就像昨天一样，当他沉重地走到客栈门口时，他的水手木箱用一辆手推车跟在后面——一个高大、强壮、沉重、栗色皮肤的男人，他的辫子垂在他污秽的蓝色外衣的肩膀上，他的手破旧有疤，指甲黑而破损，一条白色的刀疤贯穿了一侧脸颊。"
+          "en": "I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow; a tall, strong, heavy, nut-brown man, his tarry pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white. I remember him looking round the cover and whistling to himself as he did so, and then breaking out in that old sea-song that he sang so often afterwards: 'Fifteen men on the dead man's chest—Yo-ho-ho, and a bottle of rum!'",
+          "zh": "我记得他仿佛就在昨天，当他蹒跚走到客栈门口，他的水手宝箱用手推车跟在他身后；一个高大、强壮、沉重、坚果棕色的男人，他涂着焦油的小辫子落在他脏兮兮蓝外套的肩膀上，他的双手破旧且带着伤疤，留着黑而断裂的指纹，一条佩刀刀疤横过一面脸颊，呈现出肮脏、惨白的颜色。我记得他环顾四周并自言自语吹着口哨，接着爆发出他后来经常唱的那首老海海歌：“十五个人争夺死人箱——哟-呵-呵，抽一口朗姆酒！”"
         },
         {
-          "en": "I remember him looking round the cover and whistling to himself as he did so, and then breaking out into that old sea-song that he sang so often afterwards:",
-          "zh": "我记得他环顾四周，边看边自言自语地吹口哨，然后破口唱起他后来经常唱的那首老海歌："
-        },
-        {
-          "en": "\"Fifteen men on the dead man's chest—",
-          "zh": "“十五个人争夺死人的箱子—"
-        },
-        {
-          "en": "Yo-ho-ho, and a bottle of rum!\"",
-          "zh": "哟-荷-荷，抽干一瓶朗姆酒！”"
-        },
-        {
-          "en": "in the high, old tottering voice that seemed to have been tuned and broken at the capstan bars.",
-          "zh": "那高亢、古老摇晃的声音似乎在绞盘杠杆上被定调和打碎过。"
+          "en": "He called himself 'Captain' Bill, and spent his days wandering the cliffs with a brass telescope, searching the sea horizon for a one-legged seafaring man. He warned me that if I kept my 'weather-eye open for a seafaring man with one leg' and let him know the moment he appeared, he would pay me a silver fourpenny on the first of every month.",
+          "zh": "他自称“比尔船长”，把日子花在带着黄铜望远镜在悬崖上漫步，在海地平线上寻找一位独脚航海人。他警告我如果我保持“留心注意一位长着一只脚的航海人”并在他出现的时刻告知他，他会在每个月的第一天给我支付一枚四便士银币。"
         }
       ]
     },
     {
       "unitIndex": 2,
-      "title": "Chapter 2: Black Dog Appears and Disappears",
-      "chineseTitle": "第 2 章：黑狗的现身与消失",
+      "title": "Chapter 2: The Black Spot and the Sea-Chest",
+      "chineseTitle": "第 2 章：黑点警告与海员宝箱",
       "paragraphs": [
         {
-          "en": "It was not very long after this that there occurred the first of the mysterious events that rid us at last of the captain, though not, as you will see, of his affairs. It was a bitter cold winter, with long, hard frosts and gales, and it was plain from the first that my poor father was little likely to see the spring. He sank daily, and my mother and I had all the inn upon our hands and were kept very busy.",
-          "zh": "在此之后不久，发生了第一起神秘事件，终于让我们摆脱了船长，虽然正如你将看到的，并没有摆脱他的事务。那是一个严寒的冬天，伴随着漫长、剧烈的严霜和大风，从一开始就很明显，我可怜的父亲很难看到春天了。他每天都在衰沉，我和母亲承担了客栈的所有事情，非常忙碌。"
+          "en": "Trouble arrived in January. A pale, sinister pirate named Black Dog visited the inn, leading to a violent sword fight with Captain Bill in the parlor. Black Dog fled bleeding, but the shock caused Captain Bill to suffer a severe stroke. Dr. Livesey bled the Captain and warned him that another drop of rum would kill him.",
+          "zh": "麻烦在元月到达。一位名叫黑狗的苍白阴险海盗拜访了客栈，导致在客厅里与比尔船长爆发了一场剧烈的击剑打斗。黑狗流着血逃跑，但打击导致比尔船长遭受了严重的中风。李夫西医生给船长放血，并警告他再喝一滴朗姆酒就会要了他的命。"
         },
         {
-          "en": "It was a cold, frosty morning, the mist clinging to the cliff and the bay, when the captain got up early and set off down the beach, his cutlass swinging under the broad skirts of his old blue coat, his brass telescope under his arm, his hat cocked back upon his head.",
-          "zh": "那是一个寒冷、结霜的早晨，雾气紧贴着悬崖和海湾，船长很早就起床下海滩去了，他的短剑在他旧蓝外衣的大下摆下摆动，他的黄铜望远镜夹在胳膊下，他的帽子扣在头后面。"
+          "en": "A few days later, a blind beggar named Pew arrived tapping his stick on the road. Pew forced his way into the room, seized Bill's hand, and pressed a small round piece of blackened paper into his palm—'The Black Spot,' the pirates' summons of death! The moment Pew departed, Captain Bill collapsed to the floor, killed instantly by a second stroke.",
+          "zh": "几天后，一位名叫皮尤的盲人乞丐在路上敲打着拐杖到达了。皮尤强行进入房间，抓住了比尔的手，并把一小块黑色纸片按进了他的掌心——“黑点”（海盗们的死亡召唤令）！皮尤离开的时刻，比尔船长倒在地板上，被第二次中风当场要了命。"
         },
         {
-          "en": "I remember his breath hanging in the air like smoke as he strode off, and the last sound I heard of him was a loud snort of indignation as he turned the big rock.",
-          "zh": "我记得当他大步走开时，他的呼吸像烟雾一样悬挂在空气中，我听到的关于他的最后一个声音是他转过大石头时发出的愤怒的响亮哼声。"
+          "en": "Fearing the pirates' return, my mother and I unlocked the Captain's heavy sea-chest. Inside, beneath clothes and pistols, we found a sealed oilskin packet. As we heard the blind beggar's stick tapping outside, we fled with the packet, hiding under a bridge as Pew and his pirate gang smashed the inn searching for the paper. A troop of revenue officers arrived on horseback, trampling Pew to death and driving the pirates away.",
+          "zh": "害怕海盗们的返回，我和母亲打开了船长沉重的海员宝箱。在里面，在衣服与手枪下方，我们发现了一个密封的油布包。当我们听到盲人乞丐的拐杖在外面敲打时，我们带着包逃跑，躲在一座桥下，皮尤和他的海盗帮砸毁了客栈寻找纸张。一队税务官骑马赶到，把皮尤踩死并赶走了海盗。"
         },
         {
-          "en": "Well, mother was up with the captain; and I was laying the breakfast-table against the captain's return when the door opened, and a man stepped in whom I had never seen before.",
-          "zh": "嗯，母亲和船长一起起来了；当门打开时，我正摆好早餐桌等船长回来，一个我以前从未见过的男人走了进来。"
+          "en": "I took the oilskin packet to Squire Trelawney and Dr. Livesey. Unsealing it, we found a map of an island in the West Indies marked with three red crosses and the words: 'Treasure here—Flint.' Overjoyed, the Squire resolved to fit out a ship in Bristol to seek the buried treasure.",
+          "zh": "我把油布包交给了乡绅特里劳尼和李夫西医生。解封它，我们发现了一张西印度群岛岛屿的地图，标着三个红十字和字样：“宝藏在此——弗林特”。喜出望外，乡绅决定在布里斯托尔配备一艘船去寻找埋藏的宝藏。"
         }
       ]
     },
     {
       "unitIndex": 3,
-      "title": "Chapter 3: The Black Spot",
-      "chineseTitle": "第 3 章：致死黑点预警符",
+      "title": "Chapter 3: Long John Silver and the Hispaniola",
+      "chineseTitle": "第 3 章：独脚水手西尔弗与伊斯帕尼奥拉号",
       "paragraphs": [
         {
-          "en": "About noon I stopped at the captain's door with some cooling drinks and medicines. He was lying very much as we had left him, only a little higher on his pillows, and he seemed both weak and excited.",
-          "zh": "大约在中午，我端着一些清凉饮料和药物停在船长的门口。他躺在那里，非常像我们离开他时的样子，只是在枕头上稍微高了一点，他看起来既虚弱又兴奋。"
+          "en": "We traveled to Bristol, where Squire Trelawney had purchased a fine schooner named the Hispaniola. The Squire had hired a one-legged sea-cook named Long John Silver, who kept a tavern called the Spy-Glass. Silver was a tall, intelligent man with a jovial face and a parrot named Captain Flint that constantly screamed, 'Pieces of eight! Pieces of eight!'",
+          "zh": "我们前往布里斯托尔，乡绅特里劳尼在那里购买了一艘名为“伊斯帕尼奥拉号”的优秀纵帆船。乡绅雇佣了一位名叫朗·约翰·西尔弗的独脚海船厨师，他开着一家叫望远镜的酒馆。西尔弗是一个高大、聪明的男人，带着欢快的脸庞和一只叫弗林特船长的鹦鹉，鹦鹉不断尖叫着：“八里亚尔！八里亚尔！”"
         },
         {
-          "en": "\"Jim,\" he said, \"you're the only one here that's worth anything; and you know I've been always good to you. Never a dime I didn't give you for keeping your eyes peeled for that seaman with one leg. Now, Jim, you see how I'm down, and left helpless by all these mates.\"",
-          "zh": "“吉姆，”他说，“你是这里唯一有价值的人；你知道我一直对你很好。为了让你留心那个独腿水手，我给你的每一分钱都没有少过。现在，吉姆，你看到我是怎么倒下的，被所有这些同伴留下来无依无靠。”"
+          "en": "Silver helped the Squire recruit the ship's crew. Captain Smollett, a stern, experienced officer, expressed deep concern to Dr. Livesey before we sailed: he disliked the crew, hated that the secret treasure map was common knowledge among the sailors, and mistrusted Silver's influence over the men. But the Squire brushed aside the Captain's warnings.",
+          "zh": "西尔弗帮助乡绅招募了船上的船员。斯莫列特船长（一位严厉有经验的官员）在我们航行前向李夫西医生表达了深深的担忧：他不喜船员，讨厌秘密宝藏地图在水手中是共同常识，并且不信任西尔弗对男人们的影响。但乡绅甩开了船长的警告。"
         },
         {
-          "en": "He looked up at me with a desperate, frightened expression. \"They're after my sea-chest, Jim! They'll pass me the black spot, if they can't get me any other way!\"",
-          "zh": "他带着绝望、恐惧的表情看着我。“他们是奔着我的水手箱子来的，吉姆！如果他们没有其他办法得到我，他们会给我递黑点！”"
-        },
-        {
-          "en": "\"What is the black spot, Captain?\" I asked, leaning over his bed.",
-          "zh": "“什么是黑点，船长？”我俯身在看他的床上问。"
-        },
-        {
-          "en": "\"That's a summons, mate. I'll tell you if they give me the black spot, it's to tell me they're coming to take my chest.\"",
-          "zh": "“那是召唤，伙计。如果他们给我黑点，我会告诉你的，那是告诉我他们要来拿我的箱子。”"
+          "en": "The Hispaniola set sail across the Atlantic. Silver proved to be an efficient cook, maintaining great discipline and winning the affection of young Jim Hawkins. Yet behind his cheerful smile, Silver was secretly organizing a bloodthirsty mutiny among the crew members he had surreptitiously recruited.",
+          "zh": "伊斯帕尼奥拉号起航横渡大西洋。西尔弗被证明是一位高效的厨师，保持着极大的纪律并赢得了年轻吉姆·霍金斯的喜欢。然而在他欢快的微笑后面，西尔弗正在秘密地在他暗中招募的船员中间组织着一场嗜血的叛乱。"
         }
       ]
     },
     {
       "unitIndex": 4,
-      "title": "Chapter 4: The Sea-chest",
-      "chineseTitle": "第 4 章：老海盗的水手木箱",
+      "title": "Chapter 4: The Apple Barrel and the Mutiny Plot",
+      "chineseTitle": "第 4 章：苹果桶里的阴谋",
       "paragraphs": [
         {
-          "en": "I lost no time, of course, in telling my mother all that I knew, and perhaps should have told her long before. We saw ourselves in a situation of extreme difficulty and danger. Some of the man's money—if he had any—was certainly due to us; but it was not likely that the captain's shipmates, above all the two Johnny Raws I had seen, would be inclined to part with their booty.",
-          "zh": "当然，我毫不浪费时间地把我所知道的一切告诉了我母亲，也许很久以前就该告诉她了。我们看到自己处于极度困难和危险的境地。那个人的某些钱——如果他有的话——肯定是我们应得的；但船长的船员们，尤其是见过的两个笨蛋，不大可能愿意分出他们的战利品。"
+          "en": "On the evening before we sighted land, I climbed into an empty apple barrel on deck to fetch an apple. As I lay inside, I heard heavy footsteps, and Long John Silver sat down against the barrel, speaking in a low voice with several crew members.",
+          "zh": "在我们看见陆地的那个晚上之前，我爬上了甲板上的一个空苹果桶去拿苹果。当我在里面躺着时，我听到了沉重的脚步声，朗·约翰·西尔弗靠着桶坐了下来，用低沉的声音与几个船员交谈着。"
         },
         {
-          "en": "To take the key and open the chest was our only course, and my mother was determined to have her rights.",
-          "zh": "拿着钥匙打开箱子是我们唯一的选择，我母亲决心获得她的权利。"
+          "en": "Overhearing their conversation, my blood ran cold! Silver revealed that he had been the quartermaster of the legendary pirate Captain Flint, and that most of the crew were Flint's old pirate hands. They planned to wait until Captain Smollett navigated the ship to Treasure Island and loaded the treasure, after which they would slaughter the Captain, Squire, Doctor, and all loyal men!",
+          "zh": "无意中听到他们的交谈，我的血液变凉了！西尔弗揭露了他曾是传奇海盗弗林特船长的军需官，而且大部分船员都是弗林特的老海盗手下。他们计划等待直到斯莫列特船长驾驶船只到达金银岛并装载宝藏，之后他们就会屠杀船长、乡绅、医生以及所有忠诚的男人！"
         },
         {
-          "en": "We locked the door of the inn and ran by the moonlit path to the neighboring village to get help. But no one would return with us to defend the Admiral Benbow; the very name of Captain Flint struck terror into their hearts.",
-          "zh": "我们锁上客栈的门，顺着月光照射的小路跑到邻近的村庄寻求帮助。但没有人愿意和我们一起回来保卫海军本鲍；弗林特船长的名字在他们心里引起了恐惧。"
-        },
-        {
-          "en": "So my mother and I had to return alone to the inn, with only a lantern and a key that we took from around the dead captain's neck.",
-          "zh": "所以我和母亲不得不独自返回客栈，只带着一盏灯和从死船长脖子上取下来的钥匙。"
+          "en": "Just as Silver reached into the barrel for an apple, the lookout shouted: 'Land ho!' In the excitement, I escaped unnoticed and reported the horrific plot to Captain Smollett, Dr. Livesey, and the Squire. Counting our forces, we found only seven loyal men against nineteen mutineers.",
+          "zh": "正当西德尼伸进桶里拿苹果时，瞭望员喊道：“看到陆地了！”在兴奋中，我在未被察觉的情况下逃脱，并向斯莫列特船长、李夫西医生和乡绅报告了这个可怕的阴谋。计算我们的力量，我们发现面对十九个叛变者只有七个忠诚的男人。"
         }
       ]
     },
     {
       "unitIndex": 5,
-      "title": "Chapter 5: The Map of Treasure Island",
-      "chineseTitle": "第 5 章：金银岛神秘藏宝图",
+      "title": "Chapter 5: Ben Gunn, the Marooned Pirate",
+      "chineseTitle": "第 5 章：荒岛囚徒本·甘恩",
       "paragraphs": [
         {
-          "en": "When we opened the heavy wooden chest, we found inside a suit of very good clothes, never worn; a compass, a pair of silver pistols, a bar of melted silver, a Spanish watch, and a canvas bag tied tightly with twine.",
-          "zh": "当打开沉重的木箱时，在里面找到了一套非常好的衣服，从未穿过；一个指南针、一对银手枪、一块熔化的银块、一块西班牙怀表，和一个用麻绳紧紧系着的帆布袋。"
+          "en": "When the Hispaniola anchored in the island bay, Silver allowed his men ashore to cool their tempers. I slipped into one of the boats and escaped into the dense island jungle alone. Exploring the island, I witnessed Silver coldbloodily stab a loyal sailor named Tom for refusing to join the mutiny.",
+          "zh": "当伊斯帕尼奥拉号锚泊在岛屿海湾时，西尔弗允许他的男人们上岸去冷却他们的脾气。我溜进了一条小船并单独逃进了密集的岛屿丛林。探索岛屿，我目睹了西尔弗冷血地刺死了一名名叫汤姆的忠诚水手，因为他拒绝加入叛乱。"
         },
         {
-          "en": "My mother began counting out the gold coins to pay our debt, refusing to take a single penny more than was due to her.",
-          "zh": "我母亲开始数出金币来还我们的债，拒绝多拿应得的一分钱。"
+          "en": "Terrified, I fled deeper into the woods, where I suddenly encountered a wild, ragged man dressed in goat skins, with pale skin and crazy eyes. He threw himself on his knees, weeping: 'I'm poor Ben Gunn, I am; and I haven't spoke with a Christian these three years!'",
+          "zh": "惊恐万状，我逃进了树林深处，在那里我突然遇到了一位穿着山羊皮的野生破烂男人，有着苍白的皮肤与疯狂的双眼。他扑倒在膝盖上，哭着：“我是可怜的本·甘恩，我是；三年来我没有和一个基督教徒说过话了！”"
         },
         {
-          "en": "Suddenly, we heard the tapping of a blind man's stick on the frozen road outside, followed by a shrill whistle echoing across the dark bay!",
-          "zh": "突然，听到了外面冻硬的路上盲人拐杖的敲击声，紧接着是一声尖锐的哨声在黑暗的海湾上空回荡！"
+          "en": "Ben Gunn revealed that he had been one of Flint's pirates when Flint buried the treasure. Three years ago, another ship had marooned Ben Gunn on the island alone. Ben Gunn told me he had spent those three solitary years digging, and hinted that he had found something very precious. He promised to help Captain Smollett in exchange for passage home and a share of money.",
+          "zh": "本·甘恩揭示当弗林特埋藏宝藏时他曾是弗林特的海盗之一。三年前，另一艘船把本·甘恩单独抛弃在了岛上。本·甘恩告诉我他把那三个孤独的年份花在了挖掘上，并暗示他发现了某种非常宝贵的东西。他承诺帮助斯莫列特船长以换取带他回家以及一份资金。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Battle at the Stockade",
+      "chineseTitle": "第 6 章：木栅栏围寨攻防战",
+      "paragraphs": [
+        {
+          "en": "Meanwhile, Dr. Livesey and Captain Smollett had abandoned the ship and occupied a strong log stockade built on a hill by Flint's men. I joined them inside the fort, and we raised the Union Jack above the logs. Silver arrived under a white flag of truce, offering to spare our lives if we handed over Flint's treasure map. Captain Smollett refused with scorn, and Silver departed in fury.",
+          "zh": "与此同时，李夫西医生和斯莫列特船长已经弃船，占领了弗林特手下在山上建造的坚固木栅栏围寨。我加入他们在堡垒内部，我们在木头上方升起了联合杰克旗。西尔弗在一面白色的休战旗帜下到达，提出如果我们交出弗林特的宝藏地图就饶我们一命。斯莫列特船长带着蔑视拒绝了，西尔弗在愤怒中离开。"
         },
         {
-          "en": "\"Take the bundle and run!\" my mother gasped, seizing the oilskin packet from the bottom of the chest.",
-          "zh": "“拿着包裹跑！”我母亲喘着气说，从箱底抓起油皮包裹。"
+          "en": "An hour later, the pirates launched a fierce assault on the stockade! Swarming over the palisades, they fired their muskets and fought hand-to-hand with cutlasses. We fought back bravely, killing five pirates, but Captain Smollett was wounded, and two of our loyal men were slain.",
+          "zh": "一个小时后，海盗们对木栅栏围寨发起了凶猛的攻击！涌过栅栏，他们开火火枪并用弯刀进行肉搏打斗。我们勇敢地反击，打死五个海盗，但斯莫列特船长受伤了，而我们两个忠诚的男人被杀害了。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: Jim Recaptures the Hispaniola",
+      "chineseTitle": "第 7 章：吉姆独立夺回船只",
+      "paragraphs": [
+        {
+          "en": "While the wounded Captain rested, I slipped out of the stockade with a daring plan. Using a small skin coracle built by Ben Gunn, I rowed out to the Hispaniola in the pitch dark. I cut the ship's anchor cable, setting the schooner adrift with the current.",
+          "zh": "当受伤的船长休息时，我带着一个大胆的计划溜出了木栅栏围寨。使用本·甘恩建造的小皮艇，我在漆黑一片中划向了伊斯帕尼奥拉号。我砍断了船只的锚缆，使纵帆船随水流漂流。"
         },
         {
-          "en": "We fled under the arch of the bridge just as the gang of pirates, led by Blind Pew, burst into the inn! That oilskin packet contained the famous chart of Treasure Island.",
-          "zh": "就在以盲人皮尤为首的一帮海盗冲进客栈时，逃到了桥拱下！那个油皮包裹里装的就是金银岛的著名海图。"
+          "en": "Climbing aboard the next morning, I found only two drunken pirates on deck: O'Brien, who lay dead, and Israel Hands, who was severely wounded. Hands agreed to help me beach the ship in a safe inlet on the north of the island in exchange for food and bandage.",
+          "zh": "第二天早上爬上船，我发现甲板上只有两个酗酒的海盗：奥布赖恩（躺着死去）以及伊斯雷尔·汉兹（受了重伤）。汉兹同意帮助我在岛屿北部安全的小港湾把船靠岸，以换取食物与绷带。"
+        },
+        {
+          "en": "However, as the ship reached the inlet, Hands treacherous pulled a dagger and attacked me! I scrambled up the mast into the cross-trees, loading my pistols. Hands threw his dagger, pinning my shoulder to the mast. I fired both pistols, killing Hands, and he fell into the water below. I secured the Hispaniola safely in the mud.",
+          "zh": "然而，当船到达小港湾时，汉兹奸诈地拔出一把匕首攻击了我！我爬上桅杆进入横木，装填着我的手枪。汉兹扔出他的匕首，把我的肩膀钉在了桅杆上。我开火了两支手枪，打死了汉兹，他倒进了下面的水里。我在泥里安全地固定了伊斯帕尼奥拉号。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Treasure Found and Homebound",
+      "chineseTitle": "第 8 章：宝藏出土与重返家园（终极结局）",
+      "paragraphs": [
+        {
+          "en": "Returning to the stockade at night, I was shocked to find it occupied by Silver and five surviving pirates! Silver protected me from his mutinous men, revealing that Dr. Livesey had given him the stockade and the treasure map.",
+          "zh": "夜晚回到木栅栏围寨，我吃惊地发现它被西尔弗和五个幸存的海盗占领着！西尔弗保护着我免受他叛变男人们的伤害，揭示李夫西医生已经把木栅栏围寨和宝藏地图给了他。"
+        },
+        {
+          "en": "The next day, Silver led the pirates to the treasure site using Flint's map. But when they reached the tall tree marked on the map, they found a giant hole—the treasure had already been dug up years ago! The enraged pirates turned on Silver, but Dr. Livesey and Ben Gunn sprang from the bushes with muskets, scattering the mutineers.",
+          "zh": "第二天，西尔弗使用弗林特的地图引导海盗们前往宝藏地点。但当他们到达地图上标着的高树时，他们发现了一个巨大的坑——宝藏几年前就已经被挖出来了！被激怒的海盗们冲向西尔弗，但李夫西医生和本·甘恩带着火枪从灌木丛里跳了出来，赶散了叛变者。"
+        },
+        {
+          "en": "Ben Gunn revealed that he had found the gold three years earlier and carried it all to his cave! We spent days loading seven hundred thousand pounds of gold coins onto the Hispaniola. Leaving the three surviving pirates marooned on the island, we set sail for England. In a Caribbean port, Silver stole a sack of gold and escaped into the night. The rest of us returned safely home to Bristol, wealthy and peaceful, though the sound of Captain Flint's parrot screaming 'Pieces of eight!' still haunted my dreams.",
+          "zh": "本·甘恩揭示他三年前就发现了黄金，并把它们全部搬到了他的洞穴里！我们花了几天时间把七十万镑金币装上了伊斯帕尼奥拉号。留下三个幸存的海盗抛弃在岛上，我们起航前往英国。在加勒比港口，西尔弗偷了一袋黄金并在黑夜中逃跑。我们其余的人安全回到布里斯托尔家乡，富有而和平，尽管弗林特船长鹦鹉尖叫着“八里亚尔！”的声音依然萦绕在我的梦中。"
         }
       ]
     }

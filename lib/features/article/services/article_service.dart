@@ -130,6 +130,14 @@ class ArticleService {
     }
   }
 
+  Future<void> markArticleAsRead(String articleId, {bool isRead = true}) async {
+    try {
+      await _database.markArticleAsRead(articleId, isRead: isRead);
+    } catch (e) {
+      // Ignore database write errors in fallback mode
+    }
+  }
+
   Future<void> recordReading(int minutes) async {
     await _storage.updateProgress('minutes', minutes);
     await _storage.updateStreak();
@@ -138,6 +146,7 @@ class ArticleService {
   Future<void> recordReadingWithId(String articleId, int minutes) async {
     try {
       await _database.addReadingHistory(articleId, minutes);
+      await _database.markArticleAsRead(articleId, isRead: true);
     } catch (e) {
       // Ignore database history write errors in fallback mode
     }

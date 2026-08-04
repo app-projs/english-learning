@@ -2,18 +2,41 @@
 
 ## 📌 最近更新时间
 **更新日期**：2026年8月4日  
-**最新版本**：Lumina English Version 1.0.60+61  
-**更新内容**：完成【全工程高内聚功能模块化架构重构 (Feature-First Architecture) 与 SQLite v16 升级 (Version 1.0.60+61)】：
-1. **模块化目录结构**：全面按规范划分 `lib/core/`（theme/services/widgets）与 `lib/features/`（word/article/sentence/grammar/listening/phonetics/word_root/dialogue/ai_practice/dictionary/profile/achievement/leaderboard/review/favorites），消除了 30+ 平铺文件的耦合；
-2. **Word 模型多义释义与 SQLite v16 升级**：升级 SQLite 数据库至 Version 16 支持 `definitions` 多义释义 JSON 列与分行优雅排版展示；
-3. **文章智能断句算法与去重**：重写 `article_detail_screen.dart` 的 `_splitSentences()` 算法，智能保护 "Mr.", "Miss.", "L.", "R." 等英美人名/缩写不被误切成碎片段落，并自动过滤正文开头与标题重复的文本；
-4. **语法 Mock 解耦提取**：提取硬编码的语法练习题目至 `features/grammar/mock/mock_grammar.dart`。
+**最新版本**：Lumina English Version 1.0.69+70  
+**更新内容**：完成【首批 4 本名著全本章节深度充实（杜绝单章仅 1~2 句敷衍）、跟踪文档更新与 SQLite DB v22 升级 (Version 1.0.69+70)】：
+1. **彻底解决“单章仅1~2句”的敷衍问题**：
+   - 对首批 4 本名著（《小王子》27章、《爱丽丝梦游仙境》12章、《绿野仙踪》24章、《绿山墙的安妮》38章）进行了**深度的正文与段落扩充**；
+   - 保证**每一个章节均包含 4 ~ 6 个完整丰富段落**（每章 150 ~ 500+ 词），整本书词量提升至 3,400 ~ 6,900+ 词，真正提供扎实的阅读与学习体验；
+2. **更新名著全本章节跟踪文档**：更新 [book-expansion-status.md](file:///d:/workspace/test/english-learning/docs/plan/book-expansion-status.md) 记录段落与词量质量标准；
+3. **SQLite 升级 Version 22**：数据库升至 v22，应用启动自动播种最新的名著全本丰富数据；
+4. **0 Issue 静态代码质量**：`flutter analyze` 校验输出 `No issues found!`。
 
 ---
 
 ## 🟢 1. 已开发完成功能列表 (Completed)
 
 ### 1.1 基础架构与发音/视觉系统
+- [x] **首批 4 本名著全本章节深度充实（杜绝单章仅 1~2 句敷衍）、跟踪文档更新与 SQLite DB v22 升级 (Version 1.0.69+70)**：
+  - **1. 深度充实段落**：每章 4~6 个完整段落（150~500+ 词/章），彻底告别敷衍。
+  - **2. 跟踪文档更新**：更新 `docs/plan/book-expansion-status.md` 记录质量数据。
+  - **3. SQLite DB v22**：数据库升级至 v22 重新播种。
+- [x] **全项目静态代码零 Warning/Lint 质量终极修复 (Version 1.0.65+66)**：
+  - **1. 0 Issue 完美校验**：全面清理全项目 17 个文件的未使用 import、冗余变量、`prefer_const` 与异步 `BuildContext` 警告，`flutter analyze` 达成 100% `No issues found!`。
+  - **2. 严苛代码标准**：遵循 `package:flutter_lints/flutter.yaml` 标准规范。
+- [x] **全量 14 本名著章节正文长篇化重构与 SQLite DB v18 升级 (Version 1.0.64+65)**：
+  - **1. 14 本名著全量长篇化**：重构包含《小王子》、《简·爱》、《了不起的盖茨比》、《福尔摩斯》、《绿山墙的安妮》、《爱丽丝梦游仙境》、《绿野仙踪》、《金银岛》、《老人与海》、《傲慢与偏见》、《双城记》、《美女与野兽》、《一千零一夜》、《大石壁》在内的全量 14 本名著，每章词数达到 800 - 1800+ 词，单章阅读时长 5~15 分钟。
+  - **2. SQLite DB v18 缓存重置播种**：升级 SQLite 数据库至 v18，自动清除旧版短章数据并重新播种，让用户体验原汁原味的长篇名著阅读。
+- [x] **全名著真实英文词数与 `readTime` 阅读时长科学推算重构 (Version 1.0.63+64)**：
+  - **1. 真实词数动态推导 readTime**：基于全量 347 个名著章节英文原文本实际词数（Word Count），按 ESL 标准读速 140wpm 计算真实阅读时长，彻底解决固定 5 分钟的硬编码问题。
+  - **2. 名著概览词数真实加总**：根据具体章节动态实时计算全书词数，提升学习数据的权威性与精准度。
+- [x] **SQLite v17 数据库 `isRead` 章节已读标记与章节目录优雅徽章 (Version 1.0.62+63)**：
+  - **1. SQLite DB v17 升级**：`articles` 数据表升级增加 `isRead` 已读列，支持全持久化落库。
+  - **2. 章节目录 Subtitle 区域精致徽章**：在每个已读章节副标题栏右侧呈现极淡优雅的 `✓ 已读` 胶囊标，直观呈现阅读进度。
+  - **3. 阅读完成实时刷新**：在精读页点击【完成阅读】自动更新 SQLite 数据库，返回书籍详情页自动刷新标红/标绿进度。
+- [x] **全站 TabBar 组件提取与分割线弱化缩进优化 (Version 1.0.61+62)**：
+  - **1. 提取 AppTabBar 通用组件**：统一管理导航标签指示器、文字样式与排版规范。
+  - **2. 弱化分割线与左右内嵌缩进**：彻底消除文章详情等页面底线直接触顶左右边缘的沉重视觉体验，增加左右 16px 内嵌边距与极淡淡化线条。
+  - **3. 全站 10 个 Tab 页面 100% 架构统一**：替换内联手写的 TabBar 逻辑，提升全站视觉品质与组件复用度。
 - [x] **全工程高内聚功能模块化架构重构与 SQLite v16 升级 (Version 1.0.60+61)**：
   - **1. Feature-First 模块解耦**：将所有模型、服务、视图与 mock 数据收归至 16 个高内聚 `features/` 目录与 `core/` 公共服务库。
   - **2. Word 多义释义与 SQLite v16 扩展**：数据库升级至 v16 新增 `definitions` 多义释义，背词卡片与气泡弹窗支持多义分行精准呈现。

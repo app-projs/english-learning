@@ -201,38 +201,38 @@ class PracticeTab extends StatelessWidget {
               ]),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     '练习技巧',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
                   _TipCard(
                     icon: Icons.lightbulb_outline,
                     title: '分散学习',
                     description: '每天多次短时间学习比一次性长时间学习更有效',
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   _TipCard(
                     icon: Icons.repeat,
                     title: '间隔重复',
                     description: '复习已学过的内容，加强记忆痕迹',
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   _TipCard(
                     icon: Icons.psychology,
                     title: '主动回忆',
                     description: '不看答案回忆内容，比被动阅读更能加深理解',
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20),
                 ],
               ),
             ),

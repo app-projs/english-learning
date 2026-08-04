@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/lumina_theme.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 import '../../../core/services/storage_service.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../features/review/screens/completion_congratulation_screen.dart';
@@ -47,8 +48,6 @@ class _GrammarPracticeScreenState extends State<GrammarPracticeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('语法句型专项训练', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -86,24 +85,10 @@ class _GrammarPracticeScreenState extends State<GrammarPracticeScreen>
             ),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(44),
-          child: TabBar(
-            controller: _tabController,
-            isScrollable: true,
-            dividerColor: Colors.transparent,
-            dividerHeight: 0,
-            indicatorColor: LuminaColors.primary,
-            labelColor: LuminaColors.primary,
-            unselectedLabelColor: isDark ? Colors.white60 : Colors.grey.shade700,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(width: 3, color: LuminaColors.primary),
-              insets: EdgeInsets.symmetric(horizontal: 16),
-              borderRadius: BorderRadius.all(Radius.circular(3)),
-            ),
-            tabs: _grammarTopics.map((t) => Tab(text: t.title)).toList(),
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          isScrollable: true,
+          tabs: _grammarTopics.map((t) => Tab(text: t.title)).toList(),
         ),
       ),
       body: TabBarView(
@@ -261,7 +246,7 @@ class _GrammarPracticeScreenState extends State<GrammarPracticeScreen>
                 ),
                 child: Text(
                   '第 ${_currentQuestionIndex + 1} / ${questions.length} 题',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: LuminaColors.primary,

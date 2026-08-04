@@ -1247,8 +1247,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Icon(Icons.cloud_done_rounded, color: Colors.indigo),
             SizedBox(width: 8),
             Text('多设备进度云同步'),
@@ -1267,8 +1267,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(color: Colors.indigo.shade200),
                 ),
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.check_circle_rounded, color: Colors.indigo, size: 20),
                     SizedBox(width: 8),
                     Expanded(
@@ -1448,8 +1448,8 @@ class RadarChartPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.0;
 
-    final int websCount = 4;
-    final int sidesCount = 5;
+    const int websCount = 4;
+    const int sidesCount = 5;
 
     // Draw background concentric polygons
     for (int w = 1; w <= websCount; w++) {

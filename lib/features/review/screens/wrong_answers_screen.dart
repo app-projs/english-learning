@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../core/services/storage_service.dart';
 import '../../../core/services/audio_service.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 
 class WrongAnswersScreen extends StatefulWidget {
   const WrongAnswersScreen({super.key});
@@ -186,8 +187,8 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Icon(Icons.picture_as_pdf_rounded, color: Colors.deepOrange),
             SizedBox(width: 8),
             Text('错题巩固清单导出'),
@@ -290,23 +291,12 @@ class _WrongAnswersScreenState extends State<WrongAnswersScreen>
               tooltip: '清空错题',
             ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48),
-          child: TabBar(
-            controller: _tabController,
-            dividerColor: Colors.transparent,
-            dividerHeight: 0,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(width: 3, color: Colors.blue),
-              insets: EdgeInsets.symmetric(horizontal: 16),
-              borderRadius: BorderRadius.all(Radius.circular(3)),
-            ),
-            tabs: const [
-              Tab(icon: Icon(Icons.style, size: 20), text: '浏览卡片'),
-              Tab(icon: Icon(Icons.local_fire_department, size: 20), text: '消灭错题'),
-            ],
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          tabs: const [
+            Tab(icon: Icon(Icons.style, size: 20), text: '浏览卡片'),
+            Tab(icon: Icon(Icons.local_fire_department, size: 20), text: '消灭错题'),
+          ],
         ),
       ),
       body: _wrongAnswers.isEmpty

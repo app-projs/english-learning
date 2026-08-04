@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/services/storage_service.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../features/review/screens/completion_congratulation_screen.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 
 class ListeningPracticeScreen extends StatefulWidget {
   final VoidCallback? onCompleted;
@@ -396,29 +397,16 @@ class _ListeningPracticeScreenState extends State<ListeningPracticeScreen>
             ),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48),
-          child: Container(
-            color: Colors.transparent,
-            child: TabBar(
-              controller: _tabController,
-              dividerColor: Colors.transparent,
-              dividerHeight: 0,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicator: const UnderlineTabIndicator(
-                borderSide: BorderSide(width: 3, color: Colors.blue),
-                insets: EdgeInsets.symmetric(horizontal: 16),
-                borderRadius: BorderRadius.all(Radius.circular(3)),
-              ),
-              tabs: const [
-                Tab(icon: Icon(Icons.list, size: 20), text: '场景选择'),
-                Tab(icon: Icon(Icons.headphones, size: 20), text: '单选练习'),
-                Tab(icon: Icon(Icons.edit_note, size: 20), text: '听写填空'),
-                Tab(icon: Icon(Icons.repeat, size: 20), text: '逐句精听'),
-                Tab(icon: Icon(Icons.spellcheck_rounded, size: 20), text: '断句听写'),
-              ],
-            ),
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          isScrollable: true,
+          tabs: const [
+            Tab(icon: Icon(Icons.list, size: 20), text: '场景选择'),
+            Tab(icon: Icon(Icons.headphones, size: 20), text: '单选练习'),
+            Tab(icon: Icon(Icons.edit_note, size: 20), text: '听写填空'),
+            Tab(icon: Icon(Icons.repeat, size: 20), text: '逐句精听'),
+            Tab(icon: Icon(Icons.spellcheck_rounded, size: 20), text: '断句听写'),
+          ],
         ),
       ),
       body: TabBarView(

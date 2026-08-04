@@ -5,6 +5,7 @@ import '../../../core/services/audio_service.dart';
 import '../../word/mock/mock_words.dart';
 import '../../../features/article/mock/mock_articles.dart';
 import '../../../core/theme/lumina_theme.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 import '../../../features/article/screens/article_detail_screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
@@ -233,8 +234,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
             SizedBox(width: 8),
             Text('生词本备考清单导出'),
@@ -329,23 +330,12 @@ class _FavoritesScreenState extends State<FavoritesScreen>
             tooltip: '导出 A4 生词清单',
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48),
-          child: TabBar(
-            controller: _tabController,
-            dividerColor: Colors.transparent,
-            dividerHeight: 0,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(width: 3, color: Colors.blue),
-              insets: EdgeInsets.symmetric(horizontal: 16),
-              borderRadius: BorderRadius.all(Radius.circular(3)),
-            ),
-            tabs: const [
-              Tab(text: '单词'),
-              Tab(text: '文章'),
-            ],
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          tabs: const [
+            Tab(text: '单词'),
+            Tab(text: '文章'),
+          ],
         ),
       ),
       body: _isLoading
@@ -453,6 +443,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                           IconButton(
                             icon: const Icon(Icons.favorite, color: Colors.red),
                             onPressed: () async {
+                              final messenger = ScaffoldMessenger.of(context);
                               final id = word['id'];
                               setState(() {
                                 _wordFavorites.removeAt(index);
@@ -460,10 +451,11 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                               if (id != null) {
                                 await _storageService?.removeFavorite(id);
                               }
-                              if (!mounted) return;
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('已取消收藏')),
-                              );
+                              if (mounted) {
+                                messenger.showSnackBar(
+                                  const SnackBar(content: Text('已取消收藏')),
+                                );
+                              }
                             },
                           ),
                         ],
@@ -592,6 +584,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                       IconButton(
                         icon: const Icon(Icons.favorite, color: Colors.red),
                         onPressed: () async {
+                          final messenger = ScaffoldMessenger.of(context);
                           final id = article['id'];
                           setState(() {
                             _articleFavorites.removeAt(index);
@@ -599,10 +592,11 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                           if (id != null) {
                             await _storageService?.removeArticleFavorite(id);
                           }
-                          if (!mounted) return;
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('已取消收藏')),
-                          );
+                          if (mounted) {
+                            messenger.showSnackBar(
+                              const SnackBar(content: Text('已取消收藏')),
+                            );
+                          }
                         },
                       ),
                     ],

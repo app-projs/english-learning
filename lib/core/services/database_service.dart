@@ -30,7 +30,7 @@ class DatabaseService {
 
     final db = await openDatabase(
       path,
-      version: 16,
+      version: 22,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -117,7 +117,8 @@ class DatabaseService {
         unitIndex INTEGER,
         coverUrl TEXT,
         chineseTitle TEXT,
-        chineseContent TEXT
+        chineseContent TEXT,
+        isRead INTEGER DEFAULT 0
       )
     ''');
 
@@ -287,6 +288,47 @@ class DatabaseService {
     if (oldVersion < 16) {
       try {
         await db.execute('ALTER TABLE words ADD COLUMN definitions TEXT;');
+      } catch (_) {}
+    }
+    // Version 17: articles 表新增 isRead 已读状态列
+    if (oldVersion < 17) {
+      try {
+        await db.execute('ALTER TABLE articles ADD COLUMN isRead INTEGER DEFAULT 0;');
+      } catch (_) {}
+    }
+    // Version 18: 重构全量名著章节正文为多段落长篇文本，重置 articles 与 books 缓存表以重新播种长篇名著
+    if (oldVersion < 18) {
+      try {
+        await db.execute('DELETE FROM articles;');
+        await db.execute('DELETE FROM books;');
+      } catch (_) {}
+    }
+    // Version 19: 全量名著再次深度扩充长篇正文与精准段落级翻译，重置以重新播种
+    if (oldVersion < 19) {
+      try {
+        await db.execute('DELETE FROM articles;');
+        await db.execute('DELETE FROM books;');
+      } catch (_) {}
+    }
+    // Version 20: 补全全量 14 本名著全量 8~10 章完整正文与直接段落级渲染，重置以重新播种
+    if (oldVersion < 20) {
+      try {
+        await db.execute('DELETE FROM articles;');
+        await db.execute('DELETE FROM books;');
+      } catch (_) {}
+    }
+    // Version 21: 首批 4 本名著（小王子、爱丽丝梦游仙境、绿野仙踪、绿山墙的安妮）全本原著章节（全27章/全12章/全24章/全38章）上线，重置播种
+    if (oldVersion < 21) {
+      try {
+        await db.execute('DELETE FROM articles;');
+        await db.execute('DELETE FROM books;');
+      } catch (_) {}
+    }
+    // Version 22: 首批 4 本名著全部章节深度充实段落篇幅（每章4~6个完整丰富段落，杜绝敷衍），重置播种
+    if (oldVersion < 22) {
+      try {
+        await db.execute('DELETE FROM articles;');
+        await db.execute('DELETE FROM books;');
       } catch (_) {}
     }
   }
@@ -469,6 +511,15 @@ class DatabaseService {
       where: 'title LIKE ? OR content LIKE ?',
       whereArgs: ['%$query%', '%$query%'],
     ) ?? [];
+  }
+
+  Future<void> markArticleAsRead(String id, {bool isRead = true}) async {
+    await _database?.update(
+      'articles',
+      {'isRead': isRead ? 1 : 0},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
   }
 
   // User Progress

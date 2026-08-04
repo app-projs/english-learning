@@ -4,152 +4,201 @@
   "chineseTitle": "福尔摩斯探案集",
   "author": "Arthur Conan Doyle",
   "coverUrl": "assets/images/book_sherlock.png",
-  "description": "《福尔摩斯探案集》由阿瑟·柯南·道尔（Arthur Conan Doyle）创作，是世界侦探推理小说史上不可逾越的丰碑。故事讲述了居住在伦敦贝克街 221B 的神探歇洛克·福尔摩斯与他的忠实助手华生医生（Dr. John H. Watson）联手破解的一系列离奇案情。从《波希米亚丑闻》中与传奇女性艾琳·艾德勒的智力较量，到《红发会》、《斑点带子案》中逻辑严密的现场推理，福尔摩斯凭借其观察入微的观察力与严谨周密的演绎推理法破解了一个又一个看似不可能的悬案。本书语言干练地道，是拓展应用词汇与逻辑思维训练的必读之选。",
+  "description": "《福尔摩斯探案集》是阿瑟·柯南·道尔创作的世界侦探小说至高巅峰巨作。故事通过忠实伙伴华生医生的记录，展现了居住在伦敦贝克街 221B 的神奇大侦探歇洛克·福尔摩斯凭凭借惊人的观察力、严密的逻辑推理与无与伦比的演绎法，破获了一系列扑朔迷离、惊心动魄的悬疑奇案。包含《波希米亚丑闻》、《红发会》、《斑点带案》、《蓝宝石案》等名篇，是学习地道英国英语、提升逻辑思维与悬疑阅读乐趣的绝佳名著。",
   "category": "经典名著",
   "difficulty": "中/高级难度",
-  "totalUnits": 5,
-  "wordCount": 22000,
-  "readerCount": "310.5万人在读",
-  "targetVocab": "2000-4500词",
-  "tagLabel": "推理侦探",
-  "coverBadge": "经典 · 推理侦探",
+  "totalUnits": 8,
+  "wordCount": 35000,
+  "readerCount": "210.5万人在读",
+  "targetVocab": "2200-5200词",
+  "tagLabel": "悬疑侦探",
+  "coverBadge": "精读 · 侦探名篇",
   "chapters": [
     {
       "unitIndex": 1,
-      "title": "Case 1: A Scandal in Bohemia",
-      "chineseTitle": "第 1 案：波希米亚丑闻",
+      "title": "Chapter 1: A Scandal in Bohemia and Irene Adler",
+      "chineseTitle": "第 1 章：波希米亚丑闻与艾琳·艾德勒",
       "paragraphs": [
         {
-          "en": "To Sherlock Holmes she is always THE woman. I have seldom heard him mention her under any other name. In his eyes she eclipses and predominates the whole of her sex. It was not that he felt any emotion akin to love for Irene Adler. All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind.",
-          "zh": "对歇洛克·福尔摩斯来说，她永远是“那位女性”。我很少听到他以任何其他名字提到她。在他的眼里，她黯淡并主导了她的整个性别。这并不是说他对艾琳·艾德勒感到了任何类似于爱的感情。所有的感情，尤其是那一种，对他那冷酷、精准但极其平衡的心智来说都是令人厌恶的。"
+          "en": "To Sherlock Holmes she is always THE woman. I have seldom heard him mention her under any other name. In his eyes she eclipses and predominates the whole of her sex. It was not that he felt any emotion akin to love for Irene Adler. All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind. He was the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position.",
+          "zh": "对于歇洛克·福尔摩斯来说，她永远是“那位女人”。我很少听到他用任何其他名字提到过她。在他的眼中，她遮蔽并主导了她的整个性别。这并不是说他对艾琳·艾德勒感到任何类似于爱的感情。所有的情感（特别是那一种）对于他冰冷、精确但令人赞赏的平衡头脑来说都是令人厌恶的。他是世界所见过的最完美的推理与观察机器，但作为爱人，他会把自己置于虚假的位置。"
         },
         {
-          "en": "He was, I take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position.",
-          "zh": "在我看来，他是世界上见过的最完美的推理和观察机器，但作为一个情人，他会把自己置于一个虚假的位置。"
+          "en": "One evening in March 1888, a tall, masked gentleman arrived at 221B Baker Street. He introduced himself as Count Von Kramm, but Holmes instantly exposed him as Wilhelm Gottsreich Sigismond von Ormstein, hereditary King of Bohemia! The King confessed that five years earlier, while a Crown Prince in Warsaw, he had been involved in a passionate romance with Irene Adler, a famous American opera singer.",
+          "zh": "1888 年 3 月的一个晚上，一位高大戴着面具的绅士来到了贝克街 221B 号。他自我介绍为冯·克拉姆伯爵，但福尔摩斯立刻揭穿他正是威廉·哥特斯莱希·西吉斯蒙德·冯·奥姆斯坦（波希米亚的世袭国王）！国王承认五年前当他在华沙做皇太子时，曾与著名美国歌剧女歌手艾琳·艾德勒卷入了一场热烈的罗曼史。"
         },
         {
-          "en": "He never spoke of the softer passions, save with a gibe and a sneer. They were admirable things for the observer—excellent for drawing the veil from men's motives and actions.",
-          "zh": "他从不谈论较软的激情，除非带着嘲弄和冷笑。它们对观察者来说是令人赞叹的东西——对于从人的动机和行为中揭开面纱极具价值。"
+          "en": "Now engaged to marry a young Scandinavian princess, the King was terrified that Irene Adler would publish a incriminating photograph of them together to ruin his wedding. Having failed to steal the photograph through burglaries, the King hired Holmes to recover it. Disguising himself first as an out-of-work groom and later as a kindly clergyman, Holmes tracked Irene to her home at Briony Lodge.",
+          "zh": "如今与一位年轻的斯堪的纳维亚公主订婚，国王极度害怕艾琳·艾德勒会公布一张他们俩在一起的有罪照片来毁掉他的婚礼。在通过盗窃偷取照片失败后，国王雇佣福尔摩斯收复它。首先把自己伪装成失业的马夫，后来伪装成和蔼的牧师，福尔摩斯追踪艾琳到了她在布里奥尼小屋的家。"
         },
         {
-          "en": "But for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results.",
-          "zh": "但对于训练有素的推理者来说，允许这样的侵入他自己微妙而精细调整的气质中，就是引入了一个可能会对他所有的精神结果产生怀疑的干扰因素。"
+          "en": "Holmes staged a fake street fight outside her house, pretending to be injured, and was carried into her sitting-room. Watson threw a smoke-rocket through the window, shouting 'Fire!' In the panic, Irene instinctively rushed to a secret panel behind a picture to save her most precious treasure—the photograph! Holmes marked the secret hiding place, intending to return with the King next morning.",
+          "zh": "福尔摩斯在她房子外上演了一场假街头打斗，假装受伤，被抬进了她的客厅。华生通过窗户扔进烟雾火箭，喊着“着火了！”在恐慌中，艾琳本能地冲向一幅画后面的秘密暗格去救她最宝贵的珍宝——那张照片！福尔摩斯标记了秘密隐藏地点，打算第二天早上和国王一起回来。"
         },
         {
-          "en": "Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his.",
-          "zh": "敏感仪器里的砂砾，或者他自己某个高倍镜头上的裂纹，都不会比像他这样的性格中的强烈情感更令人不安。"
+          "en": "However, when Holmes and the King arrived the next day, they found the house deserted and Irene gone for Europe with her new husband! In the secret panel, Irene had left a letter explaining that she had seen through Holmes's disguise, but promised to keep the photograph safe without exposing the King. She left a portrait of herself, which Holmes kept as his only reward. From that day on, Holmes never mocked women's intellect again.",
+          "zh": "然而，当福尔摩斯和国王第二天到达时，他们发现房子空无一人，艾琳已经和她的新丈夫前往欧洲了！在秘密暗格里，艾琳留下一封信解释说她已经识破了福尔摩斯的伪装，但承诺保持照片安全而不曝光国王。她留下了自己的一幅肖像画，福尔摩斯将其留作自己唯一的报酬。从那一刻起，福尔摩斯再也没有嘲笑过女性的智力。"
         }
       ]
     },
     {
       "unitIndex": 2,
-      "title": "Case 2: The Red-Headed League",
-      "chineseTitle": "第 2 案：红发会奇案",
+      "title": "Chapter 2: The Red-Headed League",
+      "chineseTitle": "第 2 章：红发会奇案",
       "paragraphs": [
         {
-          "en": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair.",
-          "zh": "在去年秋天的一天，我拜访了我的朋友歇洛克·福尔摩斯先生，发现他正在与一位非常魁梧、满脸红光、留着火红头发的老先生进行深谈。"
+          "en": "Mr. Jabez Wilson, an elderly pawnbroker with fiery red hair, visited Baker Street seeking Holmes's help. Wilson explained that his young assistant, Vincent Spaulding, had shown him a newspaper advertisement offering a lucrative salary to red-headed men for simple clerical duties funded by a deceased American millionaire's trust, known as 'The Red-Headed League.'",
+          "zh": "杰贝兹·威尔逊先生（一位有着火红头发的年长典当商人）拜访贝克街寻求福尔摩斯的帮助。威尔逊解释说他的年轻助手文森特·斯波尔丁曾向他展示过一则报纸广告，为红发男人提供丰厚的薪水去从事简单的文书工作，该资金由一位已故美国百万富翁的信托基金提供，被称为“红发会”。"
         },
         {
-          "en": "With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me.",
-          "zh": "为我的侵入道歉后，我正要退出来，福尔摩斯突然把我拉进房间，关上了身后的门。"
+          "en": "Wilson applied and was hired by the manager, Mr. Duncan Ross. For eight weeks, Wilson spent four hours a day copying the Encyclopædia Britannica in an isolated office for four pounds a week. But that very morning, Wilson found a card pinned to the locked office door reading: 'THE RED-HEADED LEAGUE IS DISSOLVED.' Utterly baffled by the sudden closure, Wilson sought Holmes's advice.",
+          "zh": "威尔逊申请并被经理邓肯·罗斯先生录用。在八周的时间里，威尔逊每天花四个小时在一个隔离的办公室里抄写《大英百科全书》，每周获得四镑。但就在那天早上，威尔逊发现锁着的办公室门上钉着一张卡片，上面写着：“红发会已解散。”被这突如其来的关闭完全弄懵了，威尔逊寻求福尔摩斯的建议。"
         },
         {
-          "en": "\"You could not have come at a better time, my dear Watson,\" he said cordially.",
-          "zh": "“你来得正是再好不过的时候了，我亲爱的华生，”他热情地说。"
+          "en": "Holmes investigated the pawnbroker's shop in Saxe-Coburg Square, tapping his walking stick heavily on the pavement and knocking on the door to inspect the knees of Spaulding's trousers. Holmes quickly deduced that Spaulding was actually John Clay, a notorious thief and bank robber! Clay had invented the Red-Headed League to get Wilson out of the shop every morning so he could dig a subterranean tunnel from the pawnshop basement to the vault of a nearby bank holding thirty thousand French gold napoleons.",
+          "zh": "福尔摩斯调查了萨克森-科堡广场的典当铺，用他的拐杖重重地敲打着铺路石，并敲门去检查斯波尔丁裤子的膝盖。福尔摩斯迅速推断出斯波尔丁实际上是约翰·克莱（一位臭名昭著的贼和银行大盗）！克莱发明红发会是为了每天早上把威尔逊调离店铺，以便他能从典当铺地下室挖掘一条地下隧道通往附近一家保存着三万法国黄金拿破仑的银行金库。"
         },
         {
-          "en": "\"I was afraid that you were engaged.\"",
-          "zh": "“我担心你正忙着。”"
-        },
-        {
-          "en": "\"So I am. Very much so.\"",
-          "zh": "“是的。非常忙。”"
-        },
-        {
-          "en": "\"Then I can wait in the next room.\"",
-          "zh": "“那我可以在隔壁房间等。”"
-        },
-        {
-          "en": "\"Not at all. This gentleman, Mr. Jabez Wilson, has been my partner and helper in many of my most successful accomplishments, and I have no doubt that he will be of the same use to me in your case also.\"",
-          "zh": "“完全不必。这位先生，贾贝兹·威尔逊先生，在我许多最成功的成就中一直是我合作伙伴和帮手，我毫不怀疑他也会在你的案子里对我产生同样的用处。”"
-        },
-        {
-          "en": "The stout gentleman rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes.",
-          "zh": "魁梧的先生从椅子上站起来，致以问候的点头，从他小小的被脂肪包围的眼睛里投来快速的小询问目光。"
+          "en": "That midnight, Holmes, Watson, a bank director, and a Scotland Yard inspector hid in the dark bank vault. Right on cue, the floorboards gave way, and John Clay emerged from the tunnel! Holmes sprang forward and seized Clay by the collar, apprehending the master criminal red-handed and foiling a brilliant bank heist.",
+          "zh": "那天半夜，福尔摩斯、华生、一位银行董事以及一位苏格兰场警探藏在昏暗的银行金库里。正如预料的那样，地板踩空了，约翰·克莱从隧道里冒了出来！福尔摩斯向前跃起抓住了克莱的领口，当场抓获了这位犯罪大师并挫败了一场精彩的银行抢劫。"
         }
       ]
     },
     {
       "unitIndex": 3,
-      "title": "Case 3: A Case of Identity",
-      "chineseTitle": "第 3 案：身份案悬云",
+      "title": "Chapter 3: The Boscombe Valley Mystery",
+      "chineseTitle": "第 3 章：博斯科姆比溪谷惨案",
       "paragraphs": [
         {
-          "en": "\"My dear fellow,\" said Sherlock Holmes as we sat on either side of the fire in his rooms at Baker Street, \"life is infinitely stranger than anything which the mind of man could invent.",
-          "zh": "“我亲爱的伙计，”当我们在贝克街他房间里的火炉两侧坐下时，歇洛克·福尔摩斯说，“生活无限比人类心智所能发明的任何东西都要奇特。"
+          "en": "Holmes invited me to travel to Herefordshire to investigate the murder of Mr. Charles McCarthy, a wealthy Australian emigré who had been found battered to death near Boscombe Pool. All evidence pointed to his young son, James McCarthy, who had been seen arguing heatedly with his father near the pool moments before the murder, carrying a gun.",
+          "zh": "福尔摩斯邀请我前往赫里福德郡调查查尔斯·麦卡锡先生的谋杀案，他是一位富有的澳大利亚移民，被发现死在博斯科姆比水塘附近被殴打致死。所有的证据都指向他的年轻儿子詹姆斯·麦卡锡，有人看到他在谋杀前几分钟在水塘附近持枪与父亲激烈争吵。"
         },
         {
-          "en": "We would not dare to conceive the things which are really mere commonplaces of existence.",
-          "zh": "我们不敢想象那些实际上仅仅是存在的寻常事物。"
+          "en": "James was arrested for murder, but claimed he was innocent. He admitted arguing with his father over marrying Alice Turner, the daughter of the local landlord, John Turner. James recalled that as his father died, his father's last words were a cryptic reference to 'a rat' and a cloak.",
+          "zh": "詹姆斯因谋杀被捕，但声称自己是无辜的。他承认曾与父亲就娶当地地主约翰·特纳的女儿艾丽斯·特纳一事发生争吵。詹姆斯回想起当他父亲死去时，他父亲最后的话语是对“一只老鼠”和斗篷的隐晦提及。"
         },
         {
-          "en": "If we could fly out of that window hand in hand, hover over this great city, gently remove the roofs, and peep in at the queer things which are going on, the strange coincidences, the plannings, the cross-purposes, the wonderful chains of events, working through generations, and leading to the most out-of-the-way results, it would make all fiction with its conventionalities and foreseen conclusions most stale and unprofitable.\"",
-          "zh": "如果我们能手拉手飞出那扇窗户，在这座伟大的城市上空盘旋，轻轻掀开屋顶，偷看里面正在发生的奇特事情，奇特的巧合，计划，交叉的目的，贯穿几代人工作的精彩事件链，并导致最异乎寻常的结果，那就会使所有带有陈规和预见结论的小说变得最陈腐和毫无价值。”"
+          "en": "Holmes examined the muddy ground around Boscombe Pool with a magnifying glass, analyzing footprints, cigarette ash, and bloodstains. He deduced that the murderer was a tall, left-handed man who walked with a limp and smoked cigars. Furthermore, Holmes realized 'a rat' was actually the truncated pronunciation of 'Ballarat,' a famous gold-mining town in Australia!",
+          "zh": "福尔摩斯用放大镜检查了博斯科姆比水塘周围泥泞的地面，分析着脚印、香烟灰和血迹。他推断出谋杀犯是一位身材高大、左撇子、走路瘸腿且抽雪茄的男人。此外，福尔摩斯意识到“a rat”（老鼠）实际上是澳大利亚著名采金镇“巴拉瑞特”（Ballarat）的缩略发音！"
         },
         {
-          "en": "\"And yet I am not convinced of it,\" I answered. \"The cases which come to light in the papers are, as a rule, bald enough, and vulgar enough.\"",
-          "zh": "“但我还是不相信这一点，”我回答。“报纸上揭露的案件，通常都是光秃秃的，而且足够俗气。”"
+          "en": "Holmes confronted the landlord, John Turner, who confessed everything. Turner had been a highway robber in Ballarat decades earlier, and Charles McCarthy had been blackmailing him ever since. When McCarthy demanded that Turner force Alice to marry James, Turner killed him to protect his daughter's future. Holmes kept the confession secret, and James McCarthy was acquitted.",
+          "zh": "福尔摩斯质问地主约翰·特纳，后者承认了一切。特纳几十年前在巴拉瑞特曾是个公路强盗，而查尔斯·麦卡锡从那以后一直敲诈他。当麦卡锡要求特纳强迫艾丽斯嫁给詹姆斯时，特纳杀了他以保护女儿的未来。福尔摩斯保持了招供秘密，詹姆斯·麦卡锡被宣告无罪。"
         }
       ]
     },
     {
       "unitIndex": 4,
-      "title": "Case 4: The Boscombe Valley Mystery",
-      "chineseTitle": "第 4 案：博斯科姆比溪谷谜案",
+      "title": "Chapter 4: The Five Orange Pips",
+      "chineseTitle": "第 4 章：五个桔核的警讯",
       "paragraphs": [
         {
-          "en": "We were seated at breakfast one morning, my wife and I, when the maid brought in a telegram. It was from Sherlock Holmes and ran in this way:",
-          "zh": "一天早晨，我们正坐在早餐桌前，我和我妻子，这时女佣送进来一封电报。那是歇洛克·福尔摩斯发来的，内容如下："
+          "en": "During an autumn gale in November, a young gentleman named John Openshaw arrived at 221B Baker Street in deep terror. Openshaw explained that in 1883, his uncle Elias, a former American Confederate colonel who had settled in Sussex, received an envelope from India containing five dried orange pips labeled 'K.K.K.' Weeks later, Elias died mysteriously in a garden pond.",
+          "zh": "在十一月的一场秋季大风中，一位名叫约翰·欧文肖的年轻绅士怀着深深的恐怖来到了贝克街 221B 号。欧文肖解释说在 1883 年，他的叔叔埃利亚斯（一位定居在萨塞克斯的前美国南方邦联上校）收到了一封来自印度的信封，里面装有五个标着“K.K.K.”的干桔核。几周后，埃利亚斯神秘地死在一个花园水塘里。"
         },
         {
-          "en": "\"Have you a couple of days to spare? Have just been wired for from the west of England in connection with Boscombe Valley tragedy. Shall be glad if you will come with me. Air and scenery perfect. Leave Paddington by 11:15.\"",
-          "zh": "“你有两天的空闲时间吗？刚刚收到英格兰西部关于博斯科姆比溪谷悲剧的电报。如果你能和我一起来，我会很高兴。空气和风景完美。11:15 从帕丁顿出发。”"
+          "en": "In 1885, John's father received a similar envelope with five orange pips posted from Dundee, and fell to his death from a chalk pit shortly after. Now, three days ago, John himself had received an envelope from London containing five orange pips, ordering him to leave the family papers in the garden sundial!",
+          "zh": "在 1885 年，约翰的父亲收到了一个类似的信封，里面装有从邓迪寄出的五个桔核，不久后从石灰坑坠落身亡。如今，三天前，约翰自己收到了一个来自伦敦的信封，里面装有五个桔核，命令他把家族文件放在花园日晷里！"
         },
         {
-          "en": "\"What do you say, dear?\" said my wife, looking across at me. \"Will you go?\"",
-          "zh": "“你怎么说，亲爱的？”我妻子看着我问。“你去吗？”"
+          "en": "Holmes realized with horror that 'K.K.K.' stood for the Ku Klux Klan, a secret American terrorist organization seeking to recover missing records Elias had stolen. Holmes urged Openshaw to comply instantly, but the next morning, news arrived that Openshaw had drowned in the Thames near Waterloo Bridge—murdered by the Klan before he could reach home.",
+          "zh": "福尔摩斯带着恐怖意识到“K.K.K.”代表三K党（一个寻求收复埃利亚斯偷走的遗失记录的美国秘密恐怖组织）。福尔摩斯敦促欧文肖立刻服从，但第二天早上，消息到达：欧文肖在滑铁卢桥附近的泰晤士河里淹死了（在到达家之前被三K党谋杀）。"
         },
         {
-          "en": "\"I really do not know what to say. I have a fairly long list at present.\"",
-          "zh": "“我真的不知道该说什么。我目前有一份相当长的清单。”"
-        },
-        {
-          "en": "\"Oh, Anstruther would do your work for you. You have been looking a little pale lately. I think that the change would do you good, and you are always so interested in Mr. Sherlock Holmes' cases.\"",
-          "zh": "“哦，安斯特拉瑟会帮你做工作的。你最近看起来有点苍白。我想改变一下对你有好处，而且你总是对歇洛克·福尔摩斯先生的案件这么感兴趣。”"
+          "en": "Furious at the murder of his client, Holmes tracked the registration of the ships carrying the pips. He identified the murderer's vessel as an American sailing ship, the 'Lone Star.' Holmes sent five orange pips in an envelope to the captain in Savannah, notifying the American police. The 'Lone Star' was lost at sea during a hurricane, bringing divine justice to the killers.",
+          "zh": "对客户被谋杀感到愤怒，福尔摩斯追踪了携带桔核船只的登记。他认出谋杀犯的船只是一艘名为“孤星号”的美国帆船。福尔摩斯给萨瓦纳的船长寄去了一个装有五个桔核的信封，通知了美国警察。“孤星号”在一场飓风中失踪于海上，给杀手们带来了神圣的正义。"
         }
       ]
     },
     {
       "unitIndex": 5,
-      "title": "Case 5: The Five Orange Pips",
-      "chineseTitle": "第 5 案：五个橘核预警印",
+      "title": "Chapter 5: The Man with the Twisted Lip",
+      "chineseTitle": "第 5 章：歪唇男人与离奇失踪",
       "paragraphs": [
         {
-          "en": "When I glance over my notes and records of the Sherlock Holmes cases between the years '82 and '90, I am faced by so many which present strange and interesting features that it is no easy matter to know which to choose and which to leave.",
-          "zh": "当我翻阅 82 年到 90 年间歇洛克·福尔摩斯案件的笔记和记录时，我面临着如此多呈现奇特和有趣特征的案件，以至于知道选择哪一个和留下哪一个并不是一件容易的事。"
+          "en": "Mrs. Isa Whitney asked me to search for her addicted husband in a squalid opium den in the East End of London. While rescuing Whitney, I was astounded to find Sherlock Holmes sitting disguised as an old opium smoker. Holmes was investigating the disappearance of Mr. Neville St. Clair, a prosperous, respectable country gentleman from Kent.",
+          "zh": "伊萨·惠特尼太太请我前往伦敦东区一家肮脏的鸦片馆寻找她上瘾的丈夫。在拯救惠特尼时，我惊奇地发现歇洛克·福尔摩斯正伪装成一位老鸦片抽吸者坐在那里。福尔摩斯正在调查内维尔·圣克莱尔先生的失踪案，他是一位来自肯特郡繁荣体面的乡村绅士。"
         },
         {
-          "en": "Some, however, have already given publicity through the papers, and others have not offered a wide field for those peculiar qualities which my friend possessed in so high a degree.",
-          "zh": "然而，有些已经通过报纸公开了，有些则没有为我朋友在如此高的程度上拥有的那些独特品质提供广阔的领域。"
+          "en": "St. Clair's wife had seen her husband waving frantically from a second-floor window above the opium den. Entering the room with police, they found no trace of St. Clair except his clothes and bloodstains on the windowsill. The only inhabitant was Hugh Boone, a hideous, deformed beggar with a twisted lip, who was arrested for murder.",
+          "zh": "圣克莱尔的妻子曾看到她的丈夫从鸦片馆上方二楼的窗户发疯似地挥手。带着警察进入房间，除了他的衣服和窗台上血迹外他们没有发现圣克莱尔的任何痕迹。唯一的居住者是休·布恩，一位有着歪唇的可怕畸形乞丐，他因谋杀被捕。"
         },
         {
-          "en": "Among the latter is the case of the Open Door, and the singular adventure of the Atkinson family at Trincomalee.",
-          "zh": "后者中有开门案，以及特林可马利的阿特金森一家奇特的冒险。"
+          "en": "Holmes pondered the mystery all night in a cloud of tobacco smoke. Early next morning, Holmes took a sponge and a bar of soap to the police cell where the sleeping beggar was held. Washing Hugh Boone's dirty face, the facial scars and twisted lip melted away—revealing Mr. Neville St. Clair himself!",
+          "zh": "福尔摩斯在一团烟草烟雾中沉思了一整夜。第二天清晨，福尔摩斯带着海绵和一块肥皂来到了关押着沉睡乞丐的警察牢房。洗着休·布恩脏兮兮的脸，面部伤疤与歪唇融化掉了——露出了内维尔·圣克莱尔先生本人！"
         },
         {
-          "en": "The case of the Five Orange Pips, however, presents features so unusual and so terrifying that I cannot refrain from placing it upon record, despite the fact that the mystery was never fully solved by human intervention.",
-          "zh": "然而，五个橘核案呈现出如此不寻常和如此可怕的特征，以至于我不能不把它记录下来，尽管这一谜团从未通过人类干预得到完全解决。"
+          "en": "St. Clair sheepishly confessed that years ago, while working as a journalist, he had disguised himself as a beggar for an article and discovered that begging earned him three pounds a day—far more than journalism! He had lived a double life ever since, supporting his family in luxury as a professional beggar, but had been caught when his wife accidentally walked by.",
+          "zh": "圣克莱尔羞怯地承认几年前当记者时，他曾为了写文章将自己伪装成乞丐，并发现乞讨每天能赚三镑（远多于新闻业！）。从那以后他一直过着双重生活，作为专业乞丐在奢华中养活家人，但在妻子意外走过时被抓包了。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Adventure of the Blue Carbuncle",
+      "chineseTitle": "第 6 章：蓝宝石案与圣诞鹅奇遇",
+      "paragraphs": [
+        {
+          "en": "On the second morning after Christmas, I visited Holmes and found him examining a battered felt hat and a fat Christmas goose brought to him by a commissionaire named Peterson. Peterson had found them after a street brawl. Attached to the goose's leg was a card for 'Mrs. Henry Baker.'",
+          "zh": "在圣诞节后的第二个早上，我拜访了福尔摩斯，发现他正在检查帽子和一只肥硕的圣诞鹅，那是一位名叫彼得森的信使带给他的。彼得森在一次街头斗殴后发现了它们。系在鹅腿上的是一张写给“亨利·贝克太太”的卡片。"
+        },
+        {
+          "en": "While Peterson cooked the goose for dinner, he rushed back into Baker Street in shock: inside the goose's crop he had found the Countess of Morcar's famous Blue Carbuncle, a priceless jewel stolen days earlier from the Hotel Cosmopolitan! A poor plumber named John Horner had been arrested for the theft.",
+          "zh": "当彼得森为晚餐煮鹅时，他在震惊中冲回了贝克街：在鹅的嗉囊里他发现了莫卡伯爵夫人的著名蓝宝石，一颗几天前从大都会酒店偷来的无价宝石！一位名叫约翰·霍纳的可怜水管工因盗窃被捕。"
+        },
+        {
+          "en": "Holmes traced the goose back through the dealer at Covent Garden Market to a goose-breeder named Mrs. Oakshott. Outside the market, Holmes noticed a terrified man named James Ryder questioning the dealer about the geese. Holmes tricked Ryder into returning to Baker Street, where Ryder broke down and confessed.",
+          "zh": "福尔摩斯通过考文特花园市场的经销商将鹅追踪到了一位名叫奥克肖特太太的养鹅人。在市场外，福尔摩斯注意到一位名叫詹姆斯·赖德的惊恐男人正在向经销商询问关于鹅的事。福尔摩斯把赖德诱骗回贝克街，在那里赖德崩溃并招供了。"
+        },
+        {
+          "en": "Ryder, the hotel head attendant, had stolen the jewel and framed the plumber. Seeking to hide the gem, Ryder had forced the jewel down the throat of one of his sister Mrs. Oakshott's geese, intending to claim that specific bird later. But he accidentally picked the wrong bird! Holmes, filled with Christmas mercy, decided not to turn Ryder over to the police, allowing him to flee the country while innocent Horner was released.",
+          "zh": "赖德（酒店领班侍者）偷了宝石并陷害了水管工。寻求隐藏宝石，赖德曾把宝石塞进了他姐姐奥克肖特太太的一只鹅的喉咙里，打算以后再索要那只特定的鸟。但他意外挑错了鸟！福尔摩斯充满了圣诞节的慈悲，决定不把赖德交给警察，允许他逃离该国，同时无辜的霍纳被释放了。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Adventure of the Speckled Band",
+      "chineseTitle": "第 7 章：斑点带案与危险毒蛇",
+      "paragraphs": [
+        {
+          "en": "Early one April morning in 1883, Helen Stoner arrived at Baker Street shivered with terror. Helen lived at Stoke Moran with her violent, quick-tempered stepfather, Dr. Grimesby Roylott, a impoverished aristocrat who had spent years in India and kept wild exotic animals on his estate, including a cheetah and a baboon.",
+          "zh": "1883 年 4 月的一个清晨，海伦·斯托纳怀着恐惧的颤抖来到了贝克街。海伦与她暴躁易怒的继父格莱姆斯比·罗伊洛特医生一起住在斯托克莫兰，后者是一位贫困的贵族，在印度生活了多年，并在庄园里养着野生异域动物，包括一只猎豹和一只狒狒。"
+        },
+        {
+          "en": "Helen explained that two years earlier, her twin sister Julia had died mysteriously in her bedroom just before her wedding. Julia's dying words were a terrified whisper: 'The speckled band!' Now, Helen was engaged to be married, and Dr. Roylott had ordered her to move into Julia's old bedroom under the pretext of wall repairs. Last night, Helen heard the same low whistle that Julia had reported before her death!",
+          "zh": "海伦解释说两年前，她的双胞胎姐妹朱莉娅在婚礼前夕在卧室里神秘死亡。朱莉娅临死前的话语是一句恐怖的低语：“斑点带！”如今，海伦订婚准备结婚，而罗伊洛特医生以墙壁维修为借口命令她搬进朱莉娅原来的卧室。昨晚，海伦听到了朱莉娅生前报告过的同一个低沉哨声！"
+        },
+        {
+          "en": "Holmes examined Dr. Roylott's financial records and discovered that if either stepdaughter married, Dr. Roylott would lose two-thirds of his late wife's income. Inspecting Julia's bedroom, Holmes uncovered curious clues: a dummy bell-rope that did not ring, a ventilator connecting to Dr. Roylott's room, and a bed bolted to the floor.",
+          "zh": "福尔摩斯检查了罗伊洛特医生的财务记录，发现如果任何一个继女结婚，罗伊洛特医生就会失去他已故妻子三分之二的收入。检查朱莉娅的卧室，福尔摩斯发现了奇怪的线索：一条并不响的假铃绳、一个连接到罗伊洛特医生房间的通风口，以及一张锁在地板上的床。"
+        },
+        {
+          "en": "That night, Holmes and Watson snuck into Helen's bedroom in the dark. Sitting silently in the dark, Holmes suddenly struck a match and struck violently at the bell-rope with his cane, shouting, 'You see it, Watson?' Through the ventilator came a terrible hiss. Dr. Roylott had trained a deadly Indian Swamp Adder—the 'speckled band'—to climb down the bell-rope and bite the victim. Agitated by Holmes's blows, the lethal snake slithered back through the ventilator and bit Dr. Roylott in the brain, killing the evil doctor within ten seconds.",
+          "zh": "那天晚上，福尔摩斯和华生在黑暗中溜进了海伦的卧室。在黑暗中静静地坐着，福尔摩斯突然划亮了一根火柴，用拐杖猛烈地抽打着铃绳，喊道：“你看到它了吗，华生？”穿过通风口传来了一声可怕的嘶嘶声。罗伊洛特医生曾训练了一条致命的印度沼泽蝰蛇（“斑点带”）沿着铃绳爬下来咬死受害者。被福尔摩斯的抽打激怒，这条致命的蛇滑回穿过通风口咬中了罗伊洛特医生的大脑，在十秒钟内杀死了这位恶毒的医生。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Copper Beeches and the Final Deduction",
+      "chineseTitle": "第 8 章：铜枫庄奇案与演绎法的终极胜利",
+      "paragraphs": [
+        {
+          "en": "Violet Hunter, a young governess, sought Holmes's advice regarding a strange job offer at The Copper Beeches in Hampshire. Mr. Jephro Rucastle offered her an extraordinary salary of 120 pounds a year on the weird conditions that she cut her long electric-brown hair short, wear a peculiar blue dress, and sit in the drawing-room with her back to the window at specific hours.",
+          "zh": "瓦奥莱特·亨特（一位年轻的家庭教师）就汉普郡铜枫庄一份奇怪的工作要约寻求福尔摩斯的建议。杰弗罗·鲁卡斯尔先生为她提供每年 120 镑的非凡薪水，条件奇怪：要求她剪短长长的棕色头发、穿上一件奇特的蓝色连衣裙，并在特定小时背对窗户坐在客厅里。"
+        },
+        {
+          "en": "Holmes advised her to accept but promised to come if she needed help. Weeks later, Violet summoned Holmes, revealing that she had discovered a locked wing of the house guarded by a vicious mastiff, and suspected a secret prisoner was held inside. Holmes deduced that Rucastle was impersonating his estranged daughter, Alice, who was locked away so Rucastle could steal her inheritance.",
+          "zh": "福尔摩斯建议她接受，但承诺如果她需要帮助就会赶来。几周后，瓦奥莱特召唤了福尔摩斯，揭露了她发现了一间由恶狗看守的锁着的房屋侧翼，并怀疑里面关押着一位秘密囚犯。福尔摩斯推断出鲁卡斯尔正在伪装他失和的女儿艾丽斯（她被锁起来以便鲁卡斯尔能偷走她的遗产）。"
+        },
+        {
+          "en": "Breaking into the locked wing, Holmes and Watson found Alice had escaped with her lover, Mr. Fowler. Rucastle released his giant mastiff to attack Holmes, but the hungry beast turned upon Rucastle himself, badly mauling him before Watson shot the dog. Alice married Fowler, and Violet Hunter became the successful head of a private school.",
+          "zh": "闯入锁着的侧翼，福尔摩斯与华生发现艾丽斯已经和她的爱人福勒先生逃跑了。鲁卡斯尔放出了他的巨型猛犬去攻击福尔摩斯，但饥饿的野兽转而攻击鲁卡斯尔本人，在华生开枪打死狗之前严重咬伤了他。艾丽斯嫁给了福勒，而瓦奥莱特·亨特成为了一所私人学校成功的校长。"
+        },
+        {
+          "en": "Reflecting on these cases back at Baker Street, Holmes observed that truth is stranger than fiction. With a keen eye for minute details and an unshakeable faith in logical deduction, Sherlock Holmes stood as an eternal guardian of justice, using his brilliant intellect to protect the innocent and expose the darkness of human nature.",
+          "zh": "回到贝克街反思这些案件，福尔摩斯观察到真相比虚构更加神奇。凭借对微小细节敏锐的眼睛和对逻辑演绎法不可动摇的信念，歇洛克·福尔摩斯矗立为正义永恒的守护者，利用他卓越的智力去保护无辜者并揭露人性黑暗。"
         }
       ]
     }

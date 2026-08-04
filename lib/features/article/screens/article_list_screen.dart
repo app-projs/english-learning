@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../models/article.dart';
 import '../models/book.dart';
 import '../services/article_service.dart';
@@ -86,8 +86,6 @@ class _ReadingTabState extends State<ReadingTab> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('阅读文章'),

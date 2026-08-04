@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../core/theme/lumina_theme.dart';
 import '../../../core/services/storage_service.dart';
 
@@ -147,7 +147,7 @@ class _LevelAssessmentScreenState extends State<LevelAssessmentScreen> {
                 ),
                 child: Text(
                   q.levelTag,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: LuminaColors.primary,

@@ -4,6 +4,7 @@ import '../../../core/services/storage_service.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../core/services/sm2_service.dart';
 import '../../../core/theme/lumina_theme.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 import '../../../features/review/screens/completion_congratulation_screen.dart';
 import '../../../features/profile/screens/goal_setting_screen.dart';
 import '../mock/mock_words.dart';
@@ -661,28 +662,14 @@ class _WordPracticeScreenState extends State<WordPracticeScreen>
             ),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48),
-          child: Container(
-            color: Colors.transparent,
-            child: TabBar(
-              controller: _tabController,
-              dividerColor: Colors.transparent,
-              dividerHeight: 0,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicator: const UnderlineTabIndicator(
-                borderSide: BorderSide(width: 3, color: Colors.blue),
-                insets: EdgeInsets.symmetric(horizontal: 16),
-                borderRadius: BorderRadius.all(Radius.circular(3)),
-              ),
-              tabs: const [
-                Tab(icon: Icon(Icons.style, size: 20), text: '卡片模式'),
-                Tab(icon: Icon(Icons.quiz, size: 20), text: '测试模式'),
-                Tab(icon: Icon(Icons.edit, size: 20), text: '拼写小测'),
-                Tab(icon: Icon(Icons.account_tree_rounded, size: 20), text: '同反义词链'),
-              ],
-            ),
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          tabs: const [
+            Tab(icon: Icon(Icons.style, size: 20), text: '卡片模式'),
+            Tab(icon: Icon(Icons.quiz, size: 20), text: '测试模式'),
+            Tab(icon: Icon(Icons.edit, size: 20), text: '拼写小测'),
+            Tab(icon: Icon(Icons.account_tree_rounded, size: 20), text: '同反义词链'),
+          ],
         ),
       ),
       body: TabBarView(

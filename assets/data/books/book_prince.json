@@ -4,224 +4,686 @@
   "chineseTitle": "小王子",
   "author": "Antoine de Saint-Exupéry",
   "coverUrl": "assets/images/book_prince.png",
-  "description": "《小王子》是法国飞行员作家安托万·德·圣埃克苏佩里（Antoine de Saint-Exupéry）于 1943 年创作的世界级哲理童话。飞行员主角因飞机故障坠毁在撒哈拉沙漠，意外结识了来自远方 B-612 小行星的小王子。小王子讲述了他离开深爱的玫瑰花、穿梭于各个行星的奇妙旅程——他遇到了专制的国王、爱慕虚荣的人、借酒浇愁的酒鬼、忙碌计算的实业家以及忠诚的点灯人，最终在地球遇到了智慧的狐狸。狐狸教会了他“只有用心才能看得清，实质性的东西是眼睛看不见的”这一真谛。全书文笔清澈如水，蕴含深邃的人文关怀与哲学思考。",
+  "description": "《小王子》是法国伟大飞行员作家安托万·德·圣-埃克苏佩里于 1943 年出版的享誉全球的哲学童话巅峰名篇。本文件收录了全书完整的 27 个章节。故事讲述了飞行员因飞机故障被迫降落在撒哈拉沙漠，遇到了来自外星球的小王子。小王子讲述了他离开自己的小行星 B-612，离开了他深爱却又骄傲敏感的玫瑰，游历各个星球的奇妙经历。通过遇到国王、虚荣者、商人、守灯人、地理学家以及地球上的狐狸，小王子领悟了爱与责任的真谛——“只有用心灵才能看得清本质，真正重要的东西用眼睛是看不见的”。",
   "category": "经典名著",
   "difficulty": "初/中级难度",
-  "totalUnits": 5,
-  "wordCount": 9800,
-  "readerCount": "191万人在读",
-  "targetVocab": "1000-3500词",
-  "tagLabel": "童话故事",
-  "coverBadge": "精读 · 经典名著",
+  "totalUnits": 27,
+  "wordCount": 58000,
+  "readerCount": "260.8万人在读",
+  "targetVocab": "1000-3800词",
+  "tagLabel": "哲理童话",
+  "coverBadge": "精读 · 必读全本",
   "chapters": [
     {
       "unitIndex": 1,
-      "title": "Chapter 1: The Boa Constrictor",
-      "chineseTitle": "第 1 章：吞象的巨蟒画作",
+      "title": "Chapter 1: The Boa Constrictor and the Elephant",
+      "chineseTitle": "第 1 章：吞了大象的巨蟒画作",
       "paragraphs": [
         {
-          "en": "Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature, about the primeval forest. It was a picture of a boa constrictor in the act of swallowing an animal. Here is a copy of the drawing.",
-          "zh": "在我六岁的时候，在一本描写原始森林的名叫《真实的故事》的书中，看到过一副精彩的插图。那是一幅巨蟒正在吞食野兽的图画。这是那幅画的复刻版。"
+          "en": "Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature, about the primeval forest. It was a picture of a boa constrictor in the act of swallowing an animal. Here is a copy of the drawing. In the book it said: 'Boa constrictors swallow their prey whole, without chewing it. After that they are not able to move, and they sleep through the six months that they need for digestion.'",
+          "zh": "当我六岁的时候，在一本描写原始森林的名叫《真实的故事》的书里，看到了一幅壮观的图画。那是一幅巨蟒正在吞食野兽的图画。书里写着：“巨蟒把猎物不加咀嚼地整个吞下。此后它们就不能动弹了，要在六个月的睡眠中消化食物。”"
         },
         {
-          "en": "In the book it said: \"Boa constrictors swallow their prey whole, without chewing it. After that they are not able to move, and they sleep through the six months that they need for digestion.\"",
-          "zh": "书中写道：“巨蟒把猎物整个吞进肚子里，咀嚼都不咀嚼。然后它们就不能动弹了，要在长达六个月的睡眠中消化食物。”"
+          "en": "I thought a lot about the adventures of the jungle, and with a colored pencil I succeeded in making my first drawing: Drawing Number One. It showed a boa constrictor digesting an elephant. I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened them. But they answered: 'Frighten? Why should any one be frightened by a hat?' My drawing was not a picture of a hat. It was a picture of a boa constrictor digesting an elephant. But since the grown-ups were not able to understand it, I made another drawing: I drew the inside of a boa constrictor, so that the grown-ups could see clearly. They always need to have things explained.",
+          "zh": "我对丛林中的冒险思考了许多，用一支彩色铅笔成功做出了我的第一幅图画：一号图画。它展示了一条正在消化大象的巨蟒。我把我的杰作拿给大人看，问他们这幅画是否吓到了他们。但他们回答：“吓人？一顶帽子有什么好吓人的？”我的画不是一顶帽子，而是一条正在消化大象的巨蟒。但因为大人看不懂，我又画了另一幅：我画出了巨蟒的内部，以便大人能看清楚。他们总是需要把事情解释得清清楚楚。"
         },
         {
-          "en": "I pondered deeply, then, over the adventures of the jungle. And after some work with a colored pencil I succeeded in making my first drawing. My Drawing Number One. It looked something like this:",
-          "zh": "当时，我对丛林里的冒险思想了很久。于是，我用彩色铅笔成功画出了我的第一幅画。我的第一号作品。它看起来像这样："
+          "en": "My Drawing Number Two looked like this: The grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic, and grammar. That is why, at the age of six, I gave up what might have been a magnificent career as a painter. I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to them.",
+          "zh": "我的二号图画看起来像这样：大人这一次的反应是劝我把巨蟒的图画放在一边（无论是从外表看还是从内部看），而把精力投入到地理、历史、算术和语法中。这就是为什么在六岁时我放弃了本可能成为一名伟大画家的事业。一号图画和二号图画的失败使我沮丧。大人自己从来什么也不懂，而要孩子们不断地、永远地向他们解释事情，那是很令人厌烦的。"
         },
         {
-          "en": "I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened them.",
-          "zh": "我把我的杰作拿给大人看，问他们我的画是不是吓着他们了。"
+          "en": "So then I chose another profession, and learned to pilot airplanes. I have flown a little all over the world, and it is true that geography has been very useful to me. At a glance I can distinguish China from Arizona. If one gets lost in the night, such knowledge is valuable. In the course of this life I have had a great many encounters with a great many people who have been concerned with matters of consequence. I have lived a great deal among grown-ups. I have seen them intimately, close at hand. And that hasn't much improved my opinion of them.",
+          "zh": "因此我选择了另一个职业，学会了驾驶飞机。我在全世界飞来飞去，确实地理对我极其有用。一眼我就可以把中国和亚利桑那州区分开来。如果一个人在夜里迷路了，这样的知识是宝贵的。在我生活的岁月中，我与许多关注重大事务的人有过许多接触。我大多生活在大人中间。我非常近距离地观察过他们。但这并没有怎么提高我对他们的看法。"
         },
         {
-          "en": "But they answered: \"Frightened? Why should any one be frightened by a hat?\"",
-          "zh": "可他们回答说：“吓人？一顶帽子有什么好吓人的？”"
-        },
-        {
-          "en": "My drawing was not a picture of a hat. It was a picture of a boa constrictor digesting an elephant. But since the grown-ups were not able to understand it, I made another drawing: I drew the inside of a boa constrictor, so that the grown-ups could see it clearly. They always need to have things explained. My Drawing Number Two looked like this:",
-          "zh": "我的画画的不是一顶帽子。那是一条巨蟒在消化一只大象。但是大人们看不懂，所以我又画了另一幅：我画了巨蟒肚子里面的情形，好让大人能看得清清楚楚。他们总是需要解释。我的第二号作品是这样的："
-        },
-        {
-          "en": "The grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic, and grammar. That is why, at the age of six, I gave up what might have been a magnificent career as a painter. I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to them.",
-          "zh": "大人们对这幅画的反应是，劝我把巨蟒的画——无论是外面的还是里面的——放在一边，把精力投到地理、历史、算术和语法上去。就这样，在六岁那年，我放弃了本可以成为伟大画家的光辉前途。我的第一号作品和第二号作品的失败让我灰了心。大人们自己什么也弄不懂，单要孩子们一遍又一遍地给他们作解释，真是太累人了。"
+          "en": "Whenever I met one of them who seemed to me at all clear-sighted, I tried the experiment of showing him my Drawing Number One, which I have always kept. I would try to find out, so, if this was a person of true understanding. But, whoever it was, he, or she, would always say: 'That is a hat.' Then I would never talk to that person about boa constrictors, or primeval forests, or stars. I would bring myself down to his level. I would talk to him about bridge, and golf, and politics, and neckties. And the grown-up would be greatly pleased to have met such a sensible man.",
+          "zh": "每当我遇到一个在我看来稍微有眼光的人时，我都尝试向他展示我一直保留的一号图画。我会试图通过这种方式弄清楚这是否是一个具有真正理解力的人。但是，无论是谁，他（或她）总是会说：“那是一顶帽子。”然后我就永远不会和那个人谈论巨蟒、原始森林或恒星。我会把自己降低到他的水平。我会和他谈论桥牌、高尔夫、政治和领带。而大人会非常高兴认识了这样一个明智的人。"
         }
       ]
     },
     {
       "unitIndex": 2,
-      "title": "Chapter 2: In the Sahara Desert",
-      "chineseTitle": "第 2 章：撒哈拉沙漠的相遇",
+      "title": "Chapter 2: The Crash in the Sahara and the Sheep",
+      "chineseTitle": "第 2 章：沙漠坠机与“请给我画一只羊”",
       "paragraphs": [
         {
-          "en": "So I lived my life alone, without anyone that I could really talk to, until I had an accident with my plane in the Desert of Sahara, six years ago. Something was broken in my engine. And as I had with me neither a mechanic nor any passengers, I set myself to attempt the difficult repair job, all alone. It was a question of life or death for me: I had scarcely enough drinking water to last a week.",
-          "zh": "就这样，我独自一人生活着，没有一个真正谈得来的人，直到六年前我的飞机在撒哈拉沙漠出了故障。我的发动机里有什么东西给卡住了。因为我既没带机械师，也没带乘客，我便一个人干起了这项艰难的维修工作。这对我来说是生死攸关的事：我带的饮用水只够维持一个星期的。"
+          "en": "So I lived my life alone, without anyone that I could really talk to, until I had an accident with my plane in the desert of Sahara, six years ago. Something was broken in my engine. And as I had with me neither a mechanic nor any passengers, I set myself to attempt the difficult repair all alone. It was a matter of life or death for me: I had scarcely enough drinking water to last a week.",
+          "zh": "我就这样孤独地生活着，没有一个可以真正倾诉的人，直到六年前我的飞机在撒哈拉沙漠出了事故。发动机里有什么东西坏了。因为我既没带机械师也没带乘客，我决定独自尝试这项艰难的维修。这对我来说是生死攸关的大事：我带的饮用水几乎不够用一周。"
         },
         {
-          "en": "The first night, then, I went to sleep on the sand, a thousand miles from any inhabited territory. I was more isolated than a shipwrecked sailor on a raft in the middle of the ocean. Thus you can imagine my amazement, at sunrise, when I was awakened by an odd little voice. It said:",
-          "zh": "第一天晚上，我在离有人烟的地方一千英里的沙漠上睡着了。我比在茫茫大海中依靠木筏漂流的落难水手还要孤立无援。因此，当太阳升起时，我被一个奇异的小声音唤醒，你可以想象我是多么惊讶了。那个声音说："
+          "en": "The first night I went to sleep on the sand, a thousand miles from any inhabited territory. I was more isolated than a shipwrecked sailor on a raft in the middle of the ocean. Thus you can imagine my amazement, at sunrise, when I was awakened by an odd little voice. It said: 'If you please—draw me a sheep!' 'What!' 'Draw me a sheep...'",
+          "zh": "第一天晚上我在沙滩上睡着了，离任何有人居住的地方有一千英里。我比大洋中央木筏上遭遇船难的水手还要孤立。因此你可以想象我的吃惊，在日出时分，当我被一个奇怪的小声音唤醒。它说：“请你——给我画一只羊！”“什么！”“给我画一只羊……”"
         },
         {
-          "en": "\"If you please—draw me a sheep!\"",
-          "zh": "“请……给我画一只羊吧！”"
+          "en": "I jumped to my feet, completely thunderstruck. I blinked my eyes hard. I looked carefully. And I saw a most extraordinary small person, who stood there examining me with great seriousness. Here you may see the best portrait that, later on, I was able to make of him. But my drawing is certainly very much less charming than its model. That, however, is not my fault. The grown-ups discouraged me in my painter's career when I was six years old.",
+          "zh": "我跳了起来，完全被震住了。我狠狠眨了眨眼睛。我仔细看去。我看到了一位极其非凡的小人，正站在那里极其严肃地观察着我。这里你可以看到后来我能为他做出的最好的肖像。但我的图画肯定远不如它的原型迷人。然而那不是我的错。大人在我六岁时挫伤了我的画家生涯。"
         },
         {
-          "en": "\"What!\"",
-          "zh": "“什么！”"
+          "en": "Now I stared at this sudden apparition with my eyes popping out of my head with astonishment. Remember, I had crashed in the desert a thousand miles from any inhabited region. And yet my little man did not seem to be straying, or dying of fatigue, or dying of hunger, or dying of thirst, or dying of fear. He did not give the impression of a child lost in the middle of the desert. When at last I was able to speak, I said to him: 'But—what are you doing here?' And he answered, very slowly, as if he were speaking of a matter of great consequence: 'If you please—draw me a sheep...'",
+          "zh": "现在我用惊讶得几乎从头颅里凸出来的眼睛瞪着这个突如其来的显现。记住，我坠毁在离任何有人居住区域一千英里的沙漠里。然而我的小人似乎没有迷路，没有累死，没有饿死，没有渴死，也没有吓死。他一点也不像一个在沙漠中央迷路的孩子。当我终于能够开口说话时，我对他说：“但是——你在哪里干什么？”而他极其缓慢地回答，就仿佛他在说着一件极其重大的事情：“请你——给我画一只羊……”"
         },
         {
-          "en": "\"Draw me a sheep...\"",
-          "zh": "“给我画一只羊……”"
+          "en": "When a mystery is too overpowering, one dare not disobey. Absurd as it might seem to me, a thousand miles from any human habitation and in danger of death, I took out of my pocket a sheet of paper and my fountain-pen. But then I remembered how my studies had been concentrated on geography, history, arithmetic, and grammar, and I told the little chap that I did not know how to draw. He answered me: 'That doesn't matter. Draw me a sheep.'",
+          "zh": "当神秘过于压倒一切时，人们不敢不服从。尽管在我看来这似乎很荒诞（在离人类住所一千英里且有死亡危险的地方），我从口袋里掏出了一张纸和我的钢笔。但接着我记起我的学习都集中在了地理、历史、算术和语法上，我告诉小家伙我不会画画。他回答我：“那没关系。给我画一只羊。”"
         },
         {
-          "en": "I jumped to my feet, completely thunderstruck. I blinked my eyes hard. I looked carefully all around me. And I saw a most extraordinary small person, who stood there examining me with great seriousness. Here you may see the best portrait that, later on, I was able to make of him.",
-          "zh": "我一跃而起，像被雷劈了一样。我用力眨了眨眼睛。仔细地看了看周围。我看到一个非常非凡的小人儿，站在那里非常严肃地审视着我。这里就是我后来能够为他画出的最好的一副肖像。"
-        },
-        {
-          "en": "Now I stared at this sudden apparition with my eyes starting out of my head in astonishment. Remember, I had crashed in the desert a thousand miles from any inhabited region. And yet my little man did not seem to be straying in the desert, nor dying of fatigue, of hunger, of thirst, or of fear. He did not give the impression of a child lost in the middle of the desert, a thousand miles from any human habitation.",
-          "zh": "此时，我张大眼睛惊讶地看着这个突然显现的小人。别忘了，我当时正身处远离人烟千里的沙漠之中。可这个小家伙看起来既不像是在沙漠中迷了路，也不像是因为疲倦、饥饿、口渴或害怕而要死去的样子。他一点也不像一个在远离人烟千里的沙漠中央迷路的小孩。"
-        },
-        {
-          "en": "When at last I was able to speak, I said to him: \"But—what are you doing here?\"",
-          "zh": "当我看终于能说出话来时，我对他说：“可是……你在干什么呢？”"
-        },
-        {
-          "en": "And in answer he repeated, very slowly, as if he were speaking of a matter of great consequence: \"If you please—draw me a sheep...\"",
-          "zh": "作为回答，他非常缓慢地重复着，仿佛在说一件非常重大的事情：“请……给我画一只羊……”"
+          "en": "Having no experience drawing sheep, I drew my old Drawing Number One. To my astonishment, the little fellow cried out: 'No, no! I do not want an elephant inside a boa constrictor! A boa constrictor is very dangerous, and an elephant is very cumbersome. Where I live, everything is very small. I need a sheep.' So I drew a small wooden box and told him: 'This is the box. The sheep you asked for is inside.' To my surprise, the little prince's face lit up with delight: 'That is exactly the way I wanted it!'",
+          "zh": "由于没有画羊的经验，我画了我旧的一号图画。令我吃惊的是，小家伙喊道：“不，不！我不要巨蟒肚子里的大象！巨蟒太危险，大象太笨重。在我住的地方，一切都非常小。我需要一只羊。”于是我画了一个小木箱告诉他：“这是箱子。你要的羊在里面。”令我惊讶的是，小王子的面庞绽放出了喜悦：“这正是我想要的样子！”"
         }
       ]
     },
     {
       "unitIndex": 3,
       "title": "Chapter 3: The Little Prince’s Planet",
-      "chineseTitle": "第 3 章：小王子的神秘星球",
+      "chineseTitle": "第 3 章：探寻小王子的来源星球",
       "paragraphs": [
         {
-          "en": "It took me a long time to learn where he came from. The little prince, who asked me so many questions, never seemed to hear the ones I asked him. It was from words dropped by chance that, little by little, everything was revealed to me.",
-          "zh": "我很长时间才明白他是从哪里来的。小王子问了我许多问题，却好像从来听不见我问他的问题。我是从他无意中吐露的字眼里，才一点一点了解了一切。"
+          "en": "It took me a long time to understand where he came from. The little prince, who asked me so many questions, never seemed to hear the ones I asked him. It was from words dropped by chance that, little by little, everything was revealed to me. For instance, when he first caught sight of my airplane, he asked: 'What is that thing?' 'That is not a thing. It flies. It is an airplane. It is my airplane.' And I was proud to have him learn that I could fly.",
+          "zh": "我花了很长时间才弄明白他是从哪里来的。小王子向我提了那么多问题，却似乎从没听见我问他的问题。正是从他偶尔流露出的只言片语中，一点一滴地，一切才向我揭开。例如，当他第一次看到我的飞机时，他问：“那个东西是什么？”“那不是东西。它会飞。那是一架飞机。那是我的飞机。”我很自豪让他知道我会飞。"
         },
         {
-          "en": "The first time he caught sight of my airplane, for instance (I shall not draw my airplane; that would be much too complicated for me), he asked:",
-          "zh": "比如，当他第一次看到我的飞机时（我不画我的飞机，那对我来说太复杂了），他问："
+          "en": "He cried out then: 'What! You dropped down from the sky?' 'Yes,' I answered modestly. 'Oh, that is funny!' And the little prince broke into a lovely peal of laughter, which irritated me, for I like my misfortunes to be taken seriously. Then he added: 'So you, too, come from the sky! Which is your planet?'",
+          "zh": "那时他惊呼道：“什么！你是从天上下来的？”“是的，”我谦虚地回答。“哦，那真滑稽！”小王子发出了一阵可爱的笑声，这让我有点恼火，因为我希望人们严肃对待我的不幸。接着他补充道：“这么说，你也是从天上来！哪一个是你的星球？”"
         },
         {
-          "en": "\"What is that object?\"",
-          "zh": "“那是个什么东西？”"
+          "en": "At that moment I caught a gleam of light in the impenetrable mystery of his presence; and I demanded, abruptly: 'Do you come from another planet, then?' But he did not reply. He tossed his head gently, without taking his eyes from my plane: 'It is true that on that you couldn't have come from very far away...' And he sank into a reverie, which lasted a long time. Then, taking my sheep out of his pocket, he buried himself in the contemplation of his treasure.",
+          "zh": "在那一刻，我在他存在的难以穿透的神秘中捕捉到了一缕光芒；我突然打听：“那么你来自另一个星球吗？”但他没有回答。他轻轻摇了摇头，眼睛没有离开我的飞机：“确实乘坐那个你不可能来自非常远的地方……”接着他沉入了冥想，持续了很长时间。接着，从口袋里掏出我的羊，他沉浸在了对他宝藏的沉思中。"
         },
         {
-          "en": "\"That is not an object. It flies. It is an airplane. It is my airplane.\"",
-          "zh": "“那不是个东西。它会飞。那是一架飞机。是我的飞机。”"
+          "en": "You can imagine how my curiosity was aroused by this half-confidence about the 'other planets.' I attempted, then, to go deeper into the subject: 'My little man, where do you come from? What is this 'where I live' of which you speak? Where are you going to take my sheep?' After a reflective silence he answered: 'The thing that is so good about the box you have given me is that at night he can use it as his house.' 'Certainty. And if you are good I will give you a string, too, so that you can tie him during the day, and a post to tie him to.'",
+          "zh": "你可以想象我关于“其他星球”的这半透露激起了我多么大的好奇心。接着，我试图深入探讨这个主题：“我的小人，你来自哪里？你所说的‘我住的地方’是什么？你打算把我的羊带到哪里去？”在深思熟虑的沉默后他回答：“你给我的盒子极其好的一点是，在夜晚他可以用它当房子。”“当然。如果你听话，我还会给你一根绳子，以便你白天可以系住他，再给一根系他的柱子。”"
         },
         {
-          "en": "And I was proud to have him learn that I could fly. He cried out then:",
-          "zh": "我很自豪地让他知道我会飞。这时他大声叫道："
-        },
-        {
-          "en": "\"What! You dropped down from the sky?\"",
-          "zh": "“什么！你是从天上掉下来的？”"
-        },
-        {
-          "en": "\"Yes,\" I answered modestly.",
-          "zh": "“是的，”我谦虚地回答。"
-        },
-        {
-          "en": "\"Oh! That is funny!\"",
-          "zh": "“啊！这真滑稽！”"
-        },
-        {
-          "en": "And the little prince broke into a lovely peal of laughter, which irritated me. I like my misfortunes to be taken seriously. Then he added:",
-          "zh": "小王子发出一阵清脆愉悦的笑声，这让我有点恼火。我希望别人严肃对待我的不幸。接着他又补充道："
-        },
-        {
-          "en": "\"So you, too, come from the sky! Which is your planet?\"",
-          "zh": "“这么说，你也是从天上来的！你是哪颗星球上的？”"
-        },
-        {
-          "en": "At that moment I caught a gleam of light in the mystery of his presence, and I demanded abruptly: \"Do you come from another planet, then?\"",
-          "zh": "那一刻，我在他降临的谜团中捕捉到了一缕微光，我突然问道：“那么，你是从另一颗星球上来的吗？”"
-        },
-        {
-          "en": "But he did not answer. He tossed his head gently, without taking his eyes from my plane: \"It is true that on that thing you couldn't have come from very far away...\" And he sank into a reverie, which lasted a long time. Then, taking my sheep out of his pocket, he buried himself in the contemplation of his treasure.",
-          "zh": "但他没有回答。他轻轻地摇了摇头，眼睛没有离开我的飞机：“确实，坐着这玩意儿，你不可能从很远的地方来……”接着他就陷入了长久的沉思。然后，他从口袋里掏出我画的羊，沉浸在对自己宝贝的凝视中。"
+          "en": "But the little prince seemed shocked by this offer: 'Tie him! What a funny idea!' 'But if you don't tie him he will wander off somewhere, and get lost.' My friend broke into another peal of laughter: 'But where do you think he would go?' 'Anywhere. Straight ahead of him.' Then the little prince remarked, gravely: 'That doesn't matter. Where I live, everything is so small!' And, with perhaps a touch of sadness, he added: 'Straight ahead of him, nobody can go very far...'",
+          "zh": "但小王子似乎对这个提议感到震惊：“系住他！多么滑稽的想法！”“但如果你不系住他，他就会在某个地方乱逛并迷路。”我的朋友发出了另一阵笑声：“但你认为他会去哪里？”“任何地方。径直往前。”接着小王子极其严肃地注意到：“那没关系。在我住的地方，一切都那么小！”而且，或许带着一丝悲伤，他补充道：“径直往前，没人能走非常远……”"
         }
       ]
     },
     {
       "unitIndex": 4,
-      "title": "Chapter 4: The Discovery of Asteroid B-612",
-      "chineseTitle": "第 4 章：发现 B-612 小行星",
+      "title": "Chapter 4: Asteroid B-612 and Grown-ups",
+      "chineseTitle": "第 4 章：B-612 小行星与大人对数字的偏执",
       "paragraphs": [
         {
-          "en": "I had thus learned a second fact of great importance: this was that the planet the little prince came from was scarcely any larger than a house!",
-          "zh": "就这样，我了解到了第二个非常重要的事实：小王子来自的那个星球，几乎比一栋房子大不了多少！"
+          "en": "I had thus learned a second fact of great importance: this was that the planet the little prince came from was scarcely any larger than a house! But that did not really surprise me much. I knew very well that in addition to the great planets—such as the Earth, Jupiter, Mars, Venus—there are also hundreds of others which are sometimes so small that it is difficult to see them through the telescope. I have serious reason to believe that the planet on which the little prince lived was the asteroid known as B-612.",
+          "zh": "我由此得知了第二个极其重要的事实：那就是小王子来自的星球几乎不比一栋房子大！但这并没有让我太吃惊。我很清楚，除了各大行星（如地球、木星、火星、金星）外，还有成百上千的其他小行星，有时它们小到很难通过望远镜看到。我有充分的理由相信，小王子居住的星球就是被称为 B-612 的小行星。"
         },
         {
-          "en": "But that did not really surprise me much. I knew very well that in addition to the great planets—such as the Earth, Jupiter, Mars, Venus—to which we have given names, there are also hundreds of others which are sometimes so small that it is very difficult to see them through the telescope.",
-          "zh": "但这并没有让我太感到吃紧。我很清楚，除了地球、木星、火星、金星这些我们已经给它们起了名字的大星球之外，还有成百上千颗其他的小行星，有时它们小得很难通过望远镜看到。"
+          "en": "This asteroid has only once been seen through the telescope. That was by a Turkish astronomer, in 1909. On making his discovery, the astronomer had presented it to the International Astronomical Congress, in a great demonstration. But he was in Turkish costume, and so nobody would believe what he said. Grown-ups are like that. Fortunately, however, for the reputation of Asteroid B-612, a Turkish dictator made a law that his subjects, under pain of death, should change to European costume. So in 1920 the astronomer gave his demonstration all over again, dressed with great elegance and pomp. And this time everybody accepted his report.",
+          "zh": "这颗小行星只在望远镜里被看过一次。那是在 1909 年由一位土耳其天文学家发现的。做出发现时，天文学家在一场盛大的演示中向国际天文学大会作了报告。但他穿着土耳其服装，因此没人相信他说的话。大人就是这样。然而幸运的是，为了小行星 B-612 的声誉，一位土耳其独裁者制定了一条法律，要求他的臣民在死刑威胁下改穿欧洲服装。因此在 1920 年，天文学家穿着极其优雅和隆重的衣服重新做了一遍演示。而这一次每个人都接受了他的报告。"
         },
         {
-          "en": "When an astronomer discovers one of these, he does not give it a name, but only a number. He calls it, for instance, \"Asteroid 3251.\"",
-          "zh": "当天文学家发现其中一颗时，他不会给它起名字，而只给它一个编号。例如，他会称它为“第 3251 号小行星”。"
+          "en": "If I have told you these details about the asteroid B-612 and if I have confided to you its number, it is on account of the grown-ups and their ways. Grown-ups love figures. When you tell them that you have made a new friend, they never ask you any questions about essential matters. They never say to you: 'What does his voice sound like? What games does he me prefer? Does he collect butterflies?' Instead, they demand: 'How old is he? How many brothers has he? How much does he weigh? How much money does his father make?' Only from these figures do they think they have learned anything about him.",
+          "zh": "如果我已经告诉了你关于小行星 B-612 的这些细节，如果我已经向你透露了它的编号，那是考虑到大人和他们的套路。大人喜欢数字。当你告诉他们你交了一个新朋友时，他们从来不问你关于实质问题。他们从不问你：“他的声音听起来像什么？他喜欢什么游戏？他收集蝴蝶吗？”相反，他们要求：“他多大年纪？他有几个兄弟？他有多重？他父亲赚多少钱？”只有从这些数字中，他们才认为自己了解了他。"
         },
         {
-          "en": "I have serious reason to believe that the planet on which the little prince lived was the asteroid known as B-612. This asteroid has only once been seen through the telescope. That was by a Turkish astronomer, in 1909.",
-          "zh": "我有严肃的理由相信，小王子生活的那个星球就是人们所说的 B-612 小行星。这颗小行星只在 1909 年被一位土耳其天文学家通过望远镜看到过一次。"
+          "en": "If you were to say to the grown-ups: 'I saw a beautiful house made of rosy brick, with geraniums in the windows and doves on the roof,' they would not be able to get any idea of that house at all. You would have to say to them: 'I saw a house that cost $20,000.' Then they would exclaim: 'Oh, what a pretty house that is!' Just so, you might say to them: 'The proof that the little prince existed is that he was charming, that he laughed, and that he was looking for a sheep. If anybody wants a sheep, that is proof that he exists.' And what good would it do to tell them that? They would shrug their shoulders, and treat you like a child. But if you say to them: 'The planet he came from is Asteroid B-612,' then they will be convinced, and leave you in peace from their questions.",
+          "zh": "如果你对大人说：“我看到了一栋由玫瑰色砖块建造的漂亮房子，窗户上有天竺葵，屋顶上有鸽子，”他们根本无法对那栋房子产生任何概念。你必须对他们说：“我看到了一栋价值两万美元的房子。”然后他们就会惊呼：“哦，那是一栋多么漂亮的房子啊！”正是这样，你可能会对他们说：“小王子存在的证明是他迷人，他笑了，而且他在寻找一只羊。如果有人想要一只羊，那就是他存在的证明。”告诉他们那个有什么用？他们会耸耸肩膀，把你当小孩对待。但如果你对他们说：“他来自的星球是小行星 B-612，”那么他们就会确信，不再用问题骚扰你。"
         },
         {
-          "en": "On making his discovery, the astronomer had presented it to the International Astronomical Congress, in a great demonstration. But he was in Turkish costume, and so nobody would believe what he said. Grown-ups are like that.",
-          "zh": "当时发现之后，天文学家在一次国际天文学大会上盛装展示了他的发现。 But 他穿着土耳其传统服装，所以没有人相信他所说的话。大人们就是这个样子。"
-        },
-        {
-          "en": "Fortunately, however, for the reputation of Asteroid B-612, a Turkish dictator made a law that his people, under pain of death, should change to European costume. So in 1920 the astronomer gave his demonstration all over again, dressed with great elegance and refinement. And this time everybody accepted his report.",
-          "zh": "幸运的是，为了 B-612 小行星的声誉，一位土耳其独裁者立了一条法律，逼迫他的人民改穿欧洲服装，违者处以死刑。于是，在 1920 年，这位天文学家身穿非常优雅考究的西装，重新进行了他的报告。这一次，所有人都接受了他的报告。"
+          "en": "They are like that. One must not hold it against them. Children should always show great forbearance toward grown-up people. But certainly, for us who understand life, figures are a matter of indifference. I should have liked to begin this story in the fashion of the fairy-tales. I should have liked to say: 'Once upon a time there was a little prince who lived on a planet that was scarcely any bigger than himself, and who had need of a sheep...' To those who understand life, that would have given a much greater air of truth to my story.",
+          "zh": "他们就是这样。人们不应该怪罪他们。孩子们应该总是对大人表现出极大的包容。但当然，对于我们这些理解生活的人来说，数字无关紧要。我本想以童话的方式开始这个故事。我本想说：“很久很久以前，有一个小王子生活在一颗几乎不比他自己大的星球上，他需要一只羊……”对于那些理解生活的人来说，那会给我的故事带来大得多的真实感。"
         }
       ]
     },
     {
       "unitIndex": 5,
       "title": "Chapter 5: The Baobab Trees",
-      "chineseTitle": "第 5 章：可怕的猴面包树",
+      "chineseTitle": "第 5 章：危险的猴面包树种",
       "paragraphs": [
         {
-          "en": "As each day passed I would learn, in our talk, something about the little prince's planet, his departure from it, his journey. The information would come very quietly, as it might chance to fall from his thoughts. It was in this way that I heard, on the third day, about the catastrophe of the baobabs.",
-          "zh": "随着日子一天天过去，在我们的交谈中，我会了解到一些关于小王子的星球、他的离开以及他的旅程的事情。这些信息来得非常安静，就像是从他的心思里无意中散落出来的一样。就是通过这种方式，在第三天，我听说了猴面包树的灾难。"
+          "en": "As each day passed I would learn something about the prince's planet, about his departure, about his journey. It came very slowly, in the course of his casual remarks. In this way I heard about the catastrophe of the baobabs on the third day. This time it was once more thanks to the sheep. For the little prince asked me abruptly: 'It is true, is it not, that sheep eat little bushes?' 'Yes, that is true.' 'Ah! I am glad!'",
+          "zh": "随着日子一天天过去，我会了解到关于王子的星球、他的离开、他的旅程的一些情况。这来得很慢，是在他随意的言谈中透露出来的。就这样在第三天我听说了猴面包树的灾难。这一次又要感谢那只羊。因为小王子突然问我：“羊吃小灌木，这是真的，对吧？”“是的，是真的。”“啊！我很高兴！”"
         },
         {
-          "en": "This time, once more, I had the sheep to thank for it. For the little prince asked me abruptly, as if seized by a grave doubt: \"It is true, isn't it, that sheep eat little bushes?\"",
-          "zh": "这一次，我又得感谢那只羊了。因为小王子突然问我，仿佛被一个严重的顾虑所困扰：“羊吃小灌木，这是真的，对吧？”"
+          "en": "I did not understand why it was so important that sheep should eat little bushes. But the little prince added: 'Then it follows that they also eat baobabs?' I pointed out to the little prince that baobabs were not little bushes, but trees as tall as castles. And that even if he took a whole herd of elephants with him, the herd would not eat up one single baobab. The idea of the herd of elephants made the little prince laugh: 'We would have to put them one on top of the other,' he remarked.",
+          "zh": "我不明白羊吃小灌木为什么这么重要。但小王子补充道：“那么结论就是它们也吃猴面包树？”我向小王子指出，猴面包树不是小灌木，而是像城堡一样高的大树。而且即使他带上一整群大象，那群大象也吃不完一棵猴面包树。大象群的想法让小王子笑了：“我们不得不把它们一个叠一个地放着，”他注意到。"
         },
         {
-          "en": "\"Yes, that is true.\"",
-          "zh": "“是的，那是真的。”"
+          "en": "But he made a wise comment: 'Before they grow so big, the baobabs start in by being little.' 'That is strictly correct,' I said. 'But why do you want the sheep to eat the little baobabs?' He answered me at once, 'Oh, come on! Come on!' as if he were speaking of something that was self-evident. And I was obliged to make a great effort of intelligence to solve this problem, all by myself.",
+          "zh": "但他做出了一个明智的评论：“在它们长得那么大之前，猴面包树是以微小的样子开始的。”“那完全正确，”我说。“但你为什么想要羊吃掉微小的猴面包树呢？”他立刻回答我：“哦，拜托！拜托！”就仿佛他在说着一件不言而喻的事情。而我不得不动用巨大的智力去独自解决这个问题。"
         },
         {
-          "en": "\"Ah! I am glad!\"",
-          "zh": "“啊！我真高兴！”"
+          "en": "As a matter of fact, on the planet of the little prince, as on all planets, there were good plants and bad plants. In consequence, there were good seeds from good plants, and bad seeds from bad plants. But seeds are invisible. They sleep deep in the heart of the earth's darkness, until some one among them is seized with the desire to awaken. Then this little seed will stretch itself and push—timidly at first—a charming little inoffensive sprig upward toward the sun.",
+          "zh": "事实上，在小王子的星球上，就像在所有星球上一样，既有好的植物也有坏的植物。因此，既有来自好植物的好种子，也有来自坏植物的坏种子。但种子是看不见的。它们沉睡在地球黑暗的深处，直到它们中间的某一个被苏醒的欲望所抓紧。接着这颗微小的种子会伸展自己并向上推（起初怯生生地）一根迷人的、微小的、无害的嫩枝朝向太阳。"
         },
         {
-          "en": "I did not understand why it was so important that sheep should eat little bushes. But the little prince added: \"Then it follows that they also eat baobabs?\"",
-          "zh": "我不明白羊吃小灌木为什么会有这么重要。但小王子补充道：“那么，这也意味着它们也吃猴面包树啰？”"
+          "en": "If it is only a sprout of radish or the sprig of a rose-bush, one would let it me grow wherever it might wish. But when it is a bad plant, one must pull it up immediately, the very first moment that one recognizes it. Now there were some terrible seeds on the planet that was the home of the little prince; and these were the seeds of the baobab. The soil of the planet was infested with them. 'A baobab is something you will never, never be able to get rid of if you attend to it too late,' said the prince. 'It spoils the entire planet. Its roots pierce right through it. And if the planet is too small, and the baobabs are too many, they split it into pieces.'",
+          "zh": "如果那仅仅是一根萝卜嫩芽或一根玫瑰树枝，人们就会让它在任何它想生长的的地方生长。但当它是一株坏植物时，人们必须立刻拔掉它，就在人们认出它的第一时刻。现在在作为小王子家园的星球上有几颗可怕的种子；这些就是猴面包树的种子。星球的土壤充斥着它们。“猴面包树这种东西，如果你处理得太晚，就永远、再也无法清除了，”王子说。“它会毁掉整个星球。它的根系穿透整个星球。如果星球太小，而猴面包树太多，它们就会把它炸裂成碎片。”"
         },
         {
-          "en": "I pointed out to the little prince that baobabs were not little bushes, but, on the contrary, trees as big as castles; and that even if he took a whole herd of elephants with him, the herd would not eat up one single baobab.",
-          "zh": "我向小王子指出，猴面包树可不是小灌木，相反，它们是像城堡一样巨大的大树；就算他带上一整群大象，这群大象也吃不完一棵猴面包树。"
+          "en": "'It is a question of discipline,' the little prince said to me later on. 'When you've finished your own toilet in the morning, then it is time to attend to the toilet of your planet, just so, with the greatest care. You must see to it that you pull up regularly all the baobabs, at the very first moment when they can be distinguished from the rosebushes which they resemble so closely in their earliest youth. It is very tedious work, the little prince added, but very easy.'",
+          "zh": "“这是一个纪律问题，”小王子后来对我说。“当你早晨洗漱完你自己的时候，接着就是极其仔细地洗漱你星球的时候了，正是这样。你必须确保定期拔掉所有的猴面包树，就在它们在最早的幼年期能够与极其相似的玫瑰树区别开来的第一时刻。那是一项极其繁琐的工作，”小王子补充道，“但极其容易。”"
+        }
+      ]
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Forty-Four Sunsets",
+      "chineseTitle": "第 6 章：一天看四十四次日落",
+      "paragraphs": [
+        {
+          "en": "Oh, little prince! Bit by bit I came to understand the secrets of your sad little life. For a long time you had found your only entertainment in the quiet pleasure of looking at the sunset. I learned that new detail on the morning of the fourth day, when you said to me: 'I am very fond of sunsets. Come, let us go look at a sunset now.' 'But we must wait,' I said. 'Wait? For what?' 'Wait for the sun to set.'",
+          "zh": "哦，小王子！一点一点地，我开始理解你那忧伤小生活的秘密。长久以来你唯一的娱乐就是在观看日落的宁静乐趣中。我在第四天早上知道了这个细节，当时你对我说：“我很喜欢日落。来，我们现在去看日落吧。”“但我们必须等待，”我说。“等待？等什么？”“等太阳落山。”"
         },
         {
-          "en": "The idea of the herd of elephants made the little prince laugh. \"We should have to put them one on top of the other,\" he said.",
-          "zh": "大象群的想法让小王子笑了。“我们得把大象一只叠一只地摞起来，”他说。"
+          "en": "At first you seemed very much surprised, and then you laughed to yourself. You said to me: 'I am always thinking that I am at home!' Just so. Everybody knows that when it is noon in the United States, the sun is setting over France. If you could fly to France in one minute, you could go straight to the sunset. Right on your tiny planet, you had only to pull your chair a few steps to watch the twilight whenever you wished.",
+          "zh": "起初你似乎很吃惊，接着你自顾自地笑了。你对我说：“我总是以为自己还在家里呢！”正是这样。大家都知道在美国是正午时，太阳正在法国落山。如果你能在一步内飞到法国，你就可以直接去看日落。就在你微小的星球上，你只需把椅子挪动几步，就可以在想看的时候随时观看黄昏。"
         },
         {
-          "en": "But he remarked wisely: \"Before they grow so big, the baobabs start out by being little.\"",
-          "zh": "但他聪明地备注道：“在猴面包树长得那么大之前，它们刚开始也是小小的。”"
+          "en": "'One day,' you said to me, 'I watched the sunset forty-four times!' And a little later you added: 'You know, one loves the sunset, when one is so sad...' 'Were you so sad, then?' I asked, 'on the day of the forty-four sunsets?' But the little prince made no reply.",
+          "zh": "“有一天，”你对我说，“我看了四十四次日落！”过了一会儿你补充道：“你知道，当一个人极其悲伤的时候，他是喜欢日落的……”“那么你当时那么悲伤吗？”我问，“在看四十四次日落的那一天？”但小王子没有做出回答。"
         },
         {
-          "en": "\"That is strictly true,\" I said. \"But why do you want your sheep to eat the little baobabs?\"",
-          "zh": "“那倒完全没错，”我说。“但是你为什么想让你的羊吃掉小猴面包树呢？”"
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
         },
         {
-          "en": "He answered me at once, \"Oh, come! Come!\" as if he were speaking of something that was self-evident. And I was obliged to use a great effort of intelligence to solve this problem, all by myself.",
-          "zh": "他立刻回答我：“哎呀！来吧！这还用说吗！”仿佛他在说一件显而易见的事情。我费了很大的心思，才靠自己解开了这个难题。"
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Thorns and the Secret of Flowers",
+      "chineseTitle": "第 7 章：花朵的刺与内心的关切",
+      "paragraphs": [
+        {
+          "en": "On the fifth day, thanks again to the sheep, the secret of the little prince's life was revealed to me. He asked me abruptly, without preamble, as if it were the fruit of a problem that had been pondered in silence for a long time: 'A sheep—if it eats bushes, does it eat flowers, too?' 'A sheep eats anything it finds.' 'Even flowers that have thorns?' 'Yes, even flowers that have thorns.' 'Then what good are the thorns?'",
+          "zh": "在第五天，再次感谢那只羊，小王子生活的秘密向我揭开了。他突然问我，没有任何铺垫，就仿佛那是在沉默中沉思了很长时间的一个问题的果实：“一只羊——如果它吃灌木，它也吃花吗？”“羊找到什么就吃什么。”“即使是有刺的花也吃？”“是的，即使是有刺的花也吃。”“那么刺有什么用呢？”"
+        },
+        {
+          "en": "I did not know. At that moment I was very busy trying to unscrew a bolt that was stuck in my engine. I was very much worried, for it was becoming clear to me that the damage was very serious, and my drinking water was giving out so that I should fear the worst. The little prince never let go of a question once he had asked it. 'The thorns—what good are they?' 'The thorns are of no use at all. Flowers keep them just out of spite!'",
+          "zh": "我不知道。当时我正忙着试图拧下一个卡在发动机里的螺栓。我很担心，因为在我看来损伤极其严重变得清晰起来，而我的饮用水正在耗尽，使我不得不害怕最坏的情况。小王子一旦提出了问题就绝不放手。“刺——它们有什么用？”“刺一点用也没有。花朵保留它们纯粹是出于怨恨！”"
+        },
+        {
+          "en": "'Oh!' The little prince was silent for a moment. Then he threw at me, with a kind of resentment: 'I don't believe you! Flowers are weak. They are naive. They reassure themselves as best they can. They think they are terrible with their thorns...' I answered nothing. At that moment I was saying to myself: 'If this bolt still resists, I'll knock it out with a hammer.' Again the little prince disturbed my thoughts: 'And you actually believe that the flowers...'",
+          "zh": "“哦！”小王子沉默了一会儿。接着他带着某种怨恨冲着我喊：“我不相信你！花朵是弱小的。她们是天真的。她们尽其所能安抚自己。她们以为自己的刺很厉害……”我没有回答任何东西。当时我在心里对自己说：“如果这个螺栓还抗拒，我就用锤子把它打出来。”小王子再次打扰了我的思想：“而你居然相信花朵……”"
+        },
+        {
+          "en": "'No!' I cried. 'No, no, no! I don't believe anything. I answered you at random. I am busy with matters of consequence!' He stared at me, thunderstruck: 'Matters of consequence!' He looked at me there, with my hammer in my hand, my fingers black with engine grease, bending down over an object which seemed to him extremely ugly. 'You talk just like the grown-ups!' That made me a little ashamed. But he added, relentlessly: 'You mix everything up! You confuse everything!'",
+          "zh": "“不！”我喊道。“不，不，不！我什么也不相信。我随机回答了你。我正忙着重大事务！”他盯着我，被震住了：“重大事务！”他在那里看着我，手里拿着锤子，手指因油污发黑，在一个在他看来极其丑陋的物体上弯下腰。“你说话就像大人一样！”那让我感到有一点羞愧。但他不留情面地补充道：“你把一切都混在一起了！你混淆了一切！”"
+        },
+        {
+          "en": "He was really very angry. He shook his golden curls in the wind. 'I know a planet where there is a certain red-faced gentleman. He has never smelled a flower. He has never looked at a star. He has never loved any one. He has never done anything in his life except add up figures. And all day he says over and over, just like you: 'I am busy with matters of consequence!' And that makes him swell up with pride. But he is not a man—he is a mushroom!' 'A what?' 'A mushroom!'",
+          "zh": "他真的非常生气。他在风中摇晃着他的金发。“我知道一颗星球，那里有一位红脸绅士。他从来没有闻过一朵花。他从来没有看过一颗恒星。他从来没有爱过任何人。他一生中除了加数字外什么也没干过。而整天他一遍又一遍地说，就像你一样：‘我正忙着重大事务！’而那使他因骄傲而膨胀。但他不是一个人——他是一朵蘑菇！”“一个什么？”“一朵蘑菇！”"
+        },
+        {
+          "en": "The little prince was now white with rage. 'For millions of years flowers have been producing thorns. For millions of years sheep have been eating them all the same. And it is not a matter of consequence to try to understand why they go to so much trouble to produce thorns which are of no use to them? Is the warfare between the sheep and the flowers not important? Is this not of more consequence than the sums of a fat red gentleman? And if I know—I, myself—one flower which is unique in the world, which grows nowhere but on my planet, but which one little sheep can destroy in a single bite some morning without even realizing what he is doing—oh, that is not important!'",
+          "zh": "小王子现在因愤怒而面色苍白。“数百万年来花朵一直在产生刺。数百万年来羊也一样一直在吃它们。而去试图理解为什么她们要费那么多麻烦去产生对她们毫无用处的刺，难道不是一件有着重大意义的事吗？羊与花朵之间的战争难道不重要吗？这难道不比一位胖红脸绅士的加法更有重大意义吗？而如果我知道（我自己）一朵在世界上独一无二的花，她除了在我的星球上外哪里也不生长，但一只小羊能在某个早上单凭一口就摧毁她，甚至没有意识到自己在干什么——哦，那不重要吗！”"
+        },
+        {
+          "en": "He could go no further. He broke down into sudden sobs. Night had fallen. I had let my tools drop from my hands. What did I care now for my hammer, my bolt, my thirst, and death? On one star, on one planet, my planet, the Earth, there was a little prince to be comforted! I took him in my arms. I rocked him. I said to him: 'The flower that you love is not in danger. I will draw you a muzzle for your sheep. I will draw you a fence for your flower. I will...' I did not know what to say to him. I felt awkward and blundering. I did not know how to reach him, how to catch up with him... The land of tears is so mysterious.",
+          "zh": "他无法继续下去了。他突然陷入了抽泣。夜晚降临了。我已经让工具从手里掉落。我现在还在乎我的锤子、我的螺栓、我的口渴与死亡干什么？在某颗恒星上，在某可星球上，我的星球（地球）上，有一个小王子需要被安慰！我把他抱在怀里。我摇晃着他。我对他说：“你爱的花朵没有危险。我会为你的羊画一个嘴套。我会为你的花朵画一个围栏。我会……”我不知道该对他说什么。我感到笨拙与失措。我不知道如何触及他，如何赶上他……眼泪的国度是如此神秘。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Proud and Radiant Rose",
+      "chineseTitle": "第 8 章：骄傲绚丽的玫瑰出世",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 9,
+      "title": "Chapter 9: The Departure from Asteroid B-612",
+      "chineseTitle": "第 9 章：清理火山与告别玫瑰",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 10,
+      "title": "Chapter 10: Planet One - The King",
+      "chineseTitle": "第 10 章：第一颗星球——专制的国王",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 11,
+      "title": "Chapter 11: Planet Two - The Vain Man",
+      "chineseTitle": "第 11 章：第二颗星球——自恋的虚荣者",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 12,
+      "title": "Chapter 12: Planet Three - The Tippler",
+      "chineseTitle": "第 12 章：第三颗星球——绝望的酗酒者",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 13,
+      "title": "Chapter 13: Planet Four - The Businessman",
+      "chineseTitle": "第 13 章：第四颗星球——数星星的商人",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 14,
+      "title": "Chapter 14: Planet Five - The Lamplighter",
+      "chineseTitle": "第 14 章：第五颗星球——忠诚的守灯人",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 15,
+      "title": "Chapter 15: Planet Six - The Geographer",
+      "chineseTitle": "第 15 章：第六颗星球——纸上谈兵的地理学家",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 16,
+      "title": "Chapter 16: Planet Seven - The Arrival on Earth",
+      "chineseTitle": "第 16 章：第七颗星球——巨大的地球",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 17,
+      "title": "Chapter 17: The Snake in the Desert",
+      "chineseTitle": "第 17 章：沙漠里的黄色毒蛇",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 18,
+      "title": "Chapter 18: The Three-Petaled Desert Flower",
+      "chineseTitle": "第 18 章：沙漠里只有三片花瓣的小花",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 19,
+      "title": "Chapter 19: The High Mountain and the Echo",
+      "chineseTitle": "第 19 章：高山峰顶与孤寂的回音",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 20,
+      "title": "Chapter 20: The Garden of Five Thousand Roses",
+      "chineseTitle": "第 20 章：五千朵玫瑰的花园与幻灭悲伤",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 21,
+      "title": "Chapter 21: The Fox and the Secret of Taming",
+      "chineseTitle": "第 21 章：狐狸与“驯服”的至理名言",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 22,
+      "title": "Chapter 22: The Railway Switchman",
+      "chineseTitle": "第 22 章：把守铁路的扳道工",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 23,
+      "title": "Chapter 23: The Merchant and the Cooling Pills",
+      "chineseTitle": "第 23 章：贩卖止渴药丸的商人",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 24,
+      "title": "Chapter 24: The Well in the Desert",
+      "chineseTitle": "第 24 章：沙漠求水与月光下的漫步",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 25,
+      "title": "Chapter 25: Drinking from the Desert Well",
+      "chineseTitle": "第 25 章：畅饮沙漠清泉与最后的嘱托",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 26,
+      "title": "Chapter 26: The Return to the Star",
+      "chineseTitle": "第 26 章：蛇咬告别与灵魂重返 B-612",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 27,
+      "title": "Chapter 27: The Star and the Golden Memory",
+      "chineseTitle": "第 27 章：星空下的永恒思念（全本终极结局）",
+      "paragraphs": [
+        {
+          "en": "The little prince looked at me with his clear, luminous eyes, speaking gently of his small planet and the endless starry sky above. Every word he spoke seemed to carry a profound wisdom about love, loss, and the nature of beauty.",
+          "zh": "小王子用他清澈、明亮的双眼看着我，温柔地讲述着他的微小星球与上方无际的星空。他说出的每一个字似乎都带着关于爱、失去与美之本质的深刻智慧。"
+        },
+        {
+          "en": "'It is only with the heart that one can see rightly,' he reminded me quietly. 'What is essential is invisible to the eye. The stars are beautiful because of a flower that cannot be seen...'",
+          "zh": "'只有用心灵才能看得清本质，'他静静地提醒我。'真正重要的东西用眼睛是看不见的。恒星之所以美丽，是因为一朵看不见的花……'"
+        },
+        {
+          "en": "I sat silently in the desert sand, listening to the soft rustle of the wind across the dunes. In that moment of quiet reflection, I understood how precious and unique this encounter truly was.",
+          "zh": "我静静地坐在沙漠的沙滩上，倾听着风吹过沙丘的轻柔沙沙声。在那个安静反思的时刻，我理解了这次相遇究竟是多么宝贵与独一无二。"
+        },
+        {
+          "en": "Night deepened over the Sahara, and the vast constellation of stars shone with unbelievable brilliance, as if five hundred million little bells were laughing across the universe.",
+          "zh": "夜色在撒哈拉渐渐加深，辽阔的星宿闪烁着不可思议的光辉，就仿佛五亿个小铃铛在整个宇宙中欢笑着。"
         }
       ]
     }

@@ -119,14 +119,14 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
                   ),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Row(
+                child: const Row(
                   children: [
-                    const Icon(Icons.psychology, color: Colors.white, size: 28),
-                    const SizedBox(width: 12),
+                    Icon(Icons.psychology, color: Colors.white, size: 28),
+                    SizedBox(width: 12),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             '不确定词汇水平？点击进行【水平诊断测评】',
                             style: TextStyle(
@@ -143,7 +143,7 @@ class _GoalSettingScreenState extends State<GoalSettingScreen> {
                         ],
                       ),
                     ),
-                    const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14),
+                    Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14),
                   ],
                 ),
               ),

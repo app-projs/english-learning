@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/lumina_theme.dart';
+import '../../../core/widgets/app_tab_bar.dart';
 import '../../../core/services/audio_service.dart';
 import '../../../core/services/storage_service.dart';
 import '../../../core/services/database_service.dart';
@@ -104,29 +105,16 @@ class _WordRootsScreenState extends State<WordRootsScreen>
             ),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(44),
-          child: TabBar(
-            controller: _tabController,
-            dividerColor: Colors.transparent,
-            dividerHeight: 0,
-            indicatorColor: LuminaColors.primary,
-            labelColor: LuminaColors.primary,
-            unselectedLabelColor: isDark ? Colors.white60 : Colors.grey.shade700,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(width: 3, color: LuminaColors.primary),
-              insets: EdgeInsets.symmetric(horizontal: 16),
-              borderRadius: BorderRadius.all(Radius.circular(3)),
-            ),
-            tabs: const [
-              Tab(text: '核心词根 (Roots)'),
-              Tab(text: '高频前缀 (Prefixes)'),
-              Tab(text: '常用后缀 (Suffixes)'),
-              Tab(text: '派生思维导图树'),
-              Tab(text: '拆词连线游戏'),
-            ],
-          ),
+        bottom: AppTabBar(
+          controller: _tabController,
+          isScrollable: true,
+          tabs: const [
+            Tab(text: '核心词根 (Roots)'),
+            Tab(text: '高频前缀 (Prefixes)'),
+            Tab(text: '常用后缀 (Suffixes)'),
+            Tab(text: '派生思维导图树'),
+            Tab(text: '拆词连线游戏'),
+          ],
         ),
       ),
       body: Column(
@@ -270,7 +258,7 @@ class _WordRootsScreenState extends State<WordRootsScreen>
                 ),
                 child: Text(
                   item.root,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: LuminaColors.primary,
@@ -659,7 +647,7 @@ class _WordRootMatchingGameWidgetState extends State<_WordRootMatchingGameWidget
             builder: (context) => AlertDialog(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               title: const Text('🎉 拆词消除大满贯！'),
-              content: Text('恭喜你配对成功全部 5 组词根拆解！\n获得 100 学习积分奖励！'),
+              content: const Text('恭喜你配对成功全部 5 组词根拆解！\n获得 100 学习积分奖励！'),
               actions: [
                 ElevatedButton(
                   onPressed: () {

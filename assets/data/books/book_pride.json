@@ -4,168 +4,129 @@
   "chineseTitle": "傲慢与偏见",
   "author": "Jane Austen",
   "coverUrl": "assets/images/book_pride.png",
-  "description": "《傲慢与偏见》是英国著名女作家简·奥斯汀（Jane Austen）于 1813 年出版的世情小说代表作。故事围绕贝内特一家五姐妹的婚事展开，主线为二女儿伊丽莎白·贝内特（Elizabeth Bennet）与高傲富有的达西先生（Mr. Darcy）之间的情感纠葛。伊丽莎白因达西的傲慢态度对其抱有深厚偏见，而达西也因伊丽莎白出身中产家庭而心生顾虑。随着一系列误会与事件的解开，两人逐渐看清了自己的内心与对方的真情。本书机智幽默，刻画人物入木三分，是理解 19 世纪英国社会风情与学习高级风雅英语对话的典范。",
+  "description": "《傲慢与偏见》是英国著名女作家简·奥斯汀于 1813 年出版的世情小说巅峰之作。故事围绕贝内特家聪慧独立的大女儿伊丽莎白与傲慢冷峻的贵族达西先生展开。在一场乡村舞会上，达西因傲慢言语伤害了伊丽莎白的自尊，使她对达西产生了深厚的偏见。同时由于威克姆的谗言和达西干涉宾利与吉英的恋情，偏见愈发加深。然而随着达西秘密拯救贝内特家声誉并坦诚心迹，伊丽莎白逐渐消除了偏见，达西也摒弃了傲慢，两人最终缔结了美满婚姻。",
   "category": "经典名著",
-  "difficulty": "高级难度",
-  "totalUnits": 5,
+  "difficulty": "中/高级难度",
+  "totalUnits": 8,
   "wordCount": 35000,
-  "readerCount": "275.2万人在读",
-  "targetVocab": "3000-6000词",
-  "tagLabel": "英国文学",
-  "coverBadge": "经典 · 爱情巨著",
+  "readerCount": "168.3万人在读",
+  "targetVocab": "2500-5500词",
+  "tagLabel": "世情小说",
+  "coverBadge": "精读 · 爱情经典",
   "chapters": [
     {
       "unitIndex": 1,
-      "title": "Chapter 1: A Truth Universally Acknowledged",
-      "chineseTitle": "第 1 章：举世公认的真理",
+      "title": "Chapter 1: The Assembly Ball and the First Impression",
+      "chineseTitle": "第 1 章：舞会风波与第一印象的交锋",
       "paragraphs": [
         {
-          "en": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-          "zh": "这是一个举世公认的真理，一个拥有巨额财产的单身汉，必定需要一位妻子。"
+          "en": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife. However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters. When young, wealthy Charles Bingley rented the magnificent estate of Netherfield Park, Mrs. Bennet immediately plotted to secure him for one of her five unmarried daughters.",
+          "zh": "这是一个被普遍承认的真理：凡是有钱的单身汉，一定需要娶个太太。这样一个男人初到一个地方，不论对他本人的感受或看法了解多么少，这个真理在四周家庭的心目中是如此根深蒂固，以至于他被看作是他某个女儿的合法财产。当年轻富有的查尔斯·宾利租下内瑟菲尔德庄园时，贝内特太太立刻谋划着为她五个未婚女儿中的一个争取到他。"
         },
         {
-          "en": "However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.",
-          "zh": "无论这样一个男人在初次进入一个街区时，人们对他的感受或看法知之甚少，这一真理在周围家庭的心目中是如此根深蒂固，以至于他被视为他们某个女儿的合法国产。"
+          "en": "At the Meryton assembly ball, Mr. Bingley arrived accompanied by his two fashionable sisters and his close friend, Fitzwilliam Darcy. Mr. Darcy attracted the admiration of the whole room by his fine, tall person, handsome features, and noble mien, and the report of his having ten thousand pounds a year! However, his cold, haughty manners soon turned the tide of public opinion against him; he was pronounced to be proud, disagreeable, and above being pleased.",
+          "zh": "在梅里顿的集合舞会上，宾利先生在他的两个时尚姐妹和他紧密的朋友菲茨威廉·达西的陪同下到达。达西先生通过他挺拔的身材、英俊的面貌、高尚的举止以及年收入万镑的报道吸引了全场的赞赏！然而，他冰冷傲慢的态度很快使公众舆论转而反对他；大家断言他傲慢、令人不快，且高高在上难以讨好。"
         },
         {
-          "en": "\"My dear Mr. Bennet,\" said his lady to him one day, \"have you heard that Netherfield Park is let at last?\"",
-          "zh": "“我亲爱的班奈特先生，”他的夫人有一天对他说，“你听说内瑟菲尔德庄园终于租出去了吗？”"
-        },
-        {
-          "en": "Mr. Bennet replied that he had not.",
-          "zh": "班奈特先生回答说他没有。"
-        },
-        {
-          "en": "\"But it is,\" returned she; \"for Mrs. Long has just been here, and she told me all about it.\"",
-          "zh": "“但确实租出去了，”她回答说；“因为朗太太刚刚来过这里，她把这一切都告诉我了。”"
-        },
-        {
-          "en": "Mr. Bennet made no answer.",
-          "zh": "班奈特先生没有回答。"
-        },
-        {
-          "en": "\"Do you not want to know who has taken it?\" cried his wife impatiently.",
-          "zh": "“难道你不想知道是谁租了吗？”他的妻子耐心地大喊。"
-        },
-        {
-          "en": "\"YOU want to tell me, and I have no objection to hearing it.\"",
-          "zh": "“你想告诉我，我不反对听。”"
-        },
-        {
-          "en": "This was invitation enough.",
-          "zh": "这邀请就足够了。"
+          "en": "During the dance, Mr. Bingley urged Darcy to dance with Elizabeth Bennet, who was sitting down for lack of a partner. Darcy looked coldly at Elizabeth and replied haughtily within her hearing: 'She is tolerable, but not handsome enough to tempt me; I am in no humour at present to give consequence to young ladies who are slighted by other men.' Elizabeth felt her pride deeply wounded, and from that moment, she conceived a bitter prejudice against Mr. Darcy.",
+          "zh": "在舞蹈期间，宾利先生敦促达西与伊丽莎白·贝内特跳舞，后者因缺乏舞伴正坐着。达西冰冷地看着伊丽莎白，并在她听得见的范围内高傲地回答：“她还可以，但不够漂亮来引诱我；我现在没有心情去捧那些被其他男人轻视的年轻女士。”伊丽莎白感觉自己的自尊受到了深深的伤害，从那一刻起，她对达西先生抱有了强烈的偏见。"
         }
       ]
     },
     {
       "unitIndex": 2,
-      "title": "Chapter 2: Mr. Bennet Visits Netherfield",
-      "chineseTitle": "第 2 章：班奈特先生拜访内瑟菲尔德",
+      "title": "Chapter 2: Jane’s Illness at Netherfield",
+      "chineseTitle": "第 2 章：吉英患病与内瑟菲尔德之行",
       "paragraphs": [
         {
-          "en": "Mr. Bennet was among the earliest of those who waited on Mr. Bingley. He had always intended to visit him, though to the last always assuring his wife that he should not go; and till the evening after the visit was paid she had no knowledge of it.",
-          "zh": "班奈特先生是早拜访宾利先生的人之一。他一直打算去拜访他，尽管到最后一直向他的妻子保证他不去；直到拜访后的那天晚上，她才知道这件事。"
+          "en": "When Jane received an invitation to dine with Bingley's sisters at Netherfield, Mrs. Bennet forced her to ride on horseback in the rain, hoping she would be caught in a shower and forced to stay overnight. Jane caught a severe cold and fell ill. Learning of her sister's condition, Elizabeth walked three miles across muddy fields to nurse Jane. Her muddy petticoats shocked Bingley's arrogant sisters, but Darcy admired the bright glow of her eyes and her sisterly devotion.",
+          "zh": "当吉英收到去内瑟菲尔德与宾利姐妹共进晚餐的邀请时，贝内特太太强迫她骑马在雨中前往，希望她能在阵雨中受凉并被迫留宿。吉英患上了严重感冒并病倒了。得知姐姐的状况，伊丽莎白步行三英里穿过泥泞的田野去照顾吉英。她沾满泥巴的衬裙震惊了宾利傲慢的姐妹，但达西赞赏她双眼明亮的光芒与对姐姐的奉献。"
         },
         {
-          "en": "It was then disclosed in the following manner. Observing his second daughter engaged in trimming a hat, he suddenly addressed her with:",
-          "zh": "然后是以以下方式揭露的。看到他的二女儿正忙着修剪一顶帽子，他突然对她说："
-        },
-        {
-          "en": "\"I hope Mr. Bingley will like it, Lizzy.\"",
-          "zh": "“我希望宾利先生会喜欢它，丽兹。”"
-        },
-        {
-          "en": "\"We are not in a way to know what Mr. Bingley likes,\" said her mother resentfully, \"since we are not to visit.\"",
-          "zh": "“我们无法知道宾利先生喜欢什么，”她的母亲怨恨地说，“因为我们不去拜访。”"
-        },
-        {
-          "en": "\"But you forget, mama,\" said Elizabeth, \"that we shall meet him at the assemblies, and that Mrs. Long has promised to introduce him.\"",
-          "zh": "“但你忘了，妈妈，”伊丽莎白说，“我们会在舞会上遇到他，朗太太已经答应把他介绍给我们了。”"
-        },
-        {
-          "en": "\"I do not believe Mrs. Long will do any such thing. She has two nieces of her own. She is a selfish, hypocritical woman, and I have no opinion of her.\"",
-          "zh": "“我不相信朗太太会做这样的事。她自己有两个侄女。她是一个自私、虚伪的女人，我对她没有任何好感。”"
-        },
-        {
-          "en": "\"No more have I,\" said Mr. Bennet; \"and I am glad to find that you do not depend on her serving you.\"",
-          "zh": "“我也一样，”班奈特先生说；“我很高兴发现你不指望她为你服务。”"
+          "en": "During her stay at Netherfield, Elizabeth conversed frequently with Darcy. Despite his attempts to remain detached, Darcy realized that Elizabeth was the first woman who had genuinely challenged his intellect and pride. Yet Elizabeth remained completely unaware of his growing affection, interpreting his intense gazes as cold scrutiny.",
+          "zh": "在内瑟菲尔德留宿期间，伊丽莎白频繁地与达西交谈。尽管他试图保持超然，达西意识到伊丽莎白是第一个真正挑战了他的智力与傲慢的女性。然而伊丽莎白对他的爱意完全没有察觉，将他强烈的凝视解释为冰冷的审视。"
         }
       ]
     },
     {
       "unitIndex": 3,
-      "title": "Chapter 3: The Assembly Ball at Meryton",
-      "chineseTitle": "第 3 章：麦里屯的舞会交锋",
+      "title": "Chapter 3: Mr. Collins’s Proposal and George Wickham’s Tale",
+      "chineseTitle": "第 3 章：柯林斯的求婚与威克姆的谗言",
       "paragraphs": [
         {
-          "en": "Not all that Mrs. Bennet, however, with the assistance of her five daughters, could ask on the subject, was sufficient to draw from her husband any satisfactory description of Mr. Bingley. They attacked him in various ways—with barefaced questions, ingenious suppositions, and distant surmises; but he eluded the skill of them all.",
-          "zh": "然而，班奈特太太在她的五个女儿的帮助下，在这个问题上所能问的一切，都不足以从她的丈夫那里得出对宾利先生的任何满意的描述。她们以各种方式攻击他——用赤裸裸的问题、巧妙的假想和遥远的猜想；但他避开了她们所有人的技巧。"
+          "en": "Mr. Collins, a pompous, foolish clergyman who was heir to Mr. Bennet's entailed estate, arrived at Longbourn. He proposed marriage to Elizabeth, offering her security. When Elizabeth firmly rejected him, Collins quickly turned his attentions to her sensible friend Charlotte Lucas, who accepted him for financial stability.",
+          "zh": "柯林斯先生（一位自大愚蠢的牧师，也是贝内特先生限嗣继承财产的继承人）来到了朗博恩。他向伊丽莎白求婚，为她提供保障。当伊丽莎白坚定地拒绝了他时，柯林斯迅速将注意力转向了她通情达理的朋友夏洛特·卢卡斯，后者为了财务稳定接受了他。"
         },
         {
-          "en": "They were at last obliged to accept the second-hand intelligence of their neighbour, Lady Lucas. Her report was highly favourable. Sir William had been delighted with him. He was quite young, wonderfully handsome, extremely agreeable, and, to crown the whole, he meant to be at the next assembly with a large party.",
-          "zh": "她们最后不得不接受她们的邻居卢卡斯太太的二手情报。她的报告非常有利。威廉爵士对他感到非常高兴。他相当年轻，非常英俊，极其讨人喜欢，最重要的是，他打算带一大群人参加下一次舞会。"
-        },
-        {
-          "en": "Nothing could be more delightful! To be fond of dancing was a certain step towards falling in love; and very lively hopes of Mr. Bingley's heart were entertained.",
-          "zh": "没有什么比这更令人愉快的了！喜欢跳舞是坠入爱河的确定一步；人们对宾利先生的心抱有非常活泼的希望。"
-        },
-        {
-          "en": "Mr. Bingley was good-looking and gentlemanlike; he had a pleasant countenance, and easy, unaffected manners.",
-          "zh": "宾利先生长相英俊，有绅士风度；他有一副令人愉快的面容，以及轻松、自然举止。"
+          "en": "Meanwhile, the handsome officer George Wickham arrived in Meryton. Wickham singled out Elizabeth and painted a tragic picture of Darcy's cruelty, claiming Darcy had robbed him of a valuable church living out of malice. Elizabeth, her judgment blinded by her existing dislike of Darcy, believed Wickham's false story completely.",
+          "zh": "与此同时，英俊的军官乔治·威克姆来到了梅里顿。威克姆挑出了伊丽莎白，描绘了一幅达西残酷的悲剧画面，声称达西出于恶意剥夺了他宝贵的教会教职。伊丽莎白因对达西既有的厌恶遮蔽了判断力，完全相信了威克姆假的故事。"
         }
       ]
     },
     {
       "unitIndex": 4,
-      "title": "Chapter 4: Jane and Elizabeth Discuss Mr. Bingley",
-      "chineseTitle": "第 4 章：简与伊丽莎白的闺中密语",
+      "title": "Chapter 4: The Netherfield Ball and Departure for London",
+      "chineseTitle": "第 4 章：内瑟菲尔德舞会与离别",
       "paragraphs": [
         {
-          "en": "When Jane and Elizabeth were alone, the former, who had been cautious in her praise of Mr. Bingley before, expressed to her sister how very much she admired him.",
-          "zh": "当简和伊丽莎白单独在一起时，前者之前在赞扬宾利先生时一直很谨慎，她向她的妹妹表达了她是多么钦佩他。"
-        },
-        {
-          "en": "\"He is just what a young man ought to be,\" said she, \"sensible, good-humoured, lively; and I never saw such happy manners!—so much ease, with such perfect good breeding!\"",
-          "zh": "“他正是一个年轻男子应该有的样子，”她说，“通情达理，幽默活泼；我从未见过这么幸福的举止！——如此轻松，带有如此完美的良好教养！”"
-        },
-        {
-          "en": "\"He is also handsome,\" replied Elizabeth, \"which a young man ought likewise to be, if he possibly can. His character is thereby complete.\"",
-          "zh": "“他也英俊，”伊丽莎白回答，“如果可能的话，年轻男子也应该英俊。他的性格从而完整了。”"
-        },
-        {
-          "en": "\"I was very much flattered by his asking me to dance a second time. I did not expect such a compliment.\"",
-          "zh": "“他第二次邀请我跳舞，我感到非常荣幸。我没有期待这样的夸奖。”"
-        },
-        {
-          "en": "\"Did not you? I did for you. But that is one great difference between us. Compliments always take you by surprise, and me never. What could be more natural than his asking you again? He could not help seeing that you were about five times as pretty as any other woman in the room.\"",
-          "zh": "“你没有吗？我为你期待了。但那是我们之间的一个巨大区别。夸奖总是让你感到意外，而我从来不会。他再次邀请你还有什么比这更自然的呢？他忍不住看到你比房间里的任何其他女人都要漂亮大约五倍。”"
+          "en": "At the grand ball at Netherfield, Darcy asked Elizabeth to dance, and she reluctantly accepted. Their conversation was tense and guarded. Shortly after the ball, Mr. Bingley and his party abruptly departed for London, leaving Jane heart-broken. Elizabeth suspected that Darcy and Bingley's sisters had conspired to separate Bingley from Jane.",
+          "zh": "在内瑟菲尔德的盛大舞会上，达西邀请伊丽莎白跳舞，她勉强接受了。他们的交谈紧张而戒备。舞会后不久，宾利先生及其随行人员突然离开前往伦敦，留下了心碎的吉英。伊丽莎白怀疑达西和宾利的姐妹阴谋将宾利与吉英分开。"
         }
       ]
     },
     {
       "unitIndex": 5,
-      "title": "Chapter 5: The Lucas Family and Charlotte’s Wisdom",
-      "chineseTitle": "第 5 章：卢卡斯一家与夏洛特的智慧",
+      "title": "Chapter 5: Darcy’s Proposal and the Explanatory Letter",
+      "chineseTitle": "第 5 章：达西的求婚与真相长信",
       "paragraphs": [
         {
-          "en": "At a short distance from Longbourn resided the Lucas family, with whom the Bennets were particularly intimate. Sir William Lucas had been formerly in trade in Meryton, where he had made a tolerable fortune, and risen to the honour of knighthood during his mayoralty.",
-          "zh": "在距离朗伯恩不远的地方住着卢卡斯一家，班奈特一家与他们特别亲密。威廉·卢卡斯爵士以前在麦里屯做生意，在那里赚了一笔相当可观的财产，并在他担任市长期间上升到了爵位的荣誉。"
+          "en": "In spring, while visiting Charlotte at Rosings Park, Elizabeth encountered Mr. Darcy again. One afternoon, Darcy unexpectedly entered the parsonage and passionately proposed marriage to Elizabeth, detailing his struggles against her inferior social status. Elizabeth fiercely rejected him, accusing him of ruining Jane's happiness and abusing Wickham.",
+          "zh": "在春天，当在罗辛斯公园拜访夏洛特时，伊丽莎白再次遇到了达西先生。一个下午，达西意外地进入牧师住宅并热烈地向伊丽莎白求婚，详细说明了他针对她低下社会地位的挣扎。伊丽莎白严厉地拒绝了他，指责他毁掉了吉英的幸福并虐待威克姆。"
         },
         {
-          "en": "Lady Lucas was a very good kind of woman, not too clever to be a valuable neighbour to Mrs. Bennet. They had several children. The eldest of them, a sensible, intelligent young woman, about twenty-seven, was Elizabeth's intimate friend.",
-          "zh": "卢卡斯太太是一个非常好的人，不太聪明，不至于成为班奈特太太的有价值的邻居。他们有几个孩子。她们中最大的一个，一个通情达理、聪明的年轻女子，大约二十七岁，是伊丽莎白的亲密朋友。"
+          "en": "The next morning, Darcy handed Elizabeth a thick letter. In it, he explained that he separated Bingley from Jane because he believed Jane did not love Bingley, and revealed that Wickham was a profligate liar who had squandered money and tried to elope with Darcy's 15-year-old sister, Georgiana. Elizabeth's eyes were opened, and she bitterly reproached her own prejudice.",
+          "zh": "第二天早上，达西递给伊丽莎白一封厚信。在信中，他解释说他将宾利与吉英分开是因为他相信吉英并不爱宾利，并揭露了威克姆是一个挥霍无度的骗子，曾挥霍资金并试图与达西 15 岁妹乔治安娜私奔。伊丽莎白的双眼被打开了，她痛苦地责备着自己的偏见。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: Pemberley and the Family Crisis",
+      "chineseTitle": "第 6 章：彭伯里庄园与家族危机爆发",
+      "paragraphs": [
+        {
+          "en": "During a summer tour of Derbyshire with her aunt and uncle Gardiner, Elizabeth visited Pemberley, Darcy's magnificent estate. The housekeeper gave a glowing testimony of Darcy's extraordinary kindness. Unexpectedly, Darcy returned home, greeting Elizabeth and her relatives with remarkable gentleness, humility, and respect.",
+          "zh": "在与加德纳舅舅舅妈在德比郡的夏季旅行期间，伊丽莎白拜访了彭伯里（达西宏伟的庄园）。管家太太对达西非凡的和蔼作出了极其赞赏的证词。意外地，达西归家，以非凡的温柔、谦逊与尊重招呼着伊丽莎白和她的亲戚。"
         },
         {
-          "en": "That Charlotte Lucas should me with Elizabeth to talk over the ball was absolutely necessary.",
-          "zh": "夏洛特·卢卡斯和伊丽莎白一起谈论舞会是绝对必要的。"
+          "en": "However, news arrived that Elizabeth's 15-year-old sister, Lydia, had eloped with Wickham from Brighton! Distressed, Elizabeth confided in Darcy before hurrying home, mourning the lost opportunity of his love.",
+          "zh": "然而，消息到达：伊丽莎白 15 岁妹丽迪雅与威克姆从布赖顿私奔了！痛苦中，伊丽莎白在匆忙回家前倾诉给了达西，哀悼着失去他爱的机会。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: Lydia's Rescue and Lady Catherine's Interference",
+      "chineseTitle": "第 7 章：达西秘密救赎与凯瑟琳干涉",
+      "paragraphs": [
+        {
+          "en": "Elizabeth learned that it was Darcy who had secretly tracked down Lydia and Wickham in London, paid off Wickham's massive gambling debts, bought him a commission, and arranged the marriage, all while insisting on absolute secrecy. Soon after, Bingley returned and proposed to Jane.",
+          "zh": "伊丽莎白得知正是达西秘密在伦敦追踪到了丽迪雅和威克姆，付清了威克姆巨大的赌债，为他买了军职并安排了婚礼，同时坚持绝对保密。不久后，宾利归来并向吉英求婚。"
         },
         {
-          "en": "\"You began the evening well, Charlotte,\" said Mrs. Bennet with civil self-command to Miss Lucas. \"You were Mr. Bingley's first choice.\"",
-          "zh": "“你今晚开局很好，夏洛特，”班奈特太太带着礼貌的自制对卢卡斯小姐说。“你是宾利先生的第一选择。”"
-        },
+          "en": "Then Lady Catherine de Bourgh arrived arrogantly demanding that Elizabeth promise never to marry Darcy. Elizabeth courageously refused to be intimidated, asserting her right to seek her own happiness.",
+          "zh": "接着凯瑟琳·德·波尔夫夫人高傲到达要求伊丽莎白承诺绝不嫁给达西。伊丽莎白勇敢地拒绝被吓倒，维护着她寻求自己幸福的权利。"
+        }
+      ]
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: Love Redeemed and Eternal Harmony",
+      "chineseTitle": "第 8 章：真爱救赎与偏见消融（终极幸福）",
+      "paragraphs": [
         {
-          "en": "\"Yes; but he seemed to like his second better.\"",
-          "zh": "“是的；但他似乎更喜欢他的第二个选择。”"
+          "en": "Lady Catherine's report of Elizabeth's defiance gave Darcy renewed hope. He returned to Longbourn, and while walking together, renewed his proposal. Elizabeth joyfully accepted, expressing profound gratitude for his salvation of her family. Both had learned invaluable lessons: Darcy had overcome his pride, and Elizabeth had conquered her prejudice, embarking on a lifetime of profound happiness at Pemberley.",
+          "zh": "凯瑟琳夫人关于伊丽莎白反抗的报道给了达西重新燃起的希望。他回到朗博恩，在一起散步时重新提出求婚。伊丽莎白喜悦地接受了，对他拯救她家族表达了深沉的感恩。两意都学到了宝贵的教训：达西克服了他的傲慢，而伊丽莎白征服了她的偏见，在彭伯里踏上了终生深沉幸福的旅程。"
         }
       ]
     }
