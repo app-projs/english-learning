@@ -1,0 +1,267 @@
+{
+  "id": "The_little_prince_u24",
+  "bookId": "The_little_prince",
+  "unitIndex": 24,
+  "title": "Chapter XXI",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "The little prince encountered a fox in the garden.",
+      "zh": "小王子在花园里遇到了一只狐狸。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "\"Good morning,\" said the fox.",
+      "zh": "“早上好。”狐狸说道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 1,
+      "en": "\"Greetings,\" replied the little prince politely, though he saw nothing but an apple tree.",
+      "zh": "“您好，”小王子礼貌地回应道，尽管他看到的只是一棵苹果树。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "\"I am here beneath the tree,\" the voice continued.",
+      "zh": "“我在这棵树下,”声音继续说道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"Who are you?\" asked the little prince, adding, \"You look so charming.\"",
+      "zh": "“你是谁？”小王子问道，又补充了一句，“你看起来如此迷人。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "\"I am a fox,\" answered the fox.",
+      "zh": "“我是一只狐狸。”狐狸答道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "\"Can we play together?\" proposed the little prince. \"I feel very lonely.\"",
+      "zh": "“我们可以一起玩吗？”小王子提议道，“我感到非常孤独。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"Not yet,\" said the fox. \"We have not tamed each other.\"",
+      "zh": "“还没有呢，”狐狸说，“我们彼此还未驯养。”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "The little prince apologized and then inquired about 'taming.'",
+      "zh": "小王子道歉后，又询问起“驯养”的事情。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "\"You do not belong here,\" said the fox. \"What are you seeking?\"",
+      "zh": "“你不属于这里。”狐狸说道，“你在寻找什么呢？”"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "\"I am looking for friends,\" replied the little prince.",
+      "zh": "“我在寻找朋友。”小王子回答道。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "\"Then what does 'tame' mean?\" he asked again.",
+      "zh": "“那么‘驯服’的意思是什么呢？”他再次问道。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "\"It means to form a bond,\" explained the fox. \"Before, I was like any other fox, but now I am unique because of you.\"",
+      "zh": "“这意味着结成一种纽带，”狐狸解释道，“以前我和其他狐狸没什么不同，但因为你，我现在变得独一无二了。”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "The little prince began to understand and mentioned his flower back on his planet.",
+      "zh": "小王子开始渐渐明白，并提到了他星球上的那朵花。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "\"It is possible she has tamed you,\" said the fox.",
+      "zh": "“她也许已经把你驯服了。”狐狸说道。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 2,
+      "en": "\"But this isn't my Earth!\" exclaimed the little prince.",
+      "zh": "“但这不是我的地球！”小王子脱口而出。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 1,
+      "en": "The fox looked puzzled and curious.",
+      "zh": "狐狸显得困惑又好奇。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "\"Is it another planet?\" he asked.",
+      "zh": "“这是另一个星球吗？”他脱口问道。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 1,
+      "en": "\"Yes,\" replied the little prince.",
+      "zh": "“是的,”小王子回答道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "\"Are there hunters or chickens there?\"",
+      "zh": "“那边有猎人还是鸡呢？”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "\"No to both.\"",
+      "zh": "“两个都拒绝。”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "\"That's interesting,\" sighed the fox, returning to his thoughts.",
+      "zh": "狐狸叹了口气，陷入了沉思，“真有意思。”"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "The fox looked into the little prince's eyes for a long moment. \"Please tame me,\" he said softly.",
+      "zh": "狐狸凝视着小王子的眼睛，好一会儿才开口：“请你驯养我吧。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "\"I want to, very much,\" replied the little prince, but with a hint of urgency. \"But I have many things to discover and understand.\"",
+      "zh": "“我非常想这么做，”小王子回答道，语气中带着一丝急切，“但我还有很多事情需要发现和理解。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "\"Only through taming can one truly understand,\" the fox explained. \"Men rush through life, buying ready-made things without time for friendship. If you wish a friend, tame me...\"",
+      "zh": "“唯有驯养才能真正理解，”狐狸解释道，“人类匆匆忙忙地生活着，购买现成的东西，没有时间去结交朋友。如果你想要一个朋友，就来驯养我吧……”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 2,
+      "en": "\"What must I do?\" asked the little prince.",
+      "zh": "“我该怎么办呢？”小王子问道。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "\"You must be patient,\" said the fox. \"Sit in the grass and come closer each day. Words are often misunderstood, so say nothing at first.\"",
+      "zh": "“你必须要有耐心，”狐狸说，“每天坐在草地上靠近一点。话往往会被误解，所以一开始不要说什么。”"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "The next day, the little prince returned as instructed. \"It would have been better to arrive on time,\" said the fox. \"If you come at four o'clock every afternoon, I will be prepared.",
+      "zh": "第二天，小王子如约而至。“要是能准时来就好了。”狐狸说，“如果你每天下午四点过来，我就会做好准备。”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 1,
+      "en": "I'll worry and jump with joy as the hour approaches.\"",
+      "zh": "随着时刻临近，我将忧心忡忡又欣喜若狂。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "\"What is a rite?\" inquired the little prince.",
+      "zh": "“什么是仪式？”小王子问道。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"A ritual,\" explained the fox, \"is important for our hearts. It helps us prepare and shows how much we care.\"",
+      "zh": "“仪式对我们的心灵很重要，”狐狸解释说，“它帮助我们做好准备，并展示了我们有多在乎。”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "The little prince tamed the fox, who explained the importance of unique bonds. \"Thursday is special because I dance with village girls,\" the fox said. \"Without this ritual, every day would be the same.\"",
+      "zh": "小王子驯服了狐狸，狐狸解释说重要的是一份独特的联系。“星期四特别一些，因为我与村里的女孩跳舞。”狐狸说道，“如果没有这个仪式，每一天都会一样平凡。”"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "As their parting approached, the fox said, \"I will cry.\" The little prince replied, \"It's your own fault. You wanted me to tame you.\"",
+      "zh": "随着分别的日子临近，狐狸说：“我会哭的。”小王子回答道：“这都是你自己的错。是你想要和我建立联系的。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "The fox agreed, adding that taming had been good because of his connection with the wheat fields. He advised the little prince to return and see the roses.",
+      "zh": "狐狸同意了，补充说驯化对他来说很有好处，因为他与小麦田有牵连。他建议小王子回去看看他的玫瑰花。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "Upon returning, the little prince realized he was different from his rose. \"You are nothing yet,\" he said to the roses. \"No one has tamed you, and you have tamed no one.\"",
+      "zh": "回到玫瑰身边，小王子意识到自己与他的玫瑰已经不同了。“你还未成熟呢，”他对玫瑰说，“你还没有被驯化，也没有去驯化任何人。”"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "The roses felt embarrassed. The little prince continued, \"You are beautiful but empty. I could not die for you.",
+      "zh": "玫瑰们感到有些尴尬。小王子继续说道：“你们美丽却空虚，我不能为你们献出生命。”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 1,
+      "en": "My rose is unique because I watered her, put her under a glass globe, sheltered her, and listened to her.\"",
+      "zh": "我的玫瑰之所以独特，是因为我精心照料她、为她浇水、把她罩在玻璃球下保护她，并且倾听她的声音。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 1,
+      "en": "He returned to the fox, saying goodbye.",
+      "zh": "他回到狐狸身边，与它道别。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "The fox said goodbye and shared his secret: only the heart can reveal the essential truths; what is truly important cannot be seen with the eyes.",
+      "zh": "狐狸道别时透露了一个秘密：只有心灵才能揭示事物的本质；真正重要的东西，眼睛是看不见的。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 1,
+      "en": "\"Only the time you've wasted on your rose makes her so special,\" the little prince echoed, reinforcing this lesson in his mind.",
+      "zh": "“你对玫瑰浪费的时间让她如此特别，”小王子重复道，这句话在他心中再次得到了强化。"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 1,
+      "en": "\"The time I have spent on my rose—this is what makes her so important,\" the fox added, emphasizing its significance.",
+      "zh": "“我花在玫瑰上的时间——这才是让她如此重要的原因。”狐狸补充道，强调了这一点的重要性。"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 3,
+      "en": "Men have lost sight of this truth, the fox noted. But the little prince must remember: you become responsible for what you tame. You are responsible for your rose...",
+      "zh": "狐狸说道：“人们已经忘记了这个道理。但是小王子你要记住：你驯养了什么东西，就要对它负责。你要为你的玫瑰承担责任……”"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 1,
+      "en": "\"I am responsible for my rose,\" the little prince repeated, solidifying his understanding.",
+      "zh": "“我负责我的玫瑰。”小王子重复道，坚定地表达了他心中的理解。"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "bookId": "The_little_prince",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "7230",
+      "chineseTitle": "",
+      "path": "chapters/001.json",
+      "wordCount": 63,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 2,
+      "title": "7235",
+      "chineseTitle": "",
+      "path": "chapters/002.json",
+      "wordCount": 56,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 3,
+      "title": "7295",
+      "chineseTitle": "",
+      "path": "chapters/003.json",
+      "wordCount": 148,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter I",
+      "chineseTitle": "",
+      "path": "chapters/004.json",
+      "wordCount": 155,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter II",
+      "chineseTitle": "",
+      "path": "chapters/005.json",
+      "wordCount": 376,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter III",
+      "chineseTitle": "",
+      "path": "chapters/006.json",
+      "wordCount": 212,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter IV",
+      "chineseTitle": "",
+      "path": "chapters/007.json",
+      "wordCount": 414,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter V",
+      "chineseTitle": "",
+      "path": "chapters/008.json",
+      "wordCount": 411,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 9,
+      "title": "Chapter VI",
+      "chineseTitle": "",
+      "path": "chapters/009.json",
+      "wordCount": 138,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 10,
+      "title": "Chapter VII",
+      "chineseTitle": "",
+      "path": "chapters/010.json",
+      "wordCount": 450,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 11,
+      "title": "Chapter VIII",
+      "chineseTitle": "",
+      "path": "chapters/011.json",
+      "wordCount": 407,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 12,
+      "title": "Chapter IX",
+      "chineseTitle": "",
+      "path": "chapters/012.json",
+      "wordCount": 248,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 13,
+      "title": "Chapter X",
+      "chineseTitle": "",
+      "path": "chapters/013.json",
+      "wordCount": 586,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 14,
+      "title": "Chapter XI",
+      "chineseTitle": "",
+      "path": "chapters/014.json",
+      "wordCount": 246,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 15,
+      "title": "Chapter XII",
+      "chineseTitle": "",
+      "path": "chapters/015.json",
+      "wordCount": 119,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 16,
+      "title": "Chapter XIII",
+      "chineseTitle": "",
+      "path": "chapters/016.json",
+      "wordCount": 365,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 17,
+      "title": "Chapter XIV",
+      "chineseTitle": "",
+      "path": "chapters/017.json",
+      "wordCount": 483,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 18,
+      "title": "Chapter XV",
+      "chineseTitle": "",
+      "path": "chapters/018.json",
+      "wordCount": 471,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 19,
+      "title": "Chapter XVI",
+      "chineseTitle": "",
+      "path": "chapters/019.json",
+      "wordCount": 129,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 20,
+      "title": "Chapter XVII",
+      "chineseTitle": "",
+      "path": "chapters/020.json",
+      "wordCount": 364,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 21,
+      "title": "Chapter XVIII",
+      "chineseTitle": "",
+      "path": "chapters/021.json",
+      "wordCount": 86,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 22,
+      "title": "Chapter XIX",
+      "chineseTitle": "",
+      "path": "chapters/022.json",
+      "wordCount": 119,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 23,
+      "title": "Chapter XX",
+      "chineseTitle": "",
+      "path": "chapters/023.json",
+      "wordCount": 147,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 24,
+      "title": "Chapter XXI",
+      "chineseTitle": "",
+      "path": "chapters/024.json",
+      "wordCount": 658,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 25,
+      "title": "Chapter XXII",
+      "chineseTitle": "",
+      "path": "chapters/025.json",
+      "wordCount": 207,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 26,
+      "title": "Chapter XXIII",
+      "chineseTitle": "",
+      "path": "chapters/026.json",
+      "wordCount": 82,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 27,
+      "title": "Chapter XXIV",
+      "chineseTitle": "",
+      "path": "chapters/027.json",
+      "wordCount": 411,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 28,
+      "title": "Chapter XXV",
+      "chineseTitle": "",
+      "path": "chapters/028.json",
+      "wordCount": 564,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 29,
+      "title": "Chapter XXVI",
+      "chineseTitle": "",
+      "path": "chapters/029.json",
+      "wordCount": 1049,
+      "readTime": 8
+    }
+  ]
+}

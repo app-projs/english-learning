@@ -1,0 +1,27 @@
+{
+  "id": "The_little_prince_u3",
+  "bookId": "The_little_prince",
+  "unitIndex": 3,
+  "title": "7295",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "The narrative shifts to Saint-Exupéry's life, providing a concise overview. Born in Lyon, France, in 1900, he showed an early interest in aviation. After initial struggles and setbacks, he joined the French Air Force during World War I, where his skills as a pilot quickly became evident.",
+      "zh": "叙述转向圣埃克苏佩里的生活，简要概述了他的生平。他出生于法国里昂，1900年，在早期就对航空产生了浓厚的兴趣。经过一番挣扎和挫折后，他在一战期间加入了法国空军，很快便展现出了卓越的飞行技能。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "In 1923, Saint-Exupéry embarked on his first commercial flight, marking the beginning of his career as a pioneering aviator. His experiences flying over remote regions inspired him to write about his adventures and observations. The harsh realities of life in the air and the beauty of the landscapes he encountered shaped his literary works.",
+      "zh": "1923年，圣埃克苏佩里开始了他的首次商业飞行，标志着他作为一名先驱飞行员职业生涯的开始。他在偏远地区空中的经历激发了他书写冒险和观察的心灵。高空生活的严酷现实与他所目睹的壮丽景色塑造了他的文学作品。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "His writing career flourished, with \"The Little Prince\" becoming an international bestseller. Despite his success, Saint-Exupéry remained deeply committed to aviation, often risking his own safety on dangerous missions. His dedication to both literature and flying made him a celebrated figure in the early 20th century.",
+      "zh": "他的文学事业如日中天，《小王子》一书风靡全球，成为国际畅销书。尽管取得了巨大成功，圣埃克苏佩里依然对航空事业抱有深厚的热情，常常冒着生命危险执行危险的任务。他对文学和飞行的双重执着使他成为了20世纪初备受瞩目的人物。"
+    }
+  ]
+}

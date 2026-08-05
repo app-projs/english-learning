@@ -1,0 +1,69 @@
+{
+  "id": "The_little_prince_u9",
+  "bookId": "The_little_prince",
+  "unitIndex": 9,
+  "title": "Chapter VI",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "Oh, little prince! Gradually, I came to understand your sorrowful life. You found joy in watching sunsets.",
+      "zh": "哦，小王子！渐渐地，我开始理解你那充满哀愁的生活。你在欣赏日落时找到了快乐。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "On the fourth day, you invited me to see one together.",
+      "zh": "第四天，你邀请我一起去看看。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 1,
+      "en": "\"Let's go watch a sunset,\" you said.",
+      "zh": "“我们去看日落吧。”你脱口而出。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "\"But we must wait,\" I replied.",
+      "zh": "“但我们必须等等才行。”我回答道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"Why do we need to wait?\" you asked.",
+      "zh": "“为什么要等？”你问道。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"For the sunset,\" I explained. \"We must wait until it is time.\"",
+      "zh": "“等夕阳西下，”我解释道，“我们必须等到那个时候。”"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "Initially, you seemed surprised. Then you laughed and said, \"I always think I'm at home!\"",
+      "zh": "起初你显得有些惊讶，随后你笑了笑，说道：“我总是觉得自己在家呢！”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "Indeed, if you could fly to France in a minute, you could see the sunset right from noon. But your planet was too far for that. On your tiny world, all you needed to do was move your chair a few steps.",
+      "zh": "如果你们能瞬间飞抵法国，中午就能看到日落。但你们的星球距离太远，做不到这一点。在你们这个小小的世界上，只要挪动几把椅子的位置就行了。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "\"One day,\" you told me, \"I saw forty-four sunsets.\"",
+      "zh": "“有一天，”你告诉我，“我见证了四十四次日落。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "You continued, \"When one is so sad, they love the sunset.\"",
+      "zh": "你继续说道：“悲伤时，人们总是钟情于夕阳。”"
+    }
+  ]
+}

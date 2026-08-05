@@ -1,0 +1,63 @@
+{
+  "id": "The_little_prince_u6",
+  "bookId": "The_little_prince",
+  "unitIndex": 6,
+  "title": "Chapter III",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "The little prince, who asked many questions but rarely answered mine, gradually revealed his origins through chance conversations.",
+      "zh": "这个经常提问却很少回答我问题的小王子，逐渐在偶然的交谈中透露出了他的身世。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "One day, when he saw my airplane, he inquired: \"What is that object?\" I replied, \"It's an airplane, and it flies. It's my airplane.\"",
+      "zh": "有一天，他看到我的飞机后问道：“那是什么东西？”我回答说：“那是一架飞机，会飞的。这是我的飞机。”"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 1,
+      "en": "Proud of this revelation, I felt slighted by his laughter at the idea that I had come from the sky.",
+      "zh": "我为这个发现感到自豪，却对他笑我对天空而来的说法时的轻蔑感到了一丝不快。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "He then asked, \"So you're also from the sky? Which planet are you from?\" This question sparked a momentary curiosity in him, but he quickly changed the subject to his sheep.",
+      "zh": "他接着问道：“这么说你也是从天上来的？你是哪个星球的？”这个问题让他短暂地产生了好奇，但很快他就把话题转到了他的羊身上。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "My curiosity piqued, I pressed further: \"Where do you come from? What is this 'where I live' you speak of? Where will you take your sheep?\"",
+      "zh": "我好奇心大增，继续追问：“你从哪里来？你说的‘我的家园’是指哪里？你要把羊带到哪儿去？”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "He responded with a thoughtful pause before saying, \"The box you gave me is perfect for him at night.\" He then suggested we could provide a string and post during the day to keep his sheep secure.",
+      "zh": "他沉思了一下，然后说道：“你给我的那个盒子正好适合他在晚上使用。”接着建议我们白天可以给他提供一根绳子和一个羊圈，以确保羊群的安全。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "However, the little prince was appalled by this idea. \"Tie him! What a strange notion!\"",
+      "zh": "然而，小王子对这个想法感到震惊。“把他绑起来！真是个奇怪的想法！”他脱口而出。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "he exclaimed. I explained that without restraint, the sheep might wander off and get lost. But he insisted, \"Anywhere straight ahead of him, nobody can go far.\"",
+      "zh": "他脱口而出：“我解释说，如果不加约束，羊可能会走失。但他坚持认为：‘在他前方的任何直路上，没人能走得远。’”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "With a hint of sadness, he added, \"Everything is so small where I live.\"",
+      "zh": "他带着一丝悲伤说道：“我住的地方一切都那么渺小。”"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "The_little_prince_u2",
+  "bookId": "The_little_prince",
+  "unitIndex": 2,
+  "title": "7235",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "Leon Werth, as a young boy, faced his first significant challenge. His father, a strict man, forbade him from playing in the park after dark. This rule created tension between them.",
+      "zh": "莱昂·韦尔特还是个孩子的时候，就遇到了他人生中的第一个重大挑战。他的父亲是个严厉的人，严禁他在晚上到公园玩耍。这条禁令让他们之间产生了不小的矛盾。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "Despite the prohibition, Leon often sneaked out to play, leading to an argument one evening when he was caught by his father returning home late.",
+      "zh": "尽管禁止外出玩乐，莱昂还是经常偷偷溜出去，有一次晚上被父亲发现回家晚了，两人因此起了争执。"
+    }
+  ]
+}

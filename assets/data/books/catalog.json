@@ -50,6 +50,12 @@
       "manifest": "The_Adventures_of_Sherlock_Holmes/book.json"
     },
     {
+      "id": "The_Arabian_Nights_(New_Deluxe_Edition)",
+      "title": "The Arabian Nights (New Deluxe Edition)",
+      "path": "The_Arabian_Nights_(New_Deluxe_Edition)",
+      "manifest": "The_Arabian_Nights_(New_Deluxe_Edition)/book.json"
+    },
+    {
       "id": "The_Great_Gatsby",
       "title": "The Great Gatsby",
       "path": "The_Great_Gatsby",
@@ -62,10 +68,10 @@
       "manifest": "The_Great_Stone_Face/book.json"
     },
     {
-      "id": "The_Little_Prince",
-      "title": "The Little Prince",
-      "path": "The_Little_Prince",
-      "manifest": "The_Little_Prince/book.json"
+      "id": "The_little_prince",
+      "title": "The little prince",
+      "path": "The_little_prince",
+      "manifest": "The_little_prince/book.json"
     },
     {
       "id": "The_Old_Man_and_the_Sea",

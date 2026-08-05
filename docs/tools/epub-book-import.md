@@ -43,6 +43,7 @@ python3.11 -m venv .venv-epub
 source .venv-epub/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r tools/requirements-epub-import.txt
+chmod +x tools/import-epub.sh
 brew install --cask ollama
 ollama pull qwen2.5:7b
 ```
@@ -84,7 +85,7 @@ argospm install translate-en_zh
 
 ## 3. 每次新增 EPUB 的操作
 
-完成一次环境安装后，后续新增书籍不需要 AI 介入，也不需要修改 Flutter 代码。只需把 EPUB 放入 `assets/epub/incoming/`，启动 Ollama，然后运行一次导入脚本；工具会自动完成解析、章节精简、中文翻译、目录更新和原文件备份移动。
+完成一次环境安装后，后续新增书籍不需要 AI 介入，也不需要修改 Flutter 代码。只需把 EPUB 放入 `assets/epub/incoming/`，启动 Ollama，然后运行平台对应的一条命令；工具会自动完成解析、章节精简、中文翻译、目录更新和原文件备份移动。
 
 ### 3.1 放入待处理目录
 
@@ -96,18 +97,18 @@ assets/epub/incoming/
 
 不要把原 EPUB 放到 `assets/data/books/`，否则可能被打包进 Flutter 应用。
 
-### 3.2 先执行预览
+### 3.2 先执行预览（可选）
 
 Windows：
 
 ```powershell
-.venv-epub\Scripts\python.exe tools/epub_import.py --dry-run
+tools\import-epub.cmd --dry-run
 ```
 
 macOS：
 
 ```bash
-.venv-epub/bin/python tools/epub_import.py --dry-run
+./tools/import-epub.sh --dry-run
 ```
 
 预览只解析和统计，不翻译、不写入、不移动文件。示例输出：
@@ -121,19 +122,48 @@ DRY-RUN book.epub: Anne_of_Green_Gables, 38 chapters, 102874 words
 Windows：
 
 ```powershell
-.venv-epub\Scripts\python.exe tools/epub_import.py
+tools\import-epub.cmd
 ```
 
 macOS：
 
 ```bash
-.venv-epub/bin/python tools/epub_import.py
+./tools/import-epub.sh
+```
+
+这两个启动脚本会自动优先使用项目虚拟环境中的 Python，并将其他参数传递给底层导入工具。例如：
+
+如果目标书籍目录已经存在，工具会提示：
+
+```text
+Book output already exists: assets/data/books/Book_Title. Continue with the next book? [Y/N]:
+```
+
+输入 `Y` 跳过当前书籍并继续处理下一本，输入 `N` 取消本次导入。
+
+所有文件处理完后会输出 `Import completed.`。
+
+导入过程中会显示当前书籍、章节和段落进度；如果某个段落正在等待 Ollama 翻译，进度会停留在该段落，翻译完成后继续更新。
+
+导入器会尝试根据章节标题和文件名过滤序言、目录、版权页、致谢、译者说明、附录、作者简介等非正文内容，并输出 `Skipping non-content section` 提示。无法明确识别的内容会保留并正常解析。
+
+中文翻译结果会进行字符污染检查。检测到西里尔文、泰文、阿拉伯文等异常脚本时会自动重试；重试仍失败则停止当前导入且不写入该条缓存。新缓存优先使用新版本，旧版本中通过校验的结果也会兼容复用。
+
+如果翻译和文件生成已完成，但 Windows 在最后一步移动目录时拒绝访问，工具会保留临时生成目录并打印路径，不会删除已经生成的内容。
+
+```powershell
+tools\import-epub.cmd --book "assets/epub/incoming/My Book.epub"
+```
+
+```bash
+./tools/import-epub.sh --book "assets/epub/incoming/My Book.epub"
 ```
 
 处理成功后：
 
 - 书籍数据写入 `assets/data/books/`；
 - `catalog.json` 自动更新；
+- `assets/epub/pending-translation-books.md` 自动将已完成书籍标记为“已处理”并移动到表格末尾；
 - 翻译结果写入缓存；
 - 原 EPUB 移动到 `assets/epub/processed/<日期>/`。
 
@@ -147,6 +177,7 @@ macOS：
 --input <dir>       待解析 EPUB 目录
 --output <dir>      书籍输出目录
 --processed <dir>   已处理 EPUB 目录
+--pending-record    完成后自动更新书籍状态的 Markdown 文件
 --cache <file>      翻译缓存文件
 --abridged-cache    章节精简正文缓存文件
 --book <file>       只处理指定 EPUB

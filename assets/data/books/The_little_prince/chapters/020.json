@@ -1,0 +1,165 @@
+{
+  "id": "The_little_prince_u20",
+  "bookId": "The_little_prince",
+  "unitIndex": 20,
+  "title": "Chapter XVII",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "When one wishes to play the wit, he sometimes wanders from the truth. I have not been entirely honest about the lamplighters. If two billion people stood in a crowded square twenty miles long and wide, they could fit into such an area.",
+      "zh": "当一个人想要卖弄机智时，有时会偏离事实。我并没有完全说实话关于那些点灯人。如果两 billion 人挤在一个二十英里见方的广场上，他们确实可以全部容纳进去。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "The grown-ups will not believe you; they think they occupy much space. You should advise them to calculate it themselves—figures please them.",
+      "zh": "大人是不会相信你的；他们自认为占据了很大的空间。你应该建议他们自己计算一下——给他们看一些数据吧。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "Upon arriving on Earth, the little prince was surprised by its emptiness. He feared he had landed on the wrong planet until a golden snake appeared in the moonlight.",
+      "zh": "小王子来到地球后感到十分惊讶，发现这里显得异常空旷。他担心自己可能降落在了错误的星球上，直到一道月光下金色的蛇出现了。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "\"Good evening,\" said the little prince courteously.",
+      "zh": "“晚上好，”小王子礼貌地说。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "\"Good evening,\" replied the snake.",
+      "zh": "“晚上好。”蛇应道。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "\"This is the Earth, Africa,\" the snake explained.",
+      "zh": "“这是地球，非洲，”那条蛇解释道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "\"Are there no people here?\" asked the little prince.",
+      "zh": "“这里没有人吗？”小王子问道。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"There are none in the desert. The Earth is vast,\" the snake answered.",
+      "zh": "“沙漠中没有了，大地如此广阔。”蛇回答道。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "The little prince sat on a stone and looked at the stars. \"Do the stars guide us back to our homes? My planet is up there, but it seems so distant.\"",
+      "zh": "小王子坐在一块石头上，凝视着星空。“是星星引领我们回到家园吗？我的星球就在上面，却显得如此遥远。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "\"It's beautiful,\" said the snake. \"Why did you come here?\"",
+      "zh": "“真美啊，”那条蛇说道，“你为什么要来这里？”"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "\"I had trouble with a flower,\" replied the little prince.",
+      "zh": "“我遇到了一朵花的问题。”小王子回答道。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "\"Ah!\" said the snake.",
+      "zh": "“啊！”蛇叫道。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "They fell silent for a while.",
+      "zh": "他们沉默了片刻。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 2,
+      "en": "\"Why are there no people?\" the little prince asked again.",
+      "zh": "“为什么这里没有人？”小王子再次问道。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "\"It's lonely in the desert...\"",
+      "zh": "“沙漠中真是寂寞……”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "\"And among men too,\" added the snake.",
+      "zh": "“就连人类也是如此,”蛇补充道。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "The little prince stared at the snake. \"You're peculiar, you know. You're thinner than my finger.\"",
+      "zh": "小王子盯着那条蛇看，“你可真怪，比我的手指还要细。”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "The snake declared, \"I am more powerful than a king's finger.\"",
+      "zh": "蛇宣称：“我的力量胜过国王的指尖。”"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "The little prince smiled. \"You are not powerful. You have no feet and cannot travel.\"",
+      "zh": "小王子笑了笑：“你不够强大。你没有脚，无法远行。”"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "\"But I can carry you farther than any ship,\" the snake replied, coiling around the little prince’s ankle.",
+      "zh": "“但我能带你去比任何船只更远的地方，”那条蛇回答着，绕上了小王子的脚踝。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 2,
+      "en": "\"Only those I touch return to their home star,\" the snake continued. \"But you are innocent and come from a distant planet...\"",
+      "zh": "“只有我触碰过的才会返回各自的星辰母星，”蛇继续说道，“而你则是无辜的，来自遥远的星球……”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "The little prince remained silent.",
+      "zh": "小王子沉默不语。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "\"You move me with pity—so weak on this granite Earth,\" the snake said. \"One day, if you miss your own planet too much, I can help you.\"",
+      "zh": "“你让我心生怜悯——在这片坚硬的岩石之上如此虚弱，”那条蛇说道，“如果你有一天太思念自己的星球，我可以帮助你。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "\"Oh! I understand you well,\" the little prince replied. \"But why do you always speak in riddles?\"",
+      "zh": "“哦！我明白你的意思了，”小王子回答，“但你为什么总是爱卖关子呢？”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 1,
+      "en": "\"I solve them all,\" the snake responded.",
+      "zh": "“我全都解决了。”蛇回答道。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "They fell into silence.",
+      "zh": "他们陷入了沉默。"
+    }
+  ]
+}

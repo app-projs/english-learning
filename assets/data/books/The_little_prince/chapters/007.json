@@ -1,0 +1,81 @@
+{
+  "id": "The_little_prince_u7",
+  "bookId": "The_little_prince",
+  "unitIndex": 7,
+  "title": "Chapter IV",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "The little prince came from a planet no bigger than a house, which was not surprising since there are many small asteroids. In 1909, a Turkish astronomer discovered asteroid B-612 but was dismissed due to his attire. Ten years later, with the new law mandating European dress, he presented his findings again and gained acceptance.",
+      "zh": "小王子来自一个比房子还要小的星球，这并不奇怪，因为小行星很多。1909年，一位土耳其天文学家发现了编号为B-612的小行星，但由于他的衣着问题被忽视了。十年后，在新的法律要求采用欧洲服饰之后，他再次提交研究成果并得到了认可。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "This experience taught me about grown-ups' preoccupations. When I told them of my new friend, they focused only on trivial details like age or financial status rather than asking meaningful questions about him. If I described a house as beautiful with geraniums and doves, they would not understand; instead, I had to mention the price—$20,000—to convey its value accurately.",
+      "zh": "这次经历让我了解了大人的关注点。当我向他们介绍我的新朋友时，他们只关心一些琐事，比如年龄或经济状况，并没有提出有意义的问题来深入了解他。如果我形容一所房子很美，里面种着万寿菊和鸽子，他们也不会明白；相反，我必须提到它的价格——2万美元，才能准确传达这所房子的价值。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "You could tell them, \"The proof that the little prince existed is that he was charming, laughed, and sought a sheep.\" But trying to convince them would be futile; they'd dismiss you as a child. Instead, if you said his planet was Asteroid B-612, they might believe you.",
+      "zh": "你可以对他们说：“小王子存在的证据是他迷人、会笑，还寻找一只羊。”但试图说服他们却是徒劳；他们会认为你只是个孩子。相反，如果你提到他的星球是B-612号小行星，他们或许会信你一回。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "People are like this—understandable but frustrating. Children must endure the ignorance of adults with patience.",
+      "zh": "人们就是这样——可以理解但也令人沮丧。孩子们必须耐心忍受大人的无知。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "For those who truly understand life, such details don't matter much. I wished to begin my story as a fairy tale: \"Once upon a time, there was a little prince on a tiny planet needing a sheep...\"",
+      "zh": "对于真正懂得生活的人来说，这些细节无关紧要。我希望能从一个童话故事开始：“从前，有一位小王子住在一颗小小的星球上，需要一只羊……”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "This approach would have given more authenticity to my narrative.",
+      "zh": "这种做法会让我的叙述更加真实。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "I want readers to engage deeply with this book; it's been six years since my friend left me and his sheep. Describing him here ensures I won't forget him. Forgetting a friend is sad, as not everyone has had one.",
+      "zh": "我希望读者能深刻地与这本书互动；自从我的朋友和他的羊离开我已经六年了。在这里描述他，是为了确保我不忘却这段记忆。忘记一个朋友是令人伤感的，毕竟并不是每个人都有这样的经历。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "If I fail to remember, I might become like the grown-ups obsessed only with numbers.",
+      "zh": "如果我记性不好，可能会像那些只沉迷于数字的大人一样。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "To aid in this, I've bought paints and pencils. It's challenging for an older man to take up drawing again after six years, but I aim to make my portraits as lifelike as possible. However, success is uncertain; some drawings are good, while others fail to capture the subject accurately.",
+      "zh": "为了弥补这一不足，我买了一些颜料和铅笔。对于一个多年未画的人来说，再次拿起画笔确实颇具挑战。但我力求让我的肖像尽可能生动逼真。然而，结果尚不明朗；有些作品还算不错，但也有不少未能准确捕捉到人物的神韵。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "The little prince's height varies, and his costume colors are also questionable. Despite these challenges, I strive for a fair-to-middling result.",
+      "zh": "小王子的身高不一，服装颜色也令人怀疑。尽管面临这些难题，我仍力求取得尚可的结果。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "I will make mistakes in certain important details, but it won't be my fault. My friend never explained anything to me, perhaps thinking I was like him. However, I struggle to see sheep through box walls—perhaps I am a little like the grown-ups who fail to understand simple things.",
+      "zh": "我会在某些关键细节上犯错，但这并非我的过错。我的朋友从未向我解释过什么，或许他认为我跟他一样。然而，隔着栅栏我看不清羊群的情况——也许我确实有点像那些不懂简单事物的大人。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "I have had to grow old and learn these lessons on my own.",
+      "zh": "我只能在成长过程中独自学习这些教训。"
+    }
+  ]
+}

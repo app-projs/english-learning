@@ -1,0 +1,105 @@
+{
+  "id": "The_little_prince_u25",
+  "bookId": "The_little_prince",
+  "unitIndex": 25,
+  "title": "Chapter XXII",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "The little prince greeted the railway switchman with a morning salutation.",
+      "zh": "小王子向铁路扳道工致以早安问候。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "\"Good morning,\" replied the switchman.",
+      "zh": "“早上好。”扳道工应道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"What do you do here?\" inquired the little prince.",
+      "zh": "“你在这里做什么？”小王子问道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"I sort travelers into groups of a thousand and send off trains, right or left,\" explained the switchman. As a train roared by, he added, \"They're always in such a hurry.\"",
+      "zh": "“我将旅客分成一千人的小组，然后安排列车左右发车。”扳道工解释说。随着一列火车轰鸣而过，他又补充道：“他们总是这么急匆匆的。”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"Why are they so eager?\" wondered the little prince.",
+      "zh": "“他们为什么这么急切呢？”小王子疑惑地问道。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "\"Even the engineer doesn't know their destination,\" said the switchman.",
+      "zh": "“就连工程师也不知道他们的目的地。”扳道工说道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "Another express train sped past them from the opposite direction.",
+      "zh": "另一列快车从相反的方向疾驰而过。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"Do these travelers return immediately?\" asked the little prince.",
+      "zh": "“这些旅人会马上回来吗？”小王子问道。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "\"These aren't the same ones; it's an exchange,\" replied the switchman.",
+      "zh": "“这些不是同一拨人；这是个交换。”扳道工回答。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "\"Why are they unsatisfied where they are?\" pondered the little prince.",
+      "zh": "“他们为什么对现状不满意呢？”小王子沉思道。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "\"No one is ever content with their current situation,\" stated the switchman.",
+      "zh": "“没有人会对现状感到满意。”扳道工说道。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "A third express train thundered by, its lights bright and loud.",
+      "zh": "另一列快速列车呼啸而过，车灯明亮刺眼。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "\"Are these trains following the first travelers?\" questioned the little prince.",
+      "zh": "“这些列车是不是在跟着第一批旅客？”小王子问道。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "\"They're not pursuing anything,\" said the switchman. \"They're asleep or yawning inside. Only children are pressing their noses against the windows.\"",
+      "zh": "“他们并没有做什么事，”扳道工说，“他们要么在睡觉，要么在打哈欠。只有孩子们把鼻子贴在窗户上。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 2,
+      "en": "\"The children know what they seek,\" mused the little prince. \"They get so attached to a rag doll that it becomes crucial; if someone takes it away, they cry...\"",
+      "zh": "“孩子们知道他们所追求的是什么，”小王子沉思道，“他们会如此依恋一个布偶，以至于它变得至关重要；如果有人把它拿走了，他们就会哭起来……”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "\"They have good fortune,\" commented the switchman.",
+      "zh": "“他们挺有福气的。”扳道工评论道。"
+    }
+  ]
+}

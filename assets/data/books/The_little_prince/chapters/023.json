@@ -1,0 +1,51 @@
+{
+  "id": "The_little_prince_u23",
+  "bookId": "The_little_prince",
+  "unitIndex": 23,
+  "title": "Chapter XX",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "After wandering through sand, rocks, and snow for a long time, the little prince stumbled upon a road leading to human settlements.",
+      "zh": "在漫无目的地穿越沙地、岩石和冰雪之后，小王子意外发现了一条通向人类聚居地的道路。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "\"Good morning,\" he greeted as he approached a blooming garden filled with roses.",
+      "zh": "“早上好，”他走近满是玫瑰花的盛开花园时说道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 1,
+      "en": "\"Good morning,\" the roses replied.",
+      "zh": "“早上好，”玫瑰们回答道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "The little prince stared at them, recognizing his flower among the five thousand identical ones.",
+      "zh": "小王子凝视着她们，一眼认出了自己的那朵花，在五千朵一模一样的花中格外显眼。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "He thought to himself, \"She would be upset if she saw this... she'd cough and pretend to die to avoid embarrassment. I’d have to pretend to nurse her back to life—otherwise, I’d look foolish too...\"",
+      "zh": "他心想：“她要是看到了，肯定会不高兴……她会故意咳嗽装死以避免尴尬。我得假装把她救活过来——否则我也显得太傻了……”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "Continuing his reflections, he mused, \"I believed I was special with a unique flower; now I realize I’m just a prince with common roses and volcanoes that barely reach my knees—one might even be extinct.\"",
+      "zh": "继续沉思，他自言自语道：“我曾以为自己与众不同，拥有独一无二的花朵；如今才发现，我只是个普通的王子，拥有的只是平凡的玫瑰和几乎触不到膝盖的火山——甚至可能已经熄灭。”"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "Touched by these realizations, the little prince lay down in the grass, tears streaming down his face.",
+      "zh": "受到这些感悟的触动，小王子躺在草地上，泪水顺着脸颊流了下来。"
+    }
+  ]
+}

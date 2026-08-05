@@ -1,0 +1,69 @@
+{
+  "id": "The_little_prince_u15",
+  "bookId": "The_little_prince",
+  "unitIndex": 15,
+  "title": "Chapter XII",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "The next planet was inhabited by a tippler. The visit was brief but left the little prince feeling deeply sad.",
+      "zh": "下一个星球住着一个嗜酒者。这次访问虽然短暂，却让小王子感到异常悲伤。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "\"Are you drinking?\" asked the little prince upon finding the tippler surrounded by empty and full bottles.",
+      "zh": "“你喝酒吗？”小王子发现那个酒鬼周围摆满了空瓶和满瓶，便问道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 1,
+      "en": "\"Yes, I am drinking,\" replied the tippler with a somber expression.",
+      "zh": "“是的，我正在喝酒，”那个酗酒者一脸严肃地回答。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"Why do you drink?\" inquired the little prince sympathetically.",
+      "zh": "“你为什么喝酒？”小王子同情地问道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "\"To forget,\" answered the tippler.",
+      "zh": "“忘掉它，”那个酗酒者回答道。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"Forget what?\" pressed the little prince, already feeling sorry for him.",
+      "zh": "“忘了什么？”小王子追问了一句，已经为他感到有些难过。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "\"I am ashamed of drinking,\" confessed the tippler, lowering his head.",
+      "zh": "“我为喝酒感到羞愧，”酒鬼低下了头承认道。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"Ashamed of what exactly?\" insisted the little prince, wanting to help.",
+      "zh": "“到底羞愧什么呢？”小王子坚持问道，显然想帮上忙。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "The tippler remained silent, shutting himself off completely.",
+      "zh": "酗酒者沉默不语，把自己完全隔离了开来。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "Puzzled, the little prince continued on his journey. \"Grown-ups are indeed very strange,\" he mused aloud.",
+      "zh": "困惑不解的小王子继续前行。“大人们真是奇怪得很呢，”他不禁出声思考道。"
+    }
+  ]
+}

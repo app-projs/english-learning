@@ -1,0 +1,21 @@
+{
+  "id": "The_little_prince_u1",
+  "bookId": "The_little_prince",
+  "unitIndex": 1,
+  "title": "7230",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "I dedicate this book to a grown-up for serious reasons. He is my best friend and understands everything, even books about children. He lives in France where he faces hunger and cold; he needs cheering up.",
+      "zh": "我将这本书献给一位成年人，原因十分严肃。他既是我的挚友，也深谙世事，即便是关于孩子的书籍也不例外。他住在法国，那里风雪交加、饥寒交迫；我希望通过这书为他带来一丝慰藉。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "If these reasons are not enough, I dedicate it to the child from whom this grown-up once was. All grown-ups were once children, though few remember it.",
+      "zh": "如果这些理由还不足以说明，我将这份献给曾经的我——那个如今已长大的孩子。所有的成年人曾经都是孩子，只是很少有人记得这一点。"
+    }
+  ]
+}

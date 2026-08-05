@@ -1,0 +1,45 @@
+{
+  "id": "The_little_prince_u22",
+  "bookId": "The_little_prince",
+  "unitIndex": 22,
+  "title": "Chapter XIX",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "The little prince ascended a high mountain, taller than any he knew before, where his previous volcanoes only reached his knees. He used an extinct volcano as a stool and declared, \"From such a height, I should see everything at once.\"",
+      "zh": "小王子登上了一座比他以往见过的任何山都高的山顶，他的先前那些火山只到他的膝盖。他把一座已熄灭的火山当成了凳子，说道：“从这样的高度，我应该可以一览无余。”"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "But all he saw were needle-like rock peaks. Greeting the echo, he said, \"Good morning,\" to which it replied, \"Good morning--Good morning--Good morning.\"",
+      "zh": "但他看到的只有尖锐如针的山峰。他对着回声喊道：“早上好。”回声应声道：“早上好——早上好——早上好。”"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Who are you?\" asked the little prince.",
+      "zh": "“你是谁？”小王子问道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "\"I am all alone--all alone--all alone,\" echoed back.",
+      "zh": "“我孤身一人——孤身一人——孤身一人”，回声般响起。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "He thought, \"This is a strange planet—dry and harsh. The people lack imagination; they just repeat what I say.\"",
+      "zh": "他心想：“这真是个奇怪的星球——干燥而严酷。人们缺乏想象力，只是机械地重复我的话。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "Recalling his flower on his own planet, he mused, \"She was always the first to speak...\"",
+      "zh": "回想起自己星球上的那朵花，他沉思道：“她总是第一个开口……”"
+    }
+  ]
+}

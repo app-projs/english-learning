@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -9,6 +10,9 @@ import 'storage_service.dart';
 /// 统一超真实高保真语音服务 (Unified Natural Audio Service)
 /// 支持: 谷歌 Google Neural TTS 神经网络发音、有道美音/英音原生原声 MP3 本地文件缓存、双引擎故障自动降级
 class AudioService {
+  static const _edgeUsVoice = 'en-US-AvaNeural';
+  static const _edgeUkVoice = 'en-GB-SoniaNeural';
+
   static AudioService? _instance;
   late FlutterTts _flutterTts;
   late AudioPlayer _audioPlayer;
@@ -266,8 +270,9 @@ class AudioService {
 
     try {
       if (_cacheDir != null) {
+        final voiceName = _edgeVoiceForAccent(accent);
         final hashStr = trimmedText.hashCode.abs().toString();
-        final fileName = 'neural_tts_${accent}_${hashStr}_${trimmedText.length}.mp3';
+        final fileName = 'neural_tts_${voiceName}_${hashStr}_${trimmedText.length}.mp3';
         final localFile = File('${_cacheDir!.path}/$fileName');
 
         // 1. 磁盘缓存命中 - 0 延迟秒播
@@ -279,7 +284,6 @@ class AudioService {
         }
 
         // 2. 请求微软 Edge 神经网络发音 (支持长段落自然连续播报，美音/英音适配)
-        final voiceName = accent.toUpperCase() == 'UK' ? 'en-GB-SoniaNeural' : 'en-US-AvaNeural';
         final edgeBytes = await _fetchEdgeTtsAudio(trimmedText, voiceName: voiceName);
         if (edgeBytes != null && edgeBytes.length > 500) {
           if (_isStopped) return;
@@ -333,6 +337,10 @@ class AudioService {
     await playNext();
   }
 
+  String _edgeVoiceForAccent(String accent) {
+    return accent.toUpperCase() == 'UK' ? _edgeUkVoice : _edgeUsVoice;
+  }
+
   /// 通过谷歌 Google Translate 高保真神经网络 API 合成自然高保真音频 (HTTP GET)
   Future<List<int>?> _fetchGoogleTtsAudio(String text, {String accent = 'US'}) async {
     if (kIsWeb) return null;
@@ -378,7 +386,12 @@ class AudioService {
         .replaceAll("'", '&apos;');
 
     try {
-      const wsUrl = 'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EA5E40B1A42548646CF1037F';
+      const trustedClientToken = '6A5AA1D4EA5E40B1A42548646CF1037F';
+      final connectionId = _randomId();
+      final requestId = _randomId();
+      final wsUrl =
+          'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1'
+          '?TrustedClientToken=$trustedClientToken&ConnectionId=$connectionId';
       final socket = await WebSocket.connect(
         wsUrl,
         headers: {
@@ -394,6 +407,7 @@ class AudioService {
 
       // 1. 发送配置消息
       final configMsg =
+          'X-RequestId: $requestId\r\n'
           "X-Timestamp: ${DateTime.now().toIso8601String()}\r\n"
           "Content-Type: application/json; charset=utf-8\r\n"
           "Path: speech.config\r\n\r\n"
@@ -402,10 +416,11 @@ class AudioService {
 
       // 2. 发送 SSML 朗读请求
       final ssmlMsg =
+          'X-RequestId: $requestId\r\n'
           "X-Timestamp: ${DateTime.now().toIso8601String()}\r\n"
           "Content-Type: application/ssml+xml\r\n"
           "Path: ssml\r\n\r\n"
-          "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>"
+          "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='${selectedVoice.startsWith('en-GB') ? 'en-GB' : 'en-US'}'>"
           "<voice name='$selectedVoice'>"
           "<pitch hertz='0Hz'/><rate speed='0%'/>$escapedText"
           "</voice></speak>";
@@ -445,7 +460,7 @@ class AudioService {
       );
 
       return await completer.future.timeout(
-        const Duration(seconds: 7),
+        const Duration(seconds: 30),
         onTimeout: () {
           socket.close();
           return audioBuffer.isNotEmpty ? audioBuffer : null;
@@ -455,6 +470,11 @@ class AudioService {
       debugPrint('Edge TTS WebSocket synthesis error: $e');
       return null;
     }
+  }
+
+  String _randomId() {
+    final random = Random();
+    return List.generate(32, (_) => random.nextInt(16).toRadixString(16)).join();
   }
 
   /// 单句 MP3 流播放内核 (Google Neural TTS -> Youdao MP3 -> FlutterTts 降级)

@@ -12,6 +12,7 @@ import re
 import shutil
 import sys
 import tempfile
+import time
 import urllib.error
 import urllib.request
 import zipfile
@@ -33,6 +34,34 @@ ABBREVIATIONS = {
 }
 WORD_RE = re.compile(r"[A-Za-z]+(?:['-][A-Za-z]+)*")
 SENTENCE_END_RE = re.compile(r"[.!?]+(?:[\"'”’»)]*)?(?=\s+|$)")
+CHINESE_CHAR_RE = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
+FORBIDDEN_TRANSLATION_SCRIPT_RE = re.compile(
+    r"[\u0370-\u03ff\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u0900-\u097f\u0e00-\u0e7f]"
+)
+NON_CONTENT_TITLE_RE = re.compile(
+    r"^(?:"
+    r"preface|foreword|introduction|contents|table of contents|toc|"
+    r"title page|copyright(?: page)?|dedication|epigraph|acknowledg(?:e?ments?)|"
+    r"(?:translator|editor|author)(?:['’]s)?(?: note| introduction)|"
+    r"appendix|appendices|notes?|about the author|bibliography|glossary|index|colophon|"
+    r"序言|前言|导言|目录|版权(?:页)?|献词|致谢|译者(?:序|说明)|编者(?:按|说明)|"
+    r"附录|注释|作者简介|词汇表|索引|出版信息"
+    r")$",
+    re.IGNORECASE,
+)
+NON_CONTENT_TITLE_PREFIX_RE = re.compile(
+    r"^(?:conclusion|prologue|postscript|map\b|a note on\b|also translated by\b|"
+    r"chronology\b|list of (?:maps|illustrations|figures)\b|"
+    r"translator(?:['’]s)? postscript\b)",
+    re.IGNORECASE,
+)
+NON_CONTENT_TITLE_SEARCH_RE = re.compile(r"\b(?:biography|postscript)\b", re.IGNORECASE)
+NON_CONTENT_FILENAME_RE = re.compile(
+    r"(?:preface|foreword|introduction|contents|toc|title.?page|copyright|"
+    r"dedication|epigraph|acknowledg|translator.?s?.?note|editor.?s?.?note|"
+    r"appendix|notes?|about.?the.?author|bibliography|glossary|colophon)",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -136,6 +165,23 @@ def slugify_title(title: str) -> str:
     return value
 
 
+def is_non_content_chapter(title: str, source_path: str) -> bool:
+    normalized_title = normalize_text(title).strip(" .:：-_")
+    if (
+        NON_CONTENT_TITLE_RE.fullmatch(normalized_title)
+        or NON_CONTENT_TITLE_PREFIX_RE.match(normalized_title)
+        or NON_CONTENT_TITLE_SEARCH_RE.search(normalized_title)
+    ):
+        return True
+
+    filename = Path(source_path).stem
+    if re.fullmatch(r"index_split_\d+", filename, re.IGNORECASE) and re.fullmatch(
+        r"index split \d+", normalized_title, re.IGNORECASE
+    ):
+        return True
+    return bool(NON_CONTENT_FILENAME_RE.search(filename))
+
+
 def zip_path(base: str, href: str) -> str:
     href_path = unquote(urlparse(href).path)
     return posixpath.normpath(posixpath.join(posixpath.dirname(base), href_path))
@@ -210,7 +256,10 @@ class EpubReader:
                 continue
             if not chapters and not nav_titles.get(path) and word_count(" ".join(paragraphs)) < 20:
                 continue
-            title = nav_titles.get(path) or headings[0] if headings else nav_titles.get(path, Path(path).stem.replace("_", " "))
+            title = nav_titles.get(path) or (headings[0] if headings else Path(path).stem.replace("_", " "))
+            if is_non_content_chapter(title, path):
+                print(f"Skipping non-content section: {title} ({path})", flush=True)
+                continue
             chapters.append(EpubChapter(title, paragraphs, path))
         if not chapters:
             raise ValueError("No readable chapters found in EPUB spine")
@@ -289,13 +338,13 @@ class OllamaTranslator:
         glossary_hash = hashlib.sha256(
             json.dumps(glossary, ensure_ascii=False, sort_keys=True).encode("utf-8")
         ).hexdigest()[:12]
-        self.cache_namespace = f"ollama|{model}|literary-v1|{glossary_hash}"
+        self.cache_namespace = f"ollama|{model}|literary-v2|{glossary_hash}"
 
     def _generate(self, prompt: str, temperature: float = 0.2) -> str:
         payload = json.dumps({
             "model": self.model,
             "prompt": prompt,
-            "stream": False,
+            "stream": True,
             "think": False,
             "options": {"temperature": temperature, "top_p": 0.9},
         }).encode("utf-8")
@@ -307,16 +356,27 @@ class OllamaTranslator:
         )
         try:
             with urllib.request.urlopen(request, timeout=self.timeout) as response:
-                result = json.loads(response.read().decode("utf-8"))
+                response_parts: list[str] = []
+                chunk_count = 0
+                print("  Ollama streaming", end="", flush=True)
+                for line in response:
+                    if not line.strip():
+                        continue
+                    result = json.loads(line.decode("utf-8"))
+                    if result.get("error"):
+                        raise RuntimeError(f"Ollama error: {result['error']}")
+                    response_parts.append(str(result.get("response", "")))
+                    chunk_count += 1
+                    if chunk_count % 10 == 0:
+                        print(".", end="", flush=True)
+                print(flush=True)
         except urllib.error.URLError as error:
             raise RuntimeError(
                 f"Cannot connect to Ollama at {self.url}. Start Ollama and install the selected model."
             ) from error
         except json.JSONDecodeError as error:
             raise RuntimeError("Ollama returned invalid JSON") from error
-        if result.get("error"):
-            raise RuntimeError(f"Ollama error: {result['error']}")
-        response_text = str(result.get("response", "")).strip()
+        response_text = "".join(response_parts).strip()
         if not response_text:
             raise RuntimeError("Ollama returned an empty response")
         return response_text
@@ -347,7 +407,45 @@ class OllamaTranslator:
 当前段落：
 {text}
 """
-        return normalize_text(self._generate(prompt))
+        retry_instruction = """
+
+上一次输出存在格式污染。请重新翻译：只能输出中文译文，不能出现西里尔文、泰文、阿拉伯文或英文单词，不要输出解释。
+        """
+        last_error = "unknown validation error"
+        last_candidate = ""
+        for attempt in range(2):
+            candidate = normalize_text(self._generate(prompt + (retry_instruction if attempt else "")))
+            last_candidate = candidate
+            validation_error = self._validate_translation(candidate)
+            if validation_error is None:
+                return candidate
+            last_error = validation_error
+            print(
+                f"Warning: rejected contaminated translation (attempt {attempt + 1}/2): {validation_error}",
+                file=sys.stderr,
+            )
+        sanitized = self._sanitize_translation(last_candidate)
+        if CHINESE_CHAR_RE.search(sanitized):
+            print(
+                "Warning: removed contaminated script from translation after retries.",
+                file=sys.stderr,
+            )
+            return sanitized
+        raise RuntimeError(f"Translation output validation failed after 2 attempts: {last_error}")
+
+    @staticmethod
+    def _sanitize_translation(value: str) -> str:
+        return normalize_text(FORBIDDEN_TRANSLATION_SCRIPT_RE.sub("", value))
+
+    @staticmethod
+    def _validate_translation(value: str) -> str | None:
+        if not value:
+            return "empty output"
+        if not CHINESE_CHAR_RE.search(value):
+            return "no Chinese characters"
+        if FORBIDDEN_TRANSLATION_SCRIPT_RE.search(value):
+            return "contains a non-Chinese script"
+        return None
 
 
 class OllamaChapterAbridger:
@@ -403,9 +501,10 @@ class OllamaChapterAbridger:
 
 
 class TranslationCache:
-    def __init__(self, path: Path, namespace: str) -> None:
+    def __init__(self, path: Path, namespace: str, fallback_namespaces: tuple[str, ...] = ()) -> None:
         self.path = path
         self.namespace = namespace
+        self.fallback_namespaces = fallback_namespaces
         self.values: dict[str, str] = {}
         if path.exists():
             try:
@@ -421,7 +520,16 @@ class TranslationCache:
         ).hexdigest()
 
     def get(self, text: str) -> str | None:
-        return self.values.get(self.key(text))
+        value = self.values.get(self.key(text))
+        if value is not None:
+            return value
+        for namespace in self.fallback_namespaces:
+            value = self.values.get(
+                hashlib.sha256(f"{namespace}|{text}".encode("utf-8")).hexdigest()
+            )
+            if value is not None:
+                return value
+        return None
 
     def put(self, text: str, translation: str) -> None:
         self.values[self.key(text)] = translation
@@ -484,6 +592,7 @@ def build_book(
     dry_run: bool,
 ) -> tuple[str, dict, Path | None]:
     reader = EpubReader(epub_path)
+    temporary: Path | None = None
     try:
         metadata = reader.metadata()
         book_id = slugify_title(metadata["title"])
@@ -493,11 +602,22 @@ def build_book(
         if not dry_run and output_root.joinpath(book_id).exists():
             raise FileExistsError(f"Book output already exists: {output_root / book_id}")
 
-        chapter_docs: list[dict] = []
+        print(
+            f"Processing {epub_path.name}: {len(source_chapters)} chapters",
+            flush=True,
+        )
+        if not dry_run:
+            output_root.mkdir(parents=True, exist_ok=True)
+            temporary = Path(tempfile.mkdtemp(prefix=f".{book_id}-", dir=output_root))
+            (temporary / book_id / "chapters").mkdir(parents=True, exist_ok=True)
         chapter_indexes: list[dict] = []
         total_words = 0
         translated_since_save = 0
         for unit_index, chapter in enumerate(source_chapters, start=1):
+            print(
+                f"Chapter {unit_index}/{len(source_chapters)}: {chapter.title}",
+                flush=True,
+            )
             paragraphs: list[dict] = []
             chapter_words = 0
             if content_mode == "abridged":
@@ -523,7 +643,18 @@ def build_book(
                         for item in chunk_paragraphs(source_paragraph)
                     ]
                     for chunk_index, (text, sentence_count) in enumerate(abridged_chunks):
+                        print(
+                            f"  Processing paragraph {chunk_index + 1}/{len(abridged_chunks)}",
+                            flush=True,
+                        )
                         zh = cache.get(text) if cache is not None else ""
+                        if zh and isinstance(translator, OllamaTranslator):
+                            if translator._validate_translation(zh) is not None:
+                                sanitized = translator._sanitize_translation(zh)
+                                zh = sanitized if CHINESE_CHAR_RE.search(sanitized) else ""
+                                if zh and cache is not None:
+                                    cache.put(text, zh)
+                                    cache.save()
                         if not zh:
                             zh = translator.translate(text, f"章节：{chapter.title}")
                             if cache is not None:
@@ -543,12 +674,23 @@ def build_book(
                     for item in chunk_paragraphs(source_paragraph)
                 ]
                 for chunk_index, (text, sentence_count) in enumerate(chunks):
+                    print(
+                        f"  Processing paragraph {chunk_index + 1}/{len(chunks)}",
+                        flush=True,
+                    )
                     chapter_words += word_count(text)
                     zh = ""
                     if not dry_run:
                         if translator is None or cache is None:
                             raise RuntimeError("Translator and cache are required outside dry-run")
                         zh = cache.get(text) or ""
+                        if isinstance(translator, OllamaTranslator):
+                            if translator._validate_translation(zh) is not None:
+                                sanitized = translator._sanitize_translation(zh)
+                                zh = sanitized if CHINESE_CHAR_RE.search(sanitized) else ""
+                                if zh:
+                                    cache.put(text, zh)
+                                    cache.save()
                         if not zh:
                             try:
                                 context_parts = [f"章节：{chapter.title}"]
@@ -591,14 +733,18 @@ def build_book(
                 "wordCount": chapter_words,
                 "readTime": read_time(chapter_words),
             })
-            chapter_docs.append({
+            chapter_doc = {
                 "id": f"{book_id}_u{unit_index}",
                 "bookId": book_id,
                 "unitIndex": unit_index,
                 "title": chapter.title,
                 "chineseTitle": "",
                 "paragraphs": paragraphs,
-            })
+            }
+            if not dry_run:
+                assert temporary is not None
+                write_json(temporary / book_id / chapter_path, chapter_doc)
+                print(f"  Saved {chapter_path}", flush=True)
 
         book_json = {
             "id": book_id,
@@ -609,7 +755,7 @@ def build_book(
             "description": "",
             "category": "经典名著",
             "difficulty": "中级难度",
-            "totalUnits": len(chapter_docs),
+            "totalUnits": len(chapter_indexes),
             "wordCount": total_words,
             "sourceFormat": "epub",
             "contentVersion": 1,
@@ -620,16 +766,17 @@ def build_book(
             "chapters": chapter_indexes,
         }
         if dry_run:
-            return book_id, {"title": metadata["title"], "chapters": len(chapter_docs), "words": total_words}, None
+            return book_id, {"title": metadata["title"], "chapters": len(chapter_indexes), "words": total_words}, None
 
-        output_root.mkdir(parents=True, exist_ok=True)
-        temporary = Path(tempfile.mkdtemp(prefix=f".{book_id}-", dir=output_root))
+        assert temporary is not None
         book_dir = temporary / book_id
         write_json(book_dir / "book.json", book_json)
         write_json(book_dir / "chapters.json", chapters_json)
-        for index, chapter_doc in enumerate(chapter_docs, start=1):
-            write_json(book_dir / "chapters" / f"{index:03d}.json", chapter_doc)
         return book_id, book_json, temporary
+    except Exception:
+        if temporary:
+            shutil.rmtree(temporary, ignore_errors=True)
+        raise
     finally:
         reader.close()
 
@@ -686,6 +833,81 @@ def move_processed(source: Path, processed_root: Path) -> Path:
     return destination
 
 
+def promote_book_output(source: Path, destination: Path) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    last_error: PermissionError | None = None
+    for _ in range(3):
+        if destination.exists():
+            raise FileExistsError(f"Book output already exists: {destination}")
+        try:
+            source.replace(destination)
+            return
+        except PermissionError as error:
+            last_error = error
+            time.sleep(1)
+
+    if destination.exists():
+        raise FileExistsError(f"Book output already exists: {destination}")
+    try:
+        shutil.copytree(source, destination)
+    except Exception as error:  # noqa: BLE001
+        shutil.rmtree(destination, ignore_errors=True)
+        raise PermissionError(
+            f"Could not finalize book output. Windows may be locking a generated file: {destination}"
+        ) from (last_error or error)
+    shutil.rmtree(source.parent, ignore_errors=True)
+
+
+def update_pending_translation_record(path: Path, book_id: str, book_title: str = "") -> bool:
+    """Mark a completed book and move its row to the end of the book table."""
+    if not path.is_file():
+        return False
+
+    original = path.read_text(encoding="utf-8")
+    marker = f"`{book_id}/`"
+    normalized_title = re.sub(r"[^a-z0-9]+", "", book_title.casefold())
+    lines = original.splitlines(keepends=True)
+    row_index = next(
+        (
+            index
+            for index, line in enumerate(lines)
+            if marker.casefold() in line.casefold()
+            or (
+                normalized_title
+                and len(line.split("|")) >= 4
+                and normalized_title.startswith(
+                    re.sub(r"[^a-z0-9]+", "", line.split("|")[1].strip().casefold())
+                )
+            )
+        ),
+        None,
+    )
+    if row_index is None:
+        return False
+
+    row = lines[row_index]
+    newline = "\r\n" if row.endswith("\r\n") else "\n"
+    row_without_newline = row.rstrip("\r\n")
+    columns = row_without_newline.split("|")
+    if len(columns) < 5:
+        return False
+    columns[-2] = " 已处理 "
+    updated_row = "|".join(columns) + newline
+
+    table_end = row_index + 1
+    while table_end < len(lines) and lines[table_end].lstrip().startswith("|"):
+        table_end += 1
+
+    lines.pop(row_index)
+    table_end -= 1
+    lines.insert(table_end, updated_row)
+    updated = "".join(lines)
+    if updated == original:
+        return False
+    path.write_text(updated, encoding="utf-8")
+    return True
+
+
 def load_glossary(path: Path | None) -> dict[str, str]:
     if path is None:
         return {}
@@ -697,11 +919,31 @@ def load_glossary(path: Path | None) -> dict[str, str]:
     return data
 
 
+def confirm_skip_existing_book(error: FileExistsError) -> bool:
+    prompt = f"{error}. Continue with the next book? [Y/N]: "
+    while True:
+        try:
+            answer = input(prompt).strip().lower()
+        except EOFError:
+            return False
+        if answer in {"y", "yes"}:
+            return True
+        if answer in {"n", "no"}:
+            return False
+        print("Please enter Y to continue or N to cancel.")
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=Path("assets/epub/incoming"))
     parser.add_argument("--output", type=Path, default=Path("assets/data/books"))
     parser.add_argument("--processed", type=Path, default=Path("assets/epub/processed"))
+    parser.add_argument(
+        "--pending-record",
+        type=Path,
+        default=Path("assets/epub/pending-translation-books.md"),
+        help="完成导入后更新对应书籍状态的 Markdown 文件",
+    )
     parser.add_argument("--cache", type=Path, default=Path("assets/epub/translation-cache/cache.json"))
     parser.add_argument("--abridged-cache", type=Path, default=Path("assets/epub/translation-cache/abridged-cache.json"))
     parser.add_argument("--book", type=Path)
@@ -743,14 +985,24 @@ def main() -> int:
                 glossary,
                 timeout=args.ollama_timeout,
             )
-        cache = TranslationCache(args.cache, translator.cache_namespace)
+        legacy_cache_namespace = translator.cache_namespace.replace("|literary-v2|", "|literary-v1|")
+        cache = TranslationCache(
+            args.cache,
+            translator.cache_namespace,
+            fallback_namespaces=(legacy_cache_namespace,),
+        )
         if not 0.2 <= args.abridge_ratio <= 0.7:
             raise ValueError("--abridge-ratio must be between 0.2 and 0.7")
         if args.content_mode == "abridged":
             if not isinstance(translator, OllamaTranslator):
                 raise RuntimeError("Abridged mode requires --translator ollama")
             abridger = OllamaChapterAbridger(translator)
-            summary_cache = TranslationCache(args.abridged_cache, abridger.cache_namespace)
+            legacy_summary_namespace = abridger.cache_namespace.replace("literary-v2", "literary-v1")
+            summary_cache = TranslationCache(
+                args.abridged_cache,
+                abridger.cache_namespace,
+                fallback_namespaces=(legacy_summary_namespace,),
+            )
 
     for epub_path in files:
         if not epub_path.is_file():
@@ -784,18 +1036,52 @@ def main() -> int:
             if final_dir.exists():
                 raise FileExistsError(f"Book output already exists: {final_dir}")
             validate_book_output(temporary / book_id, args.allow_partial)
-            temporary.joinpath(book_id).replace(final_dir)
+            print(f"Finalizing book output -> {final_dir}", flush=True)
+            try:
+                promote_book_output(temporary / book_id, final_dir)
+            except PermissionError as error:
+                preserved_path = temporary / book_id
+                print(
+                    f"Could not finalize the generated book: {error}\n"
+                    f"Generated content was preserved at: {preserved_path}\n"
+                    "Close programs that may be scanning the folder, then move this directory manually "
+                    "or rerun the import.",
+                    file=sys.stderr,
+                )
+                temporary = None
+                return 1
             shutil.rmtree(temporary, ignore_errors=True)
             update_catalog(args.output, book_id, str(book_info["title"]))
             cache.save()
             destination = move_processed(epub_path, args.processed)
+            try:
+                if update_pending_translation_record(
+                    args.pending_record,
+                    book_id,
+                    str(book_info["title"]),
+                ):
+                    print(f"Updated pending translation record -> {args.pending_record}")
+            except OSError as error:
+                print(
+                    f"Warning: could not update pending translation record: {error}",
+                    file=sys.stderr,
+                )
             print(f"Imported {epub_path.name} -> {final_dir}")
             print(f"Moved original EPUB -> {destination}")
+        except FileExistsError as error:
+            if temporary:
+                shutil.rmtree(temporary, ignore_errors=True)
+            if confirm_skip_existing_book(error):
+                print(f"Skipped {epub_path.name}")
+                continue
+            print("Import canceled.", file=sys.stderr)
+            return 1
         except Exception as error:  # noqa: BLE001
             if temporary:
                 shutil.rmtree(temporary, ignore_errors=True)
             print(f"Failed to import {epub_path}: {error}", file=sys.stderr)
             return 1
+    print("Import completed.")
     return 0
 
 

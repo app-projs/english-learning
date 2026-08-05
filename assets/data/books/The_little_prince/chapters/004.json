@@ -1,0 +1,39 @@
+{
+  "id": "The_little_prince_u4",
+  "bookId": "The_little_prince",
+  "unitIndex": 4,
+  "title": "Chapter I",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "When I was six, I saw a picture in a book about a boa constrictor swallowing an animal whole. Inspired by this, I drew my first masterpiece, depicting the inside of a boa digesting an elephant.",
+      "zh": "六岁那年，我看到一本书里有一张关于 boa 狄斯科蛇吞下整只动物的图片。受此启发，我画出了自己的第一幅杰作，描绘了boa蛇消化一头大象的内部景象。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "I showed these drawings to grown-ups but received only puzzled responses. They asked why they should be frightened by hats instead of understanding my artwork. Discouraged, I decided to focus on subjects like geography and arithmetic rather than painting.",
+      "zh": "我把这些画给大人看，却只得到了困惑的回应。他们不解地问我，为什么会被帽子吓到而不是理解我的作品。受挫之下，我决定将注意力转向地理和算术这类科目，而非绘画。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "This decision led me to become a pilot, traveling the world and finding that geographical knowledge was indeed useful. Despite this, my experiences with grown-ups did not change my negative opinion of them.",
+      "zh": "这个决定让我成为一名飞行员，环游世界，发现地理知识确实很有用。尽管如此，我对成人的经历并没有改变我对其负面的看法。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "Whenever I encountered someone who appeared insightful, I tested them with my Drawing Number One. They always replied, \"That is a hat.\" To prove their understanding, I then discussed mundane topics like bridge, golf, politics, and neckties.",
+      "zh": "每当我遇到看似见解独到的人，我都会用我的第一招测试他们。他们总是回答：“那是一顶帽子。”为了证明他们的理解能力，我随后会讨论一些平凡的话题，比如桥牌、高尔夫、政治和领带。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "The grown-ups were delighted to find such a sensible companion.",
+      "zh": "大人发现有个如此理智的同伴非常高兴。"
+    }
+  ]
+}

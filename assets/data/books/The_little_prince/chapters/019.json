@@ -1,0 +1,33 @@
+{
+  "id": "The_little_prince_u19",
+  "bookId": "The_little_prince",
+  "unitIndex": 19,
+  "title": "Chapter XVI",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "The Earth, the seventh planet, is far from ordinary. It hosts 111 kings, 7,000 geographers, 9 million businessmen, 7.5 million tipplers, and 311 million conceited men—approximately 2 billion adults.",
+      "zh": "地球，这个第七行星远非寻常。它汇聚了111位国王、7000名地理学家、900万名商人、750万名酗酒者以及3.11亿自视甚高的男子——大约有20亿成年人。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "To illustrate its vastness, consider that before electricity, a staggering army of 462,511 lamplighters kept the street lamps alight across six continents. Their movements would be as precise as a ballet in an opera. First, New Zealand and Australia's lamplighters would light their lamps and then retire.",
+      "zh": "为了说明其规模之宏大，在电灯出现之前，有462,511名烛光照明工人遍布六大洲，确保街道灯火通明。他们的行动如同歌剧中的芭蕾舞一般精准。首先，新西兰和澳大利亚的照明工人点亮了他们的灯笼，然后退下岗位。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "Next, China and Siberia’s lamplighters would take their turn, followed by Russia and India, Africa and Europe, and finally North America. Each group knew its exact moment to enter and exit without error.",
+      "zh": "接着，中国和西伯利亚的灯火守卫将依次登场，随后是俄罗斯、印度、非洲和欧洲。最后轮到北美洲。每个小组都知道自己准确的进场和退场时机，丝毫不差。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "Only the lamplighter at the North Pole and his counterpart at the South Pole enjoyed a life free from labor, working only twice a year.",
+      "zh": "只有北极和南极的点灯人享有免于劳作的生活，他们每年仅需工作两次。"
+    }
+  ]
+}

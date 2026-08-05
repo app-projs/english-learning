@@ -1,0 +1,57 @@
+{
+  "id": "The_little_prince_u21",
+  "bookId": "The_little_prince",
+  "unitIndex": 21,
+  "title": "Chapter XVIII",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "The little prince crossed the desert and encountered a single flower with three petals.",
+      "zh": "小王子穿越了沙漠，遇到了一朵三瓣花。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "\"Good morning,\" he greeted.",
+      "zh": "“早上好。”他打招呼道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 1,
+      "en": "\"Good morning,\" replied the flower.",
+      "zh": "“早上好。”那朵花回答道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"Where are the men?\" asked the little prince politely.",
+      "zh": "“男士们在哪里？”小王子礼貌地问道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "The flower, recalling an encounter years ago, responded, \"Men? I believe there are six or seven in existence. The last time I saw them was several years back.",
+      "zh": "花朵回忆起多年前的一次相遇，回答说：“男人？依我所知，现在大约有六七个吧。上次见到他们还是几年前的事了。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "They're hard to find; the wind carries them away and they have no roots.\"",
+      "zh": "它们很难留存；风一吹就没了，根也扎不深。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "With a sigh, the little prince said goodbye.",
+      "zh": "小王子叹了口气，告别离去。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "\"Goodbye,\" echoed the flower.",
+      "zh": "“再见了，”花儿似乎回声道。"
+    }
+  ]
+}

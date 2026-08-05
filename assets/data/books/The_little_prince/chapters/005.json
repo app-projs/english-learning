@@ -1,0 +1,117 @@
+{
+  "id": "The_little_prince_u5",
+  "bookId": "The_little_prince",
+  "unitIndex": 5,
+  "title": "Chapter II",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "Six years ago, in the Sahara Desert, I faced a life-threatening situation after my plane's engine broke down. With no mechanic or passengers, I attempted repairs alone, relying on scarce drinking water for a week. On waking at sunrise, I was startled by an odd voice requesting a drawing of a sheep.",
+      "zh": "六年前，在撒哈拉沙漠中，我的飞机引擎突然故障，我面临生死攸关的困境。独自一人，没有任何机修人员和乘客的帮助，我只能依靠稀少的饮用水进行修理。直到日出时分醒来，耳边忽然传来一个奇怪的声音，要求我画一只羊。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "\"Draw me a sheep!\" it insisted.",
+      "zh": "“给我画一只羊！”它坚持道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "I stood, utterly stunned, and blinked hard to focus. Before me stood a small figure, examining me with seriousness. Despite my lack of artistic skills, I drew the best portrait possible, though it fell short of its model's charm.",
+      "zh": "我愣在原地，努力眨了眨眼以集中视线。眼前站着一个小小的身影，正严肃地打量着我。尽管我没有多少绘画天赋，我还是尽力画出了最好的肖像，虽然这幅画远不及模特的魅力。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "My inability to draw stemmed from adults discouraging my painterly ambitions when I was six. Now, staring at this apparition in astonishment, I questioned his presence. A thousand miles from any habitation, he seemed neither lost nor distressed.",
+      "zh": "我的绘画才能之所以缺失，源于六岁时成人对我的画图梦想的打压。此刻，我惊讶地盯着这个身影，不禁质疑他的出现。在这荒无人烟的地方，他既不显得迷失，也不见忧愁。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"Where are you from?\" I asked, bewildered.",
+      "zh": "“你来自哪里？”我困惑地问道。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "He repeated calmly: \"Draw me a sheep...\"",
+      "zh": "他平静地重复道：“给我画一只羊……”"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "In the face of such mystery, I hesitated but produced paper and pen. Remembering my focus on academic subjects, I gruffly told him I couldn't draw. He responded with patience.",
+      "zh": "面对这样的神秘情况，我犹豫了一下，但仍拿出了纸和笔。想起自己专注于学术科目，我粗声粗气地告诉他我不会画画。他则耐心地回应了我。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "The boy asked, \"Draw me a sheep...\" but I had never drawn one. Instead, I drew the boa constrictor from the outside, which I had done many times before.",
+      "zh": "男孩说道：“给我画一只羊……”但我从未画过羊。相反，我画了那条蟒蛇的外貌，这是我以前做过多次的事。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "\"No, no, no!\" he said. \"I don't want an elephant inside that.",
+      "zh": "“不，不，不！”他脱口而出，“我可不想里面有个大象。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "A boa constrictor is dangerous and an elephant is cumbersome. Where I live, everything is small. I need a sheep.\"",
+      "zh": "蟒蛇危险，大象笨拙。我住的地方，一切都小得可怜。我倒宁愿有一只羊。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "I drew another one, but it was rejected because the sheep looked sickly. Then, he wanted a young sheep that would live long.",
+      "zh": "我又抽了一只，但被拒绝了，因为那只羊看起来病恹恹的。接着，他想要一只年轻健壮、能长寿的羊。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "\"This one is too old,\" he said. \"I want a sheep that will live a long time.\"",
+      "zh": "“这只太老了，”他说，“我要一只能活很久的羊。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "My patience ran thin as I hurried to take apart my engine. So, I drew another sheep and tossed it at him with an explanation: \"This is only the box; the real sheep is inside.\"",
+      "zh": "我的耐心快被耗尽了，急忙拆解起机器来。于是，我又画了一只羊，并把它扔向他，解释道：“这只是个盒子，真正的羊在里边。”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "His face lit up. \"That's exactly what I wanted! Do you think this sheep will need much grass?\"",
+      "zh": "他的脸上露出了笑容。“正是我想要的！你觉得这只羊需要很多草吗？”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 2,
+      "en": "\"Why?\" he asked.",
+      "zh": "“为什么？”他脱口问道。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "\"Because where I live everything is small...\"",
+      "zh": "“因为在我们那里，一切都显得很小……”"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "\"It won't need much,\" I said, \"it's a very small sheep.\" He studied the drawing closely: \"Not so small that—Look! He’s sleeping...\"",
+      "zh": "“不需要太大,”我说，“这只羊很小。”他仔细研究着图纸：“不至于那么小——看！它在睡觉……”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "And thus began my acquaintance with the little prince.",
+      "zh": "就这样，我与小王子结下了不解之缘。"
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "id": "The_little_prince_u13",
+  "bookId": "The_little_prince",
+  "unitIndex": 13,
+  "title": "Chapter X",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "He arrived near asteroids 325-330 and began his exploration.",
+      "zh": "他来到第325至330号小行星附近，开始了探索。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "The first asteroid hosted a king dressed in royal purple and ermine, seated on an elegant throne.",
+      "zh": "第一个小行星上坐着一位身着皇家紫袍和貂皮大衣的国王，他端坐于一座精致的王座之上。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Ah! Here is a subject,\" the king exclaimed upon seeing the little prince.",
+      "zh": "“啊！找到话题了,”国王见到小王子不禁脱口而出。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "The little prince wondered how the king recognized him despite never having met before.",
+      "zh": "小王子疑惑国王是如何认出他的，尽管他们从未见过面。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "\"Approach so I can see you better,\" said the king, proud of his new kingdom.",
+      "zh": "“过来让我看得更清楚些。”国王说道，对自己的新王国感到颇为得意。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "Finding no place to sit due to the king's robe, the tired prince stood and yawned.",
+      "zh": "因国王的长袍占了位置，疲惫的王子站立着打了个哈欠。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "\"It is improper to yawn in my presence,\" the king declared. \"You are forbidden to do it.\"",
+      "zh": "“在我面前打哈欠是不恰当的，”国王宣布，“你被禁止这样做。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "\"I cannot help it; I have been traveling,\" replied the little prince, embarrassed.",
+      "zh": "“我控制不住自己，最近一直在旅行。”小王子尴尬地回答。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "\"Yawn again as an order,\" commanded the king.",
+      "zh": "“再打个哈欠当作命令。”国王下令道。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "The little prince was too abashed to comply.",
+      "zh": "小王子羞涩得无法答应。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "\"Hum! Hum!\" said the king, vexed.",
+      "zh": "“哼！哼！”国王不满地说道。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "\"Sometimes you must yawn and sometimes--\"",
+      "zh": "“有时候你不得不打个哈欠，有时候——”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "He faltered, realizing his authority's importance.",
+      "zh": "他犹豫了一下，意识到自己权威的重要性。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "\"If I ordered a general to change into a sea bird and he disobeyed, it would be my fault,\" explained the king.",
+      "zh": "“如果我命令一名将军变成海鸟而他不服从，那就是我的错。”国王解释道。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 2,
+      "en": "\"May I sit down?\" asked the little prince timidly.",
+      "zh": "“我可以坐下来吗？”小王子怯生生地问道。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "The king commanded him to do so, gathering in his ermine robe.",
+      "zh": "国王命令他这样做，身披貂皮大衣。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 1,
+      "en": "The prince then questioned the king about his true domain on such a small asteroid.",
+      "zh": "王子随后询问国王，在这么一个小行星上，他的真正领地在哪里。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "The king commanded, \"Ask me a question.\"",
+      "zh": "国王下令：“提个问题吧。”"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "\"Over what do you rule?\" the prince inquired.",
+      "zh": "“你统治的是什么？”王子问道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "\"Everything,\" the king replied with grand simplicity.",
+      "zh": "“一切,”国王以庄重的简洁回答道。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "\"Everything?\"",
+      "zh": "“一切？”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "With a gesture, the king encompassed his planet and beyond.",
+      "zh": "国王一挥手，仿佛将整个星球乃至更远处都囊括其中。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "\"Do the stars obey you?\" the prince asked.",
+      "zh": "“星辰会听你的话吗？”王子问道。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "\"Certainly they do,\" said the king. \"They obey instantly; insubordination is not tolerated.\"",
+      "zh": "“当然会服从，”国王说道，“他们立刻听从命令；任何不服从的行为都是不被容忍的。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "The prince was amazed by this power. He wished to see a sunset without moving his chair. With courage, he requested, \"Order the sun to set for me.\"",
+      "zh": "王子对这种能力感到惊叹。他希望能坐在原地观赏日落。鼓起勇气，他请求道：“命令太阳为我落下。”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 2,
+      "en": "\"If I ordered a general to transform into a sea bird, would you blame him or me?\" the king asked.",
+      "zh": "“如果我命令一名将军变成海鸟，你会责怪他还是我？”国王问道。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "\"You,\" said the little prince firmly.",
+      "zh": "“你,”小王子坚定地说。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "\"Exactly,\" the king continued. \"One must demand what each can perform reasonably. My authority is based on reason; unreasonable orders would lead to rebellion.\"",
+      "zh": "“正是如此，”国王继续说道，“每个人都应该被要求完成合理之事。我的权威建立在理性之上；不合理的要求只会引发叛乱。”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 1,
+      "en": "The prince reminded, \"Then my sunset?\"",
+      "zh": "王子提醒道：“那么我的日落呢？”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "\"You shall have it. I will command it when conditions are right,\" the king replied, consulting his almanac.",
+      "zh": "“等条件成熟了，我就会下令实行。”国王查阅着占星历书回答道。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"When will that be?\" asked the little prince.",
+      "zh": "“那会是什么时候？”小王子问道。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "\"Tonight at about twenty minutes to eight,\" said the king with a smile. \"You'll see how well I am obeyed.\"",
+      "zh": "“今晚大约七点四十分左右，”国王微笑着说道，“你就会看到我命令执行得多么到位。”"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "The prince yawned, feeling bored and regretting lost time. He told the king, \"I have nothing more to do here.\"",
+      "zh": "王子打了个哈欠，显得有些无聊和后悔浪费了时间，他对国王说：“这里我已经没有什么事情可做了。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "The king pleaded, \"Do not go. I will make you Minister of Justice!\"",
+      "zh": "国王哀求道：“别走了，我让你做司法大臣！”"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 2,
+      "en": "\"Of justice?\" replied the little prince skeptically.",
+      "zh": "“公正？”小王子怀疑地问道。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 2,
+      "en": "\"You will judge yourself,\" the king insisted. \"It is harder than judging others.\"",
+      "zh": "“你将自行裁决，”国王坚持道，“这比评判他人要艰难得多。”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 2,
+      "en": "\"But there's no one to judge here!\" protested the little prince.",
+      "zh": "“可是这里没有人来评判！”小王子抗议道。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 2,
+      "en": "\"I haven't toured my entire kingdom yet,\" said the king, tired from walking. \"I need a carriage, but it’s too old for me.\"",
+      "zh": "“我还没有巡完我的整个王国呢，”国王边说边显得有些疲惫，“我需要一辆马车，但太旧了，不适合我。”"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "The little prince turned around and saw emptiness on both sides of his planet.",
+      "zh": "小王子转过身来，发现他的星球两侧一片空旷。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "\"Then you'll judge yourself,\" the king declared. \"You can condemn an old rat to death, but pardon him each time because he's essential.\"",
+      "zh": "“那你可就要自己来评判了，”国王宣布道，“你可以将一只老耗子判死刑，但每次又因它不可或缺而予以赦免。”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 2,
+      "en": "\"I don't like condemning anyone,\" said the little prince. \"I think I’ll go.\"",
+      "zh": "“我不喜欢谴责任何人，”小王子说道，“我想我还是走吧。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "\"No,\" countered the king.",
+      "zh": "“不,”国王坚定地反驳道。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 1,
+      "en": "The little prince, ready for departure, decided not to upset the monarch.",
+      "zh": "小王子准备启程，决定不惹恼这位君王。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 2,
+      "en": "\"If Your Majesty wants obedience,\" he said, \"give a clear order—leave within one minute.\" He then left with a sigh.",
+      "zh": "“如果陛下想要服从，”他说，“那就下一道明确的命令——一分钟内离开。”说完，他叹了口气离开了。"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 2,
+      "en": "\"Remember, you were my Ambassador!\" called out the king hastily.",
+      "zh": "“你还记得你曾经是我的大使！”国王急忙喊道。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 1,
+      "en": "As the little prince walked on, he mused, \"Grown-ups are strange.\"",
+      "zh": "小王子继续走着，不禁思索道：“大人们真是奇怪。”"
+    }
+  ]
+}

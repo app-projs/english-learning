@@ -1,0 +1,45 @@
+{
+  "id": "The_little_prince_u26",
+  "bookId": "The_little_prince",
+  "unitIndex": 26,
+  "title": "Chapter XXIII",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "The little prince greeted the merchant with a morning salutation.",
+      "zh": "小王子向商人致以清晨的问候。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "\"Good morning,\" replied the merchant. He sold pills designed to eliminate thirst, requiring only one pill per week.",
+      "zh": "“早上好，”商贩应道。他售卖的是一种止渴药丸，只需每周服用一次即可。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Why do you sell these?\" inquired the little prince.",
+      "zh": "“你为什么卖这些？”小王子问道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"They save a lot of time,\" explained the merchant. \"Experts have calculated that each week, you gain fifty-three minutes.\"",
+      "zh": "“这样可以节省很多时间，”商人大声解释道，“专家们计算过，每周你能多出53分钟。”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "\"What can I do with those extra minutes?\"",
+      "zh": "“多出来的这几分钟我能用来做什么？”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "\"If you wish, you could walk towards a spring of fresh water,\" mused the little prince to himself.",
+      "zh": "“如果你愿意，可以走向一口清泉。”小王子自言自语道。"
+    }
+  ]
+}

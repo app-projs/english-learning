@@ -1,0 +1,159 @@
+{
+  "id": "The_little_prince_u16",
+  "bookId": "The_little_prince",
+  "unitIndex": 16,
+  "title": "Chapter XIII",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "The little prince approached a businessman who was engrossed in his calculations. \"Good morning,\" he said, \"your cigarette has gone out.\"",
+      "zh": "小王子走近一个正全神贯注于计算的商人。“早上好，”他说，“你的烟头灭了。”"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "\"Three and two make five,\" the businessman replied without looking up. \"Five and seven make twelve... I haven't time to light it again.\"",
+      "zh": "“三加二等于五，”商人头也不抬地回答，“五加七等于十二……我没时间再点一次。”"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Five hundred million what?\" the little prince persisted.",
+      "zh": "“五亿什么？”小王子坚持问道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "The businessman finally looked up. \"During my fifty-four years here, I was only disturbed three times. Twenty-two years ago, a goose fell from the sky; eleven years ago, rheumatism struck; and now...",
+      "zh": "商人终于抬起头来。“在这五十四个年头里，我只被打扰了三次。二十二年前，一只鹅从天而降；十一年前，风湿病找上了门；而现在……”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "five-hundred-and-one millions of those objects in the sky.\"",
+      "zh": "“天空中有五百零一个那样的东西。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"Millions of what?\" the little prince asked again.",
+      "zh": "“几百万什么？”小王子又问了一遍。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "The businessman realized he couldn't avoid answering. \"Millions of stars,\" he said. \"I am concerned with matters of consequence: I must be accurate.\"",
+      "zh": "商人意识到他无法回避这个问题，“成千上万的星星，”他说，“我关注的是事关重大的事务：必须准确无误。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "\"And what do you do with these stars?\"",
+      "zh": "“那你把这些星星怎么办？”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "\"Nothing, I own them.\"",
+      "zh": "“这些我都有。”他脱口而出。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "\"You own the stars?\" the little prince repeated.",
+      "zh": "“你拥有星星吗？”小王子又问了一遍。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "\"Yes, but kings reign over them; it's different for me. Owning the stars makes me rich, and being rich allows me to buy more if any are discovered,\" the businessman concluded.",
+      "zh": "“是的，但国王可以统治他们；对我来说就不一样。拥有星辰让我变得富有，而富有则让我能够购买更多的星星，如果还有的话。”商人总结道。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "The little prince mused, \"This man reasons a bit like my poor tippler.\" He had more questions, though.",
+      "zh": "小王子沉思道：“这个人思考的方式有点像我那个可怜的酒鬼。”不过他还有更多的问题想要问。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "\"How can one own the stars?\" he asked.",
+      "zh": "“谁能拥有星辰？”他脱口问道。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "\"Who owns them?\" the businessman retorted irritably. \"Nobody.\"",
+      "zh": "“它们归谁所有？”商人不耐烦地反问道，“没人拥有。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "\"Then they belong to you,\" the little prince said, \"since you were the first to think of it.\"",
+      "zh": "“那么他们就归你了，”小王子说，“因为你最先想到了这一点。”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "\"Is that all?\"",
+      "zh": "“就这些吗？”"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "\"Certainly. If you find a diamond or an island, it's yours. Same with ideas—owning one gives you rights.\"",
+      "zh": "当然。如果你发现了钻石或一座岛屿，那就是你的了。同样的道理也适用于思想——拥有一个想法就赋予你相应的权利。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "The businessman explained.",
+      "zh": "商人解释道。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "The little prince nodded, then asked, \"But if I owned a silk scarf, I could wear it and take it away. What can I do with the stars?\"",
+      "zh": "小王子点了点头，然后问道：“但如果我拥有一条丝巾，我可以戴上它并带走。而星星我能做什么呢？”"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 2,
+      "en": "\"You can bank them,\" the businessman replied. \"Write their number on paper, put it in a drawer, and lock it.\"",
+      "zh": "“你可以把它们存起来，”商人回答，“把他们的账号写下来，记在纸上，放进抽屉里锁好。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "\"That's all?\"",
+      "zh": "“就是这些吗？”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "\"Enough for me,\" said the businessman.",
+      "zh": "“够了，”商人说道。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "The little prince thought, \"Entertaining but not very useful.\" He continued his conversation: \"I own a flower I water daily, three volcanoes I clean weekly. Owning them is useful to both.",
+      "zh": "小王子心想：“有趣但不太实用。”他继续说道：“我有一朵花每天浇水，还有三座火山每周清理。拥有它们对我俩都有益处。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 1,
+      "en": "But you are useless to the stars.\"",
+      "zh": "但是对你来说，对星星而言你是毫无用处的。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "The businessman was speechless. The little prince walked away, muttering, \"Grown-ups are indeed strange,\" as he carried on his journey.",
+      "zh": "商人惊得说不出话来。小王子喃喃自语道：“大人们真是奇怪，”然后继续他的旅程。"
+    }
+  ]
+}

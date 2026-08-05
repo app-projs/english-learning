@@ -1,0 +1,225 @@
+{
+  "id": "The_little_prince_u18",
+  "bookId": "The_little_prince",
+  "unitIndex": 18,
+  "title": "Chapter XV",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "The sixth planet was much larger than the previous ones and hosted an old gentleman who wrote extensive books.",
+      "zh": "第六颗行星比前几颗大得多，住着一位写了不少著作的老人。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "\"Look! An explorer!\" he exclaimed upon seeing the little prince.",
+      "zh": "“看！是一位探险家！”他一见到小王子便脱口而出。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "The little prince sat down, panting from his long journey. \"Where do you come from?\" asked the old man.",
+      "zh": "小王子喘着气坐了下来。“你来自哪里？”老人问道。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "\"What's that big book?\" the little prince inquired. \"What are you doing?\"",
+      "zh": "“那本大书是什么？”小王子好奇地问道，“你这是在做什么？”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "\"I am a geographer,\" replied the old man.",
+      "zh": "“我是一名地理学家，”老人回答道。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"What is a geographer?\" the little prince wanted to know.",
+      "zh": "“地理学家是做什么的？”小王子好奇地问道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "\"A geographer knows all about seas, rivers, towns, mountains, and deserts.\"",
+      "zh": "“地理学家对海洋、河流、城镇、山脉和沙漠了如指掌。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"That sounds interesting,\" said the little prince. \"Here's someone with a real job!\"",
+      "zh": "“这听起来挺有趣的，”小王子说道，“这里有个真正在做事的人！”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "He looked around at the planet, finding it magnificent. \"Your planet is beautiful,\" he remarked. \"Does it have any oceans?\"",
+      "zh": "他环视着这个星球，发现它壮丽非凡。“你们的星球真美，”他说，“这里有海洋吗？”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "\"I can't tell you,\" the geographer replied.",
+      "zh": "“我不能告诉你，”地理学家回答道。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "\"Ah!\" The little prince was disappointed. \"What about mountains?\"",
+      "zh": "“啊！”小王子显得有些失望，“那山呢？”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "Again, the geographer said, \"I can't tell you.\"",
+      "zh": "地理学家又说：“这件事你没法知道。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "\"And towns, rivers, and deserts?\"",
+      "zh": "“城镇、河流和沙漠？”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "\"Nope, I can't say anything about them either.\"",
+      "zh": "“不行，我也没法对他们说什么。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "\"But you are a geographer!\"",
+      "zh": "“你可是个地理学家！”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "\"Yes, but I'm not an explorer,\" the geographer explained. \"I don't go out to discover these things. I stay at my desk, receiving explorers who tell me what they've seen.",
+      "zh": "“是的，但我不是探险家，”地理学家解释道，“我不出去发现这些事情。我待在我的办公桌旁，接待那些向我讲述他们所见的探险家。”"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 1,
+      "en": "If their stories seem interesting, I send someone to check.\"",
+      "zh": "如果他们的故事听起来有趣，我会派人去核实。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "\"Why do you need to check?\" asked the little prince.",
+      "zh": "“你为什么要查证呢？”小王子问道。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 1,
+      "en": "\"Because a liar or an intoxicated explorer could ruin my records,\" explained the geographer.",
+      "zh": "“因为一个说谎者或是醉酒的探险家都可能毁了我的记录，”地理学家解释道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "\"I know someone who wouldn't make a good explorer,\" said the little prince.",
+      "zh": "“我知道有人不适合当探险家。”小王子说道。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 2,
+      "en": "\"That's possible,\" agreed the geographer. \"So when their character is confirmed, we verify their findings.\"",
+      "zh": "“这有可能，”地理学家赞同道，“所以当他们的性格得到确认时，我们就验证他们的发现。”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "The geographer's excitement was sparked as he prepared to document the explorer’s journey.",
+      "zh": "地理学家的兴致被点燃了，他正准备记录探险家的旅程。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "\"Tell me about your world!\" he urged. Opening his register and sharpening his pencil, he noted that explorers' accounts are initially recorded in pencil until verified with evidence.",
+      "zh": "“给我讲讲你的世界！”他迫不及待地催促道，打开记事本，削尖了铅笔，记录下探险家的记载最初都是用铅笔写的，待证据核实后才会转为正式记录。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "\"What do you have on your planet?\" asked the geographer eagerly.",
+      "zh": "“你们星球上有什么？”地理学家迫不及待地问道。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "The little prince replied, \"It's not very exciting. I have three volcanoes—two active and one extinct. But who knows what might happen.\"",
+      "zh": "小王子回答说：“并没有什么特别激动人心的。我有三座火山——两座是活火山，一座是死火山。但谁知道会发生什么呢。”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "\"Unpredictable,\" echoed the geographer.",
+      "zh": "“变幻莫测，”地理学家重复道。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "\"And a flower,\" added the little prince.",
+      "zh": "“还有一朵花呢，”小王子补充道。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 1,
+      "en": "\"But we don't record flowers,\" said the geographer dismissively.",
+      "zh": "“但我们并不记录花朵。”地理学家轻蔑地说。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "\"Why not?\" questioned the little prince, \"It's the most beautiful thing on my planet!\"",
+      "zh": "“为什么不行呢？”小王子反问道，“这是我星球上最美丽的事物！”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "\"They are too fleeting for us to document,\" explained the geographer. \"Geographies focus on eternal things like mountains and oceans.\"",
+      "zh": "“它们太过瞬息万变，难以记录下来，”地理学家解释道，“地理学关注的是一些永恒的事物，比如山脉和海洋。”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"Even extinct volcanoes could erupt again,\" interrupted the little prince. \"What does 'ephemeral' mean?\"",
+      "zh": "“就连熄灭的火山也可能再次喷发,”小王子插话说道。“‘瞬息即逝’是什么意思？”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 1,
+      "en": "\"It means something that is likely to disappear quickly,\" replied the geographer.",
+      "zh": "“这意味着一种很可能很快就会消失的东西。”地理学家回答道。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "The little prince pondered, \"Is my flower ephemeral?\" he mused aloud. \"And I left her alone on my planet!\"",
+      "zh": "小王子沉思着自言自语：“我的花是不是会枯萎？”他不禁问道，“而且我还把她一个人留在了我的星球上！”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "This was his first moment of regret. However, he regained his composure and asked, \"What other planets should I visit?\"",
+      "zh": "这是他第一次感到后悔。不过，他很快镇定了下来，问道：“还有哪些星球需要我访问？”"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 1,
+      "en": "\"The Earth has a good reputation,\" suggested the geographer.",
+      "zh": "“地球一向颇有口碑。”地理学家建议说。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "With renewed determination, the little prince departed, thinking about his flower.",
+      "zh": "带着重振旗鼓的决心，小王子离开了，心中想着他的花儿。"
+    }
+  ]
+}
