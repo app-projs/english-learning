@@ -5,7 +5,7 @@
     {
       "unitIndex": 1,
       "title": "CHAPTER I. Mrs. Rachel Lynde is Surprised",
-      "chineseTitle": "",
+      "chineseTitle": "第 1 章：雷切尔·林德太太大吃一惊",
       "path": "chapters/001.json",
       "wordCount": 1258,
       "readTime": 9
@@ -13,7 +13,7 @@
     {
       "unitIndex": 2,
       "title": "CHAPTER II. Matthew Cuthbert is surprised",
-      "chineseTitle": "",
+      "chineseTitle": "第 2 章：马修·卡斯伯特大吃一惊",
       "path": "chapters/002.json",
       "wordCount": 2156,
       "readTime": 16
@@ -21,7 +21,7 @@
     {
       "unitIndex": 3,
       "title": "CHAPTER III. Marilla Cuthbert is Surprised",
-      "chineseTitle": "",
+      "chineseTitle": "第 3 章：玛丽拉·卡斯伯特大吃一惊",
       "path": "chapters/003.json",
       "wordCount": 1036,
       "readTime": 8
@@ -29,7 +29,7 @@
     {
       "unitIndex": 4,
       "title": "CHAPTER IV. Morning at Green Gables",
-      "chineseTitle": "",
+      "chineseTitle": "第 4 章：绿山墙的清晨",
       "path": "chapters/004.json",
       "wordCount": 964,
       "readTime": 7
@@ -37,7 +37,7 @@
     {
       "unitIndex": 5,
       "title": "CHAPTER V. Anne's History",
-      "chineseTitle": "",
+      "chineseTitle": "第 5 章：安妮的身世",
       "path": "chapters/005.json",
       "wordCount": 1006,
       "readTime": 8
@@ -45,7 +45,7 @@
     {
       "unitIndex": 6,
       "title": "CHAPTER VI. Marilla Makes Up Her Mind",
-      "chineseTitle": "",
+      "chineseTitle": "第 6 章：玛丽拉下定决心",
       "path": "chapters/006.json",
       "wordCount": 743,
       "readTime": 6
@@ -53,7 +53,7 @@
     {
       "unitIndex": 7,
       "title": "CHAPTER VII. Anne Says Her Prayers",
-      "chineseTitle": "",
+      "chineseTitle": "第 7 章：安妮的第一次祈祷",
       "path": "chapters/007.json",
       "wordCount": 665,
       "readTime": 5
@@ -61,7 +61,7 @@
     {
       "unitIndex": 8,
       "title": "CHAPTER VIII. Anne's Bringing-up Is Begun",
-      "chineseTitle": "",
+      "chineseTitle": "第 8 章：安妮的教养生活开始了",
       "path": "chapters/008.json",
       "wordCount": 1228,
       "readTime": 9
@@ -69,7 +69,7 @@
     {
       "unitIndex": 9,
       "title": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified",
-      "chineseTitle": "",
+      "chineseTitle": "第 9 章：雷切尔·林德太太惊呆了",
       "path": "chapters/009.json",
       "wordCount": 1002,
       "readTime": 8
@@ -77,7 +77,7 @@
     {
       "unitIndex": 10,
       "title": "CHAPTER X. Anne's Apology",
-      "chineseTitle": "",
+      "chineseTitle": "第 10 章：安妮的赔礼道歉",
       "path": "chapters/010.json",
       "wordCount": 1079,
       "readTime": 8
@@ -85,7 +85,7 @@
     {
       "unitIndex": 11,
       "title": "CHAPTER XI. Anne's Impressions of Sunday-School",
-      "chineseTitle": "",
+      "chineseTitle": "第 11 章：安妮对主日学校的印象",
       "path": "chapters/011.json",
       "wordCount": 519,
       "readTime": 4
@@ -93,7 +93,7 @@
     {
       "unitIndex": 12,
       "title": "CHAPTER XII. A Solemn Vow and Promise",
-      "chineseTitle": "",
+      "chineseTitle": "第 12 章：庄严的誓言",
       "path": "chapters/012.json",
       "wordCount": 1034,
       "readTime": 8
@@ -101,7 +101,7 @@
     {
       "unitIndex": 13,
       "title": "CHAPTER XIII. The Delights of Anticipation",
-      "chineseTitle": "",
+      "chineseTitle": "第 13 章：期待的喜悦",
       "path": "chapters/013.json",
       "wordCount": 805,
       "readTime": 6
@@ -109,7 +109,7 @@
     {
       "unitIndex": 14,
       "title": "CHAPTER XIV. Anne's Confession",
-      "chineseTitle": "",
+      "chineseTitle": "第 14 章：安妮的坦白",
       "path": "chapters/014.json",
       "wordCount": 1446,
       "readTime": 11
@@ -117,7 +117,7 @@
     {
       "unitIndex": 15,
       "title": "CHAPTER XV. A Tempest in the School Teapot",
-      "chineseTitle": "",
+      "chineseTitle": "第 15 章：学校茶壶里的风暴",
       "path": "chapters/015.json",
       "wordCount": 2459,
       "readTime": 18
@@ -125,7 +125,7 @@
     {
       "unitIndex": 16,
       "title": "CHAPTER XVI. Diana Is Invited to Tea with Tragic Results",
-      "chineseTitle": "",
+      "chineseTitle": "第 16 章：戴安娜受邀赴茶会",
       "path": "chapters/016.json",
       "wordCount": 1805,
       "readTime": 13
@@ -133,7 +133,7 @@
     {
       "unitIndex": 17,
       "title": "CHAPTER XVII. A New Interest in Life",
-      "chineseTitle": "",
+      "chineseTitle": "第 17 章：对生活的新兴趣",
       "path": "chapters/017.json",
       "wordCount": 1077,
       "readTime": 8
@@ -141,7 +141,7 @@
     {
       "unitIndex": 18,
       "title": "CHAPTER XVIII. Anne to the Rescue",
-      "chineseTitle": "",
+      "chineseTitle": "第 18 章：安妮挺身相救",
       "path": "chapters/018.json",
       "wordCount": 1342,
       "readTime": 10
@@ -149,7 +149,7 @@
     {
       "unitIndex": 19,
       "title": "CHAPTER XIX. A Concert a Catastrophe and a Confession",
-      "chineseTitle": "",
+      "chineseTitle": "第 19 章：音乐会与风波",
       "path": "chapters/019.json",
       "wordCount": 2016,
       "readTime": 15
@@ -157,7 +157,7 @@
     {
       "unitIndex": 20,
       "title": "CHAPTER XX. A Good Imagination Gone Wrong",
-      "chineseTitle": "",
+      "chineseTitle": "第 20 章：走火入魔的想象力",
       "path": "chapters/020.json",
       "wordCount": 877,
       "readTime": 7
@@ -165,7 +165,7 @@
     {
       "unitIndex": 21,
       "title": "CHAPTER XXI. A New Departure in Flavorings",
-      "chineseTitle": "",
+      "chineseTitle": "第 21 章：调味剂的新风波",
       "path": "chapters/021.json",
       "wordCount": 1525,
       "readTime": 11
@@ -173,7 +173,7 @@
     {
       "unitIndex": 22,
       "title": "CHAPTER XXII. Anne is Invited Out to Tea",
-      "chineseTitle": "",
+      "chineseTitle": "第 22 章：安妮受邀做客",
       "path": "chapters/022.json",
       "wordCount": 523,
       "readTime": 4
@@ -181,7 +181,7 @@
     {
       "unitIndex": 23,
       "title": "CHAPTER XXIII. Anne Comes to Grief in an Affair of Honor",
-      "chineseTitle": "",
+      "chineseTitle": "第 23 章：荣誉之战中的挫折",
       "path": "chapters/023.json",
       "wordCount": 1138,
       "readTime": 9
@@ -189,7 +189,7 @@
     {
       "unitIndex": 24,
       "title": "CHAPTER XXIV. Miss Stacy and Her Pupils Get Up a Concert",
-      "chineseTitle": "",
+      "chineseTitle": "第 24 章：史黛西老师筹办音乐会",
       "path": "chapters/024.json",
       "wordCount": 670,
       "readTime": 5
@@ -197,7 +197,7 @@
     {
       "unitIndex": 25,
       "title": "CHAPTER XXV. Matthew Insists on Puffed Sleeves",
-      "chineseTitle": "",
+      "chineseTitle": "第 25 章：马修坚持要泡泡袖",
       "path": "chapters/025.json",
       "wordCount": 1281,
       "readTime": 10
@@ -205,7 +205,7 @@
     {
       "unitIndex": 26,
       "title": "CHAPTER XXVI. The Story Club Is Formed",
-      "chineseTitle": "",
+      "chineseTitle": "第 26 章：故事俱乐部的成立",
       "path": "chapters/026.json",
       "wordCount": 1097,
       "readTime": 8
@@ -213,7 +213,7 @@
     {
       "unitIndex": 27,
       "title": "CHAPTER XXVII. Vanity and Vexation of Spirit",
-      "chineseTitle": "",
+      "chineseTitle": "第 27 章：虚荣与心灵的烦恼",
       "path": "chapters/027.json",
       "wordCount": 1205,
       "readTime": 9
@@ -221,7 +221,7 @@
     {
       "unitIndex": 28,
       "title": "CHAPTER XXVIII. An Unfortunate Lily Maid",
-      "chineseTitle": "",
+      "chineseTitle": "第 28 章：不幸的百合少女",
       "path": "chapters/028.json",
       "wordCount": 1242,
       "readTime": 9
@@ -229,7 +229,7 @@
     {
       "unitIndex": 29,
       "title": "CHAPTER XXIX. An Epoch in Anne's Life",
-      "chineseTitle": "",
+      "chineseTitle": "第 29 章：安妮人生中的里程碑",
       "path": "chapters/029.json",
       "wordCount": 1566,
       "readTime": 12
@@ -237,7 +237,7 @@
     {
       "unitIndex": 30,
       "title": "CHAPTER XXX. The Queens Class Is Organized",
-      "chineseTitle": "",
+      "chineseTitle": "第 30 章：奎恩备考班成立",
       "path": "chapters/030.json",
       "wordCount": 1741,
       "readTime": 13
@@ -245,7 +245,7 @@
     {
       "unitIndex": 31,
       "title": "CHAPTER XXXI. Where the Brook and River Meet",
-      "chineseTitle": "",
+      "chineseTitle": "第 31 章：溪流与江河交汇处",
       "path": "chapters/031.json",
       "wordCount": 1111,
       "readTime": 8
@@ -253,7 +253,7 @@
     {
       "unitIndex": 32,
       "title": "CHAPTER XXXII. The Pass List Is Out",
-      "chineseTitle": "",
+      "chineseTitle": "第 32 章：奎恩学院金榜题名",
       "path": "chapters/032.json",
       "wordCount": 1347,
       "readTime": 10
@@ -261,7 +261,7 @@
     {
       "unitIndex": 33,
       "title": "CHAPTER XXXIII. The Hotel Concert",
-      "chineseTitle": "",
+      "chineseTitle": "第 33 章：饭店音乐会",
       "path": "chapters/033.json",
       "wordCount": 1615,
       "readTime": 12
@@ -269,7 +269,7 @@
     {
       "unitIndex": 34,
       "title": "CHAPTER XXXIV. A Queen's Girl",
-      "chineseTitle": "",
+      "chineseTitle": "第 34 章：奎恩学院的女学生",
       "path": "chapters/034.json",
       "wordCount": 1215,
       "readTime": 9
@@ -277,7 +277,7 @@
     {
       "unitIndex": 35,
       "title": "CHAPTER XXXV. The Winter at Queen's",
-      "chineseTitle": "",
+      "chineseTitle": "第 35 章：奎恩学院的冬日岁月",
       "path": "chapters/035.json",
       "wordCount": 812,
       "readTime": 6
@@ -285,7 +285,7 @@
     {
       "unitIndex": 36,
       "title": "CHAPTER XXXVI. The Glory and the Dream",
-      "chineseTitle": "",
+      "chineseTitle": "第 36 章：荣光与梦想",
       "path": "chapters/036.json",
       "wordCount": 914,
       "readTime": 7
@@ -293,7 +293,7 @@
     {
       "unitIndex": 37,
       "title": "CHAPTER XXXVII. The Reaper Whose Name Is Death",
-      "chineseTitle": "",
+      "chineseTitle": "第 37 章：死神降临绿山墙",
       "path": "chapters/037.json",
       "wordCount": 1148,
       "readTime": 9
@@ -301,7 +301,7 @@
     {
       "unitIndex": 38,
       "title": "CHAPTER XXXVIII. The Bend in the road",
-      "chineseTitle": "",
+      "chineseTitle": "第 38 章：人生的转折弯道",
       "path": "chapters/038.json",
       "wordCount": 1569,
       "readTime": 12

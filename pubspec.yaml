@@ -71,6 +71,34 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/data/books/
+    - assets/data/books/Anne_of_Green_Gables/
+    - assets/data/books/Anne_of_Green_Gables/chapters/
+    - assets/data/books/A_Tale_of_Two_Cities/
+    - assets/data/books/A_Tale_of_Two_Cities/chapters/
+    - assets/data/books/Alice_s_Adventures_in_Wonderland/
+    - assets/data/books/Alice_s_Adventures_in_Wonderland/chapters/
+    - assets/data/books/Beauty_and_the_Beast/
+    - assets/data/books/Beauty_and_the_Beast/chapters/
+    - assets/data/books/Jane_Eyre/
+    - assets/data/books/Jane_Eyre/chapters/
+    - assets/data/books/Pride_and_Prejudice/
+    - assets/data/books/Pride_and_Prejudice/chapters/
+    - assets/data/books/The_Adventures_of_Sherlock_Holmes/
+    - assets/data/books/The_Adventures_of_Sherlock_Holmes/chapters/
+    - assets/data/books/The_Arabian_Nights_(New_Deluxe_Edition)/
+    - assets/data/books/The_Arabian_Nights_(New_Deluxe_Edition)/chapters/
+    - assets/data/books/The_Great_Gatsby/
+    - assets/data/books/The_Great_Gatsby/chapters/
+    - assets/data/books/The_Great_Stone_Face/
+    - assets/data/books/The_Great_Stone_Face/chapters/
+    - assets/data/books/The_little_prince/
+    - assets/data/books/The_little_prince/chapters/
+    - assets/data/books/The_Old_Man_and_the_Sea/
+    - assets/data/books/The_Old_Man_and_the_Sea/chapters/
+    - assets/data/books/The_Wonderful_Wizard_of_Oz/
+    - assets/data/books/The_Wonderful_Wizard_of_Oz/chapters/
+    - assets/data/books/Treasure_Island/
+    - assets/data/books/Treasure_Island/chapters/
 
   fonts:
     - family: IPAFont
