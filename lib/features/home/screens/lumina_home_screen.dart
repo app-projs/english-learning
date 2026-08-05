@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../core/theme/lumina_theme.dart';
 import '../../../core/widgets/lumina_card.dart';
 import 'daily_tab.dart';
@@ -497,18 +497,20 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
   Widget _buildNavItem(int index, IconData icon, String label, {bool isActive = false}) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final activeColor = isDark ? const Color(0xFF60A5FA) : const Color(0xFF1E293B);
-    // 未选中态使用选中态颜色的同系淡化色，提升视觉统一感与高级感
     final inactiveColor = activeColor.withValues(alpha: 0.55);
 
     return InkWell(
       onTap: () {
-        setState(() {
-          _currentIndex = index;
-        });
+        if (_currentIndex != index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        }
       },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       borderRadius: BorderRadius.circular(12),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -528,13 +530,21 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
               ),
             ),
             const SizedBox(height: 4),
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 180),
-              width: isActive ? 12 : 0,
-              height: isActive ? 3 : 0,
-              decoration: BoxDecoration(
-                color: activeColor,
-                borderRadius: BorderRadius.circular(99),
+            // 固定纵向占用高度 3px，用 width 和 opacity 实现平滑淡入扩展，彻底解决纵向挤压引起的闪烁抖动
+            SizedBox(
+              height: 3,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 180),
+                opacity: isActive ? 1.0 : 0.0,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 180),
+                  width: isActive ? 12 : 0,
+                  height: 3,
+                  decoration: BoxDecoration(
+                    color: activeColor,
+                    borderRadius: BorderRadius.circular(99),
+                  ),
+                ),
               ),
             ),
           ],
@@ -550,10 +560,14 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
 
     return InkWell(
       onTap: () {
-        setState(() {
-          _currentIndex = index;
-        });
+        if (_currentIndex != index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        }
       },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       borderRadius: BorderRadius.circular(16),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
@@ -561,7 +575,7 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 180),
               width: 38,
               height: 38,
               decoration: BoxDecoration(
@@ -573,15 +587,6 @@ class _LuminaHomeScreenState extends State<LuminaHomeScreen> {
                   end: Alignment.bottomRight,
                 ),
                 shape: BoxShape.circle,
-                boxShadow: isActive
-                    ? [
-                        BoxShadow(
-                          color: const Color(0xFF2563EB).withValues(alpha: 0.4),
-                          blurRadius: 8,
-                          offset: const Offset(0, 3),
-                        ),
-                      ]
-                    : [],
               ),
               child: Icon(
                 Icons.auto_awesome,

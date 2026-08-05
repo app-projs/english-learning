@@ -241,6 +241,18 @@ class DatabaseService {
         updatedAt TEXT NOT NULL
       )
     ''');
+
+    // 按需实时翻译本地数据库缓存表 (Version 24)
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS book_translations (
+        id TEXT PRIMARY KEY,
+        en_text TEXT NOT NULL,
+        zh_text TEXT NOT NULL,
+        updated_at INTEGER
+      )
+    ''');
+    await db.execute(
+        'CREATE INDEX IF NOT EXISTS idx_book_trans_id ON book_translations(id);');
   }
 
   static Future<void> _onUpgrade(
@@ -824,6 +836,44 @@ class DatabaseService {
       where: 'scenario_id = ?',
       whereArgs: [scenarioId],
     );
+  }
+
+  // ==================== 按需段落翻译缓存读写 API ====================
+
+  /// 根据唯一 ID（如 article_id + "_" + p_index）获取本地数据库缓存的中文翻译
+  Future<String?> getCachedTranslation(String transId) async {
+    try {
+      final results = await _database?.query(
+        'book_translations',
+        where: 'id = ?',
+        whereArgs: [transId],
+        limit: 1,
+      );
+      if (results != null && results.isNotEmpty) {
+        return results.first['zh_text'] as String?;
+      }
+    } catch (e) {
+      debugPrint('Error reading translation from DB: $e');
+    }
+    return null;
+  }
+
+  /// 保存按需在线翻译到的中文译文至本地 SQLite 数据库中，实现零 Token 永久复用
+  Future<void> saveCachedTranslation(String transId, String enText, String zhText) async {
+    try {
+      await _database?.insert(
+        'book_translations',
+        {
+          'id': transId,
+          'en_text': enText,
+          'zh_text': zhText,
+          'updated_at': DateTime.now().millisecondsSinceEpoch,
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    } catch (e) {
+      debugPrint('Error saving translation to DB: $e');
+    }
   }
 
   // Clear all data

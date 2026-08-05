@@ -7,6 +7,7 @@ import '../services/article_service.dart';
 import '../../../core/theme/lumina_theme.dart';
 import '../services/book_json_loader.dart';
 import '../mock/mock_articles.dart';
+import '../../../core/services/online_translation_service.dart';
 import '../../../features/review/screens/completion_congratulation_screen.dart';
 import '../../../core/widgets/word_detail_dialog.dart';
 
@@ -26,6 +27,10 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   final double _fontSize = 16.5;
 
   final Map<int, bool> _activeParagraphTranslations = {};
+  // 动态在线翻译 + 数据库离线缓存映射
+  final Map<int, String> _translationCache = {};
+  final Map<int, bool> _loadingTranslations = {};
+
   StorageService? _storageService;
   ArticleService? _articleService;
 
@@ -46,6 +51,68 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
     _storageService = await StorageService.getInstance();
     final db = await DatabaseService.getInstance();
     _articleService = ArticleService(_storageService!, db);
+  }
+
+  /// 按需点击翻译：有原生翻译优先用；没有则优先查 SQLite 数据库；数据库没有则调在线 API 并存库！
+  Future<void> _toggleParagraphTrans(int index, ParagraphBlock paragraph) async {
+    final bool currentExpanded = _showAllTranslations || (_activeParagraphTranslations[index] ?? false);
+
+    // 1. 如果要收起，直接切换状态
+    if (currentExpanded) {
+      setState(() {
+        _activeParagraphTranslations[index] = false;
+      });
+      return;
+    }
+
+    // 2. 判断当前是否有有效中文
+    final bool hasNativeChinese = paragraph.zh.isNotEmpty &&
+        RegExp(r'[\u4e00-\u9fa5]').hasMatch(paragraph.zh);
+
+    if (hasNativeChinese || _translationCache.containsKey(index)) {
+      setState(() {
+        _activeParagraphTranslations[index] = true;
+      });
+      return;
+    }
+
+    // 3. 展开并进入加载状态（查询数据库 / 在线 API 翻译）
+    setState(() {
+      _activeParagraphTranslations[index] = true;
+      _loadingTranslations[index] = true;
+    });
+
+    final transKey = '${widget.article.id}_p$index';
+    final db = await DatabaseService.getInstance();
+
+    // 优先从 SQLite 数据库缓存中调取
+    final cachedDbZh = await db.getCachedTranslation(transKey);
+    if (cachedDbZh != null && cachedDbZh.isNotEmpty && mounted) {
+      setState(() {
+        _translationCache[index] = cachedDbZh;
+        _loadingTranslations[index] = false;
+      });
+      return;
+    }
+
+    // 数据库没有，调用免费网络在线 API 实时翻译
+    final onlineZh = await OnlineTranslationService.translate(paragraph.en);
+    if (onlineZh != null && onlineZh.isNotEmpty) {
+      // 成功翻译后自动存入本地 SQLite 数据库中，下次零消耗调出！
+      await db.saveCachedTranslation(transKey, paragraph.en, onlineZh);
+
+      if (mounted) {
+        setState(() {
+          _translationCache[index] = onlineZh;
+          _loadingTranslations[index] = false;
+        });
+      }
+    } else if (mounted) {
+      setState(() {
+        _translationCache[index] = '（网络翻译暂不可用，请稍后重试）';
+        _loadingTranslations[index] = false;
+      });
+    }
   }
 
   void _toggleAllTranslations() {
@@ -442,14 +509,10 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                     favoriteWords: favoriteWords,
                     isTransExpanded: isTransExpanded,
                     isDark: isDark,
-                    onToggleTrans: () {
-                      setState(() {
-                        _activeParagraphTranslations[index] = !isTransExpanded;
-                      });
-                    },
+                    onToggleTrans: () => _toggleParagraphTrans(index, paragraph),
                   ),
 
-                  // 点按小图标后展开的对应 JSON 原生中文段落（100% 精准匹配）
+                  // 点按小图标后展开的对应中文段落（原生/离线数据库缓存/在线实时 API）
                   if (isTransExpanded) ...[
                     const SizedBox(height: 8),
                     Container(
@@ -462,15 +525,39 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
                           color: isDark ? Colors.blue.withValues(alpha: 0.2) : const Color(0xFFBFDBFE),
                         ),
                       ),
-                      child: Text(
-                        paragraph.zh,
-                        style: TextStyle(
-                          fontSize: 14.5,
-                          height: 1.65,
-                          color: isDark ? const Color(0xFF93C5FD) : const Color(0xFF1D4ED8),
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      child: _loadingTranslations[index] == true
+                          ? Row(
+                              children: [
+                                SizedBox(
+                                  width: 13,
+                                  height: 13,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: isDark ? const Color(0xFF60A5FA) : const Color(0xFF2563EB),
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  '在线译文实时解析中...',
+                                  style: TextStyle(
+                                    fontSize: 13.5,
+                                    color: isDark ? const Color(0xFF93C5FD) : const Color(0xFF1D4ED8),
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Text(
+                              (paragraph.zh.isNotEmpty && RegExp(r'[\u4e00-\u9fa5]').hasMatch(paragraph.zh))
+                                  ? paragraph.zh
+                                  : (_translationCache[index] ?? paragraph.zh),
+                              style: TextStyle(
+                                fontSize: 14.5,
+                                height: 1.65,
+                                color: isDark ? const Color(0xFF93C5FD) : const Color(0xFF1D4ED8),
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                     ),
                   ],
                 ],
@@ -529,29 +616,47 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
         }),
 
         // 段尾小翻译 Icon
-        InkWell(
-          onTap: onToggleTrans,
-          borderRadius: BorderRadius.circular(12),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-            margin: const EdgeInsets.only(left: 4),
-            decoration: BoxDecoration(
-              color: isTransExpanded
-                  ? (isDark ? const Color(0xFF2563EB).withValues(alpha: 0.25) : const Color(0xFFDBEAFE))
-                  : (isDark ? Colors.white.withValues(alpha: 0.06) : const Color(0xFFF1F5F9)),
+        Padding(
+          padding: const EdgeInsets.only(left: 4),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: onToggleTrans,
               borderRadius: BorderRadius.circular(10),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.g_translate_outlined,
-                  size: 13,
+              splashColor: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.blue.withValues(alpha: 0.1),
+              highlightColor: Colors.transparent,
+              child: Ink(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                decoration: BoxDecoration(
                   color: isTransExpanded
-                      ? (isDark ? const Color(0xFF93C5FD) : const Color(0xFF2563EB))
-                      : (isDark ? Colors.white54 : const Color(0xFF94A3B8)),
+                      ? (isDark ? const Color(0xFF2563EB).withValues(alpha: 0.25) : const Color(0xFFDBEAFE))
+                      : (isDark ? Colors.white.withValues(alpha: 0.06) : const Color(0xFFF1F5F9)),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              ],
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.g_translate_outlined,
+                      size: 13,
+                      color: isTransExpanded
+                          ? (isDark ? const Color(0xFF60A5FA) : const Color(0xFF2563EB))
+                          : (isDark ? Colors.white60 : const Color(0xFF64748B)),
+                    ),
+                    const SizedBox(width: 3),
+                    Text(
+                      '译文',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: isTransExpanded
+                            ? (isDark ? const Color(0xFF60A5FA) : const Color(0xFF2563EB))
+                            : (isDark ? Colors.white60 : const Color(0xFF64748B)),
+                        fontWeight: isTransExpanded ? FontWeight.bold : FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),

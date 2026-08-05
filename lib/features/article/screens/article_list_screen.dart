@@ -123,7 +123,7 @@ class _ReadingTabState extends State<ReadingTab> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            '📖 经典名著书架',
+                            '经典名著书架',
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           Text(
@@ -164,8 +164,8 @@ class _ReadingTabState extends State<ReadingTab> {
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
                         _selectedCategory == '新闻美文'
-                            ? '📰 新闻美文合集'
-                            : (_selectedCategory == '短文精读' ? '📄 短文精读合集' : '📄 推荐短文精读'),
+                            ? '新闻美文合集'
+                            : (_selectedCategory == '短文精读' ? '短文精读合集' : '推荐短文精读'),
                         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ),
