@@ -8,7 +8,7 @@ import '../../../core/services/storage_service.dart';
 import '../../../core/services/database_service.dart';
 
 class ArticleService {
-  static const _contentVersion = '28';
+  static const _contentVersion = '30';
   static const _contentVersionKey = 'article_content_version';
 
   final StorageService _storage;

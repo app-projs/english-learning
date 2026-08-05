@@ -1,14 +1,18 @@
 {
   "id": "The_little_prince",
   "title": "The little prince",
-  "chineseTitle": "",
+  "chineseTitle": "小王子",
   "author": "Antoine de Saint-Exupéry",
-  "coverUrl": "",
-  "description": "",
+  "coverUrl": "assets/images/book_prince.png",
+  "description": "《小王子》是法国作家安托万·德·圣-埃克苏佩里创作的享誉全球的经典文学名著。故事通过一名飞行员的视角，讲述了来自B-612小行星的小王子在游历各个星球过程中的奇妙见闻，以及他与玫瑰花、狐狸之间关于爱、责任与羁绊的深刻悟理。全书语言纯真优美，充满了对人性与哲理的洞察。",
   "category": "经典名著",
   "difficulty": "中级难度",
   "totalUnits": 29,
   "wordCount": 9164,
   "sourceFormat": "epub",
-  "contentVersion": 1
+  "contentVersion": 1,
+  "readerCount": "230.8万人在读",
+  "targetVocab": "800-2500词",
+  "tagLabel": "哲学治愈",
+  "coverBadge": "必读名篇 · 经典译本"
 }

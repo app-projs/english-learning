@@ -5,7 +5,7 @@
     {
       "unitIndex": 1,
       "title": "The Tale of the Ox and the Donkey",
-      "chineseTitle": "",
+      "chineseTitle": "公牛与驴子的故事",
       "path": "chapters/001.json",
       "wordCount": 487,
       "readTime": 4
@@ -13,7 +13,7 @@
     {
       "unitIndex": 2,
       "title": "The Tale of the Merchant and His Wife",
-      "chineseTitle": "",
+      "chineseTitle": "商人与妻子的故事",
       "path": "chapters/002.json",
       "wordCount": 631,
       "readTime": 5
@@ -21,7 +21,7 @@
     {
       "unitIndex": 3,
       "title": "The Story of the Merchant and the Demon",
-      "chineseTitle": "",
+      "chineseTitle": "商人与魔鬼的故事",
       "path": "chapters/003.json",
       "wordCount": 962,
       "readTime": 7
@@ -29,7 +29,7 @@
     {
       "unitIndex": 4,
       "title": "The First Old Man’s Tale",
-      "chineseTitle": "",
+      "chineseTitle": "第一个老人的故事",
       "path": "chapters/004.json",
       "wordCount": 919,
       "readTime": 7
@@ -37,7 +37,7 @@
     {
       "unitIndex": 5,
       "title": "The Second Old Man’s Tale",
-      "chineseTitle": "",
+      "chineseTitle": "第二个老人的故事",
       "path": "chapters/005.json",
       "wordCount": 816,
       "readTime": 6
@@ -45,7 +45,7 @@
     {
       "unitIndex": 6,
       "title": "The Story of the Fisherman and the Demon",
-      "chineseTitle": "",
+      "chineseTitle": "第三个老人的故事",
       "path": "chapters/006.json",
       "wordCount": 1793,
       "readTime": 13
@@ -53,7 +53,7 @@
     {
       "unitIndex": 7,
       "title": "The Tale of King Yunan and the Sage Duban",
-      "chineseTitle": "",
+      "chineseTitle": "渔夫与魔鬼的故事",
       "path": "chapters/007.json",
       "wordCount": 849,
       "readTime": 7
@@ -61,7 +61,7 @@
     {
       "unitIndex": 8,
       "title": "The Tale of the Husband and the Parrot",
-      "chineseTitle": "",
+      "chineseTitle": "尤南国王与智者杜班",
       "path": "chapters/008.json",
       "wordCount": 317,
       "readTime": 3
@@ -69,7 +69,7 @@
     {
       "unitIndex": 9,
       "title": "The Tale of the King’s Son and the She-Ghoul",
-      "chineseTitle": "",
+      "chineseTitle": "丈夫与鹦鹉的故事",
       "path": "chapters/009.json",
       "wordCount": 2900,
       "readTime": 21
@@ -77,7 +77,7 @@
     {
       "unitIndex": 10,
       "title": "The Tale of the Enchanted King",
-      "chineseTitle": "",
+      "chineseTitle": "宰相与御医的故事",
       "path": "chapters/010.json",
       "wordCount": 2439,
       "readTime": 18
@@ -85,7 +85,7 @@
     {
       "unitIndex": 11,
       "title": "The Story of the Porter and the Three Ladies",
-      "chineseTitle": "",
+      "chineseTitle": "被魔咒附身的王子",
       "path": "chapters/011.json",
       "wordCount": 4568,
       "readTime": 33
@@ -93,7 +93,7 @@
     {
       "unitIndex": 12,
       "title": "The First Dervish’s Tale",
-      "chineseTitle": "",
+      "chineseTitle": "巴格达的三位女士",
       "path": "chapters/012.json",
       "wordCount": 1366,
       "readTime": 10
@@ -101,7 +101,7 @@
     {
       "unitIndex": 13,
       "title": "The Second Dervish’s Tale",
-      "chineseTitle": "",
+      "chineseTitle": "第一个托钵僧的故事",
       "path": "chapters/013.json",
       "wordCount": 1725,
       "readTime": 13
@@ -109,7 +109,7 @@
     {
       "unitIndex": 14,
       "title": "The Tale of the Envious and the Envied",
-      "chineseTitle": "",
+      "chineseTitle": "第二个托钵僧的故事",
       "path": "chapters/014.json",
       "wordCount": 2690,
       "readTime": 20
@@ -117,7 +117,7 @@
     {
       "unitIndex": 15,
       "title": "The Third Dervish’s Tale",
-      "chineseTitle": "",
+      "chineseTitle": "嫉妒者与被嫉妒者的故事",
       "path": "chapters/015.json",
       "wordCount": 4905,
       "readTime": 36
@@ -125,7 +125,7 @@
     {
       "unitIndex": 16,
       "title": "The Tale of the First Lady, the Mistress of the House",
-      "chineseTitle": "",
+      "chineseTitle": "第三个托钵僧的故事",
       "path": "chapters/016.json",
       "wordCount": 1609,
       "readTime": 12
@@ -133,7 +133,7 @@
     {
       "unitIndex": 17,
       "title": "The Tale of the Second Lady, the Flogged One",
-      "chineseTitle": "",
+      "chineseTitle": "巴格达主妇的故事",
       "path": "chapters/017.json",
       "wordCount": 1836,
       "readTime": 14
@@ -141,7 +141,7 @@
     {
       "unitIndex": 18,
       "title": "The Story of the Three Apples",
-      "chineseTitle": "",
+      "chineseTitle": "女搬运工的故事",
       "path": "chapters/018.json",
       "wordCount": 1681,
       "readTime": 13
@@ -149,7 +149,7 @@
     {
       "unitIndex": 19,
       "title": "The Story of the Two Viziers, Nur al-Din Ali al-Misri and Badr al-Din Hasan al-Basri",
-      "chineseTitle": "",
+      "chineseTitle": "驼背人的故事",
       "path": "chapters/019.json",
       "wordCount": 9701,
       "readTime": 70
@@ -157,7 +157,7 @@
     {
       "unitIndex": 20,
       "title": "The Story of the Hunchback",
-      "chineseTitle": "",
+      "chineseTitle": "基督教商人的故事",
       "path": "chapters/020.json",
       "wordCount": 1342,
       "readTime": 10
@@ -165,7 +165,7 @@
     {
       "unitIndex": 21,
       "title": "The Christian Broker’s Tale: The Young Man with the Severed Hand and the Girl",
-      "chineseTitle": "",
+      "chineseTitle": "粮商的故事",
       "path": "chapters/021.json",
       "wordCount": 2908,
       "readTime": 21
@@ -173,7 +173,7 @@
     {
       "unitIndex": 22,
       "title": "The Steward’s Tale: The Young Man from Baghdad and Lady Zubaida’s Maid",
-      "chineseTitle": "",
+      "chineseTitle": "犹太医生的故事",
       "path": "chapters/022.json",
       "wordCount": 1991,
       "readTime": 15
@@ -181,7 +181,7 @@
     {
       "unitIndex": 23,
       "title": "The Jewish Physician’s Tale: The Young Man from Mosul and the Murdered Girl",
-      "chineseTitle": "",
+      "chineseTitle": "巴格达理发师的故事",
       "path": "chapters/023.json",
       "wordCount": 2112,
       "readTime": 16
@@ -189,7 +189,7 @@
     {
       "unitIndex": 24,
       "title": "The Tailor’s Tale: The Lame Young Man from Baghdad and the Barber",
-      "chineseTitle": "",
+      "chineseTitle": "理发师的大哥的故事",
       "path": "chapters/024.json",
       "wordCount": 3696,
       "readTime": 27
@@ -197,7 +197,7 @@
     {
       "unitIndex": 25,
       "title": "The Barber’s Tale",
-      "chineseTitle": "",
+      "chineseTitle": "理发师的二哥的故事",
       "path": "chapters/025.json",
       "wordCount": 349,
       "readTime": 3
@@ -205,7 +205,7 @@
     {
       "unitIndex": 26,
       "title": "The Tale of the First Brother, the Hunchbacked Tailor",
-      "chineseTitle": "",
+      "chineseTitle": "理发师的三哥的故事",
       "path": "chapters/026.json",
       "wordCount": 867,
       "readTime": 7
@@ -213,7 +213,7 @@
     {
       "unitIndex": 27,
       "title": "The Tale of the Second Brother, Baqbaqa the Paraplegic",
-      "chineseTitle": "",
+      "chineseTitle": "理发师的四哥的故事",
       "path": "chapters/027.json",
       "wordCount": 566,
       "readTime": 5
@@ -221,7 +221,7 @@
     {
       "unitIndex": 28,
       "title": "The Tale of the Third Brother, Faqfaq the Blind",
-      "chineseTitle": "",
+      "chineseTitle": "理发师的五哥的故事",
       "path": "chapters/028.json",
       "wordCount": 665,
       "readTime": 5
@@ -229,7 +229,7 @@
     {
       "unitIndex": 29,
       "title": "The Tale of the Fourth Brother, the One-Eyed Butcher",
-      "chineseTitle": "",
+      "chineseTitle": "理发师的六哥的故事",
       "path": "chapters/029.json",
       "wordCount": 790,
       "readTime": 6
@@ -237,7 +237,7 @@
     {
       "unitIndex": 30,
       "title": "The Tale of the Fifth Brother, the Cropped of Ears",
-      "chineseTitle": "",
+      "chineseTitle": "阿拉丁与神灯（上）",
       "path": "chapters/030.json",
       "wordCount": 1758,
       "readTime": 13
@@ -245,7 +245,7 @@
     {
       "unitIndex": 31,
       "title": "The Tale of the Sixth Brother, the Cropped of Lips",
-      "chineseTitle": "",
+      "chineseTitle": "阿拉丁与神灯（下）",
       "path": "chapters/031.json",
       "wordCount": 1436,
       "readTime": 11
@@ -253,7 +253,7 @@
     {
       "unitIndex": 32,
       "title": "The Story of Nur al-Din Ali ibn-Bakkar and the Slave-Girl Shams al-Nahar",
-      "chineseTitle": "",
+      "chineseTitle": "阿里巴巴与四十大盗",
       "path": "chapters/032.json",
       "wordCount": 9646,
       "readTime": 69
@@ -261,7 +261,7 @@
     {
       "unitIndex": 33,
       "title": "The Story of the Slave-Girl Anis al-Jalis and Nur al-Din Ali ibn-Khaqan",
-      "chineseTitle": "",
+      "chineseTitle": "辛巴达的七次航海",
       "path": "chapters/033.json",
       "wordCount": 7694,
       "readTime": 55
@@ -269,7 +269,7 @@
     {
       "unitIndex": 34,
       "title": "The Story of Jullanar of the Sea",
-      "chineseTitle": "",
+      "chineseTitle": "千夜终章与山方佐德的救赎",
       "path": "chapters/034.json",
       "wordCount": 9054,
       "readTime": 65

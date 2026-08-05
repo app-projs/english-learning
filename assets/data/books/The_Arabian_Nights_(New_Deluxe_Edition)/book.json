@@ -1,14 +1,18 @@
 {
   "id": "The_Arabian_Nights_(New_Deluxe_Edition)",
   "title": "The Arabian Nights (New Deluxe Edition)",
-  "chineseTitle": "",
+  "chineseTitle": "一千零一夜",
   "author": "Muhsin Mahdi",
-  "coverUrl": "",
-  "description": "",
+  "coverUrl": "assets/images/book_nights.png",
+  "description": "《一千零一夜》（又称《天方夜谭》）是阿拉伯民间故事集，被誉为世界文学史上最具神幻色彩与童话魅力的瑰宝之一。讲述了聪慧的宰相之女山方佐德为了挽救王国女子，每天夜里给国王讲故事，故事环环相扣，最终感化国王的故事。收录了阿拉丁神灯、阿里巴巴与四十大盗、辛巴达航海等家喻户晓的经典传奇。",
   "category": "经典名著",
   "difficulty": "中级难度",
   "totalUnits": 34,
   "wordCount": 87068,
   "sourceFormat": "epub",
-  "contentVersion": 1
+  "contentVersion": 1,
+  "readerCount": "156.4万人在读",
+  "targetVocab": "1200-3500词",
+  "tagLabel": "神话童话",
+  "coverBadge": "精选全本 · 经典名著"
 }
