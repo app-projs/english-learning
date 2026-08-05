@@ -1,0 +1,102 @@
+{
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: Down the Rabbit-Hole",
+      "chineseTitle": "第 1 章：掉进兔子洞",
+      "path": "chapters/001.json",
+      "wordCount": 511,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Pool of Tears",
+      "chineseTitle": "第 2 章：眼泪之池",
+      "path": "chapters/002.json",
+      "wordCount": 377,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: A Caucus-Race and a Long Tale",
+      "chineseTitle": "第 3 章：无结果的赛跑与长尾巴故事",
+      "path": "chapters/003.json",
+      "wordCount": 282,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Rabbit Sends in a Little Bill",
+      "chineseTitle": "第 4 章：兔子派来了小比尔",
+      "path": "chapters/004.json",
+      "wordCount": 257,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Advice from a Caterpillar",
+      "chineseTitle": "第 5 章：毛毛虫的忠告",
+      "path": "chapters/005.json",
+      "wordCount": 310,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: Pig and Pepper",
+      "chineseTitle": "第 6 章：小猪与胡椒",
+      "path": "chapters/006.json",
+      "wordCount": 301,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: A Mad Tea-Party",
+      "chineseTitle": "第 7 章：疯帽客的茶会",
+      "path": "chapters/007.json",
+      "wordCount": 259,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Queen’s Croquet-Ground",
+      "chineseTitle": "第 8 章：王后的槌球场",
+      "path": "chapters/008.json",
+      "wordCount": 251,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 9,
+      "title": "Chapter 9: The Mock Turtle’s Story",
+      "chineseTitle": "第 9 章：假海龟的故事",
+      "path": "chapters/009.json",
+      "wordCount": 196,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 10,
+      "title": "Chapter 10: The Lobster Quadrille",
+      "chineseTitle": "第 10 章：龙虾舞曲",
+      "path": "chapters/010.json",
+      "wordCount": 189,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 11,
+      "title": "Chapter 11: Who Stole the Tarts?",
+      "chineseTitle": "第 11 章：谁偷了王后的馅饼？",
+      "path": "chapters/011.json",
+      "wordCount": 221,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 12,
+      "title": "Chapter 12: Alice’s Evidence and the Awakening",
+      "chineseTitle": "第 12 章：爱丽丝的证词与梦醒时分（全本终极结局）",
+      "path": "chapters/012.json",
+      "wordCount": 384,
+      "readTime": 3
+    }
+  ]
+}

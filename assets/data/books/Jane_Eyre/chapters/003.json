@@ -1,0 +1,27 @@
+{
+  "id": "Jane_Eyre_u3",
+  "bookId": "Jane_Eyre",
+  "unitIndex": 3,
+  "title": "Chapter 3: Arrival at Thornfield Hall",
+  "chineseTitle": "第 3 章：到达桑菲尔德庄园",
+  "paragraphs": [
+    {
+      "en": "Six years passed as a student and two as a teacher at Lowood. When Miss Temple married and left, I felt an overwhelming longing for freedom and a wider world. I placed an advertisement in the newspaper seeking a position as a private governess. Soon, I received a favorable reply from Mrs. Fairfax, the housekeeper of Thornfield Hall near Millcote.",
+      "zh": "在洛伍德作为学生度过了六年，作为老师度过了两年。当泰姆普尔小姐结婚离开后，我感受到了对自由与更广阔世界的压倒性渴望。我在报纸上刊登了一则寻找私人家庭教师职位的广告。很快，我收到了来自米尔科特附近桑菲尔德庄园管家费尔法克斯太太的赞许回复。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Arriving at Thornfield Hall on a gloomy autumn evening, I was greeted warmly by Mrs. Fairfax. The house was an ancient, stately mansion with dark oak paneling, battlements, and long corridors filled with oil paintings. My pupil was Adele Varens, a lively seven-year-old French girl who was the ward of the master of the house, Mr. Edward Rochester. Life at Thornfield was peaceful and orderly, yet a strange atmosphere hovered over the third floor.",
+      "zh": "在一个阴暗的秋日夜晚到达桑菲尔德庄园，我受到了费尔法克斯太太的热情招呼。这座房子是一座古老庄严的豪宅，配有深色橡木墙板、城墙以及挂满油画的长走廊。我的学生是阿黛尔·瓦伦斯，一个活泼的七岁法国女孩，她是庄园主人爱德华·罗切斯特先生的受监护人。桑菲尔德的生活和平有序，然而一种奇怪的氛围萦绕在三楼之上。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "One afternoon, while walking along the third-floor corridor, I heard a sound that chilled my blood—a low, slow, mirthless laugh echoing from behind a locked door. Mrs. Fairfax assured me it was merely Grace Poole, a eccentric seamstress who worked in the attic. Yet the eerie laughter returned night after night, haunting my dreams.",
+      "zh": "一天下午，当沿着三楼走廊散步时，我听到了一个让我血液发凉的声音——一个低沉、缓慢、毫无欢笑意味的笑声从锁着的门后回荡。费尔法克斯太太向我保证那仅仅是格雷斯·普尔（一位在阁楼工作的古怪缝纫女工）。然而怪诞的笑声一夜又一夜重现，萦绕在我的梦中。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

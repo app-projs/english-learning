@@ -1,0 +1,21 @@
+{
+  "id": "A_Tale_of_Two_Cities_u3",
+  "bookId": "A_Tale_of_Two_Cities",
+  "unitIndex": 3,
+  "title": "Chapter 3: The Trial at the Old Bailey",
+  "chineseTitle": "第 3 章：老贝利法庭的惊险审判",
+  "paragraphs": [
+    {
+      "en": "Five years later, in the Old Bailey courtroom of London, a young French emigré named Charles Darnay stood trial for high treason, accused of spying. The prosecution case seemed airtight, backed by corrupt witnesses.",
+      "zh": "五年后，在伦敦的老贝利法庭上，一位名叫查尔斯·达奈的年轻法国移民因高瞻叛国罪受审，被指控从事间谍活动。控方案情似乎严丝合缝，得到了腐败证人的支持。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Suddenly, Sydney Carton, a brilliant but careless lawyer, pointed out that he himself bore an astonishing physical resemblance to Darnay! This uncanny likeness shattered the key witness's credibility, and Darnay was acquitted.",
+      "zh": "突然，西德尼·卡顿（一位卓越而随意的律师）指出他自己与达奈在长相上有着惊人的相似！这种不可思议的相似性粉碎了关键证人的可信度，达奈被宣告无罪。",
+      "id": "p002",
+      "sentenceCount": 1
+    }
+  ]
+}

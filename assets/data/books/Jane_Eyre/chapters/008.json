@@ -1,0 +1,27 @@
+{
+  "id": "Jane_Eyre_u8",
+  "bookId": "Jane_Eyre",
+  "unitIndex": 8,
+  "title": "Chapter 8: Moor House and St. John Rivers",
+  "chineseTitle": "第 8 章：沼泽房与圣约翰的求婚",
+  "paragraphs": [
+    {
+      "en": "Fleeing on a coach until my last penny was spent, I was left wandering helpless on the lonely, desolate moors. For three days I suffered intense hunger, cold, and exhaustion, sleeping on the damp heather and begging for bread at a village doorstep.",
+      "zh": "乘坐马车逃跑直到花光最后一分钱，我被留在了孤独荒凉的沼泽上无助地游荡。整整三天我承受着剧烈的饥饿、寒冷与疲惫，睡在潮湿的石楠花上，在村庄门口乞求面包。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Collapsing on the doorstep of Moor House, I was rescued by St. John Rivers, a stern young clergyman, and his two gentle sisters, Mary and Diana. They nursed me back to health, and St. John secured a position for me as the schoolmistress of a village school for poor girls. Soon after, St. John discovered that my late uncle in Madeira had left me an inheritance of twenty thousand pounds, and that the Rivers family were my cousins! Overjoyed, I divided the fortune equally among the four of us.",
+      "zh": "倒在沼泽房的门口，我被圣约翰·里弗斯（一位严厉的年轻牧师）以及他的两个温柔姐妹玛丽与戴安娜所救。她们把我照顾恢复了健康，圣约翰为我争取到了一个作为贫穷女孩乡村学校女教师的职位。不久之后，圣约翰发现我已故在马德拉的舅舅留给了我两万镑遗产，而且里弗斯家族正是我的表亲！喜出望外，我把财产在四个人中间平分了。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "St. John, driven by religious fanaticism, proposed that I marry him and accompany him to India as a missionary's wife. He admitted he did not love me, but demanded my obedience. As I hesitated under his intense pressure, I suddenly heard a phantom voice calling out through the night, filled with agony: 'Jane! Jane! Jane!' It was the voice of Edward Rochester.",
+      "zh": "圣约翰在宗教狂热的驱使下，提出要我嫁给他并作为传教士的妻子陪同他去印度。他承认他不爱我，但要求我服从。当我在他强烈的压力下犹豫不决时，我突然听到一个幽灵般的声音在夜色中呼唤，充满了痛苦：“简！简！简！”那是爱德华·罗切斯特的声音。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

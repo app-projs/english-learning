@@ -1,0 +1,18 @@
+{
+  "id": "Arabian_Nights",
+  "title": "Arabian Nights",
+  "chineseTitle": "一千零一夜",
+  "author": "Anonymous",
+  "coverUrl": "assets/images/book_nights.png",
+  "description": "《一千零一夜》（又名《天方夜谭》）是阿拉伯民间故事集锦，代表了古代中东文学的至高成就。故事缘起于波斯国王沙赫里亚尔因王后背叛而对所有女性产生仇恨，每日娶一女子，次日晨即杀之。宰相的聪慧女儿雪赫拉查德为了拯救无辜女性，毅然自愿嫁给国王。每晚她为国王讲一个极其吸引人的精彩故事，并在最扣人心弦的高潮处停下，使国王因渴望听完故事而不断推迟处决。经过一千零一夜的智慧讲述，国王彻底被感动与感化，最终废除虐杀暴行，与雪赫拉查德白头偕老。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 8,
+  "wordCount": 33000,
+  "readerCount": "145.2万人在读",
+  "targetVocab": "1200-4000词",
+  "tagLabel": "奇幻民间故事",
+  "coverBadge": "精读 · 东方童话",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

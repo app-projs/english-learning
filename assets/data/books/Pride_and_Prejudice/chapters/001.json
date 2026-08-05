@@ -1,0 +1,27 @@
+{
+  "id": "Pride_and_Prejudice_u1",
+  "bookId": "Pride_and_Prejudice",
+  "unitIndex": 1,
+  "title": "Chapter 1: The Assembly Ball and the First Impression",
+  "chineseTitle": "第 1 章：舞会风波与第一印象的交锋",
+  "paragraphs": [
+    {
+      "en": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife. However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters. When young, wealthy Charles Bingley rented the magnificent estate of Netherfield Park, Mrs. Bennet immediately plotted to secure him for one of her five unmarried daughters.",
+      "zh": "这是一个被普遍承认的真理：凡是有钱的单身汉，一定需要娶个太太。这样一个男人初到一个地方，不论对他本人的感受或看法了解多么少，这个真理在四周家庭的心目中是如此根深蒂固，以至于他被看作是他某个女儿的合法财产。当年轻富有的查尔斯·宾利租下内瑟菲尔德庄园时，贝内特太太立刻谋划着为她五个未婚女儿中的一个争取到他。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "At the Meryton assembly ball, Mr. Bingley arrived accompanied by his two fashionable sisters and his close friend, Fitzwilliam Darcy. Mr. Darcy attracted the admiration of the whole room by his fine, tall person, handsome features, and noble mien, and the report of his having ten thousand pounds a year! However, his cold, haughty manners soon turned the tide of public opinion against him; he was pronounced to be proud, disagreeable, and above being pleased.",
+      "zh": "在梅里顿的集合舞会上，宾利先生在他的两个时尚姐妹和他紧密的朋友菲茨威廉·达西的陪同下到达。达西先生通过他挺拔的身材、英俊的面貌、高尚的举止以及年收入万镑的报道吸引了全场的赞赏！然而，他冰冷傲慢的态度很快使公众舆论转而反对他；大家断言他傲慢、令人不快，且高高在上难以讨好。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "During the dance, Mr. Bingley urged Darcy to dance with Elizabeth Bennet, who was sitting down for lack of a partner. Darcy looked coldly at Elizabeth and replied haughtily within her hearing: 'She is tolerable, but not handsome enough to tempt me; I am in no humour at present to give consequence to young ladies who are slighted by other men.' Elizabeth felt her pride deeply wounded, and from that moment, she conceived a bitter prejudice against Mr. Darcy.",
+      "zh": "在舞蹈期间，宾利先生敦促达西与伊丽莎白·贝内特跳舞，后者因缺乏舞伴正坐着。达西冰冷地看着伊丽莎白，并在她听得见的范围内高傲地回答：“她还可以，但不够漂亮来引诱我；我现在没有心情去捧那些被其他男人轻视的年轻女士。”伊丽莎白感觉自己的自尊受到了深深的伤害，从那一刻起，她对达西先生抱有了强烈的偏见。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

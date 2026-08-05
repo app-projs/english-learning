@@ -1,0 +1,33 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u6",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 6,
+  "title": "Chapter 6: Pig and Pepper",
+  "chineseTitle": "第 6 章：小猪与胡椒",
+  "paragraphs": [
+    {
+      "en": "For a minute or two she stood looking at the house, and wondering what to do next, when suddenly a footman in livery came running out of the wood—(she considered him to be a footman because he was in livery: otherwise, judging by his face only, she would have called him a fish)—and rapped loudly at the door with his knuckles. It was opened by another footman in livery, with a round face, and large eyes like a frog.",
+      "zh": "有一两分钟她站在那里看着房子，好奇接下来干什么，这时突然一个穿着仆役制服的男仆从树林里跑了出来（她认为他是一个男仆因为他穿着制服：否则，单凭他的脸判断，她会称他为一条鱼），用他的手指关节猛烈敲打门。门被另一个穿着制服的男仆打开了，带着圆脸和像青蛙一样的大眼睛。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Fish-Footman began by producing from under his arm a great letter, nearly as large as himself, and this he handed over to the other, saying, in a solemn tone, 'For the Duchess. An invitation from the Queen to play croquet.' The Frog-Footman repeated, in the same solemn tone, only changing the order of the words a little, 'From the Queen. An invitation for the Duchess to play croquet.' Then they both bowed low, and their curls got entangled together.",
+      "zh": "鱼男仆首先从他的手臂下拿出一封大信，几乎和他自己一样大，他把它交给了另一个，用庄严的语气说：“给公爵夫人。来自王后打槌球的邀请。”青蛙男仆重复着，用同样庄严的语气，仅仅稍微改变了一下词语的顺序：“来自王后。给公爵夫人打槌球的邀请。”接着他们两个低头深深鞠躬，他们的卷发缠在了一起。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Alice laughed so much at this, that she had to run back into the wood for fear of their hearing her; and when she next peeped out the Fish-Footman was gone, and the other was sitting on the ground near the door, staring stupidly up into the sky. Alice went timidly up to the door, and knocked.",
+      "zh": "爱丽丝对此笑了那么多，以至于她不得不跑回树林里害怕他们听到她；而当她下一次偷看时，鱼男仆已经走了，另一个正坐在门附近的地面上，愚蠢地仰望着天空。爱丽丝怯生生地走到门前，敲了敲门。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'There's no sort of use in knocking,' said the Footman, 'and that for two reasons. First, because I'm on the same side of the door as you are; secondly, because they're making such a noise inside, no one could possibly hear you.' And certainly there was a most extraordinary noise going on within—a constant howling and sneezing, and every now and then a great crash, as if a dish or kettle had been broken to pieces.",
+      "zh": "“敲门没有任何用处，”男仆说，“而且有两个原因。首先，因为我和你在门的同一侧；其次，因为他们在里面制造着那么大的噪音，没有人可能听到你。”确实里面正在进行着最非凡的噪音——持续的号啕与打喷嚏，隔三岔五一声巨大的破碎声，就仿佛盘子或水壶被打成了碎片。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

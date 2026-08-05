@@ -1,0 +1,33 @@
+{
+  "id": "The_Wonderful_Wizard_of_Oz_u16",
+  "bookId": "The_Wonderful_Wizard_of_Oz",
+  "unitIndex": 16,
+  "title": "Chapter 16: The Magic Art of the Great Humbug",
+  "chineseTitle": "第 16 章：满足脑子、心与勇气的假承诺",
+  "paragraphs": [
+    {
+      "en": "Despite being a humbug, the Wizard fulfilled his promises: he stuffed the Scarecrow's head with bran and pins, gave the Tin Woodman a silk heart filled with sawdust, and gave the Lion a potion of courage.",
+      "zh": "尽管是个骗子，魔术师履行了他的承诺：他用糠皮和针塞满了稻草人的头，给了铁皮木夫一颗装木屑的丝绸心，并给了狮子一剂勇气药水。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Yellow Brick Road wound onward through the magical countryside of Oz, flanked by sparkling brooks, colorful wild flowers, and strange golden trees. Dorothy tightly held Toto in her arms, her magical Silver Shoes sparkling with every step she took toward their goal.",
+      "zh": "黄砖路沿着奥兹国奇幻的乡村继续盘旋，两侧环绕着闪烁的小溪、绚丽的野花与神奇的金树。多萝茜把托托紧抱在怀里，她魔法银鞋在她朝目标迈出的每一步中都闪闪发光。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'No matter how dreary our home in Kansas may be,' Dorothy remarked softly to the Scarecrow, 'we people of flesh and blood would rather live there than in any other country, be it ever so beautiful. There is no place like home.'",
+      "zh": "'无论我们在堪萨斯的家多么沉闷，'多萝茜对稻草人软软地注意到，'我们血肉之躯的人们宁愿住在那里，也不愿住在任何其他国家（无论它多么美丽）。没有任何地方像家一样。'",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Scarecrow nodded thoughtfully, his painted face smiling. 'I cannot understand it,' he said. 'If your heads were stuffed with straw like mine, you would all live in the beautiful places and leave Kansas empty. But it is fortunate you have brains, for a brain is the only thing worth having in this world.'",
+      "zh": "稻草人深思地点头，画着的脸上笑着。'我无法理解它，'他说。'如果你们的头像我的一样塞满稻草，你们都会住在美丽的地方，把堪萨斯空出来。但幸运的是你们有脑子，因为脑子是世上唯一值得拥有的东西。'",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

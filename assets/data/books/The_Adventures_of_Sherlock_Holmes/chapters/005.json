@@ -1,0 +1,33 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes_u5",
+  "bookId": "The_Adventures_of_Sherlock_Holmes",
+  "unitIndex": 5,
+  "title": "Chapter 5: The Man with the Twisted Lip",
+  "chineseTitle": "第 5 章：歪唇男人与离奇失踪",
+  "paragraphs": [
+    {
+      "en": "Mrs. Isa Whitney asked me to search for her addicted husband in a squalid opium den in the East End of London. While rescuing Whitney, I was astounded to find Sherlock Holmes sitting disguised as an old opium smoker. Holmes was investigating the disappearance of Mr. Neville St. Clair, a prosperous, respectable country gentleman from Kent.",
+      "zh": "伊萨·惠特尼太太请我前往伦敦东区一家肮脏的鸦片馆寻找她上瘾的丈夫。在拯救惠特尼时，我惊奇地发现歇洛克·福尔摩斯正伪装成一位老鸦片抽吸者坐在那里。福尔摩斯正在调查内维尔·圣克莱尔先生的失踪案，他是一位来自肯特郡繁荣体面的乡村绅士。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "St. Clair's wife had seen her husband waving frantically from a second-floor window above the opium den. Entering the room with police, they found no trace of St. Clair except his clothes and bloodstains on the windowsill. The only inhabitant was Hugh Boone, a hideous, deformed beggar with a twisted lip, who was arrested for murder.",
+      "zh": "圣克莱尔的妻子曾看到她的丈夫从鸦片馆上方二楼的窗户发疯似地挥手。带着警察进入房间，除了他的衣服和窗台上血迹外他们没有发现圣克莱尔的任何痕迹。唯一的居住者是休·布恩，一位有着歪唇的可怕畸形乞丐，他因谋杀被捕。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes pondered the mystery all night in a cloud of tobacco smoke. Early next morning, Holmes took a sponge and a bar of soap to the police cell where the sleeping beggar was held. Washing Hugh Boone's dirty face, the facial scars and twisted lip melted away—revealing Mr. Neville St. Clair himself!",
+      "zh": "福尔摩斯在一团烟草烟雾中沉思了一整夜。第二天清晨，福尔摩斯带着海绵和一块肥皂来到了关押着沉睡乞丐的警察牢房。洗着休·布恩脏兮兮的脸，面部伤疤与歪唇融化掉了——露出了内维尔·圣克莱尔先生本人！",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "St. Clair sheepishly confessed that years ago, while working as a journalist, he had disguised himself as a beggar for an article and discovered that begging earned him three pounds a day—far more than journalism! He had lived a double life ever since, supporting his family in luxury as a professional beggar, but had been caught when his wife accidentally walked by.",
+      "zh": "圣克莱尔羞怯地承认几年前当记者时，他曾为了写文章将自己伪装成乞丐，并发现乞讨每天能赚三镑（远多于新闻业！）。从那以后他一直过着双重生活，作为专业乞丐在奢华中养活家人，但在妻子意外走过时被抓包了。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

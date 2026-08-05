@@ -1,0 +1,18 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland",
+  "title": "Alice's Adventures in Wonderland",
+  "chineseTitle": "爱丽丝梦游仙境",
+  "author": "Lewis Carroll",
+  "coverUrl": "assets/images/book_alice.png",
+  "description": "《爱丽丝梦游仙境》是英国著名作家刘易斯·卡罗尔于 1865 年出版的奇幻荒诞文学代表作。本文件收录了全书完整的 12 个章节。故事讲述了小女孩爱丽丝在野外追逐一只怀抱怀表、会说话的白兔时，不慎掉入了一个神奇的兔子洞。在地下奇幻世界里，她通过喝药水、吃蛋糕身体奇妙地变大变小，遇到了会隐身的柴郡猫、疯狂的帽匠与三月兔、吸水烟的毛毛虫以及动辄要砍人头的红心王后。小说语言诙谐双关，充满荒诞逻辑与数学双关，是学习英国幽默与经典童话表达的至佳范本。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 12,
+  "wordCount": 42000,
+  "readerCount": "152.3万人在读",
+  "targetVocab": "1200-3800词",
+  "tagLabel": "奇幻冒险",
+  "coverBadge": "精读 · 必读全本",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

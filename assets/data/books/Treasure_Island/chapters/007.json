@@ -1,0 +1,27 @@
+{
+  "id": "Treasure_Island_u7",
+  "bookId": "Treasure_Island",
+  "unitIndex": 7,
+  "title": "Chapter 7: Jim Recaptures the Hispaniola",
+  "chineseTitle": "第 7 章：吉姆独立夺回船只",
+  "paragraphs": [
+    {
+      "en": "While the wounded Captain rested, I slipped out of the stockade with a daring plan. Using a small skin coracle built by Ben Gunn, I rowed out to the Hispaniola in the pitch dark. I cut the ship's anchor cable, setting the schooner adrift with the current.",
+      "zh": "当受伤的船长休息时，我带着一个大胆的计划溜出了木栅栏围寨。使用本·甘恩建造的小皮艇，我在漆黑一片中划向了伊斯帕尼奥拉号。我砍断了船只的锚缆，使纵帆船随水流漂流。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Climbing aboard the next morning, I found only two drunken pirates on deck: O'Brien, who lay dead, and Israel Hands, who was severely wounded. Hands agreed to help me beach the ship in a safe inlet on the north of the island in exchange for food and bandage.",
+      "zh": "第二天早上爬上船，我发现甲板上只有两个酗酒的海盗：奥布赖恩（躺着死去）以及伊斯雷尔·汉兹（受了重伤）。汉兹同意帮助我在岛屿北部安全的小港湾把船靠岸，以换取食物与绷带。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "However, as the ship reached the inlet, Hands treacherous pulled a dagger and attacked me! I scrambled up the mast into the cross-trees, loading my pistols. Hands threw his dagger, pinning my shoulder to the mast. I fired both pistols, killing Hands, and he fell into the water below. I secured the Hispaniola safely in the mud.",
+      "zh": "然而，当船到达小港湾时，汉兹奸诈地拔出一把匕首攻击了我！我爬上桅杆进入横木，装填着我的手枪。汉兹扔出他的匕首，把我的肩膀钉在了桅杆上。我开火了两支手枪，打死了汉兹，他倒进了下面的水里。我在泥里安全地固定了伊斯帕尼奥拉号。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

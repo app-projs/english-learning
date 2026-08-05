@@ -1,0 +1,70 @@
+{
+  "bookId": "Treasure_Island",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Old Sea-Dog at the Admiral Benbow",
+      "chineseTitle": "第 1 章：本博将军客栈的老水手",
+      "path": "chapters/001.json",
+      "wordCount": 265,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Black Spot and the Sea-Chest",
+      "chineseTitle": "第 2 章：黑点警告与海员宝箱",
+      "path": "chapters/002.json",
+      "wordCount": 246,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Long John Silver and the Hispaniola",
+      "chineseTitle": "第 3 章：独脚水手西尔弗与伊斯帕尼奥拉号",
+      "path": "chapters/003.json",
+      "wordCount": 163,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Apple Barrel and the Mutiny Plot",
+      "chineseTitle": "第 4 章：苹果桶里的阴谋",
+      "path": "chapters/004.json",
+      "wordCount": 155,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Ben Gunn, the Marooned Pirate",
+      "chineseTitle": "第 5 章：荒岛囚徒本·甘恩",
+      "path": "chapters/005.json",
+      "wordCount": 168,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Battle at the Stockade",
+      "chineseTitle": "第 6 章：木栅栏围寨攻防战",
+      "path": "chapters/006.json",
+      "wordCount": 117,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: Jim Recaptures the Hispaniola",
+      "chineseTitle": "第 7 章：吉姆独立夺回船只",
+      "path": "chapters/007.json",
+      "wordCount": 155,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Treasure Found and Homebound",
+      "chineseTitle": "第 8 章：宝藏出土与重返家园（终极结局）",
+      "path": "chapters/008.json",
+      "wordCount": 190,
+      "readTime": 2
+    }
+  ]
+}

@@ -55,3 +55,9 @@ app.*.map.json
 .security-key
 logs/security/
 .agents
+
+# EPUB importer local files
+.venv-epub/
+/assets/epub/incoming/
+/assets/epub/processed/
+/assets/epub/translation-cache/

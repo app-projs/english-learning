@@ -1,0 +1,70 @@
+{
+  "bookId": "A_Tale_of_Two_Cities",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Best of Times and the Mail Coach",
+      "chineseTitle": "第 1 章：最好的时代与夜色中的邮政马车",
+      "path": "chapters/001.json",
+      "wordCount": 210,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: Recalled to Life - The Wine-Shop",
+      "chineseTitle": "第 2 章：重获新生与圣安东尼区酒馆",
+      "path": "chapters/002.json",
+      "wordCount": 150,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: The Trial at the Old Bailey",
+      "chineseTitle": "第 3 章：老贝利法庭的惊险审判",
+      "path": "chapters/003.json",
+      "wordCount": 67,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: Sydney Carton’s Secret Promise",
+      "chineseTitle": "第 4 章：西德尼·卡顿的秘密承诺",
+      "path": "chapters/004.json",
+      "wordCount": 55,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Reign of Terror in Paris",
+      "chineseTitle": "第 5 章：巴黎的恐怖统治与绝境救援",
+      "path": "chapters/005.json",
+      "wordCount": 49,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Parchment in the Bastille Cell",
+      "chineseTitle": "第 6 章：巴士底狱羊皮纸的声讨",
+      "path": "chapters/006.json",
+      "wordCount": 46,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Prisoner in La Force",
+      "chineseTitle": "第 7 章：拉福尔斯监狱的死牢顶替",
+      "path": "chapters/007.json",
+      "wordCount": 59,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Ultimate Sacrifice at the Guillotine",
+      "chineseTitle": "第 8 章：断头台下的至爱与永恒救赎（终极结局）",
+      "path": "chapters/008.json",
+      "wordCount": 89,
+      "readTime": 1
+    }
+  ]
+}

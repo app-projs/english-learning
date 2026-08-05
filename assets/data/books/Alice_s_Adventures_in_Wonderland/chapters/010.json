@@ -1,0 +1,27 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u10",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 10,
+  "title": "Chapter 10: The Lobster Quadrille",
+  "chineseTitle": "第 10 章：龙虾舞曲",
+  "paragraphs": [
+    {
+      "en": "The Mock Turtle sighed deeply, and drew the back of one flipper across his eyes. He looked at Alice, and tried to speak, but for a minute or two sobs choked his voice. 'Same as if he had a bone in his throat,' said the Gryphon: and it set to work shaking him and punching him in the back. At last the Mock Turtle recovered his voice, and, with tears running down his cheeks, he went on again.",
+      "zh": "假海龟深深叹息着，用一只鳍脚的背面擦过双眼。他看着爱丽丝，试图说话，但有一两分钟抽泣哽咽了他的声音。“就像是他的喉咙里卡了一根骨头，”鹰头狮说：它开始干活摇晃他并在背上重击他。终于假海龟恢复了他的声音，而随着眼泪沿着面颊流下，他再次继续了。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'You may not have lived much under the sea,' ('I haven't,' said Alice)—'and perhaps you were never even introduced to a lobster—' (Alice began to say 'I once tasted—' but checked herself hastily, and said 'No, never')—'so you can have no idea what a delightful thing a Lobster Quadrille is!'",
+      "zh": "“你可能没有在海底生活多久，”（“我没有，”爱丽丝说）“—而或许你甚至从未被介绍给一只龙虾—”（爱丽丝开始说“我曾经尝过—”但急忙制止了自己，说“不，从未”）“—因此你无法概念龙虾舞曲是一件多么令人愉快的东！”",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'No, indeed,' said Alice. 'What sort of a dance is it?' 'Why,' said the Gryphon, 'you first form into a line along the sea-shore—' 'Two lines!' cried the Mock Turtle. 'Seals, turtles, salmon, and so on; then, when you've cleared all the jelly-fish out of the way—' 'THAT generally takes some time,' interrupted the Gryphon.",
+      "zh": "“是的，确实如此，”爱丽丝说。“那是什么样的舞蹈？”“哎呀，”鹰头狮说，“你首先沿着海岸排成一条线—”“两条线！”假海龟喊道。“海豹、海龟、三文鱼等等；接着，当你把所有的水母都从路上清理干净后—”“那通常需要一些时间，”鹰头狮打断道。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

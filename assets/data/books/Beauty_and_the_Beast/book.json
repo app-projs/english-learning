@@ -1,0 +1,18 @@
+{
+  "id": "Beauty_and_the_Beast",
+  "title": "Beauty and the Beast",
+  "chineseTitle": "美女与野兽",
+  "author": "Gabrielle-Suzanne de Villeneuve",
+  "coverUrl": "assets/images/book_beauty.png",
+  "description": "《美女与野兽》是法国作家加布里埃尔-苏珊·德·维伦纽夫于 1740 年出版的经典童话。故事讲述了一位破产商人因在神秘城堡中采摘了一朵玫瑰，被可怕的野兽扣留。善良孝顺的小女儿贝儿自愿代替父亲前往城堡受罚。在华丽的城堡中，贝儿发现野兽虽然外表凶恶粗鲁，却拥有一颗极其温柔体贴的心。通过长期的相处，贝儿克服了对丑陋外表的偏见，被野兽真挚的爱所打动，最终以纯真的爱解除了邪恶的诅咒，使野兽还原为英俊的王子。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 8,
+  "wordCount": 32000,
+  "readerCount": "112.5万人在读",
+  "targetVocab": "1000-3500词",
+  "tagLabel": "浪漫童话",
+  "coverBadge": "精读 · 奇幻童话",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

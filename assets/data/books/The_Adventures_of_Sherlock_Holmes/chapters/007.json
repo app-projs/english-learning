@@ -1,0 +1,33 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes_u7",
+  "bookId": "The_Adventures_of_Sherlock_Holmes",
+  "unitIndex": 7,
+  "title": "Chapter 7: The Adventure of the Speckled Band",
+  "chineseTitle": "第 7 章：斑点带案与危险毒蛇",
+  "paragraphs": [
+    {
+      "en": "Early one April morning in 1883, Helen Stoner arrived at Baker Street shivered with terror. Helen lived at Stoke Moran with her violent, quick-tempered stepfather, Dr. Grimesby Roylott, a impoverished aristocrat who had spent years in India and kept wild exotic animals on his estate, including a cheetah and a baboon.",
+      "zh": "1883 年 4 月的一个清晨，海伦·斯托纳怀着恐惧的颤抖来到了贝克街。海伦与她暴躁易怒的继父格莱姆斯比·罗伊洛特医生一起住在斯托克莫兰，后者是一位贫困的贵族，在印度生活了多年，并在庄园里养着野生异域动物，包括一只猎豹和一只狒狒。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Helen explained that two years earlier, her twin sister Julia had died mysteriously in her bedroom just before her wedding. Julia's dying words were a terrified whisper: 'The speckled band!' Now, Helen was engaged to be married, and Dr. Roylott had ordered her to move into Julia's old bedroom under the pretext of wall repairs. Last night, Helen heard the same low whistle that Julia had reported before her death!",
+      "zh": "海伦解释说两年前，她的双胞胎姐妹朱莉娅在婚礼前夕在卧室里神秘死亡。朱莉娅临死前的话语是一句恐怖的低语：“斑点带！”如今，海伦订婚准备结婚，而罗伊洛特医生以墙壁维修为借口命令她搬进朱莉娅原来的卧室。昨晚，海伦听到了朱莉娅生前报告过的同一个低沉哨声！",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes examined Dr. Roylott's financial records and discovered that if either stepdaughter married, Dr. Roylott would lose two-thirds of his late wife's income. Inspecting Julia's bedroom, Holmes uncovered curious clues: a dummy bell-rope that did not ring, a ventilator connecting to Dr. Roylott's room, and a bed bolted to the floor.",
+      "zh": "福尔摩斯检查了罗伊洛特医生的财务记录，发现如果任何一个继女结婚，罗伊洛特医生就会失去他已故妻子三分之二的收入。检查朱莉娅的卧室，福尔摩斯发现了奇怪的线索：一条并不响的假铃绳、一个连接到罗伊洛特医生房间的通风口，以及一张锁在地板上的床。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "That night, Holmes and Watson snuck into Helen's bedroom in the dark. Sitting silently in the dark, Holmes suddenly struck a match and struck violently at the bell-rope with his cane, shouting, 'You see it, Watson?' Through the ventilator came a terrible hiss. Dr. Roylott had trained a deadly Indian Swamp Adder—the 'speckled band'—to climb down the bell-rope and bite the victim. Agitated by Holmes's blows, the lethal snake slithered back through the ventilator and bit Dr. Roylott in the brain, killing the evil doctor within ten seconds.",
+      "zh": "那天晚上，福尔摩斯和华生在黑暗中溜进了海伦的卧室。在黑暗中静静地坐着，福尔摩斯突然划亮了一根火柴，用拐杖猛烈地抽打着铃绳，喊道：“你看到它了吗，华生？”穿过通风口传来了一声可怕的嘶嘶声。罗伊洛特医生曾训练了一条致命的印度沼泽蝰蛇（“斑点带”）沿着铃绳爬下来咬死受害者。被福尔摩斯的抽打激怒，这条致命的蛇滑回穿过通风口咬中了罗伊洛特医生的大脑，在十秒钟内杀死了这位恶毒的医生。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

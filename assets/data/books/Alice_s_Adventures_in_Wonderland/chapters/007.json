@@ -1,0 +1,33 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u7",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 7,
+  "title": "Chapter 7: A Mad Tea-Party",
+  "chineseTitle": "第 7 章：疯帽客的茶会",
+  "paragraphs": [
+    {
+      "en": "There was a table set out under a tree in front of the house, and the March Hare and the Hatter were having tea at it: a Dormouse was sitting between them, fast asleep, and the other two were using it as a cushion, resting their elbows on it, and talking over its head. 'Very uncomfortable for the Dormouse,' thought Alice; 'only, as it's asleep, I suppose it doesn't mind.'",
+      "zh": "在房子前面的树下摆着一张桌子，三月兔和帽匠正在桌前喝茶：一只睡鼠坐在他们中间，熟睡着，另外两个把它用作靠垫，把肘部搁在它上面，在它的头上交谈着。“对睡鼠来说极其不舒服，”爱丽丝想；“不过，既然它睡着了，我想它不介意。”",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The table was a large one, but the three were all crowded together at one corner of it: 'No room! No room!' they cried out when they saw Alice coming. 'There's PLENTY of room!' said Alice indignantly, and she sat down in a large arm-chair at one end of the table.",
+      "zh": "桌子是一张大桌子，但三个人全都拥挤在它的一角：“没有地方！没有地方！”当他们看到爱丽丝过来时他们喊道。“有大量的地方！”爱丽丝愤慨地说，并在桌子一头的一张大扶手椅上坐了下来。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'Have some wine,' the March Hare said in an encouraging tone. Alice looked all round the table, but there was nothing on it but tea. 'I don't see any wine,' she remarked. 'There isn't any,' said the March Hare. 'Then it wasn't very civil of you to offer it,' said Alice angrily. 'It wasn't very civil of you to sit down without being invited,' said the March Hare.",
+      "zh": "“喝点酒吧，”三月兔用鼓励的语气说。爱丽丝环顾桌子四周，但上面除了茶之外什么也没有。“我没看到任何酒，”她注意到。“没有任何酒，”三月兔说。“那么你提议请喝它不是很礼貌，”爱丽丝生气地说。“你没有被邀请就坐下来不是很礼貌，”三月兔说。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'I didn't know it was YOUR table,' said Alice; 'it's laid for a great many more than three.' 'Your hair wants cutting,' said the Hatter. He had been looking at Alice for some time with great curiosity, and this was his first speech. 'You should learn not to make personal remarks,' Alice said with some severity; 'it's very rude.'",
+      "zh": "“我不知道那是你的桌子，”爱丽丝说；“它是为比三个人多得多的人摆设的。”“你的头发需要剪了，”帽匠说。他带着巨大的好奇心看了爱丽丝好一段时间，这是他的第一番演讲。“你应该学会不要做出人身攻击评论，”爱丽丝带着某种严厉说；“那极其粗鲁。”",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

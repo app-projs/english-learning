@@ -1,0 +1,21 @@
+{
+  "id": "Pride_and_Prejudice_u3",
+  "bookId": "Pride_and_Prejudice",
+  "unitIndex": 3,
+  "title": "Chapter 3: Mr. Collins’s Proposal and George Wickham’s Tale",
+  "chineseTitle": "第 3 章：柯林斯的求婚与威克姆的谗言",
+  "paragraphs": [
+    {
+      "en": "Mr. Collins, a pompous, foolish clergyman who was heir to Mr. Bennet's entailed estate, arrived at Longbourn. He proposed marriage to Elizabeth, offering her security. When Elizabeth firmly rejected him, Collins quickly turned his attentions to her sensible friend Charlotte Lucas, who accepted him for financial stability.",
+      "zh": "柯林斯先生（一位自大愚蠢的牧师，也是贝内特先生限嗣继承财产的继承人）来到了朗博恩。他向伊丽莎白求婚，为她提供保障。当伊丽莎白坚定地拒绝了他时，柯林斯迅速将注意力转向了她通情达理的朋友夏洛特·卢卡斯，后者为了财务稳定接受了他。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Meanwhile, the handsome officer George Wickham arrived in Meryton. Wickham singled out Elizabeth and painted a tragic picture of Darcy's cruelty, claiming Darcy had robbed him of a valuable church living out of malice. Elizabeth, her judgment blinded by her existing dislike of Darcy, believed Wickham's false story completely.",
+      "zh": "与此同时，英俊的军官乔治·威克姆来到了梅里顿。威克姆挑出了伊丽莎白，描绘了一幅达西残酷的悲剧画面，声称达西出于恶意剥夺了他宝贵的教会教职。伊丽莎白因对达西既有的厌恶遮蔽了判断力，完全相信了威克姆假的故事。",
+      "id": "p002",
+      "sentenceCount": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "Arabian_Nights_u7",
+  "bookId": "Arabian_Nights",
+  "unitIndex": 7,
+  "title": "Chapter 7: Sinbad the Sailor and the Valley of Diamonds",
+  "chineseTitle": "第 7 章：水手辛巴达与钻石之谷",
+  "paragraphs": [
+    {
+      "en": "Scheherazade also recounted the legendary voyages of Sinbad the Sailor. On his second voyage, Sinbad was accidentally marooned on a desert island. He tied himself with his turban to the leg of a giant Roc bird, which carried him across the sea to a deep valley paved with sparkling diamonds, but guarded by giant serpents.",
+      "zh": "雪赫拉查德还讲述了水手辛巴达的传奇航行。在他第二次航行中，辛巴达意外被抛弃在了荒岛上。他用头巾把自己系在一只巨型大鹏鸟的腿上，大鹏带着他飞越海洋来到了一个铺满闪烁钻石、但由巨蛇守护的深谷。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Sinbad strapped a chunk of raw meat to his back. A giant eagle scooped him up along with the meat and carried him to its nest, where diamond merchants rescued him. Returning to Baghdad with immense wealth in diamonds, Sinbad shared his riches generously with the poor.",
+      "zh": "辛巴达在背上系了一大块生肉。一只巨鹰把他和肉一起舀起来带到了巢穴里，商人们在那里拯救了他。带着装满钻石的巨额财富回到巴格达，辛巴达慷慨地与穷人分享了他的财富。",
+      "id": "p002",
+      "sentenceCount": 1
+    }
+  ]
+}

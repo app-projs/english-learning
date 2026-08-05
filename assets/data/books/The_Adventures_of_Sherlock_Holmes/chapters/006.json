@@ -1,0 +1,33 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes_u6",
+  "bookId": "The_Adventures_of_Sherlock_Holmes",
+  "unitIndex": 6,
+  "title": "Chapter 6: The Adventure of the Blue Carbuncle",
+  "chineseTitle": "第 6 章：蓝宝石案与圣诞鹅奇遇",
+  "paragraphs": [
+    {
+      "en": "On the second morning after Christmas, I visited Holmes and found him examining a battered felt hat and a fat Christmas goose brought to him by a commissionaire named Peterson. Peterson had found them after a street brawl. Attached to the goose's leg was a card for 'Mrs. Henry Baker.'",
+      "zh": "在圣诞节后的第二个早上，我拜访了福尔摩斯，发现他正在检查帽子和一只肥硕的圣诞鹅，那是一位名叫彼得森的信使带给他的。彼得森在一次街头斗殴后发现了它们。系在鹅腿上的是一张写给“亨利·贝克太太”的卡片。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "While Peterson cooked the goose for dinner, he rushed back into Baker Street in shock: inside the goose's crop he had found the Countess of Morcar's famous Blue Carbuncle, a priceless jewel stolen days earlier from the Hotel Cosmopolitan! A poor plumber named John Horner had been arrested for the theft.",
+      "zh": "当彼得森为晚餐煮鹅时，他在震惊中冲回了贝克街：在鹅的嗉囊里他发现了莫卡伯爵夫人的著名蓝宝石，一颗几天前从大都会酒店偷来的无价宝石！一位名叫约翰·霍纳的可怜水管工因盗窃被捕。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes traced the goose back through the dealer at Covent Garden Market to a goose-breeder named Mrs. Oakshott. Outside the market, Holmes noticed a terrified man named James Ryder questioning the dealer about the geese. Holmes tricked Ryder into returning to Baker Street, where Ryder broke down and confessed.",
+      "zh": "福尔摩斯通过考文特花园市场的经销商将鹅追踪到了一位名叫奥克肖特太太的养鹅人。在市场外，福尔摩斯注意到一位名叫詹姆斯·赖德的惊恐男人正在向经销商询问关于鹅的事。福尔摩斯把赖德诱骗回贝克街，在那里赖德崩溃并招供了。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Ryder, the hotel head attendant, had stolen the jewel and framed the plumber. Seeking to hide the gem, Ryder had forced the jewel down the throat of one of his sister Mrs. Oakshott's geese, intending to claim that specific bird later. But he accidentally picked the wrong bird! Holmes, filled with Christmas mercy, decided not to turn Ryder over to the police, allowing him to flee the country while innocent Horner was released.",
+      "zh": "赖德（酒店领班侍者）偷了宝石并陷害了水管工。寻求隐藏宝石，赖德曾把宝石塞进了他姐姐奥克肖特太太的一只鹅的喉咙里，打算以后再索要那只特定的鸟。但他意外挑错了鸟！福尔摩斯充满了圣诞节的慈悲，决定不把赖德交给警察，允许他逃离该国，同时无辜的霍纳被释放了。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

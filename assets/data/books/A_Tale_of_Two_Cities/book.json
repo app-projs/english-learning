@@ -1,0 +1,18 @@
+{
+  "id": "A_Tale_of_Two_Cities",
+  "title": "A Tale of Two Cities",
+  "chineseTitle": "双城记",
+  "author": "Charles Dickens",
+  "coverUrl": "assets/images/book_twocities.png",
+  "description": "《双城记》是英国批判现实主义文学大师查尔斯·狄更斯于 1859 年创作的历史小说巅峰巨作。故事背景设定在 18 世纪末法国大革命前后的伦敦与巴黎。饱受白塔监狱 18 年折磨的马奈特医生在女儿露西的关爱下恢复理智。然而露西的丈夫查尔斯·达奈在返回巴黎救助老仆时被革命法庭判处死刑。爱慕露西的英国放浪律师西德尼·卡顿出于无私至爱，毅然走进死牢替换达奈，走向断头台。“这是最好的时代，也是最坏的时代”的开篇语名扬千古。",
+  "category": "经典名著",
+  "difficulty": "高级难度",
+  "totalUnits": 8,
+  "wordCount": 35000,
+  "readerCount": "136.4万人在读",
+  "targetVocab": "3000-6500词",
+  "tagLabel": "历史史诗",
+  "coverBadge": "精读 · 史诗名篇",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

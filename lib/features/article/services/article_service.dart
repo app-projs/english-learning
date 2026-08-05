@@ -8,7 +8,7 @@ import '../../../core/services/storage_service.dart';
 import '../../../core/services/database_service.dart';
 
 class ArticleService {
-  static const _contentVersion = '23';
+  static const _contentVersion = '24';
   static const _contentVersionKey = 'article_content_version';
 
   final StorageService _storage;
@@ -43,6 +43,10 @@ class ArticleService {
           dbBooks.isEmpty ||
           dbArticles.length != totalExpectedArticles;
       if (needsSync) {
+        if (savedContentVersion != _contentVersion) {
+          await _database.clearBookContent();
+        }
+
         final sampleBooks = await BookJsonLoader.loadAllBooks();
         for (final book in sampleBooks) {
           await _database.insertBook(book.toJson());

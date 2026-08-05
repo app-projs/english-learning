@@ -1,0 +1,27 @@
+{
+  "id": "Jane_Eyre_u9",
+  "bookId": "Jane_Eyre",
+  "unitIndex": 9,
+  "title": "Chapter 9: The Destruction of Thornfield",
+  "chineseTitle": "第 9 章：桑菲尔德庄园的毁灭与烈火",
+  "paragraphs": [
+    {
+      "en": "Leaving Moor House early the next morning, I traveled post-haste back to Thornfield Hall. But when the carriage rounded the hill, a shocking spectacle met my eyes: Thornfield Hall was a blackened, roofless ruin of charred stone and ashes!",
+      "zh": "第二天清晨离开沼泽房，我火速赶回桑菲尔德庄园。但当马车绕过山头时，一个震撼的景象出现在我眼前：桑菲尔德庄园成了一座黑乎乎、没有屋顶的焦石与灰烬废墟！",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "At the local inn, the landlord recounted the tragic story: a few months after my departure, the mad wife Bertha Mason had set fire to my old bedroom. As the flames consumed the mansion, Rochester risked his life to rescue the servants and climbed onto the blazing roof to save Bertha. But she jumped to her death, and the roof collapsed beneath Rochester.",
+      "zh": "在当地旅馆，店主讲述了那个悲剧的故事：在我离开几个月后，疯狂的妻子伯莎·梅森纵火烧毁了我原来的卧室。随着火焰吞噬豪宅，罗切斯特冒着生命危险拯救仆人们，并爬上燃烧的屋顶去救伯莎。但她跳楼身亡，屋顶在罗切斯特脚下坍塌。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "He survived the fall, but was left blind in both eyes and lost his left hand. He now lived in complete solitude and dark melancholy at Ferndean, a secluded manor thirty miles away. My heart overflowed with love and compassion, and I departed immediately for Ferndean.",
+      "zh": "他在坠落中幸存下来，但双眼失明并失去了左手。他现在在三十英里外隐蔽的芬丁庄园过着完全孤独与黑暗忧郁的生活。我的心充满了爱与同情，我立刻启程前往芬丁。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

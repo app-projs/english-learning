@@ -1,0 +1,27 @@
+{
+  "id": "A_Tale_of_Two_Cities_u2",
+  "bookId": "A_Tale_of_Two_Cities",
+  "unitIndex": 2,
+  "title": "Chapter 2: Recalled to Life - The Wine-Shop",
+  "chineseTitle": "第 2 章：重获新生与圣安东尼区酒馆",
+  "paragraphs": [
+    {
+      "en": "A large cask of wine had been dropped and broken in the street of Saint Antoine in Paris. The red wine ran down the rough cobblestones, and the starving people scrambled on their knees to drink the spilled wine. A tall joker dipped his finger in the lees and wrote upon a wall: BLOOD.",
+      "zh": "在巴黎的圣安东尼街，一大桶葡萄酒掉落并破碎了。红酒沿着粗糙的鹅卵石路流淌，饥饿的人们跪着爬行去喝洒出的葡萄酒。一个高个子的戏谑者把手指浸在酒渣里，在墙上写下了单字：血。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Inside the wine-shop sat Monsieur Defarge and his wife Madame Defarge, who spent all day silently knitting a secret register of hated aristocrats condemned to die when the revolution came. Defarge led Mr. Lorry and young Lucie Manette up to a dark garret where Dr. Alexandre Manette sat on a stool frantically making shoes.",
+      "zh": "在酒馆内部坐着德法热先生和他的妻子德法热太太，她整天默默编织着一份受人憎恨贵族的秘密死亡注册表。德法热带着洛里先生和年轻的露西·马奈特走上一间黑暗的阁楼，亚历山大·马奈特医生正坐在凳子上发疯似地做鞋。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Imprisoned in the Bastille for eighteen years without trial, Dr. Manette remembered his name only as '105 North Tower.' But as Lucie wrapped her arms around him, her golden hair brought back his memory, and Dr. Manette was softly recalled to life.",
+      "zh": "在巴士底狱未经审判被关押了十八年，马奈特医生只记得自己的名字是“北塔 105 号”。但当露西用手臂环绕住他时，她金色的头发带回了他的记忆，马奈特医生静静地被召回了生命。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

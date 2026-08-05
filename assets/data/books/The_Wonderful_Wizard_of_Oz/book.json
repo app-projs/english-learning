@@ -1,0 +1,18 @@
+{
+  "id": "The_Wonderful_Wizard_of_Oz",
+  "title": "The Wonderful Wizard of Oz",
+  "chineseTitle": "绿野仙踪",
+  "author": "L. Frank Baum",
+  "coverUrl": "assets/images/book_oz.png",
+  "description": "《绿野仙踪》（原名《奥兹国伟大的魔术师》）是美国儿童文学之父莱曼·弗兰克·鲍姆于 1900 年出版的奇幻童话名篇。本文件收录了全书完整的 24 个章节。故事讲述了堪萨斯州农场小女孩多萝茜和她的小狗托托被一场狂暴的龙卷风卷到了神奇的奥兹国。为了找到重返家园的方法，多萝茜踏上了前往翡翠城的黄砖路。途中她结识了想要脑子的稻草人、想要心脏的铁皮木夫以及想要勇气的胆小狮子。四位伙伴克服重重险阻、战胜西方邪恶女巫、穿过陶瓷国与战树林，最终明白了智慧、爱与勇气一直蕴藏在自己心中的深刻真理。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 24,
+  "wordCount": 45000,
+  "readerCount": "165.4万人在读",
+  "targetVocab": "1000-3600词",
+  "tagLabel": "奇幻童话",
+  "coverBadge": "精读 · 必读全本",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

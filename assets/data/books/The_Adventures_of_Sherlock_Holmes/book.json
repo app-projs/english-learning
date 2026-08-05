@@ -1,0 +1,18 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes",
+  "title": "The Adventures of Sherlock Holmes",
+  "chineseTitle": "福尔摩斯探案集",
+  "author": "Arthur Conan Doyle",
+  "coverUrl": "assets/images/book_sherlock.png",
+  "description": "《福尔摩斯探案集》是阿瑟·柯南·道尔创作的世界侦探小说至高巅峰巨作。故事通过忠实伙伴华生医生的记录，展现了居住在伦敦贝克街 221B 的神奇大侦探歇洛克·福尔摩斯凭凭借惊人的观察力、严密的逻辑推理与无与伦比的演绎法，破获了一系列扑朔迷离、惊心动魄的悬疑奇案。包含《波希米亚丑闻》、《红发会》、《斑点带案》、《蓝宝石案》等名篇，是学习地道英国英语、提升逻辑思维与悬疑阅读乐趣的绝佳名著。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 8,
+  "wordCount": 35000,
+  "readerCount": "210.5万人在读",
+  "targetVocab": "2200-5200词",
+  "tagLabel": "悬疑侦探",
+  "coverBadge": "精读 · 侦探名篇",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

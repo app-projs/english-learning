@@ -1,97 +1,241 @@
-# EPUB 名著导入与本地翻译工具技术文档
+# EPUB 导入工具使用手册
 
-## 1. 目标
+## 1. 用途
 
-提供一个独立的命令行工具，将待处理目录中的 EPUB 电子书自动转换为应用可读取的书籍数据，并在处理成功后将原 EPUB 移动到备份目录。
-
-目标流程：
+`tools/epub_import.py` 将 EPUB 转换为应用使用的书籍数据：
 
 ```text
-放入 EPUB
-    ↓
-读取书名与章节
-    ↓
-按章节提取英文正文
-    ↓
-每 3 句组成一个学习段落
-    ↓
-使用本地 Argos Translate 翻译
-    ↓
-生成 books/<书名>/ 数据目录
-    ↓
-校验通过
-    ↓
-移动原 EPUB 到 processed/
+EPUB → 解析书名和章节 → 生成每章原创英文精简正文 → 翻译精简正文 → JSON → 移动原 EPUB
 ```
 
-该工具只使用本地翻译模型，不调用 Google、微软或其他收费翻译 API。
+默认使用 Ollama + Qwen 本地模型生成章节精简正文和中文翻译，Argos Translate 仅作为旧版完整正文翻译的备用方案。翻译完全在本机执行，不调用 Google、微软或其他在线翻译 API。
 
-## 2. 目录结构
+## 2. 跨平台首次配置
 
-`assets/data/books/` 根目录只保留总索引文件和书籍目录：
+建议使用 Python 3.11 或 3.12，并为工具创建独立虚拟环境。这样不会污染 Flutter 项目或系统 Python，也可以避免 Argos 依赖和其他 Python 项目发生版本冲突。
+
+### Windows PowerShell
+
+在项目根目录执行：
+
+```powershell
+py -3.11 -m venv .venv-epub
+\.venv-epub\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r tools/requirements-epub-import.txt
+winget install Ollama.Ollama
+ollama pull qwen2.5:7b
+```
+
+如果 PowerShell 禁止激活脚本，可以不激活，直接使用虚拟环境中的 Python：
+
+```powershell
+.\.venv-epub\Scripts\python.exe -m pip install -r tools/requirements-epub-import.txt
+ollama pull qwen2.5:7b
+```
+
+### macOS
+
+在项目根目录的 Terminal 执行：
+
+```bash
+python3.11 -m venv .venv-epub
+source .venv-epub/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r tools/requirements-epub-import.txt
+brew install --cask ollama
+ollama pull qwen2.5:7b
+```
+
+如果 Mac 没有 `python3.11`，可以使用 Homebrew 安装：
+
+```bash
+brew install python@3.11
+```
+
+Apple Silicon 和 Intel Mac 使用相同命令。若某个依赖没有对应的当前 Python 版本 wheel，优先改用 Python 3.11，不要直接修改项目依赖版本。
+
+### 检查 Ollama 模型
+
+```bash
+ollama list
+```
+
+Windows PowerShell 和 macOS Terminal 都应看到 `qwen2.5:7b`。如果 Ollama 没有自动运行，可以手动启动：
+
+```text
+ollama serve
+```
+
+`qwen2.5:7b` 通常需要数 GB 磁盘空间和至少约 16 GB 内存，实际大小会随量化版本变化。
+
+可以先做一次本地翻译测试：
+
+```bash
+ollama run qwen2.5:7b "请将这句话翻译成自然中文：\"Well, this is a pretty piece of business!\" ejaculated Marilla."
+```
+
+需要 Argos 备用方案时，再执行：
+
+```bash
+argospm update
+argospm install translate-en_zh
+```
+
+## 3. 每次新增 EPUB 的操作
+
+完成一次环境安装后，后续新增书籍不需要 AI 介入，也不需要修改 Flutter 代码。只需把 EPUB 放入 `assets/epub/incoming/`，启动 Ollama，然后运行一次导入脚本；工具会自动完成解析、章节精简、中文翻译、目录更新和原文件备份移动。
+
+### 3.1 放入待处理目录
+
+将 EPUB 放入：
+
+```text
+assets/epub/incoming/
+```
+
+不要把原 EPUB 放到 `assets/data/books/`，否则可能被打包进 Flutter 应用。
+
+### 3.2 先执行预览
+
+Windows：
+
+```powershell
+.venv-epub\Scripts\python.exe tools/epub_import.py --dry-run
+```
+
+macOS：
+
+```bash
+.venv-epub/bin/python tools/epub_import.py --dry-run
+```
+
+预览只解析和统计，不翻译、不写入、不移动文件。示例输出：
+
+```text
+DRY-RUN book.epub: Anne_of_Green_Gables, 38 chapters, 102874 words
+```
+
+### 3.3 执行完整导入
+
+Windows：
+
+```powershell
+.venv-epub\Scripts\python.exe tools/epub_import.py
+```
+
+macOS：
+
+```bash
+.venv-epub/bin/python tools/epub_import.py
+```
+
+处理成功后：
+
+- 书籍数据写入 `assets/data/books/`；
+- `catalog.json` 自动更新；
+- 翻译结果写入缓存；
+- 原 EPUB 移动到 `assets/epub/processed/<日期>/`。
+
+处理失败时原 EPUB 会保留在 `incoming/`，不会自动覆盖已有书籍，也不会自动切换到在线翻译服务。
+
+如果看到 `Cannot connect to Ollama`，先启动 Ollama 应用或执行 `ollama serve`；如果看到模型不存在，执行 `ollama pull qwen2.5:7b`。
+
+## 4. 可选参数
+
+```text
+--input <dir>       待解析 EPUB 目录
+--output <dir>      书籍输出目录
+--processed <dir>   已处理 EPUB 目录
+--cache <file>      翻译缓存文件
+--abridged-cache    章节精简正文缓存文件
+--book <file>       只处理指定 EPUB
+--translator        ollama 或 argos，默认 ollama
+--ollama-model      Ollama 模型，默认 qwen2.5:7b
+--ollama-url        Ollama 地址，默认 http://127.0.0.1:11434
+--ollama-timeout    单次 Ollama 请求超时秒数，默认 1200
+--glossary <file>   人名、地名和术语 JSON 文件
+--content-mode      abridged 或 full，默认 abridged
+--abridge-ratio     精简长度参考值，默认 0.45，范围 0.2～0.7
+--max-chapters      仅处理前 N 章，用于测试，不建议生产导入
+--dry-run           只解析和统计
+--allow-partial     翻译失败时允许空 zh 字段
+```
+
+示例：
+
+```bash
+python tools/epub_import.py \
+  --book "assets/epub/incoming/My Book.epub" \
+  --translator ollama \
+  --ollama-model qwen2.5:7b \
+  --content-mode abridged \
+  --abridge-ratio 0.45 \
+  --glossary tools/glossaries/Anne_of_Green_Gables.json \
+  --dry-run
+```
+
+`abridged` 模式是默认模式：每章生成一份保留主要人物、冲突、事件顺序和结果的原创英文精简正文，再生成对应中文翻译。`--abridge-ratio` 只是长度参考值，模型优先保证章节主线和人物互动完整，实际长度不要求严格达到某个百分比。它不是只有几句话的章节摘要，而是保留叙事过程的压缩版正文。
+
+旧版完整正文翻译模式仍可显式使用，但不建议作为默认内容生产方式：
+
+```bash
+python tools/epub_import.py --content-mode full --translator argos
+```
+
+默认路径：
+
+```text
+输入：assets/epub/incoming/
+输出：assets/data/books/
+备份：assets/epub/processed/
+缓存：assets/epub/translation-cache/cache.json
+```
+
+## 5.1 术语表
+
+术语表是可选 JSON 文件，用来固定人名、地名和专有名词：
+
+```json
+{
+  "Marilla": "玛丽拉",
+  "Anne": "安妮",
+  "Matthew": "马修",
+  "Green Gables": "绿山墙"
+}
+```
+
+使用方式：
+
+```bash
+python tools/epub_import.py --glossary tools/glossaries/Anne_of_Green_Gables.json
+```
+
+术语表会参与翻译缓存版本计算，修改术语表后会自动重新翻译受影响内容。
+
+## 6. 输出目录结构
 
 ```text
 assets/data/books/
 ├── catalog.json
-├── Anne_of_Green_Gables/
-│   ├── book.json
-│   ├── chapters.json
-│   └── chapters/
-│       ├── 001.json
-│       ├── 002.json
-│       └── ...
-└── The_Adventures_of_Sherlock_Holmes/
+└── Anne_of_Green_Gables/
     ├── book.json
     ├── chapters.json
     └── chapters/
         ├── 001.json
+        ├── 002.json
         └── ...
 ```
 
-原始文件不放在 Flutter assets 目录中，避免被打包进应用：
+`books` 根目录只保留 `catalog.json` 和书籍目录。每本书的元数据、章节索引和正文都在自己的目录中。
 
-```text
-content/epub/
-├── incoming/       # 待解析 EPUB
-└── processed/      # 处理成功后移动到这里的原 EPUB
-```
+Flutter 通过 `BookJsonLoader` 读取这套结构：先读取 `catalog.json` 获取书籍列表，再读取每本书的 `book.json` 和 `chapters.json`，最后按章节索引中的 `path` 加载单章 JSON。新增 EPUB 后不需要修改 Dart 中的书籍 ID 列表。
 
-建议的工具辅助目录：
+应用内内容同步使用内容版本号。书籍结构或正文发生批量变化时，`ArticleService` 会清理旧的书籍和章节缓存，再将当前 `assets/data/books/` 重新写入本地数据库；单词、用户设置等其他数据不会被清理。
 
-```text
-content/
-└── translation-cache/  # 翻译缓存，不放入 Flutter assets
-```
+### `catalog.json`
 
-## 3. 文件命名规则
-
-书籍目录名和书籍 ID 均由 EPUB 元数据中的正式书名生成，而不是使用 `book_xx`：
-
-```text
-Anne of Green Gables
-        ↓
-Anne_of_Green_Gables
-```
-
-处理规则：
-
-- 空格和连续空白转换为单个 `_`；
-- 删除或替换 Windows、macOS、Linux 不允许的文件名字符；
-- 去除首尾空格和下划线；
-- 保留英文原始大小写；
-- 同名书籍不能直接覆盖，工具应报错并要求处理冲突；
-- `id`、目录名和资源路径保持一致。
-
-例如：
-
-```text
-目录：assets/data/books/Anne_of_Green_Gables/
-ID：Anne_of_Green_Gables
-```
-
-## 4. `catalog.json`
-
-`catalog.json` 是所有书籍的入口索引，示例：
+记录所有书籍的入口：
 
 ```json
 {
@@ -107,67 +251,46 @@ ID：Anne_of_Green_Gables
 }
 ```
 
-新增或删除书籍时由导入工具自动更新，不需要手工修改 Dart 代码。
+### 书籍目录名
 
-Flutter 端后续应从 `catalog.json` 读取书籍列表，替代当前 `BookJsonLoader` 中写死的 `bookIds`。
+目录名来自 EPUB 内部正式书名：
 
-## 5. `book.json`
+```text
+Anne of Green Gables → Anne_of_Green_Gables
+```
 
-只保存书籍级元数据，不保存完整正文：
+工具会合并空格、删除文件系统不允许的字符，并阻止同名书籍覆盖。
+
+### `book.json`
+
+保存书籍级元数据，不保存完整正文：
 
 ```json
 {
   "id": "Anne_of_Green_Gables",
   "title": "Anne of Green Gables",
-  "chineseTitle": "绿山墙的安妮",
   "author": "Lucy Maud Montgomery",
-  "coverUrl": "assets/images/Anne_of_Green_Gables.png",
-  "description": "...",
-  "category": "经典名著",
-  "difficulty": "中级难度",
   "totalUnits": 38,
-  "wordCount": 17761,
+  "wordCount": 102874,
   "sourceFormat": "epub",
   "contentVersion": 1
 }
 ```
 
-元数据优先从 EPUB 的 OPF 文件读取；缺失字段使用可追踪的默认值，并在导入报告中提示。
+### `chapters.json`
 
-## 6. `chapters.json`
+保存章节目录及正文文件路径。目录页读取该文件即可，不需要加载所有正文。
 
-保存章节目录和章节文件映射：
+### 单章 JSON
 
-```json
-{
-  "bookId": "Anne_of_Green_Gables",
-  "version": 1,
-  "chapters": [
-    {
-      "unitIndex": 1,
-      "title": "Chapter 1: Mrs. Rachel Lynde is Surprised",
-      "chineseTitle": "第 1 章：雷切尔·林德太太的惊奇发现",
-      "path": "chapters/001.json",
-      "wordCount": 467,
-      "readTime": 4
-    }
-  ]
-}
-```
-
-目录页只需读取 `chapters.json`，不需要加载所有章节正文。
-
-## 7. 章节正文格式
-
-单章文件示例：
+每章正文保存在 `chapters/001.json` 等文件中：
 
 ```json
 {
   "id": "Anne_of_Green_Gables_u1",
   "bookId": "Anne_of_Green_Gables",
   "unitIndex": 1,
-  "title": "Chapter 1: Mrs. Rachel Lynde is Surprised",
-  "chineseTitle": "第 1 章：雷切尔·林德太太的惊奇发现",
+  "title": "CHAPTER I. Mrs. Rachel Lynde is Surprised",
   "paragraphs": [
     {
       "id": "p001",
@@ -179,238 +302,93 @@ Flutter 端后续应从 `catalog.json` 读取书籍列表，替代当前 `BookJs
 }
 ```
 
-不重复保存 `content` 和 `chineseContent` 字段，正文统一以 `paragraphs` 为来源，由应用层按需拼接。
+正文只保存生成的精简正文 `paragraphs`，不重复保存 `content` 或 `chineseContent`。默认不会把 EPUB 原文写入输出 JSON。
 
-## 8. EPUB 解析流程
+## 7. 解析和翻译规则
 
-### 8.1 读取元数据
+- EPUB 元数据优先读取 OPF 中的正式书名和作者；
+- 章节优先按照 EPUB `spine` 顺序读取；
+- 章节标题优先使用 EPUB 的 `toc.ncx` 或导航信息；
+- 过滤标题页、目录页、导航、脚本和样式；
+- 默认每章生成原创英文精简正文，保留人物、冲突、关键事件、人物互动和事件顺序；
+- 默认以原文约 45% 作为长度参考，可用 `--abridge-ratio` 调整参考范围到 20%～70%；实际结果以“确实缩减且意思完整”为准；
+- 删除重复描写、次要环境描写和不影响情节的细节，但不只保留结论；
+- 精简正文不得连续复制原文超过 5 个英文单词；
+- 精简正文随后按学习段落生成对应中文翻译；
+- 只有 `--content-mode full` 才会按每 3 个英文句子切分并翻译完整正文；
+- 通过英文句子规则处理 `Mr.`、`Mrs.`、引号、省略号等情况；
+- 默认每个段落调用本地 Ollama/Qwen 英文→中文模型；
+- 翻译请求包含章节标题、前一段和后一段作为上下文；
+- 提示词要求处理文学表达、对话语气和叙述动词，而不是逐词直译；
+- 可通过术语表固定人名和地名；
+- 翻译缓存按英文内容、语言方向和模型版本计算；
+- 重复运行时命中缓存，不重复翻译。
 
-从 EPUB 的 `META-INF/container.xml` 找到 OPF 文件，再读取：
+精简模式可以降低输出体积和原文复现程度，但具体版权判断取决于使用地区、原作品版权状态和实际使用方式，不能仅凭工具保证不存在版权风险。
 
-- 书名；
-- 作者；
-- 语言；
-- 封面资源；
-- 章节资源；
-- `spine` 阅读顺序。
+## 8. 安全和失败处理
 
-书名优先使用 EPUB 内的正式标题。
+工具使用临时目录生成结果，校验通过后才提交到正式书籍目录。
 
-### 8.2 提取正文
+校验内容包括：
 
-按 `spine` 顺序读取 XHTML/HTML 文件，并：
+- 书名和书籍 ID 有效；
+- 章节编号连续；
+- 章节索引指向真实文件；
+- 每章存在正文；
+- `en` 不为空；
+- 默认情况下 `zh` 不为空；
+- JSON 结构完整；
+- `catalog.json` 可以更新。
 
-- 删除脚本、样式、导航和无关元素；
-- 提取标题和正文文本；
-- 合并无意义的换行；
-- 保留段落顺序；
-- 过滤版权页、目录页、空白页等非正文内容；
-- 根据 `h1`、`h2` 或 EPUB 导航信息识别章节。
-
-如果 EPUB 结构不规范，应输出警告并允许用户选择是否继续，而不是静默生成错误内容。
-
-## 9. 每三句切分规则
-
-切分目标是将英文正文整理为适合阅读学习的段落：
-
-1. 先识别章节和原始正文段落；
-2. 使用英文句子切分器拆分句子；
-3. 每 3 句组成一个输出段落；
-4. 章节末尾不足 3 句的内容保留为最后一个段落；
-5. 不跨章节合并；
-6. 标题、诗歌、引用等特殊内容不强行按 3 句合并；
-7. 每个输出段落记录 `sentenceCount`，便于校验。
-
-句子切分不能简单地按英文句号分割，需要处理：
-
-- `Mr.`、`Mrs.`、`Dr.` 等缩写；
-- 小数和编号；
-- 引号和对话；
-- 省略号；
-- HTML 实体和特殊字符。
-
-## 10. Argos Translate 翻译
-
-### 10.1 使用原则
-
-导入工具默认使用本地 Argos Translate：
-
-- 不需要 Google 账号；
-- 不需要 API Key；
-- 不需要绑定银行卡；
-- 不产生 API 调用费用；
-- 不受在线接口限流影响；
-- 适合离线批量处理。
-
-官方项目：[Argos Translate](https://github.com/argosopentech/argos-translate)
-
-### 10.2 安装方式
-
-工具提供安装说明，使用 Python 安装 Argos Translate 和英文到中文语言包。具体安装命令应在实现阶段根据 Argos 当前发布方式固化到工具文档和安装脚本中。
-
-首次运行前检查：
-
-- Argos Translate 是否已安装；
-- 英文到中文模型是否存在；
-- 本地模型版本是否记录在导入报告中。
-
-模型缺失时直接报错，不自动切换到收费或未知公共接口。
-
-### 10.3 翻译提示与结果
-
-每个三句段落独立翻译，要求：
-
-- 不遗漏原文信息；
-- 不额外添加解释；
-- 保留人名、地名和专有名词的一致性；
-- 保留对话和标点结构；
-- 输出单个中文字符串。
-
-### 10.4 翻译缓存
-
-缓存键由以下内容组成：
-
-```text
-英文段落内容
-+ 源语言
-+ 目标语言
-+ 翻译模型版本
-```
-
-缓存命中时跳过翻译。这样重复运行工具或只修改一章时，不需要重新翻译所有内容。
-
-## 11. 命令行接口
-
-建议默认命令：
-
-```bash
-dart run tool/epub_import.dart
-```
-
-默认目录：
-
-```text
-输入：content/epub/incoming/
-输出：assets/data/books/
-备份：content/epub/processed/
-缓存：content/translation-cache/
-```
-
-建议支持的参数：
-
-```text
---input <dir>          待解析 EPUB 目录
---output <dir>         书籍输出目录
---processed <dir>      已处理 EPUB 目录
---cache <dir>          翻译缓存目录
---book <file>          只处理指定 EPUB
---dry-run              只解析和统计，不翻译、不写入、不移动
---force                允许覆盖前的显式确认流程
---allow-partial        翻译失败时保留空 zh 字段
-```
-
-默认不允许覆盖已有书籍，也不允许在校验失败时移动原 EPUB。
-
-## 12. 校验规则
-
-导入完成后必须检查：
-
-- EPUB 是否可读取；
-- 书名是否存在；
-- 生成的目录名是否有效；
-- 书籍 ID 是否重复；
-- 章节编号是否连续；
-- 章节标题是否为空；
-- 每章是否包含正文；
-- `en` 是否为空；
-- `zh` 是否为空；
-- 每个段落句子数是否符合规则；
-- `chapters.json` 路径是否真实存在；
-- `book.json` 的章节数、词数是否与实际内容一致；
-- 所有 JSON 是否可以被应用模型读取。
-
-校验失败时：
+失败时：
 
 1. 不更新 `catalog.json`；
 2. 不移动原 EPUB；
-3. 删除或保留临时输出由命令行参数决定；
-4. 输出具体章节、段落和错误原因。
+3. 输出失败章节和段落；
+4. 已有书籍目录不会被覆盖。
 
-## 13. 原 EPUB 的移动规则
+## 9. Git 管理建议
 
-处理成功后才移动原文件：
+建议提交：
 
-```text
-content/epub/incoming/Anne_of_Green_Gables.epub
-        ↓
-content/epub/processed/Anne_of_Green_Gables.epub
-```
+- `tools/epub_import.py`；
+- `tools/requirements-epub-import.txt`；
+- `assets/data/books/catalog.json`；
+- 生成的书籍数据目录；
+- 本文档。
 
-该动作是移动，不是复制。若目标备份目录已有同名文件，工具应停止并提示冲突，不能静默覆盖。
+不建议提交：
 
-建议在备份目录中按日期分层，避免不同来源的 EPUB 重名：
+- `.venv-epub/`；
+- `assets/epub/incoming/` 下的原始文件；
+- `assets/epub/processed/` 下的 EPUB 备份；
+- `assets/epub/translation-cache/` 下的翻译缓存。
 
-```text
-content/epub/processed/2026-08-05/Anne_of_Green_Gables.epub
-```
+这些目录已加入 `.gitignore`。
 
-## 14. Flutter 端配合改造
+## 10. Flutter 端后续接入
 
-导入工具完成后，应用端需要配合调整：
+导入工具已经生成新的数据格式，但当前 Flutter 端仍需要后续改造：
 
 1. `BookJsonLoader` 从 `catalog.json` 加载书籍列表；
-2. 书籍详情只读取对应的 `book.json` 和 `chapters.json`；
-3. 打开章节时再读取对应的章节 JSON；
-4. 不再依赖 `book_xx.json` 命名规则；
-5. 逐步移除写死的 `bookIds`；
-6. 内容同步改为按书籍或章节增量同步；
-7. 使用书籍目录名和章节 ID 作为稳定标识。
+2. 书籍详情读取对应的 `book.json` 和 `chapters.json`；
+3. 打开章节时按需读取单章 JSON；
+4. 移除当前写死的 `bookIds`；
+5. 将 SQLite 内容同步改为按书籍或章节增量同步。
 
-当前 `ArticleService` 会一次性加载所有书籍章节，后续应改为按需或增量读取，否则文件拆分后仍然会在首次同步时加载过多内容。
+在 Flutter 端完成接入前，导入工具可以独立运行并生成完整内容，但应用不会自动读取新目录结构。
 
-## 15. 实施顺序
+## 11. 已完成验证
 
-### 阶段一：导入工具
+已使用《Anne of Green Gables》EPUB 完成真实导入：
 
-- [ ] 创建命令行工具目录；
-- [ ] 实现 EPUB 元数据和章节解析；
-- [ ] 实现书名目录命名；
-- [ ] 实现三句切分；
-- [ ] 接入 Argos Translate；
-- [ ] 实现翻译缓存；
-- [ ] 实现 JSON 生成；
-- [ ] 实现校验和导入报告；
-- [ ] 实现成功后移动原 EPUB；
-- [ ] 实现 `catalog.json` 更新。
-
-### 阶段二：应用端读取
-
-- [ ] 调整 `BookJsonLoader`；
-- [ ] 支持新的书籍目录结构；
-- [ ] 支持章节按需加载；
-- [ ] 移除书籍 ID 硬编码；
-- [ ] 调整 SQLite 内容同步策略；
-- [ ] 运行 `flutter analyze`。
-
-### 阶段三：质量增强
-
-- [ ] 增加 EPUB 异常结构测试样本；
-- [ ] 增加句子切分测试；
-- [ ] 增加中英文段落对应性校验；
-- [ ] 增加断点续译测试；
-- [ ] 增加重复导入和同名冲突测试。
-
-## 16. 完成标准
-
-将一个新的 EPUB 放入 `content/epub/incoming/` 后，执行一次命令即可：
-
-- 生成以原书名命名的书籍目录；
-- 生成书籍元数据和章节索引；
-- 生成每章独立 JSON；
-- 每三个英文句子形成一个学习段落；
-- 每个段落包含 Argos 中文翻译；
-- 更新 `catalog.json`；
-- 校验失败时不移动原 EPUB；
-- 校验成功后仅移动原 EPUB 到 `processed/`；
-- 不需要 AI 人工介入；
-- 不产生在线翻译 API 费用。
+- 识别为 `Anne_of_Green_Gables`；
+- 过滤标题页；
+- 识别 38 个正式章节；
+- 生成 1,741 个精简双语学习段落，`zh` 空字段数量为 0；
+- 本次生成英文精简正文约 47,389 词，原文约 102,874 词，实际保留约 46%；
+- 默认精简模式下每章生成明显缩短、但保留故事主线的原创英文精简正文和中文翻译；45% 只是长度参考，不是硬性要求；
+- 原 EPUB 成功移动到 `assets/epub/processed/<日期>/`；
+- 翻译缓存可用于重新导入；
+- `flutter analyze` 通过。

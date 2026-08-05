@@ -1,0 +1,567 @@
+{
+  "id": "Anne_of_Green_Gables_u15",
+  "bookId": "Anne_of_Green_Gables",
+  "unitIndex": 15,
+  "title": "CHAPTER XV. A Tempest in the School Teapot",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "Anne sighed with delight as she said, \"What a splendid day! Isn’t it wonderful to be alive on such a day? I pity those who will never experience this.",
+      "zh": "安妮欣喜地叹了口气，说道：“多美好的一天啊！在这样晴朗的日子里活着真是美妙极了。我为那些永远无法体验到这种感觉的人感到遗憾。”"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "And the way we go to school is even more delightful—far from the dusty and hot road.\"",
+      "zh": "而且我们去学校的路更加令人愉悦——远离那尘土飞扬、酷热难耐的路程。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "Diana agreed practically, peering into her dinner basket. She calculated that if she shared three raspberry tarts with ten girls, each would get just enough to make them want more.",
+      "zh": "戴安娜几乎同意了，她低头看了看自己的晚餐篮子。她算计着，如果和十个女孩分享三块覆盆子塔塔，每个人分到的量刚刚好能勾起她们更多的食欲。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "Anne and Diana’s route was romantic, passing through Lover's Lane, Willowmere, Violet Vale, and the Birch Path. Anne had named it before joining Green Gables, explaining to Marilla that no real lovers ever used it but they wanted one for their own story. She found it perfect for thinking aloud without being called crazy.",
+      "zh": "安妮和戴安娜的路线充满了浪漫气息，途经情人小径、柳树湾、紫罗兰谷以及白桦小道。安妮在加入绿山墙农舍之前就已经给它起了这些名字，并向玛丽拉解释说，这里从来不会有真正的恋人使用，她们只是想为自己编织一个故事中的情节。她觉得这段路非常适合大声思考而不至于被误认为是疯了。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "The girls’ shared lunches were always pooled, and Diana’s tarts were a tempting treat, though sharing them equally was the only way to avoid being labeled \"awful mean.\"",
+      "zh": "女孩子们的午餐总是共享的，戴安娜的塔塔饼虽然诱人，但为了不被冠以“极其小气”的帽子，她们只能平均分配。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "Anne and Diana met on Lover's Lane near the brook. They walked together under the maples, which Anne described as \"sociable trees\" that whisper to you. After passing through Mr. Barry's field, they reached Willowmere and then Violet Vale, a place named by Anne for its potential violets in spring.",
+      "zh": "安妮和戴安娜在情人小径的溪流附近相遇了。她们并肩走在枫树下，安妮形容这些枫树是“善于交际的树木”，仿佛在对你低语。经过巴里先生的田地后，她们来到了柳林村，接着是紫罗兰谷——这个名字是安妮给它的，因为她想象着春天这里会开满紫罗兰。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "Diana had named the Birch Path, but Anne found it too plain.",
+      "zh": "戴安娜给这条小路起了个名字叫“白桦径”，但安妮觉得这个名字太平淡了。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "Violet Vale was indeed beautiful. It lay hidden among Mr. Andrew Bell’s woods, with paths winding through emerald screens of trees, creating a diamond-like light. The path was lined with young birches and wildflowers, and the air was filled with bird songs and the rustling of tree tops.",
+      "zh": "紫罗兰山谷果然美丽。它隐藏在安德鲁·贝尔先生的森林之中，小径蜿蜒穿过一片片翡翠般的树丛，仿佛镶嵌着钻石般璀璨的光线。小径两旁长满了幼小的白桦和野花，空气中弥漫着鸟鸣声和树叶沙沙作响的声音。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "Anne and Diana rarely saw rabbits crossing the road.",
+      "zh": "安妮和戴安娜很少见到兔子穿过马路。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "The Birch Path led down to the main road, then up a spruce hill to the school.",
+      "zh": "白桦树小径通向主干道，然后蜿蜒上坡至学校。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "Anne returned from her first day of school in high spirits.",
+      "zh": "安妮怀着满腔的热情回到了家中，她第一天上学的经历让她心情格外愉快。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "\"I think I'm going to like school here,\" she said, beaming. \"But I don't much care for the master. He keeps curling his mustache and making eyes at Prissy Andrews, who is sixteen and studying for Queen's Academy.\"",
+      "zh": "她说着，脸上洋溢着笑容：“我觉得这里的学校挺不错的。不过我对那位老师不太感冒。他老是弄弄胡子，还朝普西·安德鲁斯使眼色，而她已经十六岁了，正在为女王学院做准备。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "Marilla, however, was relieved. She had worried about Anne fitting in.",
+      "zh": "然而，玛丽拉松了口气。她曾担心安妮能否融入学校生活。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "\"Anne Shirley, don't let me hear you talking about your teacher like that again,\" Marilla said sharply. \"You're there to learn, not criticize the master. I hope you were a good girl today.\"",
+      "zh": "“安妮，别再这样议论你的老师了，”玛丽拉尖锐地说，“你去那里是学习的，不是批评先生。我希望你今天是个好学生。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "Anne comforted herself, saying, \"Indeed I was. It wasn't as hard as you might think. I sit next to Diana by the window, looking down at the Shining Waters Lake.",
+      "zh": "安妮自我安慰道：“确实如此。没你想的那么难。我坐在戴安娜旁边，窗户边俯瞰着闪耀湖。”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "We have many nice friends in school and enjoyed ourselves during dinner. Having lots of little girls to play with is wonderful. But I adore Diana most.",
+      "zh": "我们在学校有很多好朋友，晚餐时玩得非常开心。有这么多小女孩可以一起玩耍真是太好了。但我最喜欢戴安娜。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "I'm far behind the others; they're in the fifth book while I’m only in the fourth. Mr. Phillips criticized my spelling, showing my slate to everyone. Ruby Gillis gave me an apple, and Sophia Sloane lent me a pink card saying 'May I see you home?'",
+      "zh": "我远远落在了别人后面；他们已经读到第五册，而我还停留在第四册。菲利普斯先生批评了我的拼写错误，并当众展示了我的石板。鲁比·吉尔思给了我一个苹果，索菲亚·斯洛恩则借给我一张粉红色的便条，上面写着“我可以送你回家吗？”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 3,
+      "en": "which I'll return tomorrow. Tillie Boulter let me wear her bead ring all afternoon. Can I have some pearl beads from the old pincushion in the attic to make my own ring?",
+      "zh": "明天我再把这戒指还给蒂莉·鲍尔特。她今天下午让我戴着她的珍珠耳环。我还想从阁楼里旧别针盒里的珍珠珠子做一枚自己的戒指，可以吗？"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "Marilla, Jane Andrews told me that Minnie MacPherson said Prissy Andrews heard Sara Gillis say I had a very pretty nose. That was the first compliment of my life; it felt strange.\"",
+      "zh": "玛丽拉，简·安德鲁斯告诉我，米妮·麦菲森说普里西·安德鲁斯听到了莎拉·吉尔思说过我的鼻子非常漂亮。这是我有生以来第一次受到的赞美；那种感觉真是奇怪。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 2,
+      "en": "Marilla replied shortly, \"Your nose is well enough.\" Secretly, she thought Anne's nose was remarkably pretty but kept her thoughts to herself.",
+      "zh": "玛丽拉简短地回答：“你的鼻子倒也还好。”私下里，她觉得安妮的鼻子相当精致，但还是把这想法藏在了心里。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "Three weeks later, everything went smoothly until this crisp September morning when Anne and Diana walked down the Birch Path. Diana said, \"Gilbert Blythe will be in school today. He’s been visiting his cousins in New Brunswick all summer and only came home Saturday night.",
+      "zh": "三周后，一切顺利，直到这个清爽的九月早晨，安妮和戴安娜沿着白桦林荫道散步。戴安娜说：“吉尔伯特·布赖斯今天会来学校。他整个夏天都在新不伦瑞克拜访堂兄弟姐妹，只是在上周六晚上才回家。”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "He's incredibly handsome and teases girls terribly.\"",
+      "zh": "他相貌英俊之极，对女生的调戏也是没完没了。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "Diana seemed to enjoy having her life tormented by Gilbert. Anne asked, \"Isn't his name written on the porch wall with Julia Bell's?\"",
+      "zh": "戴安娜似乎很享受被吉尔伯特纠缠的生活。安妮问道：“他的名字不是和朱莉娅·贝尔一起写在门廊墙上了吗？”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "Diana scoffed, \"Yes, but I doubt he likes Julia Bell much. He once said he memorized the multiplication table by looking at her freckles.\"",
+      "zh": "戴安娜嗤之以鼻，“是啊，但他恐怕不太喜欢朱莉娅·贝尔。他曾说过自己是看着她身上的雀斑记住了乘法表。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "Anne pleaded, \"Don't talk about freckles! Mine are too many for comfort.\" She sighed, adding, \"Writing names on walls is ridiculous.",
+      "zh": "安妮央求道：“别提痦子了！我的可真多，让人不舒服。”她叹了口气，又说，“在墙上写名字真是太荒谬了。”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "I wouldn’t mind if someone dared to write mine with a boy's name, but of course, no one would.\"",
+      "zh": "我不介意有人胆敢用男孩的名字来写我的名字，但当然也没人会这么干。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "Diana retorted, \"Nonsense. It’s just a joke. Charlie Sloane adores you.",
+      "zh": "戴安娜反驳说：“胡说八道。这不过是开个玩笑而已。查理·斯洛恩很喜欢你。”"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 1,
+      "en": "He told his mother that you're the smartest girl in school—better than being pretty.\"",
+      "zh": "他告诉妈妈，安妮是全校最聪明的女孩——比漂亮更重要。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "Anne disagreed, \"No, I'd rather be pretty.\" She added, \"I hate boys with big eyes like Charlie Sloane. If anyone wrote my name next to his, it would haunt me forever, Diana Barry.\"",
+      "zh": "安妮不同意，“不，我宁愿漂亮一些。”她又补充道：“我讨厌查理·斯洛恩那样的大眼睛男孩。如果有人把我的名字写在他旁边，那一定会让我永远心烦，戴安娜·巴里。”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "Diana continued, \"Gilbert will join your class now and he’s always first. He's only in the fourth grade but nearly fourteen. Four years ago, his father went to Alberta for health reasons, taking Gilbert with him.",
+      "zh": "戴安娜接着说：“吉尔伯特现在要加入你们的班级了，他总是第一个到。虽然他才四年级，但快十四岁了。四年前，为了健康原因，他的父亲去了阿尔伯塔，带上了吉尔伯特。”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 1,
+      "en": "They were away three years, and Gil barely attended school until they returned.\"",
+      "zh": "他们离开三年之久，吉尔直到他们回来之前几乎都没怎么上学。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "Anne replied quickly, \"I'm glad. Keeping head of little kids is no big deal. Yesterday, Josie Pye was first in spelling 'ebullition.'",
+      "zh": "安妮迅速回答说：“太好了。照看小孩子不算什么难事。昨天乔西·派耶在拼写‘ebullition’时还是第一个呢。”"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "She peeked at her book, but Mr. Phillips didn't see. I caught her and gave her a cold look, turning her red with embarrassment.\"",
+      "zh": "她偷偷瞥了一眼书本，但菲利普斯先生没有察觉。我一把抓住她，给了她一个冷冰冰的眼神，让她羞得满脸通红。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "Diana complained about Gertie Pye's dishonesty as they walked along the main road fence. \"She swapped her milk bottle for mine in the brook yesterday,\" she said indignantly, adding, \"I won't speak to her now.\"",
+      "zh": "戴安娜在主路的篱笆边走着，抱怨起吉蒂·派的不诚实来：“她昨天在小溪里把她的牛奶瓶和我的换了。”她愤愤地说，“我现在不会跟她说话了。”"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "In class, Diana whispered to Anne, \"Gilbert Blythe is sitting directly across from you. Look and see if he isn’t handsome.\" Anne glanced over and noticed Gilbert stealthily pinning Ruby Gillis's long yellow braid to the back of her seat.",
+      "zh": "在课堂上，戴安娜小声对安妮说：“吉尔伯特·布莱斯正坐在你对面。你看他是不是很英俊？”安妮朝那边看了一眼，发现吉尔伯特偷偷地把Ruby·吉尔思长长的黄辫子固定在了她的座位后面。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "He was a tall boy with curly brown hair, roguish hazel eyes, and a teasing smile.",
+      "zh": "他是个高个子男孩，留着卷曲的棕色头发，一双狡黠的棕眼睛闪烁着调皮的光芒。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "Ruby suddenly stood up to take a sum to Mr. Phillips, only to fall back into her seat shrieking, believing she had lost all her hair. Everyone turned to look, and Mr. Phillips glared sternly. Ruby began to cry as Gilbert quickly hid the pin and focused on his history book with a serious expression.",
+      "zh": "鲁比突然站起来去给菲利普斯先生报数，结果却一头栽回座位上，惊叫着以为自己掉光了头发。大家纷纷转头看向她，菲利普斯先生也严厉地瞪了一眼。鲁比回过神来开始哭泣，吉尔伯特迅速藏起了别针，然后一脸认真地盯着他的历史课本。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 2,
+      "en": "Anne admitted to Diana that she thought Gilbert Blythe was handsome but also very bold for winking at her. It wasn't until afternoon that things really started happening.",
+      "zh": "安妮对戴安娜承认，她觉得吉尔伯特·布雷思很英俊，但同时也相当大胆，居然对她眨眼。直到下午，事情才真正开始发生变化。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 2,
+      "en": "Mr. Phillips explained algebra to Prissy Andrews, while the rest of the students were busy eating green apples, whispering, drawing on slates, and racing crickets up and down the aisles. Gilbert tried to get Anne's attention but failed miserably; she was lost in a dreamy reverie, her chin propped on her hands, staring at the blue Lake of Shining Waters through the west window.",
+      "zh": "菲利普斯先生正在给普里西·安德鲁斯讲解代数，而其他学生则忙于吃绿苹果、窃窃私语、在黑板上涂鸦，还有在过道上赛蟋蟀。吉尔伯特试图引起安妮的注意，但完全失败了；她沉浸在一种梦幻般的遐想中，双手托着下巴，透过西窗凝视着闪耀湖畔的蓝色湖泊。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "Anne was furious when Gilbert teased her by calling her \"carrots.\" She stood up abruptly, her face flushed with anger.",
+      "zh": "安妮听到吉尔伯特,\"); 她被激怒了，便突然站了起来，脸上涨得通红。"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 3,
+      "en": "\"Meaningless boy!\" she exclaimed passionately. \"How dare you!\"",
+      "zh": "“你这个没脑的家伙！”她激情地喊道，“你怎么敢如此放肆！”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "Before anyone could react, Anne struck Gilbert's head with her slate, cracking it loudly.",
+      "zh": "还没等任何人反应过来，安妮已经用她的石板敲了吉尔伯特的头，声音清脆响亮。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "The scene in Avonlea school was always dramatic, and this time was no exception. Diana gasped, Ruby Gillis began to cry, and Tommy Sloane stared blankly at the commotion.",
+      "zh": "埃文利学校里总是上演着一幕幕戏剧性的场景，这次也不例外。戴安娜惊呼了一声， ruby gillis 开始啜泣，而汤米·斯洛恩则茫然地盯着眼前的混乱。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 2,
+      "en": "Mr. Phillips approached and placed a heavy hand on Anne’s shoulder. \"Anne Shirley,\" he said sternly, \"what does this mean?\"",
+      "zh": "菲利普斯先生走过来，重重拍了拍安妮的肩膀。“安妮·谢里登，”他严肃地说道，“这是什么意思？”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 3,
+      "en": "Without answering, Anne remained silent. Gilbert stepped forward bravely. \"It was my fault, Mr. Phillips.",
+      "zh": "安妮没有回答，而是保持沉默。吉尔伯特勇敢地向前一步。“这是我的错，菲利普斯先生。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 1,
+      "en": "I provoked her.\"",
+      "zh": "我激怒了她。"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 2,
+      "en": "Ignoring Gilbert, Mr. Phillips continued, \"I am disappointed to see such temper and vindictiveness in a student.\" He then ordered Anne to stand on the platform for the rest of the afternoon.",
+      "zh": "忽视了吉尔伯特，菲利普斯先生继续说道：“看到一个学生有这样的脾气和报复心理，我感到非常失望。”随后，他命令安妮在下午剩下的时间里站在讲台上。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 3,
+      "en": "Anne’s sensitive spirit trembled at this punishment. With a pale face, she obeyed. Mr. Phillips wrote on the blackboard: \"Ann Shirley has a very bad temper.",
+      "zh": "安妮敏感的心灵对这种惩罚感到不安。她脸色苍白地服从了。菲利普斯先生在黑板上写道：“安·雪莉脾气非常不好。”"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 1,
+      "en": "Ann Shirley must learn to control her temper,\" ensuring even the youngest students understood his message.",
+      "zh": "安妮·谢里登必须学会控制她的脾气，“他确保就连最小的学生也明白了这一点。”"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 3,
+      "en": "Anne stood through the afternoon with the painful memory above her. She faced Diana's sympathetic gaze and Charlie Sloane's indignant nods without flinching, but refused to meet Gilbert Blythe's eyes. \"I will never look at him again,\" she vowed silently.",
+      "zh": "安妮整个下午都沉浸在痛苦的回忆中。她面对戴安娜同情的目光和查理·斯洛恩义愤填膺的点头，毫不动摇，但坚决不与吉尔伯特·布雷思相遇视。她在心中暗暗发誓：“我再也不看他一眼了。”"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 3,
+      "en": "When school dismissed, Anne marched out with her head held high. Gilbert tried to apologize at the door. \"I'm sorry I made fun of your hair, Anne,\" he whispered.",
+      "zh": "放学后，安妮昂首阔步地走出校门。吉尔伯特在门口试图道歉：“安妮，我对取笑你的头发表示歉意。”他低声说道。"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 1,
+      "en": "But Anne ignored him, marching past disdainfully.",
+      "zh": "但安妮视而不见，不屑一顾地大步走过。"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 3,
+      "en": "Diana followed, half reproachful and half admiring. \"Oh how could you, Anne?\" she sighed.",
+      "zh": "戴安娜跟在后面，一半责备一半钦佩。“安妮，你怎么能这样做呢？”她叹了口气。"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 1,
+      "en": "Gilbert's plea seemed futile.",
+      "zh": "吉尔伯特的恳求似乎徒劳无功。"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 3,
+      "en": "Anne declared firmly to Diana, \"I shall never forgive Gilbert Blythe.\" She also resented Mr. Phillips for misspelling her name without an 'e'. \"The iron has entered my soul,\" she said.",
+      "zh": "安妮坚定地对戴安娜说：“我永远也不会原谅吉尔伯特·布雷思。”她还怨恨菲利普斯先生在她的名字前没有加“e”而写错了。“这伤透了我的心。”她说。"
+    },
+    {
+      "id": "p056",
+      "sentenceCount": 2,
+      "en": "Avonlea scholars often spent their noon in the spruce grove, watching Eben Wright's house. When they saw Mr. Phillips leave, they rushed to school but were usually late by three minutes.",
+      "zh": "埃文利的学生们常常在午间聚集在云杉林中，注视着伊本·赖特的房子。当看到菲利普斯先生离开时，他们急忙赶往学校，但通常总是晚到三分钟。"
+    },
+    {
+      "id": "p057",
+      "sentenceCount": 1,
+      "en": "On the next day, Mr. Phillips announced he expected all students to be on time or face punishment.",
+      "zh": "第二天，菲利普斯先生宣布，所有学生必须准时到校，否则将面临处罚。"
+    },
+    {
+      "id": "p058",
+      "sentenceCount": 3,
+      "en": "The boys and some girls gathered in Mr. Bell's spruce grove, intending to stay briefly but ended up lingering. Jimmy Glover’s shout from a tall tree alerted them that Mr. Phillips was approaching. The girls hurried back to the schoolhouse just in time, while the boys were slower due to their climb down from the trees.",
+      "zh": "男孩们和一些女孩聚集在贝尔先生那片常青树下，原打算待一会儿就走，却不知不觉滞留了下来。吉米·格洛弗从一棵高大的树上喊了一声，大家意识到菲利普斯先生正朝这边走来。女孩们急忙赶回学校，而男孩们则因为从树上下来的过程较慢，动作稍显迟缓。"
+    },
+    {
+      "id": "p059",
+      "sentenceCount": 3,
+      "en": "Anne, deep in the grove and lost in song with rice lilies in her hair, arrived last. Despite her speed, she reached the door as Mr. Phillips hung up his hat. His reforming energy was waning; he didn't want to punish a dozen students but needed to maintain his authority.",
+      "zh": "安妮沉浸在歌中，头上插着稻谷百合花，最后才赶到。尽管她跑得很快，还是在菲利普斯先生挂好帽子时到达了门口。他的改革热情正在消退；他不想惩罚十几个学生，但又需要维持自己的权威。"
+    },
+    {
+      "id": "p060",
+      "sentenceCount": 1,
+      "en": "He chose Anne as the scapegoat.",
+      "zh": "他把安妮选作了替罪羊。"
+    },
+    {
+      "id": "p061",
+      "sentenceCount": 2,
+      "en": "\"Anne Shirley,\" Mr. Phillips said sarcastically, \"since you enjoy the boys' company so much, we'll indulge your taste this afternoon.\" He instructed her to remove the lily wreath and sit with Gilbert Blythe.",
+      "zh": "“安妮·谢里登，”菲利普斯先生带着讽刺的口吻说道，“既然你这么喜欢和男生在一起，今天我们下午就满足一下你的兴趣。”他命令她摘下百合花环，并坐在吉尔伯特·布雷思薇特旁边。"
+    },
+    {
+      "id": "p062",
+      "sentenceCount": 3,
+      "en": "The other boys laughed. Diana, feeling sorry for Anne, removed the wreath and squeezed her hand. Anne stared at Mr. Phillips, seemingly frozen in place.",
+      "zh": "其他男孩笑了起来。戴安娜见安妮难堪，便摘下了花环，握了握她的手。安妮则盯着菲利普斯先生，仿佛被定住了一般，一动不动。"
+    },
+    {
+      "id": "p063",
+      "sentenceCount": 2,
+      "en": "\"Did you hear what I said, Anne?\" Mr. Phillips demanded sternly.",
+      "zh": "“安妮，你听见我说的话了吗？”菲利普斯先生严厉地问道。"
+    },
+    {
+      "id": "p064",
+      "sentenceCount": 1,
+      "en": "\"Yes, sir,\" Anne replied slowly, \"but I didn't think you meant it.\"",
+      "zh": "“是的，先生，”安妮慢吞吞地回答，“但我没想你会当真。”"
+    },
+    {
+      "id": "p065",
+      "sentenceCount": 2,
+      "en": "\"I assure you I did,\" he said with a sarcastic tone that irritated the children, especially Anne. He ordered her to obey immediately.",
+      "zh": "“我向你保证，我是这么做的，”他带着讽刺的语气说道，这令孩子们感到烦躁，尤其是安妮。他命令她立刻照做。"
+    },
+    {
+      "id": "p066",
+      "sentenceCount": 3,
+      "en": "Anne felt humiliated when Mr. Phillips ordered her to sit next to Gilbert Blythe after class. Despite her initial reluctance, she obeyed and buried her face in her arms on the desk. Ruby Gillis witnessed this and later told others about Anne's \"white face with red spots,\" adding fuel to the gossip.",
+      "zh": "安妮在菲利普斯先生课后让她坐在吉尔伯特·布雷思韦特旁边时感到十分尴尬。尽管一开始有些犹豫，她还是照做了，并把脸埋在了臂弯里趴在桌上。鲁比·吉尔西目睹了这一幕，后来便向其他人描述安妮的“白脸上泛着红斑”，这无异于火上浇油，让流言蜚语更加甚嚣尘上。"
+    },
+    {
+      "id": "p067",
+      "sentenceCount": 3,
+      "en": "The other students whispered and giggled at first but soon returned to their work as Anne remained silent. Gilbert focused intently on his fractions, oblivious to the commotion around him. When Mr. Phillips called out for the history class, Anne stayed seated, unnoticed by her teacher who was engrossed in writing a poem.",
+      "zh": "其他学生起初窃笑，但很快又埋头于自己的功课，安妮依然沉默不语。吉尔伯特则全神贯注地做着分数题，对外界的喧闹浑然不知。当菲利普斯先生喊大家上历史课时，安妮依旧坐在原位，她的老师正专心致志地写诗，并未注意到她。"
+    },
+    {
+      "id": "p068",
+      "sentenceCount": 2,
+      "en": "Gilbert secretly passed Anne a pink candy heart with \"You are sweet\" inscribed. Anne gingerly picked it up, dropped it on the floor, crushed it underfoot, and resumed her position without acknowledging Gilbert.",
+      "zh": "吉尔伯特偷偷递给安妮一颗粉红色的心形糖果，上面写着“你真甜”。安妮小心翼翼地接过，把它放在地上，踩碎了它，然后又坐回原位，仿佛什么也没发生。"
+    },
+    {
+      "id": "p069",
+      "sentenceCount": 2,
+      "en": "At home, Anne gathered all her school supplies—books, tablet, pen, ink, Bible, and arithmetic—and placed them neatly on her desk. When Diana asked why she was taking everything home, Anne declared she would never return to school again.",
+      "zh": "在家时，安妮收拾起了所有的学习用品——课本、笔记本、钢笔、墨水、圣经和算术书，并整齐地摆放在她的课桌上。当戴安娜问她为什么要把这些东西都带回家时，安妮脱口而出，表示她再也不会回学校了。"
+    },
+    {
+      "id": "p070",
+      "sentenceCount": 3,
+      "en": "Anne's friend Diana was distraught, imploring her to return to school with tears in her eyes. \"Oh, Anne! I think you're mean.",
+      "zh": "安妮的朋友戴安娜急得泪眼汪汪，央求她回去上课：“哦，安妮！我觉得你真是太小气了。”"
+    },
+    {
+      "id": "p071",
+      "sentenceCount": 2,
+      "en": "Mr. Phillips will make me sit with Gertie Pye; she’s always alone. Please come back.\"",
+      "zh": "请快点回来，菲利普斯先生让我和盖蒂·皮坐在一起；她总是孤零零的一个人。"
+    },
+    {
+      "id": "p072",
+      "sentenceCount": 3,
+      "en": "Anne felt a pang but said sadly, \"I'd do anything for you, Diana, even if it meant being torn limb from limb. But I can't go back to school.\" She told Marilla her decision as soon as she got home.",
+      "zh": "安妮心里一紧，但她悲伤地说：“为了你，戴安娜，我愿意做任何事，哪怕意味着被撕得支离破碎。但我不能回学校了。”她一到家就把这个决定告诉了玛丽拉。"
+    },
+    {
+      "id": "p073",
+      "sentenceCount": 2,
+      "en": "Marilla was unimpressed. \"Nonsense,\" she said firmly.",
+      "zh": "玛丽拉不为所动。“胡说八道。”她坚定地说。"
+    },
+    {
+      "id": "p074",
+      "sentenceCount": 3,
+      "en": "Anne's eyes were solemn and reproachful. \"Don’t you understand, Marilla? I’ve been insulted.\"",
+      "zh": "安妮的眼睛里带着严肃而责备的神情，“你难道不明白吗，玛丽拉？我被人侮辱了。”"
+    },
+    {
+      "id": "p075",
+      "sentenceCount": 1,
+      "en": "Marilla insisted, \"You'll go to school tomorrow as usual.\"",
+      "zh": "玛丽拉坚持说道：“你明天还是要像往常一样去上学。”"
+    },
+    {
+      "id": "p076",
+      "sentenceCount": 3,
+      "en": "\"No,\" Anne shook her head gently. \"I won't return to Mr. Phillips' school. I’ll learn at home and be good, but not go back.\"",
+      "zh": "“不，”安妮轻轻摇了摇头，“我不会回到菲利普斯先生的学校去了。我会在家学习，做个好学生，但不会再回那儿上学了。”"
+    },
+    {
+      "id": "p077",
+      "sentenceCount": 3,
+      "en": "Marilla saw unyielding stubbornness in Anne's face. She decided to discuss the matter with Rachel Lynde later that evening. Marilla reasoned it was best not to argue now; Anne was too worked up.",
+      "zh": "玛丽拉从安妮的脸庞看到了固执己见的態度，决定当晚晚些时候与雷切尔·林德谈谈这个问题。玛丽拉认为现在不宜争论；安妮的情绪已经激动到了极点。"
+    },
+    {
+      "id": "p078",
+      "sentenceCount": 2,
+      "en": "At Mrs. Lynde’s house, Marilla found her knitting cheerfully. Marilla planned to talk to Rachel about the situation, knowing she had experience sending children to school and might have heard the whole story from Anne.",
+      "zh": "在雷切尔·林德家中，玛丽拉发现她正在愉快地织着毛衣。玛丽拉打算和雷切尔谈谈这件事，因为她有送孩子上学的经验，或许已经从安妮那里听说了全部的情况。"
+    },
+    {
+      "id": "p079",
+      "sentenceCount": 3,
+      "en": "Marilla sighed and said, \"I suppose you know what I've come about.\" Mrs. Rachel nodded. \"About Anne's fuss in school,\" she continued.",
+      "zh": "玛丽拉叹了口气，说：“我想你应该知道我来这儿的原因。”雷切尔太太点了点头，接着说道：“就是关于安妮在学校里的那场风波。”"
+    },
+    {
+      "id": "p080",
+      "sentenceCount": 1,
+      "en": "\"Tillie Boulter told me that Anne won't go back to school.\"",
+      "zh": "蒂莉·博特尔告诉我，安妮不会回学校了。"
+    },
+    {
+      "id": "p081",
+      "sentenceCount": 2,
+      "en": "\"Anne is so worked up,\" Marilla lamented. \"She says she won't return, and I don't know what to do with her.\"",
+      "zh": "“安妮激动得很呢，”玛丽拉叹道，“她说她不回来了，我真的不知道该怎么办才好。”"
+    },
+    {
+      "id": "p082",
+      "sentenceCount": 3,
+      "en": "Mrs. Lynde offered advice: \"Humor her a little at first. Mr. Phillips was in the wrong for punishing Anne yesterday. The others who were late should have been punished too.\"",
+      "zh": "雷切尔·林德夫人提出了建议：“先顺着她一点。菲利普斯先生昨天惩罚安妮是不对的，那些迟到的人也应该受到处罚。”"
+    },
+    {
+      "id": "p083",
+      "sentenceCount": 2,
+      "en": "Marilla was surprised by this suggestion. \"Then you really think I should let her stay home?\"",
+      "zh": "玛丽拉对这个建议感到意外，“那你真是觉得我应该让她在家待着？”"
+    },
+    {
+      "id": "p084",
+      "sentenceCount": 3,
+      "en": "\"Yes, but only until she decides to go back on her own,\" Mrs. Lynde advised. \"She'll cool off soon and be ready to return. Making a fuss now might cause more trouble later.\"",
+      "zh": "雷切尔·林德夫人建议说：“是的，但只是让她自己打消念头为止。她很快就会冷静下来，准备好回家。现在大惊小怪可能会引起更多的麻烦。”"
+    },
+    {
+      "id": "p085",
+      "sentenceCount": 3,
+      "en": "Mrs. Lynde criticized Mr. Phillips: \"He's no good as a teacher. His classroom is in chaos, and he neglects the younger students.\" She added, \"If his uncle hadn't been a trustee, the school wouldn't have survived another year.\"",
+      "zh": "雷切尔·林德夫人批评菲利普斯先生说：“他当老师不行。他的课堂一团糟，还忽视了那些年纪小的学生。”她又补充道，“要不是他叔叔是校董，这所学校恐怕撑不过下一个学年了。”"
+    },
+    {
+      "id": "p086",
+      "sentenceCount": 1,
+      "en": "Mrs. Rachel shook her head, saying, \"If I were in charge of education here, things would be much better managed.\"",
+      "zh": "雷切尔太太摇了摇头，说：“如果由我负责这里的教育，情况肯定会好得多。”"
+    },
+    {
+      "id": "p087",
+      "sentenceCount": 3,
+      "en": "Anne followed Mrs. Rachel’s advice and stopped discussing her return to school with Marilla. She studied at home, did chores, and played with Diana in the cool autumn evenings. However, when she met Gilbert Blythe on the road or in Sunday school, she ignored him coldly, despite his attempts to appease her.",
+      "zh": "安妮聽從雷切尔太太的建議，不再和瑪麗拉討論她重返學校的事。她在家裡苦讀，忙著做 Household Chores，並在涼爽的秋夜與戴安娜一起玩耍。然而，當她在路上或星期日學堂遇到吉爾伯特·布萊斯時，她冷淡地避開他，儘管吉爾伯特多次嘗試平息她的不快。"
+    },
+    {
+      "id": "p088",
+      "sentenceCount": 2,
+      "en": "Despite hating Gilbert, Anne loved Diana deeply. One evening, Marilla found Anne crying by the east window after returning from the orchard with a basket of apples.",
+      "zh": "尽管恨透了吉尔伯特，安妮却深深地爱着戴安娜。一天傍晚，玛丽拉发现安妮从苹果园摘了一篮子苹果回来后，正靠在东窗边哭泣。"
+    },
+    {
+      "id": "p089",
+      "sentenceCount": 2,
+      "en": "\"What's wrong now, Anne?\" asked Marilla.",
+      "zh": "“安妮，又出什么事了？”玛丽拉问道。"
+    },
+    {
+      "id": "p090",
+      "sentenceCount": 3,
+      "en": "\"It’s about Diana,\" sobbed Anne. \"I love Diana so much, Marilla. I can't live without her.",
+      "zh": "“是关于戴安娜的，”安妮抽泣道，“我爱戴安娜那么多，玛丽拉。没有她我就无法活下去。"
+    },
+    {
+      "id": "p091",
+      "sentenceCount": 3,
+      "en": "But I know she'll marry and leave me one day. What will I do? I hate her husband—I just hate him fiercely.\"",
+      "zh": "但我明白，总有一天她会嫁人离开我。到那时我该怎么办？我恨她的丈夫——简直恨得要命。"
+    },
+    {
+      "id": "p092",
+      "sentenceCount": 2,
+      "en": "Anne imagined the wedding—Diana in white, looking like a queen, while she, as bridesmaid, would be heartbroken but smiling. She then thought of bidding Diana goodbye.",
+      "zh": "安妮想象着婚礼的场景——戴安娜穿着白色婚纱，宛如女王般美丽动人，而她作为伴娘，则会心碎却强颜欢笑。接着，她想到了与戴安娜道别的情景。"
+    },
+    {
+      "id": "p093",
+      "sentenceCount": 3,
+      "en": "Marilla turned away to hide her laughter; when Matthew heard it from outside, he was surprised. Marilla laughed heartily and unusually, saying, \"Anne Shirley, if you must borrow trouble, do it closer home. I think you have a vivid imagination.\"",
+      "zh": "玛丽拉转过身去掩饰住笑声；马修在外面听到后感到惊讶。玛丽拉笑得非常开心且不同寻常，说道：“安妮·谢里夫小姐，如果你一定要自寻烦恼，就在身边找些事情吧。我认为你想象力丰富。”"
+    }
+  ]
+}

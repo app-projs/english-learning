@@ -1,0 +1,39 @@
+{
+  "id": "The_Wonderful_Wizard_of_Oz_u1",
+  "bookId": "The_Wonderful_Wizard_of_Oz",
+  "unitIndex": 1,
+  "title": "Chapter 1: The Cyclone",
+  "chineseTitle": "第 1 章：狂暴的龙卷风",
+  "paragraphs": [
+    {
+      "en": "Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small, for the lumber to build it had to be carried by wagon many miles. There were four walls, a floor and a roof, which made one room; and this room contained a rusty looking cookstove, a cupboard for the dishes, a table, three or four chairs, and the beds. Uncle Henry and Aunt Em had a big bed in one corner, and Dorothy a little bed in another corner. There was no garret at all, and no cellar—except a small hole dug in the ground, called a cyclone cellar, where the family could go in case one of those great whirlwinds arose.",
+      "zh": "多萝茜生活在堪萨斯州辽阔的大草原中央，与做农民的亨利叔叔和做农民妻子的爱姆婶婶住在一起。他们的房子很小，因为建造房子的木材必须用马车运送许多英里。有四面墙、一个地板和一个屋顶，构成了一个房间；这个房间包含了一个看起来生锈的做饭炉灶、一个放盘子的碗橱、一张桌子、三或四张椅子以及床铺。亨利叔叔和爱姆婶婶在一角有一张大床，多萝茜在另一角有一张小床。根本没有阁楼，也没有地下室——除了在地上挖的一个小洞，被称为龙卷风地下室，一旦那些巨大的旋风刮起，一家人可以去那里避难。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side. Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions. The sun had baked the plowed land into a gray mass, with little cracks running through it. Even the grass was not green, for the sun had burned the tops of the long blades until they were the same gray color to be seen everywhere.",
+      "zh": "当多萝茜站在门口环顾四周时，除了各侧辽阔灰色的草原外她什么也看不见。没有一棵树也没有一间房子打破向各个方向延伸到天空边缘的平坦乡村的广袤画卷。阳光把耕地烤成了一团灰色，微小的裂缝穿流其中。甚至连草也不是绿色的，因为阳光把长叶的顶端烧焦了，直到它们变成了到处可见的相同灰色。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Suddenly, a terrible cyclone whirled across the prairie! Uncle Henry rushed to look after the stock, while Aunt Em opened the trap door and climbed down into the storm cellar. Dorothy caught her little black dog, Toto, but before she could follow Aunt Em, the great wind struck the house. The cyclone lifted the small house high into the air, carrying it miles away over the clouds like a toy feather.",
+      "zh": "突然，一场可怕的龙卷风在草原上旋转扫过！亨利叔叔急忙去照顾牲口，而爱姆婶婶打开陷阱门爬进了风暴地下室。多萝茜抓住了她的小黑狗托托，但还没等她跟上爱姆婶婶，大风击中了房子。龙卷风把小房子高高抬入空中，像羽毛玩具一样把它运送到几英里外云层上方。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Yellow Brick Road wound onward through the magical countryside of Oz, flanked by sparkling brooks, colorful wild flowers, and strange golden trees. Dorothy tightly held Toto in her arms, her magical Silver Shoes sparkling with every step she took toward their goal.",
+      "zh": "黄砖路沿着奥兹国奇幻的乡村继续盘旋，两侧环绕着闪烁的小溪、绚丽的野花与神奇的金树。多萝茜把托托紧抱在怀里，她魔法银鞋在她朝目标迈出的每一步中都闪闪发光。",
+      "id": "p004",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'No matter how dreary our home in Kansas may be,' Dorothy remarked softly to the Scarecrow, 'we people of flesh and blood would rather live there than in any other country, be it ever so beautiful. There is no place like home.'",
+      "zh": "'无论我们在堪萨斯的家多么沉闷，'多萝茜对稻草人软软地注意到，'我们血肉之躯的人们宁愿住在那里，也不愿住在任何其他国家（无论它多么美丽）。没有任何地方像家一样。'",
+      "id": "p005",
+      "sentenceCount": 1
+    }
+  ]
+}

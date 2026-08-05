@@ -518,6 +518,11 @@ class DatabaseService {
     return await _database?.query('books') ?? [];
   }
 
+  Future<void> clearBookContent() async {
+    await _database?.delete('articles');
+    await _database?.delete('books');
+  }
+
   Future<Map<String, dynamic>?> getBookById(String id) async {
     final results =
         await _database?.query('books', where: 'id = ?', whereArgs: [id]);

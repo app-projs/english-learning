@@ -1,0 +1,18 @@
+{
+  "id": "The_Great_Gatsby",
+  "title": "The Great Gatsby",
+  "chineseTitle": "了不起的盖茨比",
+  "author": "F. Scott Fitzgerald",
+  "coverUrl": "assets/images/book_gatsby.png",
+  "description": "《了不起的盖茨比》是美国爵士时代文学巨匠弗朗西斯·司各特·菲茨杰拉德于 1925 年出版的文学巅峰巨作。故事通过旁观者尼克·卡拉威的视角，讲述了出身贫寒的年轻军官詹姆斯·盖兹为了重新赢回富家女黛西·费伊的爱，改名盖茨比并通过非法手段积聚巨额财富。他在纽约西埃格建造奢华豪宅，每晚举办无名宾客云集的盛大舞会，只为凝视黛西家码头那一抹绿光。然而，当盖茨比终于与黛西重逢，迎来的却是虚无的幻灭、冷酷的背叛与悲剧的枪声，揭示了“美国梦”破灭的深刻悲剧。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 8,
+  "wordCount": 32000,
+  "readerCount": "178.6万人在读",
+  "targetVocab": "2000-5000词",
+  "tagLabel": "爵士时代",
+  "coverBadge": "精读 · 爵士名篇",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

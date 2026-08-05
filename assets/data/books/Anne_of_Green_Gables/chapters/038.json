@@ -1,0 +1,417 @@
+{
+  "id": "Anne_of_Green_Gables_u38",
+  "bookId": "Anne_of_Green_Gables",
+  "unitIndex": 38,
+  "title": "CHAPTER XXXVIII. The Bend in the road",
+  "chineseTitle": "",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "Marilla returned from town in the evening, her demeanor dejected. Anne found her sitting by the kitchen table with her head resting on her hand.",
+      "zh": "玛丽拉傍晚从镇上回来，神情沮丧。安妮发现她坐在厨房桌旁，头垂在手里。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "\"Are you very tired, Marilla?\" asked Anne.",
+      "zh": "“玛丽拉，你累吗？”安妮问道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Yes—no—I don't know,\" replied Marilla wearily. \"I suppose I am tired but haven't thought about it much.\"",
+      "zh": "“嗯——不——我不确定，”玛丽拉疲惫地回答，“我想我是累了，但并没有多想。”"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "Anne was concerned and asked, \"Did you see the oculist? What did he say?\"",
+      "zh": "安妮关切地问道：“你去看眼科医生了没？医生怎么说的？”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "Marilla explained, \"Yes, I saw him. He examined my eyes and said if I stop all reading and sewing and avoid any work that strains them, wear his glasses, and don’t cry, my eyes might not worsen and headaches could be cured. But if I don't, I'll surely go blind in six months.\"",
+      "zh": "玛丽拉解释道：“是的，我见着他了。他检查了我的眼睛，并告诉我如果我停止所有阅读和缝纫，避免任何会过度使用眼睛的工作，戴上他的眼镜，而且不要哭泣，我的眼睛可能不会恶化，头痛也可能得以治愈。但如果我不这样做，六个月后我肯定会失明。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "Anne was silent for a moment before saying bravely, \"Marilla, don't think of it. He has given you hope. If you're careful, you won't lose your sight; and his glasses might cure your headaches.\"",
+      "zh": "安妮沉默了一会儿，然后勇敢地说：“玛丽拉，别往这方面想。他给了你希望。如果你小心一些，不会失明；而他的眼镜或许能治好你的头痛。”"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "Marilla replied bitterly, \"I call that little hope. What am I to live for if I can’t read or sew? I might as well be blind—or dead.",
+      "zh": "玛丽拉苦涩地回答：“这算什么希望？如果连读书和缝纫都不能做，我活着还有什么意义？还不如瞎了——或者死了。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "And crying when lonely is inevitable. But there's no point in talking about it. Just get me a cup of tea; I'm exhausted.",
+      "zh": "而感到孤独时哭泣在所难免。但说这些也没什么意思。给我泡一杯茶吧，我累坏了。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "Don't tell anyone yet.\"",
+      "zh": "“暂时别告诉任何人。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "Anne persuaded Marilla to rest after lunch. Alone by the east gable window, Anne reflected on how her hopes had dimmed since returning home. Despite her earlier despair, she now felt a sense of peace and courage in facing her duty.",
+      "zh": "安妮说服玛丽拉午饭后休息一下。独自站在东墙窗前，安妮回想起回家后希望逐渐消逝的过程。尽管她曾一度感到绝望，但现在她觉得面对责任时有一种平静和勇气。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "A few days later, Marilla returned from a visit with Sadler, looking troubled. Anne asked about his visit, suspecting it might have been significant.",
+      "zh": "几天后，玛丽拉从萨德勒家回来时显得有些心事重重。安妮询问起她的拜访情况，猜疑这次访问可能别有深意。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "\"He heard you were selling Green Gables,\" Marilla replied, \"and he wants to buy it.\"",
+      "zh": "“他听说你要卖绿山墙农庄，”玛丽拉回答道，“所以他想买下来。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 3,
+      "en": "\"Buy Green Gables?\" Anne exclaimed, shocked. \"Marilla, you can't mean to sell!\"",
+      "zh": "“卖掉绿山墙？”安妮惊呼道，“玛丽拉，你不会真的要卖吧！”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 2,
+      "en": "Marilla explained her predicament: with failing eyesight, she could no longer manage the farm effectively. She might lose her sight entirely and was considering selling the property to board elsewhere.",
+      "zh": "玛丽拉解释了她的困境：由于视力衰退，她已经无法有效地管理农场。她甚至可能会完全失明，并正在考虑卖掉房产去别处寄居。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 2,
+      "en": "\"You mustn't sell,\" Anne insisted firmly. Marilla's tears flowed as she continued explaining their financial struggles and Mrs. Lynde’s advice to sell the farm for a small sum.",
+      "zh": "“你绝不能卖。”安妮坚定地说。玛丽拉的眼泪不停地流着，她继续解释他们的财务困境，并提到雷切尔·林德夫人建议他们低价卖掉绿山墙农庄的意见。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "Anne resolved to find a way to keep Green Gables, determined not to let it go.",
+      "zh": "安妮下定决心要找到办法留住绿山墙农庄，坚决不让它易主。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "Anne looked at Marilla earnestly. \"I won’t go to Redmond for the scholarship,\" she said firmly. \"I decided last night after you returned from town.",
+      "zh": "安妮认真地看着玛丽拉说：“我不去红蒙德领奖学金了。”她坚定地说道，“昨晚你从镇上回来后我就决定了。”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "You’ve done so much for me, Marilla; I couldn't leave you alone in trouble.\"",
+      "zh": "你为我做了这么多，玛丽拉；我不可能让你独自面对困难。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "Marilla lifted her head and stared at Anne. \"Why, what are you talking about?\" she asked.",
+      "zh": "玛丽拉抬起头，盯着安妮看了好一会儿。“你在说什么呀？”她问道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "Anne explained her plans. Mr. Barry wanted to rent the farm next year, which would ease their worries. She also planned to teach—she had applied for a position here but expected Gilbert Blythe to get it.",
+      "zh": "安妮解释了她的计划。巴里先生打算明年租下那块农场地，这会减轻他们的担忧。她还打算去教书——她已经申请了这里的一个职位，但预计吉尔伯特·布赖斯能得到这个机会。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "However, she could take the job at Carmody school, as Mr. Blair told her last night.",
+      "zh": "然而，她可以去卡姆多伊学校任教，布莱尔先生昨晚这样告诉了她。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 2,
+      "en": "\"Of course, it won’t be as convenient,\" Anne admitted, \"but I can board at home and drive there in good weather. In winter, I’ll come home on Fridays.\"",
+      "zh": "“当然，这不会那么方便，”安妮承认道，“但我可以在家寄宿，在好天气时开车去学校。冬天的话，我周五就回家。”"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "Marilla listened, her expression a mix of surprise and concern. \"Oh, Anne, you could manage well here,\" she said softly. \"But I can't let you sacrifice yourself for me.\"",
+      "zh": "玛丽拉听了，脸上交织着惊讶和担忧的表情。“哦，安妮，你在这里完全可以应付得很好，”她轻声说道，“但我不能让你为了我而牺牲自己。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "Anne laughed lightly. \"There’s no sacrifice,\" she insisted. \"Nothing would hurt more than giving up Green Gables.",
+      "zh": "安妮轻笑了一声。“谈不上牺牲，”她坚持道，“放弃绿山墙农场会让我痛心疾首。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "We must keep the place. My mind is made up; I’m not going to Redmond, and I will stay here to teach.\"",
+      "zh": "我们必须留下这里。我的主意已定，不去雷德蒙德了，我将留下来任教。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 3,
+      "en": "Anne declared she was just as ambitious but had shifted her goals. She planned to become a teacher and save Marilla’s eyesight, along with studying independently at home. \"There are many plans,\" Anne said excitedly, \"and I've been thinking about them for a week.\"",
+      "zh": "安妮宣称自己同样有着远大的抱负，只是目标有所调整。她打算成为一名教师，并帮助玛丽拉保护视力，同时还在家中自学。“我有很多计划呢，”安妮兴奋地说，“我已经想了一个星期了。”"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 2,
+      "en": "Marilla acknowledged Anne's determination, noting that she was sixteen and half, \"obstinate as a mule.\" Despite her concerns, Marilla agreed to let Anne pursue teaching.",
+      "zh": "玛丽拉承认安妮的决心，指出她已经十六岁半了，“倔强得像头驴。”尽管心中有些担忧，玛丽拉还是同意让安妮去尝试教学。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 2,
+      "en": "Anne expressed joy at staying at Green Gables. \"Nobody could love it more than you and I,\" she said, emphasizing their shared passion for the place.",
+      "zh": "安妮对留在绿山墙农庄感到非常高兴。“没人能像我们俩这样热爱这里，”她说，强调着彼此对这个地方的共同热情。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "Marilla conceded, saying, \"I feel like you've given me new life. I should insist on your going to college, but I can't.\" She promised to make up for it in other ways.",
+      "zh": "玛丽拉承认道：“我觉得你给了我新的生命。我本应该坚持让你上大学，但做不到。”她承诺会以其他方式来弥补这一点。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "When news spread that Anne had abandoned her college plans, Avonlea discussed it. Most people thought she was foolish, unaware of Marilla’s eyesight issues. However, Mrs. Allan and Mrs. Lynde supported her.",
+      "zh": "当消息传开，说安妮放弃了大学计划时，埃文利镇上的人们纷纷议论。大多数人认为她太愚蠢了，竟然不知玛丽拉视力不佳这一情况。不过，艾伦太太和雷切尔·林德夫人却支持她。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 1,
+      "en": "Mrs. Lynde visited one evening, finding Anne and Marilla sitting at the front door in the warm summer dusk.",
+      "zh": "莱恩德夫人一个傍晚来访，发现安妮和玛丽拉正坐在前门廊里，享受夏日黄昏的温暖余晖。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "They enjoyed the twilight, with moths flying and mint filling the air. Anne's happiness was evident as she basked in the approval of those who understood her new path.",
+      "zh": "他们享受着黄昏的时光，飞舞的蛾子和薄荷的香气弥漫在空气中。安妮的幸福显而易见，她沉浸在这份理解她的新路途的认可之中。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "Mrs. Rachel sat down on the stone bench by the door, surrounded by tall pink and yellow hollyhocks. She sighed with relief, remarking that she was glad to sit after walking all day.",
+      "zh": "雷切尔太太坐在门旁的石长椅上，周围簇拥着高大的粉红色和黄色的蜀葵。她松了口气，感慨自己终于可以坐下，毕竟已经走了整整一天的路。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "\"Two hundred pounds is quite enough for two feet,\" she said to Marilla. \"I'm grateful not to be fat.\"",
+      "zh": "“两百英镑对两条腿来说已经足够了，”她对玛丽拉说，“我感激自己不算胖。”"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "Mrs. Lynde then shared her concern about Anne's plans. \"Anne, I heard you've given up your college idea. That's good news.",
+      "zh": "玛丽拉夫人随后表达了对安妮计划的担忧。“安妮，我听说你放弃了上大学的想法。这真是个好消息。”"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "You have enough education now.\"",
+      "zh": "你现在的教育已经足够了。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 2,
+      "en": "Anne laughed and replied, \"But I'll still study Latin and Greek. I plan to take my Arts course at Green Gables.\"",
+      "zh": "安妮笑了，回答说：“不过我还是要学习拉丁语和希腊语。我打算在绿山墙农庄修完文科课程。”"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 2,
+      "en": "Mrs. Lynde was shocked. \"Anne Shirley, you'll kill yourself!\"",
+      "zh": "雷切尔·林德太太大为震惊：“安妮·谢里登，你这样下去会把自己累垮的！”"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 3,
+      "en": "\"Not at all,\" Anne said confidently. \"I'll thrive on it. I won't overdo it.",
+      "zh": "“根本不会。”安妮自信地说，“我会适应的。我不至于做得太过。”"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "And in the long winter evenings, I have no interest in fancy work. I plan to teach at Carmody.\"",
+      "zh": "而在那些漫长的冬夜，我对刺绣之类的事情提不起兴趣。我打算在卡姆多伊任教。"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 3,
+      "en": "However, Mrs. Lynde revealed a surprise. \"The trustees decided to give you the school. They promised it to Gilbert Blythe, but he withdrew his application after hearing about your request.\"",
+      "zh": "然而，雷切尔·林德夫人揭开了一个惊喜：“信托人决定把学校给你们。他们原本答应给吉尔伯特·布莱斯，但他听说你们提出了申请后便撤回了申请。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 3,
+      "en": "Anne was taken aback. \"They promised it to Gilbert? Why, I thought they had given it to him!\"",
+      "zh": "安妮愣住了。“他们答应给吉尔伯特的？为什么，我还以为他们已经给了他呢！”"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "Mrs. Lynde explained that Gilbert went to the trustees and suggested they accept Anne's application instead. He planned to teach at White Sands.",
+      "zh": "雷切尔·林德夫人解释说，吉尔伯特去找了校董会，建议他们接受安妮的申请。他打算在白沙滩任教。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 2,
+      "en": "\"I don't feel right taking it,\" Anne murmured. \"I shouldn't let Gilbert make such a sacrifice for me.\"",
+      "zh": "“我总觉得不太对劲拿这个，”安妮低语道，“我不应该让吉尔伯特为了我才做出这么大的牺牲。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 2,
+      "en": "Anne received a signal from Diana to join her. \"You know we keep up the old custom,\" Anne said with a laugh as she ran down the clover slope like a deer, disappearing into the firry shadows of the Haunted Wood.",
+      "zh": "安妮收到了戴安娜的信号，要她过来。她一边笑，一边像鹿一样轻快地跑下开满紫花苜蓿的斜坡，消失在幽暗的白松林中。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 2,
+      "en": "Mrs. Lynde watched indulgently. \"There's still much of the child in her,\" she mused.",
+      "zh": "雷切尔·林德夫人饶有兴致地观察着：“她身上still保留了许多孩子的痕迹。”"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 2,
+      "en": "Marilla retorted, \"But there’s more of the woman.\" Her old crispness had faded; Marilla was now mellow.",
+      "zh": "玛丽拉反驳道，“但这个女人还有另一面。”她的老成持重已不再那么明显；现在的玛丽拉显得更加温婉。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 3,
+      "en": "The next evening, Anne visited Matthew's grave at the Avonlea cemetery, placing fresh flowers and watering the Scotch rosebush. She lingered until dusk, enjoying the peace among the poplars and whispering grasses. As she walked down to Lake of Shining Waters, it was past sunset, and all Avonlea lay in a dreamlike afterlight.",
+      "zh": "第二天晚上，安妮来到了埃文利墓地的马修墓前，摆放了新鲜的花朵，并浇灌了那株苏格兰玫瑰。她逗留到天色渐晚，享受着白杨树和低语草丛中的宁静，在此轻声倾诉心事。当她沿着湖光闪耀之湖的方向走去时，已是日落之后，整个埃文利都沉浸在如梦似幻的余晖之中。"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 3,
+      "en": "The air carried a freshness as if from clover fields. Home lights twinkled among the trees, while beyond, the sea glowed misty purple with its haunting murmur. The west was a soft blend of hues, reflected softly on the pond.",
+      "zh": "空气中弥漫着一种像苜蓿田地般清新的气息。家中的灯光在树间闪烁，而更远处，大海泛着朦胧的紫色光泽，伴随着那令人陶醉的呢喃。西方天边是一片柔和的色彩，轻轻地映照在湖面上。"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 1,
+      "en": "Anne felt her heart thrill at the beauty around her and gratefully opened her soul to it.",
+      "zh": "安妮感受到四周美景令人心醉，感激地将心灵向这美景敞开。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 1,
+      "en": "\"Dear old world,\" she whispered, \"you are very lovely, and I am glad to be alive in you.\"",
+      "zh": "她轻声低语：“亲爱的旧世界，你如此美好，我很高兴能活在你的怀抱中。”"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 3,
+      "en": "Halfway down the hill, Gilbert emerged from the Blythe homestead gate, whistling. He stopped when he saw Anne, lowering his cap politely but intending to walk on silently. Anne called out, her cheeks flushed.",
+      "zh": "半山腰处，吉尔伯特从布莱斯家的院门走出，吹着口哨。他一见到安妮便停下了脚步，礼貌地摘下帽子，打算默默地走过去。安妮喊了一声，脸颊泛红。"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 2,
+      "en": "\"Gilbert,\" she said, \"I want to thank you for giving up your school place for me. It was very kind of you—and I appreciate it.\"",
+      "zh": "吉尔伯特，她说道：“我想感谢你放弃你的学额让我去。你真是太好了——我非常感激。”"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 1,
+      "en": "Gilbert eagerly took her hand.",
+      "zh": "吉尔伯特迫不及待地握住了她的手。"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 3,
+      "en": "\"It wasn't particularly kind at all, Anne. I just wanted to help. Will we be friends now?",
+      "zh": "“安妮，你这么做其实并不算体贴。我只是想帮忙而已。我们现在能成为朋友了吗？”"
+    },
+    {
+      "id": "p056",
+      "sentenceCount": 1,
+      "en": "Have you forgiven my old fault?\"",
+      "zh": "“你已经原谅我那老毛病了吗？”"
+    },
+    {
+      "id": "p057",
+      "sentenceCount": 1,
+      "en": "Anne laughed and tried to pull away.",
+      "zh": "安妮笑了，试图挣脱。"
+    },
+    {
+      "id": "p058",
+      "sentenceCount": 3,
+      "en": "\"I forgave you that day by the pond, even though I didn’t know it. What a stubborn goose I was. I’ve been sorry ever since.\"",
+      "zh": "“那天在池塘边，我就已经原谅你了，虽然我当时并不知道自己已经原谅了你。我真是个固执的鹅啊。从那以后我一直感到后悔。”"
+    },
+    {
+      "id": "p059",
+      "sentenceCount": 3,
+      "en": "\"We are going to be the best of friends,\" Gilbert said joyfully. \"We were meant to be good friends, Anne. You've thwarted destiny enough.",
+      "zh": "“我们一定会成为最好的朋友，”吉尔伯特兴高采烈地说，“安妮，我们本来就应该成为好朋友。你已经够破坏天意了。”"
+    },
+    {
+      "id": "p060",
+      "sentenceCount": 3,
+      "en": "We can help each other in many ways. Are you going to continue your studies? So am I. Let's walk home together.\"",
+      "zh": "我们可以互相帮助很多。你打算继续学业吗？我也是。我们同路，一起走回家吧。"
+    },
+    {
+      "id": "p061",
+      "sentenceCount": 1,
+      "en": "Marilla curiously asked when Anne entered the kitchen.",
+      "zh": "玛丽拉好奇地问安妮是什么时候进厨房的。"
+    },
+    {
+      "id": "p062",
+      "sentenceCount": 1,
+      "en": "\"Who was that with you on the lane, Anne?\"",
+      "zh": "“安妮，你刚才在小路上和谁在一起？”"
+    },
+    {
+      "id": "p063",
+      "sentenceCount": 2,
+      "en": "\"Gilbert Blythe,\" Anne replied, blushing. \"I met him on Barry’s hill.\"",
+      "zh": "安妮脸红着回答：“吉尔伯特·布莱斯，”她说，“我在巴里的山上遇到他。”"
+    },
+    {
+      "id": "p064",
+      "sentenceCount": 1,
+      "en": "\"I didn't think you and Gilbert were such good friends to talk for half an hour at the gate,\" Marilla said dryly.",
+      "zh": "“我没想到你们和吉尔伯特关系这么好，竟然在门口聊了半个多小时。”玛丽拉冷冷地说。"
+    },
+    {
+      "id": "p065",
+      "sentenceCount": 3,
+      "en": "\"We haven’t been—good enemies, but now we’ve decided to be good friends. We must catch up on lost conversations over five years. It seemed just a few minutes, but there’s much to discuss.\"",
+      "zh": "“我们不是那种敌对的关系，但如今决定成为好朋友。我们必须弥补五年来的缺失对话，有很多话题需要交流。”"
+    },
+    {
+      "id": "p066",
+      "sentenceCount": 3,
+      "en": "That night, Anne sat by her window, feeling content. The wind whispered softly in the cherry branches, and mint scents wafted through. Stars twinkled above the fir trees, and Diana's light shone through an old gap.",
+      "zh": "那天晚上，安妮坐在窗前，感到心满意足。樱桃树枝轻轻摇曳，微风低语，薄荷的香气随风飘来。高大的松树上繁星闪烁，戴安娜家的灯光透过一个旧缺口洒落下来。"
+    },
+    {
+      "id": "p067",
+      "sentenceCount": 3,
+      "en": "Anne's horizons had narrowed since returning from Queen's, but she believed that her path would be filled with quiet happiness. She found joy in sincere work and genuine friendships. Nothing could take away her imagination or her ideal dreams.",
+      "zh": "自女王学院归来后，安妮的眼界有所缩小，但她相信自己的人生将会充满宁静而幸福的时光。她从真诚的工作和真挚的友谊中找到了快乐。没有任何事物能够夺走她的想象力或那些美好的梦想。"
+    },
+    {
+      "id": "p068",
+      "sentenceCount": 1,
+      "en": "She murmured softly, \"God's in his heaven, all's right with the world.\"",
+      "zh": "她轻声说道：“上帝在天上，世界一切安好。”"
+    }
+  ]
+}

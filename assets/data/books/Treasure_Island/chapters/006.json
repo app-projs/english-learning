@@ -1,0 +1,21 @@
+{
+  "id": "Treasure_Island_u6",
+  "bookId": "Treasure_Island",
+  "unitIndex": 6,
+  "title": "Chapter 6: The Battle at the Stockade",
+  "chineseTitle": "第 6 章：木栅栏围寨攻防战",
+  "paragraphs": [
+    {
+      "en": "Meanwhile, Dr. Livesey and Captain Smollett had abandoned the ship and occupied a strong log stockade built on a hill by Flint's men. I joined them inside the fort, and we raised the Union Jack above the logs. Silver arrived under a white flag of truce, offering to spare our lives if we handed over Flint's treasure map. Captain Smollett refused with scorn, and Silver departed in fury.",
+      "zh": "与此同时，李夫西医生和斯莫列特船长已经弃船，占领了弗林特手下在山上建造的坚固木栅栏围寨。我加入他们在堡垒内部，我们在木头上方升起了联合杰克旗。西尔弗在一面白色的休战旗帜下到达，提出如果我们交出弗林特的宝藏地图就饶我们一命。斯莫列特船长带着蔑视拒绝了，西尔弗在愤怒中离开。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "An hour later, the pirates launched a fierce assault on the stockade! Swarming over the palisades, they fired their muskets and fought hand-to-hand with cutlasses. We fought back bravely, killing five pirates, but Captain Smollett was wounded, and two of our loyal men were slain.",
+      "zh": "一个小时后，海盗们对木栅栏围寨发起了凶猛的攻击！涌过栅栏，他们开火火枪并用弯刀进行肉搏打斗。我们勇敢地反击，打死五个海盗，但斯莫列特船长受伤了，而我们两个忠诚的男人被杀害了。",
+      "id": "p002",
+      "sentenceCount": 1
+    }
+  ]
+}

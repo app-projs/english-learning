@@ -1,0 +1,27 @@
+{
+  "id": "Treasure_Island_u3",
+  "bookId": "Treasure_Island",
+  "unitIndex": 3,
+  "title": "Chapter 3: Long John Silver and the Hispaniola",
+  "chineseTitle": "第 3 章：独脚水手西尔弗与伊斯帕尼奥拉号",
+  "paragraphs": [
+    {
+      "en": "We traveled to Bristol, where Squire Trelawney had purchased a fine schooner named the Hispaniola. The Squire had hired a one-legged sea-cook named Long John Silver, who kept a tavern called the Spy-Glass. Silver was a tall, intelligent man with a jovial face and a parrot named Captain Flint that constantly screamed, 'Pieces of eight! Pieces of eight!'",
+      "zh": "我们前往布里斯托尔，乡绅特里劳尼在那里购买了一艘名为“伊斯帕尼奥拉号”的优秀纵帆船。乡绅雇佣了一位名叫朗·约翰·西尔弗的独脚海船厨师，他开着一家叫望远镜的酒馆。西尔弗是一个高大、聪明的男人，带着欢快的脸庞和一只叫弗林特船长的鹦鹉，鹦鹉不断尖叫着：“八里亚尔！八里亚尔！”",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Silver helped the Squire recruit the ship's crew. Captain Smollett, a stern, experienced officer, expressed deep concern to Dr. Livesey before we sailed: he disliked the crew, hated that the secret treasure map was common knowledge among the sailors, and mistrusted Silver's influence over the men. But the Squire brushed aside the Captain's warnings.",
+      "zh": "西尔弗帮助乡绅招募了船上的船员。斯莫列特船长（一位严厉有经验的官员）在我们航行前向李夫西医生表达了深深的担忧：他不喜船员，讨厌秘密宝藏地图在水手中是共同常识，并且不信任西尔弗对男人们的影响。但乡绅甩开了船长的警告。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Hispaniola set sail across the Atlantic. Silver proved to be an efficient cook, maintaining great discipline and winning the affection of young Jim Hawkins. Yet behind his cheerful smile, Silver was secretly organizing a bloodthirsty mutiny among the crew members he had surreptitiously recruited.",
+      "zh": "伊斯帕尼奥拉号起航横渡大西洋。西尔弗被证明是一位高效的厨师，保持着极大的纪律并赢得了年轻吉姆·霍金斯的喜欢。然而在他欢快的微笑后面，西尔弗正在秘密地在他暗中招募的船员中间组织着一场嗜血的叛乱。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

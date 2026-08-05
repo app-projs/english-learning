@@ -1,0 +1,70 @@
+{
+  "bookId": "The_Great_Gatsby",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Green Light across the Bay",
+      "chineseTitle": "第 1 章：海湾对岸的绿色光芒",
+      "path": "chapters/001.json",
+      "wordCount": 301,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Valley of Ashes and Myrtle Wilson",
+      "chineseTitle": "第 2 章：灰烬之谷与茉特尔·威尔逊",
+      "path": "chapters/002.json",
+      "wordCount": 204,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: The Lavish Parties at West Egg",
+      "chineseTitle": "第 3 章：西埃格的奢华舞会与神秘盖茨比",
+      "path": "chapters/003.json",
+      "wordCount": 225,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Secrets of Jay Gatsby",
+      "chineseTitle": "第 4 章：盖茨比的神秘往事与豪车",
+      "path": "chapters/004.json",
+      "wordCount": 203,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Reunion with Daisy Fay",
+      "chineseTitle": "第 5 章：雨中重逢与大吉他梦幻",
+      "path": "chapters/005.json",
+      "wordCount": 183,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The True Story of James Gatz",
+      "chineseTitle": "第 6 章：詹姆斯·盖兹的真实出身",
+      "path": "chapters/006.json",
+      "wordCount": 200,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Plaza Hotel Conflict and the Fatal Crash",
+      "chineseTitle": "第 7 章：广场酒店摊牌与致命车祸",
+      "path": "chapters/007.json",
+      "wordCount": 241,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Tragedy and the Vanishing American Dream",
+      "chineseTitle": "第 8 章：悲剧终局与消逝的美国梦",
+      "path": "chapters/008.json",
+      "wordCount": 311,
+      "readTime": 3
+    }
+  ]
+}

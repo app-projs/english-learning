@@ -1,0 +1,70 @@
+{
+  "bookId": "The_Great_Stone_Face",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Mountain and the Ancient Prophecy",
+      "chineseTitle": "第 1 章：高山宏伟形象与古老神圣预言",
+      "path": "chapters/001.json",
+      "wordCount": 168,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: Ernest’s Childhood and Faith",
+      "chineseTitle": "第 2 章：欧内斯特的童年与虔诚期盼",
+      "path": "chapters/002.json",
+      "wordCount": 135,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Mr. Gathergold’s Return and Demise",
+      "chineseTitle": "第 3 章：巨富“老金钱袋”的荣耀与破灭",
+      "path": "chapters/003.json",
+      "wordCount": 108,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: General Blood-and-Thunder’s Arrival",
+      "chineseTitle": "第 4 章：“血火将军”的赫赫战功与冷酷",
+      "path": "chapters/004.json",
+      "wordCount": 90,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Old Stony Phiz and the Political Orator",
+      "chineseTitle": "第 5 章：“老石角”政治家与虚无演讲",
+      "path": "chapters/005.json",
+      "wordCount": 56,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Great Poet’s Visit",
+      "chineseTitle": "第 6 章：浪漫伟大的诗人拜访",
+      "path": "chapters/006.json",
+      "wordCount": 103,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Sunset Discourse at the Rocks",
+      "chineseTitle": "第 7 章：岩石间天然露天剧场的夕阳讲道",
+      "path": "chapters/007.json",
+      "wordCount": 98,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Fulfillment of the Prophecy",
+      "chineseTitle": "第 8 章：预言的终极实现与圣者显现（终极结局）",
+      "path": "chapters/008.json",
+      "wordCount": 103,
+      "readTime": 1
+    }
+  ]
+}

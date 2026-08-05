@@ -1,0 +1,27 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u11",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 11,
+  "title": "Chapter 11: Who Stole the Tarts?",
+  "chineseTitle": "第 11 章：谁偷了王后的馅饼？",
+  "paragraphs": [
+    {
+      "en": "The King and Queen of Hearts were seated on their throne when they arrived, with a great crowd assembled round them—all sorts of little birds and beasts, as well as the whole pack of cards: the Knave was standing before them, in chains, with a soldier on each side to guard him; and near the King was the White Rabbit, with a trumpet in one hand, and a scroll of parchment in the other.",
+      "zh": "当她们到达时红心国王和王后正坐在他们的王座上，一大群人聚集在他们周围——各种各样的小鸟和小野兽，以及整副扑克牌：侍从站在他们面前，戴着锁链，每侧有一个士兵守卫着他；在国王附近是白兔，一只手拿着喇叭，另一只手拿着一卷羊皮纸。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "In the very middle of the court was a table, with a large dish of tarts upon it: they looked so good, that it made Alice quite hungry to look at them—'I wish they'd get the trial done,' she thought, 'and hand round the refreshments!' But there seemed to be no chance of this, so she began looking at everything about her, to pass away the time.",
+      "zh": "就在法庭的正中央有一张桌子，上面有一大盘馅饼：它们看起来那么好，以至于看着它们使爱丽丝相当饥饿——“我希望他们把审判搞定，”她想，“并分发点心！”但似乎没有这个机会，因此她开始看着她周围的一切，以消磨时间。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Alice had never been in a court of justice before, but she had read about them in books, and she was quite pleased to find that she knew the name of nearly everything there. 'That's the judge,' she said to herself, 'because of his great wig.' The judge, by the way, was the King; and as he wore his crown over the wig, he did not look at all comfortable, and it was certainly not becoming.",
+      "zh": "爱丽丝以前从未去过法院，但她在书里阅读过关于它们的东西，她相当高兴发现她几乎知道那里一切东西的名字。“那是法官，”她对自己说，“因为他的假发。”顺便说一下，法官就是国王；而因为他在假发上面戴着皇冠，他看起来一点也不舒服，而且那肯定不合适。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

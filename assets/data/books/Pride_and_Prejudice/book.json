@@ -1,0 +1,18 @@
+{
+  "id": "Pride_and_Prejudice",
+  "title": "Pride and Prejudice",
+  "chineseTitle": "傲慢与偏见",
+  "author": "Jane Austen",
+  "coverUrl": "assets/images/book_pride.png",
+  "description": "《傲慢与偏见》是英国著名女作家简·奥斯汀于 1813 年出版的世情小说巅峰之作。故事围绕贝内特家聪慧独立的大女儿伊丽莎白与傲慢冷峻的贵族达西先生展开。在一场乡村舞会上，达西因傲慢言语伤害了伊丽莎白的自尊，使她对达西产生了深厚的偏见。同时由于威克姆的谗言和达西干涉宾利与吉英的恋情，偏见愈发加深。然而随着达西秘密拯救贝内特家声誉并坦诚心迹，伊丽莎白逐渐消除了偏见，达西也摒弃了傲慢，两人最终缔结了美满婚姻。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 8,
+  "wordCount": 35000,
+  "readerCount": "168.3万人在读",
+  "targetVocab": "2500-5500词",
+  "tagLabel": "世情小说",
+  "coverBadge": "精读 · 爱情经典",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

@@ -1,0 +1,86 @@
+{
+  "bookId": "Jane_Eyre",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: Gateshead Hall and the Red-Room",
+      "chineseTitle": "第 1 章：盖茨黑德庄园与红房子虐待",
+      "path": "chapters/001.json",
+      "wordCount": 389,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: Lowood School and Helen Burns",
+      "chineseTitle": "第 2 章：洛伍德学校与海伦·麦克风的坚忍",
+      "path": "chapters/002.json",
+      "wordCount": 215,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Arrival at Thornfield Hall",
+      "chineseTitle": "第 3 章：到达桑菲尔德庄园",
+      "path": "chapters/003.json",
+      "wordCount": 192,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: Mr. Rochester and the Mysterious Laughter",
+      "chineseTitle": "第 4 章：罗切斯特先生与夜半怪笑",
+      "path": "chapters/004.json",
+      "wordCount": 219,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Party and Blanche Ingram",
+      "chineseTitle": "第 5 章：贵族宴会与布兰切的嫉妒",
+      "path": "chapters/005.json",
+      "wordCount": 138,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Chestnut Tree Proposal",
+      "chineseTitle": "第 6 章：栗树下的真情告白与求婚",
+      "path": "chapters/006.json",
+      "wordCount": 239,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Interrupted Wedding and Bertha Mason",
+      "chineseTitle": "第 7 章：被中断的婚礼与阁楼疯女人",
+      "path": "chapters/007.json",
+      "wordCount": 216,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: Moor House and St. John Rivers",
+      "chineseTitle": "第 8 章：沼泽房与圣约翰的求婚",
+      "path": "chapters/008.json",
+      "wordCount": 195,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 9,
+      "title": "Chapter 9: The Destruction of Thornfield",
+      "chineseTitle": "第 9 章：桑菲尔德庄园的毁灭与烈火",
+      "path": "chapters/009.json",
+      "wordCount": 149,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 10,
+      "title": "Chapter 10: Reader, I Married Him",
+      "chineseTitle": "第 10 章：读者，我嫁给了他（终极幸福）",
+      "path": "chapters/010.json",
+      "wordCount": 177,
+      "readTime": 2
+    }
+  ]
+}

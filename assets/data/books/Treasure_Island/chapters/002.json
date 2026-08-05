@@ -1,0 +1,33 @@
+{
+  "id": "Treasure_Island_u2",
+  "bookId": "Treasure_Island",
+  "unitIndex": 2,
+  "title": "Chapter 2: The Black Spot and the Sea-Chest",
+  "chineseTitle": "第 2 章：黑点警告与海员宝箱",
+  "paragraphs": [
+    {
+      "en": "Trouble arrived in January. A pale, sinister pirate named Black Dog visited the inn, leading to a violent sword fight with Captain Bill in the parlor. Black Dog fled bleeding, but the shock caused Captain Bill to suffer a severe stroke. Dr. Livesey bled the Captain and warned him that another drop of rum would kill him.",
+      "zh": "麻烦在元月到达。一位名叫黑狗的苍白阴险海盗拜访了客栈，导致在客厅里与比尔船长爆发了一场剧烈的击剑打斗。黑狗流着血逃跑，但打击导致比尔船长遭受了严重的中风。李夫西医生给船长放血，并警告他再喝一滴朗姆酒就会要了他的命。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "A few days later, a blind beggar named Pew arrived tapping his stick on the road. Pew forced his way into the room, seized Bill's hand, and pressed a small round piece of blackened paper into his palm—'The Black Spot,' the pirates' summons of death! The moment Pew departed, Captain Bill collapsed to the floor, killed instantly by a second stroke.",
+      "zh": "几天后，一位名叫皮尤的盲人乞丐在路上敲打着拐杖到达了。皮尤强行进入房间，抓住了比尔的手，并把一小块黑色纸片按进了他的掌心——“黑点”（海盗们的死亡召唤令）！皮尤离开的时刻，比尔船长倒在地板上，被第二次中风当场要了命。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Fearing the pirates' return, my mother and I unlocked the Captain's heavy sea-chest. Inside, beneath clothes and pistols, we found a sealed oilskin packet. As we heard the blind beggar's stick tapping outside, we fled with the packet, hiding under a bridge as Pew and his pirate gang smashed the inn searching for the paper. A troop of revenue officers arrived on horseback, trampling Pew to death and driving the pirates away.",
+      "zh": "害怕海盗们的返回，我和母亲打开了船长沉重的海员宝箱。在里面，在衣服与手枪下方，我们发现了一个密封的油布包。当我们听到盲人乞丐的拐杖在外面敲打时，我们带着包逃跑，躲在一座桥下，皮尤和他的海盗帮砸毁了客栈寻找纸张。一队税务官骑马赶到，把皮尤踩死并赶走了海盗。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "I took the oilskin packet to Squire Trelawney and Dr. Livesey. Unsealing it, we found a map of an island in the West Indies marked with three red crosses and the words: 'Treasure here—Flint.' Overjoyed, the Squire resolved to fit out a ship in Bristol to seek the buried treasure.",
+      "zh": "我把油布包交给了乡绅特里劳尼和李夫西医生。解封它，我们发现了一张西印度群岛岛屿的地图，标着三个红十字和字样：“宝藏在此——弗林特”。喜出望外，乡绅决定在布里斯托尔配备一艘船去寻找埋藏的宝藏。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

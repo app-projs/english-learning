@@ -1,0 +1,33 @@
+{
+  "id": "The_Wonderful_Wizard_of_Oz_u14",
+  "bookId": "The_Wonderful_Wizard_of_Oz",
+  "unitIndex": 14,
+  "title": "Chapter 14: The Winged Monkeys",
+  "chineseTitle": "第 14 章：金帽召唤飞猴",
+  "paragraphs": [
+    {
+      "en": "Dorothy found the magic Golden Cap in the Witch's cupboard. Upon putting it on, she read the charm inside, summoning the Winged Monkeys. She commanded the Monkeys to carry them safely back to the Emerald City.",
+      "zh": "多萝茜在女巫的碗橱里发现了魔法金帽。一戴上它，她阅读了里面的咒语，召唤了飞猴。她命令飞猴把他们安全飞回翡翠城。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Yellow Brick Road wound onward through the magical countryside of Oz, flanked by sparkling brooks, colorful wild flowers, and strange golden trees. Dorothy tightly held Toto in her arms, her magical Silver Shoes sparkling with every step she took toward their goal.",
+      "zh": "黄砖路沿着奥兹国奇幻的乡村继续盘旋，两侧环绕着闪烁的小溪、绚丽的野花与神奇的金树。多萝茜把托托紧抱在怀里，她魔法银鞋在她朝目标迈出的每一步中都闪闪发光。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'No matter how dreary our home in Kansas may be,' Dorothy remarked softly to the Scarecrow, 'we people of flesh and blood would rather live there than in any other country, be it ever so beautiful. There is no place like home.'",
+      "zh": "'无论我们在堪萨斯的家多么沉闷，'多萝茜对稻草人软软地注意到，'我们血肉之躯的人们宁愿住在那里，也不愿住在任何其他国家（无论它多么美丽）。没有任何地方像家一样。'",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Scarecrow nodded thoughtfully, his painted face smiling. 'I cannot understand it,' he said. 'If your heads were stuffed with straw like mine, you would all live in the beautiful places and leave Kansas empty. But it is fortunate you have brains, for a brain is the only thing worth having in this world.'",
+      "zh": "稻草人深思地点头，画着的脸上笑着。'我无法理解它，'他说。'如果你们的头像我的一样塞满稻草，你们都会住在美丽的地方，把堪萨斯空出来。但幸运的是你们有脑子，因为脑子是世上唯一值得拥有的东西。'",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

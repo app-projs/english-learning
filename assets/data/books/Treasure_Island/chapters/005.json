@@ -1,0 +1,27 @@
+{
+  "id": "Treasure_Island_u5",
+  "bookId": "Treasure_Island",
+  "unitIndex": 5,
+  "title": "Chapter 5: Ben Gunn, the Marooned Pirate",
+  "chineseTitle": "第 5 章：荒岛囚徒本·甘恩",
+  "paragraphs": [
+    {
+      "en": "When the Hispaniola anchored in the island bay, Silver allowed his men ashore to cool their tempers. I slipped into one of the boats and escaped into the dense island jungle alone. Exploring the island, I witnessed Silver coldbloodily stab a loyal sailor named Tom for refusing to join the mutiny.",
+      "zh": "当伊斯帕尼奥拉号锚泊在岛屿海湾时，西尔弗允许他的男人们上岸去冷却他们的脾气。我溜进了一条小船并单独逃进了密集的岛屿丛林。探索岛屿，我目睹了西尔弗冷血地刺死了一名名叫汤姆的忠诚水手，因为他拒绝加入叛乱。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Terrified, I fled deeper into the woods, where I suddenly encountered a wild, ragged man dressed in goat skins, with pale skin and crazy eyes. He threw himself on his knees, weeping: 'I'm poor Ben Gunn, I am; and I haven't spoke with a Christian these three years!'",
+      "zh": "惊恐万状，我逃进了树林深处，在那里我突然遇到了一位穿着山羊皮的野生破烂男人，有着苍白的皮肤与疯狂的双眼。他扑倒在膝盖上，哭着：“我是可怜的本·甘恩，我是；三年来我没有和一个基督教徒说过话了！”",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Ben Gunn revealed that he had been one of Flint's pirates when Flint buried the treasure. Three years ago, another ship had marooned Ben Gunn on the island alone. Ben Gunn told me he had spent those three solitary years digging, and hinted that he had found something very precious. He promised to help Captain Smollett in exchange for passage home and a share of money.",
+      "zh": "本·甘恩揭示当弗林特埋藏宝藏时他曾是弗林特的海盗之一。三年前，另一艘船把本·甘恩单独抛弃在了岛上。本·甘恩告诉我他把那三个孤独的年份花在了挖掘上，并暗示他发现了某种非常宝贵的东西。他承诺帮助斯莫列特船长以换取带他回家以及一份资金。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

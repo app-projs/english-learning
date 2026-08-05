@@ -1,0 +1,310 @@
+{
+  "bookId": "Anne_of_Green_Gables",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "CHAPTER I. Mrs. Rachel Lynde is Surprised",
+      "chineseTitle": "",
+      "path": "chapters/001.json",
+      "wordCount": 1258,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 2,
+      "title": "CHAPTER II. Matthew Cuthbert is surprised",
+      "chineseTitle": "",
+      "path": "chapters/002.json",
+      "wordCount": 2156,
+      "readTime": 16
+    },
+    {
+      "unitIndex": 3,
+      "title": "CHAPTER III. Marilla Cuthbert is Surprised",
+      "chineseTitle": "",
+      "path": "chapters/003.json",
+      "wordCount": 1036,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 4,
+      "title": "CHAPTER IV. Morning at Green Gables",
+      "chineseTitle": "",
+      "path": "chapters/004.json",
+      "wordCount": 964,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 5,
+      "title": "CHAPTER V. Anne's History",
+      "chineseTitle": "",
+      "path": "chapters/005.json",
+      "wordCount": 1006,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 6,
+      "title": "CHAPTER VI. Marilla Makes Up Her Mind",
+      "chineseTitle": "",
+      "path": "chapters/006.json",
+      "wordCount": 743,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 7,
+      "title": "CHAPTER VII. Anne Says Her Prayers",
+      "chineseTitle": "",
+      "path": "chapters/007.json",
+      "wordCount": 665,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 8,
+      "title": "CHAPTER VIII. Anne's Bringing-up Is Begun",
+      "chineseTitle": "",
+      "path": "chapters/008.json",
+      "wordCount": 1228,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 9,
+      "title": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified",
+      "chineseTitle": "",
+      "path": "chapters/009.json",
+      "wordCount": 1002,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 10,
+      "title": "CHAPTER X. Anne's Apology",
+      "chineseTitle": "",
+      "path": "chapters/010.json",
+      "wordCount": 1079,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 11,
+      "title": "CHAPTER XI. Anne's Impressions of Sunday-School",
+      "chineseTitle": "",
+      "path": "chapters/011.json",
+      "wordCount": 519,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 12,
+      "title": "CHAPTER XII. A Solemn Vow and Promise",
+      "chineseTitle": "",
+      "path": "chapters/012.json",
+      "wordCount": 1034,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 13,
+      "title": "CHAPTER XIII. The Delights of Anticipation",
+      "chineseTitle": "",
+      "path": "chapters/013.json",
+      "wordCount": 805,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 14,
+      "title": "CHAPTER XIV. Anne's Confession",
+      "chineseTitle": "",
+      "path": "chapters/014.json",
+      "wordCount": 1446,
+      "readTime": 11
+    },
+    {
+      "unitIndex": 15,
+      "title": "CHAPTER XV. A Tempest in the School Teapot",
+      "chineseTitle": "",
+      "path": "chapters/015.json",
+      "wordCount": 2459,
+      "readTime": 18
+    },
+    {
+      "unitIndex": 16,
+      "title": "CHAPTER XVI. Diana Is Invited to Tea with Tragic Results",
+      "chineseTitle": "",
+      "path": "chapters/016.json",
+      "wordCount": 1805,
+      "readTime": 13
+    },
+    {
+      "unitIndex": 17,
+      "title": "CHAPTER XVII. A New Interest in Life",
+      "chineseTitle": "",
+      "path": "chapters/017.json",
+      "wordCount": 1077,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 18,
+      "title": "CHAPTER XVIII. Anne to the Rescue",
+      "chineseTitle": "",
+      "path": "chapters/018.json",
+      "wordCount": 1342,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 19,
+      "title": "CHAPTER XIX. A Concert a Catastrophe and a Confession",
+      "chineseTitle": "",
+      "path": "chapters/019.json",
+      "wordCount": 2016,
+      "readTime": 15
+    },
+    {
+      "unitIndex": 20,
+      "title": "CHAPTER XX. A Good Imagination Gone Wrong",
+      "chineseTitle": "",
+      "path": "chapters/020.json",
+      "wordCount": 877,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 21,
+      "title": "CHAPTER XXI. A New Departure in Flavorings",
+      "chineseTitle": "",
+      "path": "chapters/021.json",
+      "wordCount": 1525,
+      "readTime": 11
+    },
+    {
+      "unitIndex": 22,
+      "title": "CHAPTER XXII. Anne is Invited Out to Tea",
+      "chineseTitle": "",
+      "path": "chapters/022.json",
+      "wordCount": 523,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 23,
+      "title": "CHAPTER XXIII. Anne Comes to Grief in an Affair of Honor",
+      "chineseTitle": "",
+      "path": "chapters/023.json",
+      "wordCount": 1138,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 24,
+      "title": "CHAPTER XXIV. Miss Stacy and Her Pupils Get Up a Concert",
+      "chineseTitle": "",
+      "path": "chapters/024.json",
+      "wordCount": 670,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 25,
+      "title": "CHAPTER XXV. Matthew Insists on Puffed Sleeves",
+      "chineseTitle": "",
+      "path": "chapters/025.json",
+      "wordCount": 1281,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 26,
+      "title": "CHAPTER XXVI. The Story Club Is Formed",
+      "chineseTitle": "",
+      "path": "chapters/026.json",
+      "wordCount": 1097,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 27,
+      "title": "CHAPTER XXVII. Vanity and Vexation of Spirit",
+      "chineseTitle": "",
+      "path": "chapters/027.json",
+      "wordCount": 1205,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 28,
+      "title": "CHAPTER XXVIII. An Unfortunate Lily Maid",
+      "chineseTitle": "",
+      "path": "chapters/028.json",
+      "wordCount": 1242,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 29,
+      "title": "CHAPTER XXIX. An Epoch in Anne's Life",
+      "chineseTitle": "",
+      "path": "chapters/029.json",
+      "wordCount": 1566,
+      "readTime": 12
+    },
+    {
+      "unitIndex": 30,
+      "title": "CHAPTER XXX. The Queens Class Is Organized",
+      "chineseTitle": "",
+      "path": "chapters/030.json",
+      "wordCount": 1741,
+      "readTime": 13
+    },
+    {
+      "unitIndex": 31,
+      "title": "CHAPTER XXXI. Where the Brook and River Meet",
+      "chineseTitle": "",
+      "path": "chapters/031.json",
+      "wordCount": 1111,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 32,
+      "title": "CHAPTER XXXII. The Pass List Is Out",
+      "chineseTitle": "",
+      "path": "chapters/032.json",
+      "wordCount": 1347,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 33,
+      "title": "CHAPTER XXXIII. The Hotel Concert",
+      "chineseTitle": "",
+      "path": "chapters/033.json",
+      "wordCount": 1615,
+      "readTime": 12
+    },
+    {
+      "unitIndex": 34,
+      "title": "CHAPTER XXXIV. A Queen's Girl",
+      "chineseTitle": "",
+      "path": "chapters/034.json",
+      "wordCount": 1215,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 35,
+      "title": "CHAPTER XXXV. The Winter at Queen's",
+      "chineseTitle": "",
+      "path": "chapters/035.json",
+      "wordCount": 812,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 36,
+      "title": "CHAPTER XXXVI. The Glory and the Dream",
+      "chineseTitle": "",
+      "path": "chapters/036.json",
+      "wordCount": 914,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 37,
+      "title": "CHAPTER XXXVII. The Reaper Whose Name Is Death",
+      "chineseTitle": "",
+      "path": "chapters/037.json",
+      "wordCount": 1148,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 38,
+      "title": "CHAPTER XXXVIII. The Bend in the road",
+      "chineseTitle": "",
+      "path": "chapters/038.json",
+      "wordCount": 1569,
+      "readTime": 12
+    }
+  ]
+}

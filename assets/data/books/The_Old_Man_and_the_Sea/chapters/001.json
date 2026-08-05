@@ -1,0 +1,21 @@
+{
+  "id": "The_Old_Man_and_the_Sea_u1",
+  "bookId": "The_Old_Man_and_the_Sea",
+  "unitIndex": 1,
+  "title": "Chapter 1: The Old Man and the Boy",
+  "chineseTitle": "第 1 章：老渔夫圣地亚哥与忠诚的孩子",
+  "paragraphs": [
+    {
+      "en": "He was an old man who fished alone in a skiff in the Gulf Stream and he had gone eighty-four days now without taking a fish. In the first forty days a boy had been with him. But after forty days without a fish the boy's parents had told him that the old man was now definitely and finally salao, which is the worst form of unlucky, and the boy had gone at their orders in another boat which caught three good fish the first week.",
+      "zh": "他是一位老老人，一个人划着一艘小船在墨西哥湾流中捕鱼，如今他已经连续八十四天没有捕到一条鱼了。在前四十天里，有一个孩子陪着他。但是在四十天没有抓到一条鱼之后，孩子的父母告诉他，老老人现在绝对且最终是“萨拉奥”（也就是最糟糕的倒霉），孩子按照他们的命令去了另一条船，第一周就捕到了三条好鱼。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "It made the boy sad to see the old man come in each day with his skiff empty and he always went down to help him carry either the coiled lines or the gaff and harpoon and the sail that was furled around the mast. Everything about him was old except his eyes and they were the same color as the sea and were cheerful and undefeated.",
+      "zh": "看到老老人每天划着空船回来，孩子感到很难过，他总是跑下去帮他提卷好的钓线，或是携带着搭钩、飞镖和绕在桅杆上的帆。关于他的一切都是古老的，除了他的双眼，它们和大海有着相同的颜色，愉快且未被击败。",
+      "id": "p002",
+      "sentenceCount": 1
+    }
+  ]
+}

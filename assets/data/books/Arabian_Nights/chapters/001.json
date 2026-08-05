@@ -1,0 +1,27 @@
+{
+  "id": "Arabian_Nights_u1",
+  "bookId": "Arabian_Nights",
+  "unitIndex": 1,
+  "title": "Chapter 1: The Sultan and Scheherazade’s Courage",
+  "chineseTitle": "第 1 章：国王的虐杀与雪赫拉查德的勇毅",
+  "paragraphs": [
+    {
+      "en": "In ancient times, in the royal city of Samarkand, ruled a powerful Persian monarch named Sultan Shahryar. He was initially a wise and benevolent ruler, beloved by all his subjects. However, when he discovered that his beloved queen had been unfaithful, his heart turned to cold iron, and his mind was consumed by a bitter, dark madness. Convincing himself that no woman on earth could ever be trusted, he swore a bloodthirsty oath of vengeance.",
+      "zh": "在古代，在撒马尔罕的皇家城市里，统治着一位名叫沙赫里亚尔苏丹的强大波斯君主。他最初是一位明智而仁慈的统治者，受到所有臣民的喜爱。然而，当他发现自己亲爱的王后背叛了他时，他的心变成了冰冷的铁石，头脑被痛苦而黑暗的疯狂所吞噬。他确信世上没有任何女性值得信任，发下了嗜血的复仇誓言。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Every evening, the Sultan ordered his Grand Vizier to bring him a fresh young maiden from the city as his bride. The next morning at dawn, driven by his cruel vow, the Sultan commanded the executioner to behead the innocent bride. For three long years, terror gripped the city; families wept in agony, and mothers fled with their daughters, leaving the kingdom desolate and haunted by constant mourning.",
+      "zh": "每天晚上，苏丹命令他的大宰相从城里带回一位新鲜的年轻少女作为他的新娘。第二天清晨，在残酷誓言的驱使下，苏丹命令刽子手将无辜的新娘斩首。在长达三年的时间里，恐怖笼罩着整座城市；家庭在痛苦中哭泣，母亲们带着女儿逃跑，使王国变得荒凉且充斥着不断的哀悼。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The Grand Vizier had two daughters, the elder of whom was named Scheherazade, a young woman of rare beauty, courage, and matchless wisdom. She had read thousands of books on history, philosophy, poetry, and medicine, storing in her memory the tales of ancient kings and sages. Seeing the sorrow of her people, Scheherazade resolved to perform a perilous deed: 'Father,' she declared calmly, 'I entreat you by all that is sacred to present me to the Sultan as his bride.'",
+      "zh": "大宰存有两个女儿，长女名叫雪赫拉查德，是一位有着罕见美貌、勇气和无可比拟智慧的年轻女子。她阅读过数千本关于历史、哲学、诗歌和医学的书籍，在记忆中储存了古代国王和贤哲的故事。看到人民的悲伤，雪赫拉查德决心实施一项危险的壮举：“父亲，”她平静地宣布，“我以一切神圣的名义恳求您将我献给苏丹作为他的新娘。”",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

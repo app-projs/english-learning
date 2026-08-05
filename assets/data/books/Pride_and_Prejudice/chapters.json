@@ -1,0 +1,70 @@
+{
+  "bookId": "Pride_and_Prejudice",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Assembly Ball and the First Impression",
+      "chineseTitle": "第 1 章：舞会风波与第一印象的交锋",
+      "path": "chapters/001.json",
+      "wordCount": 250,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: Jane’s Illness at Netherfield",
+      "chineseTitle": "第 2 章：吉英患病与内瑟菲尔德之行",
+      "path": "chapters/002.json",
+      "wordCount": 130,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Mr. Collins’s Proposal and George Wickham’s Tale",
+      "chineseTitle": "第 3 章：柯林斯的求婚与威克姆的谗言",
+      "path": "chapters/003.json",
+      "wordCount": 99,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Netherfield Ball and Departure for London",
+      "chineseTitle": "第 4 章：内瑟菲尔德舞会与离别",
+      "path": "chapters/004.json",
+      "wordCount": 53,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Darcy’s Proposal and the Explanatory Letter",
+      "chineseTitle": "第 5 章：达西的求婚与真相长信",
+      "path": "chapters/005.json",
+      "wordCount": 110,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: Pemberley and the Family Crisis",
+      "chineseTitle": "第 6 章：彭伯里庄园与家族危机爆发",
+      "path": "chapters/006.json",
+      "wordCount": 76,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: Lydia's Rescue and Lady Catherine's Interference",
+      "chineseTitle": "第 7 章：达西秘密救赎与凯瑟琳干涉",
+      "path": "chapters/007.json",
+      "wordCount": 74,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: Love Redeemed and Eternal Harmony",
+      "chineseTitle": "第 8 章：真爱救赎与偏见消融（终极幸福）",
+      "path": "chapters/008.json",
+      "wordCount": 60,
+      "readTime": 1
+    }
+  ]
+}

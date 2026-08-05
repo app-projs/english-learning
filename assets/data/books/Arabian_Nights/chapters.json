@@ -1,0 +1,70 @@
+{
+  "bookId": "Arabian_Nights",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Sultan and Scheherazade’s Courage",
+      "chineseTitle": "第 1 章：国王的虐杀与雪赫拉查德的勇毅",
+      "path": "chapters/001.json",
+      "wordCount": 223,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Story of the Merchant and the Jinnee",
+      "chineseTitle": "第 2 章：商人与巨精的故事",
+      "path": "chapters/002.json",
+      "wordCount": 185,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: Ali Baba and the Forty Thieves - The Magic Cave",
+      "chineseTitle": "第 3 章：阿里巴巴与神奇山洞",
+      "path": "chapters/003.json",
+      "wordCount": 143,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: Morgiana and the Forty Thieves' Defeat",
+      "chineseTitle": "第 4 章：摩尔佳娜之智与强盗覆灭",
+      "path": "chapters/004.json",
+      "wordCount": 126,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: Aladdin and the Wonderful Lamp - The Magic Ring",
+      "chineseTitle": "第 5 章：阿拉丁与神灯手环",
+      "path": "chapters/005.json",
+      "wordCount": 108,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: Aladdin's Palace and the Sorcerer's Revenge",
+      "chineseTitle": "第 6 章：阿拉丁的水晶城堡与巫师复仇",
+      "path": "chapters/006.json",
+      "wordCount": 102,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: Sinbad the Sailor and the Valley of Diamonds",
+      "chineseTitle": "第 7 章：水手辛巴达与钻石之谷",
+      "path": "chapters/007.json",
+      "wordCount": 102,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Triumph of Wisdom and Eternal Peace",
+      "chineseTitle": "第 8 章：智慧的胜利与永恒和平（终极结局）",
+      "path": "chapters/008.json",
+      "wordCount": 117,
+      "readTime": 1
+    }
+  ]
+}

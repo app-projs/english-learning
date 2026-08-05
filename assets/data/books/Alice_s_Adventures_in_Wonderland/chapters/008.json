@@ -1,0 +1,27 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u8",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 8,
+  "title": "Chapter 8: The Queen’s Croquet-Ground",
+  "chineseTitle": "第 8 章：王后的槌球场",
+  "paragraphs": [
+    {
+      "en": "A large rose-tree stood near the entrance of the garden: the roses growing on it were white, but there were three gardeners at it, busily painting them red. Alice thought this a very curious thing, and she went near to watch them, and just as she came up to them she heard one of them say, 'Look out now, Five! Don't go splashing paint over me like that!'",
+      "zh": "一棵大玫瑰树立在花园入口附近：上面生长的玫瑰是白色的，但有三个园丁在它旁边，忙着把它们涂成红色。爱丽丝认为这是一件极其神奇的事，她走近观看他们，就在她走到他们跟前时她听到他们中的一个说：“现在小心，五号！别那样把油漆溅在我身上！”",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "'I couldn't help it,' said Five, in a sulky tone; 'Seven jogged my elbow.' On which Seven looked up and said, 'That's right, Five! Always lay the blame on others!' 'YOU'D better not talk!' said Five. 'I heard the Queen say only yesterday you deserved to be beheaded!' 'What for?' said the one who had spoken first. 'That's none of YOUR business, Two!' said Seven.",
+      "zh": "“我没办法，”五号用闷闷不乐的语气说；“七号碰了我的肘部。”对此七号抬头说：“对极了，五号！总是把责任推给别人！”“你最好别说话！”五号说。“我昨天刚听到王后说你该被斩首！”“为什么？”最先说话的那个人说。“那不关你的事，二号！”七号说。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Alice went up to them and asked softly, 'Would you tell me, please, why you are painting those roses?' Two began, in a low voice, 'Why, the fact is, you see, Miss, this here ought to have been a RED rose-tree, and we put a white one in by mistake; and if the Queen was to find it out, we should all have our heads cut off, you know. So you see, Miss, we're doing our best, afore she comes, to—' At this moment Five, who had been anxiously looking across the garden, called out 'The Queen! The Queen!' and the three gardeners instantly threw themselves flat upon their faces.",
+      "zh": "爱丽丝走到他们跟前软软地问：“请你们告诉我，你们为什么在把那些玫瑰涂色？”二号用低沉的声音开始说：“哎呀，事实是，你看，小姐，这里本来应该是一棵红玫瑰树，我们错放了一棵白色的；如果王后发现了，我们都会被砍头的，你知道。所以你看，小姐，我们在她来之前尽最大努力去——”在这一时刻一直在焦急地向花园对面看的五号大喊：“王后！王后！”三个园丁立刻脸朝下平摊在了地上。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

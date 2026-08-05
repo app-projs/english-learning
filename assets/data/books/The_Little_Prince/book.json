@@ -1,0 +1,18 @@
+{
+  "id": "The_Little_Prince",
+  "title": "The Little Prince",
+  "chineseTitle": "小王子",
+  "author": "Antoine de Saint-Exupéry",
+  "coverUrl": "assets/images/book_prince.png",
+  "description": "《小王子》是法国伟大飞行员作家安托万·德·圣-埃克苏佩里于 1943 年出版的享誉全球的哲学童话巅峰名篇。本文件收录了全书完整的 27 个章节。故事讲述了飞行员因飞机故障被迫降落在撒哈拉沙漠，遇到了来自外星球的小王子。小王子讲述了他离开自己的小行星 B-612，离开了他深爱却又骄傲敏感的玫瑰，游历各个星球的奇妙经历。通过遇到国王、虚荣者、商人、守灯人、地理学家以及地球上的狐狸，小王子领悟了爱与责任的真谛——“只有用心灵才能看得清本质，真正重要的东西用眼睛是看不见的”。",
+  "category": "经典名著",
+  "difficulty": "初/中级难度",
+  "totalUnits": 27,
+  "wordCount": 58000,
+  "readerCount": "260.8万人在读",
+  "targetVocab": "1000-3800词",
+  "tagLabel": "哲理童话",
+  "coverBadge": "精读 · 必读全本",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

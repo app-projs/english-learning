@@ -1,0 +1,33 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes_u3",
+  "bookId": "The_Adventures_of_Sherlock_Holmes",
+  "unitIndex": 3,
+  "title": "Chapter 3: The Boscombe Valley Mystery",
+  "chineseTitle": "第 3 章：博斯科姆比溪谷惨案",
+  "paragraphs": [
+    {
+      "en": "Holmes invited me to travel to Herefordshire to investigate the murder of Mr. Charles McCarthy, a wealthy Australian emigré who had been found battered to death near Boscombe Pool. All evidence pointed to his young son, James McCarthy, who had been seen arguing heatedly with his father near the pool moments before the murder, carrying a gun.",
+      "zh": "福尔摩斯邀请我前往赫里福德郡调查查尔斯·麦卡锡先生的谋杀案，他是一位富有的澳大利亚移民，被发现死在博斯科姆比水塘附近被殴打致死。所有的证据都指向他的年轻儿子詹姆斯·麦卡锡，有人看到他在谋杀前几分钟在水塘附近持枪与父亲激烈争吵。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "James was arrested for murder, but claimed he was innocent. He admitted arguing with his father over marrying Alice Turner, the daughter of the local landlord, John Turner. James recalled that as his father died, his father's last words were a cryptic reference to 'a rat' and a cloak.",
+      "zh": "詹姆斯因谋杀被捕，但声称自己是无辜的。他承认曾与父亲就娶当地地主约翰·特纳的女儿艾丽斯·特纳一事发生争吵。詹姆斯回想起当他父亲死去时，他父亲最后的话语是对“一只老鼠”和斗篷的隐晦提及。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes examined the muddy ground around Boscombe Pool with a magnifying glass, analyzing footprints, cigarette ash, and bloodstains. He deduced that the murderer was a tall, left-handed man who walked with a limp and smoked cigars. Furthermore, Holmes realized 'a rat' was actually the truncated pronunciation of 'Ballarat,' a famous gold-mining town in Australia!",
+      "zh": "福尔摩斯用放大镜检查了博斯科姆比水塘周围泥泞的地面，分析着脚印、香烟灰和血迹。他推断出谋杀犯是一位身材高大、左撇子、走路瘸腿且抽雪茄的男人。此外，福尔摩斯意识到“a rat”（老鼠）实际上是澳大利亚著名采金镇“巴拉瑞特”（Ballarat）的缩略发音！",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes confronted the landlord, John Turner, who confessed everything. Turner had been a highway robber in Ballarat decades earlier, and Charles McCarthy had been blackmailing him ever since. When McCarthy demanded that Turner force Alice to marry James, Turner killed him to protect his daughter's future. Holmes kept the confession secret, and James McCarthy was acquitted.",
+      "zh": "福尔摩斯质问地主约翰·特纳，后者承认了一切。特纳几十年前在巴拉瑞特曾是个公路强盗，而查尔斯·麦卡锡从那以后一直敲诈他。当麦卡锡要求特纳强迫艾丽斯嫁给詹姆斯时，特纳杀了他以保护女儿的未来。福尔摩斯保持了招供秘密，詹姆斯·麦卡锡被宣告无罪。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

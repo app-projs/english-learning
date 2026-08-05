@@ -1,0 +1,27 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u9",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 9,
+  "title": "Chapter 9: The Mock Turtle’s Story",
+  "chineseTitle": "第 9 章：假海龟的故事",
+  "paragraphs": [
+    {
+      "en": "'You can't think how glad I am to see you again, you dear old thing!' said the Duchess, as she tucked her arm affectionately into Alice's, and they walked off together. Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen.",
+      "zh": "“你无法想象再次见到你我是多么高兴，你这亲爱的老小伙！”公爵夫人说，同时她亲热地把手臂塞进爱丽丝的臂弯里，她们一起走了开去。爱丽丝极其高兴发现她处于这样愉快的脾气中，并在心里想或许仅仅是胡椒使她在厨房相遇时变得那么野蛮。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "They very soon came upon a Gryphon, lying fast asleep in the sun. 'Up, lazy thing!' said the Queen, 'and take this young lady to see the Mock Turtle, and to hear his history. I must go back and see after some executions I me ordered;' and she walked off, leaving Alice alone with the Gryphon.",
+      "zh": "她们很快遇到了一只鹰头狮，正熟睡在太阳下。“起来，懒惰的东西！”王后说，“带这位年轻女士去见假海龟，并听听他的历史。我必须回去料理我命令的一些处决；”她走了开去，留下爱丽丝单独与鹰头狮在一起。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "They had not gone far before they saw the Mock Turtle in the distance, sitting sad and lonely on a little ledge of rock, and, as they came nearer, Alice could hear him sighing as if his heart would break. She pitied him deeply. 'What is his sorrow?' she asked the Gryphon, and the Gryphon answered, 'It's all his fancy, that: he hasn't got no sorrow, you know. Come on!'",
+      "zh": "她们没走多远就在远处看到了假海龟，悲伤而孤独地坐在岩石的小突出部上，而当她们靠近时，爱丽丝能听到他叹息着，就仿佛他的心要碎了一样。她深深地同情他。“他的悲伤是什么？”她问鹰头狮，鹰头狮回答：“那全是他的幻想，那：他没有任何悲伤，你知道。来吧！”",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

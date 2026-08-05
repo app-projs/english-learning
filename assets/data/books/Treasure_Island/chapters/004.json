@@ -1,0 +1,27 @@
+{
+  "id": "Treasure_Island_u4",
+  "bookId": "Treasure_Island",
+  "unitIndex": 4,
+  "title": "Chapter 4: The Apple Barrel and the Mutiny Plot",
+  "chineseTitle": "第 4 章：苹果桶里的阴谋",
+  "paragraphs": [
+    {
+      "en": "On the evening before we sighted land, I climbed into an empty apple barrel on deck to fetch an apple. As I lay inside, I heard heavy footsteps, and Long John Silver sat down against the barrel, speaking in a low voice with several crew members.",
+      "zh": "在我们看见陆地的那个晚上之前，我爬上了甲板上的一个空苹果桶去拿苹果。当我在里面躺着时，我听到了沉重的脚步声，朗·约翰·西尔弗靠着桶坐了下来，用低沉的声音与几个船员交谈着。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Overhearing their conversation, my blood ran cold! Silver revealed that he had been the quartermaster of the legendary pirate Captain Flint, and that most of the crew were Flint's old pirate hands. They planned to wait until Captain Smollett navigated the ship to Treasure Island and loaded the treasure, after which they would slaughter the Captain, Squire, Doctor, and all loyal men!",
+      "zh": "无意中听到他们的交谈，我的血液变凉了！西尔弗揭露了他曾是传奇海盗弗林特船长的军需官，而且大部分船员都是弗林特的老海盗手下。他们计划等待直到斯莫列特船长驾驶船只到达金银岛并装载宝藏，之后他们就会屠杀船长、乡绅、医生以及所有忠诚的男人！",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Just as Silver reached into the barrel for an apple, the lookout shouted: 'Land ho!' In the excitement, I escaped unnoticed and reported the horrific plot to Captain Smollett, Dr. Livesey, and the Squire. Counting our forces, we found only seven loyal men against nineteen mutineers.",
+      "zh": "正当西德尼伸进桶里拿苹果时，瞭望员喊道：“看到陆地了！”在兴奋中，我在未被察觉的情况下逃脱，并向斯莫列特船长、李夫西医生和乡绅报告了这个可怕的阴谋。计算我们的力量，我们发现面对十九个叛变者只有七个忠诚的男人。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

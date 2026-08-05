@@ -1,0 +1,27 @@
+{
+  "id": "Treasure_Island_u8",
+  "bookId": "Treasure_Island",
+  "unitIndex": 8,
+  "title": "Chapter 8: The Treasure Found and Homebound",
+  "chineseTitle": "第 8 章：宝藏出土与重返家园（终极结局）",
+  "paragraphs": [
+    {
+      "en": "Returning to the stockade at night, I was shocked to find it occupied by Silver and five surviving pirates! Silver protected me from his mutinous men, revealing that Dr. Livesey had given him the stockade and the treasure map.",
+      "zh": "夜晚回到木栅栏围寨，我吃惊地发现它被西尔弗和五个幸存的海盗占领着！西尔弗保护着我免受他叛变男人们的伤害，揭示李夫西医生已经把木栅栏围寨和宝藏地图给了他。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The next day, Silver led the pirates to the treasure site using Flint's map. But when they reached the tall tree marked on the map, they found a giant hole—the treasure had already been dug up years ago! The enraged pirates turned on Silver, but Dr. Livesey and Ben Gunn sprang from the bushes with muskets, scattering the mutineers.",
+      "zh": "第二天，西尔弗使用弗林特的地图引导海盗们前往宝藏地点。但当他们到达地图上标着的高树时，他们发现了一个巨大的坑——宝藏几年前就已经被挖出来了！被激怒的海盗们冲向西尔弗，但李夫西医生和本·甘恩带着火枪从灌木丛里跳了出来，赶散了叛变者。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Ben Gunn revealed that he had found the gold three years earlier and carried it all to his cave! We spent days loading seven hundred thousand pounds of gold coins onto the Hispaniola. Leaving the three surviving pirates marooned on the island, we set sail for England. In a Caribbean port, Silver stole a sack of gold and escaped into the night. The rest of us returned safely home to Bristol, wealthy and peaceful, though the sound of Captain Flint's parrot screaming 'Pieces of eight!' still haunted my dreams.",
+      "zh": "本·甘恩揭示他三年前就发现了黄金，并把它们全部搬到了他的洞穴里！我们花了几天时间把七十万镑金币装上了伊斯帕尼奥拉号。留下三个幸存的海盗抛弃在岛上，我们起航前往英国。在加勒比港口，西尔弗偷了一袋黄金并在黑夜中逃跑。我们其余的人安全回到布里斯托尔家乡，富有而和平，尽管弗林特船长鹦鹉尖叫着“八里亚尔！”的声音依然萦绕在我的梦中。",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

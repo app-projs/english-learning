@@ -1,0 +1,27 @@
+{
+  "id": "A_Tale_of_Two_Cities_u1",
+  "bookId": "A_Tale_of_Two_Cities",
+  "unitIndex": 1,
+  "title": "Chapter 1: The Best of Times and the Mail Coach",
+  "chineseTitle": "第 1 章：最好的时代与夜色中的邮政马车",
+  "paragraphs": [
+    {
+      "en": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way—in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.",
+      "zh": "这是最好的时代，这是最坏的时代；这是智慧的时代，这是愚蠢的时代；这是信仰的时期，这是怀疑的时期；这是光明的季节，这是黑暗的季节；这是希望的春天，这是绝望的冬天；我们面前拥有一切，我们面前一无所有；我们都在直奔天堂，我们都在直奔相反的方向——简而言之，那个时期与现在的时期是如此相似，以至于它的一些最高权威坚持认为，无论是好是坏，都只能用最高级的程度来进行评估与接受。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "It was the Dover road that lay, on a Friday night late in November, before the Dover mail. Heavy fog steamed up from the hollows, and the horses stumbled through the deep mud of Shooters Hill. A horseman rode up, his face wrapped in a heavy scarf, calling out for Mr. Jarvis Lorry, a passenger from Tellson's Bank in London.",
+      "zh": "在十一月下旬一个星期五的深夜，多佛邮政马车正行驶在多佛大道上。浓雾从山谷中蒸腾而起，马匹在射手山的深泥中艰难蹒跚。一名骑手骑马赶来，脸裹在厚厚的围巾里，高喊要找来自伦敦泰尔森银行的乘客贾维斯·洛里先生。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "The messenger handed Mr. Lorry a slip of paper with the message: 'Wait at Dover for Mam'selle.' Mr. Lorry wrote back three words shrouded in mystery: 'Recalled to Life.'",
+      "zh": "信使递给洛里先生一张纸条，上面写着：“在多佛等候小姐。”洛里先生回写了充满神秘色彩的三个字：“死而复生。”",
+      "id": "p003",
+      "sentenceCount": 1
+    }
+  ]
+}

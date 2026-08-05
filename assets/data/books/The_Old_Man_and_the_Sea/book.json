@@ -1,0 +1,18 @@
+{
+  "id": "The_Old_Man_and_the_Sea",
+  "title": "The Old Man and the Sea",
+  "chineseTitle": "老人与海",
+  "author": "Ernest Hemingway",
+  "coverUrl": "assets/images/book_sea.png",
+  "description": "《老人与海》是美国现代文学巨匠欧内斯特·海明威于 1952 年出版的硬汉文学巅峰之作。故事讲述了一位老古巴渔夫圣地亚哥在连续 84 天没打到一条鱼后，单独出海前往墨西哥湾远海。第 85 天，他钓到了一条巨大的马林鱼。经过两天两夜精疲力竭的殊死搏斗，老渔夫克服了饥饿、伤痛与孤独，终于杀死了大鱼。然而在返航途中，大鱼引来了成群鲨鱼的围攻。老渔夫手握残缺的武器，与鲨鱼进行了坚强绝伦的血战，虽然大鱼最终只剩下一具白骨，但圣地亚哥展示了“人可以被毁灭，但不能被打败”的硬汉精神。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 8,
+  "wordCount": 32000,
+  "readerCount": "189.5万人在读",
+  "targetVocab": "1500-4500词",
+  "tagLabel": "硬汉文学",
+  "coverBadge": "精读 · 诺奖名篇",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

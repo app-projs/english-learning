@@ -1,0 +1,18 @@
+{
+  "id": "Jane_Eyre",
+  "title": "Jane Eyre",
+  "chineseTitle": "简·爱",
+  "author": "Charlotte Brontë",
+  "coverUrl": "assets/images/book_jane.png",
+  "description": "《简·爱》是英国维多利亚时代著名女作家夏洛蒂·勃朗特于 1847 年出版的长篇小说代表作。故事讲述了孤儿简·爱在舅妈家饱受虐待、在洛伍德慈善学校经历艰难成长后，前往桑菲尔德庄园担任家庭教师。她与性格孤傲却内心深情的庄园主罗切斯特先生相爱。在婚礼当天，简·爱得知罗切斯特在阁楼关押着患有疯病的合法妻子伯莎·梅森。出于对自身尊严与道德原则的坚守，简·爱毅然孤身离开。经历贫困与磨难后，简·爱继承了遗产，并在桑菲尔德庄园被毁、罗切斯特双目失明残疾后重新回到他身边，缔结了平等尊重的真挚婚姻。",
+  "category": "经典名著",
+  "difficulty": "中/高级难度",
+  "totalUnits": 10,
+  "wordCount": 42000,
+  "readerCount": "195.2万人在读",
+  "targetVocab": "2000-5000词",
+  "tagLabel": "女性成长",
+  "coverBadge": "精读 · 独立女性",
+  "sourceFormat": "legacy-json",
+  "contentVersion": 1
+}

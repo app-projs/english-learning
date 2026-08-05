@@ -1,0 +1,33 @@
+{
+  "id": "Jane_Eyre_u1",
+  "bookId": "Jane_Eyre",
+  "unitIndex": 1,
+  "title": "Chapter 1: Gateshead Hall and the Red-Room",
+  "chineseTitle": "第 1 章：盖茨黑德庄园与红房子虐待",
+  "paragraphs": [
+    {
+      "en": "There was no possibility of taking a walk that day. We had been wandering, indeed, in the leafless shrubbery an hour in the morning; but since dinner the cold winter wind had brought with it clouds so sombre, and a rain so penetrating, that further outdoor exercise was now out of the question. I was glad of it: I never liked long walks, especially on chilly afternoons, returning home in the raw twilight, with nipped fingers and toes, and a heart humbled by the perpetual scoldings of Bessie, the nurse, and humbled by the consciousness of my physical inferiority to John, Eliza, and Georgiana Reed.",
+      "zh": "那天不可能出去散步了。早上我们在没有叶子的灌木丛里游荡了一个小时；但自午饭以来，寒冷的冬风带来了阴沉的乌云和穿透性的雨水，再进行室外活动是不可能的了。我为此感到高兴：我从来不喜欢长途散步，特别是在寒冷的下午，在原始的黄昏中回到家，手指和脚趾冻得发麻，而且因为保姆贝西永无休止的训斥以及自己意识到在身体上不如约翰、伊丽莎与乔治安娜·里德而心怀自卑。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "I mounted into the window-seat of the breakfast-room, gathering my feet up under me, and sitting cross-legged, like a Turk. Drawing the red moreen curtain nearly close, I was enshrined in double retirement. Folds of scarlet drapery shut in my view to the right hand; to the left were the clear panes of glass, protecting, but not separating me from the drear November day. At intervals, while turning over the leaves of Bewick's History of British Birds, I studied the aspect of that winter afternoon. Far off, it offered a pale blank of mist and cloud; near a scene of wet lawn and storm-beat shrub, with an ceaseless rain sweeping wildly aslant before a long and lamentable blast.",
+      "zh": "我爬进早餐室的窗台盘腿坐着，把脚收在身下，像个土耳其人一样。把红色的莫林窗帘几乎拉拢，我被尊奉在双重的隐退中。深红色的帘褶封锁了我右手边的视野；左边是清澈的玻璃窗，保护着我但没有把我与沉闷的十一月时光隔开。在翻阅毕威克《英国鸟类史》的空隙，我研究着那个冬天下午的景象。远方呈现出一片苍白的雾气与乌云；近处是一片湿漉漉的草坪和狂风敲打的灌木，在一阵漫长而哀怨的狂风前，无休止的雨水狂乱地斜扫着。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "My cruel cousin John Reed soon tracked me down. He bullied me daily, striking me without provocation and calling me a dependent orphan who had no right to live with his family. When he threw a heavy book at my head, cutting my scalp, the long-repressed fury exploded within me. I flew at him like a desperate wildcat. His sisters ran screaming to Mrs. Reed, who instantly commanded her maids to drag me to the dreaded Red-Room—the dark, icy chamber where my uncle Reed had died nine years before.",
+      "zh": "我残酷的表哥约翰·里德很快追踪到了我。他每天都霸凌我，毫无理由地殴打我，叫我无依无靠的孤儿，说我没有权利和他家住在一起。当他拿一本沉重的书砸向我的头部砸破我的头皮时，长期压抑的怒火在我心中爆发了。我像一只绝望的野猫一样扑向他。他的姐妹们尖叫着跑向里德太太，后者立刻命令她的女佣们把我拖到令人胆寒的红房子里（那是九年前我里德舅舅去世的黑暗冰冷房间）。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Locked in the cold, brooding silence of the Red-Room, terror seized my young soul. As dusk deepened, a beam of light glided across the wall, and I believed it to be the herald of a ghost. I shrieked in agony and beat my fists against the door, begging for mercy. Mrs. Reed coldly refused to let me out, and I collapsed onto the floor in a deep swoon.",
+      "zh": "被锁在红房子冰冷阴郁的寂静中，恐怖抓住了我年轻的灵魂。随着黄昏加深，一束光线划过墙壁，我相信那是幽灵的前兆。我在痛苦中尖叫，用拳头敲打着门，恳求宽恕。里德太太冰冷地拒绝让我出去，我在深度昏厥中倒在了地板上。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

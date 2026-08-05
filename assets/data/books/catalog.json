@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "books": [
+    {
+      "id": "A_Tale_of_Two_Cities",
+      "title": "A Tale of Two Cities",
+      "path": "A_Tale_of_Two_Cities",
+      "manifest": "A_Tale_of_Two_Cities/book.json"
+    },
+    {
+      "id": "Alice_s_Adventures_in_Wonderland",
+      "title": "Alice's Adventures in Wonderland",
+      "path": "Alice_s_Adventures_in_Wonderland",
+      "manifest": "Alice_s_Adventures_in_Wonderland/book.json"
+    },
+    {
+      "id": "Anne_of_Green_Gables",
+      "title": "Anne of Green Gables",
+      "path": "Anne_of_Green_Gables",
+      "manifest": "Anne_of_Green_Gables/book.json"
+    },
+    {
+      "id": "Arabian_Nights",
+      "title": "Arabian Nights",
+      "path": "Arabian_Nights",
+      "manifest": "Arabian_Nights/book.json"
+    },
+    {
+      "id": "Beauty_and_the_Beast",
+      "title": "Beauty and the Beast",
+      "path": "Beauty_and_the_Beast",
+      "manifest": "Beauty_and_the_Beast/book.json"
+    },
+    {
+      "id": "Jane_Eyre",
+      "title": "Jane Eyre",
+      "path": "Jane_Eyre",
+      "manifest": "Jane_Eyre/book.json"
+    },
+    {
+      "id": "Pride_and_Prejudice",
+      "title": "Pride and Prejudice",
+      "path": "Pride_and_Prejudice",
+      "manifest": "Pride_and_Prejudice/book.json"
+    },
+    {
+      "id": "The_Adventures_of_Sherlock_Holmes",
+      "title": "The Adventures of Sherlock Holmes",
+      "path": "The_Adventures_of_Sherlock_Holmes",
+      "manifest": "The_Adventures_of_Sherlock_Holmes/book.json"
+    },
+    {
+      "id": "The_Great_Gatsby",
+      "title": "The Great Gatsby",
+      "path": "The_Great_Gatsby",
+      "manifest": "The_Great_Gatsby/book.json"
+    },
+    {
+      "id": "The_Great_Stone_Face",
+      "title": "The Great Stone Face",
+      "path": "The_Great_Stone_Face",
+      "manifest": "The_Great_Stone_Face/book.json"
+    },
+    {
+      "id": "The_Little_Prince",
+      "title": "The Little Prince",
+      "path": "The_Little_Prince",
+      "manifest": "The_Little_Prince/book.json"
+    },
+    {
+      "id": "The_Old_Man_and_the_Sea",
+      "title": "The Old Man and the Sea",
+      "path": "The_Old_Man_and_the_Sea",
+      "manifest": "The_Old_Man_and_the_Sea/book.json"
+    },
+    {
+      "id": "The_Wonderful_Wizard_of_Oz",
+      "title": "The Wonderful Wizard of Oz",
+      "path": "The_Wonderful_Wizard_of_Oz",
+      "manifest": "The_Wonderful_Wizard_of_Oz/book.json"
+    },
+    {
+      "id": "Treasure_Island",
+      "title": "Treasure Island",
+      "path": "Treasure_Island",
+      "manifest": "Treasure_Island/book.json"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes_u2",
+  "bookId": "The_Adventures_of_Sherlock_Holmes",
+  "unitIndex": 2,
+  "title": "Chapter 2: The Red-Headed League",
+  "chineseTitle": "第 2 章：红发会奇案",
+  "paragraphs": [
+    {
+      "en": "Mr. Jabez Wilson, an elderly pawnbroker with fiery red hair, visited Baker Street seeking Holmes's help. Wilson explained that his young assistant, Vincent Spaulding, had shown him a newspaper advertisement offering a lucrative salary to red-headed men for simple clerical duties funded by a deceased American millionaire's trust, known as 'The Red-Headed League.'",
+      "zh": "杰贝兹·威尔逊先生（一位有着火红头发的年长典当商人）拜访贝克街寻求福尔摩斯的帮助。威尔逊解释说他的年轻助手文森特·斯波尔丁曾向他展示过一则报纸广告，为红发男人提供丰厚的薪水去从事简单的文书工作，该资金由一位已故美国百万富翁的信托基金提供，被称为“红发会”。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Wilson applied and was hired by the manager, Mr. Duncan Ross. For eight weeks, Wilson spent four hours a day copying the Encyclopædia Britannica in an isolated office for four pounds a week. But that very morning, Wilson found a card pinned to the locked office door reading: 'THE RED-HEADED LEAGUE IS DISSOLVED.' Utterly baffled by the sudden closure, Wilson sought Holmes's advice.",
+      "zh": "威尔逊申请并被经理邓肯·罗斯先生录用。在八周的时间里，威尔逊每天花四个小时在一个隔离的办公室里抄写《大英百科全书》，每周获得四镑。但就在那天早上，威尔逊发现锁着的办公室门上钉着一张卡片，上面写着：“红发会已解散。”被这突如其来的关闭完全弄懵了，威尔逊寻求福尔摩斯的建议。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes investigated the pawnbroker's shop in Saxe-Coburg Square, tapping his walking stick heavily on the pavement and knocking on the door to inspect the knees of Spaulding's trousers. Holmes quickly deduced that Spaulding was actually John Clay, a notorious thief and bank robber! Clay had invented the Red-Headed League to get Wilson out of the shop every morning so he could dig a subterranean tunnel from the pawnshop basement to the vault of a nearby bank holding thirty thousand French gold napoleons.",
+      "zh": "福尔摩斯调查了萨克森-科堡广场的典当铺，用他的拐杖重重地敲打着铺路石，并敲门去检查斯波尔丁裤子的膝盖。福尔摩斯迅速推断出斯波尔丁实际上是约翰·克莱（一位臭名昭著的贼和银行大盗）！克莱发明红发会是为了每天早上把威尔逊调离店铺，以便他能从典当铺地下室挖掘一条地下隧道通往附近一家保存着三万法国黄金拿破仑的银行金库。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "That midnight, Holmes, Watson, a bank director, and a Scotland Yard inspector hid in the dark bank vault. Right on cue, the floorboards gave way, and John Clay emerged from the tunnel! Holmes sprang forward and seized Clay by the collar, apprehending the master criminal red-handed and foiling a brilliant bank heist.",
+      "zh": "那天半夜，福尔摩斯、华生、一位银行董事以及一位苏格兰场警探藏在昏暗的银行金库里。正如预料的那样，地板踩空了，约翰·克莱从隧道里冒了出来！福尔摩斯向前跃起抓住了克莱的领口，当场抓获了这位犯罪大师并挫败了一场精彩的银行抢劫。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

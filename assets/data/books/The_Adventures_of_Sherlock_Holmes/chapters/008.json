@@ -1,0 +1,33 @@
+{
+  "id": "The_Adventures_of_Sherlock_Holmes_u8",
+  "bookId": "The_Adventures_of_Sherlock_Holmes",
+  "unitIndex": 8,
+  "title": "Chapter 8: The Copper Beeches and the Final Deduction",
+  "chineseTitle": "第 8 章：铜枫庄奇案与演绎法的终极胜利",
+  "paragraphs": [
+    {
+      "en": "Violet Hunter, a young governess, sought Holmes's advice regarding a strange job offer at The Copper Beeches in Hampshire. Mr. Jephro Rucastle offered her an extraordinary salary of 120 pounds a year on the weird conditions that she cut her long electric-brown hair short, wear a peculiar blue dress, and sit in the drawing-room with her back to the window at specific hours.",
+      "zh": "瓦奥莱特·亨特（一位年轻的家庭教师）就汉普郡铜枫庄一份奇怪的工作要约寻求福尔摩斯的建议。杰弗罗·鲁卡斯尔先生为她提供每年 120 镑的非凡薪水，条件奇怪：要求她剪短长长的棕色头发、穿上一件奇特的蓝色连衣裙，并在特定小时背对窗户坐在客厅里。",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Holmes advised her to accept but promised to come if she needed help. Weeks later, Violet summoned Holmes, revealing that she had discovered a locked wing of the house guarded by a vicious mastiff, and suspected a secret prisoner was held inside. Holmes deduced that Rucastle was impersonating his estranged daughter, Alice, who was locked away so Rucastle could steal her inheritance.",
+      "zh": "福尔摩斯建议她接受，但承诺如果她需要帮助就会赶来。几周后，瓦奥莱特召唤了福尔摩斯，揭露了她发现了一间由恶狗看守的锁着的房屋侧翼，并怀疑里面关押着一位秘密囚犯。福尔摩斯推断出鲁卡斯尔正在伪装他失和的女儿艾丽斯（她被锁起来以便鲁卡斯尔能偷走她的遗产）。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Breaking into the locked wing, Holmes and Watson found Alice had escaped with her lover, Mr. Fowler. Rucastle released his giant mastiff to attack Holmes, but the hungry beast turned upon Rucastle himself, badly mauling him before Watson shot the dog. Alice married Fowler, and Violet Hunter became the successful head of a private school.",
+      "zh": "闯入锁着的侧翼，福尔摩斯与华生发现艾丽斯已经和她的爱人福勒先生逃跑了。鲁卡斯尔放出了他的巨型猛犬去攻击福尔摩斯，但饥饿的野兽转而攻击鲁卡斯尔本人，在华生开枪打死狗之前严重咬伤了他。艾丽斯嫁给了福勒，而瓦奥莱特·亨特成为了一所私人学校成功的校长。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Reflecting on these cases back at Baker Street, Holmes observed that truth is stranger than fiction. With a keen eye for minute details and an unshakeable faith in logical deduction, Sherlock Holmes stood as an eternal guardian of justice, using his brilliant intellect to protect the innocent and expose the darkness of human nature.",
+      "zh": "回到贝克街反思这些案件，福尔摩斯观察到真相比虚构更加神奇。凭借对微小细节敏锐的眼睛和对逻辑演绎法不可动摇的信念，歇洛克·福尔摩斯矗立为正义永恒的守护者，利用他卓越的智力去保护无辜者并揭露人性黑暗。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

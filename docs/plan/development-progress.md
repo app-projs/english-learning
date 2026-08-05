@@ -254,6 +254,15 @@
 
 ---
 
+### 2.3 EPUB 电子书导入工具
+- [x] **EPUB 自动解析与书籍目录生成**：从 `assets/epub/incoming/` 读取 EPUB，按书名生成独立书籍目录、章节索引和 `catalog.json`。
+- [x] **本地 Qwen 精简与翻译流程**：默认使用 Ollama + Qwen2.5:7b，保留章节主线、人物互动和事件顺序后生成精简英文正文，再按学习段落生成中文翻译。
+- [x] **缓存、术语表和备份**：支持章节精简缓存、翻译缓存、术语表，以及成功导入后将原 EPUB 移动到 `assets/epub/processed/<日期>/`。
+- [x] **Flutter 新结构接入**：旧版 `book_*.json` 已迁移为书籍独立目录，`BookJsonLoader` 改为动态读取 `catalog.json`、书籍清单和单章文件；内容版本升级后自动刷新旧书籍缓存。
+- [x] **Windows/macOS 使用文档**：工具链安装和运行说明见 [`docs/tools/epub-book-import.md`](../tools/epub-book-import.md)。
+
+---
+
 ## 🛠️ 3. 维护与代码质量标准
 - 每次开发完新功能后，必须运行 `dart analyze` 验证零编译错误。
 - 同步更新 `docs/features/00-roadmap.md`、`docs/plan/feature-breakdown.md` 和 `docs/plan/development-progress.md`。

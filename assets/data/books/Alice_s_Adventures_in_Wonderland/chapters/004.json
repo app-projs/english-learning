@@ -1,0 +1,33 @@
+{
+  "id": "Alice_s_Adventures_in_Wonderland_u4",
+  "bookId": "Alice_s_Adventures_in_Wonderland",
+  "unitIndex": 4,
+  "title": "Chapter 4: The Rabbit Sends in a Little Bill",
+  "chineseTitle": "第 4 章：兔子派来了小比尔",
+  "paragraphs": [
+    {
+      "en": "It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself 'The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She'll get me executed, as sure as ferrets are ferrets! Where CAN I have dropped them, I wonder?'",
+      "zh": "那是白兔，慢慢地小跑着回来，边走边焦急地环顾四周，就仿佛他遗失了什么东西；她听到他对自己嘟囔着：“公爵夫人！公爵夫人！哦我亲爱的爪子！哦我的毛发和胡须！她会把我处决的，就像雪鼬就是雪鼬一样确定！我究竟能把它们掉在了哪里，我好奇？”",
+      "id": "p001",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Alice guessed in a moment that it was looking for the fan and the pair of white kid gloves, and she very good-naturedly began hunting about for them, but they were nowhere to be seen—everything seemed to have changed since her swim in the pool, and the great hall, with the glass table and the little door, had vanished completely.",
+      "zh": "爱丽丝瞬间猜到他在寻找扇子和那对白羊皮手套，她非常脾气好地开始到处寻找它们，但哪里也看不见它们——自从她在水塘里游过之后一切似乎都改变了，带有玻璃桌和小门的大厅已经完全消失了。",
+      "id": "p002",
+      "sentenceCount": 1
+    },
+    {
+      "en": "Very soon the Rabbit noticed Alice, as she went hunting about, and called out to her in an angry tone, 'Why, Mary Ann, what ARE you doing out here? Run home this moment, and fetch me a pair of gloves and a fan! Quick, now!' And Alice was so much frightened that she ran off at once in the direction it pointed to, without trying to explain the mistake it had made.",
+      "zh": "很快兔子注意到了爱丽丝（在她到处寻找时），并用愤怒的语气冲她喊：“哎呀，玛丽·安，你在外面干什么？这一刻跑回家去，给我取一对手套和一把扇子！现在快点！”爱丽丝极其害怕，以至于她立刻朝他指的方向跑去，没有试图解释他犯下的错误。",
+      "id": "p003",
+      "sentenceCount": 1
+    },
+    {
+      "en": "She ran till she came to a neat little house, on the door of which was a bright brass plate with the name 'W. RABBIT' engraved upon it. She went in without knocking, and hurried upstairs, in great fear lest she should meet the real Mary Ann and be turned out of the house before she had found the fan and gloves.",
+      "zh": "她跑着直到来到一栋整洁的小房子前，门上有一个闪亮的黄铜门牌，刻着名字“W·兔子”。她没有敲门就进去了，急忙上楼，非常害怕会遇到真正的玛丽·安，并在她找到扇子和手套前被赶出房子。",
+      "id": "p004",
+      "sentenceCount": 1
+    }
+  ]
+}

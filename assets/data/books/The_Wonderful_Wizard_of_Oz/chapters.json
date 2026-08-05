@@ -1,0 +1,198 @@
+{
+  "bookId": "The_Wonderful_Wizard_of_Oz",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "Chapter 1: The Cyclone",
+      "chineseTitle": "第 1 章：狂暴的龙卷风",
+      "path": "chapters/001.json",
+      "wordCount": 379,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 2,
+      "title": "Chapter 2: The Council with the Munchkins",
+      "chineseTitle": "第 2 章：与芒奇金人的会面",
+      "path": "chapters/002.json",
+      "wordCount": 361,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 3,
+      "title": "Chapter 3: How Dorothy Saved the Scarecrow",
+      "chineseTitle": "第 3 章：解救稻草人",
+      "path": "chapters/003.json",
+      "wordCount": 284,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 4,
+      "title": "Chapter 4: The Road Through the Forest",
+      "chineseTitle": "第 4 章：穿过森林的旅程",
+      "path": "chapters/004.json",
+      "wordCount": 254,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 5,
+      "title": "Chapter 5: The Rescue of the Tin Woodman",
+      "chineseTitle": "第 5 章：拯救铁皮木夫",
+      "path": "chapters/005.json",
+      "wordCount": 274,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 6,
+      "title": "Chapter 6: The Cowardly Lion",
+      "chineseTitle": "第 6 章：遭遇胆小狮",
+      "path": "chapters/006.json",
+      "wordCount": 266,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 7,
+      "title": "Chapter 7: The Journey to the Great Oz",
+      "chineseTitle": "第 7 章：前往翡翠城的险途",
+      "path": "chapters/007.json",
+      "wordCount": 221,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 8,
+      "title": "Chapter 8: The Deadly Poppy Field",
+      "chineseTitle": "第 8 章：致命的罂粟花海",
+      "path": "chapters/008.json",
+      "wordCount": 273,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 9,
+      "title": "Chapter 9: The Queen of the Field Mice",
+      "chineseTitle": "第 9 章：田鼠王后与拯救巨狮",
+      "path": "chapters/009.json",
+      "wordCount": 238,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 10,
+      "title": "Chapter 10: The Guardian of the Gate",
+      "chineseTitle": "第 10 章：城门守护者与绿眼镜",
+      "path": "chapters/010.json",
+      "wordCount": 216,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 11,
+      "title": "Chapter 11: The Wonderful City of Oz",
+      "chineseTitle": "第 11 章：奥兹王座室的四大幻象",
+      "path": "chapters/011.json",
+      "wordCount": 232,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 12,
+      "title": "Chapter 12: The Search for the Wicked Witch",
+      "chineseTitle": "第 12 章：讨伐西方女巫与泼水融化",
+      "path": "chapters/012.json",
+      "wordCount": 244,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 13,
+      "title": "Chapter 13: The Rescue",
+      "chineseTitle": "第 13 章：解救狮子与伙伴重聚",
+      "path": "chapters/013.json",
+      "wordCount": 174,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 14,
+      "title": "Chapter 14: The Winged Monkeys",
+      "chineseTitle": "第 14 章：金帽召唤飞猴",
+      "path": "chapters/014.json",
+      "wordCount": 176,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 15,
+      "title": "Chapter 15: The Discovery of Oz the Terrible",
+      "chineseTitle": "第 15 章：推倒屏风与揭露骗子真相",
+      "path": "chapters/015.json",
+      "wordCount": 209,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 16,
+      "title": "Chapter 16: The Magic Art of the Great Humbug",
+      "chineseTitle": "第 16 章：满足脑子、心与勇气的假承诺",
+      "path": "chapters/016.json",
+      "wordCount": 176,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 17,
+      "title": "Chapter 17: How the Balloon Was Launched",
+      "chineseTitle": "第 17 章：热气球意外升空",
+      "path": "chapters/017.json",
+      "wordCount": 175,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 18,
+      "title": "Chapter 18: Away to the South",
+      "chineseTitle": "第 18 章：向南寻求南方女巫格琳达",
+      "path": "chapters/018.json",
+      "wordCount": 167,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 19,
+      "title": "Chapter 19: Attacked by the Fighting Trees",
+      "chineseTitle": "第 19 章：战树林险象环生",
+      "path": "chapters/019.json",
+      "wordCount": 171,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 20,
+      "title": "Chapter 20: The Dainty China Country",
+      "chineseTitle": "第 20 章：精致易碎的陶瓷国",
+      "path": "chapters/020.json",
+      "wordCount": 172,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 21,
+      "title": "Chapter 21: The Lion Becomes the King of Beasts",
+      "chineseTitle": "第 21 章：狮子打败巨蜘蛛荣登百兽之王",
+      "path": "chapters/021.json",
+      "wordCount": 176,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 22,
+      "title": "Chapter 22: The Country of the Quadlings",
+      "chineseTitle": "第 22 章：跨越锤头人领地到达奎德林国",
+      "path": "chapters/022.json",
+      "wordCount": 179,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 23,
+      "title": "Chapter 23: Glinda The Good Witch Grants Dorothy's Wish",
+      "chineseTitle": "第 23 章：格琳达揭示银鞋魔法秘诀",
+      "path": "chapters/023.json",
+      "wordCount": 187,
+      "readTime": 2
+    },
+    {
+      "unitIndex": 24,
+      "title": "Chapter 24: Home Again",
+      "chineseTitle": "第 24 章：重返堪萨斯家园（全本终极结局）",
+      "path": "chapters/024.json",
+      "wordCount": 184,
+      "readTime": 2
+    }
+  ]
+}

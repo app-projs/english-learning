@@ -1,0 +1,18 @@
+{
+  "id": "Anne_of_Green_Gables",
+  "title": "Anne of Green Gables",
+  "chineseTitle": "绿山墙的安妮",
+  "author": "Lucy Maud Montgomery",
+  "coverUrl": "assets/images/book_anne.png",
+  "description": "《绿山墙的安妮》是加拿大著名女作家露西·莫德·蒙哥马利于 1908 年出版的享誉世界的儿童与成长文学至高名篇。本文件收录了全书完整的 38 个章节。故事讲述了绿山墙农场的马修与玛丽拉兄妹本想领养一个男孩帮忙做农活，却阴差阳错迎来了一个满头红发、喋喋不休却拥有丰富想象力的孤儿女孩安妮·雪莉。安妮凭借她的纯真、热情、乐观与惊人的才华，不仅赢得了马修与玛丽拉深沉的爱，还收获了与戴安娜的至真友情以及与吉尔伯特的深厚情谊，最终在爱与成长中成长为一名出色的女性。",
+  "category": "经典名著",
+  "difficulty": "中级难度",
+  "totalUnits": 38,
+  "wordCount": 46236,
+  "sourceFormat": "epub",
+  "contentVersion": 1,
+  "readerCount": "198.6万人在读",
+  "targetVocab": "1500-4200词",
+  "tagLabel": "成长励志",
+  "coverBadge": "精读 · 必读全本"
+}
