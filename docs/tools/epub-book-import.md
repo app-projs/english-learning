@@ -349,6 +349,7 @@ Anne of Green Gables → Anne_of_Green_Gables
 ## 7. 解析和翻译规则
 
 - EPUB 元数据优先读取 OPF 中的正式书名和作者；
+- 书名单独使用专业书名翻译提示词，要求优先采用公认出版译名、避免逐词直译，并单独缓存书名结果；
 - 章节优先按照 EPUB `spine` 顺序读取；
 - 章节标题优先使用 EPUB 的 `toc.ncx` 或导航信息；
 - 每章英文标题通过同一翻译流程生成中文标题，并同时写入 `chapters.json` 和单章 JSON 的 `chineseTitle`；

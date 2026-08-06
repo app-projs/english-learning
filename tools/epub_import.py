@@ -377,6 +377,9 @@ class TranslationProvider(Protocol):
     def translate_title(self, text: str) -> str:
         ...
 
+    def translate_book_title(self, text: str) -> str:
+        ...
+
     def generate_book_metadata(
         self,
         title: str,
@@ -415,6 +418,10 @@ class ArgosTranslator:
             return deterministic_title
         return self.translate(text)
 
+    def translate_book_title(self, text: str) -> str:
+        return self.translate(text)
+
+
     def generate_book_metadata(
         self,
         title: str,
@@ -422,7 +429,7 @@ class ArgosTranslator:
         chapter_count: int,
         word_count: int,
     ) -> dict[str, str]:
-        chinese_title = self.translate_title(title)
+        chinese_title = self.translate_book_title(title)
         return default_book_metadata(chinese_title, chapter_count, word_count)
 
 
@@ -531,31 +538,52 @@ class OllamaTranslator:
             return sanitized
         raise RuntimeError(f"Translation output validation failed after 2 attempts: {last_error}")
 
-    def translate_title(self, text: str) -> str:
+    def translate_book_title(self, text: str) -> str:
         deterministic_title = deterministic_chinese_title(text)
         if deterministic_title:
             return deterministic_title
         glossary_lines = "\n".join(
             f"- {source} = {target}" for source, target in self.glossary.items()
         ) or "- 没有额外术语表，依据上下文翻译。"
-        prompt = f"""你是一名英文文学作品翻译者。
+        prompt = f"""你是一名熟悉世界文学出版物的专业书名译者。
 
-请将下面的英文章节标题翻译成简洁、自然的中文章节标题。
+请将下面的英文书名翻译成中国读者最常用、最公认的中文书名。
 
 要求：
-1. 保留章节编号和标题中的人名、地名等关键信息；
-2. 人名、地名和专有名词遵守术语表；
-3. 只输出中文标题，不输出分析、说明、引号或 Markdown；
+1. 先判断它是否是已有公认中文译名的经典作品；如果是，优先使用通行书名；
+2. 不要逐词直译，不要为了“看起来准确”创造生硬的新译名；
+3. 结合作者、作品类型和文学语境判断专名含义；
+4. 如果存在多个译名，选择出版物和中国读者最常用的那个；
+5. 只输出最终中文书名，不输出分析、说明、引号或 Markdown；
 
 术语表：
 {glossary_lines}
+
+英文书名：
+{text}
+"""
+        for attempt in range(2):
+            candidate = normalize_text(
+                self._generate(prompt + ("\n请重新检查是否使用了通行译名，只输出最终中文书名。" if attempt else ""))
+            )
+            if self._validate_translation(candidate) is None:
+                return candidate
+        raise RuntimeError("Book title translation did not return valid Chinese")
+
+    def translate_title(self, text: str) -> str:
+        deterministic_title = deterministic_chinese_title(text)
+        if deterministic_title:
+            return deterministic_title
+        prompt = f"""请将下面的英文章节标题翻译成自然、简洁的中文章节标题。
+
+要求：只输出中文标题，不输出解释、引号或 Markdown；保留章节编号和专有名词。
 
 章节标题：
 {text}
 """
         for attempt in range(2):
             candidate = normalize_text(
-                self._generate(prompt + ("\n只能输出中文章节标题。" if attempt else ""))
+                self._generate(prompt + ("\n只输出最终中文章节标题。" if attempt else ""))
             )
             if self._validate_translation(candidate) is None:
                 return candidate
@@ -1007,6 +1035,14 @@ def build_book(
                     )
                 cache.put(metadata_cache_key, json.dumps(book_metadata, ensure_ascii=False))
                 cache.save()
+
+            book_title_cache_key = f"book-title:{metadata['title']}"
+            translated_book_title = cache.get(book_title_cache_key) or ""
+            if not translated_book_title:
+                translated_book_title = translator.translate_book_title(metadata["title"])
+                cache.put(book_title_cache_key, translated_book_title)
+                cache.save()
+            book_metadata["chineseTitle"] = translated_book_title
 
             cover = reader.cover_asset()
             if cover is None:
