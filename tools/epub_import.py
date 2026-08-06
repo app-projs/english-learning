@@ -1166,19 +1166,23 @@ def update_pending_translation_record(path: Path, book_id: str, book_title: str 
         return False
 
     original = path.read_text(encoding="utf-8")
-    marker = f"`{book_id}/`"
-    normalized_title = re.sub(r"[^a-z0-9]+", "", book_title.casefold())
+    def normalize_match(value: str) -> str:
+        return re.sub(r"[^a-z0-9]+", "", value.casefold())
+    normalized_id = normalize_match(book_id)
+    normalized_title = normalize_match(book_title)
     lines = original.splitlines(keepends=True)
     row_index = next(
         (
             index
             for index, line in enumerate(lines)
-            if marker.casefold() in line.casefold()
-            or (
-                normalized_title
-                and len(line.split("|")) >= 4
-                and normalized_title.startswith(
-                    re.sub(r"[^a-z0-9]+", "", line.split("|")[1].strip().casefold())
+            if len(line.split("|")) >= 5
+            and (
+                normalize_match(line.split("|")[3].strip(" `/")) == normalized_id
+                or normalize_match(line.split("|")[1].strip()) == normalized_title
+                or (
+                    normalized_title
+                    and normalize_match(line.split("|")[1].strip())
+                    and normalize_match(line.split("|")[1].strip()) in normalized_title
                 )
             )
         ),
@@ -1357,12 +1361,19 @@ def main() -> int:
             cache.save()
             destination = move_processed(epub_path, args.processed)
             try:
-                if update_pending_translation_record(
+                pending_updated = update_pending_translation_record(
                     args.pending_record,
                     book_id,
                     str(book_info["title"]),
-                ):
+                )
+                if pending_updated:
                     print(f"Updated pending translation record -> {args.pending_record}")
+                else:
+                    print(
+                        f"Warning: no matching pending translation record for "
+                        f"{book_id} ({book_info['title']})",
+                        file=sys.stderr,
+                    )
             except OSError as error:
                 print(
                     f"Warning: could not update pending translation record: {error}",
