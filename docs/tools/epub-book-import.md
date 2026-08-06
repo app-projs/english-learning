@@ -252,6 +252,7 @@ assets/data/books/
 └── Anne_of_Green_Gables/
     ├── book.json
     ├── chapters.json
+    ├── cover.jpg/png
     └── chapters/
         ├── 001.json
         ├── 002.json
@@ -301,8 +302,17 @@ Anne of Green Gables → Anne_of_Green_Gables
   "id": "Anne_of_Green_Gables",
   "title": "Anne of Green Gables",
   "author": "Lucy Maud Montgomery",
+  "chineseTitle": "绿山墙的安妮",
+  "coverUrl": "assets/data/books/Anne_of_Green_Gables/cover.jpg",
+  "description": "中文书籍简介",
+  "category": "经典名著",
+  "difficulty": "中级难度",
   "totalUnits": 38,
   "wordCount": 102874,
+  "readerCount": "10万+人在读",
+  "targetVocab": "1500-4200词",
+  "tagLabel": "成长励志",
+  "coverBadge": "精读 · 经典名著",
   "sourceFormat": "epub",
   "contentVersion": 1
 }
@@ -322,6 +332,7 @@ Anne of Green Gables → Anne_of_Green_Gables
   "bookId": "Anne_of_Green_Gables",
   "unitIndex": 1,
   "title": "CHAPTER I. Mrs. Rachel Lynde is Surprised",
+  "chineseTitle": "第一章：雷切尔·林德夫人感到惊讶",
   "paragraphs": [
     {
       "id": "p001",
@@ -340,6 +351,10 @@ Anne of Green Gables → Anne_of_Green_Gables
 - EPUB 元数据优先读取 OPF 中的正式书名和作者；
 - 章节优先按照 EPUB `spine` 顺序读取；
 - 章节标题优先使用 EPUB 的 `toc.ncx` 或导航信息；
+- 每章英文标题通过同一翻译流程生成中文标题，并同时写入 `chapters.json` 和单章 JSON 的 `chineseTitle`；
+- 纯数字或 `Chapter 2`、`II` 形式的目录标题直接规范化为 `第2章`、`第II章`，不依赖模型翻译；
+- 书籍元数据必须包含 `Book` 模型使用的全部字段，中文书名、简介和标签优先由 Ollama 生成，失败时使用非空默认值；
+- EPUB 自带封面会提取为书籍目录下的 `cover.jpg/png`，`coverUrl` 指向该文件；没有封面的 EPUB 会在导入时明确失败，不写入空封面路径；
 - 过滤标题页、目录页、导航、脚本和样式；
 - 默认每章生成原创英文精简正文，保留人物、冲突、关键事件、人物互动和事件顺序；
 - 默认以原文约 45% 作为长度参考，可用 `--abridge-ratio` 调整参考范围到 20%～70%；实际结果以“确实缩减且意思完整”为准；

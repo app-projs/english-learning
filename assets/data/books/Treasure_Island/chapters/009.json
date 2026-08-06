@@ -1,0 +1,339 @@
+{
+  "id": "Treasure_Island_u9",
+  "bookId": "Treasure_Island",
+  "unitIndex": 9,
+  "title": "8",
+  "chineseTitle": "第8章",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 2,
+      "en": "After breakfasting, the squire gave me a note for John Silver at the Spy-glass tavern. Following the docks and looking out for a small tavern with a large brass telescope sign, I found it easily amid the bustling crowd.",
+      "zh": "吃完早餐后，庄园主给了我一张便条，让我送到望远镜酒馆给约翰·西尔弗。沿着码头走，寻找一家挂着大铜望远镜标志的小酒馆。在熙熙攘攘的人群中，我很容易就找到了它。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "The tavern was clean and well-kept, with neat red curtains and a newly painted sign. Despite the tobacco smoke, the room was spacious and clear due to its open doors on both sides.",
+      "zh": "这家酒馆干净整洁，红色的窗帘整齐有序，门口新挂了一块招牌。尽管烟雾缭绕，但由于两侧都有敞开的门窗，室内依然宽敞明亮。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "Most customers were seafarers who spoke loudly, making me hesitate at the door. As I waited, a man emerged from a side room. He had lost his left leg just above the hip and used a crutch with remarkable skill, hopping about like a bird.",
+      "zh": "大多数顾客都是水手，他们说话声音很大，让我站在门口犹豫不决。我正等着的时候，一个男子从旁边的房间走了出来。他失去了左腿，就在大腿根部上方，却用拐杖练就了非凡的技巧，蹦蹦跳跳的像只小鸟。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "Tall and strong, he had a large, round face that was plain but intelligent and smiling.",
+      "zh": "他身材高大健壮，拥有一张宽大的圆脸，虽然平凡却聪明且带着微笑。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "From Squire Trelawney's letter, I feared Long John might be the one-legged sailor from Benbow, but his appearance dispelled my doubts. He seemed cheerful, whistling as he interacted with customers, offering words of encouragement.",
+      "zh": "从特拉文纳爵士的信中，我一度怀疑那个独腿人约翰就是本鲍夫酒店的那个水手，但他的 appearance 确实打消了我的疑虑。他看起来非常愉快，在与顾客互动时还哼着小曲，并不时地鼓励他们。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "I approached him confidently, holding out the note. \"Mr. Silver, sir?\" I asked.",
+      "zh": "我自信地走近他，递出那张纸条。“塞弗尔先生？”我问道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "\"Yes, my lad,\" he replied, \"and who might you be?\" His reaction to the squire's letter suggested some surprise.",
+      "zh": "“是的，我的小伙子，”他回答，“你又是谁呢？”他对那位骑士信中的反应似乎有些惊讶。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "Silver greeted me loudly, shaking my hand firmly. \"I see,\" he said, \"you're our new cabin-boy; glad to meet you.\"",
+      "zh": "银色大声 greet 我，紧紧地握了握手。“哦，”他说，“你是我们新来的船童；很高兴见到你。”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 2,
+      "en": "Suddenly, a customer near the door rushed out, drawing attention. I recognized him as the tallow-faced man with missing fingers who had first visited Admiral Benbow.",
+      "zh": "突然，一个靠近门口的顾客急匆匆地跑了出去，引起了大家的注意。我认出他就是那个初次拜访本布瓦船长时脸上满是油脂且少了几根手指的男人。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "\"Stop him!\" I cried. \"It's Black Dog!\"",
+      "zh": "“拦住他！”我喊道，“是他，黑狗！”"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "Silver ignored me and shouted at Harry: \"Run and catch him.\" Another nearby customer chased after the man.",
+      "zh": "银色没理我，冲着哈利喊道：“快跑，去抓住他。”另一个附近的顾客也追了上去。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "\"Black Dog will pay his score,\" Silver declared, then released my hand to ask, \"Who did you say he was? Black what?\"",
+      "zh": "“黑狗会还清他的债款的。”银宣布道，随后松开我的手问道，“你刚才说他是谁？黑狗？”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 3,
+      "en": "\"Dog, sir,\" I replied. \"Mr. Trelawney hasn't told you about the buccaneers? He was one of them.\"",
+      "zh": "“狗崽子，先生，”我说，“特拉韦尼先生没有告诉你关于海盗的事吧？他就是其中一个。”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "\"So?\" Silver asked sternly. \"In my house!",
+      "zh": "“所以呢？”Silver严厉地问道，“在我的家里！"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "Ben, help Harry catch him. Was that Morgan drinking with him? Step up here.\"",
+      "zh": "本，帮哈里抓住他。莫根真的和他一起喝酒了吗？快过来这里。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "Morgan, an old sailor with a mahogany face, approached sheepishly, spitting out his tobacco.",
+      "zh": "摩根是一位满脸古铜色皮肤的老水手，羞涩地走了过来，一边吐着烟丝。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 2,
+      "en": "\"Did you ever see Black Dog before, Morgan?\" Long John demanded.",
+      "zh": "“摩根，你以前见过黑狗吗？”长约翰急切地问道。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "\"No, sir,\" Morgan replied respectfully.",
+      "zh": "“不，先生，”摩根恭敬地回答。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 1,
+      "en": "\"You didn't know his name?\"",
+      "zh": "“你不知道他的名字？”"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "\"No, sir.\"",
+      "zh": "“不，先生。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "\"By the powers, Tom Morgan!\" the landlord exclaimed. \"If you were involved with such a man, you wouldn't set foot in my house again.",
+      "zh": "“天哪，汤姆·摩根！”房东惊叫道，“如果你和那样的人有牵连，你这辈子都不可能再踏进我的门槛了。”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "What was he talking about?\"",
+      "zh": "他在说些什么？"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 1,
+      "en": "\"I don't really know, sir,\" Morgan admitted.",
+      "zh": "“ Sir ，我真的不清楚，”摩根承认道。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "\"Don't know? Don't you have a head on your shoulders?\" Long John cried.",
+      "zh": "“不知道？你脑袋里没东西吗？”长约翰喊道。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "\"What was he saying—voyages, captains, ships? Speak up!\"",
+      "zh": "“他在说些什么——航行、船长、船只？大声点！”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "\"We were talking about keel-hauling,\" Morgan replied.",
+      "zh": "“我们刚才在谈论吊尾刑的事儿，”摩根回答道。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "\"Keel-hauling, indeed!\" Long John said. \"A fitting punishment.",
+      "zh": "“居然是吊鱼尾！”长约翰脱口而出，“的确是个合适的惩罚。”"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 1,
+      "en": "Get back to your place, Tom.\"",
+      "zh": "汤姆，回到你该去的地方。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "Silver leaned back, whispering confidentially, \"Tom Morgan is honest, if a bit stupid. And you know what? Black Dog?",
+      "zh": "赛勒斯靠在椅背上，低声神秘地说：“汤姆·摩根倒是诚实的家伙，就是有点傻。对了，布莱克犬？"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 1,
+      "en": "No, I don't recall the name, but I think I've seen him—yes, the swab used to come here with a blind beggar.\"",
+      "zh": "不，我不记得他的名字了，但我觉得我见过他——对，那个棉签以前常和一个瞎眼乞丐一起来这里。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"Of course,\" I interjected. \"I knew that blind man too; his name was Pew.\"",
+      "zh": "“当然，”我插嘴道，“我也认识那个瞎子，他的名字叫佩恩。”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "Silver's excitement grew as he exclaimed, \"Pew! That’s his name for sure. He looked like a shark!",
+      "zh": "赛弗的兴奋之情溢于言表，他脱口而出：“ pew！这个名字绝对没错。他的样子就像一条鲨鱼！"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "If we catch Black Dog now, there'll be news for Captain Trelawney! Ben is a good runner; few seamen run better than him. He should catch Black Dog hand over hand.",
+      "zh": "如果我们现在抓住黑狗，特拉沃尼船长一定会听说这个消息！本跑得不错；很少有水手能比他更快。他应该能够紧紧追上黑狗。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "He talked about keel-hauling, didn't he? I’ll keel-haul him!\"",
+      "zh": "他不是提到了船底吊刑吗？那我也给他来个船底吊刑！"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "Silver paced the tavern on his crutch, slapping tables with his hand, and acting so excited that it would have convinced any judge or runner. My suspicions were reawakened when Black Dog appeared at the Spyglass, and I watched Silver closely. But he was too clever for me; by the time the two men returned breathless, admitting they lost track in a crowd and were scolded like thieves, I believed Long John Silver's innocence.",
+      "zh": "锡尔弗拄着拐杖在酒馆里来回踱步，用手拍打着桌子，显得异常兴奋，简直让人难以置信。我心中的疑虑再次被激发起来，当黑狗出现在望远镜酒吧时，我便开始密切关注锡尔弗的一举一动。但锡尔弗足智多谋，等那两个男人气喘吁吁地回来，承认他们在人群中迷失了方向并遭到斥责后，我已经相信长腿锡尔弗的清白了。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "\"Look here, Hawkins,\" Silver said, \"this is a tough spot for me. What will Captain Trelawney think? Here’s this Dutchman’s son drinking in my house!",
+      "zh": "“哈克，”锡尔弗说道，“这可真是个棘手的问题。特拉沃尼船长会怎么想？这个荷兰人的儿子竟然在我的家里喝酒！”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "You tell him straight; and I let him slip away before my deadlights! Now, Hawkins, do me justice with the captain. You’re smart, but you're young.",
+      "zh": "你直接告诉他；让我在他视线之外溜走！现在，霍金斯，你可别在船长面前亏待了我。你聪明是聪明，但还年轻呢。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 3,
+      "en": "When you first came in, I saw that. Here's what I could have done when I was a master mariner: I'd have come up alongside him and broached him to in a brace of old shakes. But now—\"",
+      "zh": "你刚进来的时候我就注意到了。如果我当年还是个老海员的话，我会靠近他，用两把旧斧头教训他一顿。但现在——"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "Silver suddenly stopped, his jaw dropping as if he remembered something.",
+      "zh": "银色突然停下了脚步，仿佛想起了什么，张大了嘴巴。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 3,
+      "en": "He burst out laughing, exclaiming, \"The score! Three goes o' rum! I must have forgotten my tally!\"",
+      "zh": "他突然大笑起来，喊道：“分数！三杯朗姆酒的账单！我肯定忘了记账了！”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 2,
+      "en": "He fell onto a bench and laughed until tears streamed down his face. I couldn't help but join him, and we laughed together, peal after peal, until the tavern echoed with our mirth.",
+      "zh": "他瘫坐在一张长椅上，笑声直到泪水顺着脸颊滚落才渐渐平息。我不由自主地加入了这份欢笑，我们一浪接一浪地大笑着，直到酒馆回荡着我们的笑声。"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 3,
+      "en": "\"Ah, what a precious old sea-calf I am!\" he said at last, wiping his cheeks. \"You and me should get on well, Hawkins, for I'll take my davy; I should be rated ship's boy.",
+      "zh": "“啊，我真是个宝呢，老海员！”他终于说道，擦了擦脸颊，“霍金斯，你和我一定相处得很好，因为我可以负责打水；我还应该当个船上的伙夫呢。”"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 3,
+      "en": "But come now, stand by to go about. This won't do. Dooty is dooty, messmates.",
+      "zh": "但是现在，准备掉头吧。这不行。职责就是职责，船员们。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 1,
+      "en": "I’ll put on my old cockerel hat and step along with you to Cap'n Trelawney.\"",
+      "zh": "我会戴上那顶旧公鸡帽，和你一起走到特雷拉尼船长那里。"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 2,
+      "en": "He began laughing again, heartily, though I didn’t see the joke as he did. Still, I was obliged to join him in his mirth.",
+      "zh": "他又大笑起来，笑声爽朗，不过我不明白他觉得哪里好笑。尽管如此，我还是不得不加入他的欢笑之中。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 2,
+      "en": "On our walk along the quays, he made himself an interesting companion, telling me about different ships and their rigging, tonnage, and nationality. He explained the work going on—how one ship was discharging cargo, another taking it in, and a third preparing for sea—and shared little anecdotes of ships or seamen, repeating nautical phrases until I had learned them perfectly.",
+      "zh": "在我们沿着码头散步的时候，他成了一个有趣的同伴。他向我介绍了各种船只及其帆索、排水量和国籍。他解释了当时的工作情况——一艘船正在卸货，另一艘则在装载货物，还有一艘正在准备启航，并分享了一些关于船只或水手的小趣事，反复使用航海术语直到我完全掌握了它们。"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 1,
+      "en": "When we reached the inn, the squire and Dr. Livesey were finishing a quart of ale with a toast before their inspection visit aboard the schooner.",
+      "zh": "我们到达客栈时，郡长和莱维斯克医生正举杯喝着四品脱啤酒，并在即将登船检查前干了一杯。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 2,
+      "en": "Long John recounted the story from start to finish with great spirit and perfect truth: \"That was how it were, now, weren't it, Hawkins?\" I could always agree with him.",
+      "zh": "长约翰从头到尾兴致勃勃、准确无误地讲述了这个故事：“事情就是这样的，对吧，霍金斯？”我总是能认同他的说法。"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 2,
+      "en": "The two gentlemen regretted Black Dog's escape but agreed there was nothing to be done. After being complimented, Long John took up his crutch and left.",
+      "zh": "两位绅士对黑狗的逃脱感到遗憾，但也一致认为无可奈何。在一番夸奖之后，长腿约翰拄着拐杖离开了。"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 1,
+      "en": "\"All hands aboard by four this afternoon,\" shouted the squire after him.",
+      "zh": "“今天下午四点全体集合上船！”他喊道。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 1,
+      "en": "\"Aye, aye, sir,\" cried the cook in the passage.",
+      "zh": "“是的是的，先生,”过道里的厨师喊道。"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 1,
+      "en": "Dr. Livesey said, \"I don't usually trust such discoveries, but I like John Silver.\"",
+      "zh": "莱维斯医生说：“我通常不会信任这样的发现，但我觉得约翰·赛勒斯挺可靠。”"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 1,
+      "en": "\"The man is excellent,\" agreed the squire.",
+      "zh": "“这个人真是出色，”庄园主同意道。"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 2,
+      "en": "\"Can Jim join us on the ship?\" Dr. Livesey asked.",
+      "zh": "“吉姆能和我们一起上船吗？”利文斯通医生问道。"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 2,
+      "en": "\"Certainly he can,\" replied the squire. \"Hawkins, take your hat and let's go see the ship.\"",
+      "zh": "“当然可以，”庄园主回答道。“霍金斯，带上你的帽子，我们去看看那艘船吧。”"
+    }
+  ]
+}

@@ -4,67 +4,283 @@
   "chapters": [
     {
       "unitIndex": 1,
-      "title": "Chapter 1: The Old Sea-Dog at the Admiral Benbow",
-      "chineseTitle": "第 1 章：本博将军客栈的老水手",
+      "title": "TREASURE ISLAND",
+      "chineseTitle": "1. 珍宝岛",
       "path": "chapters/001.json",
-      "wordCount": 265,
-      "readTime": 2
-    },
-    {
-      "unitIndex": 2,
-      "title": "Chapter 2: The Black Spot and the Sea-Chest",
-      "chineseTitle": "第 2 章：黑点警告与海员宝箱",
-      "path": "chapters/002.json",
-      "wordCount": 246,
-      "readTime": 2
-    },
-    {
-      "unitIndex": 3,
-      "title": "Chapter 3: Long John Silver and the Hispaniola",
-      "chineseTitle": "第 3 章：独脚水手西尔弗与伊斯帕尼奥拉号",
-      "path": "chapters/003.json",
-      "wordCount": 163,
-      "readTime": 2
-    },
-    {
-      "unitIndex": 4,
-      "title": "Chapter 4: The Apple Barrel and the Mutiny Plot",
-      "chineseTitle": "第 4 章：苹果桶里的阴谋",
-      "path": "chapters/004.json",
-      "wordCount": 155,
-      "readTime": 2
-    },
-    {
-      "unitIndex": 5,
-      "title": "Chapter 5: Ben Gunn, the Marooned Pirate",
-      "chineseTitle": "第 5 章：荒岛囚徒本·甘恩",
-      "path": "chapters/005.json",
-      "wordCount": 168,
-      "readTime": 2
-    },
-    {
-      "unitIndex": 6,
-      "title": "Chapter 6: The Battle at the Stockade",
-      "chineseTitle": "第 6 章：木栅栏围寨攻防战",
-      "path": "chapters/006.json",
-      "wordCount": 117,
+      "wordCount": 110,
       "readTime": 1
     },
     {
+      "unitIndex": 2,
+      "title": "1",
+      "chineseTitle": "1 埃德温·德鲁里沃思",
+      "path": "chapters/002.json",
+      "wordCount": 914,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 3,
+      "title": "2",
+      "chineseTitle": "第2章",
+      "path": "chapters/003.json",
+      "wordCount": 1232,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 4,
+      "title": "3",
+      "chineseTitle": "第3章",
+      "path": "chapters/004.json",
+      "wordCount": 1469,
+      "readTime": 11
+    },
+    {
+      "unitIndex": 5,
+      "title": "4",
+      "chineseTitle": "第4章",
+      "path": "chapters/005.json",
+      "wordCount": 1106,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 6,
+      "title": "5",
+      "chineseTitle": "第5章",
+      "path": "chapters/006.json",
+      "wordCount": 1141,
+      "readTime": 9
+    },
+    {
       "unitIndex": 7,
-      "title": "Chapter 7: Jim Recaptures the Hispaniola",
-      "chineseTitle": "第 7 章：吉姆独立夺回船只",
+      "title": "6",
+      "chineseTitle": "第6章",
       "path": "chapters/007.json",
-      "wordCount": 155,
-      "readTime": 2
+      "wordCount": 1221,
+      "readTime": 9
     },
     {
       "unitIndex": 8,
-      "title": "Chapter 8: The Treasure Found and Homebound",
-      "chineseTitle": "第 8 章：宝藏出土与重返家园（终极结局）",
+      "title": "7",
+      "chineseTitle": "第7章",
       "path": "chapters/008.json",
-      "wordCount": 190,
-      "readTime": 2
+      "wordCount": 886,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 9,
+      "title": "8",
+      "chineseTitle": "第8章",
+      "path": "chapters/009.json",
+      "wordCount": 1090,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 10,
+      "title": "9",
+      "chineseTitle": "第9章",
+      "path": "chapters/010.json",
+      "wordCount": 989,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 11,
+      "title": "10",
+      "chineseTitle": "第10章",
+      "path": "chapters/011.json",
+      "wordCount": 1081,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 12,
+      "title": "11",
+      "chineseTitle": "第11章",
+      "path": "chapters/012.json",
+      "wordCount": 1149,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 13,
+      "title": "12",
+      "chineseTitle": "第12章",
+      "path": "chapters/013.json",
+      "wordCount": 995,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 14,
+      "title": "13",
+      "chineseTitle": "第13章",
+      "path": "chapters/014.json",
+      "wordCount": 1118,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 15,
+      "title": "14",
+      "chineseTitle": "第14章",
+      "path": "chapters/015.json",
+      "wordCount": 1001,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 16,
+      "title": "15",
+      "chineseTitle": "第15章",
+      "path": "chapters/016.json",
+      "wordCount": 1289,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 17,
+      "title": "16",
+      "chineseTitle": "第16章",
+      "path": "chapters/017.json",
+      "wordCount": 852,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 18,
+      "title": "17",
+      "chineseTitle": "第17章",
+      "path": "chapters/018.json",
+      "wordCount": 855,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 19,
+      "title": "18",
+      "chineseTitle": "第18章",
+      "path": "chapters/019.json",
+      "wordCount": 866,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 20,
+      "title": "19",
+      "chineseTitle": "第19章",
+      "path": "chapters/020.json",
+      "wordCount": 994,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 21,
+      "title": "20",
+      "chineseTitle": "第20章",
+      "path": "chapters/021.json",
+      "wordCount": 1066,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 22,
+      "title": "21",
+      "chineseTitle": "第21章",
+      "path": "chapters/022.json",
+      "wordCount": 1212,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 23,
+      "title": "22",
+      "chineseTitle": "第22章",
+      "path": "chapters/023.json",
+      "wordCount": 1068,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 24,
+      "title": "23",
+      "chineseTitle": "第23章",
+      "path": "chapters/024.json",
+      "wordCount": 795,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 25,
+      "title": "24",
+      "chineseTitle": "第24章",
+      "path": "chapters/025.json",
+      "wordCount": 1143,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 26,
+      "title": "25",
+      "chineseTitle": "第25章",
+      "path": "chapters/026.json",
+      "wordCount": 951,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 27,
+      "title": "26",
+      "chineseTitle": "第26章",
+      "path": "chapters/027.json",
+      "wordCount": 1502,
+      "readTime": 11
+    },
+    {
+      "unitIndex": 28,
+      "title": "27",
+      "chineseTitle": "第27章",
+      "path": "chapters/028.json",
+      "wordCount": 1155,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 29,
+      "title": "28",
+      "chineseTitle": "第28章",
+      "path": "chapters/029.json",
+      "wordCount": 1583,
+      "readTime": 12
+    },
+    {
+      "unitIndex": 30,
+      "title": "29",
+      "chineseTitle": "第29章",
+      "path": "chapters/030.json",
+      "wordCount": 1152,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 31,
+      "title": "30",
+      "chineseTitle": "第30章",
+      "path": "chapters/031.json",
+      "wordCount": 1204,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 32,
+      "title": "31",
+      "chineseTitle": "第31章",
+      "path": "chapters/032.json",
+      "wordCount": 1199,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 33,
+      "title": "32",
+      "chineseTitle": "第32章",
+      "path": "chapters/033.json",
+      "wordCount": 1050,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 34,
+      "title": "33",
+      "chineseTitle": "第33章",
+      "path": "chapters/034.json",
+      "wordCount": 1127,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 35,
+      "title": "34",
+      "chineseTitle": "第34章",
+      "path": "chapters/035.json",
+      "wordCount": 906,
+      "readTime": 7
     }
   ]
 }

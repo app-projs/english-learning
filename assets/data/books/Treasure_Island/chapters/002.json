@@ -2,32 +2,158 @@
   "id": "Treasure_Island_u2",
   "bookId": "Treasure_Island",
   "unitIndex": 2,
-  "title": "Chapter 2: The Black Spot and the Sea-Chest",
-  "chineseTitle": "第 2 章：黑点警告与海员宝箱",
+  "title": "1",
+  "chineseTitle": "1 埃德温·德鲁里沃思",
   "paragraphs": [
     {
-      "en": "Trouble arrived in January. A pale, sinister pirate named Black Dog visited the inn, leading to a violent sword fight with Captain Bill in the parlor. Black Dog fled bleeding, but the shock caused Captain Bill to suffer a severe stroke. Dr. Livesey bled the Captain and warned him that another drop of rum would kill him.",
-      "zh": "麻烦在元月到达。一位名叫黑狗的苍白阴险海盗拜访了客栈，导致在客厅里与比尔船长爆发了一场剧烈的击剑打斗。黑狗流着血逃跑，但打击导致比尔船长遭受了严重的中风。李夫西医生给船长放血，并警告他再喝一滴朗姆酒就会要了他的命。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "In 17__, Squire Trelawney and Dr. Livesey asked me to recount my adventures on Treasure Island. The first person who stayed at our inn was a tall, weathered seaman with a sabre cut across his cheek. He arrived carrying a sea-chest in a hand-barrow, his untidy blue coat and ragged hands contrasting with his sturdy frame.",
+      "zh": "在17年那会儿，特拉文纳绅士和利维斯医生请我讲述我在 Treasure Island 的冒险经历。我们客栈的第一个住客是一位高大的海员，脸上有一道剑伤。他提着一只海chest，用独轮车推着，蓝色的外套有些凌乱，而满是裂痕的手与他健壮的身体形成了鲜明对比。"
     },
     {
-      "en": "A few days later, a blind beggar named Pew arrived tapping his stick on the road. Pew forced his way into the room, seized Bill's hand, and pressed a small round piece of blackened paper into his palm—'The Black Spot,' the pirates' summons of death! The moment Pew departed, Captain Bill collapsed to the floor, killed instantly by a second stroke.",
-      "zh": "几天后，一位名叫皮尤的盲人乞丐在路上敲打着拐杖到达了。皮尤强行进入房间，抓住了比尔的手，并把一小块黑色纸片按进了他的掌心——“黑点”（海盗们的死亡召唤令）！皮尤离开的时刻，比尔船长倒在地板上，被第二次中风当场要了命。",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "He whistled as he looked around the inn, then sang an old sea shanty: \"Fifteen men on the dead man's chest—Yo-ho-ho, and a bottle of rum!\" His voice, hoarse from years at sea, seemed to echo in the room. After being served rum, he declared the place suitable for him, asking if there was much company.",
+      "zh": "他环视着旅店，吹了声口哨，然后唱起了老调子的海歌：“十五个水手在死人的chest上——呀嗨嗨，再来一瓶朗姆酒！”他的嗓音因多年海上生活而嘶哑，似乎在房间里回响。喝过朗姆酒后，他宣称这里很适合他，并问是否有很多客人。"
     },
     {
-      "en": "Fearing the pirates' return, my mother and I unlocked the Captain's heavy sea-chest. Inside, beneath clothes and pistols, we found a sealed oilskin packet. As we heard the blind beggar's stick tapping outside, we fled with the packet, hiding under a bridge as Pew and his pirate gang smashed the inn searching for the paper. A troop of revenue officers arrived on horseback, trampling Pew to death and driving the pirates away.",
-      "zh": "害怕海盗们的返回，我和母亲打开了船长沉重的海员宝箱。在里面，在衣服与手枪下方，我们发现了一个密封的油布包。当我们听到盲人乞丐的拐杖在外面敲打时，我们带着包逃跑，躲在一座桥下，皮尤和他的海盗帮砸毁了客栈寻找纸张。一队税务官骑马赶到，把皮尤踩死并赶走了海盗。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 1,
+      "en": "When my father said no, he decided to stay, requesting rum, bacon, and eggs, and a spot by the signboard to watch for ships.",
+      "zh": "当父亲拒绝了之后，他反而决定留下来，点了一杯朗姆酒、一份培根和鸡蛋，并要了一个靠近告示牌的位置，好随时留意是否有船只驶近。"
     },
     {
-      "en": "I took the oilskin packet to Squire Trelawney and Dr. Livesey. Unsealing it, we found a map of an island in the West Indies marked with three red crosses and the words: 'Treasure here—Flint.' Overjoyed, the Squire resolved to fit out a ship in Bristol to seek the buried treasure.",
-      "zh": "我把油布包交给了乡绅特里劳尼和李夫西医生。解封它，我们发现了一张西印度群岛岛屿的地图，标着三个红十字和字样：“宝藏在此——弗林特”。喜出望外，乡绅决定在布里斯托尔配备一艘船去寻找埋藏的宝藏。",
       "id": "p004",
-      "sentenceCount": 1
+      "sentenceCount": 2,
+      "en": "He tossed some gold pieces on the floor, saying, \"I'll work through that.\" His fierce demeanor suggested he meant business.",
+      "zh": "他把几枚金币扔在地上，说道：“我这就开始干活了。”他那严峻的表情分明表明他不是说着玩的。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "Our guest was a silent man who spent his days observing from the cove or cliffs with a brass telescope. In the evenings, he would sit by the fire in the parlour, drinking strong rum and water. He rarely spoke unless provoked, responding with fierce glances and loud snorts like a fog-horn.",
+      "zh": "我们的客人是个沉默寡言的人，他整天都待在海湾或悬崖上，用那架铜望远镜观察着。到了晚上，他会坐在客厅的火炉旁，喝着烈性的朗姆酒和水。除非被激怒，否则他很少开口说话，只是用严厉的目光和响亮的哼声回应，就像雾号一样。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "He frequently asked if any seafaring men had passed along the road, initially seeming to seek companionship among his own kind. However, we soon realized he preferred solitude. When sailors stayed at the nearby Admiral Benbow Inn, he would peek through the curtains before entering the parlour and remained silent when they were present.",
+      "zh": "他经常询问是否有出海的船员经过这条路，起初似乎是在寻找同类间的同伴。然而我们很快发现，他更喜欢独处。每当水手们在附近的本鲍船长酒馆逗留时，他会透过窗帘偷偷窥视，而他们一出现，他就默不作声地退了出去。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "I was part of his vigilance, tasked with watching for a seafaring man with one leg. I often asked him for my monthly wage, but he would initially ignore me or blow through his nose in frustration. Yet, by the end of the week, he always remembered to give me the promised silver fourpenny and reiterate his instructions.",
+      "zh": "我是他的助手，负责留意是否有独腿的海员出现。我常常向他讨要每月的工资，但他起初总是置之不理或是气得用力吸鼻子。然而到了周末，他总会记得给我那枚承诺的银四便士，并再次重申他的指令。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "In stormy nights, I saw him in countless forms—his leg missing at different points, or as a single body with one middle leg. His pursuit over hedges and ditches was my worst nightmare. Despite this terror, I feared the captain less than others did.",
+      "zh": "在风雨交加的夜晚，我见到他无数种形态——他的腿在不同的地方缺失，或者是一个身体却拥有一条中间的独腿。他在篱笆和沟渠间追逐的身影是我的噩梦。尽管如此，我对船长的恐惧却比其他人要少一些。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "When he drank too much rum, he would sing his wicked sea songs, ignoring everyone else. Sometimes, he forced all to listen to his tales or join in his singing. The house would shake with \"Yo-ho-ho, and a bottle of rum,\" neighbors joining in out of fear.",
+      "zh": "当他喝多了朗姆酒，就会唱那些邪恶的海歌， ignore 了周围所有人。有时他会逼迫大家听他的故事或跟着他一起唱歌。屋子里回荡着“Yo-ho-ho，和一瓶朗姆酒”，邻居们出于恐惧也加入了合唱。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "During these fits, the captain was domineering; he demanded silence and flew into anger over questions or lack thereof. He wouldn't let anyone leave until he himself was drunk and staggered to bed.",
+      "zh": "在这些发作期间，船长变得专横起来，他要求大家保持安静，一旦有人提出问题或没有提问便勃然大怒。直到他自己醉醺醺地摇晃着回卧室躺下，才允许任何人离开。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "His stories terrified people—of hanging, walking the plank, storms at sea, and the Dry Tortugas. He lived among wicked sailors, and his tales shocked our plain country folk as much as their crimes did. My father feared the inn would be ruined, but I believe the captain's presence brought excitement to our quiet life.",
+      "zh": "他的故事令人毛骨悚然——关于绞刑、走板、海上风暴以及干托鲁加礁。他与那些恶棍水手为伍，讲述的故事让朴实的乡民们感到震惊，甚至比他们自身的罪行还要可怕。我父亲担心客栈会因此败落，但我认为船长的到来给我们的平静生活带来了刺激和兴奋。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "In one way, he threatened us financially. He stayed for weeks, then months, exhausting all our money. Father never dared ask for more; when he tried, Captain roared and left him speechless.",
+      "zh": "从某种意义上说，他通过财务威胁让我们束手无策。他一住就是几周，后来又是一两个月，把我们家的钱都花光了。父亲从未敢再开口要钱；有一次他试着开口时，船长咆哮着离开了，留下父亲一句话也说不出来。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "Father often wrung his hands after such rejections, and I think the stress hastened his early death.",
+      "zh": "父亲在遭遇这样的拒绝后常常搓着手，而我想这份压力可能加速了他的早逝。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "The captain rarely changed his appearance, just buying new stockings from a hawker. His hat cock fell down but stayed that way. He patched his coat upstairs, which became nothing but patches by the end.",
+      "zh": "船长的打扮变化不大，只是偶尔从商贩那里买些新的袜子。他的帽子斜歪着，就这么一直没扶正。他把外套补了又补，最终整个外套只剩下了一片片补丁。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "He never wrote or received letters, spoke only to neighbors when drunk on rum, and we never saw his sea-chest opened.",
+      "zh": "他从不写信也不收信，只有在醉酒时才会与邻居交谈，而我们从未见过他的海chest打开过。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "He was once challenged by his father's declining health. Dr. Livesey visited late one afternoon, ate with my mother, and smoked in the parlour until his horse arrived from the village. I followed him inside.",
+      "zh": "他曾因父亲健康状况恶化而倍感忧虑。一天傍晚，莱维斯医生来访，与我母亲共进晚餐，并在客厅抽完烟后等待他的马车从村里接他回去。随后，他跟着进了屋。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "The contrast between the neat doctor and the filthy pirate captain struck me. The captain began singing his familiar tune: \"Fifteen men on the dead man's chest—Yo-ho-ho, and a bottle of rum! Drink and the devil had done for the rest—Yo-ho-ho, and a bottle of rum!\"",
+      "zh": "医生整洁干练，而海盗船长却脏兮兮的，这种对比让我印象深刻。只见船长开始哼起了他那熟悉的调子：“十五个水手躺在死人chest上——呀嗨嘿，再来一瓶朗姆酒！喝吧，魔鬼已经把其余的人带走了——呀嗨嘿，再来一瓶朗姆酒！”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 3,
+      "en": "I initially thought he was referring to the box upstairs. However, Dr. Livesey’s expression turned angry as he continued his conversation with old Taylor about a new rheumatism cure. The captain grew louder, finally signaling for silence.",
+      "zh": "起初，我还以为他指的是楼上那个箱子。然而，在与老泰勒讨论一种新的风湿病治疗方法时，赖斯利医生的表情变得愤怒起来。船长的声音越来越大，最终大声示意大家安静下来。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "The voices stopped except for Dr. Livesey's steady voice and pipe smoke between words. The captain glared, swore again, and demanded, \"Silence, there, between decks!\"",
+      "zh": "除了莱维斯科医生平稳的声音和烟斗里的烟雾，其他声音都停了下来。船长怒目而视，又骂了一句脏话，命令道：“下面的人，给我安静！”"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "Dr. Livesey replied calmly, \"If you keep drinking rum, the world will soon be rid of a very dirty scoundrel.\"",
+      "zh": "莱维斯医生冷静地回答：“如果你继续喝朗姆酒，这个世界很快就会摆脱一个非常卑鄙的家伙。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 2,
+      "en": "The old sailor's rage was intense. He stood up, drew a sailor’s clasp-knife, and threatened to stab the doctor against the wall.",
+      "zh": "老水手的怒火腾腾。他站起身来，抽出一把船工常用的折刀，威胁着要将医生抵在墙上刺一刀。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "The doctor remained calm, speaking over his shoulder in a steady voice: \"If you don't put that knife away right now, I swear by my honor, you'll hang at the next assizes.\"",
+      "zh": "医生保持冷静，转过身来用平稳的语气说道：“如果你不马上放下那把刀，我以荣誉起誓，在下次审讯大会上你一定会被绞死。”"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "A tense stare-down ensued. The captain eventually backed down, stowed his weapon, and sat quietly, muttering like a defeated dog.",
+      "zh": "紧张的对峙持续了一会儿。最终，船长退了下来，收起了武器，默默地坐了下来，嘴里嘟囔着，仿佛一只垂头丧气的狗。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "\"From now on,\" the doctor continued, \"I’ll keep an eye on you day and night. I’m not just a doctor; I’m also a magistrate. If I hear any complaints against you, even for tonight’s rudeness, I'll take action to have you removed from here.\"",
+      "zh": "“从现在起，”医生继续说道，“我将日夜监视你。我不是仅仅作为一名医生，我还是一个地方官。如果我听到有任何对你不满的投诉，哪怕只是今晚的无礼，我都会采取行动把你赶走。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "Later that evening, Dr. Livesey left on his horse. The captain stayed silent, maintaining his silence for many evenings afterward.",
+      "zh": "当晚晚些时候，利文斯通医生骑马离开了。船长默不作声，此后好几个晚上他都保持着沉默。"
     }
   ]
 }

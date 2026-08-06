@@ -2,26 +2,200 @@
   "id": "Treasure_Island_u5",
   "bookId": "Treasure_Island",
   "unitIndex": 5,
-  "title": "Chapter 5: Ben Gunn, the Marooned Pirate",
-  "chineseTitle": "第 5 章：荒岛囚徒本·甘恩",
+  "title": "4",
+  "chineseTitle": "第4章",
   "paragraphs": [
     {
-      "en": "When the Hispaniola anchored in the island bay, Silver allowed his men ashore to cool their tempers. I slipped into one of the boats and escaped into the dense island jungle alone. Exploring the island, I witnessed Silver coldbloodily stab a loyal sailor named Tom for refusing to join the mutiny.",
-      "zh": "当伊斯帕尼奥拉号锚泊在岛屿海湾时，西尔弗允许他的男人们上岸去冷却他们的脾气。我溜进了一条小船并单独逃进了密集的岛屿丛林。探索岛屿，我目睹了西尔弗冷血地刺死了一名名叫汤姆的忠诚水手，因为他拒绝加入叛乱。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "I immediately informed my mother about what I knew, placing us in a perilous situation. Some of the man's money, if he had any, was owed to us, but his shipmates, especially Black Dog and the blind beggar, were unlikely to part with it for the dead man’s debts. My mother could not be left alone; we decided to seek help from Doctor Livesey together.",
+      "zh": "我立刻把我知道的情况告诉了母亲，这让我们陷入了险境。那人的钱如果有的话，有一部分可能欠着我们家的债，但他的船员们，尤其是黑狗和那个瞎眼乞丐，不大可能会为了死者的债务而轻易交出来。母亲不能独自留下，我们决定去找莱维斯医生帮忙。"
     },
     {
-      "en": "Terrified, I fled deeper into the woods, where I suddenly encountered a wild, ragged man dressed in goat skins, with pale skin and crazy eyes. He threw himself on his knees, weeping: 'I'm poor Ben Gunn, I am; and I haven't spoke with a Christian these three years!'",
-      "zh": "惊恐万状，我逃进了树林深处，在那里我突然遇到了一位穿着山羊皮的野生破烂男人，有着苍白的皮肤与疯狂的双眼。他扑倒在膝盖上，哭着：“我是可怜的本·甘恩，我是；三年来我没有和一个基督教徒说过话了！”",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "The ticking clock and sound of coal falling in the grate filled us with fear. We feared the approaching footsteps in the neighborhood. Despite the darkness and frosty fog, we ran out into the gathering evening.",
+      "zh": "钟声滴答作响，炉子里煤炭掉落的声音让我们感到恐惧。我们害怕邻居家的脚步声即将临近。尽管天色昏暗，寒雾弥漫，我们还是冲出了屋门，迎着傍晚的暮色奔跑。"
     },
     {
-      "en": "Ben Gunn revealed that he had been one of Flint's pirates when Flint buried the treasure. Three years ago, another ship had marooned Ben Gunn on the island alone. Ben Gunn told me he had spent those three solitary years digging, and hinted that he had found something very precious. He promised to help Captain Smollett in exchange for passage home and a share of money.",
-      "zh": "本·甘恩揭示当弗林特埋藏宝藏时他曾是弗林特的海盗之一。三年前，另一艘船把本·甘恩单独抛弃在了岛上。本·甘恩告诉我他把那三个孤独的年份花在了挖掘上，并暗示他发现了某种非常宝贵的东西。他承诺帮助斯莫列特船长以换取带他回家以及一份资金。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "The hamlet was just a short distance away, though hidden behind the next cove. It lay in the opposite direction from where the blind man had appeared, suggesting he might not be nearby. We walked quickly but stopped occasionally to hold each other and listen for any unusual sounds.",
+      "zh": "这个小村庄就在不远处，虽然被下一个海湾遮挡着。它位于瞎子出现的相反方向，表明他可能并不在附近。我们加快了脚步，但时不时停下来相互扶持，仔细聆听是否有任何异常的声音。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "There was only the low sound of waves and the croaking of birds in the woods.",
+      "zh": "只有海浪的低吟和树林中鸟儿的呱呱叫声。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "By candlelight, we arrived at the hamlet. The yellow glow from windows cheered me, but it turned out to be the most help we could expect. Locals clung to their homes despite our pleas for aid.",
+      "zh": "在烛光下，我们抵达了这个小村庄。窗户透出的黄色光芒让我感到一丝温暖，但事实证明这不过是所能指望的有限帮助。村民们尽管我们的求助请求再三恳求，仍然紧紧守着自己的家园不肯离开。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "The name Captain Flint struck fear into them; even those who had seen strangers or a small boat in Kitt's Hole were terrified. Any companion of the captain’s was enough to scare them.",
+      "zh": "船长弗林特这个名字让他们闻风丧胆；即使有些人曾在基茨洞见过陌生人或小艇，也依然感到恐惧。任何与船长同行的人都足以吓住他们。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "In the end, several agreed to ride to Dr. Livesey's, but not one would help defend the inn. My mother then spoke up, declaring she wouldn’t lose money meant for her fatherless son. \"If none of you dare,\" she said, \"Jim and I will.",
+      "zh": "最终，几个人同意骑马去莱维斯医生家，但没有人愿意帮忙守卫客栈。这时我母亲开口说道，她不会让本该属于孤儿儿子的钱白白流失。“如果你们都不敢的话，”她说，“我和吉姆就去。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "We'll go back the way we came, and I’ll thank you for that bag to bring back our lawful money.\"",
+      "zh": "我们从原路返回，顺便把那个包带来拿回我们的正当钱物。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "Of course, I agreed to go with my mother. Despite their warnings, no one volunteered to accompany us. They only gave me a loaded pistol in case of attack and promised to have horses ready if pursued.",
+      "zh": "当然，我同意和母亲一起去。尽管他们一再警告，也没有人主动提出陪同我们。他们只是给了我一把上了膛的手枪以防不测，并承诺如果遭到追击，会准备好马匹。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "One boy was sent ahead to the doctor's for armed help.",
+      "zh": "一个男孩被派去医生那里寻求支援。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "The night was cold as my companion and I set out on our perilous journey under the light of a rising, red moon. The fog made everything uncertain, but we hurried along the hedges, silent and swift.",
+      "zh": "夜色寒冷，我和同伴在升起的红月光下启程，踏上这段危险的旅程。雾气让一切变得模糊不清，但我们沿着田间小路疾行，默默无语，动作迅速。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "Inside the Admiral Benbow, the door closed behind us, leaving us alone with the dead captain's body in the dark. My mother fetched a candle from the bar, and holding hands, we cautiously entered the parlour. He lay as before, on his back with eyes open and one arm extended.",
+      "zh": "走进“贝内 bow”号军舰，门在我们身后关上，留下我们独自面对那名死者——黑暗中躺着的船长。我母亲从吧台拿来一根蜡烛，我们紧握着手，小心翼翼地进入了客厅。他依然仰面躺著，双眼睁开，一只手臂伸展开来。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 3,
+      "en": "\"Lower the blind, Jim,\" my mother whispered. \"Someone might watch outside.\" Afterward, she said, \"We need to get the key off that; who will touch it?\"",
+      "zh": "“吉姆，把窗帘拉下来。”妈妈低声说道，“外面可能有人在偷看。”随后她又说，“我们必须把钥匙拿开；谁会碰它呢？”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "Her voice trembled slightly.",
+      "zh": "她的声音微微颤抖。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "I knelt down immediately. Near his hand was a small blackened paper round. I knew this must be the Black Spot and found on its other side: \"You have till ten tonight.\"",
+      "zh": "我立刻跪下。在他手边有一个小小的黑乎乎的圆形纸片。我知道这一定是所谓的“黑点”，并在它的另一面写着：“今晚十点之前你还有机会。”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 2,
+      "en": "\"He had until ten, Mother,\" I said as our old clock began striking. The sudden noise startled us, but it was only six.",
+      "zh": "“我还有到十点的时间，妈妈，”随着旧钟突然敲响，我说道。那突如其来的声响让我们一惊，但其实才刚六点。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "\"Now, Jim,\" she said, \"the key.\" I searched his pockets—coins, a thimble, thread and needles, tobacco, a gully, a compass, and a tinder box. Despairing, my mother suggested the key might be around his neck.",
+      "zh": "“现在，吉姆，”她说，“是钥匙。”我搜了他的口袋——硬币、一个顶针、线和针、烟草、一个小水沟模型、指南针和火柴盒。失望之下，妈妈建议钥匙可能系在他的脖子上。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 3,
+      "en": "Overcoming my revulsion, I tore open his shirt at the throat. There it was—a key hanging from a bit of tarry string, which I cut with his own gully. This discovery filled us with hope as we hurried upstairs to the small room where he had slept and where his box stood since his arrival.",
+      "zh": "克制住恶心的感觉，我撕开了他脖子上的衬衫。果然，在那里——一根沾着油污的细绳上挂着一把钥匙，我用他自己的刀割断了绳子。这个发现让我们充满希望，急忙上楼来到他睡觉的小房间，那间房里自他入住以来一直放着他那个箱子。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "The chest, marked \"B\" on top, showed signs of long use. My mother demanded the key, which she quickly turned and opened.",
+      "zh": "标着“B”的chest显现出长期使用的痕迹。我母亲要来了钥匙，迅速转动后打开了它。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "Inside, a strong smell of tobacco and tar greeted us. On top lay a suit of unworn clothes, neatly folded. Below were various items: a quadrant, a tin canikin, tobacco sticks, two handsome pistols, some bar silver, an old Spanish watch, and foreign trinkets.",
+      "zh": "一进门，便扑鼻而来一股浓浓的烟草和焦油味。地上铺着一套未曾穿过的衣服，叠得整整齐齐。下面散放着一些物品：一个罗盘、一只锡酒壶、几根烟丝、两把造型精美的手枪、一些银币、一枚旧西班牙怀表以及一些外国的小饰品。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "Among them, five or six curious West Indian shells puzzled me.",
+      "zh": "其中，五六只好奇的加勒比海贝壳让我感到困惑。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 3,
+      "en": "We found only the silver and trinkets of little value. Underneath was an old boat-cloak, salt-stained from many harbors. My mother pulled it out impatiently to reveal a bundle wrapped in oilcloth and a canvas bag filled with gold.",
+      "zh": "我们只找到了一些银器和价值不大的小饰品。下面是一件旧船衣，上面沾满了来自多个港口的盐渍。母亲不耐烦地把它拉出来，露出了用油布包裹着的一捆东西以及一个装满黄金的帆布袋。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "\"I'll show them I'm honest,\" my mother declared. \"I won't take one farthing more.\" She began counting the coins from the sailor's bag into mine, a difficult task due to their varied sizes—doubloons, louis d'ors, guineas, and pieces of eight, all mixed together.",
+      "zh": "“我要让他们知道我是诚实的，”妈妈坚定地说，“我不会多要一分钱。”她开始将水手袋里的硬币一枚枚数进自己的钱堆里，这可是一项艰巨的任务，因为这些硬币大小不一——有双贝西奥、路易金币、金镑和八分银币，全都混在一起。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 1,
+      "en": "The guineas were scarce, but my mother knew how to count them accurately.",
+      "zh": "尽管金币不多，但我母亲却能准确地清点它们。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "As we approached halfway through the journey, I sensed an ominous sound—a rhythmic tapping that grew louder in the cold air. It drew closer until it struck sharply against the inn door, followed by the turning of the handle and the rattling of the bolt. We held our breaths as silence ensued.",
+      "zh": "当我们行进至中途时，隐约间传来一种不祥的声音——那是一种有节奏的敲击声，在冷空气中越来越响亮。它逐渐逼近，最终在客栈的大门上发出尖锐的一击，紧接着是门把手转动的声音和锁链的嘎吱作响。我们屏住呼吸，静候着接下来可能发生的一切。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 2,
+      "en": "I whispered to my mother, \"Take everything and let's go,\" knowing the bolted door might attract unwanted attention. Despite her fear, she insisted on taking more than her share, arguing that it was not yet seven o'clock and she would have her rights.",
+      "zh": "我对母亲低语：“把所有的东西都拿上，我们走吧。”我知道bolted的门可能会引起不必要的注意。尽管她害怕，还是坚持多拿了些东西，辩解着现在才刚过六点，她的权益还没有丧失。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "Suddenly, a distant whistle echoed from the hillside. This was enough to convince us; my mother jumped up, declaring, \"I'll take what I have.\" I picked up the oilskin packet, saying, \"And I’ll take this to square the count.\"",
+      "zh": "忽然，远处传来一声悠长的口哨声。这声音足以让我们确信；我母亲一跃而起，说道：“那我就拿这个了。”我拿起油布包裹，回应道：“那我这就拿着这个去结账吧。”"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "We hurried downstairs in the dark, leaving the candle behind an empty chest. Opening the door, we retreated into the night. The fog was lifting quickly; the moonlight illuminated the hillsides, but a thin veil still hid our escape at the bottom of the dell and around the tavern.",
+      "zh": "我们急忙下楼，天色尚暗，在一个空箱子后面留下了一根蜡烛。打开门后，我们退回到了夜色中。雾气迅速消散，月光洒在山坡上，但山谷底部和酒馆周围仍被一层薄薄的雾气遮掩着，我们的逃亡尚未完全显露。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "Before reaching the hamlet, less than halfway up the hill, we emerged into the moonlight. Footsteps running approached, and as we turned to look, a lantern flickered towards us, indicating another pursuer was close behind. My mother suddenly said, \"Take the money and run on.",
+      "zh": "还没等走到那个小村庄，刚上到山腰的一半，我们就沐浴在月光下了。这时，一阵急促的脚步声传来，我们转头一看，只见一盏灯笼摇曳着向我们走来，表明又有一个人紧随其后。我母亲突然说道：“拿着钱，赶紧跑吧。”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 1,
+      "en": "I am going to faint.\"",
+      "zh": "我快要晕倒了。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 3,
+      "en": "I felt this must be our end. I cursed the neighbors' cowardice and blamed my mother for her honesty, greed, past recklessness, and present weakness. We reached a small bridge by chance.",
+      "zh": "我觉得这可能是我们的终点。我咒骂邻居的胆怯，责怪母亲的诚实、贪婪以及过去的轻率和现在的软弱。我们偶然间来到了一座小桥旁。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "Supporting her unsteadily, I helped her to the riverbank. She sighed and fell into my arms. How I managed to drag her down the bank and under the arch is unclear; it was done roughly but we stayed there—my mother almost exposed, both of us within earshot of the inn.",
+      "zh": "扶着她不稳的身子，我将她带到河岸。她叹了口气，整个人倚在我的怀里。至于我是如何费力地把她拖下河岸，穿过拱门，这些细节已记不清了；总之是粗鲁地完成了这件事，但我们就这样待在那里——我的母亲几乎暴露无遗，而我们俩都听得见旅店里传来的动静。"
     }
   ]
 }

@@ -2,26 +2,308 @@
   "id": "Treasure_Island_u3",
   "bookId": "Treasure_Island",
   "unitIndex": 3,
-  "title": "Chapter 3: Long John Silver and the Hispaniola",
-  "chineseTitle": "第 3 章：独脚水手西尔弗与伊斯帕尼奥拉号",
+  "title": "2",
+  "chineseTitle": "第2章",
   "paragraphs": [
     {
-      "en": "We traveled to Bristol, where Squire Trelawney had purchased a fine schooner named the Hispaniola. The Squire had hired a one-legged sea-cook named Long John Silver, who kept a tavern called the Spy-Glass. Silver was a tall, intelligent man with a jovial face and a parrot named Captain Flint that constantly screamed, 'Pieces of eight! Pieces of eight!'",
-      "zh": "我们前往布里斯托尔，乡绅特里劳尼在那里购买了一艘名为“伊斯帕尼奥拉号”的优秀纵帆船。乡绅雇佣了一位名叫朗·约翰·西尔弗的独脚海船厨师，他开着一家叫望远镜的酒馆。西尔弗是一个高大、聪明的男人，带着欢快的脸庞和一只叫弗林特船长的鹦鹉，鹦鹉不断尖叫着：“八里亚尔！八里亚尔！”",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "It was a cold January morning when a stranger entered the inn. The cove was covered in hoar frost, and the sun barely touched the hilltops. The captain had left earlier than usual, his cutlass swinging under his coat, and his brass telescope by his side.",
+      "zh": "一个寒冷的初一早晨，一位陌生人走进了旅店。海湾被白霜覆盖，太阳 barely 触及山顶。船长比平时更早离开了，他的砍刀挂在外套下摆处，身旁还带着一只铜制望远镜。"
     },
     {
-      "en": "Silver helped the Squire recruit the ship's crew. Captain Smollett, a stern, experienced officer, expressed deep concern to Dr. Livesey before we sailed: he disliked the crew, hated that the secret treasure map was common knowledge among the sailors, and mistrusted Silver's influence over the men. But the Squire brushed aside the Captain's warnings.",
-      "zh": "西尔弗帮助乡绅招募了船上的船员。斯莫列特船长（一位严厉有经验的官员）在我们航行前向李夫西医生表达了深深的担忧：他不喜船员，讨厌秘密宝藏地图在水手中是共同常识，并且不信任西尔弗对男人们的影响。但乡绅甩开了船长的警告。",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "I saw him walking away, his breath visible like smoke. As he turned a big rock, I heard his loud snort of indignation. Mother was with Father upstairs, but I was setting the breakfast table when the stranger appeared.",
+      "zh": "我看见他走远了，呼出的气像烟雾一样可见。当他翻过一块大石头时，听到了他愤然的一声哼。当时母亲和父亲在楼上，而我正在摆早餐桌，这时那个陌生人出现了。"
     },
     {
-      "en": "The Hispaniola set sail across the Atlantic. Silver proved to be an efficient cook, maintaining great discipline and winning the affection of young Jim Hawkins. Yet behind his cheerful smile, Silver was secretly organizing a bloodthirsty mutiny among the crew members he had surreptitiously recruited.",
-      "zh": "伊斯帕尼奥拉号起航横渡大西洋。西尔弗被证明是一位高效的厨师，保持着极大的纪律并赢得了年轻吉姆·霍金斯的喜欢。然而在他欢快的微笑后面，西尔弗正在秘密地在他暗中招募的船员中间组织着一场嗜血的叛乱。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 1,
+      "en": "He was pale, missing two fingers on his left hand, and though he carried a cutlass, he didn't seem much like a fighter.",
+      "zh": "他面色苍白，左手少了两根手指，虽然手持一柄短剑，却似乎并不像是一名战士。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "I asked him what he wanted, and he requested rum. As I went to fetch it, he motioned me closer and sat down at a table. I hesitated, holding my napkin in hand.",
+      "zh": "我问他想要什么，他要了朗姆酒。我去拿的时候，他示意我靠近一些，并在一张桌子旁坐了下来。我犹豫了一下，手里还捏着餐巾。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"Come here, sonny,\" he said with a leer. \"Is this table for your mate Bill?\"",
+      "zh": "“过来，小子，”他,\"); 他淫笑着说道，“这是你朋友比尔的位子吗？”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "I told him I didn't know anyone named Bill, only the captain who stayed in our house.",
+      "zh": "我说我不认识什么比尔这个人，只认识住在我们家的船长。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "\"Well,\" he said, \"my mate Bill would likely be called captain. He has a cut on one cheek and is particularly pleasant in drink. Suppose your captain has such a mark; perhaps it's the right cheek.",
+      "zh": "“这么说吧，”他说道，“我那伙计比尔要是当船长的话肯定会被叫作船长。他脸上有一道伤痕，喝酒的时候尤其和善。假如你那位船长也有这样的标记；或许就是右边的脸颊。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "Now, is my mate Bill here?\"",
+      "zh": "现在，我的同伴比尔在这儿吗？\""
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "I told him that Bill was out walking.",
+      "zh": "我告诉他比尔出去散步了。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "\"Which way did he go?\" he asked.",
+      "zh": "“他走的是哪条路？”他问道。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "Pointing to the rock and estimating his return, I answered his questions. \"Ah,\" he said, \"this will be as good as drink for my mate.\"",
+      "zh": "我指着那块岩石估算了一下返回的时间，回答了他的问题：“啊，”他说道，“这对他来说就跟美酒一样。”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "His face showed no pleasant expression. I suspected he might be mistaken but thought it not my affair. The stranger lingered near the inn door, peering like a cat waiting for a mouse.",
+      "zh": "他的脸上没有露出任何愉快的神色。我怀疑他可能搞错了，但认为这不关我的事。那个陌生人徘徊在旅店门口，目光锐利，仿佛一只猫在等待老鼠出现。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "When I stepped out into the road, he called me back and ordered me in with an oath that made me jump.",
+      "zh": "当我走出房门踏上街道，他叫住了我，并用一个让我猛地一惊的咒骂把我拽了进去。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "Back inside, he resumed his manner, half fawning, half sneering. He patted my shoulder, calling me a good boy and expressing a fondness for me. \"I have a son like you,\" he said, \"and he's all the pride of my heart.",
+      "zh": "回到屋里，他恢复了语气，一半奉承一半嘲讽。他拍了拍我的肩膀，称我是个好孩子，并流露出对我一些许的喜爱。“我也有一个像你这样的儿子，”他说，“他是我心中唯一的骄傲。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "But discipline is crucial for boys—discipline. If Bill had been with us, he wouldn't have stood there to be spoken to twice. That was never his way or that of those who sailed with him.\"",
+      "zh": "但是，纪律对男孩们至关重要——真正的纪律。要是比尔在场的话，他绝不会让人第二次开口叫他。这从来不是他的行事风格，也不是与他同船共济的人的风格。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "Sure enough, in came Bill with a spyglass under his arm. \"Let's go back into the parlour,\" said the stranger, \"and hide behind the door. We'll give Bill a little surprise.\"",
+      "zh": "果然，比尔腋下夹着望远镜进来了。“我们回到客厅去，”陌生人说道，“然后躲在门后。我们要给比尔一个惊喜。”"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 2,
+      "en": "The stranger led me into the parlour and positioned us behind the open door, concealing us from view. He seemed as nervous as I was, fidgeting with his cutlass.",
+      "zh": "陌生人领我进了客厅，让我们躲在敞开的门后，以免被人发现。他似乎和我一样紧张，不停地摆弄着手中的短剑。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "Finally, the captain barged in, ignoring everything around him, and strode directly to his breakfast table.",
+      "zh": "最后，船长闯了进来，仿佛周围的一切都不存在一般，径直走向他的早餐桌。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 1,
+      "en": "\"Bill,\" the stranger said, trying to sound bold but failing.",
+      "zh": "“比尔，”陌生人说道，试图装出一副勇敢的样子，但显然失败了。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "The captain spun around, his face pale and blue-nosed, looking terrified. \"Black Dog!\" he exclaimed.",
+      "zh": "船长转过身来，脸色苍白，鼻尖泛着青色，显得惊恐万分。“黑狗！”他脱口喊道。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "\"And who else?\" replied Black Dog, growing more at ease. \"Just old shipmate Billy here at the Admiral Benbow inn.\"",
+      "zh": "“还有谁？”黑狗越发放松地回答，“就只有这位老船友比莉在这里的Adventure Benbow客栈。”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "He held up a mutilated hand, saying, \"Since I lost my claws, we've had many adventures together.\"",
+      "zh": "他举起一只残缺的手，说道：“自从我失去了爪子，我们经历了不少冒险。”"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "\"Alright,\" said the captain, \"you caught me. What do you want?\"",
+      "zh": "“好吧，”船长说道，“被你抓住了。你想怎么样？”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "Black Dog replied, \"You're right, Bill. Let's have some rum and talk like old shipmates.\"",
+      "zh": "黑狗回答说：“你说得对，比尔。我们来喝点朗姆酒，像老水手一样畅谈一番。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 1,
+      "en": "When I returned with the rum, they were already seated—Black Dog by the door, keeping an eye on both his friend and a potential escape route.",
+      "zh": "我端着朗姆酒回来时，他们已经坐下了——黑狗守在门口，既盯着他的朋友，也留意着可能的逃生路线。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 2,
+      "en": "He told me to leave the door open, saying, \"No keyholes for me, sonny.\" Then he retired into the bar.",
+      "zh": "他对我说：“别把门关死，儿子，我可不想透过钥匙孔看。”说完便走进了酒吧。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "The captain's voice grew louder, filled with anger and frustration. \"No, no, no, and an end of it!\" he shouted.",
+      "zh": "船长的声音越来越大，充满了愤怒和挫败感。“不！不！不！就此打住！”他喊道。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "\"If it comes to swinging, swing all, say I.\" Suddenly, there was a loud explosion of oaths and clashing sounds. The chair and table tipped over, followed by a cry of pain.",
+      "zh": "“说到摇摆，就全部摇摆开来。”突然间，咒骂声和碰撞声此起彼伏。椅子和桌子东倒西歪，紧接着传来一声痛苦的叫喊。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "Black Dog fled, pursued by the captain with drawn cutlasses. Blood streamed from Black Dog's shoulder as they raced out the door.",
+      "zh": "黑狗狂奔而出，船长紧随其后，手中握着砍刀。黑狗的肩膀上鲜血直流，两人在门口追逐而过。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "The final blow came when the captain aimed his cutlass at Black Dog just before he disappeared over the hill. However, the signboard of Admiral Benbow intercepted it, leaving a visible notch on its lower side. Once outside, despite his wound, Black Dog ran swiftly away.",
+      "zh": "最终一击发生在船长在黑狗消失在山丘之前，将砍刀对准他的那一刻。然而，本鲍威船长的招牌横梁挡住了这一击，在其下方留下了一个明显的缺口。出了门后，尽管受了伤，黑狗还是迅速逃走了。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 3,
+      "en": "Inside, the captain stood dazed and muttered \"Rum.\" He staggered against the wall, then passed his hand over his eyes several times before retreating to the house. \"Jim,\" he said, \"rum.\"",
+      "zh": "Inside，船长呆滞地站在那里，喃喃道：“朗姆酒。”他踉跄着靠在墙上，几次用手擦了擦眼睛，然后退回到屋里。“吉姆，”他说，“是朗姆酒。”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "I asked if he was hurt, but he repeated, \"Rum! Rum!\" I rushed to fetch it, but my efforts were in vain; I broke a glass and fouled the tap.",
+      "zh": "我问他是否受伤，但他反复念叨：“朗姆酒！朗姆酒！”我赶紧去拿，但徒劳无功；结果摔碎了一个玻璃杯，还弄脏了水龙头。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "Just then, a loud noise from the parlour drew us back inside. We found the captain lying on the floor, his breathing heavy and labored. His eyes were closed, and his face was pale.",
+      "zh": "就在这时，客厅里传来了响亮的声音，把我们拉了回去。我们发现船长躺在地上，呼吸急促而沉重。他的眼睛紧闭，脸色苍白。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "My mother, alarmed by the commotion, ran down to help. Together, we lifted his head.",
+      "zh": "我母亲听到动静跑下来帮忙。我们一起把他扶了起来。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 2,
+      "en": "We were at a loss on how to assist the captain, who we believed had been injured in his fight with the stranger. I fetched some rum but failed to get it into him due to his tightly shut teeth and strong jaw.",
+      "zh": "我们对如何帮助那位我们认为在与陌生人搏斗中受伤的船长束手无策。我给他取来一些朗姆酒，但因为他的牙齿紧闭，下巴坚硬，没能成功喂给他。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "Doctor Livesey entered just as we were desperate for help. \"Oh, doctor,\" we exclaimed, \"what should we do? Where is he hurt?\"",
+      "zh": "医生利维斯克恰好这时进来了，我们正急切地寻求帮助。“哦，医生，”我们脱口而出，“我们应该怎么办？他哪里受伤了？”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "\"Nothing serious!\" replied Doctor Livesey. \"He's had a stroke, as I warned.",
+      "zh": "“没什么大不了的！”莱维斯医生回答道，“正如我警告过的，他中风了。”"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 1,
+      "en": "Go upstairs to your husband, Mrs. Hawkins, and don't mention anything.\"",
+      "zh": "霍金斯太太，请上楼去找你的丈夫，别提任何事情。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 3,
+      "en": "Doctor Livesey then examined the captain. He ripped up his sleeve to reveal several tattoos: \"Here's luck,\" \"A fair wind,\" and \"Billy Bones his fancy\" on his forearm. Near his shoulder was a sketch of a gallows with a hanging man.",
+      "zh": "医生利文斯通随后检查了船长。他卷起袖子，露出几处纹身：“好运”、“顺风航行”和“比尔·博内兹的标记”分别刻在他的前臂上。靠近肩膀的地方则是一幅绞刑架的简笔画，上面挂着一个吊死的人。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 3,
+      "en": "\"This is prophetic,\" said the doctor, pointing at the drawing. \"Now, Master Billy Bones, let’s check your blood color.\" He asked me, \"Are you afraid of blood?\"",
+      "zh": "“这真是个预兆，”医生指着那幅画说道，“现在，比利·博内斯先生，我们来检查一下你的血色。”他又问我，“你害怕血液吗？”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 1,
+      "en": "\"No, sir,\" I replied.",
+      "zh": "“不，先生，”我回答道。"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "\"Then hold the basin,\" he instructed as he took out his lancet and opened a vein.",
+      "zh": "“然后拿着这个盆子接血。”他一边说一边取出了银针，并割开了自己的静脉。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 3,
+      "en": "A significant amount of blood was drawn before the captain finally opened his eyes. He first recognized Doctor Livesey with a frown, then looked at me, visibly relieved. Suddenly, his face turned pale, and he tried to sit up, shouting, \"Where's Black Dog?\"",
+      "zh": "在抽了不少血之后，船长终于睁开了眼睛。他皱着眉头首先认出了莱维斯医生，然后转向我，明显松了口气。突然间，他的脸色变得煞白，挣扎着想要坐起来，喊道：“黑狗呢？”"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 3,
+      "en": "\"Black Dog is on your back,\" said the doctor. \"You've been drinking rum; you had a stroke as I predicted. I’ve just pulled you out of the grave headfirst.\"",
+      "zh": "“你背上了黑狗，”医生说道，“你喝多了朗姆酒；正如我所预测的那样，你中风了。我已经把你从坟墓里头朝脚拔出来了。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 1,
+      "en": "He then addressed the captain directly: \"That’s not your name, Mr. Bones.\"",
+      "zh": "他随即直截了当地对船长说：“您不是叫骨头先生吗？”"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 3,
+      "en": "The doctor replied, \"Much I care.\" He explained that the name referred to a buccaneer he knew. To shorten things, he called the man by this name.",
+      "zh": "医生回答说：“我可不care。”他解释说，这个名字指的是一个他认识的海盗。为了简化起见，他就这么称呼那人。"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 2,
+      "en": "He warned, \"One glass of rum won't kill you, but if you take one, you'll keep drinking and die—like the man in the Bible. Come on, make an effort.\"",
+      "zh": "他警告道：“喝一杯朗姆酒不会要了你的命，但一旦喝了，你就会停不下来，最终毙命——就像圣经里的那个人一样。来吧，振作一下。”"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 2,
+      "en": "With difficulty, we helped him to his bed. His head fell back as if almost fainting.",
+      "zh": "我们费了好大劲才扶他上床。他的头往后一仰，仿佛快要晕过去似的。"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 1,
+      "en": "\"Now,\" said the doctor, \"I clear my conscience—the name of rum for you is death.\"",
+      "zh": "“现在，”医生说道，“我心安了——对你来说，朗姆酒就是毒药。”"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 3,
+      "en": "He then left to see my father, taking me by the arm. As he closed the door, he said, \"This is nothing; I've drawn enough blood to keep him quiet for a while. He should lie there for a week—that's best for both of us—but another stroke would settle him.\"",
+      "zh": "他随后带我去找了父亲，边走边挽着我的胳膊。门关上的时候，他说道：“这没什么；我已经抽够了他的血，让他安静一阵子。让他躺一个星期吧——这对我们都好，但再来一次中风就能彻底解决他的问题。”"
     }
   ]
 }

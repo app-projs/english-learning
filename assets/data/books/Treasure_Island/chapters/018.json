@@ -1,0 +1,243 @@
+{
+  "id": "Treasure_Island_u18",
+  "bookId": "Treasure_Island",
+  "unitIndex": 18,
+  "title": "17",
+  "chineseTitle": "第17章",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "The fifth trip was notably different. Our small boat, already overloaded with five grown men and powder supplies, struggled under the weight. The gunwale dipped, and water seeped in, soaking my clothes.",
+      "zh": "第五次出航明显不同。我们那条小船已经载着五位成年男子和火药，负荷过重，吃水很深。船舷浸入水中，水慢慢渗了进来，打湿了我的衣服。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "We tried to balance the boat, but remained wary. The ebb tide created a strong current flowing westward through the basin and then south towards the straits. This current threatened our course, pushing us away from our intended landing spot behind the point.",
+      "zh": "我们试图稳住小船，但仍保持警惕。退潮时形成的强劲水流从盆地向西流动，然后转向南流往海峡方向。这条水流威胁着我们的航程，将我们推向了预定登陆点背后的那个岬角之外。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Cannot keep her head for the stockade,\" I told the captain, steering while he and Redruth rowed. \"The tide keeps washing her down.\"",
+      "zh": "“她的思绪总是飘到要塞那边去，”我告诉船长，一边掌舵，而船长和雷德鲁斯则划着船。“潮水总把她的心思拉了回去。”"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"Not without swamping the boat,\" replied the captain. \"You must steer east until you see we're gaining ground.\"",
+      "zh": "“如果不让船舱进水的话,”船长回答，“你必须往东掌舵，直到看到我们正在取得进展。”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 1,
+      "en": "I adjusted the course but found that the tide continued to push us westward until I had to point the boat due east.",
+      "zh": "我调整了航向，却发现潮水依然将我们往西推，直到我把船头指向正东方向。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "\"We'll never get ashore at this rate,\" I said.",
+      "zh": "“照这样下去，我们永远也上不了岸了。”我说。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "\"If it's our only option, sir, we must stick with it,\" the captain replied. \"We need to stay upstream. If we drift leeward of the landing place, we risk being boarded by the pirates' gigs.\"",
+      "zh": "“如果这是我们唯一的选项，先生，我们只能坚持下去，”船长回答道，“我们必须逆流而上。如果我们偏离了登陆点顺风航行，就有可能被海盗的划艇劫持。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "\"Current is lessening now,\" Gray, sitting in the fore-sheets, called out.",
+      "zh": "“现在情况正在好转。”格雷坐在前桅帆位上喊道。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "\"Thank you, my man,\" I responded, as if nothing had changed, for we all treated him like one of us.",
+      "zh": "“谢谢你，伙计，”我应道，仿佛一切如常，因为我们大家对他都视若己出。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "The captain's voice sounded different when he spoke again. \"The gun!\" he said.",
+      "zh": "船长再次说话时声音有些不同。“炮弹！”他喊道。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "\"I've considered that,\" I replied, certain he was thinking about a bombardment. \"They couldn't get the gun ashore, and even if they did, it would be impossible to haul it through the woods.\"",
+      "zh": "“我考虑过这个问题，”我说，确定他在想一场炮击。“他们根本无法把大炮弄上岸，就算勉强上了岸，在树林里也无法拖动。”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "\"Look astern, doctor,\" the captain instructed.",
+      "zh": "“船长，看看船尾吧。”船长吩咐道。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "We had forgotten about the long nine; there, to our horror, were five men working on her, removing what they called the stout tarpaulin cover. At that moment, I realized the round-shot and powder for the gun had been left behind, making them vulnerable if an axe struck.",
+      "zh": "我们早已把那九个人的事抛在脑后，没想到竟有五个家伙正在那里忙活，剥除他们所谓的坚固帆布罩。那一刻，我意识到装填炮弹和火药的容器被遗忘了，这样一来，如果有人挥斧攻击，他们将毫无防备。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "\"Israel was Flint's gunner,\" Gray said hoarsely.",
+      "zh": "格雷嘶哑着 voice 说：“以色列是弗林特的炮手。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "We quickly steered directly towards the landing place. By now, we were far enough from the current to maintain steady progress despite our gentle rowing pace. I kept her steady for the goal.",
+      "zh": "我们迅速将船直接驶向登陆点。此时，水流已经不再对我们构成太大影响，尽管划桨的动作并不急促，但我们依然保持了平稳的前进速度。我小心翼翼地操控着小舟，确保它能顺利抵达目的地。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "However, by turning broadside to the Hispaniola, we exposed ourselves as a large target.",
+      "zh": "然而，我们侧对海地岛航行，反而成了一个大靶子。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "I could hear Israel Hands dropping round-shot on deck. \"Who's the best shot?\" asked the captain.",
+      "zh": "我听到以色列·汉斯在甲板上敲打实心铅弹。“谁的枪法最好？”船长问道。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "\"Mr. Trelawney is the best,\" I said.",
+      "zh": "“特拉韦尼先生最好了。”我说。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "\"Mr. Trelawney, please shoot one of those men, sir. Hands if possible,\" ordered the captain.",
+      "zh": "“特拉韦尼先生，请射杀其中一人。最好是让他们举手投降，”船长命令道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "Trelawney remained calm and checked his gun’s priming. The captain shouted, \"Easy with that gun, or you'll swamp the boat. All hands stand by to trim her when he aims.\"",
+      "zh": "特拉韦尼保持冷静，检查了一下手枪的击发装置。船长喊道：“别那么随便动枪，否则会把小艇弄翻。全体人员准备在它瞄准时调整平衡。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "The squire raised his gun; rowing stopped as we leaned over to maintain balance. Just as Trelawney fired, Hands ducked, and a ball whizzed overhead. One of the other men fell instead.",
+      "zh": "管家举起猎枪，划桨动作随之暂停，我们倾斜身子以保持平衡。就在这时特雷兰尼扣动了扳机，汉兹却突然低头躲闪，一颗子弹从头顶飞过。另一个男人却被击中倒下了。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "The pirates on shore began to move towards their boats, and a chorus of voices echoed the cry from the ship.",
+      "zh": "岸上的海盗开始向他们的船只移动，船上响起的喊声在岸边回荡。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 1,
+      "en": "\"Here come the gigs,\" I said.",
+      "zh": "“瞧，巡游的乐队来了。”我说。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "\"Row them in then,\" shouted the captain. \"If we capsize now, it won't matter. We'll be done if we can't get ashore.\"",
+      "zh": "“那就把他们押进来吧，”船长喊道，“如果现在翻船也没关系。如果我们无法登陆，就一切都完了。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "\"The other gig isn't manned,\" I added. \"The crew might try to cut us off from the shore.\"",
+      "zh": "“另一艘船没人手，”我补充道，“船员可能会试图将我们与岸边隔离开来。”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 3,
+      "en": "\"They’ll have a tough run,\" replied the captain. \"Jack is on land. It’s not them I worry about; it's the cannonballs.",
+      "zh": "“他们可要吃点苦头了，”船长回答说，“杰克在陆地上。我倒不担心他们会怎样；我担心的是那些炮弹。”"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 2,
+      "en": "My lady's maid could hit anything. Tell me when you see the shot, squire, and we'll be ready.\"",
+      "zh": "我的女仆箭无虚发。你看到射出箭了没，骑士？到时候我们好做好准备。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 2,
+      "en": "Meanwhile, despite being heavily laden, our boat was making good progress towards the shore. The ebb tide had revealed a narrow strip of sand beneath the trees, and the other gig was out of sight behind a small point.",
+      "zh": "与此同时，尽管我们的船载重颇多，但仍稳步向岸边前进。退潮后，在树下露出了一条狭窄的沙地，而另一只划艇则隐没在不远处的一个小岬角之后。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "The ebb tide, which had delayed us, now worked in our favor, slowing down our attackers. The only danger came from the gun.",
+      "zh": "退潮拖延了我们的时间，现在却成了我们的助力，减缓了敌人的攻势。唯一的威胁来自那门大炮。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 1,
+      "en": "\"If I could,\" said the captain, \"I'd stop to take another shot.\"",
+      "zh": "“要是能的话，”船长说道，“我还会再开一枪。”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "But they were determined not to be delayed. They hadn't even looked at their fallen comrade, who was still alive and trying to crawl away.",
+      "zh": "但他们决心不被耽搁。他们甚至都没有去看那个尚存气息、试图爬开的同伴。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "\"Ready!\" cried the squire.",
+      "zh": "“准备好了！”骑士脱口喊道。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "\"Hold!\" shouted the captain, almost immediately.",
+      "zh": "“等等！”船长几乎立刻喊道。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 3,
+      "en": "He and Redruth gave a powerful heave that sent the stern of the boat underwater. The gun fired simultaneously. Jim didn’t hear the squire's shot but felt the impact.",
+      "zh": "他和雷德斯黑德使出了浑身解数，船尾顿时没入水中。与此同时，枪声响起。吉姆没有听到乡绅的枪声，但感受到了强烈的震动。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 2,
+      "en": "The boat sank gently by its stern in three feet of water, leaving us standing on our feet. The other three men went under completely and resurfaced drenched and spluttering.",
+      "zh": "船尾缓缓沉入水中，刚好没过三英尺深的地方，我们几个人都站稳了脚跟。另外三个男子则完全沉了下去，随后浑身湿透、咳嗽着重新浮出水面。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "We managed to reach the shore safely, though we lost most of our supplies. Only two guns were still usable out of five. I had grabbed mine instinctively, holding it high above my head.",
+      "zh": "我们好不容易安全抵达了岸边，不过大部分物资都丢失了。五支枪中只剩下两支还能使用。我下意识地抓起自己的那支，高高地举过头顶。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 1,
+      "en": "The captain carried his over his shoulder with the lock facing up, showing wisdom in preparation.",
+      "zh": "船长将锁扣朝上挂在肩上，显示出他未雨绸缪的智慧。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 3,
+      "en": "Nearby voices signaled approaching danger. We feared being cut off from the stockade and wondered if Hunter and Joyce could hold their ground against a larger force. Hunter was reliable, but Joyce, though pleasant and polite, lacked the necessary military prowess.",
+      "zh": "附近传来的声音预示着危险逼近。我们担心会被围困在木栅外，不确定Hunter和Joyce能否抵挡住敌人的攻势。Hunter一向可靠，但Joyce虽然温和有礼，却缺乏必要的军事才能。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "With these concerns, we hurried ashore, leaving behind our damaged jolly-boat and half of our powder and provisions.",
+      "zh": "怀着这些顾虑，我们赶紧上了岸，把那只破损的吉普森小艇和一半的火药及补给品留在了船上。"
+    }
+  ]
+}

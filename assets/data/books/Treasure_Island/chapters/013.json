@@ -1,0 +1,237 @@
+{
+  "id": "Treasure_Island_u13",
+  "bookId": "Treasure_Island",
+  "unitIndex": 13,
+  "title": "12",
+  "chineseTitle": "第12章",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "A rush of footsteps echoed across the deck. People emerged from below, slipping outside my hiding spot behind the fore-sail. I quickly moved towards the stern, joining Hunter and Dr. Livesey just in time for our group to converge at the weather bow.",
+      "zh": "甲板上响起一阵急促的脚步声，人们从下面涌出，悄悄地绕过了我藏身的前帆后面。我迅速朝船尾移动，恰好与亨特和莱维斯医生会合，我们的队伍正好在风向的船首汇合。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "All hands were already gathered there. A belt of fog had lifted as the moon appeared. To the southwest, we saw two low hills about a mile apart, with a higher hill behind one, still shrouded in mist.",
+      "zh": "所有的人已经聚集在那里。随着月亮升起，一层薄雾渐渐散去。西南方向，可以看到两座相距约一里的低矮山丘，其中一座后面还有一座较高的山丘，依然笼罩在雾中。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "The captain's voice rang out, giving orders. The HISPANIOLA was adjusted to sail closer to the wind, just clearing the island on the east.",
+      "zh": "船长的声音响了起来，下达命令。希帕尼奥拉号调整航向，更加靠近风向，刚好掠过了东边的岛屿。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"Has anyone seen that land before?\" Captain Smollett asked when all preparations were complete.",
+      "zh": "“有人见过那块土地吗？”当所有准备工作完成后，斯莫莱特船长问道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"I have,\" said Silver. \"I watered there with a trader I was cook for.\"",
+      "zh": "“我确实去过，”锡尔弗说道，“我在那儿给一个商人当厨师的时候给他送过水。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"The anchorage is behind an islet on the south side, isn't it?\" the captain inquired.",
+      "zh": "“锚地在南边那个小岛的背后吧？”船长问道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "\"Yes, sir; they call it Skeleton Island. It used to be a pirate haven. A crew member knew all their names.",
+      "zh": "“是的，先生；他们叫它骷髅岛。那里曾是海盗们的避风港。一个船员知道所有海盗的名字。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "The hill to the north is called Fore-mast Hill. There are three hills running south—fore, main, and mizzen. But the main one with the cloud on top—they usually call the Spy-glass because of the lookout they kept while cleaning ships.\"",
+      "zh": "北边的山叫做前桅山。南面有三座相连的山，分别是前山、主山和尾山。但那座顶上有云的主山——他们通常称之为望远镜山，因为上面曾设有瞭望台用于检查船只。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 2,
+      "en": "Captain Smollett produced a chart. \"Check if this is the place,\" he said.",
+      "zh": "斯莫莱特船长拿出了一张航海图。“大家查一查这张图上的位置是否正确。”他说道。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "Long John's eyes gleamed as he examined the chart, but his disappointment was clear from the look on his face. This wasn't the map we found in Billy Bones's chest; it was an accurate copy with all details—names, heights, and soundings—but without the red crosses and notes. Despite his annoyance, Silver managed to conceal his feelings.",
+      "zh": "长约翰的眼睛在仔细查看那张图时闪烁着光芒，但脸上的失望之情却溢于言表。这显然不是我们在比尔·博内斯的chest中找到的地图；而是一份精确的复制品，上面详细标注了所有信息——地名、高度和水深，但却没有那些红色的叉号和注释。尽管他颇感不满，但银还是勉强掩饰住了自己的情绪。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "John confirmed the location with Captain Smollett: \"This is indeed Kidd's Anchorage, as my shipmate called it. The current runs south then northward up the west coast.\" He added confidently, \"You were wise to keep the weather gauge and enter here for careening.\"",
+      "zh": "约翰与斯莫莱特船长确认了位置：“这确实就是基德锚地，我船员这样称呼它。水流先是向南，然后沿西海岸北上。”他自信地说，“你明智地保持了风向优势，选择在这里进行擦底维修。”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "Captain Smollett thanked John and dismissed him, saying, \"Thank you, my man. I'll ask for your help later. You may go now.\"",
+      "zh": "斯莫莱特船长向约翰道谢并打发他走开，说：“谢谢你，伙计。我稍后还会请你帮忙的。你先去吧。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "Surprised by John's knowledge, I was wary when he approached me. Though unaware that I had overheard his conversation from the apple barrel, I shuddered as he touched my arm.",
+      "zh": "约翰的知识让我感到惊讶，因此当他走近时我有些警惕。虽然我不知道他曾在我藏身的苹果筐旁与人交谈，他一碰我的胳膊，我还是不由自主地打了个寒战。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "\"Ah,\" he said, \"this island is perfect for a young lad to explore—bathing, climbing trees, hunting goats, and scaling those hills like a goat yourself.\" He chuckled, adding, \"It makes me feel young again. I almost forgot about my wooden leg.\"",
+      "zh": "“啊，”他说，“这个岛对年轻人来说探索再好不过了——洗澡、爬树、猎 Goat、自己也像羊一样攀上那些山丘。他笑了笑，又说：“这让我感觉年轻了许多。我差点忘了我的木腿。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "With a friendly pat on the shoulder, John hobbled forward and went below.",
+      "zh": "约翰友好的拍了拍他的肩膀，然后一瘸一拐地走了下去。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "On the quarter-deck, Captain Smollett, the squire, and Dr. Livesey were discussing something important. Though eager to share what I had overheard, I hesitated to interrupt them openly. Just as I was formulating an excuse, Dr. Livesey called me over.",
+      "zh": "在甲板上，斯莫利特船长、乡绅和莱维斯克医生正在讨论什么重要的事情。虽然我急于分享自己无意中听到的内容，但还是犹豫着不敢公开打断他们。就在我正想编个理由的时候，莱维斯克医生叫住了我。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "He had left his pipe below and intended for me to fetch it. However, when I approached close enough to speak without being overheard, I interrupted, \"Doctor, let me speak. Get the captain and squire down to the cabin, and then make some pretence to send for me.",
+      "zh": "他把烟斗留在了下面，本打算让我去取。当我靠近到可以说话而不被发现时，我打断道：“医生，请您先别管别的事，去找船长和乡绅下来到舱里一趟，然后再找个借口叫我下去。”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "I have terrible news.\"",
+      "zh": "我有糟糕透顶的消息。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "He thanked Jim loudly and then turned to join the other two men. They spoke briefly, and it was clear that Dr. Livesey had relayed his request. Captain Smollett then ordered Job Anderson, and all hands were piped on deck.",
+      "zh": "他大声向吉姆道谢，随后转向另外两位男子。他们简单交谈了几句，显然莱维斯科医生已经转达了他的请求。接着，斯莫利特船长下令让乔布·安德森上船，全体船员也被召集到了甲板上。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "\"Men,\" said Captain Smollett, \"we've reached our destination. Mr. Trelawney, being generous as always, asked me about the crew's performance. Since I can confirm everyone has done their duty well, we're going below to celebrate.",
+      "zh": "“先生们，”斯莫莱特船长说道，“我们已经到达目的地了。特拉韦尼先生一如既往地慷慨，询问了船员们的表现。既然我可以确认每个人都尽职尽责，我们就下去庆祝一番吧。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "You'll have grog for your health and luck.\"",
+      "zh": "你喝点朗姆酒为健康和好运吧。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "The men cheered enthusiastically, surprising him with their apparent change in mood.",
+      "zh": "男人们热情地欢呼起来，他惊讶于他们情绪似乎有了明显的变化。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 1,
+      "en": "\"Another cheer for Captain Smollett,\" shouted Long John when the first one died down, and they did so with equal vigor.",
+      "zh": "“再来一次为斯莫莱特船长干杯，”当第一轮喝彩声渐渐平息后，长腿约翰喊道，众人同样热情地响应了起来。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "Afterward, the three gentlemen went below. Soon, a message came that Jim Hawkins was needed in the cabin.",
+      "zh": "随后，三位绅士下到了船舱里。不久，传来消息说吉姆·霍金斯需要到船舱里去一趟。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "I found them seated around the table, wine and raisins laid out. Dr. Livesey's wig on his lap indicated he was agitated. The window was open, letting in the warm night air and moonlight reflecting off the ship’s wake.",
+      "zh": "我走进去时，他们正围坐在桌旁，桌上摆着酒和葡萄干。利文斯通医生的假发放在膝上，表明他心情烦躁。窗户大开着，让进来的温暖夜风和月光洒在船上留下的波纹上。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "\"Jim,\" said the squire, \"you have something to share.\"",
+      "zh": "“吉姆，”庄园主说道，“你有什么要分享的吗？”"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "Dr. Livesey then asked Jim to take a seat.",
+      "zh": "莱维斯医生随后请吉姆坐下。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 2,
+      "en": "The squire admitted he was wrong, bowing before the captain, who responded modestly. The doctor then identified Silver as a remarkable man.",
+      "zh": "骑士承认自己错了，向船长鞠了一躬，船长谦逊地回应了他。随后，医生认定西尔弗是个非凡的人物。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "\"Silver would look well from a yard-arm,\" said the captain, but added that their discussion needed to lead somewhere practical. He proposed three points: they must continue, time was on their side until the treasure was found, and there were loyal hands among them.",
+      "zh": "“银牙从桅杆上看起来会很抢眼，”船长说道，但他补充说他们的讨论需要导向实际的成果。他提出了三点建议：他们必须继续行动，时间站在他们一边直到财宝被找到，而且他们中间还有忠诚的手下。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "Mr. Trelawney declared Mr. Smollett as the captain's equal in speaking. The first point was clear: turning back would be impossible due to mutiny. The second point noted that they had time before the treasure was located.",
+      "zh": "特拉文纳先生宣布斯莫莱特先生与船长在说话方面是平起平坐的。第一个观点很清楚：后退是不可能的，因为会引起哗变。第二个观点指出，在找到财宝之前他们还有时间。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 1,
+      "en": "The third point highlighted the presence of faithful crew members, including Hands and some of Trelawney’s own men.",
+      "zh": "第三点强调了忠心耿耿的船员的存在，包括哈兹和特雷劳尼的一些手下。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "The squire admitted his hands were among them too. The captain calculated their total strength at seven, counting Hawkins. They discussed using these loyal hands to confront the mutineers when least expected.",
+      "zh": "庄园主承认自己的手下也在其中。船长估算他们的总人数为七人，包括霍金斯。他们商讨着利用这些忠诚的手下，在敌人最意想不到的时候与叛乱者对抗。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "\"Jim here,\" said the doctor, \"can be a valuable ally. He's not shy with the crew and is observant.\"",
+      "zh": "“吉姆这个人,”医生说道，“可以成为我们的得力助手。他对船员们并不拘谨，而且观察力很强。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "The captain concluded they must remain vigilant but acknowledged it was trying. They would lay to and wait for favorable winds until they knew their men better.",
+      "zh": "船长认为他们必须保持警惕，但也承认这颇为吃力。他们决定锚泊等待有利的风向，直到更好地了解自己的船员。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 1,
+      "en": "Hawkins, I placed immense trust in you, added the squire.",
+      "zh": "霍金斯，我对你寄予了极大的信任，领主补充道。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "Feeling increasingly desperate, I realized my helplessness. Yet, through an unusual series of events, it was indeed through me that safety was secured. Meanwhile, despite our efforts to discuss and strategize, we could only count on seven out of twenty-six reliable individuals.",
+      "zh": "感到越来越绝望，我意识到自己的无能为力。然而，通过一系列不寻常的事件，最终还是靠我的努力确保了安全。与此同时，尽管我们费尽心思讨论和策划，也只能依靠二十六个可靠人员中的七个人。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 1,
+      "en": "Among these, one was a boy, leaving us with six grown men against nineteen.",
+      "zh": "在这六人中，有一个是男孩，让我们面对的是六名成年男子对十九人的战斗。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 1,
+      "en": "The situation remained precarious, but the squire's faith in Hawkins brought some hope.",
+      "zh": "局势依然危急，但庄园主对霍金斯的信任带来了一线希望。"
+    }
+  ]
+}

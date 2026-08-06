@@ -2,26 +2,200 @@
   "id": "Treasure_Island_u8",
   "bookId": "Treasure_Island",
   "unitIndex": 8,
-  "title": "Chapter 8: The Treasure Found and Homebound",
-  "chineseTitle": "第 8 章：宝藏出土与重返家园（终极结局）",
+  "title": "7",
+  "chineseTitle": "第7章",
   "paragraphs": [
     {
-      "en": "Returning to the stockade at night, I was shocked to find it occupied by Silver and five surviving pirates! Silver protected me from his mutinous men, revealing that Dr. Livesey had given him the stockade and the treasure map.",
-      "zh": "夜晚回到木栅栏围寨，我吃惊地发现它被西尔弗和五个幸存的海盗占领着！西尔弗保护着我免受他叛变男人们的伤害，揭示李夫西医生已经把木栅栏围寨和宝藏地图给了他。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "The weeks dragged by as we prepared for our sea journey. The doctor had to travel to London, the squire was busy in Bristol, leaving me under the watchful eye of old Redruth, the gamekeeper, at the hall. I spent hours poring over maps, imagining voyages and adventures on strange islands.",
+      "zh": "随着我们准备启程航海，日子似乎过得格外缓慢。医生去了伦敦，庄园主在布里斯托尔忙个不停，只剩下老雷德鲁斯·古德曼在大厅里监督着我。我花了无数个小时研究地图，想象着前往那些遥远岛屿上的奇遇和冒险。"
     },
     {
-      "en": "The next day, Silver led the pirates to the treasure site using Flint's map. But when they reached the tall tree marked on the map, they found a giant hole—the treasure had already been dug up years ago! The enraged pirates turned on Silver, but Dr. Livesey and Ben Gunn sprang from the bushes with muskets, scattering the mutineers.",
-      "zh": "第二天，西尔弗使用弗林特的地图引导海盗们前往宝藏地点。但当他们到达地图上标着的高树时，他们发现了一个巨大的坑——宝藏几年前就已经被挖出来了！被激怒的海盗们冲向西尔弗，但李夫西医生和本·甘恩带着火枪从灌木丛里跳了出来，赶散了叛变者。",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "One sunny day, a letter arrived for Dr. Livesey with instructions: \"To be opened by Tom Redruth or young Hawkins if he is absent.\" I read it aloud, revealing that the ship was bought and fitted, ready to sail. The schooner, named HISPANIOLA, was two hundred tons and exceptionally well-suited for sailing.",
+      "zh": "一个阳光明媚的日子，一封信送到了利文斯医生手中，信上写着：“由汤姆·雷德鲁斯或年轻霍金斯接收并开启。”我大声念了出来，内容是说船只已经购得并整装待发，准备启航。这艘名为“伊斯帕尼奥拉”的帆船有二百吨位，特别适合航行。"
     },
     {
-      "en": "Ben Gunn revealed that he had found the gold three years earlier and carried it all to his cave! We spent days loading seven hundred thousand pounds of gold coins onto the Hispaniola. Leaving the three surviving pirates marooned on the island, we set sail for England. In a Caribbean port, Silver stole a sack of gold and escaped into the night. The rest of us returned safely home to Bristol, wealthy and peaceful, though the sound of Captain Flint's parrot screaming 'Pieces of eight!' still haunted my dreams.",
-      "zh": "本·甘恩揭示他三年前就发现了黄金，并把它们全部搬到了他的洞穴里！我们花了几天时间把七十万镑金币装上了伊斯帕尼奥拉号。留下三个幸存的海盗抛弃在岛上，我们起航前往英国。在加勒比港口，西尔弗偷了一袋黄金并在黑夜中逃跑。我们其余的人安全回到布里斯托尔家乡，富有而和平，尽管弗林特船长鹦鹉尖叫着“八里亚尔！”的声音依然萦绕在我的梦中。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "Redruth interrupted, saying, \"Dr. Livesey won't like this. The squire has been talking after all.\" Redruth grumbled, \"If the squire can't speak for Dr. Livesey, it's a strange turn of events.\"",
+      "zh": "瑞德斯脱插嘴道：“利文斯通医生可不会喜欢这个。毕竟，庄园主先生一直在说话。”瑞德斯脱嘟囔着说：“如果庄园主都不能为利文斯通医生发声，那真是件奇怪的事了。”"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "I continued reading: \"My old friend Blandly arranged everything. He and everyone in Bristol worked tirelessly to prepare the ship for our voyage to treasure.\"",
+      "zh": "我继续读下去：“我的老朋友布兰德利一切安排妥当。他和布里斯托尔的每个人都全力以赴，为我们的寻宝之旅做准备。”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "Blandly managed to acquire the HISPANIOLA through a clever scheme and for minimal cost. Despite local prejudice in Bristol against Blandly, no one dared deny the ship's merits. The workmen were slow but eventually improved.",
+      "zh": "布兰德利设法通过一个巧妙的计策以极小的成本获得了“海地”号，并且尽管在布里斯托尔当地对布兰德利存有偏见，但没有人敢否定这艘船的优点。工人们进展缓慢，但最终还是有所改进。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "However, finding a crew proved challenging. I needed about ten seasoned sailors, including cooks and mates, but struggled to find even half that number until Long John Silver walked into my life by chance.",
+      "zh": "然而，找到合适的船员并不容易。我需要大约十名经验丰富的水手，包括厨师和大副，但直到碰巧遇到了长腿Silver，我才勉强找到了一半的人数。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "Standing on the dock, I struck up a conversation with him. He was an old sailor who ran a public house in Bristol, knew many seafarers, and had lost his health ashore. Wanting to return to sea, he came to get a whiff of salt air that morning.",
+      "zh": "站在码头上，我与他搭起了话。他是一位老水手，在布里斯托经营着一家酒馆，认识不少海上同行，但岸上的生活让他身体欠安。他渴望重返大海，那天早上特地过来呼吸一下海风的味道。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "Moved by his plight, I hired him on the spot as ship's cook.",
+      "zh": "同情他的处境，我当即雇用了他担任船上的厨师。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "Long John Silver, with one leg amputated during service under Admiral Hawke, was more than just a cook. He helped me assemble a tough crew of seasoned sailors in a few days. Despite their rough appearance, they possessed indomitable spirits and could fight a frigate.",
+      "zh": "长腿约翰·西尔弗曾在霍克 admiral 服役期间失去了一条腿，远不止是一名厨师那么简单。他仅用几天时间就帮我招募并训练出一支坚强的船员队伍，尽管他们外表粗犷，但士气高昂，战斗力不容小觑，足以对抗一艘轻型巡洋舰。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "Silver also dismissed two unsuitable candidates.",
+      "zh": "赛勒也否定了两名不合适的人选。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "I felt invigorated, eating like a bull and sleeping soundly. But I couldn't enjoy my health until I heard the old sailors tramping around the capstan. The sea's glory had taken hold of me.",
+      "zh": "我感到精神焕发，吃喝如同牛一般畅快，睡眠也十分安稳。但直到听到老水手们在绞缆机旁走动的声音，我才真正感受到了健康的意义。大海的壮丽已经深深吸引了我。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "Livesey, come quickly; do not delay. Send young Hawkins to his mother with Redruth as guard, then both return swiftly to Bristol.",
+      "zh": "Livesey，快点来；不要耽搁。把哈克嫩送到他的母亲那里，并由雷德鲁特陪同保护，然后两人迅速返回布里斯托尔。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 3,
+      "en": "Postscript: Blandly, who will send a consort if we don't appear by August, found an excellent sailing master but regretted he was stiff. Long John Silver discovered a competent mate named Arrow. I have a boatswain who pipes, ensuring man-o'-war discipline aboard the HISPANIOLA.",
+      "zh": "附言：布兰德利在我们不迟于八月出现的情况下，找到了一位出色的船长，但遗憾的是此人有些僵硬。长腿Silver发现了名叫箭的得力副手。我的大副会吹哨子，确保“伊斯帕尼奥拉”号上维持战舰般的纪律。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "Knowing that Silver has financial stability and a wife managing his inn, I can understand why he seeks adventure.",
+      "zh": "了解Silver有稳定的经济状况并且妻子打理着旅店，我就能理解他为何渴望冒险了。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "Postscript: Hawkins may stay one night with his mother.",
+      "zh": "附言：霍金斯或许会在他母亲那里住一夜。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "The letter thrilled me; I was elated, seeing Redruth's incompetence as a relief. Any gamekeeper would have swapped places with him, but the squire’s orders were law. Only Redruth dared grumble.",
+      "zh": "这封信让我兴奋不已；看到雷德鲁斯的无能，我反而感到轻松。任何一个看林人都会甘愿与他交换位置，但庄园主的命令就是法律。只有雷德鲁斯敢抱怨几句。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "The next morning, we walked to the Admiral Benbow. My mother was in good health and spirits. The captain, who had caused so much discomfort, was gone.",
+      "zh": "第二天一早，我们前往了贝内 bow 将军酒店。我母亲身体状况良好，精神也很好。那位曾给我们带来诸多不便的船长已经不在了。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "The squire had repaired everything, repainted the public rooms and sign, and added furniture, including a beautiful armchair for my mother in the bar. He also hired a boy as an apprentice.",
+      "zh": "管家把一切修葺一新，重新粉刷了公共房间和招牌，并添置了一些家具，还特意为我母亲在酒馆里摆放了一把漂亮的扶手椅。此外，他还雇了一个学徒帮忙。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "Seeing this boy, I realized my situation for the first time. Up to then, I had only thought of adventures ahead, not the home I was leaving. At his clumsy presence, I felt tears well up.",
+      "zh": "见到这个男孩，我初めて意识到自己的处境。在此之前，我只想着前方的冒险，从未想过即将离开的家庭。在他笨拙地出现时，我不禁泪眼朦胧。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "I treated him harshly, using every opportunity to correct and discipline him.",
+      "zh": "我对他严厉对待，抓住每一个机会纠正和管教他。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "That night passed, and on the following day after dinner, Redruth and I set out again. I bid farewell to my mother, the cove where I had lived since birth, and the old Admiral Benbow, now repainted and less dear. My last thought was of the captain, who often strode along the beach with his cocked hat and old brass telescope.",
+      "zh": "那个夜晚过去，第二天晚饭后，我和雷德鲁斯再次出发。我向母亲告别，向这片自出生便居住的海湾告别，还有那位如今重新粉刷、显得不再那么亲切的老船长本鲍。临别时，我的思绪飘向了那位船长，他常常戴着斜戴的帽子，手持旧铜色的望远镜，在海滩上漫步。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "Then we turned the corner, and my home was out of sight.",
+      "zh": "然后我们转了个弯，我家便看不见了。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "The mail coach picked us up at dusk near the Royal George on the heath. I was sandwiched between Redruth and a sturdy old gentleman. Despite the swift motion and cold night air, I must have slept deeply from the start.",
+      "zh": "暮色降临，我们在皇家乔治邮车站附近被马车接上了。我夹在雷德鲁斯和一位结实的老先生之间。尽管马车飞快地行驶，夜风刺骨，我却睡得异常沉稳。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 1,
+      "en": "When I woke, we were stopped before a large building in a city street, and daylight had already broken.",
+      "zh": "当我醒来时，我们停在了一条城市街道前的一栋大楼前，天色已经微亮。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "\"Where are we?\" I asked Tom.",
+      "zh": "“我们现在在哪里？”我问汤姆。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 2,
+      "en": "\"Bristol,\" he replied. \"Get down.\"",
+      "zh": "“布里斯托尔，”他说道，“快下来。”"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "Our journey to Mr. Trelawney's inn at the docks was delightful, following the quays and passing numerous ships of all sizes and nationalities. The smell of tar and salt was new to me, and I marveled at the figureheads from distant seas. I also saw many old sailors with ear rings, curly whiskers, and tarry pigtails.",
+      "zh": "我们前往码头上的特拉law尼先生旅店的旅程令人愉快，沿着河岸漫步，沿途经过各种大小和国籍的船只。新鲜的松香和海盐的味道让我惊叹不已，我欣赏着来自远方海域的船首雕塑。我还看到了许多佩戴耳环、留着卷曲胡须、头发上沾满油污的老水手。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 1,
+      "en": "I was about to set sail myself, on a schooner with a piping boatswain and singing seamen, bound for an unknown island in search of buried treasure!",
+      "zh": "我正要乘着一只小帆船出航，船上水手吹着口哨， sailors 唱着歌，前往一个未知的岛屿寻找埋藏的财宝！"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "Suddenly, we arrived at a large inn where Squire Trelawney, dressed like a sea-officer, greeted us with a sailor's swagger. \"Here you are,\" he cried, \"and the doctor came last night from London. Bravo!",
+      "zh": "突然，我们来到了一家大旅店，特拉温尼爵士打扮得像个海军军官，带着水手的豪气向我们打招呼。“你们来了，”他喊道，“医生昨晚从伦敦过来。干得好！”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 1,
+      "en": "The ship's company is complete!\"",
+      "zh": "船上的crew已经齐备了！"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 1,
+      "en": "\"Sir,\" I exclaimed, \"when do we sail?\"",
+      "zh": "“先生，”我脱口而出，“我们什么时候启程？”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "\"We sail tomorrow!\" he replied.",
+      "zh": "“我们明天启航！”他脱口而出。"
     }
   ]
 }

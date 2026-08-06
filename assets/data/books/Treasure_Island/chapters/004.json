@@ -2,26 +2,362 @@
   "id": "Treasure_Island_u4",
   "bookId": "Treasure_Island",
   "unitIndex": 4,
-  "title": "Chapter 4: The Apple Barrel and the Mutiny Plot",
-  "chineseTitle": "第 4 章：苹果桶里的阴谋",
+  "title": "3",
+  "chineseTitle": "第3章",
   "paragraphs": [
     {
-      "en": "On the evening before we sighted land, I climbed into an empty apple barrel on deck to fetch an apple. As I lay inside, I heard heavy footsteps, and Long John Silver sat down against the barrel, speaking in a low voice with several crew members.",
-      "zh": "在我们看见陆地的那个晚上之前，我爬上了甲板上的一个空苹果桶去拿苹果。当我在里面躺着时，我听到了沉重的脚步声，朗·约翰·西尔弗靠着桶坐了下来，用低沉的声音与几个船员交谈着。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 2,
+      "en": "I stopped by the captain’s door around noon with some drinks and medicines. He lay weak but agitated, higher than before.",
+      "zh": "中午时分，我带着一些酒和药品去船长的房间探望。他躺在那里虚弱而烦躁，比之前更加焦躁不安。"
     },
     {
-      "en": "Overhearing their conversation, my blood ran cold! Silver revealed that he had been the quartermaster of the legendary pirate Captain Flint, and that most of the crew were Flint's old pirate hands. They planned to wait until Captain Smollett navigated the ship to Treasure Island and loaded the treasure, after which they would slaughter the Captain, Squire, Doctor, and all loyal men!",
-      "zh": "无意中听到他们的交谈，我的血液变凉了！西尔弗揭露了他曾是传奇海盗弗林特船长的军需官，而且大部分船员都是弗林特的老海盗手下。他们计划等待直到斯莫列特船长驾驶船只到达金银岛并装载宝藏，之后他们就会屠杀船长、乡绅、医生以及所有忠诚的男人！",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "\"Jim,\" he said, \"you're the only one who matters. You know I’ve always been good to you—every month a silver fourpenny for yourself. Now see, mate, I’m low and deserted by all.",
+      "zh": "“吉姆，”他说道，“你才是唯一重要的。你知道我对你一直不错——每个月给你一个银四便士自己留着用。现在你看，伙计，我处境艰难，所有人都抛弃了我。"
     },
     {
-      "en": "Just as Silver reached into the barrel for an apple, the lookout shouted: 'Land ho!' In the excitement, I escaped unnoticed and reported the horrific plot to Captain Smollett, Dr. Livesey, and the Squire. Counting our forces, we found only seven loyal men against nineteen mutineers.",
-      "zh": "正当西德尼伸进桶里拿苹果时，瞭望员喊道：“看到陆地了！”在兴奋中，我在未被察觉的情况下逃脱，并向斯莫列特船长、李夫西医生和乡绅报告了这个可怕的阴谋。计算我们的力量，我们发现面对十九个叛变者只有七个忠诚的男人。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 1,
+      "en": "Will you bring me a noggin of rum now, Jim?\"",
+      "zh": "“吉姆，你现在给我拿一杯朗姆酒来！”"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "\"The doctor—\" I began.",
+      "zh": "“医生——”我开口说道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "But he interrupted, cursing the doctor in a weak but heartfelt voice. \"Doctors are all swabs,\" he said. \"What does that doctor know about seafaring men?",
+      "zh": "但他打断了她，用虚弱但真诚的声音咒骂医生：“医生都是白痴！”他接着说，“那个医生懂什么航海人的事？”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "I’ve been in hot places and seen mates drop with Yellow Jack. The land has even shaken like the sea during earthquakes—what would a doctor know of such lands? I lived on rum, Jim.",
+      "zh": "我在酷热的地方见过同伴因黄热病倒下，土地甚至像地震时的海面一样震动——医生又怎么会了解这样的地方呢？我靠朗姆酒度日，吉姆。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "It was my meat and drink, and if I can’t have it now, I’ll be a poor old hulk on a lee shore. My blood will be on you.\"",
+      "zh": "这是我生活中不可或缺的部分，如今却无法得到，那我恐怕只能成为一个可怜的老人，在生命的末路上无所作为。你们将会为我的遭遇负责。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "He continued to plead, \"Look, Jim, how my fingers shake. I can't keep them still. I haven't had a drop today.",
+      "zh": "他继续恳求着：“吉姆，你看我的手指都在颤抖呢。我根本控制不住它们。今天我连一口都没喝。”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "That doctor is a fool. If I don't get some rum, I'll have the horrors—I’ve seen old Flint in the corner already. Your doctor said one glass wouldn’t hurt me.",
+      "zh": "那个医生真是个笨蛋。如果我不喝点朗姆酒，今晚恐怕要受罪了——我已经看到芬特老爹坐在角落里了。你的医生说，喝一杯不会对我有害。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "I’ll give you a golden guinea for a noggin, Jim.\"",
+      "zh": "“吉姆，我用一个金先令换你的脑袋。”"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "He grew more excited, alarming me for my father who was very low and needed quiet. The doctor’s words reassured me, and I was offended by his offer.",
+      "zh": "他越来越激动，让我担心起父亲的病情——父亲状况不佳，需要安静。医生的话让我安心了不少，我对他的提议感到有些不悦。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "\"I want none of your money,\" I said. \"But what you owe my father. I’ll get you one glass, and no more.\"",
+      "zh": "“你的钱我一分也不要。”我说，“不过你欠我父亲的情。我只让你喝一杯，不会再多了。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 3,
+      "en": "When I brought it to him, he greedily seized it and drank it all. \"Aye, aye,\" he said, \"that’s some better, sure enough. And now, matey, did that doctor say how long I was to lie here in this old berth?\"",
+      "zh": "当我递给他时，他贪婪地一把抓过来一饮而尽。“嘿，不错，确实好喝。”他说道，“现在，伙计，医生说了吗？我还要在这旧舱位躺多久？”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "\"A week at least,\" I replied.",
+      "zh": "“至少一个星期吧，”我回答道。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "He cried out, \"Thunder! A week! I can't do that; the black spot would be on me by then.",
+      "zh": "他脱口而出：“雷电！一个星期！我办不到；到时候那黑点就会落在我的头上。”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "These scoundrels are trying to catch me now; men who can’t keep what they have and want to steal from others. Is this seamanlike behavior? But I’m a thrifty soul.",
+      "zh": "这些家伙现在想捉弄我了；一群连自己拥有的东西都守不住还想偷别人的。这算得上是船员应有的行为吗？但我是个节俭的人。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "I never wasted my money, nor will I now. I’ll outsmart them again. I’m not afraid of them.",
+      "zh": "我从不浪费钱，现在也不会。我要再次智胜他们。我不怕他们。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "I’ll hoist another reef and fool them once more.\"",
+      "zh": "我再降一次帆，让他们再次上当。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "He struggled to sit up, gripping me tightly with one hand as he moved his legs like heavy weights. His words were spirited, but his voice was weak.",
+      "zh": "他挣扎着想坐起来，一只手紧紧抓住我，双腿沉重地动弹着。他的言语充满活力，但声音却虚弱无力。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "\"That doctor's done for me,\" he murmured. \"My ears are ringing. Lay me back down.\"",
+      "zh": "“那个医生可把我给搞定了，”他低声说道，“耳朵还在嗡嗡作响。快让我躺下来。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "After a moment of silence, he said, \"Jim, did you see that seafaring man today?\"",
+      "zh": "片刻沉默后，他问道：“吉姆，你今天看到那个水手了吗？”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 2,
+      "en": "\"Black Dog?\" I asked.",
+      "zh": "“黑狗？”我问道。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "\"Ah! Black Dog,\" he replied. \"He’s bad; but there are worse who put him there.",
+      "zh": "“啊！黑狗，”他回答道，“这家伙确实不好，但还有更糟糕的人把他放在那儿。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "If I can’t escape and they give me the black spot, watch out—it's my old sea-chest they want. You get on a horse—can you do that? Yes, then go to that doctor and tell him to muster all hands, including the magistrates.",
+      "zh": "如果我逃不掉，又给了我那张黑牌——小心点，他们要的是我的旧海chest。你赶紧上马——能做到吗？行，那你去找那位医生，让他召集所有人手，包括治安官。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "They’ll be at Admiral Benbow—all of Flint’s crew, man and boy. I was first mate, Flint’s first mate, and know the place best. He gave it to me in Savannah when he lay dying.",
+      "zh": "他们会在本鲍船长那里——包括弗林特船长的所有船员，男人和男孩。我是大副，是弗林特的前大副，对那地方最为熟悉。他在萨凡纳病危时把那地方留给了我。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "But you won’t betray me unless they give me the black spot or if you see Black Dog again or a one-legged seafarer—him above all.\"",
+      "zh": "但是你不会出卖我，除非他们给我那张黑点令，或者你再见到黑狗，或是独腿的水手——尤其是那个。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 2,
+      "en": "\"What is the black spot?\" I asked.",
+      "zh": "“那个黑点是什么？”我问道。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "\"It's a summons,\" he said. \"I’ll tell you if they get it. Keep your eyes open, Jim, and we'll share equally, on my honor.\"",
+      "zh": "“这是传票，”他说，“如果他们收到了，我会告诉你们。吉姆，你得多留意点，我们凭荣誉平分。”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "He wandered for a while, his voice weakening. After giving him medicine, which he took childishly with the comment, \"If ever a seaman needed drugs, it's me,\" he fell into a deep sleep. I left him there, unsure what I would have done if everything had gone well.",
+      "zh": "他四处走动了一会儿，声音渐渐虚弱。我给他服了药，他孩子气地接过药片，自嘲道：“如果哪个水手需要药物的话，那就是我。”随后便沉沉睡去。我将他留在那里，心中暗想，若一切顺利，自己又能做些什么呢？"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "Fearing the captain might repent and harm me, I considered telling the doctor everything. However, my father died suddenly that evening, which put all other concerns aside. Our family’s grief, visits from neighbors, funeral arrangements, and managing the inn kept me busy.",
+      "zh": "害怕船长可能会后悔而加害于我，我曾考虑把一切都告诉医生。然而，那天晚上父亲突然去世，这让我顾不上其他顾虑了。我们全家沉浸在悲痛中，邻居们的探访、丧事的安排以及打理客栈的事宜都让我忙个不停。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 1,
+      "en": "There was little time to think about the captain or fear him.",
+      "zh": "没有太多时间去想船长或是害怕他。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "He descended the stairs the next morning as usual, though he ate little and seemed to drink more than usual. Scowling and snorting, he helped himself from the bar, and no one dared oppose him. The night before the funeral, he was drunker than ever, singing an ugly sea-song in the house of mourning.",
+      "zh": "第二天早上，他像往常一样下了楼梯，不过吃得很少，似乎比平时喝得更多。他皱着眉头，哼哧哼哧地从酒吧里拿了酒，没有人敢反对他。在葬礼的前一晚，他醉得更厉害了，在悼念屋里唱起了难听的海歌。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 1,
+      "en": "Despite his weakness, we feared for his life, and the doctor left after my father's death.",
+      "zh": "尽管他身体虚弱，我们仍担心他的生命安全，父亲去世后，医生便离开了。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 3,
+      "en": "The captain appeared to grow weaker instead of regaining strength. He moved up and down stairs, between the parlour and bar, sometimes stepping outside to catch a whiff of the sea, supporting himself on walls as he panted like a man climbing a steep mountain. He rarely addressed me directly; I believe he had forgotten our confidences.",
+      "zh": "船长似乎愈发虚弱，而非恢复元气。他上下楼梯，在客厅和酒吧之间来回走动，有时还会走到外面深呼吸一口海风，就像一个爬陡峭山坡的人一样喘息着，依靠在墙上支撑自己。他很少直接与我说话；我想他已经忘记了我们之间的那些秘密。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 1,
+      "en": "His temper was more volatile than before, and when drunk, he would draw his cutlass and lay it bare on the table.",
+      "zh": "他性情比以前更加暴躁，喝醉时会拔出砍刀,\"); \"把刀放在桌子上。\""
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "Once, to our astonishment, he began singing a different tune—a country love-song from his youth, long before he took to the sea.",
+      "zh": "令我们惊讶的是，他突然唱起了年轻时的一首乡村情歌，那是他涉足海上生涯之前好多年的事了。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "After the funeral, on a cold, foggy afternoon around three o'clock, I stood by the door, lost in thoughts about my father. Suddenly, I noticed someone approaching slowly down the road. The man was clearly blind, tapping ahead with a stick and wearing a large green shade over his eyes and nose.",
+      "zh": "葬礼过后，一个寒冷而雾气弥漫的下午，大约三点钟左右，我站在门口，思绪飘向了父亲。突然，我注意到有人缓缓从路上走来。那人显然双目失明，拄着一根拐杖在前面探路，并戴着一大片绿色的眼罩和鼻罩。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 1,
+      "en": "He hunched as if from age or weakness, draped in an old, tattered sea-cloak that made him look deformed.",
+      "zh": "他佝偻着身子，仿佛是因为年老或虚弱，披着一件破旧不堪的海衣，显得格外扭曲畸形。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "He stopped near the inn and called out in a strange sing-song voice, \"Will any kind friend inform a poor blind man who has lost his sight defending England—God bless King George!—where he is now?\"",
+      "zh": "他停在客栈附近，用一种奇怪的吟诵声喊道：“如果有好心人告知一位可怜的瞎眼男子，他曾为保卫英格兰而战——愿上帝保佑乔治国王！——现在他在哪里的话，那该有多好？”"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 1,
+      "en": "I replied, \"You are at the Admiral Benbow, Black Hill Cove.\"",
+      "zh": "我回答说：“您在黑山湾的 admiral benbow 酒店。”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 3,
+      "en": "\"Can you hear me?\" said the man. \"It's a young voice.",
+      "zh": "“你能听到我吗？”那人喊道，“是一个年轻的声音。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "Will you lead me in?\"",
+      "zh": "“你来带路？”"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "I offered my hand, and the blind man gripped it tightly like a vise. I was so startled that I tried to pull away, but he pulled me close with one arm.",
+      "zh": "我伸出手去，那盲人紧紧地握住，仿佛钳子一般。我一惊之下想要抽回手，但他却用一只手臂将我拉近了身子。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 1,
+      "en": "\"Now, boy,\" he said, \"take me to the captain.\"",
+      "zh": "“现在，小子，”他说道，“带我去见船长。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 1,
+      "en": "\"Sir,\" I replied, \"I dare not.\"",
+      "zh": "“先生，”我说，“我可不敢。”"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 3,
+      "en": "\"Oh, is that your fear?\" he sneered. \"If you don't bring me in, I'll break your arm.\"",
+      "zh": "“哦，这是你的害怕吗？”他冷笑道，“如果你不带我进去，我就打断你的胳膊。”"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 1,
+      "en": "He twisted my arm, causing me to cry out.",
+      "zh": "他扭了我的胳膊，疼得我叫了出来。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 3,
+      "en": "The blind man's harsh voice commanded, \"Come, now, march,\" more cruelly than any I had ever heard. His cold tone cowed me, and I obeyed immediately, walking straight into the parlour where our sick old captain lay dazed from rum. The blind man clung to me tightly, his grip iron-like, and leaned heavily on me.",
+      "zh": "盲人那冷硬的声音命令道：“来，走吧，快点行军。”语气比以往任何一次都要残忍。他冰冷的语调让我不寒而栗，我立刻顺从地照做，径直走进客厅，只见我们的病弱老船长因醉酒而神志恍惚地躺在那里。盲人紧紧抓住我，他的手如同铁钳般紧绷，身体也重重倚靠在我的身上。"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 3,
+      "en": "\"Lead me up to him,\" he ordered, \"and when I see him, shout 'Here's a friend for you, Bill.' If not, I'll make you faint.\" His words sent shivers down my spine.",
+      "zh": "“带我去见他，”他命令道，“等我见到他时，大喊‘给你个朋友，比尔。’如果不行的话，我会让你晕过去。”他的话让我不寒而栗。"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 1,
+      "en": "Terrified of the blind man, I forgot my fear of the captain and cried out his instructions tremblingly as I opened the door.",
+      "zh": "害怕那个瞎眼的人，我顾不上对船长的畏惧，颤抖着喊出了他的指令。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 3,
+      "en": "The captain looked up, and the rum left his face, leaving him staring soberly. His expression was not one of terror but of mortal sickness. He tried to rise but lacked the strength.",
+      "zh": "船长抬头一看，脸上的醉意消散，只剩下严肃而清醒的神情。他的表情并非恐惧，而是濒临死亡般的病态。他试图站起来，却无力支撑。"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 3,
+      "en": "\"Bill, sit where you are,\" said the blind man. \"I can hear a finger stirring.\" He instructed me to hold out my left hand, and the boy took his by the wrist, bringing it close to the blind man's right.",
+      "zh": "“比尔，你待着别动,”盲人说道，“我能听到手指在蠕动。”他让我伸出左手，男孩则握住我的手腕，将它靠近盲人的右手。"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 1,
+      "en": "The blind man placed something in the captain’s palm, which he closed instantly.",
+      "zh": "盲人将什么东西放在船长的手掌中，船长立刻紧紧地握住了手。"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 2,
+      "en": "\"Now that's done,\" the blind man declared, releasing his grip on me. With incredible accuracy, he skipped from the parlour into the road, leaving a tapping sound as he walked away.",
+      "zh": "“这就搞定了，”盲人宣布着，松开了抓住我的手。他以惊人的精准度从客厅跃到路上，随着他离去的脚步发出嗒嗒声。"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 2,
+      "en": "It took some time for both of us to regain our senses. I released the captain's wrist, and he drew his hand back, looking sharply at his palm.",
+      "zh": "我们两人过了好一会儿才回过神来。我松开了船长的手腕，他迅速地缩回手，盯着自己的掌心，目光锐利。"
+    },
+    {
+      "id": "p056",
+      "sentenceCount": 3,
+      "en": "\"Ten o'clock!\" he cried. \"Six hours.",
+      "zh": "“十点整！”他喊道，“六个小时了。”"
+    },
+    {
+      "id": "p057",
+      "sentenceCount": 3,
+      "en": "We'll do them yet.\" He sprang to his feet but reeled, clutching his throat. For a moment, he swayed before falling face-first to the floor with a peculiar sound.",
+      "zh": "“我们还没完！”他猛地站起身，却捂着喉咙摇晃了几下。片刻之后，他身子一歪，发出一个奇怪的声音，脸朝下重重摔在了地上。"
+    },
+    {
+      "id": "p058",
+      "sentenceCount": 3,
+      "en": "I rushed to him, calling out to my mother. The captain had suffered a fatal stroke from a sudden thunderbolt. Though I never liked him, recent pity for his plight turned to grief upon seeing his lifeless body.",
+      "zh": "我急忙跑过去，喊着母亲的名字。船长突然遭受雷击不幸去世。虽然我从未喜欢过他，但见到他毫无生气的身躯时，怜悯之情转为了悲痛。"
+    },
+    {
+      "id": "p059",
+      "sentenceCount": 1,
+      "en": "Tears streamed down my face as I realized this was the second death I had experienced, and the pain of the first still lingered in my heart.",
+      "zh": "泪水顺着我的脸颊流下，我意识到这已是第二次经历死亡，而第一次的伤痛依旧在我心中挥之不去。"
     }
   ]
 }

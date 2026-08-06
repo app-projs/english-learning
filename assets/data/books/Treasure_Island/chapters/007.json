@@ -2,26 +2,296 @@
   "id": "Treasure_Island_u7",
   "bookId": "Treasure_Island",
   "unitIndex": 7,
-  "title": "Chapter 7: Jim Recaptures the Hispaniola",
-  "chineseTitle": "第 7 章：吉姆独立夺回船只",
+  "title": "6",
+  "chineseTitle": "第6章",
   "paragraphs": [
     {
-      "en": "While the wounded Captain rested, I slipped out of the stockade with a daring plan. Using a small skin coracle built by Ben Gunn, I rowed out to the Hispaniola in the pitch dark. I cut the ship's anchor cable, setting the schooner adrift with the current.",
-      "zh": "当受伤的船长休息时，我带着一个大胆的计划溜出了木栅栏围寨。使用本·甘恩建造的小皮艇，我在漆黑一片中划向了伊斯帕尼奥拉号。我砍断了船只的锚缆，使纵帆船随水流漂流。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "We rode hard until we reached Dr. Livesey's house, which was dark except for the hall. Mr. Dance instructed me to dismount and knock; Dogger helped me down by providing a stirrup. The maid opened the door almost immediately.",
+      "zh": "我们骑马疾行，直到抵达莱维斯医生的宅邸。除了大厅外，整个房子都漆黑一片。丹斯先生吩咐我下马敲门，多格杰则帮我下了马，并递给我一只脚蹬。女仆几乎立刻就打开了门。"
     },
     {
-      "en": "Climbing aboard the next morning, I found only two drunken pirates on deck: O'Brien, who lay dead, and Israel Hands, who was severely wounded. Hands agreed to help me beach the ship in a safe inlet on the north of the island in exchange for food and bandage.",
-      "zh": "第二天早上爬上船，我发现甲板上只有两个酗酒的海盗：奥布赖恩（躺着死去）以及伊斯雷尔·汉兹（受了重伤）。汉兹同意帮助我在岛屿北部安全的小港湾把船靠岸，以换取食物与绷带。",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 2,
+      "en": "\"Is Dr. Livesey in?\" I asked.",
+      "zh": "“莱维斯医生在家吗？”我问道。"
     },
     {
-      "en": "However, as the ship reached the inlet, Hands treacherous pulled a dagger and attacked me! I scrambled up the mast into the cross-trees, loading my pistols. Hands threw his dagger, pinning my shoulder to the mast. I fired both pistols, killing Hands, and he fell into the water below. I secured the Hispaniola safely in the mud.",
-      "zh": "然而，当船到达小港湾时，汉兹奸诈地拔出一把匕首攻击了我！我爬上桅杆进入横木，装填着我的手枪。汉兹扔出他的匕首，把我的肩膀钉在了桅杆上。我开火了两支手枪，打死了汉兹，他倒进了下面的水里。我在泥里安全地固定了伊斯帕尼奥拉号。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 1,
+      "en": "\"No,\" she replied, \"he came home this afternoon but went up to dine with the squire in the hall.\"",
+      "zh": "“不，”她回答说，“他今天下午回家了，但上去大厅和庄园主共进晚餐去了。”"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 1,
+      "en": "\"So there we go, boys,\" Mr. Dance said.",
+      "zh": "“那么咱们这就开始吧，小伙子们。”丹斯先生说道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "This time, since the distance was short, I did not mount and instead ran with Dogger's stirrup-leather to the lodge gates and up the long, leafless avenue. The moonlight illuminated the white line of the hall buildings on either side of the great old gardens. Mr. Dance dismounted and led me into the house.",
+      "zh": "这次由于距离较近，我没有骑马而是拿着Dogger的马蹬带跑向门房大门，然后沿着那条长长的、光秃秃的大道前行。皎洁的月光照亮了两侧古老花园中白色建筑的轮廓。Dance先生下马后领着我进了屋。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "A servant guided us down a matted passage and showed us into a large library filled with bookcases and busts above them. There, the squire and Dr. Livesey sat by a bright fire, each holding a pipe.",
+      "zh": "仆人领我们走过一条铺着草垫的走廊，带我们来到了一间宽敞的图书馆。书架上摆满了书籍，上方还摆放着一些雕像。在那里，庄园主人和莱维斯医生坐在明亮的火炉旁，各自手中拿着烟斗，正抽着烟。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "I had never seen the squire so close; he was tall, over six feet, broad in proportion, and his face was roughened from long travels. His black eyebrows moved easily, giving him an appearance of quick-temperedness but not unkindly.",
+      "zh": "我从未如此近距离见过庄园主；他身材高大，超过六英尺，体型宽厚。他的脸庞因长期旅行而显得粗糙，但浓黑的眉毛动作敏捷，给人一种性情急躁却又不失和善的印象。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "\"Come in, Mr. Dance,\" said the squire, standing straight and formally.",
+      "zh": "“邓斯先生请进，”管家直起身，神情庄重地说道。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "\"Good evening, Dance,\" said Dr. Livesey with a nod. \"And good evening to you, Jim. What brings you here?\"",
+      "zh": "“晚安，迪恩斯先生，”莱维斯医生点点头说道，“吉姆，你也晚安。你这是怎么了，特地过来？”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "Mr. Dance stood stiffly and recounted his story like a lesson. The two gentlemen leaned forward, forgetting their pipes in their surprise and interest. When they heard about my mother returning to the inn, Dr. Livesey slapped his thigh, and the squire exclaimed \"Bravo!\"",
+      "zh": "达恩斯先生僵硬地站立，像在讲述一堂课似的叙述着他的故事。两位绅士不由自主地向前倾了倾身子，惊讶和兴趣让他们暂时忘记了手中的烟斗。当听说我母亲回到客栈时，莱维斯医生啪的一声拍了一下大腿，庄园主脱口而出：“妙极了！”"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "before breaking his long pipe against the grate.",
+      "zh": "在把那根长烟管猛地砸向铁网之前。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "Before Mr. Dance finished, Mr. Trelawney (the squire's name) had risen from his seat and began pacing the room. The doctor removed his powdered wig to listen better, sitting with his own close-cropped black hair looking very strange indeed.",
+      "zh": "在达恩斯先生还没有说完的时候，庄园主特拉韦尼先生已经从座位上站了起来，在房间里来回走动。医生摘下了假发，露出一头短而乌黑的头发，显得非常滑稽。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "The squire praised Mr. Dance for riding down the \"black, atrocious miscreant\" and said he had acted virtuously. He then asked Hawkins to ring the bell so Mr. Dance could have ale.",
+      "zh": "管家夸奖丹斯先生勇敢地将那“漆黑的、可恶至极的家伙”制服了，并说他行为高尚。随后，他让霍金斯去敲响铃铛，请丹斯先生先喝点啤酒解渴。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 2,
+      "en": "Doctor Livesey suggested keeping Hawkins at his house for the night. The squire agreed, noting that Hawkins deserved better than cold pie after his efforts.",
+      "zh": "利文斯医生建议让霍金斯在他家过夜。庄园主同意了，还说霍金斯的努力之后不该只吃冷馅饼。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 2,
+      "en": "A pigeon pie was brought in, and Hawkins ate heartily. Mr. Dance was then dismissed with further compliments.",
+      "zh": "一只鸽子派端了上来，霍金斯吃得津津有味。随后，丹斯先生被进一步恭维了一番后离开了。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 2,
+      "en": "The doctor began their discussion about Flint, a notorious pirate. The squire recounted how he had seen Flint's ships off Trinidad and how the pirates were so afraid of him that one even fled to Port of Spain.",
+      "zh": "医生开始讨论起弗林特这个臭名昭著的海盗。管家回忆起他曾亲眼见过弗林特的船只在特立尼达岛附近出没，还提到那些海盗对弗林特如此畏惧，以至于有一艘船甚至逃到了波尔图伊基奥。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 2,
+      "en": "In England, the doctor had heard similar stories. He asked if Flint had any money, as this would determine the value of their potential treasure.",
+      "zh": "在英格兰，医生也听闻过类似的故事。他问弗林特是否有钱，因为这将决定他们潜在财宝的价值。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "The squire exclaimed, \"Amount, sir!\" He continued, \"If we have the clue you speak of, I'll fit out a ship in Bristol dock and take you and Hawkins there to search for that treasure.\"",
+      "zh": "管家脱口而出：“金额，先生！”他接着说，“如果我们有你所说的线索，我就在布里斯托尔码头准备一艘船，带你们和霍金斯一起去寻找那笔财宝。”"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "Doctor Livesey replied, \"Very well.\" He then said, \"Now, if Jim agrees, let's open the packet,\" placing it on the table.",
+      "zh": "医生莱维斯克回答说：“就这样吧。”然后他又说道：“现在，如果吉姆同意的话，我们打开这个包裹吧。”说着就把包裹放在了桌子上。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "The bundle was sewn shut. Doctor Livesey had to use his medical scissors to cut the stitches. Inside were a book and a sealed paper.",
+      "zh": "这个包裹缝合得紧紧的，拉德利医生不得不用他的手术剪刀割开线头。里面是一本书和一封密封的信件。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 2,
+      "en": "\"First, we'll try the book,\" observed Doctor Livesey as he opened it. The squire and I peered over his shoulder, having been invited from our side-table where we had been eating.",
+      "zh": "“我们先试试这本书吧，”莱维斯医生一边说着一边打开了书。我和庄园主凑过头去，因为我们刚才在旁边的小桌吃饭时被邀请了过来。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 3,
+      "en": "The first page contained random scribbles, like those of someone practicing or idling with a pen. One entry read \"Billy Bones his fancy.\" Others included \"Mr. W. Bones, mate,\" \"No more rum,\" and \"Off Palm Key he got itt.\"",
+      "zh": "第一页上杂乱地写着一些笔迹，仿佛是某人在练习或是无聊时随意涂鸦。其中一条记录写着“比利·博恩斯其人”。还有其他几条分别是：“威利先生，船员”，“不再有朗姆酒”，以及“离开棕榈岛后他得到了它”。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 1,
+      "en": "I wondered who had \"got itt\" and what \"itt\" was.",
+      "zh": "我想知道是谁“中招”了，“中招”的具体内容又是什么。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 1,
+      "en": "Doctor Livesey noted, \"Not much instruction there.\"",
+      "zh": "医生利文斯通说道：“这可没什么指导意义。”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "The next ten or twelve pages held a curious series of entries with dates at one end and sums of money at the other. Each entry consisted only of varying numbers of crosses between them. For instance, on June 12, 1745, seventy pounds had six crosses without any explanation.",
+      "zh": "接下来的十来页记录了一种奇怪的系列条目，一端是日期，另一端则是数额。每个条目仅由不同数量的叉号组成，并无其他说明。例如，在1745年6月12日，有七十英镑的记录前边出现了六个叉号，却没有任何解释。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "In some cases, place names were added, such as \"Offe Caraccas,\" or latitude and longitude entries like \"62o 17' 20\", 19o 2' 40\".\"",
+      "zh": "在某些情况下，添加了地名，比如“_offe 卡拉卡斯_”，或者标注了经纬度，例如“北纬62°17′20″，东经19°2′40″”。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "The record spanned nearly twenty years. As time passed, the amounts of separate entries grew larger. At the end, a grand total was calculated after several wrong additions, with the words appended: \"Bones, his pile.\"",
+      "zh": "这份记录持续了近二十年。随着时间的推移，单独条目的金额越来越大。最终，在几次错误累加后，总金额被计算出来，并附上了这样的话语：“骨头山，他的积累。”"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 1,
+      "en": "Doctor Livesey concluded, \"I can't make head or tail of this.\"",
+      "zh": "医生利文斯通叹了口气说：“这段话我简直摸不着头脑。”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 3,
+      "en": "The squire exclaimed, \"This is clear as noonday! This ledger shows the scoundrel's plundered ships and towns. Each cross marks a victim, and the sums are his ill-gotten gains.\"",
+      "zh": "庄园主人脱口而出：“这明摆着！这个账簿记录了那个无赖掠夺的船只和城镇。每一笔交叉标记都代表着一个受害者，而这些数字就是他非法所得。”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "\"Right!\" agreed the doctor. \"A traveler indeed!",
+      "zh": "“对！”医生应道，“果然是个旅者啊！”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 1,
+      "en": "The amounts increase with his rank.\"",
+      "zh": "他的捐款数额随着职位的提升而增加。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 1,
+      "en": "Apart from some place bearings and a currency conversion table, the volume contained little else.",
+      "zh": "除了某些方位信息和货币转换表外，这本手册几乎没什么其他内容。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "\"Thrifty man,\" said the doctor. \"He wouldn't be cheated easily.\"",
+      "zh": "“这个精明的人，”医生说道，“他轻易不会上当。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 3,
+      "en": "The squire then turned to another sealed paper, likely the same thimble found in the captain's pocket. Carefully opening it, they discovered a detailed map of an island. The map included latitude and longitude, soundings, hills, bays, and inlets, all essential for safe anchorage.",
+      "zh": "随后，庄园主转向另一封密封的信件，大概就是之前在船长口袋里找到的那个小圆盒。他小心翼翼地打开后，发现里面是一张详细标注着岛屿的地图。这张地图上标有经纬度、水深、山丘、海湾和入口等重要信息，对于安全停泊至关重要。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "The island was about nine miles long and five across, shaped like a fat dragon standing up. It had two fine harbors and a central hill marked \"The Spy-glass.\" There were later additions, but three red ink crosses stood out: two on the north part and one in the southwest.",
+      "zh": "这个岛屿长约九英里，宽约五英里，形状像一只直立的肥龙。它有两个优良的港口，并且中央有一座山丘，上面标着“望远镜”字样。后来又增加了几处设施，但三个鲜红的十字标记格外显眼：两个位于北部，一个则在西南部。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "Beside the last cross, written in neat small letters, was the phrase: \"Bulk of treasure here.\"",
+      "zh": "在最后一个十字架旁边，用工整的小字写着：“大部分财宝就在这里。”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 1,
+      "en": "On the back, the same hand had added more details:",
+      "zh": "在背面，同一双手又添上了更多的细节："
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 3,
+      "en": "A tall tree marked Spy-glass shoulder, bearing a point to the N.N.E. Skeleton Island lay E.S.E. and by E., ten feet away.",
+      "zh": "一棵高大的树标记着spy-glass shoulder的位置，树顶指向东北方向。skeleton island则位于东南偏东和正东方，距离大约十英尺远。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 2,
+      "en": "The bar silver cache was in the north, found by following the trend of the east hummock, ten fathoms south of the black crag with a face on it. The arms were easy to find, located in the sand-hill at the N. point of the north inlet cape, bearing E. and a quarter N.",
+      "zh": "银器藏匿处位于北部，是在沿着东丘陵走势寻找后，在那块有雕像的黑岩南面十码的地方发现的。手臂饰品很容易找到，它们位于北入口岬地最北端的沙丘上，朝东北方向。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 1,
+      "en": "Though brief and incomprehensible, these notes filled the squire and Dr. Livesey with delight.",
+      "zh": "尽管这些笔记简短且难以理解，但它们却让骑士和莱维斯医生感到欣喜。"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 3,
+      "en": "The squire said, \"Livesey, you must stop this miserable practice immediately. Tomorrow I leave for Bristol. In three weeks, we will have the finest ship and crew in England.",
+      "zh": "管家说道：“ Livesey，你必须立刻停止这种可悲的做法。明天我就要前往布里斯托尔了。三周后，我们将拥有英格兰最出色的船只和船员。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 3,
+      "en": "Hawkins will join us as cabin-boy. You’ll make a great cabin-boy, Hawkins. Livesey, you'll be the ship's doctor; I am the admiral.",
+      "zh": "霍金斯将会担任船上的见习生。你一定会成为一名出色的见习生，霍金斯。莱维斯克，你将是船上的医生；而我，则是舰长。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "We'll take Redruth, Joyce, and Hunter. With favorable winds, a swift passage, and no difficulty finding the spot, we'll have money to spend and enjoy.\"",
+      "zh": "我们去雷德斯廷、乔伊斯和亨特。如果风力适宜，航行快速又顺利，我们一定能赚到钱花销一番。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 3,
+      "en": "Doctor Trelawney replied, \"I will go with you, and so will Jim. He’ll be a credit to our venture. The only man I fear is you.\"",
+      "zh": "特拉温尼医生回答说：“我愿意和你们一起去，吉姆也会跟着。他一定会给我们的冒险增添光彩。唯一让我担心的是你。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 1,
+      "en": "The squire asked, \"And who is that?\"",
+      "zh": "管家问道：“那个人是谁？”"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 3,
+      "en": "Trelawney answered, \"You. You can't keep your mouth shut. Not everyone knows about this paper.",
+      "zh": "特拉wen尼回答说：“你啊，就是忍不住要说话。不是每个人都知道这份文件的事。”"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 3,
+      "en": "Those who attacked the inn tonight—bold and desperate—and others on the lugger are all determined to get the money. We mustn’t go alone until we reach sea. Jim and I will stick together for now; you’ll take Joyce and Hunter to Bristol, and none of us should mention a word about what we've discovered.\"",
+      "zh": "今晚袭击客栈的那些胆大妄为之徒，还有那艘帆船上的人，全都志在必得。我们必须等到抵达海上之前不要单独行动。吉姆和我暂时会同行；你则带 Joyce 和 Hunter 去布里斯托尔，我们中没有人应该提起我们所发现的事情。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 2,
+      "en": "The squire said, \"Livesey, as always, you are right. I'll be as silent as the grave.\"",
+      "zh": "管家说道：“ Livesey，如往常一样，你又说对了。我将会像坟墓一样保持沉默。”"
     }
   ]
 }

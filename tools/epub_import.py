@@ -62,6 +62,27 @@ NON_CONTENT_FILENAME_RE = re.compile(
     r"appendix|notes?|about.?the.?author|bibliography|glossary|colophon)",
     re.IGNORECASE,
 )
+NUMERIC_CHAPTER_TITLE_RE = re.compile(
+    r"^(?:chapter\s*)?(\d+|[ivxlcdm]+)[.:：-]?$", re.IGNORECASE
+)
+BOOK_REQUIRED_FIELDS = {
+    "id",
+    "title",
+    "chineseTitle",
+    "author",
+    "coverUrl",
+    "description",
+    "category",
+    "difficulty",
+    "totalUnits",
+    "wordCount",
+    "readerCount",
+    "targetVocab",
+    "tagLabel",
+    "coverBadge",
+    "sourceFormat",
+    "contentVersion",
+}
 
 
 @dataclass
@@ -182,6 +203,11 @@ def is_non_content_chapter(title: str, source_path: str) -> bool:
     return bool(NON_CONTENT_FILENAME_RE.search(filename))
 
 
+def deterministic_chinese_title(title: str) -> str:
+    match = NUMERIC_CHAPTER_TITLE_RE.fullmatch(normalize_text(title))
+    return f"第{match.group(1)}章" if match else ""
+
+
 def zip_path(base: str, href: str) -> str:
     href_path = unquote(urlparse(href).path)
     return posixpath.normpath(posixpath.join(posixpath.dirname(base), href_path))
@@ -265,6 +291,49 @@ class EpubReader:
             raise ValueError("No readable chapters found in EPUB spine")
         return chapters
 
+    def cover_asset(self) -> tuple[bytes, str] | None:
+        metadata = next(
+            (node for node in self.opf_root if local_name(node.tag) == "metadata"),
+            self.opf_root,
+        )
+        cover_id = next(
+            (
+                node.attrib.get("content")
+                for node in metadata.iter()
+                if local_name(node.tag) == "meta" and node.attrib.get("name") == "cover"
+            ),
+            None,
+        )
+        manifest = next(
+            (node for node in self.opf_root if local_name(node.tag) == "manifest"),
+            None,
+        )
+        if manifest is None:
+            return None
+        cover_item = next(
+            (
+                item.attrib
+                for item in manifest
+                if item.attrib.get("id") == cover_id
+                or "cover-image" in item.attrib.get("properties", "").split()
+            ),
+            None,
+        )
+        if cover_item is None:
+            return None
+        media_type = cover_item.get("media-type", "")
+        if not media_type.startswith("image/"):
+            return None
+        cover_path = zip_path(self.opf_path, cover_item.get("href", ""))
+        if cover_path not in self.archive.namelist():
+            return None
+        extension = {
+            "image/jpeg": ".jpg",
+            "image/png": ".png",
+            "image/webp": ".webp",
+        }.get(media_type, "." + media_type.split("/", 1)[1])
+        return self.archive.read(cover_path), extension
+
     def _read_ncx_titles(self, manifest: ElementTree.Element) -> dict[str, str]:
         ncx_item = next(
             (
@@ -305,6 +374,18 @@ class TranslationProvider(Protocol):
     def translate(self, text: str, context: str = "") -> str:
         ...
 
+    def translate_title(self, text: str) -> str:
+        ...
+
+    def generate_book_metadata(
+        self,
+        title: str,
+        author: str,
+        chapter_count: int,
+        word_count: int,
+    ) -> dict[str, str]:
+        ...
+
 
 class ArgosTranslator:
     def __init__(self) -> None:
@@ -327,6 +408,22 @@ class ArgosTranslator:
 
     def translate(self, text: str, context: str = "") -> str:
         return normalize_text(self.translation.translate(text))
+
+    def translate_title(self, text: str) -> str:
+        deterministic_title = deterministic_chinese_title(text)
+        if deterministic_title:
+            return deterministic_title
+        return self.translate(text)
+
+    def generate_book_metadata(
+        self,
+        title: str,
+        author: str,
+        chapter_count: int,
+        word_count: int,
+    ) -> dict[str, str]:
+        chinese_title = self.translate_title(title)
+        return default_book_metadata(chinese_title, chapter_count, word_count)
 
 
 class OllamaTranslator:
@@ -397,6 +494,7 @@ class OllamaTranslator:
 5. 人名、地名和专有名词遵守术语表，并保持前后一致；
 6. 不遗漏信息，不增加解释；
 7. 只输出中文译文，不输出分析、说明、引号或 Markdown。
+8. 文章标题能识别出就翻译，识别不了的，按照匹配规则显示，第1章节、第n章节。
 
 术语表：
 {glossary_lines}
@@ -432,6 +530,83 @@ class OllamaTranslator:
             )
             return sanitized
         raise RuntimeError(f"Translation output validation failed after 2 attempts: {last_error}")
+
+    def translate_title(self, text: str) -> str:
+        deterministic_title = deterministic_chinese_title(text)
+        if deterministic_title:
+            return deterministic_title
+        glossary_lines = "\n".join(
+            f"- {source} = {target}" for source, target in self.glossary.items()
+        ) or "- 没有额外术语表，依据上下文翻译。"
+        prompt = f"""你是一名英文文学作品翻译者。
+
+请将下面的英文章节标题翻译成简洁、自然的中文章节标题。
+
+要求：
+1. 保留章节编号和标题中的人名、地名等关键信息；
+2. 人名、地名和专有名词遵守术语表；
+3. 只输出中文标题，不输出分析、说明、引号或 Markdown；
+
+术语表：
+{glossary_lines}
+
+章节标题：
+{text}
+"""
+        for attempt in range(2):
+            candidate = normalize_text(
+                self._generate(prompt + ("\n只能输出中文章节标题。" if attempt else ""))
+            )
+            if self._validate_translation(candidate) is None:
+                return candidate
+        raise RuntimeError("Chapter title translation did not return valid Chinese")
+
+    def generate_book_metadata(
+        self,
+        title: str,
+        author: str,
+        chapter_count: int,
+        word_count: int,
+    ) -> dict[str, str]:
+        prompt = f"""你是一名英文文学作品编辑。请为下面的书籍生成应用元数据。
+
+书名：{title}
+作者：{author}
+章节数：{chapter_count}
+英文词数：{word_count}
+
+只输出一个 JSON 对象，不要 Markdown 或解释，字段必须完整：
+{{
+  "chineseTitle": "中文书名",
+  "description": "100 到 180 字的中文简介，只介绍作品和主要情节",
+  "category": "分类",
+  "difficulty": "例如：中级难度",
+  "readerCount": "例如：10万+人在读",
+  "targetVocab": "例如：1500-4000词",
+  "tagLabel": "短标签",
+  "coverBadge": "例如：精读 · 经典名著"
+}}
+"""
+        candidate = normalize_text(self._generate(prompt, temperature=0.1))
+        candidate = re.sub(r"^```(?:json)?|```$", "", candidate, flags=re.IGNORECASE).strip()
+        try:
+            result = json.loads(candidate)
+        except json.JSONDecodeError as error:
+            raise RuntimeError("Book metadata response was not valid JSON") from error
+        if not isinstance(result, dict):
+            raise RuntimeError("Book metadata response was not an object")
+        required = {
+            "chineseTitle", "description", "category", "difficulty",
+            "readerCount", "targetVocab", "tagLabel", "coverBadge",
+        }
+        if not required.issubset(result) or any(
+            not isinstance(result[key], str) or not normalize_text(result[key])
+            for key in required
+        ):
+            raise RuntimeError("Book metadata response is incomplete")
+        if not CHINESE_CHAR_RE.search(result["chineseTitle"] + result["description"]):
+            raise RuntimeError("Book metadata response is not Chinese")
+        return {key: normalize_text(result[key]) for key in required}
 
     @staticmethod
     def _sanitize_translation(value: str) -> str:
@@ -558,6 +733,31 @@ def read_time(words: int) -> int:
     return max(1, math.ceil(words / 140))
 
 
+def default_book_metadata(chinese_title: str, chapter_count: int, word_count: int) -> dict[str, str]:
+    if word_count >= 50000:
+        target_vocab = "2500-6000词"
+        difficulty = "高级难度"
+    elif word_count >= 25000:
+        target_vocab = "1800-4800词"
+        difficulty = "中/高级难度"
+    else:
+        target_vocab = "1200-3500词"
+        difficulty = "中级难度"
+    return {
+        "chineseTitle": chinese_title or "经典名著",
+        "description": (
+            f"《{chinese_title or '本书'}》是一部经典文学作品，收录全书约 {chapter_count} 个章节，"
+            "展现了鲜明的人物、丰富的情节和值得细读的英语表达。"
+        ),
+        "category": "经典名著",
+        "difficulty": difficulty,
+        "readerCount": "10万+人在读",
+        "targetVocab": target_vocab,
+        "tagLabel": "经典名著",
+        "coverBadge": "精读 · 经典名著",
+    }
+
+
 def write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -620,6 +820,16 @@ def build_book(
             )
             paragraphs: list[dict] = []
             chapter_words = 0
+            chinese_title = ""
+            if not dry_run:
+                if translator is None or cache is None:
+                    raise RuntimeError("Translator and cache are required outside dry-run")
+                title_cache_key = f"chapter-title:{chapter.title}"
+                chinese_title = cache.get(title_cache_key) or ""
+                if not chinese_title:
+                    chinese_title = translator.translate_title(chapter.title)
+                    cache.put(title_cache_key, chinese_title)
+                    cache.save()
             if content_mode == "abridged":
                 if dry_run:
                     chapter_words = sum(word_count(item) for item in chapter.paragraphs)
@@ -728,7 +938,7 @@ def build_book(
             chapter_indexes.append({
                 "unitIndex": unit_index,
                 "title": chapter.title,
-                "chineseTitle": "",
+                "chineseTitle": chinese_title,
                 "path": chapter_path,
                 "wordCount": chapter_words,
                 "readTime": read_time(chapter_words),
@@ -738,7 +948,7 @@ def build_book(
                 "bookId": book_id,
                 "unitIndex": unit_index,
                 "title": chapter.title,
-                "chineseTitle": "",
+                "chineseTitle": chinese_title,
                 "paragraphs": paragraphs,
             }
             if not dry_run:
@@ -746,15 +956,76 @@ def build_book(
                 write_json(temporary / book_id / chapter_path, chapter_doc)
                 print(f"  Saved {chapter_path}", flush=True)
 
+        book_metadata = default_book_metadata(
+            "",
+            len(chapter_indexes),
+            total_words,
+        )
+        cover_url = ""
+        if not dry_run:
+            if translator is None or cache is None or temporary is None:
+                raise RuntimeError("Translator, cache, and output directory are required")
+            metadata_cache_key = (
+                f"book-metadata:{metadata['title']}|{metadata['author']}|"
+                f"{len(chapter_indexes)}|{total_words}"
+            )
+            cached_metadata = cache.get(metadata_cache_key)
+            if cached_metadata:
+                try:
+                    decoded_metadata = json.loads(cached_metadata)
+                    if isinstance(decoded_metadata, dict):
+                        book_metadata.update({
+                            key: str(value)
+                            for key, value in decoded_metadata.items()
+                            if key in book_metadata and normalize_text(str(value))
+                        })
+                except json.JSONDecodeError:
+                    cached_metadata = None
+            if not cached_metadata or any(
+                not normalize_text(book_metadata.get(key, ""))
+                for key in (
+                    "chineseTitle", "description", "category", "difficulty",
+                    "readerCount", "targetVocab", "tagLabel", "coverBadge",
+                )
+            ):
+                try:
+                    book_metadata = translator.generate_book_metadata(
+                        metadata["title"],
+                        metadata["author"],
+                        len(chapter_indexes),
+                        total_words,
+                    )
+                except Exception as error:  # noqa: BLE001
+                    print(
+                        f"Warning: book metadata generation failed, using defaults: {error}",
+                        file=sys.stderr,
+                    )
+                    book_metadata = default_book_metadata(
+                        deterministic_chinese_title(metadata["title"]),
+                        len(chapter_indexes),
+                        total_words,
+                    )
+                cache.put(metadata_cache_key, json.dumps(book_metadata, ensure_ascii=False))
+                cache.save()
+
+            cover = reader.cover_asset()
+            if cover is None:
+                raise RuntimeError(
+                    "EPUB does not contain a cover image; cannot create a non-empty coverUrl. "
+                    "Generate an AI cover or provide an EPUB with a cover image."
+                )
+            cover_bytes, cover_extension = cover
+            cover_filename = f"cover{cover_extension}"
+            write_path = temporary / book_id / cover_filename
+            write_path.write_bytes(cover_bytes)
+            cover_url = f"assets/data/books/{book_id}/{cover_filename}"
+
         book_json = {
             "id": book_id,
             "title": metadata["title"],
-            "chineseTitle": "",
+            **book_metadata,
             "author": metadata["author"],
-            "coverUrl": "",
-            "description": "",
-            "category": "经典名著",
-            "difficulty": "中级难度",
+            "coverUrl": cover_url,
             "totalUnits": len(chapter_indexes),
             "wordCount": total_words,
             "sourceFormat": "epub",
@@ -775,7 +1046,10 @@ def build_book(
         return book_id, book_json, temporary
     except Exception:
         if temporary:
-            shutil.rmtree(temporary, ignore_errors=True)
+            print(
+                f"Generated content was preserved at: {temporary}",
+                file=sys.stderr,
+            )
         raise
     finally:
         reader.close()
@@ -803,6 +1077,22 @@ def validate_book_output(book_dir: Path, allow_partial: bool = False) -> None:
         raise RuntimeError(f"Generated book manifests are incomplete: {book_dir}")
     book = json.loads(book_path.read_text(encoding="utf-8"))
     chapters = json.loads(chapters_path.read_text(encoding="utf-8"))
+    missing_book_fields = BOOK_REQUIRED_FIELDS - set(book)
+    if missing_book_fields:
+        raise RuntimeError(
+            f"Book metadata is incomplete, missing fields: {sorted(missing_book_fields)}"
+        )
+    for field in (
+        "chineseTitle", "coverUrl", "description", "readerCount",
+        "targetVocab", "tagLabel", "coverBadge",
+    ):
+        if not normalize_text(str(book.get(field, ""))):
+            raise RuntimeError(f"Book metadata field is empty: {field}")
+    cover_path = Path(str(book["coverUrl"]))
+    if not cover_path.is_absolute():
+        cover_path = Path.cwd() / cover_path
+    if not cover_path.is_file():
+        raise RuntimeError(f"Book cover file is missing: {cover_path}")
     chapter_items = chapters.get("chapters")
     if not isinstance(chapter_items, list) or len(chapter_items) != book.get("totalUnits"):
         raise RuntimeError(f"Chapter count mismatch: {book_dir}")
@@ -821,6 +1111,18 @@ def validate_book_output(book_dir: Path, allow_partial: bool = False) -> None:
                 raise RuntimeError(f"Empty English paragraph: {chapter_path}")
             if not allow_partial and not paragraph.get("zh"):
                 raise RuntimeError(f"Empty Chinese paragraph: {chapter_path}")
+        indexed_title = item.get("chineseTitle")
+        document_title = chapter.get("chineseTitle")
+        if not indexed_title:
+            raise RuntimeError(f"Missing Chinese chapter title in chapters.json: {chapter_path}")
+        if not document_title:
+            raise RuntimeError(f"Missing Chinese chapter title in chapter JSON: {chapter_path}")
+        if document_title != indexed_title:
+            print(
+                f"Warning: Chinese chapter title differs between index and document "
+                f"({indexed_title!r} != {document_title!r}): {chapter_path}",
+                file=sys.stderr,
+            )
 
 
 def move_processed(source: Path, processed_root: Path) -> Path:
@@ -1070,7 +1372,7 @@ def main() -> int:
             print(f"Moved original EPUB -> {destination}")
         except FileExistsError as error:
             if temporary:
-                shutil.rmtree(temporary, ignore_errors=True)
+                print(f"Generated content was preserved at: {temporary}", file=sys.stderr)
             if confirm_skip_existing_book(error):
                 print(f"Skipped {epub_path.name}")
                 continue
@@ -1078,7 +1380,7 @@ def main() -> int:
             return 1
         except Exception as error:  # noqa: BLE001
             if temporary:
-                shutil.rmtree(temporary, ignore_errors=True)
+                print(f"Generated content was preserved at: {temporary}", file=sys.stderr)
             print(f"Failed to import {epub_path}: {error}", file=sys.stderr)
             return 1
     print("Import completed.")

@@ -1,0 +1,375 @@
+{
+  "id": "Treasure_Island_u16",
+  "bookId": "Treasure_Island",
+  "unitIndex": 16,
+  "title": "15",
+  "chineseTitle": "第15章",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "From the steep, rocky hillside, a shower of gravel tumbled through the trees. My gaze instinctively followed it to see a figure leap behind a pine trunk. Though dark and shaggy, its identity was unclear—bear, man, or monkey.",
+      "zh": "从陡峭的岩石山坡上，一串石子如雨点般穿过树林落下。我不由自主地望向那片区域，只见一个人影闪过后方的一棵松树。虽然身影模糊不清，难以辨认是熊、人还是猴子。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "This new terror halted me.",
+      "zh": "这种新的恐惧让我停下了脚步。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "Now cut off on both sides, with murderers behind and an unknown threat ahead, I preferred known dangers over the unknown. Silver seemed less terrifying in comparison. Turning around, I retraced my steps toward the boats.",
+      "zh": "如今，两边都被切断了，后面有杀人犯虎视眈眈，前方则是一个未知的威胁。我宁可面对已知的危险，也不愿冒险。银色的光芒似乎也显得不那么恐怖了。我转过身，重新朝船的方向走去。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "Instantly, the figure reappeared, circling wide to intercept me. Tired, I knew it was futile to outrun such a swift adversary. The creature moved like a deer on two legs, stooping as it ran—clearly human but unlike any I had seen.",
+      "zh": "瞬间，那身影再次出现，绕了个大圈来截住我。我已经感到疲惫，知道在这种敏捷的对手面前逃跑是徒劳的。那生物两腿奔跑时像极了一只 Deer，跑动中还微微弓着身子——显然是人类，但却与我见过的任何一种都不相同。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "Recalling tales of cannibals, I almost called for help. However, recognizing him as a man somewhat reassured me. My fear of Silver resurfaced.",
+      "zh": "想起 Cannibals 的故事，我差点喊出声求救。不过认出他是个人，多少让我安心了一些。对 Silver 的恐惧再次涌上心头。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "Standing still, I sought an escape method. Suddenly, my pistol flashed in memory, and courage returned. Resolutely, I walked toward the figure.",
+      "zh": "我站在原地，心中寻觅着逃脱的方法。突然间，脑海中闪现出手枪的身影，勇气油然而生。我毅然决然地向那个身影走去。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "By then, he was hidden behind another tree trunk but had been watching closely. As I moved, he reappeared, hesitated, drew back, and finally knelt, holding out clasped hands in supplication.",
+      "zh": "到那时，他已经藏在另一棵树后，但一直在密切注视着我。随着我的动作，他再次露面，犹豫了一下，然后退了回去，最终跪了下来，双手合十乞求不已。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "Stopping once more, I asked, \"Who are you?\"",
+      "zh": "停了下来，我问道：“你是谁？”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 2,
+      "en": "Ben Gunn stepped forward, his voice hoarse and awkward, like a rusty lock. \"I'm poor Ben Gunn; haven't spoken to a Christian for three years.\"",
+      "zh": "本·古恩上前一步，声音沙哑而别扭，仿佛生了锈的锁。“我是贫病交加的本·古恩；三年来还没跟基督徒说过话。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "He was a white man, with sunburned skin and black lips. His fair eyes stood out starkly on his dark face. He wore tattered old ship's canvas and sea-cloth, held together by various fastenings—brass buttons, bits of stick, and loops of tarred gaskin.",
+      "zh": "他是个白人，皮肤被晒得黝黑，嘴唇却漆黑。他那双雪亮的眼睛在深色的脸上格外显眼。他穿着破旧的船帆布和海布制成的衣服，用各种扣具缝合——铜纽扣、木棍碎片以及涂了沥青的皮带环。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "An old brass-buckled leather belt was the only solid thing around his waist.",
+      "zh": "他腰间仅系着一条古旧的皮带，上面镶着铜钉。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "\"Three years!\" I exclaimed. \"Shipwrecked?\"",
+      "zh": "“三年！”我脱口而出，“遇上了海难？”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "\"Nay, mate,\" he replied. \"Marooned.\"",
+      "zh": "“不，伙计，”他回答道，“是孤岛求生。”"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 1,
+      "en": "I knew marooning meant a terrible punishment for pirates—being left on a distant island with little food and ammunition.",
+      "zh": "我知道将海盗弃置荒岛是一种极其严厉的惩罚——让他们在遥远的岛上面对匮乏的食物和弹药。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "\"Marooned three years ago,\" he continued. \"Survived on goats, berries, and oysters. Wherever a man is, says I, a man can do for himself.",
+      "zh": "“三年前流落至此，”他继续说道，“靠山羊、浆果和牡蛎勉强生存。不管一个人身在何处，我自己都能想办法活下去。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 1,
+      "en": "But my heart aches for cheese.\"",
+      "zh": "但我心里却想着奶酪。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 1,
+      "en": "\"If ever you get aboard again,\" I said, \"you'll have cheese by the stone.\"",
+      "zh": "“如果你下次再上船的话，”我说，“你有的是奶酪，够堆成山了。”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "He had been feeling my jacket, smoothing my hands, and inspecting my boots. At my last words, he perked up with a sly look.",
+      "zh": "他一直在摸我的夹克，抚平我的手，检查我的靴子。在我最后一句话说完时，他突然警觉起来，脸上露出狡黠的神情。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "\"If ever you can get aboard again?\" he repeated. \"Who's to stop you?\"",
+      "zh": "“你要是有机会再上船怎么办？”他重复道，“谁拦得住你？”"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 1,
+      "en": "\"Not me,\" I replied.",
+      "zh": "“不是我,”我回答道。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 2,
+      "en": "\"And right you are,\" he cried. \"Now, Jim—what do you call yourself?\"",
+      "zh": "“你说得没错，”他喊道，“现在，吉姆——你叫什么名字？”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "\"Jim,\" I told him.",
+      "zh": "“吉姆，”我对他说。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "\"Jim, Jim,\" he said, pleased. \"Well, Jim, I've lived rough enough for you to be ashamed of it. For instance, wouldn't think I had a pious mother?\"",
+      "zh": "“吉姆，吉姆，”他高兴地说，“好了，吉姆，我过得够潦倒的了，你应该为此感到羞愧。比如，你不会认为我的母亲是个虔诚的人吧？"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "He said, \"Ah, well, but I was remarkably pious as a boy. I could recite my catechism faster than you can tell one word from another. And here's where it led: Jim, it started with chuck-farthen on blessed grave-stones!",
+      "zh": "他说：“啊，好吧，但我在少年时可是个虔诚的孩子。我背《教义问答》的速度比你分辨单词还快。而这就导致了：吉姆，这一切始于掷铜板在神圣的墓碑上！”"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "But it went further. My mother told me so, and she predicted the whole thing, that pious woman! Providence brought me here.",
+      "zh": "但这远不止如此。我母亲告诉我，并且她还预言了这一切，那个虔诚的女人！冥冥之中，我被带到了这里。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 3,
+      "en": "I've thought about this in my lonely island and am back to piety. I don't drink much rum now, but just a thimbleful for luck when I can. I'm determined to be good.\"",
+      "zh": "我在孤岛上反复思考，如今又回到了虔诚信教的状态。我现在很少喝朗姆酒了，但偶尔也会抿一小口以求好运。我决心要做一个好人。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "He looked around, lowering his voice, \"I'm rich,\" he whispered.",
+      "zh": "他环视了一下四周，压低声音说道：“我发财了。”他轻声细语地补充了一句。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "Seeing the man's madness, I felt sure he had gone crazy in solitude. His face darkened suddenly as he tightened his grip on my hand and raised a forefinger threateningly. \"Now, Jim, tell me true: is that Flint's ship?\"",
+      "zh": "看到他疯狂的样子，我确信他是孤独疯了。他的脸色骤然一变，紧握我的手，并抬高食指威胁道：“吉姆，现在老实告诉我：那是弗林特的船吗？”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 1,
+      "en": "he asked urgently.",
+      "zh": "他急切地问道。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "An idea struck me, and I believed I'd found an ally. \"It’s not Flint’s ship,\" I said quickly, \"and Flint is dead. But there are some of his men aboard; worse luck for the rest of us.\"",
+      "zh": "一个念头闪过我的脑海，我觉得自己找到了盟友。“这艘船不是弗林特的，”我赶紧说道，“而且弗林特已经死了。但船上还有一些他的手下；对我们其他人来说，真是倒了八辈子霉。”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"None with one leg?\" he gasped.",
+      "zh": "“没有一条腿的？”他惊叫道。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "\"Silver?\" I asked.",
+      "zh": "“银币？”我问道。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "\"Ah, Silver!\" he replied. \"That was his name.\"",
+      "zh": "“啊，银色！”他脱口而出，“就是这个名字。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 1,
+      "en": "\"He's the cook and ringleader too,\" I added.",
+      "zh": "“他还负责掌勺和统筹一切呢。”我补充道。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "He still held my wrist tightly. \"If you were sent by Long John,\" he said, \"I'm as good as pork, and I know it. But where were you?\"",
+      "zh": "他仍然紧紧握着我的手腕，“如果你是长约翰派来的，”他说，“那我恐怕凶多吉少，我自己也清楚。可你到底去了哪里？”"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 2,
+      "en": "In a moment, I told him our voyage and predicament. He listened with great interest and patted me on the head when I finished.",
+      "zh": "片刻之后，我把我们的航程和困境告诉他。他听得非常入神，在我讲完后还拍了拍我的头。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "Jim, you're a good lad, Ben Gunn said. \"You're in a tight spot, aren't you? Trust me, put your faith in Ben Gunn—Ben is the man to help.",
+      "zh": "吉姆，你真是个好小伙子，本·古恩说道。“你现在处境挺棘手的吧？相信我，把你的信任交给本·古恩——本就是那个能帮上忙的人。”"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 1,
+      "en": "Would it surprise you that your squire might be generous with money if we get rescued?\"",
+      "zh": "如果咱们被救出来了，你的随从可能会对你出手阔绰，这会让你惊讶吗？"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "I assured him, \"The squire is very liberal.\"",
+      "zh": "我向他保证：“那位乡绅出手相当大方。”"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "\"But,\" continued Ben Gunn, \"not in giving me a house and clothes, Jim. I mean, would he give us one thousand pounds out of his own funds?\"",
+      "zh": "“不过，”本·古恩接着说，“不是指给我房子和衣服。我的意思是，他会拿出自己的钱给我们一千英镑吗？”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 2,
+      "en": "\"I'm sure he would,\" I replied. \"All hands were to share the treasure.\"",
+      "zh": "“我相信他会同意的，”我说，“宝藏要大家共享。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 2,
+      "en": "\"Would he also provide passage home?\" asked Ben Gunn with shrewdness.",
+      "zh": "“他还会提供回家的船票吗？”本·古恩带着精明的眼神问道。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "\"The squire is a gentleman,\" I exclaimed. \"And if we got rid of the others, you'd be needed for the journey.\"",
+      "zh": "“这位绅士骑士真是个君子，”我脱口而出，“如果我们除掉了其他人，你还是得随行护送。”"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 3,
+      "en": "Ben Gunn nodded, seeming relieved. \"Alright, here's what I'll tell you. Flint and six others were on his ship when they buried the treasure.",
+      "zh": "本·古恩点点头，似乎松了口气。“好吧，我来告诉你。芬特和他的六个同伴在埋藏财宝的时候就在他的船上。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 3,
+      "en": "They were ashore for nearly a week while we waited in the WALRUS. One day, Flint came back alone in a small boat with a blue scarf around his head. The sun was bright; he looked pale.",
+      "zh": "他们在“Walrus”号上等待了近一个星期才登岸。一天，弗林特独自驾着一只小船回来，头上围着一条蓝色的围巾。阳光明媚，他显得面色苍白。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 2,
+      "en": "But there he was—six men dead and buried. No one knew how he did it—it was battle, murder, sudden death.\"",
+      "zh": "但他就在这里——六条人命已经了结。没人知道他是怎么做到的——那是战场，是谋杀，是突如其来的死亡。"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 3,
+      "en": "Billy Bones was the mate, and Long John Silver was quartermaster. Flint asked where the treasure was. \"You can go ashore if you like,\" he said, \"but as for the ship, she'll keep searching.\"",
+      "zh": "比尔·博内是船上的水手长，而朗·约翰·西尔弗则是 Quartermaster。 Flint 问道：“宝藏在哪里？”他说道，“你们可以下船去，但至于这艘船，它还会继续搜寻。”"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 3,
+      "en": "Three years ago, I was on another ship that spotted an island. I suggested we land to find Flint's treasure, but the captain was unhappy. My companions agreed and landed.",
+      "zh": "三年前，我在另一艘船上发现了座岛屿。我建议我们登陆去寻找弗林特的财宝，但船长并不高兴。同伴们同意了我的提议，并最终上了岸。"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 1,
+      "en": "They searched for twelve days, growing increasingly frustrated with me until they left me behind with a musket, spade, and pickaxe.",
+      "zh": "他们找了十二天，越来越对我感到失望，最终只给我留下了一支步枪、一个铁铲和一把镐就离开了。"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 3,
+      "en": "Jim, I've been here three years without any proper food. But look at me now; do I seem like someone who has endured hardship? No, you say, nor was I before, I replied, winking and pinching me hard.",
+      "zh": "吉姆，我已经在这里待了三年，连像样的食物都没有。但你看我现在，看起来像是受过苦的人吗？我说，你当然不会这么认为，以前的我也不是这样。说完，我眨了眨眼，并用力捏了捏我的胳膊。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 3,
+      "en": "Just mention those words to your squire, Jim, he continued. For three years, Gunn was the island's master, day and night, fair weather or rain. Sometimes he might think of prayer or his mother, but most of his time was spent on another matter.",
+      "zh": "他继续说道，只要把这话告诉你的管家吉姆就行。盖恩在岛上整整三年，不分昼夜，无论晴雨，都是这里的主人。有时他也可能会想到祈祷或母亲，但大部分时间都忙于其他事务。"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 1,
+      "en": "He pinched me again in a confidential manner.",
+      "zh": "他又悄悄地捏了我一下。"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 1,
+      "en": "Then you'll say, \"Gunn is a good man,\" he instructed, \"and places more trust in gentlemen born than those of fortune, having been one himself.\"",
+      "zh": "然后你会说：“冈恩是个可靠的人，”他吩咐道，“更信任出身高贵的绅士而非靠财富得势之人，他自己就是个例子。”"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 3,
+      "en": "I didn't understand what he said, but how could I get back to the ship? Ah, that's the problem. My boat, made with my own hands, is hidden under the white rock.",
+      "zh": "我不明白他说的是什么，但怎么才能回到船上呢？啊，这就成了问题。我亲手打造的小船藏在那块白石下面。"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 2,
+      "en": "We might try it after dark. Suddenly, a cannon echoed across the island.",
+      "zh": "我们可以在晚上试试。就在这时，一声炮响回荡在整个岛屿上。"
+    },
+    {
+      "id": "p056",
+      "sentenceCount": 3,
+      "en": "\"They have begun to fight!\" I cried, running towards the anchorage. Beside me, the marooned man in goatskins trotted easily and lightly.",
+      "zh": "“他们已经展开战斗了！”我喊道，飞奔向停泊处。身旁，那个穿着山羊皮衣服的流放者轻快地小跑着跟上。"
+    },
+    {
+      "id": "p057",
+      "sentenceCount": 3,
+      "en": "He instructed Jim to stay left: \"Under the trees with you! Theer's where I killed my first goat. They don't come down here now; they're all mastheaded on them mountings for the fear of Benjamin Gunn.\"",
+      "zh": "他吩咐吉姆靠左走：“跟我来树下！那正是我射杀第一只山羊的地方。现在它们可不会到这里来了；所有的山羊都被拴在那些支架上了，以防被本杰明·古恩抓到。”"
+    },
+    {
+      "id": "p058",
+      "sentenceCount": 2,
+      "en": "He mentioned the cemetery, pointing out the mounds and his occasional prayers there. \"Ben Gunn was short-handed—no chapling, nor even a Bible or flag,\" he added.",
+      "zh": "他提到了墓地，指着那些土堆，并偶尔在那里祈祷。“本·古恩缺人手——没有神甫，甚至连圣经或国旗都没有。”他补充道。"
+    },
+    {
+      "id": "p059",
+      "sentenceCount": 1,
+      "en": "I ran in silence as he continued to speak, neither expecting nor receiving any response.",
+      "zh": "我默默跑着，他继续说着话，既没有抱任何期待，也没有得到任何回应。"
+    },
+    {
+      "id": "p060",
+      "sentenceCount": 1,
+      "en": "A while later, a cannon shot was followed by a volley of small arms.",
+      "zh": "过了一会儿，一声炮响之后，紧接着是一阵密集的枪声。"
+    },
+    {
+      "id": "p061",
+      "sentenceCount": 1,
+      "en": "Then, not far ahead, I saw the Union Jack fluttering above a wood.",
+      "zh": "然后，在前方不远处，我看到英国国旗在树林上空飘扬。"
+    }
+  ]
+}

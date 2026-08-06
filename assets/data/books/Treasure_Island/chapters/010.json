@@ -1,0 +1,279 @@
+{
+  "id": "Treasure_Island_u10",
+  "bookId": "Treasure_Island",
+  "unitIndex": 10,
+  "title": "9",
+  "chineseTitle": "第9章",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "The Hispaniola lay far out at sea as we navigated past other ships. Finally, we reached our destination, greeted by Mr. Arrow, a brown old sailor with earrings and a squint. He was close friends with the squire but not with Captain Smollett.",
+      "zh": "“希普利奥号”远航在茫茫大海中，我们绕过了其他船只才抵达目的地。终于，一位名叫箭先生的棕色老水手带着耳环和斜视的眼睛迎接了我们。他与庄园管家关系密切，却与斯莫莱特船长并不投缘。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "Captain Smollett entered the cabin, looking angry. \"Well, Captain Smollett,\" began the squire, \"what have you to say? All well on board?\"",
+      "zh": "船长斯莫莱特怒气冲冲地走进舱内。“斯莫莱特船长，”乡绅开口说道，“你有什么要说的？船上一切都好吗？”"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "\"Better speak plainly,\" replied the captain. \"I don't like this cruise; I don't trust the men; and I don't trust my officer.\"",
+      "zh": "“还是直说吧。”船长回答，“我对这次航行不太满意；我不信任这些水手；也不信任我的艇长。”"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "The squire grew angry. \"Perhaps you don’t like the ship?\" he asked.",
+      "zh": "管家怒道：“莫非你不喜欢这艘船？”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"I can’t comment without seeing her in action,\" said the captain. \"She seems a good craft, but that’s all I can say.\"",
+      "zh": "“我没有亲眼见到她操作过，无法妄下评论，”船长说道，“不过从外表看，她确实不错。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"Could it be your employer then?\" suggested the squire.",
+      "zh": "“难不成是你的雇主？”庄园主猜测道。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 3,
+      "en": "Dr. Livesey intervened. \"Wait a moment,\" he said. \"These questions are only causing tension.",
+      "zh": "莱维斯医生插话道：“等等。”他说道，“这些问题只会增加紧张气氛。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "Captain Smollett has either spoken too much or too little. Let me clarify: you don’t like this cruise because every man knows more than you do, is that right?\"",
+      "zh": "斯莫莱特船长说得太多或太少。让我澄清一下：你不喜欢这次航行，是因为每个人都知道得比你多，对吧？"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "\"Yes,\" agreed the captain. \"And now we’re after treasure—heard it from my own lips. Treasure work is risky; I dislike such voyages and especially when they are secret, as (excuse me, Mr. Trelawney) the parrot has been told.\"",
+      "zh": "“是的，”船长同意道，“我们现在是在寻找财宝——这是我的亲口所说。寻宝工作风险很大；我不喜欢这样的航行，尤其是当它们秘密进行时（请原谅我，特拉文纳先生），鹦鹉已经知道了这件事。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 2,
+      "en": "\"Is it Silver's parrot?\" asked the squire.",
+      "zh": "“是赛勒的鹦鹉吗？”骑士问道。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "Captain Smollett said, \"It's a way of speaking—blabbed. I believe neither of you gentlemen knows what you are about, but I'll tell you my way of it—life or death, and a close run.\"",
+      "zh": "斯莫莱特船长说道：“这是一种说话方式——乱说一通。我相信你们两位先生都不知道在搞什么，但我会告诉你们我的方式——事关生死，险象环生。”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "Dr. Livesey replied, \"That is clear and true enough. We take the risk, but we are not so ignorant as you think us to be. Next, you say you don't like the crew.",
+      "zh": "莱维斯医生回答说：“这倒是清楚明白。我们愿意承担风险，但你可别小看了我们的见识。接下来，你说你不喜欢船员。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "Are they not good seamen?\"",
+      "zh": "他们不是很好的水手吗？"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 2,
+      "en": "\"I don't like them,\" Captain Smollett responded. \"And I should have chosen my own hands if you had asked.\"",
+      "zh": "“我不喜欢他们，”斯莫莱特船长回答，“如果你提出要求的话，我会自己挑选手下。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "\"Perhaps you should,\" Dr. Livesey said. \"My friend might have taken you along; but any slight was unintentional. And you don't like Mr. Arrow?\"",
+      "zh": "“或许你应该考虑一下，”莱维斯博士说道，“我朋友可能带你一起来了；但任何冒犯都是无意的。而且你不喜欢阿罗先生吗？”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "\"I don't, sir,\" the captain replied. \"I believe he's a good seaman, but he's too familiar with the crew to be a good officer. A mate should keep himself to himself—shouldn't drink with the men before the mast!\"",
+      "zh": "“我没有，先生，”船长回答道。“我相信他是个不错的水手，但与船员太熟悉了，不适合做军官。大副应该独善其身——不应该在甲板下跟弟兄们一起喝酒！”"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 2,
+      "en": "\"Meaning he drinks?\" asked the squire.",
+      "zh": "“他是说那个人喝酒？”庄园主问道。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "\"No, sir,\" Captain Smollett said. \"Only that he's too familiar.\"",
+      "zh": "“不，先生，”斯莫莱特船长说道，“只是他太熟悉了。”"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "\"Well, now, and the short and long of it, captain?\" Dr. Livesey asked. \"Tell us what you want.\"",
+      "zh": "“好了，船长，事情的来龙去脉是怎么回事？快告诉我们你想要什么吧。”利文斯通医生问道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 2,
+      "en": "\"Well, gentlemen, are you determined to go on this cruise?\" the captain inquired.",
+      "zh": "“诸位先生，你们决心要参加这次航行吗？”船长问道。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "\"Like iron,\" answered the squire.",
+      "zh": "“就像铁一样坚硬。”骑士回答道。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 3,
+      "en": "\"Very good,\" said Captain Smollett. \"Then, as you've heard me very patiently, saying things that I could not prove, hear me a few words more. They are putting the powder and arms in the fore hold.",
+      "zh": "“很好，”斯莫莱特船长说道，“既然你耐心地听我说了一些无法证实的事情，再听我讲几句。他们正把火药和武器放在前舱里。”"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "Now, why not put them under the cabin?—first point. Then, you are bringing four of your own people with you, and some are to be berthed forward. Why not give them the berths here beside the cabin?—second point.\"",
+      "zh": "那么，为什么不把他们安排在船舱下面呢？——第一个问题。再说，你这次带来了四名自己的人手，其中一些还要安排在前部甲板上。为什么不让他们住在这靠近船舱的位置呢？——第二个问题。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "\"Any more?\" asked Mr. Trelawney.",
+      "zh": "“还有别的吗？”特拉韦尼先生问道。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 2,
+      "en": "\"One more,\" said Captain Smollett. \"There's been too much blabbing already.\"",
+      "zh": "“再讲一个吧，”斯莫莱特船长说，“已经说了太多闲话了。”"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "\"Far too much,\" agreed Dr. Livesey.",
+      "zh": "“太多了。”利文斯通医生附和道。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "\"I'll tell you what I've heard myself,\" continued Captain Smollett: \"that you have a map of an island, crosses on the map to show where treasure is, and that the island lies—\" And then he named the latitude and longitude exactly.",
+      "zh": "“我自己听说的，”斯莫莱特船长接着说，“是关于你有一张岛屿的地图，上面用叉号标记出藏宝地点。而那个岛屿的位置——”他准确地报出了纬度和经度。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 2,
+      "en": "\"I never told that to a soul!\" cried the squire.",
+      "zh": "“我可没对任何人说过这件事！”乡绅喊道。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 1,
+      "en": "\"The hands know it, sir,\" returned Captain Smollett.",
+      "zh": "“船长知道得很清楚，”斯莫莱特船长回答道。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "The doctor agreed with Captain Smollett's concerns but noted that neither he nor the captain paid much attention to Mr. Trelawney’s objections. The captain then proposed keeping the map secret from even himself and Mr. Arrow, suggesting resignation if they refused.",
+      "zh": "医生赞同斯莫莱特船长的担忧，但指出自己和船长并没有太在意特雷拉尼先生的反对意见。随后，船长提议连他自己和箭手先生阿罗也不让知道这张地图的存在，如果他们不同意，就只能辞职。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"Doctor,\" continued the captain, \"I fear a mutiny. I am responsible for the ship's safety and must take precautions.\"",
+      "zh": "“医生，”船长接着说，“我担心会发生叛变。作为这艘船的安全负责人，我必须采取防范措施。”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "The doctor responded with a smile, referencing the fable of the mountain and the mouse, implying that Captain Smollett had ulterior motives. The captain admitted he intended to resign but only after hearing Mr. Trelawney’s proposal.",
+      "zh": "医生微笑着回应，提到了“山与老鼠”的寓言故事，暗示斯莫利特船长另有图谋。船长承认他确实打算辞职，但前提是先听听特拉文纳先生的提议。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "\"Doctor,\" said the squire, \"I think you are unwise in your methods. I will comply with your request, but I disapprove of them.\"",
+      "zh": "管家说道：“医生，我认为你的方法不太明智。我会遵从你的要求，但我并不赞同。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "Captain Smollett left, stating his intention to fulfill his duty. The doctor then turned to Mr. Trelawney and expressed surprise that he had managed to secure two honest men on board—John Silver included.",
+      "zh": "船长斯莫莱特离开了，表示他会履行职责。医生随即转向特雷劳尼先生，惊讶于他居然能确保船上有了两名诚实可靠的水手——其中就包括约翰·银。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 1,
+      "en": "\"Silver if you like,\" cried the squire, \"but I find his conduct unmanly and un-English.\"",
+      "zh": "“如果你喜欢的话就银子吧，”庄园主喊道，“但我发现他的行为未免太窝囊，不英俊。”"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "\"Well,\" said the doctor, \"we shall see.\"",
+      "zh": "“好吧，”医生说道，“咱们先看看再说。”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 2,
+      "en": "Upon coming onto deck, we found the men busily unpacking arms and powder with cheerful exclamations. The captain and Mr. Arrow supervised their efforts.",
+      "zh": "一上甲板，我们就看到几个水手正愉快地unpacking 武器和火药，一边忙活着一边发出高兴的惊叹。船长和阿row先生在一旁监督着他们的工作。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 3,
+      "en": "The schooner had been thoroughly refurbished; six berths were installed aft from what used to be the main hold's after-part. These cabins connected only by a sparred passage on the port side, leading to the galley and forecastle. Initially, the captain, Mr. Arrow, Hunter, Joyce, the doctor, and the squire were to occupy these berths.",
+      "zh": "这艘帆船经过彻底翻新，从前主舱的后部安装了六个铺位。这些舱室仅通过左舷的木梁通道相连，通往厨房和艏楼。起初，船长阿罗、猎人亨特、乔伊斯医生以及乡绅先生将占据这些铺位。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 1,
+      "en": "Now Redruth and I would have two of them, while Mr. Arrow and the captain slept on deck in an enlarged companion way, almost a round-house.",
+      "zh": "现在红德斯和我将各占一个，而阿罗先生和船长则在扩大的舱口处甲板上打盹，几乎就像是圆屋一般。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 3,
+      "en": "The cook climbed up the side like a monkey, then asked, \"What's this?\" We explained we were changing the powder. Long John worried about missing the morning tide due to the delay.",
+      "zh": "厨师像猴子一样攀上船侧，问道：“这是怎么回事？”我们解释说正在更换火药。长腿约翰则担心因耽搁太久会错过早潮。"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 3,
+      "en": "\"Orders!\" the captain snapped. \"Go below and prepare for supper.\"",
+      "zh": "“下令去！”船长厉声喝道，“下去准备吃饭。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "\"Yes, sir,\" the cook replied, disappearing into his galley.",
+      "zh": "“是的，先生，”厨师应道，消失在他的厨房里。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 3,
+      "en": "The doctor commended the captain, who responded, \"Very likely.\" He then instructed us to handle the powder carefully before suddenly calling me over to inspect a swivel amidships. \"Ship's boy, out of that!\"",
+      "zh": "医生称赞了船长，船长回答说：“很有可能。”随后他吩咐我们小心处理火药，突然又把我叫过去检查了一下中甲板的转头。“甲板少年，过来！”"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 2,
+      "en": "he commanded. \"Go get some work from the cook.\"",
+      "zh": "他命令道：“去厨房拿些活儿来做。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 2,
+      "en": "As I hurried away, I heard him say loudly to the doctor, \"I'll have no favorites on my ship.\" This confirmed my dislike for the captain.",
+      "zh": "我匆匆离开时，听到他大声对医生说：“我的船上没有宠儿。”这句话证实了我对船长的厌恶。"
+    }
+  ]
+}

@@ -2,20 +2,290 @@
   "id": "Treasure_Island_u6",
   "bookId": "Treasure_Island",
   "unitIndex": 6,
-  "title": "Chapter 6: The Battle at the Stockade",
-  "chineseTitle": "第 6 章：木栅栏围寨攻防战",
+  "title": "5",
+  "chineseTitle": "第5章",
   "paragraphs": [
     {
-      "en": "Meanwhile, Dr. Livesey and Captain Smollett had abandoned the ship and occupied a strong log stockade built on a hill by Flint's men. I joined them inside the fort, and we raised the Union Jack above the logs. Silver arrived under a white flag of truce, offering to spare our lives if we handed over Flint's treasure map. Captain Smollett refused with scorn, and Silver departed in fury.",
-      "zh": "与此同时，李夫西医生和斯莫列特船长已经弃船，占领了弗林特手下在山上建造的坚固木栅栏围寨。我加入他们在堡垒内部，我们在木头上方升起了联合杰克旗。西尔弗在一面白色的休战旗帜下到达，提出如果我们交出弗林特的宝藏地图就饶我们一命。斯莫列特船长带着蔑视拒绝了，西尔弗在愤怒中离开。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "My curiosity outweighed my fear as I returned to the bank, hiding behind a broom bush to watch the road leading up to our house. Moments later, seven or eight men arrived, running swiftly down the path. The blind beggar, Pew, was among them, his voice confirming my suspicions.",
+      "zh": "我的好奇心战胜了恐惧，我返回银行时躲在一把扫帚后面，偷偷观察通向我们家的道路。片刻之后，七八个男人疾步跑来，沿着小路快速下山。瞎眼乞丐皮吾也在其中，他那熟悉的声音证实了我的猜测。"
     },
     {
-      "en": "An hour later, the pirates launched a fierce assault on the stockade! Swarming over the palisades, they fired their muskets and fought hand-to-hand with cutlasses. We fought back bravely, killing five pirates, but Captain Smollett was wounded, and two of our loyal men were slain.",
-      "zh": "一个小时后，海盗们对木栅栏围寨发起了凶猛的攻击！涌过栅栏，他们开火火枪并用弯刀进行肉搏打斗。我们勇敢地反击，打死五个海盗，但斯莫列特船长受伤了，而我们两个忠诚的男人被杀害了。",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 2,
+      "en": "\"Down with the door!\" he shouted.",
+      "zh": "“快开门！”他喊道。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "Several men responded, rushing towards Admiral Benbow, while Pew followed with a lantern. They paused when they found the door open, but Pew's urgency quickly resumed.",
+      "zh": "几个男人应声而起，朝本鲍船长的住处奔去，佩恩则提着灯笼紧随其后。当他们发现门是开着的时候停下了脚步，但佩恩的急切心情很快又恢复了。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "\"In, in, in!\" he bellowed, cursing their delay.",
+      "zh": "“快点，快点，快点！”他大声喊道，咒骂着他们的延误。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "Four or five entered immediately, leaving two outside to guard the formidable beggar. Inside, there was a brief pause before a cry of surprise echoed through the house. A voice from upstairs announced, \"Bill’s dead.\"",
+      "zh": "四五个人立刻走了进来，留下两个在外守着那个气势汹汹的乞丐。屋内短暂一静后，一声惊呼在整个房子里回荡起来。楼上有人喊道：“比尔死了。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 1,
+      "en": "Pew cursed them again for their tardiness and ordered some to search Bill's body while others ascended to retrieve the chest.",
+      "zh": "佩恩再次咒骂他们的迟到，并命令一些人搜查比尔的身体，而另一些人则上楼去取回那个箱子。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "Their footsteps thundered up our old stairs, shaking the entire house. Moments later, new sounds of astonishment arose as a man leaned out of the captain's room window into the moonlight, addressing Pew below.",
+      "zh": "他们的脚步声在旧楼梯上回响，震得整座房子都在颤动。片刻之后，楼下传来了惊讶的声音，只见一名男子从船长房间的窗户探出身子，沐浴在月光中，对着Pew喊道。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"Pew,\" he cried, \"they've been here before. Someone has turned the chest out.\"",
+      "zh": "“ pew ，”他喊道，“他们来过这里。有人把箱子翻过了。”"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 2,
+      "en": "\"Is it there?\" roared Pew.",
+      "zh": "“它在那儿吗？”佩德大声喊道。"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "\"The money’s there,\" replied the man.",
+      "zh": "“钱就在那里，”那人回答道。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "Pew cursed the money, insisting, \"Flint’s fist!\"",
+      "zh": "皮特咒骂着那笔钱，脱口而出：“弗林特的拳头！”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "\"We don't see it here nohow,\" countered another voice.",
+      "zh": "“我们这里根本看不到这种情况。”另一个声音反驳道。"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "\"Here, you below there, is it on Bill?\" Pew shouted again.",
+      "zh": "“喂，你在下面，是比尔吗？”皮吾再次喊道。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "Pew cried out, “These inn guests—especially that boy! I wish I had blinded his eyes!” The window man added, “They left their lantern here.”",
+      "zh": "佩恩脱口而出：“这些旅店里的客人——尤其是那个男孩！真希望我瞎了他的眼睛！”窗外那人补充道：“他们把灯笼留下了。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 3,
+      "en": "“Scatter and find them!” Pew ordered, striking his stick on the ground. A commotion ensued in the old inn as heavy footsteps echoed through the rooms.",
+      "zh": "“快去找他们！”皮特下令，用力敲了敲地面的拐杖。老客栈里顿时喧闹起来，沉重的脚步声回荡在各个房间中。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 2,
+      "en": "Furniture was overturned, doors kicked open, until even the rocks reverberated with the noise. The men emerged one by one onto the road, declaring they could not be found.",
+      "zh": "家具被翻倒在地，门被踢开，连岩石都震颤着发出声响。那些人一个接一个地出现在路上，宣称自己无法被找到。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "A whistle, previously heard when Pew tried to enter the captain's room, now sounded twice in the night. Initially thought to be Pew’s signal for an assault, it was now recognized as a warning from the hillside to the hamlet. The buccaneers realized their danger and began to move.",
+      "zh": "一阵哨声在夜空中响起，这哨声之前曾让皮吾试图进入船长房间时听到。起初大家以为这是皮吾发出的进攻信号，但现在他们意识到这是来自山上的警告，传给小村庄的信息。海盗们意识到了危险，开始行动起来。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 3,
+      "en": "“Dirk is back,” one man said. “Twice! We must leave.”",
+      "zh": "“迪克回来了，”一个人说道，“而且是两次！我们得赶紧离开。”"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "Pew retorted, “Scatter and look for them, you cowards!” He lamented, “If I had eyes!”",
+      "zh": "佩威反驳道：“你们这些胆小鬼，快去找他们！”他感叹道：“要是我有双眼睛该多好！”"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 2,
+      "en": "Two men started searching among the debris but half-heartedly, always wary of danger. The rest stood irresolute on the road.",
+      "zh": "两名男子在废墟中搜寻，但显得不太用心，始终警惕着危险。其他人则站在路边犹豫不决。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "“You have your hands on thousands,” Pew shouted, “and you’re standing here like fools! You’d be as rich as kings if you found it. Face up to this—there’s no one who dared stand against Bill, and I did it—a blind man!",
+      "zh": "“你手里有成千上万的财富，”皮特喊道，“却站在这里像傻子一样！如果你找到了那些钱，你会比国王还富有。面对现实吧——没有人敢与比尔对抗，而我做到了——一个瞎子也能做到！”"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 2,
+      "en": "Why should I lose my chance for you? I’ll be a poor beggar when I could have a coach full of gold!”",
+      "zh": "为什么要因为我而放弃这个机会？我可以是个满载黄金的富翁，而不是一个可怜的乞丐！"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "One man grumbled, “We’ve got the doubloons.” Another replied, “They might have hidden it. Take the Georges, Pew, and stop whining.”",
+      "zh": "一个男人抱怨道：“我们找到了双倍的金币。”另一个回应说，“他们也许藏起来了。你们乔治斯和佩恩，别再唧唧歪歪了。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 1,
+      "en": "Pew's anger flared as he lashed out blindly, his cane striking several of those who opposed him.",
+      "zh": "佩德的怒火骤然燃起，他挥舞着拐杖，毫无目标地乱打一通，几名反对他的人都被他击中了。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 1,
+      "en": "In response, they cursed and threatened him, but failed to seize the cane from his grasp.",
+      "zh": "他们咒骂并威胁他，但没能从他手中夺走手杖。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 3,
+      "en": "This quarrel saved us; just as it raged, horse hooves galloped up from the hillside. A pistol shot echoed from nearby, signaling the pirates' retreat. They scattered in all directions—some towards the sea, others across the hills.",
+      "zh": "这场争吵反而救了我们；就在这时，远处传来一阵马蹄声。紧接着是一声枪响，海盗们开始撤退。他们四散奔逃，有的向海边跑去，有的则穿过山丘。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "Pew remained behind, frantically calling out to his comrades: \"Johnny, Black Dog, Dirk,\" and other names, insisting they wouldn't abandon him.",
+      "zh": "皮特留在原地，焦急地喊着：“约翰尼、黑狗、迪克”，以及其他同伴的名字，坚持认为他们不会抛下他。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 2,
+      "en": "Suddenly, horsemen appeared on the hilltop, galloping down at full speed. Pew realized his mistake and screamed as he fled towards a ditch, rolling into it.",
+      "zh": "突然，一群骑兵出现在山顶，飞速冲了下来。皮特意识到自己判断错了，不禁惊叫一声，转身向一个水沟狂奔而去，滚了进去。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "He quickly regained his feet but was now utterly disoriented. As the nearest rider approached, Pew lunged under the horse's hooves with a cry that pierced the night.",
+      "zh": "他迅速站起身来，却感到头昏眼花。就在最近一名骑士逼近时，皮特突然扑到马蹄下，喊声穿透了夜空。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "The rider tried to help but could not save him. With a final cry, Pew fell, landing on his side and then face down, motionless.",
+      "zh": "骑手试图施救却无能为力。佩恩发出最后的嘶喊，然后倒了下去，侧身着地，随后脸朝下，一动不动。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 3,
+      "en": "I sprang to my feet and called out to the riders. They had stopped, horrified by the accident, and I soon realized their identities: one was a lad who had recently left our hamlet for Dr. Livesey's, while the rest were revenue officers he had encountered on his way. Supervisor Dance, hearing news of the lugger in Kitt's Hole, rode out that night towards us.",
+      "zh": "我一跃而起，朝骑马的人喊去。他们被这起事故惊呆了，停了下来，很快我就认出了他们的身份：其中一个是个不久前刚从我们村前往莱维斯医生那里的少年，其余的则是他在路上遇到的税务官员。舞督闻讯赶到了基茨洞，当晚便骑马向我们这边赶来。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "Pew lay dead, stone cold. My mother, after being carried to the hamlet, recovered quickly with a little cold water and salts. Though she was still upset about the lost money, her condition improved.",
+      "zh": "佩威已经死了，冰冷如石。我母亲被抬回村中后，用了一些冷水和盐水调和，很快便恢复了过来。虽然她对丢失的钱财仍感到不满，但身体状况有所好转。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "Meanwhile, Supervisor Dance hurried to Kitt's Hole on his horse. His men had to dismount and cautiously descend the dingle, leading their horses while constantly wary of ambushes. By the time they reached the lugger, it had already sailed away but remained close by.",
+      "zh": "与此同时，监工丹斯骑马疾驰前往基特洞。他的手下不得不下马，小心翼翼地沿着狭窄的山谷下行，牵着马匹，时刻警惕着可能的伏击。等他们赶到那艘快帆船旁时，它已经扬帆远去，但仍然在附近徘徊。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 2,
+      "en": "The supervisor called out, receiving a warning to stay out of the moonlight or face danger. A bullet whizzed past his arm as he spoke.",
+      "zh": "主管喊道，警告他别待在月光下，否则会有危险。他的话音未落，一颗子弹擦着他的手臂飞过。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "Dance stood there, like a fish out of water, and could only send a man to B—— to warn the cutter. \"That,\" he said, \"is just about as good as nothing. They've escaped clean.\"",
+      "zh": "丹斯站在那里，显得格外格格不入，只能派人去B地通知那位木匠，“那件事啊，”他说，“也就和白费力气差不多。他们可是干净利落地逃走了。”"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 1,
+      "en": "However, he took some satisfaction in having trodden on Pew's corns.",
+      "zh": "不过，他还是有些得意地踩了佩恩的脚'&&。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "I returned with him to the Admiral Benbow, where I found the house in utter disarray. The clock had been knocked over by the intruders during their frantic search for my mother and me. Though only the captain's money-bag and a little silver from the till were taken, it was clear we were ruined.",
+      "zh": "我跟他回到了贝彭号船长酒店，发现整个房子一片狼藉。入侵者在疯狂搜寻我和母亲时把钟都撞翻了。虽然只少了船长的钱袋和收银台里的一点银币，但我们显然已经一无所有了。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 1,
+      "en": "Supervisor Dance could not explain the scene.",
+      "zh": "主管舞蹈无法解释眼前的情景。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 3,
+      "en": "\"They got the money,\" I said. \"But what else did they want? More money, perhaps?\"",
+      "zh": "我说：“他们拿到了钱，但除此之外还想得到什么呢？也许还想获得更多？”"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "I replied, \"No, sir; not money, I think. In fact, sir, I believe it’s in my breast pocket, and I’d like to secure it.\"",
+      "zh": "我回答说：“不，先生；我想不是钱。事实上，先生，我相信它在我的胸口袋里，我想把它拿回来。”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 2,
+      "en": "\"Of course, boy,\" he said. \"You can give it to me if you want.\"",
+      "zh": "“当然可以，小子，”他说，“你要给我的话，就给我吧。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "\"I thought perhaps Dr. Livesey might need it,\" I began.",
+      "zh": "“我想或许莱维斯医生用得着这个，”我开口说道。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 3,
+      "en": "\"Perfectly right,\" he interrupted cheerfully. \"A gentleman and a magistrate. And now that I think of it, I'll ride over there myself and report to him or the squire.",
+      "zh": "“完全正确，”他愉快地插话说，“既是一位绅士，又是一名官员。现在想想，我自己骑马过去向他或管家汇报吧。”"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 2,
+      "en": "Master Pew is dead; not that I regret it, but people will make accusations against an officer of His Majesty's revenue if they can. So, Hawkins, would you like me to take you along?\"",
+      "zh": "佩威先生去世了；虽然我不这么认为，但人们总是会在有机会的时候指责海关官员。所以，霍金斯，你愿意让我带你一起去吗？"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 2,
+      "en": "I thanked him heartily and we walked back to where the horses were. By the time I told my mother about our plan, everyone was already mounted.",
+      "zh": "我衷心地向他道谢，然后我们便返回马厩。等我把我们的计划告诉母亲时，大家都已经骑上了马。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 1,
+      "en": "\"Dogger,\" Mr. Dance said, \"you have a good horse; take this lad behind you.\"",
+      "zh": "“狗狗，”丹斯先生说道，“你有一匹好马；带着这个小伙子跟在你后面吧。”"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 1,
+      "en": "As soon as I was seated holding onto Dogger's belt, the supervisor gave the word and we set off at a lively trot towards Dr. Livesey’s house.",
+      "zh": "我刚一坐定，紧握着多格的腰带，监督人一声令下，我们便快步奔向莱维斯医生的家。"
     }
   ]
 }

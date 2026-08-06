@@ -2,26 +2,26 @@
   "id": "Treasure_Island_u1",
   "bookId": "Treasure_Island",
   "unitIndex": 1,
-  "title": "Chapter 1: The Old Sea-Dog at the Admiral Benbow",
-  "chineseTitle": "第 1 章：本博将军客栈的老水手",
+  "title": "TREASURE ISLAND",
+  "chineseTitle": "1. 珍宝岛",
   "paragraphs": [
     {
-      "en": "Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17— and go back to the time when my father kept the Admiral Benbow inn and the brown old seaman with the sabre cut first took up his lodging under our roof.",
-      "zh": "乡绅特里劳尼、李夫西医生以及这些绅士中的其余人要求我写下关于金银岛的全部细节，从头到尾，除了岛屿的方位外不保留任何东西，而那仅仅是因为那里仍有尚未挖出的宝藏，我在主后 17— 年拿起笔，回到我父亲开本博将军客栈、带佩刀刀疤的棕色老海员第一次在我们屋檐下住宿的时候。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 2,
+      "en": "To S.L.O., an American gentleman with a classic taste for sailor tales, this narrative is dedicated in return for delightful hours spent together. The author, with kind wishes, dedicates it to him.",
+      "zh": "献给S.L.O.这位拥有经典 sailors 味道的美国绅士，在与他共度的美好时光中，这段叙述作为回报而献给他。作者怀着善良的愿望向他表示敬意。"
     },
     {
-      "en": "I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow; a tall, strong, heavy, nut-brown man, his tarry pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white. I remember him looking round the cover and whistling to himself as he did so, and then breaking out in that old sea-song that he sang so often afterwards: 'Fifteen men on the dead man's chest—Yo-ho-ho, and a bottle of rum!'",
-      "zh": "我记得他仿佛就在昨天，当他蹒跚走到客栈门口，他的水手宝箱用手推车跟在他身后；一个高大、强壮、沉重、坚果棕色的男人，他涂着焦油的小辫子落在他脏兮兮蓝外套的肩膀上，他的双手破旧且带着伤疤，留着黑而断裂的指纹，一条佩刀刀疤横过一面脸颊，呈现出肮脏、惨白的颜色。我记得他环顾四周并自言自语吹着口哨，接着爆发出他后来经常唱的那首老海海歌：“十五个人争夺死人箱——哟-呵-呵，抽一口朗姆酒！”",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 1,
+      "en": "For those who enjoy sailor stories set to sea tunes, full of storm and adventure, heat and cold, this tale of schooners, islands, maroons, buccaneers, and buried gold retold in the ancient way may please today's wiser youngsters as much as before.",
+      "zh": "对于喜欢听海员故事并配上海歌的读者来说，充满风暴与冒险、炎热与寒冷的故事，这种以古风重述的关于快帆船、岛屿、流放者、海盗和埋藏宝藏的故事，或许会像过去一样，让今天的智龄青年们感到愉悦。"
     },
     {
-      "en": "He called himself 'Captain' Bill, and spent his days wandering the cliffs with a brass telescope, searching the sea horizon for a one-legged seafaring man. He warned me that if I kept my 'weather-eye open for a seafaring man with one leg' and let him know the moment he appeared, he would pay me a silver fourpenny on the first of every month.",
-      "zh": "他自称“比尔船长”，把日子花在带着黄铜望远镜在悬崖上漫步，在海地平线上寻找一位独脚航海人。他警告我如果我保持“留心注意一位长着一只脚的航海人”并在他出现的时刻告知他，他会在每个月的第一天给我支付一枚四便士银币。",
       "id": "p003",
-      "sentenceCount": 1
+      "sentenceCount": 2,
+      "en": "If not, if studious youth no longer crave such tales, let it be so! The author hopes that even without them, he and all his pirates will share a peaceful grave with their creations.",
+      "zh": "如果不再有这样的情节吸引求知的年轻人，那就随它去吧！作者希望即便没有这些故事，他和他的海盗们也能与他们创造的角色一同安息于宁静的地下。"
     }
   ]
 }

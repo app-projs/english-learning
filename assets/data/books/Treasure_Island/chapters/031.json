@@ -1,0 +1,339 @@
+{
+  "id": "Treasure_Island_u31",
+  "bookId": "Treasure_Island",
+  "unitIndex": 31,
+  "title": "30",
+  "chineseTitle": "第30章",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "I awoke, along with everyone else, as the clear voice from the woods shouted:",
+      "zh": "我与众人一同醒来，只见树林中传来一声清晰的喊叫：“大家醒醒！”"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 2,
+      "en": "\"Block house, ahoy! Here's the doctor!\"",
+      "zh": "“木屋那边！医生来了！”"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "It was indeed Dr. Livesey. Though I was glad to hear him, there was also a hint of shame. I remembered my insubordinate actions and felt embarrassed about where they had led me—among Silver and his dangerous companions.",
+      "zh": "果然是莱维斯医生。虽然听到他的声音我很高兴，但也有一丝羞愧。我回想起了自己不听话的行为，不禁为这些行为将我引向了与西尔弗及其危险同伴为伍而感到尴尬。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "Silver must have risen early; it was barely dawn. He stood on the hilltop, mid-calf deep in mist, just as he did before. \"You, doctor!",
+      "zh": "银医大概很早就起床了；天刚蒙蒙亮。他站在山顶，小腿深陷在雾中，和以前一样。“你，医生！”"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "Top o' the morning to you!\" he exclaimed, beaming with good nature. \"Bright and early, indeed.",
+      "zh": "“早上好！”他满脸善意地喊道，“果然起得早。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "The early bird gets the rations. George, help Dr. Livesey over the ship's side. All your patients are well.\"",
+      "zh": "早起的鸟儿有虫吃。乔治，帮赖斯利医生下船。所有病人都恢复得很好。”"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "Silver continued, his voice and manner unchanged: \"We have a surprise for you too. We have a new boarder—a fit and taut fellow who slept like a supercargo right next to John all night.\"",
+      "zh": "Silver 接着说，语气和态度没有任何变化：“我们也有一个惊喜送给你。我们新来了一位房客——一个健壮结实的家伙，整晚都像超等商人在约翰旁边呼呼大睡。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 1,
+      "en": "Dr. Livesey was already across the stockade near the cook when he asked, \"Not Jim?\"",
+      "zh": "当利文斯通医生问到“不是吉姆吗？”时，他已经穿过围栏，靠近了厨师棚屋。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "Silver replied, \"The very same Jim as ever was.\"",
+      "zh": "银色回答道：“还是那个Jim。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "Dr. Livesey paused, seemingly unable to move for several seconds before responding, \"Well, well. Duty first and pleasure afterwards, as you might have said yourself, Silver. Let's check on your patients.\"",
+      "zh": "莱维斯医生停顿了几秒钟，仿佛无法动弹一般，才回应道：“嗯，嗯。职责在先，享受在后，正如你刚才所说的，锡尔弗。我们去看看你的病人吧。”"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 2,
+      "en": "Doctor Livesey entered the blockhouse and immediately began treating the sick, his demeanor calm despite the dangerous situation. He spoke to one patient, George, as if conducting an ordinary medical visit.",
+      "zh": "医生利文斯通走进了兵营，尽管形势危险，他依然镇定自若地开始诊治病人。他对一名名叫乔治的患者说话时，语气仿佛是在进行一次普通的问诊。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 3,
+      "en": "\"You're doing well,\" he said to a man with a bandaged head. \"Your head must be as hard as iron. How are you feeling, George?",
+      "zh": "他对一个头上缠着绷带的男人说：“你表现不错。”“你的脑袋肯定像块铁。乔治，你现在感觉怎么样？”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "Your liver is upside down; did you take your medicine?\"",
+      "zh": "你的肝倒挂了，服药了吗？"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 2,
+      "en": "Morgan confirmed that the sick man had taken his dose. Doctor Livesey explained his commitment to saving lives, even those of mutineers.",
+      "zh": "摩根确认那个病人已经服用了药。医生利文斯通解释说，他致力于拯救生命，即使是叛乱者的生命也不例外。"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "\"Since I am a prison doctor,\" he said pleasantly, \"I won't lose any man for King George or the gallows.\"",
+      "zh": "“既然我是监狱医生，”他和颜悦色地说，“就不会因为乔治国王或绞刑而失去任何一个病人。”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "The men exchanged glances but remained silent. One reported that Dick was unwell. Doctor Livesey examined Dick's tongue and diagnosed another fever.",
+      "zh": "男人们互相看了看，但都没有说话。有人报告说迪克身体不适。莱维斯医生检查了迪克的舌头，诊断他又发起了高烧。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "\"That comes from being foolish,\" he retorted to Morgan. \"You don’t know honest air from poison, and you'll all suffer before you get rid of this malaria. You should camp in a bog?\"",
+      "zh": "“这都是因为愚蠢，”他对莫根说道，“你分不清清新的空气和有毒的气体，这种疟疾不治好你们都会受苦。你应该住在沼泽里？”"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 1,
+      "en": "He then spoke to me, nodding carelessly.",
+      "zh": "他随口说道，点点头。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 1,
+      "en": "George Merry spit out some bitter medicine at the door but immediately protested when the doctor suggested something, turning red and shouting no before swearing.",
+      "zh": "乔治·梅里在门口吐出了一些苦药，医生刚一建议什么，他就立刻反对起来，脸涨得通红，大声喊道“不！”随后还骂了一句。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 3,
+      "en": "Silver struck the barrel with his hand and roared, \"Silence!\" He looked around like a lion. Addressing the doctor, he said, \"I was thinking of that, knowing you had a fancy for the boy.",
+      "zh": "银色用手敲了敲枪管，吼道：“安静！”他环视了一圈，仿佛一头雄狮。然后他对医生说道：“我正想着这件事，知道你对那孩子颇有好感。”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 3,
+      "en": "We're grateful for your kindness, taking the medicine like grog. I have a plan to suit everyone. Hawkins, give me your word as a gentleman not to slip your cable.\"",
+      "zh": "我们感激您的好意，您就像喝药一样忍受着。我有一个计划能让大家都满意。霍金斯，作为一个绅士，请你保证不要擅自行动。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 1,
+      "en": "I readily agreed.",
+      "zh": "我欣然应允。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 2,
+      "en": "\"Then,\" Silver continued, \"you step outside and I'll bring the boy inside so you can talk through the spars. Good day to you, sir, and our duties to the squire and Captain Smollett.\"",
+      "zh": "“然后，”赛勒里继续说道，“你出去一下，我带那孩子进来，你们好通过隔板交谈。先生，祝您一天愉快，我们对郡长和斯莫利特船长尽忠职守。”"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "The doctor left, and immediately, a wave of disapproval erupted. Silver was accused of making a separate peace for himself, sacrificing his accomplices' interests. He called them fools and dolts, insisting I talk to the doctor.",
+      "zh": "医生离开后，立刻掀起了一阵不满的浪潮。Silver被指责为了个人利益单独与医生达成协议，牺牲了同伙的利益。他称他们为傻瓜和笨蛋，并坚持让我去找医生谈谈。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 1,
+      "en": "He threatened to intoxicate him if necessary.",
+      "zh": "他威胁说必要时会让他喝个醉醺醺。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 3,
+      "en": "\"No, by thunder!\" he cried. \"We must break the treaty when the time comes; until then, I'll deceive that doctor.\"",
+      "zh": "“不，见鬼！”他喊道，“等到时机成熟时我们必须撕毁条约；在此之前，我要欺骗那个医生。”"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 1,
+      "en": "He ordered them to light the fire and left on his crutch, with his hand on my shoulder, leaving them in disarray but silenced more by his verbosity than conviction.",
+      "zh": "他命令他们生火，然后拄着拐杖离开了，手里还搭着我的肩膀。他们顿时乱作一团，但更多的是被他的滔滔不绝压住了声势，反而不敢多言。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 2,
+      "en": "\"Slow down, lad,\" he said. \"If we hurry, they might turn against us instantly.\"",
+      "zh": "“慢点走，小伙子，”他说，“如果我们急躁行事，他们可能会立刻反目。”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "Silver approached us deliberately as we crossed the sand to where Dr. Livesey awaited on the other side of the stockade. Once within speaking distance, Silver stopped.",
+      "zh": "锡尔弗故意朝我们走来，我们在沙地上穿过时，他正站在栅栏的另一边，等待着活斯莱医生。当我们走近到能够说话的距离时，锡尔弗停下了脚步。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 3,
+      "en": "\"Make a note of this too, doctor,\" he said. \"The boy will tell you how I saved his life and was punished for it. You can count on that.\"",
+      "zh": "“医生，请把这个也记下来，”他说，“那个男孩会告诉你是怎么我救了他的命，却因此受到了惩罚。你可以相信他的话。”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "Silver appeared changed, his cheeks sunken, voice trembling. He seemed utterly dead inside.",
+      "zh": "银色看起来变了样，脸颊凹陷，声音颤抖。他似乎内心已经完全枯竭。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "\"Why, John, are you afraid?\" Dr. Livesey asked.",
+      "zh": "“约翰，你这是怕什么呢？”莱维斯科医生问道。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "\"Doctor, I'm no coward—not really!\" Silver snapped his fingers. \"If I were, I wouldn't say it.",
+      "zh": "“医生，我不是胆小鬼——真的不是！”银利索地弹了弹手指。“如果我是，我绝不会这么说。”"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 3,
+      "en": "But the gallows make me shake. You're a good man and true; I've never seen a better! And you won’t forget what I did right or wrong.\"",
+      "zh": "但是绞刑架让我心惊肉跳。你是个可靠的好汉，我从没见过比你好得多的！而且无论我对错，你都不会忘记我的。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 2,
+      "en": "With that, he stepped back, out of earshot, sat on a tree stump, and began to whistle. Occasionally, he turned to watch us and his unruly men preparing breakfast.",
+      "zh": "说完这话，他退后几步，远离我们的耳畔，坐在一棵树墩上吹起了口哨。不时地，他会转过头来，看看我们和那些桀骜不驯的同伴们正在准备早餐。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "\"Jim,\" Dr. Livesey said sadly, \"here you are. As you have sown, so shall you reap. Heaven knows, I cannot blame you, but when Captain Smollett was well, you should not have left.",
+      "zh": "“吉姆，”莱维斯科医生悲伤地说，“你来了。种什么，收什么。天知道我不能怪你，但当斯莫利特船长还好的时候，你不该离开。”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 1,
+      "en": "When he was ill, it was cowardly.\"",
+      "zh": "当他生病时，那就是胆小鬼的表现。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 3,
+      "en": "I began to weep. \"Doctor,\" I said, \"you might spare me. My life's forfeit anyway; and if not for Silver, I would have been dead by now.\"",
+      "zh": "我忍不住哭了起来。“医生，”我说，“你不必这样。我的命本来就该没了；要不是西尔弗，我已经死了。”"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 3,
+      "en": "\"Jim,\" the doctor interrupted, his voice changed. \"Jim, I can't let this happen. Whip over, and we'll run for it.\"",
+      "zh": "“吉姆，”医生插话道，语气变了，“吉姆，这事不能让它发生。快上马，我们赶紧逃。”"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "\"No,\" I replied. \"You know you wouldn't do that yourself—neither you nor the squire nor the captain; and no more will I. Silver trusted me; I passed my word, and back I go.\"",
+      "zh": "“不，”我说，“你自己也不会那样做——你不会，斯科特先生也不会，库珀船长也不会；我也不干。西尔弗信任了我，我立过誓，现在我要回去履行承诺。”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 3,
+      "en": "\"Jim,\" the doctor said, \"you didn't let me finish. If they come to torture you, you might slip a word about the ship's location. She lies in North Inlet on the southern beach, just below high water.",
+      "zh": "“吉姆，”医生说道，“你没让我把话说完。如果他们来折磨你，你可能会不小心透露出船只的位置。她就停泊在北港南部的海滩上，就在高潮线以下不远处。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 1,
+      "en": "At half tide, she must be high and dry.\"",
+      "zh": "“潮水正好平的时候，她就得彻底露馅了。”"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "\"The ship!\" exclaimed the doctor.",
+      "zh": "“船！”医生脱口而出。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 3,
+      "en": "He listened as I quickly recounted my adventures. \"There is fate in this,\" he observed when I finished. \"Every step, you save our lives.",
+      "zh": "他听着我快速地讲述我的冒险经历。“这其中似乎有着命运的安排，”当他讲完时说道，“每一步，你都在挽救我们的生命。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 3,
+      "en": "Do you think we would let you lose yours? That would be a poor return, my boy. You found out the plot; you found Ben Gunn—the best deed you ever did.\"",
+      "zh": "你认为我们会让你白忙一场吗？那可太不值了，我的小伙子。你揭穿了阴谋；找到了本·古恩——这是你做过的最好的事情。"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 3,
+      "en": "\"Silver!\" cried the doctor as the cook approached again. \"Don't rush after that treasure,\" he advised.",
+      "zh": "“银币！”医生见厨师再次靠近，不禁喊道，“别急着去抢那财宝。”他劝说道。"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 2,
+      "en": "\"Why, sir, I do my possible,\" said Silver. \"I can only save my life and Jim's by seeking for it.\"",
+      "zh": "“哦，先生，我尽力而为，”锡尔弗说道，“我只能通过寻找来保住我和吉姆的性命。”"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 1,
+      "en": "\"Well, Silver,\" replied the doctor, \"if that is so, look out for squalls when you find it.\"",
+      "zh": "“银子，”医生回答，“如果真是这样，找到它的时候可得小心暴风雨。”"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 3,
+      "en": "Silver looked hopeful as he spoke: \"Sir, between man and man, that's too much and too little. Why you left the blockhouse or gave me that chart, I don't know. But I did your bidding without hope!",
+      "zh": "赛弗尔说话时充满希望：“先生，两厢情愿的话，这太多了也太少了。您为何离开掩体，或是给了我那份图表，我都不清楚。但无论怎样，我都照您的吩咐行事，毫无怨言！”"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 2,
+      "en": "Yet this is too much. If you won't tell me what you mean, just say so and let me go.\"",
+      "zh": "可是这样未免太过分了。如果你不想告诉我你的意思，那就直说一声，让我离开好了。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 3,
+      "en": "The doctor replied thoughtfully: \"No, Silver. I have no right to reveal more; it's not my secret. But I'll share as much as I dare.",
+      "zh": "医生沉思了一会儿回答说：“不，西尔弗。我没有权利透露更多；这并不是我的秘密。但我可以分享我能承担的部分。”"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 1,
+      "en": "First, if we both survive, I’ll do my best to save you, short of perjury.\"",
+      "zh": "首先，如果我们都能幸存下来，我会尽最大努力救助你，前提是我不会因此作伪证。"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 1,
+      "en": "Silver’s face lit up: \"You couldn't say more, sir, not even if you were my mother,\" he exclaimed.",
+      "zh": "银色的脸庞顿时亮了起来：“您说的一点不错，先生，即便是我的母亲也无法再说得更好了。”他脱口而出。"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 2,
+      "en": "The doctor continued: \"Second, keep the boy close and call for help when needed. I'm going to seek assistance, which will show if I speak truthfully.\"",
+      "zh": "医生接着说：“第二，要把孩子紧紧地保护在身边，并在必要时呼救。我这就去寻求帮助，这将证明我说的话是否属实。”"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 1,
+      "en": "He shook hands with Jim through the stockade, nodded to Silver, then walked briskly into the woods.",
+      "zh": "他隔着栅栏和吉姆握了握手，向西尔弗点了点头，然后大步走进了树林。"
+    }
+  ]
+}

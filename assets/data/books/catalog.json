@@ -20,12 +20,6 @@
       "manifest": "Anne_of_Green_Gables/book.json"
     },
     {
-      "id": "Arabian_Nights",
-      "title": "Arabian Nights",
-      "path": "Arabian_Nights",
-      "manifest": "Arabian_Nights/book.json"
-    },
-    {
       "id": "Beauty_and_the_Beast",
       "title": "Beauty and the Beast",
       "path": "Beauty_and_the_Beast",

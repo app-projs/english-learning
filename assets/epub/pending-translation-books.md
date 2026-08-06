@@ -8,7 +8,6 @@
 
 ## 书籍清单（14本）
 
-| 英文书名 | 中文书名 | 目录 | 状态 |
 |---|---|---|---|
 | A Tale of Two Cities | 双城记 | `A_Tale_of_Two_Cities/` | 未处理 |
 | Alice's Adventures in Wonderland | 爱丽丝梦游仙境 | `Alice_s_Adventures_in_Wonderland/` | 未处理 |
@@ -24,6 +23,7 @@
 | Anne of Green Gables | 绿山墙的安妮 | `Anne_of_Green_Gables/` | 已处理 |
 | The Little Prince | 小王子 | `The_Little_Prince/` | 已处理 |
 | Arabian Nights | 一千零一夜 | `Arabian_Nights/` | 已处理 |
+| 英文书名 | 中文书名 | 目录 | 已处理 |
 
 ## 处理方式
 
