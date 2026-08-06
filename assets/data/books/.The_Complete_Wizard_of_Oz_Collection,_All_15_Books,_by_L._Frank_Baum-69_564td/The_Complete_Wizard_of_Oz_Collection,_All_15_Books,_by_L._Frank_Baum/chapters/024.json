@@ -1,0 +1,27 @@
+{
+  "id": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum_u24",
+  "bookId": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum",
+  "unitIndex": 24,
+  "title": "24. Home Again",
+  "chineseTitle": "24. 回到家中",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 1,
+      "en": "Aunt Em stepped outside to water the cabbages when she saw Dorothy running towards her.",
+      "zh": "艾姆姨妈正要出去给菜园里的甘蓝浇水，忽然看到多萝西飞奔而来。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 3,
+      "en": "\"Darling child!\" Aunt Em exclaimed, hugging Dorothy and kissing her face. \"Where did you come from?\"",
+      "zh": "“亲爱的宝贝！”艾姆姨妈惊喜地喊道，紧紧抱住多萝西，并在她脸上亲了又亲。“你从哪里来的？”"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "Dorothy replied gravely, \"From the Land of Oz. And here is Toto.\" She added with joy, \"Aunt Em, I'm so glad to be home again.\"",
+      "zh": "多萝西庄重地回答：“来自奥兹国。而这是托托。”她高兴地说，“艾姆姨妈，我终于回家了，真是太好了。”"
+    }
+  ]
+}

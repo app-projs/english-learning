@@ -1,0 +1,321 @@
+{
+  "id": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum_u42",
+  "bookId": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum",
+  "unitIndex": 42,
+  "title": "Chapter 4. THE VEGETABLE KINGDOM",
+  "chineseTitle": "第4章. 蔬菜王国",
+  "paragraphs": [
+    {
+      "id": "p001",
+      "sentenceCount": 3,
+      "en": "After the Wizard cleaned his sword and packed it away, the man with the star ordered his people to carry the Sorcerer’s halves to the public gardens. Zeb invited the Wizard to join them in the buggy, which was spacious enough for the little man and two children. Jim left the hall with a kitten perched on his back.",
+      "zh": "巫师擦拭并收起宝剑后，那位带着星星标记的人命令手下将术士的遗体运往公共花园。赛布邀请巫师一同乘坐马车，车内宽敞，足以容纳这位矮小的男子和两个孩子。吉姆则抱着一只小猫离开了大厅。"
+    },
+    {
+      "id": "p002",
+      "sentenceCount": 1,
+      "en": "The procession moved through the streets: bearers carried the Sorcerer first, followed by the Prince, then Jim pulling the buggy, and finally a group of heartless vegetable people walking behind.",
+      "zh": "游行队伍穿过街道：巫师由扛旗手抬着走在最前面，接着是王子，然后是吉姆拉着马车，最后是一群冷酷无情的蔬菜人紧随其后。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 2,
+      "en": "Several fine streets lined the glass city, but after passing them, they entered a broad plain filled with gardens watered by pretty brooks. Paths wound through these gardens, and some brooks had ornamental glass bridges.",
+      "zh": "几条宽阔的街道贯穿了这座玻璃之城，但穿过这些街道后，他们进入了一片广阔的平原，平原上布满了由清澈小溪灌溉的花园。蜿蜒的小径穿行于这些花园之中，有些小溪还架设有装饰性的玻璃桥。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 3,
+      "en": "Dorothy and Zeb exited the buggy to walk beside the Prince, examining the flowers more closely. \"Who built these lovely bridges?\" Dorothy asked.",
+      "zh": "多萝西和泽布下了马车，沿着王子身旁步行，仔细端详着那些美丽的花桥。“这些漂亮的花桥是谁建的？”多萝西问道。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 2,
+      "en": "\"No one built them,\" replied the man with the star. \"They grow.\"",
+      "zh": "“没有人建造它们，”那颗星星旁的人回答说，“它们自然生长。”"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 2,
+      "en": "\"That's queer,\" she said. \"Did the glass houses in your city grow too?\"",
+      "zh": "“这挺奇怪的，”她说，“你们城市里的玻璃房也长高了吗？”"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 2,
+      "en": "\"Of course,\" he answered. \"But it took many years for them to grow as large and fine as they are now, which is why we are so angry when a Rain of Stones comes to break our towers and crack our roofs.\"",
+      "zh": "“当然，”他回答道，“但它们长到这么大这么好，花了很长时间。这也是我们如此愤怒的原因——因为石雨来摧毁我们的高塔，砸破我们的屋顶。”"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 2,
+      "en": "\"Can't you mend them?\" she asked.",
+      "zh": "“你不能把它们修好吗？”她问道。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 1,
+      "en": "\"No; but they will grow together again in time, and we must wait until they do.\"",
+      "zh": "“不，但他们迟早会再次一起生长，所以我们必须耐心等待。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 3,
+      "en": "They first passed through many beautiful gardens of flowers near the city. Dorothy could hardly tell what kind of flowers they were because their colors constantly changed under the six suns' shifting lights. A flower would be pink one moment, white the next, then blue or yellow; the same happened with the broad-leaved plants that grew close to the ground.",
+      "zh": "他们首先穿过了一片片五彩斑斓的花园区，靠近城市的那些花园里百花争艳。多萝西几乎分辨不出是什么花，因为这些花朵在六颗太阳不断变换的光芒下颜色时时刻刻都在变化。一朵花可能刚刚还是粉红色，下一秒就变成了白色，随后可能是蓝色或黄色；同样地，那些贴近地面、叶片宽大的植物也呈现出同样的色彩变幻。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 1,
+      "en": "Jim immediately stretched his head down and began nibbling when they passed a field of grass.",
+      "zh": "当他们路过一片草地时，吉姆立刻低下头开始啃食起来。"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 2,
+      "en": "The horse complained, \"This is no place for a decent horse! I'm munching on rainbow grass.\"",
+      "zh": "马儿抱怨道：“这里可不适合一匹体面的马！我正在咀嚼着彩虹草呢。”"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 1,
+      "en": "\"Actually, it's violet,\" said the Wizard from his buggy.",
+      "zh": "“实际上，它是紫罗兰色的,”骑在马车上的巫师说道。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 2,
+      "en": "\"It changes colors,\" grumbled the horse. \"Right now, it’s blue.\"",
+      "zh": "“它会变颜色的，”马抱怨道，“现在是蓝色的。”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 2,
+      "en": "\"How does it taste?\" asked the Wizard.",
+      "zh": "“味道怎么样？”巫师脱口问道。"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 2,
+      "en": "\"Not bad at all,\" replied Jim. \"If they give me plenty of it, I won't mind its color.\"",
+      "zh": "“还不错呢。”吉姆回答说，“如果他们给我很多，我不会在意它的颜色的。”"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 3,
+      "en": "The party arrived at a freshly plowed field where Dorothy and the Prince said, \"This is our planting-ground.\" Several Mangaboos with glass spades dug a hole, placed the Sorcerer halves inside, and covered him up. Water was brought from a brook to sprinkle the earth.",
+      "zh": "聚会来到了一片刚刚翻耕过的田地，多萝西和王子说：“这是我们种菜的地方。”几株长着玻璃铲的芒芭蕉挖了一个坑，将施法者的一半放入其中，然后覆土掩埋。从溪流中取来的水被用来洒在泥土上。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "\"The sorcerer will sprout soon,\" explained the Prince. \"In time, we'll have many good sorcerers.\"",
+      "zh": "“巫师很快就会出现，”王子解释道，“到时候我们会有很多优秀的巫师。”"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 2,
+      "en": "\"Do all your people grow on bushes?\" asked Jim.",
+      "zh": "“你们的所有人都长在灌木上吗？”吉姆脱口问道。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 2,
+      "en": "\"Certainly,\" replied the Prince. \"Don't all people grow in gardens where you came from?\"",
+      "zh": "“当然,”王子回答道，“你们那边的人不都是在花园里长大的吗？”"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 1,
+      "en": "\"Not that I know of,\" said Jim.",
+      "zh": "“据我所知不是这样的。”吉姆说道。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 3,
+      "en": "\"How strange!\" remarked the Prince. \"Follow me to one of our folk gardens, and I'll show you how we grow.\"",
+      "zh": "王子说道：“真是奇怪！”他领着我们走进一个民间花园，打算展示一番他们的种植技艺。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "The Mangaboos moved easily through the air but usually walked on the ground like humans. Their houses had no stairs since they didn't need them. The little group followed the Prince across glass bridges and paths until they reached a garden enclosed by a high hedge.",
+      "zh": "马瓜布家族轻盈地在空中移动，但通常像人类一样在地上行走。他们不需要楼梯，因此房子也没有楼梯。这群人跟着王子跨过玻璃桥和小径，直到到达一座被高高的灌木篱笆围起来的花园。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 3,
+      "en": "Inside, rows of large, graceful plants with broad leaves grew. At the center of each plant stood a daintily dressed Mangaboo, as their clothing was attached to their bodies. Jim remained in the field, busy eating grass, while the Wizard joined Zeb and Dorothy, followed by the kitten.",
+      "zh": "室内，排列着一排排高大优雅的植物，叶片宽大。每株植物中央站着一位穿着精致的芒果boo，他们的衣物紧贴身体。吉姆仍留在田里专心啃食青草，巫师则加入了泽布和多萝西的行列，身后跟着一只小猫。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "The Mangaboos varied greatly in size, from tiny blossoms to nearly ripe adults. Attached by their feet to the bushes, they remained silent and lifeless until fully grown. Dorothy realized why she hadn't seen any children among them.",
+      "zh": "芒果子的大小差异很大，从小小的花苞到几乎成熟的果实不等。它们的根部附着在灌木上，直到完全成熟之前都保持着沉默和无生命的状态。多萝西意识到，这就是为什么她没有看到其中有任何儿童的原因。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 2,
+      "en": "\"The Mangaboos gain true life only after being picked,\" explained the Prince. \"They grow motionless on the plants, but once plucked, they can move and speak.\"",
+      "zh": "“芒果竹子只有在被采摘后才真正获得生命，”王子解释道，“它们在植株上静止不动，但一旦被摘下，就能活动和说话。”"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 2,
+      "en": "\"How long do you live after picking?\" Dorothy asked.",
+      "zh": "“摘下来之后你能活多久？”多萝西问道。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "\"Dependent on our care,\" replied the Prince. \"We often survive five years if kept cool and safe. I've been here for over six years, though some of my family can live much longer.\"",
+      "zh": "“依赖我们的照料，”王子回答道，“如果我们保持凉爽和安全，常常能存活五年以上。我已经在这里待了六年多，不过我的一些家族成员可以活得更久。”"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "\"Do you eat?\" inquired Zeb.",
+      "zh": "“你吃不吃？”泽布问道。"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "\"No,\" said the Prince. \"We are solid inside and don't need food like potatoes.\"",
+      "zh": "“不,”王子说道，“我们内部坚实，不需要像土豆那样的食物。”"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"Can potatoes sprout?\" asked Zeb.",
+      "zh": "“土豆能发芽吗？”泽布问道。"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 2,
+      "en": "\"Yes, sometimes we do,\" answered the Prince. \"But it's considered a misfortune; we must be replanted immediately.\"",
+      "zh": "“是的，有时我们会这样做，”王子回答，“但这是不幸的事；我们必须立即重新种植。”"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 2,
+      "en": "The group then followed the Prince into another circle of hedges to see the Royal Bush. This bush was large and beautiful, housing all Mangaboo rulers since time immemorial.",
+      "zh": "接着，众人跟随王子走进另一圈篱笆，参观皇家灌木。这株灌木既大且美，自古以来便是所有曼加布鲁国王的居所。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 3,
+      "en": "Standing on its central stalk was a girl so perfect in form and expression that Dorothy had never seen anything more lovely. Her gown flowed like satin, and lace adorned her bodice and sleeves. Her skin was smooth as ivory, exuding grace and dignity.",
+      "zh": "站在中央茎秆上的是一位形态与表情都完美的女孩，多萝西从未见过如此美丽的景象。她的长裙如丝绸般飘逸，蕾丝装饰着她的胸衣和袖口。她的皮肤白皙如象牙，散发着优雅与庄重的气质。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 2,
+      "en": "\"Who is she?\" the Wizard asked curiously.",
+      "zh": "“她是谁？”巫师好奇地问道。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 3,
+      "en": "The Prince looked at Dorothy with unease. \"She is destined to be my successor as a Royal Princess. I must wait until she fully ripens before giving up my sovereignty.\"",
+      "zh": "王子不安地看了看多萝西，说道：“她注定会成为我的继任王后。我必须等到她完全成熟之后，才能放弃我的王权。”"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 1,
+      "en": "Dorothy questioned, \"Isn't she ripe now?\"",
+      "zh": "多萝西问道：“她现在该成熟了吧？”"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 2,
+      "en": "\"Not quite,\" he replied. \"I will rule for several more days before handing over the Mangaboos to her.\"",
+      "zh": "“还不完全是这样，”他回答道，“我还要再统治几天，然后再把马加布oS给她的。”"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 2,
+      "en": "The Wizard nodded. \"That makes sense.\"",
+      "zh": "巫师点了点头。“这倒是合情合理。”"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 2,
+      "en": "The Prince sighed. \"Our vegetable lives are unpleasant; we must give way to another and be planted when at our prime.\"",
+      "zh": "王子叹了口气：“我们的蔬菜生活颇为不悦；我们必须让位于其他作物，在最适时刻被种植。”"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 2,
+      "en": "Dorothy insisted, \"She's perfect now. She should be picked.\"",
+      "zh": "多萝西坚持说道：“她现在已经完美了。我们应该选她。”"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 2,
+      "en": "The Prince hurriedly said, \"Give me a few more days. I need to deal with these strangers first.\"",
+      "zh": "王子急切地说：“再给我几天时间。我先得处理这些陌生人。”"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 2,
+      "en": "\"What will you do with us?\" asked Zeb.",
+      "zh": "“你们打算怎么处置我们？”赛布问道。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 3,
+      "en": "\"I haven't decided yet,\" the Prince replied. \"I might keep this Wizard until a new Sorcerer is ready. But the rest of you must be destroyed; horses and cats shouldn’t grow here.\"",
+      "zh": "王子回答说：“我还没有决定。”“在新的术士准备好之前，我可能会继续留用这个巫师。但你们其他人必须被消灭；马和猫不应该在这生长。”"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 1,
+      "en": "Dorothy said, \"We won't grow underground.\"",
+      "zh": "多萝西说：“我们不会在地下生长。”"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 3,
+      "en": "\"Why destroy my friends?\" the little Wizard asked. \"Why not let them live?\"",
+      "zh": "“为什么要毁掉我的朋友？”小巫师问道，“为什么不让他们活着呢？”"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 1,
+      "en": "\"They don't belong,\" the Prince replied coldly.",
+      "zh": "“他们不属于这里。”王子冷冰冰地说道。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 2,
+      "en": "The children exchanged puzzled glances. Eureka added softly, \"I'll starve to death soon and save him trouble.\"",
+      "zh": "孩子们交换了一下疑惑的眼神。欧瑞卡轻声说道：“我很快就会饿死，免得给他添麻烦。”"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 1,
+      "en": "The Wizard suggested, \"He might grow some cat-tails if he planted me.\"",
+      "zh": "巫师建议说：“如果他种下我，也许会长出一些香蒲来。”"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 2,
+      "en": "Eureka suggested finding milk-weeds for food. The kitten dismissed the idea with disdain.",
+      "zh": "欧瑞卡建议寻找牛奶草作为食物，小猫对此不屑一顾地加以拒绝。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 3,
+      "en": "Dorothy noted that Eureka was large enough to eat any food, not just milk. Zeb expressed his hunger but mentioned spotting strawberries and melons in different gardens. He hoped they could gather some on their return journey.",
+      "zh": "多萝西注意到欧瑞卡大到不仅能喝牛奶，还能吃任何食物。泽布表达了他强烈的饥饿感，并提到在不同的花园里发现了草莓和瓜果。他希望能在返回的路上采摘一些。"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 2,
+      "en": "Prince interrupted, ordering the group to follow him. He planned to destroy them soon, so there would be no need for them to damage the garden.",
+      "zh": "王子打断众人，命令他们跟上。他打算很快就把他们解决掉，以免他们破坏花园。"
+    }
+  ]
+}

@@ -65,6 +65,15 @@ NON_CONTENT_FILENAME_RE = re.compile(
 NUMERIC_CHAPTER_TITLE_RE = re.compile(
     r"^(?:chapter\s*)?(\d+|[ivxlcdm]+)[.:：-]?$", re.IGNORECASE
 )
+EMBEDDED_CHAPTER_TITLE_RE = re.compile(
+    r"^(?:(?:chapter|part)\s+(?:\d+|[ivxlcdm]+|[a-z]+)(?:\s*[:.：\-–—]\s*|\s+)|"
+    r"\d+\s*[:.：\-–—]\s+)[A-Za-z].{1,180}$",
+    re.IGNORECASE,
+)
+EMBEDDED_CHAPTER_MARKER_RE = re.compile(
+    r"^(?:chapter|part)\s+(?:\d+|[ivxlcdm]+|[a-z]+)[.:：-]?$",
+    re.IGNORECASE,
+)
 BOOK_REQUIRED_FIELDS = {
     "id",
     "title",
@@ -83,6 +92,8 @@ BOOK_REQUIRED_FIELDS = {
     "sourceFormat",
     "contentVersion",
 }
+MAX_BOOK_CHAPTERS = 50
+MAX_CHAPTER_PARAGRAPHS = 100
 
 
 @dataclass
@@ -110,7 +121,9 @@ class TextBlockParser(HTMLParser):
             return
         if self._skip_depth:
             return
-        if self._active_tag is None and (tag in BLOCK_TAGS or tag in HEADING_TAGS):
+        if tag in BLOCK_TAGS or tag in HEADING_TAGS:
+            if self._active_tag is not None:
+                self._finish_block()
             self._active_tag = tag
             self._active_kind = "heading" if tag in HEADING_TAGS else "paragraph"
             self._buffer = []
@@ -128,6 +141,9 @@ class TextBlockParser(HTMLParser):
             return
         if self._skip_depth or tag != self._active_tag:
             return
+        self._finish_block()
+
+    def _finish_block(self) -> None:
         text = normalize_text("".join(self._buffer))
         if text:
             self.blocks.append((self._active_kind or "paragraph", text))
@@ -208,6 +224,14 @@ def deterministic_chinese_title(title: str) -> str:
     return f"第{match.group(1)}章" if match else ""
 
 
+def embedded_chapter_title(text: str) -> str:
+    """Return a chapter heading found inside a large EPUB XHTML document."""
+    title = normalize_text(text).strip(" .:：-_–—")
+    if EMBEDDED_CHAPTER_TITLE_RE.fullmatch(title):
+        return title
+    return ""
+
+
 def zip_path(base: str, href: str) -> str:
     href_path = unquote(urlparse(href).path)
     return posixpath.normpath(posixpath.join(posixpath.dirname(base), href_path))
@@ -274,21 +298,134 @@ class EpubReader:
             filename = Path(path).name.lower()
             if filename in {"titlepage.xhtml", "titlepage.html", "cover.xhtml", "cover.html"}:
                 continue
+            source_html = self.archive.read(path).decode("utf-8", errors="replace")
             parser = TextBlockParser()
-            parser.feed(self.archive.read(path).decode("utf-8", errors="replace"))
+            parser.feed(source_html)
             headings = [text for kind, text in parser.blocks if kind == "heading"]
             paragraphs = [text for kind, text in parser.blocks if kind == "paragraph"]
             if not paragraphs:
                 continue
             if not chapters and not nav_titles.get(path) and word_count(" ".join(paragraphs)) < 20:
                 continue
+            embedded = self._split_internal_toc_chapters(path, source_html, parser.blocks)
+            embedded = embedded or self._split_embedded_chapters(path, parser.blocks)
+            if embedded:
+                for chapter in embedded:
+                    if is_non_content_chapter(chapter.title, path):
+                        print(
+                            f"Skipping non-content section: {chapter.title} ({path})",
+                            flush=True,
+                        )
+                        continue
+                    chapters.append(chapter)
+                continue
+
             title = nav_titles.get(path) or (headings[0] if headings else Path(path).stem.replace("_", " "))
+            if (
+                re.fullmatch(r".+\s+split\s+\d+", title, re.IGNORECASE)
+                and len(paragraphs) <= 5
+            ):
+                print(f"Skipping EPUB split title page: {title} ({path})", flush=True)
+                continue
             if is_non_content_chapter(title, path):
                 print(f"Skipping non-content section: {title} ({path})", flush=True)
                 continue
             chapters.append(EpubChapter(title, paragraphs, path))
         if not chapters:
             raise ValueError("No readable chapters found in EPUB spine")
+        return chapters
+
+    def _split_internal_toc_chapters(
+        self,
+        source_path: str,
+        source_html: str,
+        blocks: list[tuple[str, str]],
+    ) -> list[EpubChapter]:
+        """Use same-file TOC anchors when chapter headings are plain paragraphs."""
+        toc_titles: list[str] = []
+        for _target, inner_html in re.findall(
+            r'<a[^>]+href=["\']#([^"\']+)["\'][^>]*>(.*?)</a>',
+            source_html,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            parser = TextBlockParser()
+            parser.feed(f"<p>{inner_html}</p>")
+            title = normalize_text(" ".join(text for _kind, text in parser.blocks))
+            if title and title not in toc_titles:
+                toc_titles.append(title)
+
+        if len(toc_titles) < 2:
+            return []
+
+        boundaries: list[tuple[int, str]] = []
+        search_from = 0
+        for title in toc_titles:
+            normalized_title = title.casefold()
+            match_index = next(
+                (
+                    index
+                    for index in range(search_from, len(blocks))
+                    if blocks[index][1].casefold() == normalized_title
+                ),
+                None,
+            )
+            if match_index is None:
+                continue
+            boundaries.append((match_index, blocks[match_index][1]))
+            search_from = match_index + 1
+
+        if len(boundaries) < 2:
+            return []
+
+        chapters: list[EpubChapter] = []
+        for boundary_index, (start, title) in enumerate(boundaries):
+            end = boundaries[boundary_index + 1][0] if boundary_index + 1 < len(boundaries) else len(blocks)
+            paragraphs = [
+                text
+                for kind, text in blocks[start + 1:end]
+                if kind == "paragraph" and text
+            ]
+            if paragraphs:
+                chapters.append(EpubChapter(title, paragraphs, source_path))
+        return chapters
+
+    def _split_embedded_chapters(
+        self,
+        source_path: str,
+        blocks: list[tuple[str, str]],
+    ) -> list[EpubChapter]:
+        """Split collection XHTML files whose many chapters share one spine item."""
+        boundaries = [
+            (index, embedded_chapter_title(text) or text)
+            for index, (_kind, text) in enumerate(blocks)
+            if embedded_chapter_title(text) or EMBEDDED_CHAPTER_MARKER_RE.fullmatch(normalize_text(text))
+        ]
+        if not boundaries:
+            return []
+
+        first_chapter_occurrences = [
+            index
+            for index, (_boundary_index, title) in enumerate(boundaries)
+            if re.match(r"^1\s*[.:：-]", title)
+        ]
+        if len(first_chapter_occurrences) > 1:
+            boundaries = boundaries[first_chapter_occurrences[-1]:]
+
+        chapters: list[EpubChapter] = []
+        for boundary_index, (start, title) in enumerate(boundaries):
+            end = boundaries[boundary_index + 1][0] if boundary_index + 1 < len(boundaries) else len(blocks)
+            if EMBEDDED_CHAPTER_MARKER_RE.fullmatch(normalize_text(title)) and start + 1 < end:
+                title = f"{title} {blocks[start + 1][1]}"
+                content_start = start + 2
+            else:
+                content_start = start + 1
+            paragraphs = [
+                text
+                for kind, text in blocks[content_start:end]
+                if kind == "paragraph" and text
+            ]
+            if paragraphs:
+                chapters.append(EpubChapter(title, paragraphs, source_path))
         return chapters
 
     def cover_asset(self) -> tuple[bytes, str] | None:
@@ -554,7 +691,9 @@ class OllamaTranslator:
 2. 不要逐词直译，不要为了“看起来准确”创造生硬的新译名；
 3. 结合作者、作品类型和文学语境判断专名含义；
 4. 如果存在多个译名，选择出版物和中国读者最常用的那个；
-5. 只输出最终中文书名，不输出分析、说明、引号或 Markdown；
+5. 如果书名包含“系列名、全集、卷号、冒号或斜杠分隔的多部作品”，先分别判断每个组成部分的通行译名，再组合成完整书名；
+6. 保留原书名中的卷号、冒号和斜杠结构，不要遗漏斜杠后的任何作品；
+7. 只输出最终中文书名，不输出分析、说明、引号或 Markdown；
 
 术语表：
 {glossary_lines}
@@ -562,13 +701,32 @@ class OllamaTranslator:
 英文书名：
 {text}
 """
+        candidate = ""
         for attempt in range(2):
+            retry_prompt = ""
+            if attempt:
+                retry_prompt = f"""
+
+请审核上一版候选译名：
+{candidate}
+
+如果存在逐词直译、生硬译名、遗漏斜杠分隔作品或卷号问题，请重新按通行出版译名改写；保留原有斜杠数量，只输出最终中文书名。
+"""
             candidate = normalize_text(
-                self._generate(prompt + ("\n请重新检查是否使用了通行译名，只输出最终中文书名。" if attempt else ""))
+                self._generate(prompt + retry_prompt)
             )
-            if self._validate_translation(candidate) is None:
+            if (
+                self._validate_translation(candidate) is None
+                and self._validate_book_title_structure(text, candidate) is None
+            ):
                 return candidate
         raise RuntimeError("Book title translation did not return valid Chinese")
+
+    @staticmethod
+    def _validate_book_title_structure(source: str, candidate: str) -> str | None:
+        if source.count("/") != candidate.count("/"):
+            return "composite title lost slash-separated works"
+        return None
 
     def translate_title(self, text: str) -> str:
         deterministic_title = deterministic_chinese_title(text)
@@ -826,7 +984,9 @@ def build_book(
         book_id = slugify_title(metadata["title"])
         source_chapters = reader.chapters()
         if max_chapters is not None:
-            source_chapters = source_chapters[:max_chapters]
+            source_chapters = source_chapters[:min(max_chapters, MAX_BOOK_CHAPTERS)]
+        else:
+            source_chapters = source_chapters[:MAX_BOOK_CHAPTERS]
         if not dry_run and output_root.joinpath(book_id).exists():
             raise FileExistsError(f"Book output already exists: {output_root / book_id}")
 
@@ -841,9 +1001,11 @@ def build_book(
         chapter_indexes: list[dict] = []
         total_words = 0
         translated_since_save = 0
-        for unit_index, chapter in enumerate(source_chapters, start=1):
+        for source_index, chapter in enumerate(source_chapters, start=1):
+            # Only chapters that pass the generated-paragraph limit receive an output index.
+            unit_index = len(chapter_indexes) + 1
             print(
-                f"Chapter {unit_index}/{len(source_chapters)}: {chapter.title}",
+                f"Chapter {source_index}/{len(source_chapters)}: {chapter.title}",
                 flush=True,
             )
             paragraphs: list[dict] = []
@@ -880,6 +1042,13 @@ def build_book(
                         for source_paragraph in abridged_paragraphs
                         for item in chunk_paragraphs(source_paragraph)
                     ]
+                    if len(abridged_chunks) > MAX_CHAPTER_PARAGRAPHS:
+                        print(
+                            f"Skipping chapter with more than {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
+                            f"{chapter.title}",
+                            flush=True,
+                        )
+                        continue
                     for chunk_index, (text, sentence_count) in enumerate(abridged_chunks):
                         print(
                             f"  Processing paragraph {chunk_index + 1}/{len(abridged_chunks)}",
@@ -911,6 +1080,13 @@ def build_book(
                     for source_paragraph in chapter.paragraphs
                     for item in chunk_paragraphs(source_paragraph)
                 ]
+                if len(chunks) > MAX_CHAPTER_PARAGRAPHS:
+                    print(
+                        f"Skipping chapter with more than {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
+                        f"{chapter.title}",
+                        flush=True,
+                    )
+                    continue
                 for chunk_index, (text, sentence_count) in enumerate(chunks):
                     print(
                         f"  Processing paragraph {chunk_index + 1}/{len(chunks)}",
@@ -1124,14 +1300,22 @@ def validate_book_output(book_dir: Path, allow_partial: bool = False) -> None:
     ):
         if not normalize_text(str(book.get(field, ""))):
             raise RuntimeError(f"Book metadata field is empty: {field}")
-    cover_path = Path(str(book["coverUrl"]))
-    if not cover_path.is_absolute():
-        cover_path = Path.cwd() / cover_path
-    if not cover_path.is_file():
-        raise RuntimeError(f"Book cover file is missing: {cover_path}")
+    cover_reference = Path(str(book["coverUrl"]))
+    cover_candidates = [
+        cover_reference if cover_reference.is_absolute() else Path.cwd() / cover_reference,
+        book_dir / cover_reference.name,
+    ]
+    cover_path = next((path for path in cover_candidates if path.is_file()), None)
+    if cover_path is None:
+        raise RuntimeError(
+            f"Book cover file is missing: {cover_candidates[0]} "
+            f"(checked temporary output: {cover_candidates[1]})"
+        )
     chapter_items = chapters.get("chapters")
     if not isinstance(chapter_items, list) or len(chapter_items) != book.get("totalUnits"):
         raise RuntimeError(f"Chapter count mismatch: {book_dir}")
+    if len(chapter_items) > MAX_BOOK_CHAPTERS:
+        raise RuntimeError(f"Book has more than {MAX_BOOK_CHAPTERS} chapters: {book_dir}")
     for expected_index, item in enumerate(chapter_items, start=1):
         if item.get("unitIndex") != expected_index:
             raise RuntimeError(f"Chapter index is not continuous: {book_dir}")
@@ -1142,6 +1326,10 @@ def validate_book_output(book_dir: Path, allow_partial: bool = False) -> None:
         paragraphs = chapter.get("paragraphs")
         if not isinstance(paragraphs, list) or not paragraphs:
             raise RuntimeError(f"Chapter has no paragraphs: {chapter_path}")
+        if len(paragraphs) > MAX_CHAPTER_PARAGRAPHS:
+            raise RuntimeError(
+                f"Chapter has more than {MAX_CHAPTER_PARAGRAPHS} paragraphs: {chapter_path}"
+            )
         for paragraph in paragraphs:
             if not paragraph.get("en"):
                 raise RuntimeError(f"Empty English paragraph: {chapter_path}")

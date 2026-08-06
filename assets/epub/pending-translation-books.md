@@ -18,12 +18,12 @@
 | The Great Gatsby | 了不起的盖茨比 | `The_Great_Gatsby/` | 未处理 |
 | The Great Stone Face | 巨石脸 | `The_Great_Stone_Face/` | 未处理 |
 | The Old Man and the Sea | 老人与海 | `The_Old_Man_and_the_Sea/` | 未处理 |
-| The Wonderful Wizard of Oz | 绿野仙踪 | `The_Wonderful_Wizard_of_Oz/` | 未处理 |
 | Anne of Green Gables | 绿山墙的安妮 | `Anne_of_Green_Gables/` | 已处理 |
 | The Little Prince | 小王子 | `The_Little_Prince/` | 已处理 |
 | Arabian Nights | 一千零一夜 | `Arabian_Nights/` | 已处理 |
 | 英文书名 | 中文书名 | 目录 | 已处理 |
 | Treasure Island | 金银岛 | `Treasure_Island/` | 已处理 |
+| The Wonderful Wizard of Oz | 绿野仙踪 | `The_Wonderful_Wizard_of_Oz/` | 已处理 |
 
 ## 处理方式
 

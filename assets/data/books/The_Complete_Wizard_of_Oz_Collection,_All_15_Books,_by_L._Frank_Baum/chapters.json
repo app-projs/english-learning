@@ -1,0 +1,382 @@
+{
+  "bookId": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "1. The Cyclone",
+      "chineseTitle": "1. 洛杉矶旋风",
+      "path": "chapters/001.json",
+      "wordCount": 546,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 2,
+      "title": "2. The Council with the Munchkins",
+      "chineseTitle": "2. 矮人族议会",
+      "path": "chapters/002.json",
+      "wordCount": 1132,
+      "readTime": 9
+    },
+    {
+      "unitIndex": 3,
+      "title": "3. How Dorothy Saved the Scarecrow",
+      "chineseTitle": "3. 多萝西救下了稻草人",
+      "path": "chapters/003.json",
+      "wordCount": 919,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 4,
+      "title": "4. The Road Through the Forest",
+      "chineseTitle": "4. 森林之路",
+      "path": "chapters/004.json",
+      "wordCount": 510,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 5,
+      "title": "5. The Rescue of the Tin Woodman",
+      "chineseTitle": "5. 铁皮人救援记",
+      "path": "chapters/005.json",
+      "wordCount": 947,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 6,
+      "title": "6. The Cowardly Lion",
+      "chineseTitle": "6. 胆小的狮子",
+      "path": "chapters/006.json",
+      "wordCount": 802,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 7,
+      "title": "7. The Journey to the Great Oz",
+      "chineseTitle": "7. 奇幻奥兹之旅",
+      "path": "chapters/007.json",
+      "wordCount": 828,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 8,
+      "title": "8. The Deadly Poppy Field",
+      "chineseTitle": "8. 致命罂粟田",
+      "path": "chapters/008.json",
+      "wordCount": 942,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 9,
+      "title": "9. The Queen of the Field Mice",
+      "chineseTitle": "9. 鼠族女王",
+      "path": "chapters/009.json",
+      "wordCount": 758,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 10,
+      "title": "10. The Guardian of the Gate",
+      "chineseTitle": "10. 王者守护者",
+      "path": "chapters/010.json",
+      "wordCount": 961,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 11,
+      "title": "11. The Wonderful City of Oz",
+      "chineseTitle": "11. 欧洲奇城",
+      "path": "chapters/011.json",
+      "wordCount": 1763,
+      "readTime": 13
+    },
+    {
+      "unitIndex": 12,
+      "title": "12. The Search for the Wicked Witch",
+      "chineseTitle": "12. 搜捕恶巫",
+      "path": "chapters/012.json",
+      "wordCount": 1673,
+      "readTime": 12
+    },
+    {
+      "unitIndex": 13,
+      "title": "13. The Rescue",
+      "chineseTitle": "13. 营救行动",
+      "path": "chapters/013.json",
+      "wordCount": 571,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 14,
+      "title": "14. The Winged Monkeys",
+      "chineseTitle": "14. 飞行猴",
+      "path": "chapters/014.json",
+      "wordCount": 895,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 15,
+      "title": "15. The Discovery of Oz, the Terrible",
+      "chineseTitle": "15. 恶魔奥兹的发现",
+      "path": "chapters/015.json",
+      "wordCount": 1352,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 16,
+      "title": "16. The Magic Art of the Great Humbug",
+      "chineseTitle": "16. 大骗子的魔幻艺术",
+      "path": "chapters/016.json",
+      "wordCount": 398,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 17,
+      "title": "17. How the Balloon Was Launched",
+      "chineseTitle": "17. 气球是如何被放飞的",
+      "path": "chapters/017.json",
+      "wordCount": 560,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 18,
+      "title": "18. Away to the South",
+      "chineseTitle": "18. 南行记程",
+      "path": "chapters/018.json",
+      "wordCount": 544,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 19,
+      "title": "19. Attacked by the Fighting Trees",
+      "chineseTitle": "19. 战斗之树攻击",
+      "path": "chapters/019.json",
+      "wordCount": 569,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 20,
+      "title": "20. The Dainty China Country",
+      "chineseTitle": "20. 精致瓷国",
+      "path": "chapters/020.json",
+      "wordCount": 734,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 21,
+      "title": "21. The Lion Becomes the King of Beasts",
+      "chineseTitle": "21. 狮子成为百兽之王",
+      "path": "chapters/021.json",
+      "wordCount": 400,
+      "readTime": 3
+    },
+    {
+      "unitIndex": 22,
+      "title": "22. The Country of the Quadlings",
+      "chineseTitle": "22. 卡力丁那国",
+      "path": "chapters/022.json",
+      "wordCount": 424,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 23,
+      "title": "23. Glinda the Good Witch Grants Dorothy's Wish",
+      "chineseTitle": "23. 吉inda善巫实现多莉的愿望",
+      "path": "chapters/023.json",
+      "wordCount": 651,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 24,
+      "title": "24. Home Again",
+      "chineseTitle": "24. 回到家中",
+      "path": "chapters/024.json",
+      "wordCount": 56,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 25,
+      "title": "Tip Manufactures a Pumpkinhead",
+      "chineseTitle": "提示制作南瓜头",
+      "path": "chapters/025.json",
+      "wordCount": 491,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 26,
+      "title": "The Marvelous Powder of Life",
+      "chineseTitle": "生命的奇妙粉末",
+      "path": "chapters/026.json",
+      "wordCount": 1061,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 27,
+      "title": "The Flight of the Fugitives",
+      "chineseTitle": "逃亡者的飞行",
+      "path": "chapters/027.json",
+      "wordCount": 657,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 28,
+      "title": "Tip Makes an Experiment in Magic",
+      "chineseTitle": "提示与魔法实验",
+      "path": "chapters/028.json",
+      "wordCount": 530,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 29,
+      "title": "The Awakening of the Saw-Horse",
+      "chineseTitle": "第一章 马蹄苏醒",
+      "path": "chapters/029.json",
+      "wordCount": 974,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 30,
+      "title": "Jack Pumpkinhead's Ride to the Emerald City",
+      "chineseTitle": "1. 约克南瓜头前往翡翠城之旅",
+      "path": "chapters/030.json",
+      "wordCount": 957,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 31,
+      "title": "His Majesty the Scarecrow",
+      "chineseTitle": "1. 吓人的稻草人国王",
+      "path": "chapters/031.json",
+      "wordCount": 790,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 32,
+      "title": "Gen. Jinjur's Army of Revolt",
+      "chineseTitle": "第一章 金珠将军的反抗军",
+      "path": "chapters/032.json",
+      "wordCount": 896,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 33,
+      "title": "The Scarecrow Plans an Escape",
+      "chineseTitle": "第一章：稻草人计划越狱",
+      "path": "chapters/033.json",
+      "wordCount": 857,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 34,
+      "title": "The Journey to the Tin Woodman",
+      "chineseTitle": "第一章 前往铜人王国的旅程",
+      "path": "chapters/034.json",
+      "wordCount": 759,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 35,
+      "title": "A Nickel-Plated Emperor",
+      "chineseTitle": "镀镍皇帝",
+      "path": "chapters/035.json",
+      "wordCount": 1717,
+      "readTime": 13
+    },
+    {
+      "unitIndex": 36,
+      "title": "Chapter 1. THE EARTHQUAKE",
+      "chineseTitle": "第一章 地震",
+      "path": "chapters/036.json",
+      "wordCount": 986,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 37,
+      "title": "Chapter 2. THE GLASS CITY",
+      "chineseTitle": "第2章. 玻璃之城",
+      "path": "chapters/037.json",
+      "wordCount": 1682,
+      "readTime": 13
+    },
+    {
+      "unitIndex": 38,
+      "title": "Chapter 3. THE ARRIVAL OF THE WIZARD",
+      "chineseTitle": "第3章 魔法师的到来",
+      "path": "chapters/038.json",
+      "wordCount": 1464,
+      "readTime": 11
+    },
+    {
+      "unitIndex": 39,
+      "title": "Chapter 4. THE VEGETABLE KINGDOM",
+      "chineseTitle": "第4章. 蔬菜王国",
+      "path": "chapters/039.json",
+      "wordCount": 1085,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 40,
+      "title": "Chapter 5. DOROTHY PICKS THE PRINCESS",
+      "chineseTitle": "第5章 琥宝石公主的选择",
+      "path": "chapters/040.json",
+      "wordCount": 1077,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 41,
+      "title": "Chapter 6. THE MANGABOOS PROVE DANGEROUS",
+      "chineseTitle": "第6章. 马果果芒果证实危险",
+      "path": "chapters/041.json",
+      "wordCount": 853,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 42,
+      "title": "Chapter 7. INTO THE BLACK PIT AND OUT AGAIN",
+      "chineseTitle": "第7章. 跌入黑坑再爬出",
+      "path": "chapters/042.json",
+      "wordCount": 606,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 43,
+      "title": "Chapter 8. THE VALLEY OF VOICES",
+      "chineseTitle": "第8章. 声音之谷",
+      "path": "chapters/043.json",
+      "wordCount": 885,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 44,
+      "title": "Chapter 9. THEY FIGHT THE INVISIBLE BEARS",
+      "chineseTitle": "第9章 他们对抗无形的熊",
+      "path": "chapters/044.json",
+      "wordCount": 1458,
+      "readTime": 11
+    },
+    {
+      "unitIndex": 45,
+      "title": "Chapter 10. THE BRAIDED MAN OF PYRAMID MOUNTAIN",
+      "chineseTitle": "第10章. 布发男子 Pyramid Mountain",
+      "path": "chapters/045.json",
+      "wordCount": 504,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 46,
+      "title": "Chapter 11. THEY MEET THE WOODEN GARGOYLES",
+      "chineseTitle": "第11章 他们遇见木制石像鬼",
+      "path": "chapters/046.json",
+      "wordCount": 1386,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 47,
+      "title": "Chapter 12. A WONDERFUL ESCAPE",
+      "chineseTitle": "第12章 神奇逃生",
+      "path": "chapters/047.json",
+      "wordCount": 1368,
+      "readTime": 10
+    }
+  ]
+}

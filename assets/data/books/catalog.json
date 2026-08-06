@@ -32,6 +32,12 @@
       "manifest": "Jane_Eyre/book.json"
     },
     {
+      "id": "Oz,_Complete_Collection,_Volume_1_The_Wonderful_Wizard_of_Oz_the_Marvelous_Land_of_Oz_Ozma_of_Oz",
+      "title": "Oz, Complete Collection, Volume 1: The Wonderful Wizard of Oz / the Marvelous Land of Oz / Ozma of Oz",
+      "path": "Oz,_Complete_Collection,_Volume_1_The_Wonderful_Wizard_of_Oz_the_Marvelous_Land_of_Oz_Ozma_of_Oz",
+      "manifest": "Oz,_Complete_Collection,_Volume_1_The_Wonderful_Wizard_of_Oz_the_Marvelous_Land_of_Oz_Ozma_of_Oz/book.json"
+    },
+    {
       "id": "Pride_and_Prejudice",
       "title": "Pride and Prejudice",
       "path": "Pride_and_Prejudice",
@@ -48,6 +54,12 @@
       "title": "The Arabian Nights (New Deluxe Edition)",
       "path": "The_Arabian_Nights_(New_Deluxe_Edition)",
       "manifest": "The_Arabian_Nights_(New_Deluxe_Edition)/book.json"
+    },
+    {
+      "id": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum",
+      "title": "The Complete Wizard of Oz Collection, All 15 Books, by L. Frank Baum",
+      "path": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum",
+      "manifest": "The_Complete_Wizard_of_Oz_Collection,_All_15_Books,_by_L._Frank_Baum/book.json"
     },
     {
       "id": "The_Great_Gatsby",

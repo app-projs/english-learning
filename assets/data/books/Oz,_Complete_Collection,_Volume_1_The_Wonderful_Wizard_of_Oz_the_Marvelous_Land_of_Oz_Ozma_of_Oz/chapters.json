@@ -1,0 +1,174 @@
+{
+  "bookId": "Oz,_Complete_Collection,_Volume_1_The_Wonderful_Wizard_of_Oz_the_Marvelous_Land_of_Oz_Ozma_of_Oz",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "1. The Girl in the Chicken Coop",
+      "chineseTitle": "1. 鸡舍中的女孩",
+      "path": "chapters/001.json",
+      "wordCount": 684,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 2,
+      "title": "2. The Yellow Hen",
+      "chineseTitle": "2. 黄鸡",
+      "path": "chapters/002.json",
+      "wordCount": 768,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 3,
+      "title": "3. Letters in the Sand",
+      "chineseTitle": "3. 沙中的信札",
+      "path": "chapters/003.json",
+      "wordCount": 771,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 4,
+      "title": "4. Tiktok the Machine Man",
+      "chineseTitle": "4. 抖音机器人大师",
+      "path": "chapters/004.json",
+      "wordCount": 1105,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 5,
+      "title": "5. Dorothy Opens the Dinner Pail",
+      "chineseTitle": "5. 琼蒂莉饭盒的秘密",
+      "path": "chapters/005.json",
+      "wordCount": 606,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 6,
+      "title": "6. The Heads of Langwidere",
+      "chineseTitle": "6. 兰格威德的首领",
+      "path": "chapters/006.json",
+      "wordCount": 1746,
+      "readTime": 13
+    },
+    {
+      "unitIndex": 7,
+      "title": "7. Ozma of Oz to the Rescue",
+      "chineseTitle": "7. 欧泽玛拯救奥兹国",
+      "path": "chapters/007.json",
+      "wordCount": 981,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 8,
+      "title": "8. The Hungry Tiger",
+      "chineseTitle": "8. 饥饿的老虎",
+      "path": "chapters/008.json",
+      "wordCount": 889,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 9,
+      "title": "9. The Royal Family of Ev",
+      "chineseTitle": "9. 艾文王室",
+      "path": "chapters/009.json",
+      "wordCount": 757,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 10,
+      "title": "10. The Giant with the Hammer",
+      "chineseTitle": "10. 拥有锤子的巨人",
+      "path": "chapters/010.json",
+      "wordCount": 969,
+      "readTime": 7
+    },
+    {
+      "unitIndex": 11,
+      "title": "11. The Nome King",
+      "chineseTitle": "11. 魔王尼莫",
+      "path": "chapters/011.json",
+      "wordCount": 1304,
+      "readTime": 10
+    },
+    {
+      "unitIndex": 12,
+      "title": "12. The Eleven Guesses",
+      "chineseTitle": "12. 十一猜谜",
+      "path": "chapters/012.json",
+      "wordCount": 460,
+      "readTime": 4
+    },
+    {
+      "unitIndex": 13,
+      "title": "13. The Nome King Laughs",
+      "chineseTitle": "13. Nome王笑了",
+      "path": "chapters/013.json",
+      "wordCount": 599,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 14,
+      "title": "14. Dorothy Tries to be Brave",
+      "chineseTitle": "14. 多萝西尝试勇敢",
+      "path": "chapters/014.json",
+      "wordCount": 981,
+      "readTime": 8
+    },
+    {
+      "unitIndex": 15,
+      "title": "15. Billina Frightens the Nome King",
+      "chineseTitle": "15. 比莉娜吓退 Nome 王",
+      "path": "chapters/015.json",
+      "wordCount": 52,
+      "readTime": 1
+    },
+    {
+      "unitIndex": 16,
+      "title": "16. Purple, Green, and Gold",
+      "chineseTitle": "16. 紫绿金",
+      "path": "chapters/016.json",
+      "wordCount": 781,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 17,
+      "title": "17. The Scarecrow Wins the Fight",
+      "chineseTitle": "17. 铁皮人获胜",
+      "path": "chapters/017.json",
+      "wordCount": 773,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 18,
+      "title": "18. The Fate of the Tin Woodman",
+      "chineseTitle": "18. 铜人命运",
+      "path": "chapters/018.json",
+      "wordCount": 712,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 19,
+      "title": "19. The King of Ev",
+      "chineseTitle": "19. 生存之王",
+      "path": "chapters/019.json",
+      "wordCount": 619,
+      "readTime": 5
+    },
+    {
+      "unitIndex": 20,
+      "title": "20. The Emerald City",
+      "chineseTitle": "20. 翡翠城",
+      "path": "chapters/020.json",
+      "wordCount": 701,
+      "readTime": 6
+    },
+    {
+      "unitIndex": 21,
+      "title": "21. Dorothy's Magic Belt",
+      "chineseTitle": "21. 琥珀魔带",
+      "path": "chapters/021.json",
+      "wordCount": 521,
+      "readTime": 4
+    }
+  ]
+}
