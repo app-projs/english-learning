@@ -10,6 +10,7 @@ import math
 import posixpath
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import time
@@ -19,6 +20,7 @@ import zipfile
 from dataclasses import dataclass
 from datetime import date
 from html.parser import HTMLParser
+from html import escape as html_escape
 from pathlib import Path
 from typing import Protocol
 from urllib.parse import unquote, urlparse
@@ -235,6 +237,72 @@ def embedded_chapter_title(text: str) -> str:
 def zip_path(base: str, href: str) -> str:
     href_path = unquote(urlparse(href).path)
     return posixpath.normpath(posixpath.join(posixpath.dirname(base), href_path))
+
+
+def generate_book_cover(
+    output_path: Path,
+    title: str,
+    chinese_title: str,
+    author: str,
+) -> None:
+    """Generate a readable local fallback cover when an EPUB has no cover asset."""
+    safe_title = html_escape(title)
+    safe_chinese_title = html_escape(chinese_title)
+    safe_author = html_escape(author)
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1350" viewBox="0 0 900 1350">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#172554"/>
+      <stop offset=".58" stop-color="#7c3f5d"/>
+      <stop offset="1" stop-color="#e49a68"/>
+    </linearGradient>
+    <linearGradient id="rock" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a99b89"/>
+      <stop offset=".5" stop-color="#5c5b64"/>
+      <stop offset="1" stop-color="#252b3c"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f6e8d5" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f6e8d5" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#f6e8d5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1350" fill="url(#sky)"/>
+  <circle cx="710" cy="485" r="118" fill="#ffdca8" opacity=".72"/>
+  <path d="M0 710 L130 565 L240 650 L350 430 L455 600 L580 380 L900 690 L900 1350 L0 1350 Z" fill="#303c57" opacity=".72"/>
+  <path d="M0 825 C170 700 260 730 362 620 C470 505 575 495 676 595 C740 658 816 690 900 670 L900 1350 L0 1350 Z" fill="url(#rock)"/>
+  <path d="M170 860 C236 739 309 647 397 589 C493 526 596 520 677 602 C741 667 753 776 708 889 C671 983 590 1041 484 1045 C353 1050 225 986 170 860 Z" fill="#6f6b70" opacity=".74"/>
+  <path d="M273 772 C323 719 380 714 431 754 M525 751 C578 704 635 717 679 772" fill="none" stroke="#282b38" stroke-width="18" stroke-linecap="round"/>
+  <path d="M291 790 C331 812 377 812 418 790 M543 789 C586 811 632 810 669 789" fill="none" stroke="#d3b99e" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+  <path d="M485 758 C474 844 457 899 425 942 C451 960 487 966 524 948" fill="none" stroke="#30323d" stroke-width="17" stroke-linecap="round"/>
+  <path d="M327 1000 C414 1040 533 1045 632 978" fill="none" stroke="#292b37" stroke-width="18" stroke-linecap="round"/>
+  <path d="M0 978 C222 900 446 1018 900 902 L900 1045 C550 1108 270 1002 0 1088 Z" fill="url(#mist)"/>
+  <path d="M0 1115 C250 1060 460 1150 900 1058 L900 1350 L0 1350 Z" fill="#131b2f"/>
+  <circle cx="665" cy="1120" r="6" fill="#f7d9a8"/><circle cx="685" cy="1112" r="4" fill="#f7d9a8"/>
+  <text x="64" y="112" fill="#fff7ed" font-family="Georgia, serif" font-size="29" letter-spacing="5">A LITERARY CLASSIC</text>
+  <text x="64" y="190" fill="#fff7ed" font-family="Georgia, serif" font-size="48" font-weight="bold">{safe_title}</text>
+  <text x="64" y="246" fill="#ffe4c7" font-family="sans-serif" font-size="35">{safe_chinese_title}</text>
+  <text x="64" y="1275" fill="#e8d8c5" font-family="sans-serif" font-size="28">{safe_author}</text>
+</svg>"""
+    svg_path = output_path.with_suffix(".svg")
+    svg_path.write_text(svg, encoding="utf-8")
+    try:
+        subprocess.run(
+            ["magick", str(svg_path), "-strip", "-quality", "90", str(output_path)],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except FileNotFoundError as error:
+        raise RuntimeError(
+            "EPUB does not contain a cover image and ImageMagick is not installed; "
+            "install ImageMagick or provide an EPUB with a cover image."
+        ) from error
+    except subprocess.CalledProcessError as error:
+        detail = normalize_text(error.stderr or error.stdout or "")
+        raise RuntimeError(f"Could not generate fallback book cover: {detail}") from error
+    finally:
+        svg_path.unlink(missing_ok=True)
 
 
 class EpubReader:
@@ -1044,11 +1112,11 @@ def build_book(
                     ]
                     if len(abridged_chunks) > MAX_CHAPTER_PARAGRAPHS:
                         print(
-                            f"Skipping chapter with more than {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
+                            f"Truncating chapter to {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
                             f"{chapter.title}",
                             flush=True,
                         )
-                        continue
+                        abridged_chunks = abridged_chunks[:MAX_CHAPTER_PARAGRAPHS]
                     for chunk_index, (text, sentence_count) in enumerate(abridged_chunks):
                         print(
                             f"  Processing paragraph {chunk_index + 1}/{len(abridged_chunks)}",
@@ -1082,11 +1150,11 @@ def build_book(
                 ]
                 if len(chunks) > MAX_CHAPTER_PARAGRAPHS:
                     print(
-                        f"Skipping chapter with more than {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
+                        f"Truncating chapter to {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
                         f"{chapter.title}",
                         flush=True,
                     )
-                    continue
+                    chunks = chunks[:MAX_CHAPTER_PARAGRAPHS]
                 for chunk_index, (text, sentence_count) in enumerate(chunks):
                     print(
                         f"  Processing paragraph {chunk_index + 1}/{len(chunks)}",
@@ -1222,14 +1290,20 @@ def build_book(
 
             cover = reader.cover_asset()
             if cover is None:
-                raise RuntimeError(
-                    "EPUB does not contain a cover image; cannot create a non-empty coverUrl. "
-                    "Generate an AI cover or provide an EPUB with a cover image."
+                cover_filename = "cover.jpg"
+                write_path = temporary / book_id / cover_filename
+                print("  EPUB has no embedded cover; generating a local cover", flush=True)
+                generate_book_cover(
+                    write_path,
+                    metadata["title"],
+                    book_metadata.get("chineseTitle", ""),
+                    metadata["author"],
                 )
-            cover_bytes, cover_extension = cover
-            cover_filename = f"cover{cover_extension}"
-            write_path = temporary / book_id / cover_filename
-            write_path.write_bytes(cover_bytes)
+            else:
+                cover_bytes, cover_extension = cover
+                cover_filename = f"cover{cover_extension}"
+                write_path = temporary / book_id / cover_filename
+                write_path.write_bytes(cover_bytes)
             cover_url = f"assets/data/books/{book_id}/{cover_filename}"
 
         book_json = {

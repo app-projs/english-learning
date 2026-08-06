@@ -2,20 +2,608 @@
   "id": "The_Great_Stone_Face_u1",
   "bookId": "The_Great_Stone_Face",
   "unitIndex": 1,
-  "title": "Chapter 1: The Mountain and the Ancient Prophecy",
-  "chineseTitle": "第 1 章：高山宏伟形象与古老神圣预言",
+  "title": "THE NOTCH OF THE WHITE MOUNTAINS",
+  "chineseTitle": "白山 notch",
   "paragraphs": [
     {
-      "en": "One afternoon, when the sun was going down, a mother and her little boy sat at the door of their cottage, talking about the Great Stone Face. They had but to lift their eyes, and there it was plainly to be seen, though miles away, with the sunshine gilding all its noble features. The Great Stone Face was a work of Nature in her mood of majestic playfulness, formed on the perpendicular side of a mountain by immense rocks, which had been thrown together in such a position as to resemble the features of a giant human face.",
-      "zh": "一天下午，当太阳落山时，一位母亲和她的小男孩坐在农舍门口，谈论着大石壁。他们只需抬头，便能清晰地看到它，虽然远在数英里之外，阳光为它所有高尚的面貌镀上了金辉。大石壁是大自然在雄伟戏谑心境下的杰作，由巨大的岩石形成于高山的垂直侧面，这些岩石被抛在这样的位置，正好酷似一张巨型人类面庞的面貌。",
       "id": "p001",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "In 1840, Nathaniel Hawthorne wrote an interesting paragraph that foreshadowed \"The Great Stone Face.\" He described a natural phenomenon where a face appeared on a mountain or in a stone, and a boy was born with features resembling this portrait. This idea might have inspired the story, even before Hawthorne saw the Old Man of the Mountain in Franconia Notch.",
+      "zh": "在1840年，纳撒尼尔·霍桑写了一段引人入胜的描述，预示了《巨石面庞》的故事。他描绘了一个自然奇观：一座山或一块石头上出现了人脸，而一个男孩则生来就拥有人脸画像般的特征。这个想法或许在霍桑见到弗朗克尼亚峡口的老汉森岩之前就已经启发了他的创作。"
     },
     {
-      "en": "There was the broad front, with its sunlit brow; the nose, with its long, noble bridge; and the vast lips, which, if they could have spoken, would have uttered a grand voice, echoing through the valley. It was a happy lot for children to grow up in the shadow of that mountain, for all its features were divine and benevolent, inspiring every watcher with thoughts of purity, majesty, and love.",
-      "zh": "那里有宽阔的额头，带着被阳光照耀的眉宇；有鼻子，带着漫长高尚的鼻梁；还有巨大的双唇，如果它们能说话，一定会发出宏伟的声音，在山谷中回荡。对于孩子们来说，在那座山峰的影子下长大是一种幸福的命运，因为它的所有面貌都是神圣而仁慈的，赋予每个观看者纯洁、雄伟与爱的思想。",
       "id": "p002",
-      "sentenceCount": 1
+      "sentenceCount": 3,
+      "en": "In \"The Ambitious Guest,\" Hawthorne used an incident still recounted by travelers through the Notch: the tragic fate of the Willey family in August 1826. The family lived on a mountain slope. During a severe drought, a terrible storm raised the river and loosened the mountain's surface, causing a massive landslide.",
+      "zh": "在《雄心勃勃的客人》中，霍桑描述了一个至今仍被穿越诺思山口的旅行者讲述的真实事件：1826年8月威利家族的悲剧命运。这个家庭住在山坡上。在一个严重的干旱期间，一场可怕的风暴使河水上涨，并松动了山体表面，导致了一场巨大的滑坡事故。"
+    },
+    {
+      "id": "p003",
+      "sentenceCount": 3,
+      "en": "The house was directly in the path of this slide. Had the family stayed inside, they would have survived as a ledge above the house diverted the avalanche into two paths, sweeping past the house on either side. Unfortunately, Mr. and Mrs. Willey, their five children, and two hired men were crushed by the weight of earth, rocks, and trees.",
+      "zh": "这座房子正好位于滑坡的路径上。如果家人待在屋内，他们或许能幸存下来，因为房顶上方的一块凸出部分成功地将雪崩分成了两条路线，从房子两侧掠过。不幸的是，威利先生、太太以及他们的五个孩子和两名雇工被泥土、岩石和树木的重量压得粉身碎骨。"
+    },
+    {
+      "id": "p004",
+      "sentenceCount": 2,
+      "en": "In \"Sketches from Memory,\" Hawthorne hints at his future tale, The Great Carbuncle. This paper reveals how he drew inspiration from real-life experiences.",
+      "zh": "在《记忆草稿》中，霍桑暗示了他将要创作的故事——《巨大红宝石》。这篇文章揭示了他是如何从现实生活经历中汲取灵感的。"
+    },
+    {
+      "id": "p005",
+      "sentenceCount": 3,
+      "en": "One evening, a mother and her child sat by their cottage door, discussing the Great Stone Face. From their vantage point, they could see it clearly, despite its distance, with sunlight illuminating its features. The Great Stone Face was located in a valley among high mountains, home to thousands of people.",
+      "zh": "一个傍晚，一位母亲和她的孩子坐在小屋门前，谈论着那块巨石人脸。尽管距离遥远，阳光仍照亮了它的轮廓，她们看得一清二楚。这块巨石人脸坐落在白山群峰中的山谷之中，那里居住着成千上万的人。"
+    },
+    {
+      "id": "p006",
+      "sentenceCount": 3,
+      "en": "Some lived in log cabins on steep hillsides surrounded by dense forests. Others resided in comfortable farmhouses, cultivating the fertile land on gentle slopes or flat areas. Still others gathered in bustling villages where local streams had been harnessed for cotton factories.",
+      "zh": "有些人在陡峭的山坡上的木屋里生活，四周被茂密的森林环绕。另一些人住在舒适的农舍里，在缓坡或平地上耕种肥沃的土地。还有一些人聚集在繁忙的小镇中，当地的溪流已被利用来驱动棉纺厂。"
+    },
+    {
+      "id": "p007",
+      "sentenceCount": 1,
+      "en": "The inhabitants, diverse in lifestyle and occupation, shared a common familiarity with the Great Stone Face, though some could discern it more vividly than their neighbors.",
+      "zh": "居民们虽然生活方式和职业各不相同，但都对那块巨石脸有着共同的熟悉感，尽管有些人比邻居们看得更加清晰。"
+    },
+    {
+      "id": "p008",
+      "sentenceCount": 3,
+      "en": "In the White Mountains, there stood the Great Stone Face—a majestic work of nature carved into the mountain's side by immense rocks. From afar, it resembled a human face with a broad forehead, a long nose, and vast lips that seemed to speak in thunderous tones. Approaching too closely obscured its features, but from a distance, the face appeared noble and divine.",
+      "zh": "在白山山脉中，矗立着巨石人面——大自然在这座山的侧壁上雕琢出的一尊宏伟之作。从远处望去，它仿佛是一个宽额、长鼻和大嘴的人脸，似乎能发出震耳欲聋的声音。走近了却模糊了它的细节，但从远处看去，这张脸显得庄重而神圣。"
+    },
+    {
+      "id": "p009",
+      "sentenceCount": 3,
+      "en": "Children growing up near this face were fortunate; its grandeur and sweetness inspired them. Ernest, a young boy, sat with his mother at their cottage door, gazing at the Great Stone Face. \"Mother,\" he said, \"I wish it could speak because it looks so kindly.",
+      "zh": "居住在这一巨石面容附近的孩童是幸运的；它那宏伟而温柔的姿态激发了他们的想象。一个名叫厄内斯特的小男孩正与母亲坐在小木屋前，凝视着那块巨大的岩石。“妈妈，”他脱口而出，“我希望它能说话，因为它看起来如此和善。”"
+    },
+    {
+      "id": "p010",
+      "sentenceCount": 1,
+      "en": "If I saw someone like that, I would love him dearly.\"",
+      "zh": "如果我遇到这样的人，我会深深地爱上他。"
+    },
+    {
+      "id": "p011",
+      "sentenceCount": 3,
+      "en": "His mother replied, \"If an old prophecy comes true, we might see a man with such a face.\" Ernest's curiosity was piqued. \"What prophecy do you mean, dear mother?",
+      "zh": "他的母亲回答说：“如果古老的预言成真，我们或许会见到这样一张脸孔的人。”这句话勾起了埃内斯特的好奇心。“亲爱的妈妈，你指的是哪个预言？”"
+    },
+    {
+      "id": "p012",
+      "sentenceCount": 1,
+      "en": "Please tell me all about it!\"",
+      "zh": "请把一切都告诉我！"
+    },
+    {
+      "id": "p013",
+      "sentenceCount": 2,
+      "en": "Ernest's mother told him a story passed down from her own mother about a future child destined to become the greatest person of his time, with a face resembling the Great Stone Face. While some believed in this prophecy, others had grown skeptical after waiting in vain.",
+      "zh": "Ernest 的母亲给他讲了一个从她祖母那里听来的故事，讲述了一位未来的孩子注定会成为他那个时代最伟大的人物，并且他的面容与那块巨石脸极为相似。虽然有些人仍然相信这个预言，但随着时间的流逝，那些满怀期待的人逐渐变得怀疑起来。"
+    },
+    {
+      "id": "p014",
+      "sentenceCount": 3,
+      "en": "\"Mother, dear mother!\" Ernest exclaimed, clapping his hands. \"I hope I will live to see him!\"",
+      "zh": "“妈妈，亲爱的妈妈！”艾尔内斯特兴奋地喊道，“我希望有生之年能看到他！”"
+    },
+    {
+      "id": "p015",
+      "sentenceCount": 1,
+      "en": "His affectionate and thoughtful mother did not discourage his hopes but simply replied, \"Perhaps you may.\"",
+      "zh": "他那充满关爱且体贴的母亲并没有打击他的希望，只是轻声说道：“也许你可以。”"
+    },
+    {
+      "id": "p016",
+      "sentenceCount": 3,
+      "en": "Ernest always remembered the story his mother told him about the Great Stone Face. He spent his childhood in the log-cottage where he was born, helping his dutiful mother with many tasks. This upbringing turned him into a mild, quiet boy who worked hard in the fields but showed more intelligence than most boys from famous schools.",
+      "zh": "厄内斯特永远记得母亲讲述的那块巨石面庞的故事。他童年时住在出生地的小木屋里，帮助勤劳的母亲做许多家务。这种养育方式使他成长为一个温和、安静的孩子，在田间辛勤工作的同时，展现出比大多数名牌学校学生更聪明的一面。"
+    },
+    {
+      "id": "p017",
+      "sentenceCount": 2,
+      "en": "During the day's work, Ernest would gaze at the Great Stone Face for hours, imagining it recognized and smiled kindly upon him. Though others might not see this kindness, Ernest’s tender simplicity allowed him to perceive what was meant for all.",
+      "zh": "在一天的工作中，埃德蒙会凝视着巨石之脸数小时，想象它认出了他，并友好地对他微笑。尽管其他人可能察觉不到这份善意，但埃德蒙那细腻而纯真的心灵让他能够感知到这本应属于所有人的温暖。"
+    },
+    {
+      "id": "p018",
+      "sentenceCount": 2,
+      "en": "A rumor spread through the valley that a man resembling the Great Stone Face had appeared. Many years ago, a young man named Gathergold had moved from the valley to a distant seaport and become a successful shopkeeper.",
+      "zh": "山谷中流传着一个消息，说有一个长相与巨石面容相似的人出现了。多年前，一个名叫Gathergold的年轻人从山谷搬到了一个遥远的海港，并成为了一名成功的商人。"
+    },
+    {
+      "id": "p019",
+      "sentenceCount": 3,
+      "en": "Mr. Gathergold, shrewd and fortunate, amassed immense wealth through trade. His ships sailed the globe, bringing back furs from the Arctic, ivory from Africa, and precious goods from Asia. The ocean itself contributed its whales for oil.",
+      "zh": "格瑞奇戈尔先生精明且幸运，通过贸易积累了巨额财富。他的船只航行于世界各地，从北极带回毛皮，从非洲带来象牙，从亚洲带回珍贵的货物。大海本身也为他贡献了鲸鱼油。"
+    },
+    {
+      "id": "p020",
+      "sentenceCount": 2,
+      "en": "Whatever he touched turned to gold, much like Midas. When his fortune was beyond counting, Mr. Gathergold decided to return to his birthplace in the White Mountains.",
+      "zh": "无论他触碰什么都会变成黄金，就像米达斯王一样。当他的财富多到无法计数时，Gathergold 先生决定返回白山的故乡。"
+    },
+    {
+      "id": "p021",
+      "sentenceCount": 2,
+      "en": "He commissioned a skilled architect to construct a palace befitting his wealth. This grand structure would serve as both a testament to his success and a final resting place for his twilight years.",
+      "zh": "他委托一位技艺高超的建筑师建造一座与其财富相称的宫殿。这座宏伟的建筑既将成为他成功人生的见证，也将是他晚年归宿的最终安息之地。"
+    },
+    {
+      "id": "p022",
+      "sentenceCount": 3,
+      "en": "In the valley, whispers circulated about Mr. Gathergold being the long-awaited prophetic figure, with a face resembling the Great Stone Face. His new mansion, built on his father's old farm site, further fueled these rumors. The marble exterior gleamed so brightly that it seemed to shimmer in the sun, much like the snow castles Mr. Gathergold had once constructed as a child.",
+      "zh": "在山谷中，人们私下里流传着一个消息，说盖瑟戈尔先生就是众人期盼已久的先知，他的面容与那块巨石脸极为相似。他新建的豪宅矗立在他父亲旧农场的位置上，更添了几分神秘色彩。这座用大理石建造的房子表面闪耀着光芒，在阳光下仿佛在熠熠生辉，就像盖瑟戈尔小时候堆砌的雪堡一样。"
+    },
+    {
+      "id": "p023",
+      "sentenceCount": 3,
+      "en": "The house featured an ornate portico with tall pillars supporting a grand door studded with silver knobs and crafted from exotic wood. Each room was adorned with large glass windows, said to be clearer than air itself. Few had seen inside, but it was rumored to be even more opulent, with silver and gold replacing iron and brass in other homes.",
+      "zh": "这座房子设有华丽的门廊，高大的柱子支撑着一扇镶嵌着银色把手、用异国木材制成的大门。每个房间都装有巨大的玻璃窗，据说比空气还要清澈。很少有人见过里面的样子，但传言称这里更加奢华，其他人家中的铁器和黄铜被金银所取代。"
+    },
+    {
+      "id": "p024",
+      "sentenceCount": 2,
+      "en": "Notably, Mr. Gathergold's bedroom sparkled so brightly that no one could sleep there without being disturbed by the light. Yet, his wealth had become such a part of him that he might have struggled to find rest anywhere else.",
+      "zh": "值得注意的是，盖瑟戈尔先生的卧室亮得令人难以忍受，几乎没有人能在那种光线下入睡。然而，他的财富已经成了他的一部分，以至于他在其他地方可能也很难找到安宁。"
+    },
+    {
+      "id": "p025",
+      "sentenceCount": 3,
+      "en": "The mansion was completed, followed by upholsterers bringing magnificent furniture. A troop of servants arrived, heralded by Mr. Gathergold himself, expected to arrive that evening. Ernest, though young, believed in the possibility that Mr. Gathergold could transform into a benefactor, much like the Great Stone Face.",
+      "zh": "这座府邸装修完毕，随后又迎来了豪华家具的搬运工。一群仆人紧随其后，而他们的到来是由那位富翁盖聚金亲自宣布的，预计当晚就会抵达。尽管埃内斯特年纪尚轻，但他相信盖聚金有可能会成为一位恩赐者，就像那块伟大的石脸预言的一样。"
+    },
+    {
+      "id": "p026",
+      "sentenceCount": 1,
+      "en": "He awaited with hope and faith as he gazed up the valley, imagining the face looking back at him kindly.",
+      "zh": "他满怀希望和信心地凝视着山谷，想象着一双友好的眼睛正回望着他。"
+    },
+    {
+      "id": "p027",
+      "sentenceCount": 3,
+      "en": "Suddenly, the sound of wheels approached along the winding road. \"Here he comes!\" exclaimed the crowd gathered to witness his arrival.",
+      "zh": "突然，车轮声沿着蜿蜒的道路传来。“他来了！”围观的人群脱口而出。"
+    },
+    {
+      "id": "p028",
+      "sentenceCount": 3,
+      "en": "A carriage drawn by four horses appeared around the bend. Mr. Gathergold's weathered face was partially visible from the window, with a yellow hue as if transformed by his own touch. He had a low forehead, small sharp eyes lined with wrinkles, and thin lips pressed tightly together.",
+      "zh": "一辆由四匹马拉的马车出现在拐弯处。盖瑟戈尔先生苍老的脸庞从窗户中部分露了出来，脸色略显黄色，仿佛是自己造成的。他的前额较低，眼睛细小且布满皱纹，嘴唇紧紧地抿着。"
+    },
+    {
+      "id": "p029",
+      "sentenceCount": 2,
+      "en": "The people shouted in unison: \"It is indeed the image of the Great Stone Face! The prophecy has come true at last!\"",
+      "zh": "人们异口同声地喊道：“果然是那巨石面庞的画像！预言终于应验了！”"
+    },
+    {
+      "id": "p030",
+      "sentenceCount": 2,
+      "en": "Ernest was puzzled by the villagers' insistence that a beggar woman and her children resembled the Great Stone Face. As the carriage passed, they continued to plead for charity, but Ernest turned away from their sordid faces and gazed up the valley where he saw the glorious features that had inspired him.",
+      "zh": "埃德蒙困惑于村民们坚持认为一个乞丐妇人及其孩子们与“伟大石面”相似的说法。随着马车驶过，村民们继续恳求施舍，但埃德蒙转头避开他们那令人作呕的面孔，抬头望向山谷，那里是他所仰慕的壮丽面容。"
+    },
+    {
+      "id": "p031",
+      "sentenceCount": 2,
+      "en": "\"Trust in it, Ernest,\" the voice seemed to say. \"He will come.\"",
+      "zh": "“相信它吧，艾尔内斯托，”那声音似乎在说，“他会来的。”"
+    },
+    {
+      "id": "p032",
+      "sentenceCount": 3,
+      "en": "Years passed, and Ernest grew into a young man. He was noticed little by his fellow villagers, who found nothing remarkable about his life except his habit of gazing at the Great Stone Face after work. They saw this as foolish but forgivable since he was industrious and kind.",
+      "zh": "岁月流逝，埃德蒙成长为一个年轻人。村民们对他关注不多，除了他下班后常常凝视那块巨石面庞的习惯外，并未发现他有何特别之处。他们认为这有些愚蠢，但也情有可原，因为埃德蒙勤劳而善良。"
+    },
+    {
+      "id": "p033",
+      "sentenceCount": 3,
+      "en": "Ernest did not realize that the Great Stone Face had become more than just a physical image to him. It taught him to see the world with broader, deeper sympathies. He knew nothing of the wisdom and better life it would bring him, nor did he understand that his thoughts and feelings were of a higher tone than those shared by others.",
+      "zh": "Ernest 并未意识到，那块巨石脸已经超越了单纯的物理形象，它教会他以更加宽广、深刻的情感去看待世界。他完全不知道这块巨石脸将给他带来怎样的智慧和更美好的人生，也不理解自己的思想与情感比他人更高尚。"
+    },
+    {
+      "id": "p034",
+      "sentenceCount": 1,
+      "en": "In the fields and at home, Ernest saw the marvellous features beaming down the valley, still wondering why their human counterpart had not yet appeared.",
+      "zh": "在田野里，在家中，艾尔默斯目睹着这些令人赞叹的景色从山谷中倾泻而下，心中依然疑惑为什么人类的身影还未出现。"
+    },
+    {
+      "id": "p035",
+      "sentenceCount": 3,
+      "en": "By this time, Mr. Gathergold had died, leaving behind only a living skeleton covered in wrinkled, yellow skin. His wealth, which defined him, vanished before his death. People no longer honored him during his lifetime and quickly forgot him after he passed away.",
+      "zh": "到这时，盖瑟戈尔先生已经去世，留下的只是一具裹着皱巴巴黄色皮肤的枯瘦躯壳。他生前以财富著称，但财富在他去世前便已烟消云散。人们生前并未对他顶礼膜拜，在他去世后更是迅速将其遗忘。"
+    },
+    {
+      "id": "p036",
+      "sentenceCount": 2,
+      "en": "Although occasionally mentioned in connection with the magnificent palace he built—now turned into a hotel for visitors—the memory of Mr. Gathergold was overshadowed by the Great Stone Face. The man of prophecy remained to be seen, standing in contrast to the discredited merchant.",
+      "zh": "尽管盖瑟戈尔先生在他那宏伟宫殿的偶尔提及中——如今已改建为游客酒店——仍然为人所记起，但他的形象却被“伟大石面”所掩盖。那位预言家依然没有露面，与这位被证明是错误的商人的形象形成了鲜明对比。"
+    },
+    {
+      "id": "p037",
+      "sentenceCount": 3,
+      "en": "A native-born son of the valley enlisted as a soldier and became an illustrious commander after much fighting. Known as Old Blood-and-Thunder, he was weary of military life and sought to return home for rest. The inhabitants planned a grand welcome with cannon fire and a public dinner, hoping to see the likeness of the Great Stone Face, which had finally appeared.",
+      "zh": "山谷里出生的他参军后历经多次战斗，最终成为了一位显赫的指挥官。人们称他为“老血与 thunder”，他对军事生活感到厌倦，渴望回家休憩。村民们计划举行盛大的欢迎仪式，鸣放礼炮并设宴款待，希望能一睹那块终于显现出来的伟大石面的风采。"
+    },
+    {
+      "id": "p038",
+      "sentenceCount": 3,
+      "en": "An aid-de-camp of Old Blood-and-Thunder traveling through the valley noted the resemblance. His schoolmates and early acquaintances also confirmed that he resembled the majestic image from childhood, though they never thought of it at the time. The excitement spread throughout the valley as people began to gaze at the Great Stone Face, eager to know how General Blood-and-Thunder looked.",
+      "zh": "白山隘的一名随从军官在穿越山谷时注意到了这种相似之处。他的同学和早期的朋友也确认他与儿时那宏伟的形象颇为相像，尽管当时他们从未想过这一点。随着人们开始注视着巨石人面像，整个山谷都弥漫起一股激动的气氛，大家纷纷想看看那位血与铁将军的真实面貌。"
+    },
+    {
+      "id": "p039",
+      "sentenceCount": 3,
+      "en": "On the day of the great festival, Ernest and others from the valley gathered at the sylvan banquet. As he approached, Reverend Dr. Battleblast’s voice echoed, blessing the food and honoring General Blood-and-Thunder, the guest of peace. The tables were set in a cleared woodland area, surrounded by trees except for an eastern vista that offered a distant view of the Great Stone Face.",
+      "zh": "在盛大节日的这一天，埃内斯特和其他山谷居民聚集在林间宴会上。就在这时，巴特布莱斯特牧师博士的声音回荡开来，为食物祝福，并向和平之客——血与Thunder将军致敬。餐桌布置在一个开阔的木地区域中，四周被树木环绕，唯有东方的一片视野可以远眺那座巨大的石面。"
+    },
+    {
+      "id": "p040",
+      "sentenceCount": 3,
+      "en": "Ernest tried to catch a glimpse of the general but was pushed back by the crowd eager to hear toasts and speeches. A volunteer guard kept order with bayonets, ensuring everyone remained attentive. Ernest, unobtrusive as he was, found himself at the edge of the crowd, unable to see Blood-and-Thunder’s face.",
+      "zh": "厄内斯特试图一睹将军的风采，却被一群急于听祝酒词和演讲的人挤了回来。一名志愿维持秩序的士兵手持刺刀，确保每个人都保持专注。尽管厄内斯特尽量不引人注意，但他还是被挤到了人群边缘，无法看清血与雷霆的脸庞。"
+    },
+    {
+      "id": "p041",
+      "sentenceCount": 1,
+      "en": "Turning towards the Great Stone Face, which stood like a faithful friend through the forest, Ernest could hear others comparing the general's features with those on the distant mountainside.",
+      "zh": "转头望向森林中矗立着的巨石人面像，就像一位忠实的朋友守望着这里一样，艾尔内斯特可以听到其他人将将军的特征与远处山侧的景象相比较。"
+    },
+    {
+      "id": "p042",
+      "sentenceCount": 2,
+      "en": "\"Exactly the same!\" one man exclaimed joyfully.",
+      "zh": "“完全一样！”一个人高兴地喊道。"
+    },
+    {
+      "id": "p043",
+      "sentenceCount": 1,
+      "en": "\"Remarkably alike,\" another agreed.",
+      "zh": "“出奇地相似。”另一个人附和道。"
+    },
+    {
+      "id": "p044",
+      "sentenceCount": 2,
+      "en": "\"A monstrous looking-glass of Old Blood-and-Thunder himself!\" cried a third.",
+      "zh": "“这个老血与Thunder镜子里的怪异影像！”第三个人大声喊道。"
+    },
+    {
+      "id": "p045",
+      "sentenceCount": 3,
+      "en": "\"And why not?\" said a fourth. \"He’s undoubtedly the greatest man of this or any other age.\"",
+      "zh": "“那为什么不可以呢？”第四个人说道，“他无疑是这个时代，或许任何时代最伟大的人物。”"
+    },
+    {
+      "id": "p046",
+      "sentenceCount": 2,
+      "en": "The three speakers shouted, electrifying the crowd and eliciting a roar that echoed through the mountains. This enthusiasm piqued our friend's interest even more, confirming in his mind that the mountain visage had finally found its human counterpart.",
+      "zh": "三位发言者的声音激昂有力，瞬间点燃了现场的气氛，引来一片震耳欲聋的欢呼声，回荡在山谷之间。这种热情更加激发了我们朋友的兴趣，让他确信山峦的面貌终于找到了合适的人类伙伴。"
+    },
+    {
+      "id": "p047",
+      "sentenceCount": 2,
+      "en": "Ernest had envisioned this person as a man of peace, spreading wisdom and doing good. However, he believed that providence could bless humanity through various means, including a warrior with a bloody sword, if such was inscrutable wisdom's will.",
+      "zh": "Ernest曾想象这个人是一位和平使者，传播智慧并行善。然而，他认为天意可以通过各种方式祝福人类，包括一位手持血剑的战士，如果这是不可捉摸的智慧所愿的话。"
+    },
+    {
+      "id": "p048",
+      "sentenceCount": 3,
+      "en": "The general stepped forward to thank the audience after his health was toasted. Ernest spotted him over the crowd, recognizing the two epaulets and embroidered collar beneath green boughs and a laurel banner. Through the forest, he also saw the Great Stone Face.",
+      "zh": "将军在祝酒完毕后向前一步，向观众致谢。艾尔内斯托从人群中认出了他，只见绿色枝条和橄榄枝旗帜下佩戴着两枚肩章和绣花领子。穿过森林，他还看到了那块巨大的石面。"
+    },
+    {
+      "id": "p049",
+      "sentenceCount": 1,
+      "en": "Despite the resemblance noted by others, Ernest could not see it in Old Blood-and-Thunder's weathered face, which was full of energy but lacked gentle wisdom and deep sympathies.",
+      "zh": "尽管别人注意到了相似之处，但厄内斯特在老血与铁的沧桑脸上并未看出这一点。那张脸充满活力，却缺乏温柔的智慧和深刻的理解力。"
+    },
+    {
+      "id": "p050",
+      "sentenceCount": 1,
+      "en": "Sighing, Ernest made his way out of the crowd, thinking that the world must wait longer for the man of prophecy.",
+      "zh": "叹了一口气，艾尔内斯特从人群中走了出来，心想那个预言家般的人物还需要再等待一段时间。"
+    },
+    {
+      "id": "p051",
+      "sentenceCount": 3,
+      "en": "The mists gathered around the distant mountainside, revealing the Great Stone Face with its awe-inspiring yet gentle features. To Ernest, it seemed to smile warmly, though without movement. He believed this was due to the western sunlight filtering through the thin clouds.",
+      "zh": "薄雾缭绕在远处的山腰间，渐渐显露出那块令人敬畏又不失温柔的大石面庞。对艾瑞斯而言，它仿佛带着温暖的笑容向他招手，尽管没有丝毫动作。艾瑞斯相信这是因为西边的阳光透过稀薄的云层洒落下来。"
+    },
+    {
+      "id": "p052",
+      "sentenceCount": 1,
+      "en": "Ernest's heart whispered, \"Fear not, Ernest; he will come.\"",
+      "zh": "埃德蒙的心里低语道：“别怕，埃德蒙；他会来的。”"
+    },
+    {
+      "id": "p053",
+      "sentenceCount": 3,
+      "en": "Years passed swiftly, and Ernest remained in his native valley, now a middle-aged man. He continued to work for his livelihood but had become well-known among the people. Despite his simple nature, he had deep thoughts and devoted many hours to unworldly hopes for mankind's benefit.",
+      "zh": "岁月匆匆流逝，埃德蒙特依旧留在故乡山谷中，如今已是一位中年人。他依然为生计劳作，但已在乡里小有名气。尽管性格朴实，但他思想深邃，常常花费大量时间投身于那些对人类有益的不切实际的理想之中。"
+    },
+    {
+      "id": "p054",
+      "sentenceCount": 3,
+      "en": "His life was marked by calm benevolence, evident in the good deeds he performed daily. His influence spread quietly, making the world a better place without him seeking recognition. He often spoke of truths that profoundly affected his listeners' lives.",
+      "zh": "他的生活充满了平静而善意的光辉，体现在他每日所行的善举之中。他的影响悄无声息地蔓延开来，让世界变得更好，却从不寻求认可。他常常谈及一些深刻的人生真谛，对听者的生活产生了深远的影响。"
+    },
+    {
+      "id": "p055",
+      "sentenceCount": 2,
+      "en": "Ernest never realized how extraordinary he had become. His words flowed naturally from his pure and simple thoughts, which were reflected in both his actions and his speech.",
+      "zh": "埃德蒙从未意识到自己变得多么不凡。他的言语自然地源自他那纯洁而简单的思想，这些思想在他的行动和言辞中得到了体现。"
+    },
+    {
+      "id": "p056",
+      "sentenceCount": 3,
+      "en": "The townsfolk eventually acknowledged their mistake in comparing General Blood-and-Thunder's stern face to the gentle visage on the mountain. However, reports and newspaper articles continued to claim that an eminent statesman from the valley bore a striking resemblance to the Great Stone Face. This statesman had left his hometown early, pursuing law and politics instead of wealth or military glory.",
+      "zh": "townsfolk 最终承认，将将军血与火的面容比作白山上的柔和面貌是错误的。然而，有关报道和新闻文章依然声称，谷中的某位杰出政客与伟大的石面人极为相似。这位政客早年便离开了家乡，投身法律和政治事业，而非追求财富或军事荣耀。"
+    },
+    {
+      "id": "p057",
+      "sentenceCount": 3,
+      "en": "His eloquence was unparalleled; he could make his audience believe anything he said, turning right into wrong with just a breath. His voice was both thunderous and melodious, a powerful tool that brought him great success. After gaining worldwide recognition, his countrymen chose him as their president.",
+      "zh": "他的口才无与伦比，能够轻易说服听众相信他说的任何事情，只需一口气就能将对错颠倒。他的声音既雄浑有力又悦耳动听，成为他走向巨大成功的重要工具。在获得全球认可后，同胞们推选他担任了总统。"
+    },
+    {
+      "id": "p058",
+      "sentenceCount": 2,
+      "en": "His admirers had noticed the resemblance to the Great Stone Face early on, dubbing him \"Old Stony Phiz.\" The phrase boosted his political prospects, much like how papal names can influence a candidate's chances.",
+      "zh": "他的仰慕者早就注意到了他与“巨石脸”之间的相似之处，称他为“老石相”。这个称呼提升了他在政坛上的前景，就像教宗的名字也能影响候选人的胜算一样。"
+    },
+    {
+      "id": "p059",
+      "sentenceCount": 2,
+      "en": "Old Stony Phiz, as he was known, traveled to his birthplace despite his friends' efforts to make him President. He simply wanted to greet his fellow citizens without considering its impact on the election.",
+      "zh": "老石脸菲兹，尽管朋友们极力想让他竞选总统，他还是回到了自己的出生地。他只是想在不考虑选举影响的情况下与乡亲们见面寒暄。"
+    },
+    {
+      "id": "p060",
+      "sentenceCount": 2,
+      "en": "A grand procession met him at the state boundary, with horsemen and a crowd lining the road. Ernest, though often disappointed, remained hopeful and ready to believe in anything beautiful or good.",
+      "zh": "在州界迎接他的是一支盛大的队伍，马队和人群沿路排列。尽管埃德蒙特屡次失望，仍保持着希望，随时准备相信一切美好或善良的事物。"
+    },
+    {
+      "id": "p061",
+      "sentenceCount": 3,
+      "en": "The cavalcade approached, creating a cloud of dust that hid the mountain visage from Ernest's view. Prominent locals, including militia officers, Congress members, and newspaper editors, joined the procession on horseback. The sight was impressive, with banners featuring Old Stony Phiz and the Great Stone Face smiling together.",
+      "zh": "骑兵队缓缓接近，扬起一片尘土，遮住了山峦的轮廓。埃德温看不见山景，只见漫天尘雾。当地的重要人物纷纷骑马加入行列，包括民兵军官、国会议员和报社编辑等。这一幕颇为壮观，旗帜上绘着老石脸庞和巨石面庞，两人相视而笑，神情安详。"
+    },
+    {
+      "id": "p062",
+      "sentenceCount": 2,
+      "en": "A band played loudly, filling the mountains with melodies. When the music echoed off the distant cliffs, it seemed as if the Great Stone Face itself was part of the celebration, acknowledging the arrival of the man of prophecy.",
+      "zh": "一支乐队奏响了欢快的乐曲，旋律在群山间回荡。当音乐在远处悬崖上空回响时，仿佛那巨石之面本身也加入了庆典，似乎在欢迎那位先知的到来。"
+    },
+    {
+      "id": "p063",
+      "sentenceCount": 2,
+      "en": "The crowd erupted in cheers as they saw their hero approach. Ernest, moved by the enthusiasm, joined in with a loud \"Huzza for Old Stony Phiz!\"",
+      "zh": "人群一见英雄归来，顿时爆发出欢呼声。埃德蒙深受感染，也高呼了一声：“为老斯通菲兹致敬！”"
+    },
+    {
+      "id": "p064",
+      "sentenceCount": 3,
+      "en": "\"Look! There he is!\" shouted those near Ernest.",
+      "zh": "“看！他来了！” Ernest nearby喊道。"
+    },
+    {
+      "id": "p065",
+      "sentenceCount": 1,
+      "en": "\"See how similar he looks to the Old Man of the Mountain!\"",
+      "zh": "“看看他和老山翁多么相像！”"
+    },
+    {
+      "id": "p066",
+      "sentenceCount": 1,
+      "en": "An open barouche drawn by four white horses pulled up, and from it emerged Old Stony Phiz himself, his massive head uncovered.",
+      "zh": "一辆四匹白色骏马拉的敞篷马车停了下来，石脸老爹本人从车上走了下来，他那魁梧的脑袋上没有戴帽子。"
+    },
+    {
+      "id": "p067",
+      "sentenceCount": 1,
+      "en": "\"Admit it,\" one of Ernest's neighbors said, \"the Great Stone Face has finally met its match!\"",
+      "zh": "“承认吧，”厄内斯特的一个邻居说，“伟大的石面终于遇到了对手！”"
+    },
+    {
+      "id": "p068",
+      "sentenceCount": 3,
+      "en": "At first glance, Ernest noticed a resemblance between the statesman’s face and the mountain’s visage. The brow was deep and lofty, but something seemed lacking. The grandeur that etherealized the mountain’s granite into spirit was absent in Phiz.",
+      "zh": "初看之下，艾尔默注意到这位政客的脸庞与山峰的面貌颇有几分相似。眉宇深邃而高挺，但似乎缺少了些什么。那座山峰之所以显得雄伟壮丽，是因为其岩石被赋予了灵性；然而菲兹却没有这种感觉。"
+    },
+    {
+      "id": "p069",
+      "sentenceCount": 1,
+      "en": "\"Confess,\" his neighbor urged, \"isn't he exactly like your Old Man of the Mountain?\"",
+      "zh": "“承认吧，”他的邻居催促道，“他不就是你老山民的样子吗？”"
+    },
+    {
+      "id": "p070",
+      "sentenceCount": 3,
+      "en": "\"No!\" Ernest replied bluntly. \"I see little likeness.\"",
+      "zh": "“不！”艾尔纳特干脆地回答，“我看不到多少相似之处。”"
+    },
+    {
+      "id": "p071",
+      "sentenceCount": 1,
+      "en": "His neighbor sighed and shouted for Old Stony Phiz instead.",
+      "zh": "他的邻居叹了口气，喊道：“去找斯通菲兹老头吧。”"
+    },
+    {
+      "id": "p072",
+      "sentenceCount": 3,
+      "en": "Ernest turned away, melancholy and almost despondent. He witnessed a man who might have fulfilled the prophecy but chose not to. The cavalcade, banners, music, and barouches passed by him, leaving dust behind and revealing the Great Stone Face with its timeless grandeur.",
+      "zh": "Ernest 转过身去，神情忧郁，几乎到了绝望的边缘。他目睹了一个本可能实现预言的人却选择了放弃。那支仪仗队、旗帜、乐声和马车从他身边经过，扬起阵阵尘土，而那块永恒壮丽的“白山之凹”的巨石面庞也赫然显现。"
+    },
+    {
+      "id": "p073",
+      "sentenceCount": 3,
+      "en": "\"Here I am, Ernest!\" the lips seemed to say. \"I waited longer than you and am not weary yet.",
+      "zh": "“埃德蒙！我就在这里！”似乎嘴唇在说，“我等的时间比你长，可我还未感到疲惫。”"
+    },
+    {
+      "id": "p074",
+      "sentenceCount": 1,
+      "en": "Fear not; the man will come.\"",
+      "zh": "别怕，那人很快就到。"
+    },
+    {
+      "id": "p075",
+      "sentenceCount": 3,
+      "en": "Years sped by, bringing white hair and wrinkles to Ernest's face. He had grown old but was no less wise for it. His fame spread beyond his quiet valley, drawing college professors and city dwellers who sought his unique insights.",
+      "zh": "岁月如梭，埃德蒙的头发渐渐变白，脸上也多了皱纹。他虽然年华老去，却更加睿智。他的名声传出了宁静的山谷，吸引了求知若渴的大学教授和城市居民，他们都希望能从他那里获得独特的见解。"
+    },
+    {
+      "id": "p076",
+      "sentenceCount": 3,
+      "en": "Ernest received visitors with gentle sincerity, discussing freely whatever came to mind. His face would often light up during these conversations, as if bathed in a mild evening glow. After their talks, guests left pondering the wisdom they had shared, often pausing to look at the Great Stone Face, believing they had seen its likeness in Ernest's features.",
+      "zh": "埃德蒙特以温和而真诚的态度接待来访者，随意地谈论着各种话题。在这些交谈中，他的脸上常常会露出一抹温暖的微笑，仿佛沐浴在傍晚柔和的光辉之中。会谈结束后，客人们往往会回味起他们分享的智慧，有时还会停下脚步凝视那块巨石人脸，相信自己在埃德蒙特的面容上看到了它的身影。"
+    },
+    {
+      "id": "p077",
+      "sentenceCount": 3,
+      "en": "Ernest had grown old while a new poet emerged in the valley. This poet, though distant from his birthplace, created beautiful poetry amidst city life. The mountains that Ernest knew as a child often inspired his verses.",
+      "zh": "艾尔内斯特年华老去，谷地里却涌现了一位新诗人。这位诗人虽然远离故乡，却在都市生活中创作出了优美动人的诗篇。艾尔内斯特儿时熟悉的那些山峦常常成为他诗歌的灵感源泉。"
+    },
+    {
+      "id": "p078",
+      "sentenceCount": 1,
+      "en": "He also wrote an ode to the Great Stone Face, praising its grandeur.",
+      "zh": "他也写了一首颂歌，赞美巨石面庞的壮丽。"
+    },
+    {
+      "id": "p079",
+      "sentenceCount": 3,
+      "en": "The poet's genius transformed nature and humanity. When he sang of mountains, all saw greater beauty; in lakes, celestial reflections appeared; even the sea seemed more vast. His poetry gave the world a new, better perspective.",
+      "zh": "诗人的天才将自然与人类升华。每当他吟诵山川，人们便看到了更大的美丽；在湖泊中，仿佛出现了天上的倒影；就连大海也显得更为辽阔。他的诗歌为世界带来了全新的、更美好的视角。"
+    },
+    {
+      "id": "p080",
+      "sentenceCount": 3,
+      "en": "In his verses about people, too, the poet elevated them. Even those sullied by life or children playing were glorified through his eyes. He revealed their angelic kinship and celestial birthright.",
+      "zh": "在诗人的笔下，人们都被提升了地位。即使是被生活玷污的人或正在玩耍的孩子，在他的眼中也都得到了赞美。他揭示了他们与天使之间的亲缘关系和天上赋予的权利。"
+    },
+    {
+      "id": "p081",
+      "sentenceCount": 2,
+      "en": "Some dismissed these as mere fancies, but such critics seemed to be Nature's rejects. The poet’s ideal was the truest truth.",
+      "zh": "有些人把这些仅仅当作是空想，但这样的批评家似乎就是自然的弃儿。诗人的理想才是最真实的真理。"
+    },
+    {
+      "id": "p082",
+      "sentenceCount": 2,
+      "en": "The poet's verses reached Ernest, who read them by his cottage door, gazing at the Great Stone Face. Inspired, he looked up to it, murmuring, \"O majestic friend, is this man worthy of your likeness?\"",
+      "zh": "诗人的诗句传到了艾尔内斯特耳中，他正坐在小屋门前阅读。望着巨大的石面肖像，艾尔内斯特不禁脱口而出：“哦，庄严的朋友，这个人配得上你的形象吗？”"
+    },
+    {
+      "id": "p083",
+      "sentenceCount": 1,
+      "en": "The face seemed to smile but remained silent.",
+      "zh": "这张脸似乎露出了微笑，但却没有作声。"
+    },
+    {
+      "id": "p084",
+      "sentenceCount": 3,
+      "en": "Though distant, the poet had long admired Ernest’s character and wisdom. One summer afternoon, he boarded a train and arrived near Ernest's cottage in the late afternoon. He asked about Ernest's residence and decided to stay as his guest.",
+      "zh": "尽管相隔甚远，诗人已久闻艾尔弗雷德的品格与智慧。一个夏日午后，他登上了火车，在傍晚时分抵达了艾尔弗雷德小屋附近。他打听了一下艾尔弗雷德的住处，决定留下来做客。"
+    },
+    {
+      "id": "p085",
+      "sentenceCount": 3,
+      "en": "Approaching the door, the poet found Ernest reading by the Great Stone Face. \"Good evening,\" said the poet. \"Can you give a traveler a night’s lodging?\"",
+      "zh": "接近门口时，诗人发现艾尔内斯正在巨石面旁阅读。“晚上好，”诗人说道，“能给一名旅人借宿一晚吗？”"
+    },
+    {
+      "id": "p086",
+      "sentenceCount": 2,
+      "en": "Ernest smiled, replying, \"Willingly. I think the Great Stone Face looks hospitably at strangers today.\"",
+      "zh": "Ernest 微笑著回答：“当然可以。我觉得今天的伟大石面似乎特别友善地望着陌生人。”"
+    },
+    {
+      "id": "p087",
+      "sentenceCount": 3,
+      "en": "The poet sat beside Ernest on a bench. They conversed freely, for Ernest's thoughts flowed naturally and made great truths accessible through his simple words. The poet believed angels had influenced him, imbuing his ideas with divine sublimity.",
+      "zh": "诗人坐在埃里内斯特身旁的长椅上，两人畅所欲言。埃里内斯特的思想自然流畅，用简单的言语便让深奥的道理变得易于理解。诗人相信天使曾影响过他，赋予他的思想以神圣的崇高感。"
+    },
+    {
+      "id": "p088",
+      "sentenceCount": 2,
+      "en": "Ernest, in turn, was inspired by the poet’s vivid imagery, which filled the air around their cottage with beautiful shapes. Their shared insights deepened each other's understanding, blending into a harmonious melody of thought.",
+      "zh": "Ernest 受到诗人生动意象的启发，周围的空气中充满了美丽的形象。他们共同的见解加深了彼此的理解，融合成一首和谐的思想旋律。"
+    },
+    {
+      "id": "p089",
+      "sentenceCount": 2,
+      "en": "As Ernest listened, he imagined the Great Stone Face listening too. He gazed intently at the poet's eyes and asked, \"Who are you, my strangely gifted guest?\"",
+      "zh": "随着艾尔内斯特聆听，他仿佛看到那块巨石脸也在倾听。他专注地凝视着诗人的双眼，问道：“你究竟是谁，这位奇怪天赋的客人？”"
+    },
+    {
+      "id": "p090",
+      "sentenceCount": 3,
+      "en": "The poet pointed to the book Ernest had read. \"You've read these poems,\" he said. \"You know me—these are mine.\"",
+      "zh": "诗人指着埃里内特读过的书说：“你读过这些诗。”他接着说道，“了解我吧——这些都是我的作品。”"
+    },
+    {
+      "id": "p091",
+      "sentenceCount": 2,
+      "en": "Ernest examined the poet’s features closely before turning to the Great Stone Face, then back again uncertainly. His face fell as he shook his head and sighed.",
+      "zh": "埃德蒙特仔细端详了诗人的面容，然后转向那块巨石脸庞，又回头再看诗人，显得犹豫不决。他摇了摇头，叹了口气，脸上露出了失望的神情。"
+    },
+    {
+      "id": "p092",
+      "sentenceCount": 3,
+      "en": "\"Why are you sad?\" asked the poet. \"Because,\" replied Ernest, \"I've waited my whole life for a prophecy to come true, and I hoped it might be fulfilled in you.\"",
+      "zh": "“你怎么这么愁眉不展？”诗人问道。“因为我一生都在等待一个预言成真，”艾尔纳斯特回答说，“我还曾希望这个预言会在你身上应验。”"
+    },
+    {
+      "id": "p093",
+      "sentenceCount": 3,
+      "en": "The poet smiled faintly. \"You sought me out to find the likeness of the Great Stone Face. And now you're disappointed, as with Gathergold, Blood-and-Thunder, and Old Stony Phiz.",
+      "zh": "诗人微微一笑：“你特意来找我，想看看那块巨石脸的画像。如今你像对Gathergold、Blood-and-Thunder和Old Stony Phiz一样失望了。”"
+    },
+    {
+      "id": "p094",
+      "sentenceCount": 1,
+      "en": "Yes, Ernest, that is my fate.\"",
+      "zh": "是的，艾尔内斯特，这就是我的命运。"
+    },
+    {
+      "id": "p095",
+      "sentenceCount": 3,
+      "en": "Ernest asked, \"And why?\" pointing to the volume. \"Are not those thoughts divine?\"",
+      "zh": "埃德蒙特问道：“为什么呢？”他指着那本书，“难道这些思想不是神圣的吗？”"
+    },
+    {
+      "id": "p096",
+      "sentenceCount": 3,
+      "en": "The poet replied, \"They have a strain of divinity. You can hear in them the far-off echo of a heavenly song. But my life has not corresponded with my thought.",
+      "zh": "诗人回答说：“他们身上带着神性的血脉。你能从他们的声音中听到天籁之音的遥远回响。但我的生活并未与我的思想相契合。”"
+    },
+    {
+      "id": "p097",
+      "sentenceCount": 1,
+      "en": "I had grand dreams, but they were only dreams because I lived among poor and mean realities by my own choice.\"",
+      "zh": "我曾有过宏伟的憧憬，但那只是梦想，因为我出于自己的选择，生活在如此平凡而卑微的现实中。"
+    },
+    {
+      "id": "p098",
+      "sentenceCount": 2,
+      "en": "Ernest's eyes dimmed as he listened sadly. The poet continued, \"Sometimes—shall I dare to say it?—I lack faith in the grandeur, beauty, and goodness that my works are said to have made evident.\"",
+      "zh": "埃德蒙听后眼中闪过一丝黯淡，悲伤地说道。诗人接着说：“有时——我敢这么说吗？——我对我的作品被认为彰显出的宏伟、美丽和善良产生了怀疑。”"
+    },
+    {
+      "id": "p099",
+      "sentenceCount": 3,
+      "en": "At sunset, Ernest prepared his speech for an audience of neighbors. Arm in arm with the poet, they walked to a small hillside nook. Behind was a gray precipice softened by creeping plants that formed a tapestry over its rugged surface.",
+      "zh": "夕阳西下，艾尔内斯特为一群邻居准备了他的演讲。他挽着诗人的手臂，一起走向一个小山坳。身后是一片灰色的峭壁，在攀爬植物的装点下，峭壁粗糙的表面被柔和了许多，仿佛织成了一幅精美的挂毯。"
+    },
+    {
+      "id": "p100",
+      "sentenceCount": 1,
+      "en": "At a slight elevation, a niche framed by verdant foliage awaited them.",
+      "zh": "在稍高的位置，一片葱郁的绿叶环绕着一个凹槽，仿佛在静候他们的到来。"
     }
   ]
 }
