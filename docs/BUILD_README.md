@@ -161,6 +161,30 @@ flutter build apk --release --build-name=1.0.42 --build-number=43
 flutter build apk --split-per-abi --build-name=1.0.42 --build-number=43
 ```
 
+#### 3. 每次正式打包自动递增版本号
+
+Android 已配置 Gradle 自动递增 `versionCode`，因此直接执行普通命令即可：
+
+```bash
+flutter build apk --release
+```
+
+每次执行 Android 正式打包时，`android/version.properties` 中的构建号会自动递增。项目同时提供 PowerShell 脚本；它会额外递增 `pubspec.yaml` 中的补丁版本，并自动执行正式打包：
+
+```powershell
+.\tools\build_release.ps1
+```
+
+例如 `1.0.41+42` 会自动更新为 `1.0.42+43`。也可以指定其他打包目标：
+
+```powershell
+.\tools\build_release.ps1 -Target appbundle
+.\tools\build_release.ps1 -Target windows
+.\tools\build_release.ps1 -DryRun
+```
+
+脚本会同步更新 `pubspec.yaml`，因此版本号会保留在项目中；`-DryRun` 只预览下一版本，不会修改文件。
+
 ---
 
 ## iOS 应用

@@ -5,6 +5,24 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+def versionPropertiesFile = rootProject.file("version.properties")
+def versionProperties = new Properties()
+if (versionPropertiesFile.exists()) {
+    versionPropertiesFile.withInputStream { versionProperties.load(it) }
+}
+
+def isPackagingTask = gradle.startParameter.taskNames.any { taskName ->
+    def normalizedTaskName = taskName.toLowerCase()
+    normalizedTaskName.contains('assemble') || normalizedTaskName.contains('bundle')
+}
+
+def autoVersionCode = (versionProperties.getProperty('VERSION_CODE') ?: flutter.versionCode.toString()).toInteger()
+if (isPackagingTask) {
+    autoVersionCode += 1
+    versionProperties.setProperty('VERSION_CODE', autoVersionCode.toString())
+    versionPropertiesFile.withOutputStream { versionProperties.store(it, 'Automatically incremented by flutter build') }
+}
+
 android {
     namespace = "com.example.flutter_app"
     compileSdk = flutter.compileSdkVersion
@@ -27,7 +45,7 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
+        versionCode = autoVersionCode
         versionName = flutter.versionName
     }
 
