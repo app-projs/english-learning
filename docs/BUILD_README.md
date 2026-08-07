@@ -169,7 +169,7 @@ Android 已配置 Gradle 自动递增 `versionCode`，因此直接执行普通�
 flutter build apk --release
 ```
 
-每次执行 Android 正式打包时，`android/version.properties` 中的构建号会自动递增。项目同时提供 PowerShell 脚本；它会额外递增 `pubspec.yaml` 中的补丁版本，并自动执行正式打包：
+每次执行 Android 正式打包时，`android/version.properties` 中的展示版本和构建号都会自动递增，输出文件名例如 `lumina-english-v1.0.42-build48.apk`。项目同时提供 PowerShell 脚本；它适合需要同步更新 `pubspec.yaml` 的场景，并自动执行正式打包：
 
 ```powershell
 .\tools\build_release.ps1

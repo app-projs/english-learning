@@ -16,11 +16,34 @@ def isPackagingTask = gradle.startParameter.taskNames.any { taskName ->
     normalizedTaskName.contains('assemble') || normalizedTaskName.contains('bundle')
 }
 
-def autoVersionCode = (versionProperties.getProperty('VERSION_CODE') ?: flutter.versionCode.toString()).toInteger()
-if (isPackagingTask) {
-    autoVersionCode += 1
-    versionProperties.setProperty('VERSION_CODE', autoVersionCode.toString())
-    versionPropertiesFile.withOutputStream { versionProperties.store(it, 'Automatically incremented by flutter build') }
+def autoVersionCode
+if (rootProject.ext.has('autoVersionCode')) {
+    autoVersionCode = rootProject.ext.autoVersionCode
+} else {
+    autoVersionCode = (versionProperties.getProperty('VERSION_CODE') ?: flutter.versionCode.toString()).toInteger()
+    if (isPackagingTask) {
+        autoVersionCode += 1
+        versionProperties.setProperty('VERSION_CODE', autoVersionCode.toString())
+        versionPropertiesFile.withOutputStream { versionProperties.store(it, 'Automatically incremented by flutter build') }
+    }
+    rootProject.ext.autoVersionCode = autoVersionCode
+}
+
+def autoVersionName
+if (rootProject.ext.has('autoVersionName')) {
+    autoVersionName = rootProject.ext.autoVersionName
+} else {
+    autoVersionName = versionProperties.getProperty('VERSION_NAME') ?: flutter.versionName.toString()
+    if (isPackagingTask) {
+        def versionParts = autoVersionName.tokenize('.')
+        if (versionParts.size() == 3) {
+            def nextPatch = versionParts[2].toInteger() + 1
+            autoVersionName = "${versionParts[0]}.${versionParts[1]}.${nextPatch}"
+            versionProperties.setProperty('VERSION_NAME', autoVersionName)
+            versionPropertiesFile.withOutputStream { versionProperties.store(it, 'Automatically incremented by flutter build') }
+        }
+    }
+    rootProject.ext.autoVersionName = autoVersionName
 }
 
 android {
@@ -46,7 +69,7 @@ android {
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = autoVersionCode
-        versionName = flutter.versionName
+        versionName = autoVersionName
     }
 
     buildTypes {
@@ -59,6 +82,7 @@ android {
 
     applicationVariants.all { variant ->
         def versionName = variant.versionName
+        def versionCode = variant.versionCode
         variant.outputs.all { output ->
             outputFileName = "lumina-english-v${versionName}.apk"
         }
