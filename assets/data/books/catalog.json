@@ -26,6 +26,12 @@
       "manifest": "Beauty_and_the_Beast/book.json"
     },
     {
+      "id": "Hemingway,_Ernest_-_The_Old_Man_and_the_Sea",
+      "title": "Hemingway, Ernest - The Old Man and the Sea",
+      "path": "Hemingway,_Ernest_-_The_Old_Man_and_the_Sea",
+      "manifest": "Hemingway,_Ernest_-_The_Old_Man_and_the_Sea/book.json"
+    },
+    {
       "id": "Jane_Eyre",
       "title": "Jane Eyre",
       "path": "Jane_Eyre",

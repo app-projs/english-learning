@@ -96,6 +96,7 @@ BOOK_REQUIRED_FIELDS = {
 }
 MAX_BOOK_CHAPTERS = 50
 MAX_CHAPTER_PARAGRAPHS = 100
+SINGLE_CHAPTER_MAX_PARAGRAPHS = 300
 
 
 @dataclass
@@ -1055,6 +1056,11 @@ def build_book(
             source_chapters = source_chapters[:min(max_chapters, MAX_BOOK_CHAPTERS)]
         else:
             source_chapters = source_chapters[:MAX_BOOK_CHAPTERS]
+        chapter_paragraph_limit = (
+            SINGLE_CHAPTER_MAX_PARAGRAPHS
+            if len(source_chapters) == 1
+            else MAX_CHAPTER_PARAGRAPHS
+        )
         if not dry_run and output_root.joinpath(book_id).exists():
             raise FileExistsError(f"Book output already exists: {output_root / book_id}")
 
@@ -1110,13 +1116,13 @@ def build_book(
                         for source_paragraph in abridged_paragraphs
                         for item in chunk_paragraphs(source_paragraph)
                     ]
-                    if len(abridged_chunks) > MAX_CHAPTER_PARAGRAPHS:
+                    if len(abridged_chunks) > chapter_paragraph_limit:
                         print(
-                            f"Truncating chapter to {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
+                            f"Truncating chapter to {chapter_paragraph_limit} generated paragraphs: "
                             f"{chapter.title}",
                             flush=True,
                         )
-                        abridged_chunks = abridged_chunks[:MAX_CHAPTER_PARAGRAPHS]
+                        abridged_chunks = abridged_chunks[:chapter_paragraph_limit]
                     for chunk_index, (text, sentence_count) in enumerate(abridged_chunks):
                         print(
                             f"  Processing paragraph {chunk_index + 1}/{len(abridged_chunks)}",
@@ -1148,13 +1154,13 @@ def build_book(
                     for source_paragraph in chapter.paragraphs
                     for item in chunk_paragraphs(source_paragraph)
                 ]
-                if len(chunks) > MAX_CHAPTER_PARAGRAPHS:
+                if len(chunks) > chapter_paragraph_limit:
                     print(
-                        f"Truncating chapter to {MAX_CHAPTER_PARAGRAPHS} generated paragraphs: "
+                        f"Truncating chapter to {chapter_paragraph_limit} generated paragraphs: "
                         f"{chapter.title}",
                         flush=True,
                     )
-                    chunks = chunks[:MAX_CHAPTER_PARAGRAPHS]
+                    chunks = chunks[:chapter_paragraph_limit]
                 for chunk_index, (text, sentence_count) in enumerate(chunks):
                     print(
                         f"  Processing paragraph {chunk_index + 1}/{len(chunks)}",
@@ -1390,6 +1396,11 @@ def validate_book_output(book_dir: Path, allow_partial: bool = False) -> None:
         raise RuntimeError(f"Chapter count mismatch: {book_dir}")
     if len(chapter_items) > MAX_BOOK_CHAPTERS:
         raise RuntimeError(f"Book has more than {MAX_BOOK_CHAPTERS} chapters: {book_dir}")
+    chapter_paragraph_limit = (
+        SINGLE_CHAPTER_MAX_PARAGRAPHS
+        if book.get("totalUnits") == 1
+        else MAX_CHAPTER_PARAGRAPHS
+    )
     for expected_index, item in enumerate(chapter_items, start=1):
         if item.get("unitIndex") != expected_index:
             raise RuntimeError(f"Chapter index is not continuous: {book_dir}")
@@ -1400,9 +1411,9 @@ def validate_book_output(book_dir: Path, allow_partial: bool = False) -> None:
         paragraphs = chapter.get("paragraphs")
         if not isinstance(paragraphs, list) or not paragraphs:
             raise RuntimeError(f"Chapter has no paragraphs: {chapter_path}")
-        if len(paragraphs) > MAX_CHAPTER_PARAGRAPHS:
+        if len(paragraphs) > chapter_paragraph_limit:
             raise RuntimeError(
-                f"Chapter has more than {MAX_CHAPTER_PARAGRAPHS} paragraphs: {chapter_path}"
+                f"Chapter has more than {chapter_paragraph_limit} paragraphs: {chapter_path}"
             )
         for paragraph in paragraphs:
             if not paragraph.get("en"):

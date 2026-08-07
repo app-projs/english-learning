@@ -1,0 +1,14 @@
+{
+  "bookId": "Hemingway,_Ernest_-_The_Old_Man_and_the_Sea",
+  "version": 1,
+  "chapters": [
+    {
+      "unitIndex": 1,
+      "title": "THE OLD MAN AND THE SEA",
+      "chineseTitle": "老人与海",
+      "path": "chapters/001.json",
+      "wordCount": 4882,
+      "readTime": 35
+    }
+  ]
+}

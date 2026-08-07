@@ -120,29 +120,30 @@ class _BookDetailScreenState extends State<BookDetailScreen> with SingleTickerPr
                 // Top Header Banner (Cover & Metadata)
                 _buildHeaderBanner(isDark),
 
-                // Unified AppTabBar (内容简介 | 章节目录)
-                AppTabBar(
-                  controller: _tabController,
-                  backgroundColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC),
-                  tabs: [
-                    const Tab(text: '内容简介'),
-                    Tab(text: '章节目录 (${_chapters.length})'),
-                  ],
-                ),
-
-                // Tab Content Area
-                Expanded(
-                  child: TabBarView(
+                if (_chapters.length > 1) ...[
+                  // Unified AppTabBar (内容简介 | 章节目录)
+                  AppTabBar(
                     controller: _tabController,
-                    children: [
-                      // Tab 1: 内容简介
-                      _buildDescriptionTab(isDark),
-
-                      // Tab 2: 章节目录
-                      _buildDirectoryTab(isDark),
+                    backgroundColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC),
+                    tabs: [
+                      const Tab(text: '内容简介'),
+                      Tab(text: '章节目录 (${_chapters.length})'),
                     ],
                   ),
-                ),
+                  // Tab Content Area
+                  Expanded(
+                    child: TabBarView(
+                      controller: _tabController,
+                      children: [
+                        _buildDescriptionTab(isDark),
+                        _buildDirectoryTab(isDark),
+                      ],
+                    ),
+                  ),
+                ] else ...[
+                  // 单章节书籍不展示章节目录，保留简介和底部阅读入口。
+                  Expanded(child: _buildDescriptionTab(isDark)),
+                ],
               ],
             ),
 
